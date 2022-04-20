@@ -18,7 +18,8 @@
 
           $formats_field = [
             {
-              uuid: '63DcPSsYfssc_2rLO90Cmlk-c4DwPmfe_Aj4iFdxcpM',
+              // uuid: '63DcPSsYfssc_2rLO90Cmlk-c4DwPmfe_Aj4iFdxcpM',
+              uuid: 'hYnvnamR6ag_AxPcntKd-XexOpwMkaLhAxui6lsUShU',
               element: $('#edit-field-formats'),
               json_wrapper: 'formats',
               json_key: 'translated'
@@ -27,7 +28,8 @@
 
           $authors_field = [
             {
-              uuid: 'nL39PHzAu3uXzCPe2BBSlw4VVVuZsLVS6RtbkaMLdS8',
+              // uuid: 'nL39PHzAu3uXzCPe2BBSlw4VVVuZsLVS6RtbkaMLdS8',
+              uuid: 'o5vLXb8HgB7zYu_XHLPrCslmmt-Hnd87yCE1cOrRvsE',
               element: $('#edit-field-authors'),
               json_wrapper: 'nonPresenterAuthors',
               json_key: 'name'
@@ -36,7 +38,8 @@
 
           $copyrights_field = [
             {
-              uuid: 'HSgHktR7ejpMhZd1Y-atx9Axw7SuNtwq0FT_sAh8smU',
+              // uuid: 'HSgHktR7ejpMhZd1Y-atx9Axw7SuNtwq0FT_sAh8smU',
+              uuid: 'uLeAPTPSYBImqlrCXa80txmYaj1B7rrTbPvmvunHjxE',
               element: $('#edit-field-copyrights'),
               json_wrapper: 'imageRights',
               json_key: 'copyright'
@@ -45,7 +48,8 @@
 
           $buildings_field = [
             {
-              uuid: '8S0fSi9mz_jgq_PU9xvyDN2ir3lHAnsjmz7_9rnCThY',
+              // uuid: '8S0fSi9mz_jgq_PU9xvyDN2ir3lHAnsjmz7_9rnCThY',
+              uuid: '9ohEZZrClEf1sGsxVQvK0ye9W9HKlh0k6ZuNhZyRi5o',
               element: $('#edit-field-buildings'),
               json_wrapper: 'buildings',
               json_key: 'translated'

@@ -14,12 +14,9 @@ RUN mkdir /crons
 COPY docker/openshift/crons/ /crons
 RUN chmod +x /crons/*
 
-# Install sudo
-RUN apk add --update sudo
+# Install node and npm
+RUN apk add sudo nodejs npm
 
-# Install node
-RUN curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-RUN sudo apk add -y nodejs
 
 # Install theme packages
 WORKDIR /var/www/html/public/themes/custom/hdbt_subtheme

@@ -14,8 +14,8 @@ RUN mkdir /crons
 COPY docker/openshift/crons/ /crons
 RUN chmod +x /crons/*
 
-# Install core dependencies
-RUN apt-get update && apt-get install -y curl sudo
+# Install sudo
+RUN apk add --update sudo
 
 # Install node
 RUN curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -

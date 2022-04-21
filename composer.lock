@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2acc613add1b9c5f1a5223bb4921f701",
+    "content-hash": "612e23049171ac7e0b93c7042acf1465",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9212,6 +9212,15 @@
             "dist": {
                 "type": "zip",
                 "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip"
+            },
+            "type": "drupal-library"
+        },
+        {
+            "name": "jieter/leaflet.sync",
+            "version": "0.2.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jieter/Leaflet.Sync/archive/0.2.4.zip"
             },
             "type": "drupal-library"
         },

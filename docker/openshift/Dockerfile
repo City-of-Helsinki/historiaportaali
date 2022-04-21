@@ -13,18 +13,3 @@ RUN chmod +x /entrypoints/20-deploy.sh
 RUN mkdir /crons
 COPY docker/openshift/crons/ /crons
 RUN chmod +x /crons/*
-
-# Install node and npm
-RUN apk add sudo nodejs npm
-
-# Install theme packages
-WORKDIR /var/www/html/public/themes/custom/hdbt_subtheme
-RUN mkdir -p /var/www/html/.nvm
-ENV NVM_DIR /var/www/html/.nvm
-ENV NODE_VERSION 0.10.33
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-#    && . $NVM_DIR/nvm.sh \
-#    && nvm install $NODE_VERSION \
-#    && nvm alias default $NODE_VERSION \
-#    && nvm use default \
-#    && npm install

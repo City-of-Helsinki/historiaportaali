@@ -19,7 +19,7 @@ RUN apk add --update sudo
 
 # Install node
 RUN curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
+RUN sudo apk add -y nodejs
 
 # Install theme packages
 WORKDIR /var/www/html/public/themes/custom/hdbt_subtheme

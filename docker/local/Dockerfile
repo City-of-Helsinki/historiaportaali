@@ -12,3 +12,6 @@ RUN sudo apk add chromium chromium-chromedriver
 # Autostart chromedriver and drush server
 COPY entrypoints/30-chromedriver.sh /entrypoints
 COPY entrypoints/30-drush-server.sh /entrypoints
+
+# Copy nginx overrides.
+COPY docker/openshift/custom.locations /etc/nginx/conf.d/custom.locations

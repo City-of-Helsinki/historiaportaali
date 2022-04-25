@@ -7,6 +7,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "city-of-helsinki/helfi_azure_fs": "^1.0",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.7",
         "drupal/better_exposed_filters": "^5.0",
@@ -186,6 +187,18 @@
                 "type": "drupal-library",
                 "dist": {
                     "url": "https://github.com/jieter/Leaflet.Sync/archive/0.2.4.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "city-of-helsinki/helfi_azure_fs",
+                "version": "1.0.6",
+                "type": "drupal-module",
+                "dist": {
+                    "url": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs/archive/1.0.6.zip",
                     "type": "zip"
                 }
             }

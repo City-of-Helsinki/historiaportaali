@@ -43,6 +43,7 @@
       const comparisonMapInitialized = self.initMap(comparisonMapId);
 
       if (comparisonMapInitialized) {
+        self.attachPopupListeners(comparisonMapId);
         self.syncMaps();
       }
     },
@@ -77,6 +78,23 @@
       }
 
       return true;
+    },
+
+    attachPopupListeners: function(mapId) {
+      // Attach leaflet ajax popup listeners.
+      Drupal.Leaflet[mapId].lMap.on('popupopen', function(e) {
+        let element = e.popup._contentNode;
+        let content = $('[data-leaflet-ajax-popup]', element);
+
+        if (content.length) {
+          let url = content.data('leaflet-ajax-popup');
+          Drupal.ajax({url: url}).execute().done(function () {
+            e.popup.setContent(element.innerHTML);
+            e.popup.update();
+            Drupal.attachBehaviors(element, drupalSettings);
+          });
+        }
+      });
     },
 
     disableMapComparison: function() {

@@ -18,18 +18,17 @@ bundle: list_of_links
 mode: default
 content:
   field_list_of_links_design:
-    type: design_field_widget
     weight: 1
-    region: content
     settings: {  }
     third_party_settings: {  }
+    type: design_field_widget
+    region: content
   field_list_of_links_links:
     type: paragraphs
     weight: 2
-    region: content
     settings:
-      title: Lohko
-      title_plural: Lohkot
+      title: Paragraph
+      title_plural: Paragraphs
       edit_mode: closed_expand_nested
       closed_mode: summary
       autocollapse: none
@@ -42,14 +41,15 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_list_of_links_title:
-    type: string_textfield
-    weight: 0
     region: content
+  field_list_of_links_title:
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

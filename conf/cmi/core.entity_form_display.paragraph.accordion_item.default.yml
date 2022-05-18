@@ -20,10 +20,9 @@ content:
   field_accordion_item_content:
     type: paragraphs
     weight: 2
-    region: content
     settings:
-      title: Lohko
-      title_plural: Lohkot
+      title: Paragraph
+      title_plural: Paragraphs
       edit_mode: closed_expand_nested
       closed_mode: summary
       autocollapse: none
@@ -36,20 +35,21 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_accordion_item_heading:
-    type: string_textfield
-    weight: 0
     region: content
+  field_accordion_item_heading:
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_icon:
-    type: select2_icon_widget
-    weight: 1
+    type: string_textfield
     region: content
+  field_icon:
+    weight: 1
     settings: {  }
     third_party_settings: {  }
+    type: select2_icon_widget
+    region: content
 hidden:
   created: true
   status: true

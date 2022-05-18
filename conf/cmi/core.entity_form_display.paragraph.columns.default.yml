@@ -19,18 +19,17 @@ bundle: columns
 mode: default
 content:
   field_columns_design:
-    type: design_field_widget
     weight: 1
-    region: content
     settings: {  }
     third_party_settings: {  }
+    type: design_field_widget
+    region: content
   field_columns_left_column:
     type: paragraphs
     weight: 2
-    region: content
     settings:
-      title: Lohko
-      title_plural: Lohkot
+      title: Paragraph
+      title_plural: Paragraphs
       edit_mode: closed_expand_nested
       closed_mode: summary
       autocollapse: none
@@ -43,13 +42,13 @@ content:
         collapse_edit_all: '0'
         duplicate: '0'
     third_party_settings: {  }
+    region: content
   field_columns_right_column:
     type: paragraphs
     weight: 3
-    region: content
     settings:
-      title: Lohko
-      title_plural: Lohkot
+      title: Paragraph
+      title_plural: Paragraphs
       edit_mode: closed_expand_nested
       closed_mode: summary
       autocollapse: none
@@ -62,14 +61,15 @@ content:
         collapse_edit_all: '0'
         duplicate: '0'
     third_party_settings: {  }
-  field_columns_title:
-    type: string_textfield
-    weight: 0
     region: content
+  field_columns_title:
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

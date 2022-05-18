@@ -88,6 +88,7 @@ content:
     region: content
     settings:
       sidebar: false
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select

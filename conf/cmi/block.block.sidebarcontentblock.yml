@@ -6,11 +6,11 @@ dependencies:
     - hdbt_content
     - node
   theme:
-    - hdbt
+    - hdbt_subtheme
 _core:
   default_config_hash: 78yiI6vde7AAMhp5ktXyPS5VcKtVs4_JuJccNBI1K7Q
 id: sidebarcontentblock
-theme: hdbt
+theme: hdbt_subtheme
 region: sidebar_first
 weight: 1
 provider: null
@@ -23,9 +23,9 @@ settings:
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      article: article
-      landing_page: landing_page
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      landing_page: landing_page

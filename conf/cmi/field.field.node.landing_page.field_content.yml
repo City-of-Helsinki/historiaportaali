@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
+    - paragraphs.paragraphs_type.content_liftup
     - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.liftup_with_image
     - paragraphs.paragraphs_type.list_of_links
@@ -40,6 +41,7 @@ settings:
       text: text
       from_library: from_library
       remote_video: remote_video
+      content_liftup: content_liftup
       timeline: timeline
     negate: 0
     target_bundles_drag_drop:
@@ -52,11 +54,23 @@ settings:
       banner:
         weight: -26
         enabled: true
+      chart:
+        weight: 28
+        enabled: false
       columns:
         weight: -27
         enabled: true
+      contact_card:
+        weight: 30
+        enabled: false
+      contact_card_listing:
+        weight: 31
+        enabled: false
       content_cards:
         weight: -23
+        enabled: true
+      content_liftup:
+        weight: 33
         enabled: true
       from_library:
         weight: 21
@@ -88,6 +102,12 @@ settings:
       remote_video:
         weight: 27
         enabled: true
+      sidebar_text:
+        weight: 44
+        enabled: false
+      social_media_link:
+        weight: 45
+        enabled: false
       text:
         weight: -15
         enabled: true

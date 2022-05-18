@@ -1,4 +1,4 @@
-label: 'Scheduled content'
+label: 'Schemalagt innehåll'
 display:
   default:
     display_options:
@@ -62,15 +62,15 @@ display:
         langcode:
           expose:
             label: Språk
-      title: 'Scheduled Content'
-    display_title: Förvald
+      title: 'Schemalagt innehåll'
+    display_title: Huvud
   overview:
     display_options:
       menu:
         title: Schemalagd
       tab_options:
         title: Innehåll
-    display_title: 'Content Overview'
+    display_title: Innehållsöversikt
   user_page:
     display_options:
       menu:

@@ -45,7 +45,7 @@
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/search_api_sorts": "^1.0",
-        "drupal/term_merge": "1.x-dev@dev",
+        "drupal/term_merge": "^2.0@beta",
         "drupal/twig_tweak": "^3.1",
         "drupal/views_block_filter_block": "1.x-dev@dev",
         "drupal/views_cm_current_state": "^2.0",

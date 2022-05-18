@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f2f75518d200f8834aeb3365a1a3fa6",
+    "content-hash": "004885db23632f710460b8d12a5118ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7657,27 +7657,30 @@
         },
         {
             "name": "drupal/term_merge",
-            "version": "dev-1.x",
+            "version": "2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/term_merge.git",
-                "reference": "ba0b6febde373a1c70fe34177055257194141e79"
+                "reference": "2.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/term_merge-2.0.0-beta1.zip",
+                "reference": "2.0.0-beta1",
+                "shasum": "c5df9289a7d2a16bd4a05daa7fbb4908253d0bcb"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9",
                 "drupal/term_reference_change": "*"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0-alpha2+2-dev",
-                    "datestamp": "1592462758",
+                    "version": "2.0.0-beta1",
+                    "datestamp": "1640027763",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -18926,7 +18929,7 @@
         "drupal/rabbit_hole": 10,
         "drupal/search_api": 20,
         "drupal/search_api_location": 15,
-        "drupal/term_merge": 20,
+        "drupal/term_merge": 10,
         "drupal/views_block_filter_block": 20,
         "drupal/views_menu_children_filter": 5
     },

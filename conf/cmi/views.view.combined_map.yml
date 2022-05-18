@@ -428,7 +428,7 @@ display:
           leaflet_markercluster:
             control: true
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false}'
-            include_path: 0
+            include_path: false
           fullscreen:
             control: false
             options: '{"position":"topleft","pseudoFullscreen":false}'

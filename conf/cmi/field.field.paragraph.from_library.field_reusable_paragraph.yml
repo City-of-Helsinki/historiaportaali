@@ -18,8 +18,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraphs_library_item'
+  handler: views
   handler_settings:
+    view:
+      view_name: paragraphs_selection
+      display_name: entity_reference
+      arguments: {  }
     target_bundles: null
     sort:
       field: _none

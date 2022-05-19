@@ -14,7 +14,7 @@ bundle: gallery_slide
 mode: default
 content:
   field_gallery_slide_caption:
-    type: text_span
+    type: basic_string
     label: inline
     settings: {  }
     third_party_settings: {  }

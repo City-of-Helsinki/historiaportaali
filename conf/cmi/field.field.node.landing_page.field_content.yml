@@ -43,6 +43,7 @@ settings:
       remote_video: remote_video
       content_liftup: content_liftup
       timeline: timeline
+      chart: chart
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -55,8 +56,8 @@ settings:
         weight: -26
         enabled: true
       chart:
-        weight: 28
-        enabled: false
+        weight: 25
+        enabled: true
       columns:
         weight: -27
         enabled: true

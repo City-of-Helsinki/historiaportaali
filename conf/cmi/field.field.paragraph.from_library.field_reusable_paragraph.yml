@@ -24,4 +24,8 @@ settings:
       view_name: paragraphs_selection
       display_name: entity_reference
       arguments: {  }
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
 field_type: entity_reference

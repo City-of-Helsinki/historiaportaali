@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - filter.format.minimal
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -121,8 +122,6 @@ permissions:
   - 'use articles_editorial_workflow transition submit_for_review'
   - 'use menu link attributes'
   - 'use text format full_html'
-  - 'use text format full_html'
-  - 'use text format minimal'
   - 'use text format minimal'
   - 'view all media revisions'
   - 'view all revisions'
@@ -135,3 +134,8 @@ permissions:
   - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'create helfi_chart media'
+  - 'delete any helfi_chart media'
+  - 'delete own helfi_chart media'
+  - 'edit any helfi_chart media'
+  - 'edit own helfi_chart media'

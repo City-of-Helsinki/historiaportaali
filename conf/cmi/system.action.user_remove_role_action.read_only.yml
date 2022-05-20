@@ -1,0 +1,14 @@
+uuid: b1007234-be50-4bef-9606-e8ff458cae1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.read_only
+  module:
+    - user
+id: user_remove_role_action.read_only
+label: 'Remove the Read only role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: read_only

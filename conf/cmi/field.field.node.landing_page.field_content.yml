@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
+    - paragraphs.paragraphs_type.content_liftup
     - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.liftup_with_image
     - paragraphs.paragraphs_type.list_of_links
@@ -38,9 +39,11 @@ settings:
       liftup_with_image: liftup_with_image
       content_cards: content_cards
       text: text
+      content_liftup: content_liftup
       from_library: from_library
       remote_video: remote_video
       timeline: timeline
+      chart: chart
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -52,11 +55,17 @@ settings:
       banner:
         weight: -26
         enabled: true
+      chart:
+        weight: 25
+        enabled: true
       columns:
         weight: -27
         enabled: true
       content_cards:
         weight: -23
+        enabled: true
+      content_liftup:
+        weight: -32
         enabled: true
       from_library:
         weight: 21

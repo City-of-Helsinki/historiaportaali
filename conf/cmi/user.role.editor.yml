@@ -1,10 +1,12 @@
-uuid: null
+uuid: 80765e2c-9d0e-4f30-8a0b-eae75052ad27
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.full_html
+    - filter.format.minimal
     - media.type.file
+    - media.type.helfi_chart
     - media.type.image
     - media.type.remote_video
     - media.type.soundcloud
@@ -54,6 +56,7 @@ permissions:
   - 'change own username'
   - 'create content translations'
   - 'create file media'
+  - 'create helfi_chart media'
   - 'create image media'
   - 'create landing_page content'
   - 'create media'
@@ -65,6 +68,7 @@ permissions:
   - 'create terms in keywords'
   - 'create url aliases'
   - 'delete any file media'
+  - 'delete any helfi_chart media'
   - 'delete any image media'
   - 'delete any landing_page content'
   - 'delete any media'
@@ -75,6 +79,7 @@ permissions:
   - 'delete landing_page revisions'
   - 'delete media'
   - 'delete own file media'
+  - 'delete own helfi_chart media'
   - 'delete own image media'
   - 'delete own landing_page content'
   - 'delete own page content'
@@ -84,12 +89,14 @@ permissions:
   - 'delete remote entities'
   - 'delete terms in keywords'
   - 'edit any file media'
+  - 'edit any helfi_chart media'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any page content'
   - 'edit any remote_video media'
   - 'edit any soundcloud media'
   - 'edit own file media'
+  - 'edit own helfi_chart media'
   - 'edit own image media'
   - 'edit own landing_page content'
   - 'edit own page content'
@@ -121,8 +128,6 @@ permissions:
   - 'use articles_editorial_workflow transition submit_for_review'
   - 'use menu link attributes'
   - 'use text format full_html'
-  - 'use text format full_html'
-  - 'use text format minimal'
   - 'use text format minimal'
   - 'view all media revisions'
   - 'view all revisions'

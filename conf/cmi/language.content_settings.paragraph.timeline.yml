@@ -1,9 +1,9 @@
-uuid: f22659b3-5067-4d5a-9897-dcf29c9f8574
+uuid: a3b193fc-231b-46f1-bd6f-4b4f2b056f5e
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.helfi_chart
+    - paragraphs.paragraphs_type.timeline
   module:
     - content_translation
 third_party_settings:
@@ -11,10 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-_core:
-  default_config_hash: 2BVN4f7oVA6fKcWq9zF90vKpBQ122PgyhnrbvoSn_gk
-id: media.helfi_chart
-target_entity_type_id: media
-target_bundle: helfi_chart
+id: paragraph.timeline
+target_entity_type_id: paragraph
+target_bundle: timeline
 default_langcode: site_default
 language_alterable: false

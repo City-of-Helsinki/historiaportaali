@@ -12,7 +12,7 @@ bundle: map_layer
 label: 'Layer title'
 description: 'This will be the name of the layer in the map layer selector.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -1,20 +1,17 @@
-uuid: f22659b3-5067-4d5a-9897-dcf29c9f8574
+uuid: d5f8b792-c5d2-4ef7-8601-ea4a360480da
 langcode: en
 status: true
 dependencies:
-  config:
-    - media.type.helfi_chart
   module:
     - content_translation
+    - paragraphs_library
 third_party_settings:
   content_translation:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-_core:
-  default_config_hash: 2BVN4f7oVA6fKcWq9zF90vKpBQ122PgyhnrbvoSn_gk
-id: media.helfi_chart
-target_entity_type_id: media
-target_bundle: helfi_chart
+id: paragraphs_library_item.paragraphs_library_item
+target_entity_type_id: paragraphs_library_item
+target_bundle: paragraphs_library_item
 default_langcode: site_default
 language_alterable: false

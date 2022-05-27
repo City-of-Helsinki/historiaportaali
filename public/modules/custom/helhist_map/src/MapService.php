@@ -34,8 +34,11 @@ class MapService {
     if (!$map_layer_nodes || empty($map_layer_nodes)) {
       return $layers;
     }
+
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     
     foreach ($map_layer_nodes as $node) {
+      $node = \Drupal::service('entity.repository')->getTranslationFromContext($node, $language);
       $layer_title = $node->get('field_layer_title')->getString();
       $map_layer_api_endpoints_field = $node->get('field_map_api_endpoints');
 

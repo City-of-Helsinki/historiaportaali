@@ -9,6 +9,7 @@ dependencies:
     - filter
     - graphql
     - helfi_api_base
+    - matomo
     - media
     - search_api_autocomplete
     - system
@@ -24,6 +25,7 @@ permissions:
   - 'access toolbar'
   - 'display eu cookie compliance popup'
   - 'execute graphql requests'
+  - 'opt-in or out of matomo tracking'
   - 'use search_api_autocomplete for search'
   - 'use text format full_html'
   - 'view media'

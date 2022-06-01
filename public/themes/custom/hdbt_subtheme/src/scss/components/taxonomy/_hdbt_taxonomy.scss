@@ -18,18 +18,19 @@
     flex-flow: row wrap;
 
     a {
-        text-decoration: none;
-        @include font-size(16px, 24px);
-        background-color: $color-black;
-        border-radius: $spacing-and-half;
-        color: $color-white;
-        font-weight: $font-weight-regular;
-        margin: $spacing-quarter;
-        padding: $spacing-half $spacing-double;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
+      @include font-size(16px, 24px);
+      background-color: $color-black;
+      border-radius: $spacing-and-half;
+      color: $color-white;
+      font-weight: $font-weight-regular;
+      margin: $spacing-quarter;
+      padding: $spacing-half $spacing-double;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $color-black-80;
+      }
     }
   }
 }

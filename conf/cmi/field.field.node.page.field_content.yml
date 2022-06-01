@@ -6,8 +6,10 @@ dependencies:
     - field.storage.node.field_content
     - node.type.page
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
+    - paragraphs.paragraphs_type.content_liftup
     - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.image
@@ -40,8 +42,11 @@ settings:
       gallery: gallery
       list_of_links: list_of_links
       content_cards: content_cards
+      content_liftup: content_liftup
+      banner: banner
       from_library: from_library
       remote_video: remote_video
+      chart: chart
       timeline: timeline
     negate: 0
     target_bundles_drag_drop:
@@ -53,12 +58,18 @@ settings:
         enabled: false
       banner:
         weight: -16
-        enabled: false
+        enabled: true
+      chart:
+        weight: 25
+        enabled: true
       columns:
         weight: -26
         enabled: true
       content_cards:
         weight: -21
+        enabled: true
+      content_liftup:
+        weight: -22
         enabled: true
       from_library:
         weight: 21

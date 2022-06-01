@@ -1,0 +1,17 @@
+uuid: 78550888-b550-4139-97a2-0b33a57fcd6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: eTaYwUTssthgegDKXXVauF-8HIAezuwWcXeKrTbt1aI
+id: sidebar_text
+label: 'Sidebar text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

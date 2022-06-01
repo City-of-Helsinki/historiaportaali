@@ -46,6 +46,16 @@ display:
         type:
           expose:
             label: Innehållstyp
+        status:
+          expose:
+            label: Status
+          group_info:
+            label: 'Status för publicering'
+            group_items:
+              1:
+                title: Publicerad
+              2:
+                title: 'Ej publicerad'
         langcode:
           expose:
             label: Språk

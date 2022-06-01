@@ -1,0 +1,18 @@
+uuid: ceba388c-34a4-4f95-b168-5e5d38d80df3
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.liftup_with_image
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.liftup_with_image
+target_entity_type_id: paragraph
+target_bundle: liftup_with_image
+default_langcode: site_default
+language_alterable: false

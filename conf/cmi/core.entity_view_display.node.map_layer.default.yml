@@ -11,7 +11,6 @@ dependencies:
     - node.type.map_layer
   module:
     - entity_reference_revisions
-    - options
     - user
 id: node.map_layer.default
 targetEntityType: node
@@ -24,14 +23,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
-    region: content
-  field_map_api:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 106
+    weight: 2
     region: content
   field_map_api_endpoints:
     type: entity_reference_revisions_entity_view
@@ -40,29 +32,17 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 107
-    region: content
-  field_map_era:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  field_map_wms_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 105
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_map_api: true
+  field_map_era: true
+  field_map_wms_title: true
   langcode: true
   search_api_excerpt: true
+  toc_enabled: true

@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - filter.format.minimal
     - media.type.file
+    - media.type.helfi_chart
     - media.type.image
     - media.type.remote_video
     - media.type.soundcloud
@@ -48,6 +50,7 @@ dependencies:
     - simple_sitemap
     - system
     - taxonomy
+    - term_merge
     - toolbar
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
@@ -100,6 +103,7 @@ permissions:
   - 'create article content'
   - 'create content translations'
   - 'create file media'
+  - 'create helfi_chart media'
   - 'create image media'
   - 'create landing_page content'
   - 'create listing_page content'
@@ -125,6 +129,7 @@ permissions:
   - 'delete all revisions'
   - 'delete any article content'
   - 'delete any file media'
+  - 'delete any helfi_chart media'
   - 'delete any image media'
   - 'delete any landing_page content'
   - 'delete any listing_page content'
@@ -141,6 +146,7 @@ permissions:
   - 'delete media'
   - 'delete own article content'
   - 'delete own file media'
+  - 'delete own helfi_chart media'
   - 'delete own image media'
   - 'delete own landing_page content'
   - 'delete own listing_page content'
@@ -163,6 +169,7 @@ permissions:
   - 'delete terms in source'
   - 'edit any article content'
   - 'edit any file media'
+  - 'edit any helfi_chart media'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any listing_page content'
@@ -172,6 +179,7 @@ permissions:
   - 'edit any soundcloud media'
   - 'edit own article content'
   - 'edit own file media'
+  - 'edit own helfi_chart media'
   - 'edit own image media'
   - 'edit own landing_page content'
   - 'edit own listing_page content'
@@ -193,6 +201,7 @@ permissions:
   - 'edit terms in phenomenon'
   - 'edit terms in source'
   - 'link to any page'
+  - 'merge taxonomy terms'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert landing_page revisions'
@@ -236,8 +245,6 @@ permissions:
   - 'use articles_editorial_workflow transition unpublish'
   - 'use menu link attributes'
   - 'use text format full_html'
-  - 'use text format full_html'
-  - 'use text format minimal'
   - 'use text format minimal'
   - 'view all media revisions'
   - 'view all revisions'

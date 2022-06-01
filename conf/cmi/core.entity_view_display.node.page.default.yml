@@ -30,7 +30,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_lead_in:
     type: basic_string
@@ -46,14 +46,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_metatags:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_sidebar_content:
     type: entity_reference_revisions_entity_view
@@ -62,22 +62,12 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  toc_enabled:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
     region: content
 hidden:
   field_has_hero: true
@@ -85,3 +75,4 @@ hidden:
   field_liftup_image: true
   langcode: true
   search_api_excerpt: true
+  toc_enabled: true

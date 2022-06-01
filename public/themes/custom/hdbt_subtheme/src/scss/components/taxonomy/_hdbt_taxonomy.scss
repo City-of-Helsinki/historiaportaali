@@ -17,15 +17,19 @@
     display: flex;
     flex-flow: row wrap;
 
-    span {
-      @include font-size(16px, 24px);
-      background-color: $color-black;
-      border-radius: $spacing-and-half;
-      color: $color-white;
-      font-weight: $font-weight-regular;
-      margin: $spacing-quarter;
-      padding: $spacing-half $spacing-double;
-      text-decoration: none;
+    a {
+        text-decoration: none;
+        @include font-size(16px, 24px);
+        background-color: $color-black;
+        border-radius: $spacing-and-half;
+        color: $color-white;
+        font-weight: $font-weight-regular;
+        margin: $spacing-quarter;
+        padding: $spacing-half $spacing-double;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
     }
   }
 }

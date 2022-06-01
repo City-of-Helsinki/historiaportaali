@@ -106,7 +106,7 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
 
   $form_id = 'views-exposed-form-combined-map-block--2';
   $select_field = 'field_keywords_target_id';
-  $taxonomy_field = 'node__field_keywords';
+  $taxonomy_field = 'field_keywords';
 
   if ($form['#id'] == $form_id) {
     $active_terms = _get_active_terms($taxonomy_field, $select_field);
@@ -139,11 +139,13 @@ function _get_active_terms($taxonomy_field, $select_field) {
 
   // Find taxonomy terms that link to node type content with a geolocation.
   $connection = \Drupal::database();
-  $query = $connection->select($taxonomy_field, 'node__field_table');
-  $query->join('node__field_geolocation', 'geolocation', 'geolocation.entity_id = node__field_table.entity_id');
-  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = node__field_table.' . $select_field);
-  $query->condition('tname.langcode', $language);
-  $query->fields('node__field_table', [$select_field]);
+  $query = $connection->select('node__'.$taxonomy_field, 'node_field_data');
+  $query->join('node__field_geolocation', 'geolocation', 'geolocation.entity_id = node_field_data.entity_id');
+  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = node_field_data.' . $select_field);
+  // Let's restore this condition once we have translated terms.
+  // TODO: also add condition that node must have translation.
+  // $query->condition('tname.langcode', $language);
+  $query->fields('node_field_data', [$select_field]);
   $query->fields('tname', ['name']);
   $result = $query->distinct()->execute();
   while ($row = $result->fetchAssoc()) {
@@ -152,11 +154,13 @@ function _get_active_terms($taxonomy_field, $select_field) {
 
   // Find taxonomy terms that link to media type content with a geolocation.
   $connection = \Drupal::database();
-  $query = $connection->select($taxonomy_field, 'media__field_table');
-  $query->join('media__field_geolocation', 'geolocation', 'geolocation.entity_id = media__field_table.entity_id');
-  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = media__field_table.' . $select_field);
-  $query->condition('tname.langcode', $language);
-  $query->fields('media__field_table', [$select_field]);
+  $query = $connection->select('media__'.$taxonomy_field, 'media_field_data');
+  $query->join('media__field_geolocation', 'geolocation', 'geolocation.entity_id = media_field_data.entity_id');
+  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = media_field_data.' . $select_field);
+  // Let's restore this filter once we have translated terms.
+  // TODO: also add condition that media entity must have translation.
+  // $query->condition('tname.langcode', $language);
+  $query->fields('media_field_data', [$select_field]);
   $query->fields('tname', ['name']);
   $result = $query->distinct()->execute();
   while ($row = $result->fetchAssoc()) {

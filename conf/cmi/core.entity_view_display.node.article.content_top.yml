@@ -102,3 +102,4 @@ hidden:
   field_reading_time: true
   field_turning_points: true
   search_api_excerpt: true
+  toc_enabled: true

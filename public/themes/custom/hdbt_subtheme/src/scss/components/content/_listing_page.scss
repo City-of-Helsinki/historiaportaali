@@ -41,9 +41,20 @@
 
     .node--type-listing-page {
       &.node--view-mode-full {
+        .listing-page-body__container {
+          max-width: 60rem;
 
-        p {
-          @include font-size($fontsize-body-xl, $lineheight-m);
+          p {
+            line-height: $lineheight-l;
+            margin: $spacing-triple 0 0;
+
+            @include font-size($fontsize-heading-s);
+            font-weight: $font-weight-medium;
+          
+            @include breakpoint($breakpoint-l) {
+              @include font-size($fontsize-heading-m);
+            }
+          }
         }
       }
     }

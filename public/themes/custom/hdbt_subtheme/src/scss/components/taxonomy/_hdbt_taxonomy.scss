@@ -17,7 +17,7 @@
     display: flex;
     flex-flow: row wrap;
 
-    span {
+    a {
       @include font-size(16px, 24px);
       background-color: $color-black;
       border-radius: $spacing-and-half;
@@ -26,6 +26,11 @@
       margin: $spacing-quarter;
       padding: $spacing-half $spacing-double;
       text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $color-black-80;
+      }
     }
   }
 }

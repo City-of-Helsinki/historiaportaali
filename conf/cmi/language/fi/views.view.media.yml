@@ -69,7 +69,4 @@ display:
           expose:
             label: Kieli
     display_title: Oletus
-  media_page_list:
-    display_options:
-      menu: {  }
 description: 'Etsi ja ylläpidä mediatiedostoja.'

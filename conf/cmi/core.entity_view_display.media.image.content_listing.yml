@@ -38,6 +38,8 @@ content:
     settings:
       image_link: ''
       image_style: 3_2_xxs
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

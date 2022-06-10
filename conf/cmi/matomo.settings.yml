@@ -1,8 +1,8 @@
 _core:
   default_config_hash: mKwnhF-0ryfftZZP6jyqW8q9MEo9glyRkvRzSddrc0k
 site_id: '903'
-url_http: 'http://digiaiiris.com/web-analytics/'
-url_https: 'https://digiaiiris.com/web-analytics/'
+url_http: 'http://webanalytics.digiaiiris.com/js/'
+url_https: 'https://webanalytics.digiaiiris.com/js/'
 domain_mode: 0
 visibility:
   request_path_mode: 0
@@ -52,7 +52,7 @@ codesnippet:
   before: ''
   after: ''
 translation_set: false
-disable_tracking: false
+disable_tracking: true
 cache: false
 page_title_hierarchy: false
 page_title_hierarchy_exclude_home: true

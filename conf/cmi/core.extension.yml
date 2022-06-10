@@ -93,6 +93,7 @@ module:
   linkit: 0
   locale: 0
   matomo: 0
+  matomo_tagmanager: 0
   media: 0
   media_entity_soundcloud: 0
   media_library: 0

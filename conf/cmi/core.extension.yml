@@ -33,6 +33,7 @@ module:
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  editoria11y: 0
   elasticsearch_connector: 0
   entity: 0
   entity_reference_revisions: 0
@@ -64,7 +65,9 @@ module:
   helfi_azure_fs: 0
   helfi_base_config: 0
   helfi_charts: 0
+  helfi_contact_cards: 0
   helfi_content: 0
+  helfi_events: 0
   helfi_example_content: 0
   helfi_gdpr_compliance: 0
   helfi_languages: 0
@@ -95,6 +98,7 @@ module:
   matomo: 0
   matomo_tagmanager: 0
   media: 0
+  media_entity_file_replace: 0
   media_entity_soundcloud: 0
   media_library: 0
   menu_block_current_language: 0
@@ -106,6 +110,7 @@ module:
   metatag_twitter_cards: 0
   metatag_views: 0
   migrate: 0
+  mysql: 0
   node: 0
   oembed_providers: 0
   optional_end_date: 0
@@ -132,6 +137,7 @@ module:
   social_media: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   term_merge: 0
   term_reference_change: 0
   text: 0
@@ -145,6 +151,8 @@ module:
   user: 0
   view_unpublished: 0
   views_block_filter_block: 0
+  views_bulk_edit: 0
+  views_bulk_operations: 0
   views_cm_current_state: 0
   views_infinite_scroll: 0
   views_menu_children_filter: 0

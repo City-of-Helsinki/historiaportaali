@@ -63,7 +63,7 @@ class MapService {
 
   public function getPhotoLayers() {
     $layers = [];
-    $map_layer_nodes = $this->getMapLayerNodes();
+    $map_layer_nodes = $this->getPhotoLayerNodes();
     
     if (!$map_layer_nodes || empty($map_layer_nodes)) {
       return $layers;
@@ -101,7 +101,10 @@ class MapService {
       ->getStorage()
       ->getQuery();
     $query->condition('type', 'map_layer');
-    $query->condition('field_layer_type', 'map');
+    $mapOrNull = $query->orConditionGroup()
+      ->condition('field_layer_type', 'map')
+      ->notExists('field_layer_type');
+    $query->condition($mapOrNull);
     $query->condition('status', 1);
     $query->sort('field_layer_title', 'DESC');
 

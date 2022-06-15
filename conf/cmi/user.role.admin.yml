@@ -30,6 +30,7 @@ dependencies:
     - content_lock
     - content_moderation
     - content_translation
+    - editoria11y
     - entity_usage
     - eu_cookie_compliance
     - file
@@ -52,6 +53,8 @@ dependencies:
     - taxonomy
     - term_merge
     - toolbar
+    - update
+    - views_bulk_edit
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
@@ -246,10 +249,12 @@ permissions:
   - 'use menu link attributes'
   - 'use text format full_html'
   - 'use text format minimal'
+  - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view article revisions'
+  - 'view editoria11y checker'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'
@@ -262,3 +267,4 @@ permissions:
   - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view update notifications'

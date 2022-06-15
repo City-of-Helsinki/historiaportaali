@@ -48,6 +48,8 @@ settings:
       remote_video: remote_video
       chart: chart
       timeline: timeline
+      contact_card_listing: contact_card_listing
+      event_list: event_list
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -65,11 +67,20 @@ settings:
       columns:
         weight: -26
         enabled: true
+      contact_card:
+        weight: 30
+        enabled: false
+      contact_card_listing:
+        weight: 31
+        enabled: true
       content_cards:
         weight: -21
         enabled: true
       content_liftup:
         weight: -22
+        enabled: true
+      event_list:
+        weight: 30
         enabled: true
       from_library:
         weight: 21
@@ -101,6 +112,9 @@ settings:
       remote_video:
         weight: 27
         enabled: true
+      social_media_link:
+        weight: 46
+        enabled: false
       text:
         weight: -27
         enabled: true

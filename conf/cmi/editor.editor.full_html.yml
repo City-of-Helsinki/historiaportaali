@@ -52,6 +52,7 @@ settings:
             - PasteFromWord
             - SpecialChar
             - Source
+            - language_selector
   plugins:
     drupallink:
       linkit_enabled: true

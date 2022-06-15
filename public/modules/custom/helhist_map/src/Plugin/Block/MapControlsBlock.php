@@ -61,7 +61,8 @@ class MapControlsBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
     $build = [
       '#theme' => 'map_controls',
-      '#map_layers' => $this->mapService->getMapLayers()
+      '#map_layers' => $this->mapService->getMapLayers(),
+      '#photo_layers' => $this->mapService->getPhotoLayers()
     ];
 
     return $build;

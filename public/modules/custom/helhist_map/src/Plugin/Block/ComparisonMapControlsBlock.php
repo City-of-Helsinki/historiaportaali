@@ -61,8 +61,8 @@ class ComparisonMapControlsBlock extends BlockBase implements ContainerFactoryPl
   public function build() {
     $build = [
       '#theme' => 'comparison_map_controls',
-      '#map_layers' => $this->mapService->getMapLayers(),
-      '#photo_layers' => $this->mapService->getPhotoLayers()
+      '#map_layers' => $this->mapService->getMapLayers('map'),
+      '#photo_layers' => $this->mapService->getMapLayers('photo')
     ];
 
     return $build;

@@ -1,13 +1,29 @@
 <div class="map-controls__top-container main-map">
-  <div class="map-controls__map-layer main-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}">
-    <button class="map-controls__control-button map-controls__map-layer-item active main-map" role="button" data-map-layer-title="present">
-      {{ 'Present'|t({}, {'context' : 'Map selectors'}) }}
-    </button>
-    {% for layer in map_layers %}
-      <button class="map-controls__control-button map-controls__map-layer-item main-map" role="button" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
-        {{ layer.layer_title }}
-      </button>
-    {% endfor %}
+  <div class="hds-text-input map-controls__mid-container">
+    <select class="map-controls__map-layer main-map hds-text-input__input" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}">
+
+      <option class="map-controls__control-button map-controls__map-layer-item active main-map" role="button" data-map-layer-title="present">
+        {{ 'Present'|t({}, {'context' : 'Map selectors'}) }}
+      </option>
+      {% for layer in map_layers %}
+        <option class="map-controls__control-button map-controls__map-layer-item main-map" role="button" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
+          {{ layer.layer_title }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="hds-text-input map-controls__mid-container">
+    <select class="map-controls__map-layer main-map hds-text-input__input" aria-label="{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}">
+
+      <option class="map-controls__control-button map-controls__map-layer-item active main-map" role="button" data-map-layer-title="aerial photos">
+        {{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}
+      </option>
+      {% for layer in photo_layers %}
+        <option class="map-controls__control-button map-controls__map-layer-item main-map" role="button" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
+          {{ layer.layer_title }}
+        </option>
+      {% endfor %}
+    </select>
   </div>
 </div>
 

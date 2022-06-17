@@ -1,5 +1,5 @@
 <div class="map-controls__top-container main-map">
-  <div class="hds-text-input map-controls__mid-container">
+  <div class="hds-text-input map-controls__mid-container hds-text-input">
     <select class="map-controls__map-layer main-map hds-text-input__input" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}">
       <option selected disabled class="map-controls__control-button map-controls__map-layer-item active main-map" role="button" data-map-layer-title="default">
         {{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}
@@ -11,7 +11,7 @@
       {% endfor %}
     </select>
   </div>
-  <div class="hds-text-input map-controls__mid-container">
+  <div class="hds-text-input map-controls__mid-container hds-text-input">
     <select class="map-controls__map-layer main-map hds-text-input__input" aria-label="{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}">
       <option selected disabled class="map-controls__control-button map-controls__map-layer-item active main-map" role="button" data-map-layer-title="default">
         {{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}

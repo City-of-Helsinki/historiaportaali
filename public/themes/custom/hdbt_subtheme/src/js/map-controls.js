@@ -26,25 +26,18 @@
 
     bindLayerControls: function(lMap, mapName) {
       let self = this;
-      let $controls = $(`.map-controls__map-layer.${mapName} .map-controls__map-layer-item`);
-
-      $controls.on('click', function(e) {
-        let selectedLayerTitle = $(e.target).data('map-layer-title')
-            mapApiEndpoints = $(e.target).data('map-api-endpoints');
-
-        if ($(e.target).is('.active')) {
-          self.toggleLayerSelectorVisibility(mapName);
-        } else {
-          self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
-          self.toggleLayerSelectorVisibility(mapName);
-          $controls.removeClass('active');
-          $(e.target).addClass('active');
-        }
+      let $controls = $(`.map-controls__map-layer.${mapName}`);
+      $controls.change(function(e) {
+        let selectedLayerTitle = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-layer-title')
+            mapApiEndpoints = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
+        self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
+        // Revert other <selects> to placeholder.
+        $controls.not(e.target).prop('selectedIndex', 0);
       });
     },
 
     unBindLayerControls: function(mapName) {
-      let $controls = $(`.map-controls__map-layer.${mapName} .map-controls__map-layer-item`);
+      let $controls = $(`.map-controls__map-layer.${mapName}`);
       $controls.off('click');
     },
 

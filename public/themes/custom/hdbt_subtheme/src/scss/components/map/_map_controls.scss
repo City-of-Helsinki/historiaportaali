@@ -88,16 +88,6 @@
     }
   }
 
-  .hds-text-input__input {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0ibTEyIDEzLjUgNS01IDEuNSAxLjUtNi41IDYuNUw1LjUgMTAgNyA4LjV6Ii8+PC9nPjwvc3ZnPg==);
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position: calc(100% - var(--spacing-s)) center;
-    cursor: pointer;
-    min-width: 14ch;
-    @include font-size(15px, 24px);
-  }
-
   .select2-container {
     width: 15rem !important;
     max-width: 15rem;

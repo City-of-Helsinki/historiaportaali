@@ -70,6 +70,22 @@
 
   .map-controls__mid-container {
     margin-right: $spacing;
+
+    &.mobile {
+      display: flex;
+
+      @include breakpoint($breakpoint-m) {
+        display: none;
+      }
+    }
+
+    &:not(.mobile) {
+      display: none;
+
+      @include breakpoint($breakpoint-m) {
+        display: flex;
+      }
+    }
   }
 
   .hds-text-input__input {
@@ -83,7 +99,7 @@
   }
 
   .select2-container {
-    width: 15rem;
+    width: 15rem !important;
     max-width: 15rem;
 
     .select2-selection--single {
@@ -202,6 +218,21 @@
   .select2-results {
     filter: grayscale(1) invert(1);
     background: #FBD;
+  }
+
+  // Add indent to mobile dropdown options.
+  .select2-results__option {
+    padding-left: 12px;
+ 
+    &[aria-disabled=true] {
+      color: $color-black-60;
+      font-weight: bold;
+      padding-left: 6px;
+    }
+
+    @include breakpoint($breakpoint-m) {
+      padding-left: 6px;
+    }
   }
 }
 

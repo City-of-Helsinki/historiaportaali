@@ -14,6 +14,20 @@
           this.removeControl(this.zoomControl);
         }
 
+        $('.map-controls__map-layer').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: {
+            id: 'default',
+            text: 'Select an option'
+          },
+          allowClear: true
+        }).on('select2:clear', function (e) {
+          $(this).on('select2:opening.cancelOpen', function (e) {
+            e.preventDefault();
+            $(this).off('select2:opening.cancelOpen');
+          });
+        });
+
         this.on('unload', function() {
           if (this.options?.mapName == 'comparison-map') {
             self.unBindLayerControls('comparison-map');
@@ -31,8 +45,8 @@
         let selectedLayerTitle = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-layer-title')
             mapApiEndpoints = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
         self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
-        // Revert other <selects> to placeholder.
-        $controls.not(e.target).prop('selectedIndex', 0);
+        // Clear other select2s.
+        $controls.not(e.target).val('').trigger('change.select2');
       });
     },
 

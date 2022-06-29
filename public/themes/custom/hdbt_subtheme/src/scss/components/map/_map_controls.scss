@@ -82,6 +82,55 @@
     @include font-size(15px, 24px);
   }
 
+  .select2-container {
+    width: 15rem;
+    max-width: 15rem;
+
+    .select2-selection--single {
+      background: $color-black-80;
+      color: $color-white;
+      @include font-size(15px, 24px);
+
+      &:hover {
+        background: $color-black-90;
+      }
+
+      span {
+        color: $color-white !important;
+      }
+
+      .select2-selection__clear {
+        // TODO: Replace with responsive units.        
+        height: 26px;
+        width: 26px;
+        top: 15px;
+        right: 30px;
+        background: $color-white;
+        mask-image:url(../icons/hds/ui/cross-circle.svg);
+        -webkit-mask-image:url(../icons/hds/ui/cross-circle.svg);
+
+        &:hover {
+          mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+          -webkit-mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+        }
+      }
+
+      .select2-selection__arrow {
+        // TODO: Replace with responsive units.        
+        height: 26px;
+        width: 26px;
+        top: 15px;
+        background: $color-white;
+        mask-image:url(../icons/hds/ui/angle-down.svg);
+        -webkit-mask-image:url(../icons/hds/ui/angle-down.svg);
+
+        b {
+          display: none;
+        }
+      }
+    }
+  }
+
   .map-controls__map-layer {
     display: flex;
     align-items: center;
@@ -145,6 +194,14 @@
         display: block;
       }
     }
+  }
+}
+
+// TODO: Replace with less hacky.
+.node--type-map-page {
+  .select2-results {
+    filter: grayscale(1) invert(1);
+    background: #FBD;
   }
 }
 

@@ -5,7 +5,7 @@
   border: 0;
   border-radius: 0;
   @include font-size(15px, 24px);
-  
+
   &:hover,
   &:focus {
     background: $color-black-90;
@@ -22,7 +22,7 @@
   left: 20px;
   max-width: 90%;
   z-index: 401;
-
+  display: flex;
   &.comparison-map {
     top: auto;
     bottom: 20px;
@@ -54,7 +54,7 @@
         max-width: 45%;
       }
     }
-  
+
     @include breakpoint($breakpoint-l) {
       left: 30px;
     }
@@ -65,6 +65,75 @@
 
     @include breakpoint($breakpoint-m) {
       padding: $spacing-half $spacing;
+    }
+  }
+
+  .map-controls__mid-container {
+    margin-right: $spacing;
+
+    &.mobile {
+      display: flex;
+
+      @include breakpoint($breakpoint-m) {
+        display: none;
+      }
+    }
+
+    &:not(.mobile) {
+      display: none;
+
+      @include breakpoint($breakpoint-m) {
+        display: flex;
+      }
+    }
+  }
+
+  .select2-container {
+    width: 15rem !important;
+    max-width: 15rem;
+
+    .select2-selection--single {
+      background: $color-black-80;
+      color: $color-white;
+      @include font-size(15px, 24px);
+
+      &:hover {
+        background: $color-black-90;
+      }
+
+      span {
+        color: $color-white !important;
+      }
+
+      .select2-selection__clear {
+        // TODO: Replace with responsive units.        
+        height: 26px;
+        width: 26px;
+        top: 15px;
+        right: 30px;
+        background: $color-white;
+        mask-image:url(../icons/hds/ui/cross-circle.svg);
+        -webkit-mask-image:url(../icons/hds/ui/cross-circle.svg);
+
+        &:hover {
+          mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+          -webkit-mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+        }
+      }
+
+      .select2-selection__arrow {
+        // TODO: Replace with responsive units.        
+        height: 26px;
+        width: 26px;
+        top: 15px;
+        background: $color-white;
+        mask-image:url(../icons/hds/ui/angle-down.svg);
+        -webkit-mask-image:url(../icons/hds/ui/angle-down.svg);
+
+        b {
+          display: none;
+        }
+      }
     }
   }
 
@@ -134,6 +203,29 @@
   }
 }
 
+// TODO: Replace with less hacky.
+.node--type-map-page {
+  .select2-results {
+    filter: grayscale(1) invert(1);
+    background: #FBD;
+  }
+
+  // Add indent to mobile dropdown options.
+  .select2-results__option {
+    padding-left: 12px;
+ 
+    &[aria-disabled=true] {
+      color: $color-black-60;
+      font-weight: bold;
+      padding-left: 6px;
+    }
+
+    @include breakpoint($breakpoint-m) {
+      padding-left: 6px;
+    }
+  }
+}
+
 .map-controls__sidebar-container {
   position: absolute;
   top: 200px;
@@ -161,7 +253,7 @@
       width: 50px;
     }
   }
-  
+
   .map-controls__control-button {
     display: flex;
     align-items: center;

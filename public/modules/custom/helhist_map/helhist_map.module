@@ -12,13 +12,15 @@ function helhist_map_theme($existing, $type, $theme, $path) {
     'map_controls' => [
       'template' => 'map-controls',
       'variables' => [
-        'map_layers' => []
+        'map_layers' => [],
+        'photo_layers' => []
       ]
       ],
     'comparison_map_controls' => [
       'template' => 'comparison-map-controls',
       'variables' => [
-        'map_layers' => []
+        'map_layers' => [],
+        'photo_layers' => []
       ]
       ],
       'map_lift_block' => [

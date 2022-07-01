@@ -1,0 +1,23 @@
+uuid: 3684f4d4-da8d-46b5-b2de-3cb551dfa415
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layer_type
+    - node.type.map_layer
+  module:
+    - options
+id: node.map_layer.field_layer_type
+field_name: field_layer_type
+entity_type: node
+bundle: map_layer
+label: 'Layer type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: map
+default_value_callback: ''
+settings: {  }
+field_type: list_string

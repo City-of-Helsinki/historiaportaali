@@ -14,6 +14,21 @@
           this.removeControl(this.zoomControl);
         }
 
+        $('.map-controls__map-layer').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: function() {
+            $(this).data('placeholder');
+          },
+          allowClear: true
+        }).on('select2:clear', function (e) {
+          $(this).on('select2:opening.cancelOpen', function (e) {
+            e.preventDefault();
+            $(this).off('select2:opening.cancelOpen');
+          });
+        });
+
+        $('.map-controls__map-layer').val('default').trigger('change.select2');
+
         this.on('unload', function() {
           if (this.options?.mapName == 'comparison-map') {
             self.unBindLayerControls('comparison-map');
@@ -26,25 +41,23 @@
 
     bindLayerControls: function(lMap, mapName) {
       let self = this;
-      let $controls = $(`.map-controls__map-layer.${mapName} .map-controls__map-layer-item`);
+      let $controls = $(`.map-controls__map-layer.${mapName}`);
 
-      $controls.on('click', function(e) {
-        let selectedLayerTitle = $(e.target).data('map-layer-title')
-            mapApiEndpoints = $(e.target).data('map-api-endpoints');
+      $controls.change(function(e) {
+        let selectedLayerTitle = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-layer-title')
+            mapApiEndpoints = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
+        self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
+        // Clear other select2s.
+        $controls.not(e.target).val('default').trigger('change.select2');
+      });
 
-        if ($(e.target).is('.active')) {
-          self.toggleLayerSelectorVisibility(mapName);
-        } else {
-          self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
-          self.toggleLayerSelectorVisibility(mapName);
-          $controls.removeClass('active');
-          $(e.target).addClass('active');
-        }
+      $controls.on('select2:clear', function (e) {
+        self.removeOtherMapLayers(lMap, null);
       });
     },
 
     unBindLayerControls: function(mapName) {
-      let $controls = $(`.map-controls__map-layer.${mapName} .map-controls__map-layer-item`);
+      let $controls = $(`.map-controls__map-layer.${mapName}`);
       $controls.off('click');
     },
 

@@ -1,0 +1,27 @@
+uuid: 018696ff-3a0b-4dea-99cb-d9bcfc1d8b2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_layer_type
+field_name: field_layer_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: map
+      label: Map
+    -
+      value: photo
+      label: 'Aerial photo'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

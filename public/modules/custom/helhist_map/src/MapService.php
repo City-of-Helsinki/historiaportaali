@@ -27,9 +27,9 @@ class MapService {
     $this->entityTypeManager = $entity_type_manager;
   }
 
-  public function getMapLayers() {
+  public function getMapLayers(string $type) {
     $layers = [];
-    $map_layer_nodes = $this->getMapLayerNodes();
+    $map_layer_nodes = $this->getMapLayerNodes($type);
     
     if (!$map_layer_nodes || empty($map_layer_nodes)) {
       return $layers;
@@ -61,12 +61,23 @@ class MapService {
     return $layers;
   }
 
-  private function getMapLayerNodes() {
+  private function getMapLayerNodes(string $type) {
     $query = $this->entityTypeManager
       ->getListBuilder('node')
       ->getStorage()
       ->getQuery();
+
+    if ($type == 'map') {
+      $field_condition = $query->orConditionGroup()
+        ->condition('field_layer_type', $type)
+        ->notExists('field_layer_type');
+    } else {
+      $field_condition = $query->andConditionGroup()
+        ->condition('field_layer_type', $type);
+    }
+
     $query->condition('type', 'map_layer');
+    $query->condition($field_condition);
     $query->condition('status', 1);
     $query->sort('field_layer_title', 'DESC');
 
@@ -80,4 +91,5 @@ class MapService {
 
     return $map_layer_nodes;
   }
+
 }

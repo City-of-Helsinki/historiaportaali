@@ -428,7 +428,7 @@ display:
           leaflet_markercluster:
             control: true
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":18}'
-            include_path: 0
+            include_path: false
           path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
           geocoder:
             control: false

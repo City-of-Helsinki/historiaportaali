@@ -99,6 +99,9 @@
             "drupal/core": {
                 "Paragraph widget buttons not visible in Claro/Gin admin theme (https://www.drupal.org/project/drupal/issues/3099026#comment-13786709)": "https://www.drupal.org/files/issues/2020-08-13/3099026-17.patch"
             },
+            "drupal/context_entity_field": {
+                "Update deprecated entity bundle deriver plugin (https://www.drupal.org/project/context_entity_field/issues/3303163)": "https://www.drupal.org/files/issues/2022-08-11/3303163-update-ctools-deriver-plugin-2.patch"
+            },
             "drupal/leaflet": {
                 "Add entity id to marker options": "custom-patches/leaflet_add_entity_id_to_marker_options.patch"
             },

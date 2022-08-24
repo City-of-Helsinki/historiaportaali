@@ -9,6 +9,7 @@ url:
     fi: fi
     sv: sv
     ru: ru
+    '': null
   domains:
     en: ''
     fi: ''

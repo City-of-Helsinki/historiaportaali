@@ -1,5 +1,116 @@
 # Changelog
 
+## 2022-05-31.1
+
+Added documentation of how to sync databases between OpenShift environments: [documentation/openshift-db-sync.md](/documentation/openshift-db-sync.md).
+
+## 2022-05-19.1
+### HDBT 3.0
+
+The HDBT theme page layouts and blocks were overhauled and might cause BC breaks.
+See changes: https://github.com/City-of-Helsinki/drupal-hdbt/releases/tag/3.0.0
+
+### Required actions
+1. Make sure your Drupal instance is up and running on latest dev/main branch
+2. Update the HDBT and necessary modules by running: `composer require -W drupal/hdbt:^3.0; composer update -W drupal/helfi_platform_config drupal/helfi_tpr drupal/hdbt_admin`.
+3. Run updates and export configuration. `make drush-updb drush-cr drush-cex`
+4. Check that exported configuration is correct and commit the configuration changes to your repository.
+
+## 2022-03-04.1
+### Changed druidfi/db:mysql5.7-drupal docker image to druidfi/mariadb:10.5-drupal
+
+This change was necessary since the base [mysql](https://hub.docker.com/_/mysql?tab=tags&page=1&name=5.7) image used to build `druidfi/db:mysql5.7-drupal` does not support Apple's M1 chip (arm64).
+
+### Required actions
+- Run `drush helfi:tools:update-platform` or update your `docker-compose.yml` [manually](https://github.com/City-of-Helsinki/drupal-helfi-platform/commit/b3b07018292638fc0b27d0e391774642718734fd#diff-e45e45baeda1c1e73482975a664062aa56f20c03dd9d64a827aba57775bed0d3).
+
+## 2021-01-07.1
+### Introducing drupal/helfi_drupal_tools package
+
+The Drupal tools aims to provide a way to automatically sync updates from `drupal-helfi-platform`.
+
+### Required actions
+- Update your `composer.json` to use correct installer-path: https://github.com/City-of-Helsinki/drupal-helfi-platform/commit/0359fd9d3f82f4d3e51eac5cb872b7ed0b5424c6#diff-d2ab9925cad7eac58e0ff4cc0d251a937ecf49e4b6bf57f8b95aab76648a9d34
+- Install the package: `composer require drupal/helfi_drupal_tools`
+- Run `drush helfi:tools:update-platform` to update changed files. This might require some manual actions, such as moving custom `settings.php` changes to `all.settings.php`.
+- Commit or revert changed files.
+
+## 2021-11-25.2
+### Database sync from dev/testing to local
+
+Added a support for database syncing from dev/testing environment to local.
+
+### Required actions
+- Copy contents from `drush/` folder to your project's repository
+- Copy `tools/make/project/install.mk` and `.gitignore` files to your project's repository
+- Add `OC_PROJECT_NAME=` environment variable to your `.env` file. The value should be your project's name in OpenShift
+- Restart containers (`make stop && make up`)
+
+Run `make fresh` to start the database sync.
+
+### Optional actions
+
+You can use `stage_file_proxy` module to serve files directly from your testing/dev environment without having to sync them to your local environment.
+
+- Copy `settings.php` and add `STAGE_FILE_PROXY_ORIGIN` and `STAGE_FILE_PROXY_ORIGIN_DIR` environment variables to your `.env` file
+- Install and enable `stage_file_proxy` module (`composer install drupal/stage_file_proxy`, `drush en stage_file_proxy`)
+
+If you store files in azure blob storage then `STAGE_FILE_PROXY_ORIGIN` value should be something like `https://{storage-accountname}.core.windows.net` and `STAGE_FILE_PROXY_ORIGIN_DIR` should be your container's name, for example `dev`.
+
+Otherwise `STAGE_FILE_PROXY_ORIGIN` should be an URL to your instance (`https://nginx-{project}-{env}.agw.arodevtest.hel.fi`) and `STAGE_FILE_PROXY_ORIGIN_DIR` is `sites/default/files`.
+
+## 2021-11-25.1
+
+### Pre-built drupal image that supports the new Apple M1 chip
+
+### Required actions
+- Remove `docker/local` folder (`rm -r docker/local`)
+- Update value for `DRUPAL_IMAGE` in your `.env` file: `DRUPAL_IMAGE=ghcr.io/city-of-helsinki/drupal-web:8.0`
+- Copy `docker-compose.yml` to your project's repository
+  
+## 2021-10-06.1
+### Tunnistamo 2.0
+
+Tunnistamo module has a major release to support openid_connect:2.0.
+
+### Required actions
+- Run `composer require "drupal/helfi_tunnistamo:^2.0" -W` in your project's root
+- Run database updates: `drush updb -y`
+- Delete old openid_connect clients: `rm conf/cmi/openid_connect.settings.facebook.yml conf/cmi/openid_connect.settings.generic.yml conf/cmi/openid_connect.settings.github.yml conf/cmi/openid_connect.settings.google.yml conf/cmi/openid_connect.settings.linkedin.yml conf/cmi/openid_connect.settings.tunnistamo.yml`
+- Re-create tunnistamo client from `/admin/config/people/openid-connect`
+- Update any settings.php overrides (`settings` key was changed to `client`), for example:  `$config['openid_connect.settings.tunnistamo']['settings']['is_production']` should now be `$config['openid_connect.client.tunnistamo']['settings']['is_production']`.
+
+## 2021-09-16.1
+### HELfi Platform Config 2.0
+
+Update/install instructions for:
+* drupal-helfi-platform-config 2.0.0
+
+### Required actions
+1. Install the site with your current configuration by running either `make new` or `make fresh`.
+2. When the site is up and running, run `composer require drupal/helfi_platform_config:^2.0 --with-all-dependencies` to retrieve the new version of HELfi Platform config.
+3. Run updates and export the configurations by running `make drush-updb drush-cr drush-cex`.
+4. Go through configuration changes from `/conf/cmi/` and revert/modify any changes what will override your customised configurations.
+5. Commit the changes to your repository.
+
+## 2021-09-14.1
+### Run deploy tasks only once per deploy
+
+At the moment the deploy script is run every time a container replica is started. This can lead to a race condition when multiple containers are running deploy script at the same time, corrupting the entire configuration stack.
+
+### Required actions
+Replace your existing `docker/openshift/entrypoints/20-deploy.sh` with the updated one from this repository.
+
+## 2021-08-12.1
+### Easy breadcrumb 2.0
+
+Update/install instructions for:
+* drupal-helfi-platform-config 1.3.0
+
+1. Update the HELfi platform config module by running: `composer require drupal/helfi_platform_config:1.3.0 --with-all-dependencies`.
+2. Update your current Easy breadcrumb configuration file by copying the default settings file from `/public/modules/contrib/helfi_platform_config/features/helfi_base_config/config/install/easy_breadcrumb.settings.yml` to `/conf/cmi`. Do not forget to change any previously made changes to what was made to the file.
+3. Commit the configurations changes to your repository.
+
 ## 2021-06-09.1
 ### OpenShift deploy script fix
 

@@ -1,3 +1,4 @@
+label: 'Библиотека параграфов'
 display:
   default:
     display_title: Основной
@@ -50,5 +51,9 @@ display:
         type:
           expose:
             label: Тип
+      title: 'Библиотека параграфов'
+      empty:
+        area_text_custom:
+          content: 'В библиотеке нет доступных элементов.'
   page_1:
     display_title: Страница

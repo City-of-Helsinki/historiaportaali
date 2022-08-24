@@ -16,8 +16,8 @@
         "drupal/content_lock": "^2.2",
         "drupal/context": "^4.1",
         "drupal/context_entity_field": "1.x-dev@dev",
-        "drupal/core-composer-scaffold": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/core-composer-scaffold": "^9.3",
+        "drupal/core-recommended": "^9.3",
         "drupal/elasticsearch_connector": "7.x-dev@dev",
         "drupal/facets": "2.0.x-dev@dev",
         "drupal/filelog": "^2.0",
@@ -33,7 +33,7 @@
         "drupal/helfi_drupal_tools": "dev-main",
         "drupal/helfi_hauki": "^1.0",
         "drupal/helfi_linkedevents": "^1.0",
-        "drupal/helfi_platform_config": "^2",
+        "drupal/helfi_platform_config": "^2.0",
         "drupal/helfi_tpr": "^1.0",
         "drupal/helfi_tunnistamo": "^2.0",
         "drupal/leaflet": "^2.1",
@@ -50,7 +50,7 @@
         "drupal/views_block_filter_block": "1.x-dev@dev",
         "drupal/views_cm_current_state": "^2.0",
         "drupal/views_menu_children_filter": "^1.0@RC",
-        "drush/drush": "^10.4",
+        "drush/drush": "^10.4 || ^11",
         "geocoder-php/nominatim-provider": "^5.5",
         "jackmoore/colorbox": "^1.6",
         "jieter/leaflet.sync": "^0.2",
@@ -60,10 +60,16 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "donatj/mock-webserver": "^2.4",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^9.1",
+        "drupal/core-dev": "^9.3",
+        "mglaman/phpstan-drupal": "^1.0",
         "phpspec/prophecy-phpunit": "^2",
-        "phpunit/phpunit": "~9.4.0"
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "weitzman/drupal-test-traits": "^1.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -72,11 +78,12 @@
         "optimize-autoloader": true,
         "sort-packages": true,
         "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "composer/installers": true,
+            "phpstan/extension-installer": true,
             "wikimedia/composer-merge-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "oomphinc/composer-installers-extender": true
         }
     },
@@ -98,6 +105,9 @@
         "patches": {
             "drupal/core": {
                 "Paragraph widget buttons not visible in Claro/Gin admin theme (https://www.drupal.org/project/drupal/issues/3099026#comment-13786709)": "https://www.drupal.org/files/issues/2020-08-13/3099026-17.patch"
+            },
+            "drupal/context_entity_field": {
+                "Update deprecated entity bundle deriver plugin (https://www.drupal.org/project/context_entity_field/issues/3303163)": "https://www.drupal.org/files/issues/2022-08-11/3303163-update-ctools-deriver-plugin-2.patch"
             },
             "drupal/leaflet": {
                 "Add entity id to marker options": "custom-patches/leaflet_add_entity_id_to_marker_options.patch"
@@ -162,6 +172,11 @@
             "ignore-duplicates": true
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\dtt\\": "tests/dtt/src"
+        }
+    },
     "repositories": [
         {
             "type": "composer",
@@ -212,5 +227,12 @@
             }
         }
     ],
-    "scripts": { }
+    "scripts": {
+        "test": [
+          "@lint-php",
+          "@test-php"
+        ],
+        "test-php": "vendor/bin/phpunit -c phpunit.xml.dist",
+        "lint-php": "vendor/bin/phpcs --standard=Drupal"
+    }
 }

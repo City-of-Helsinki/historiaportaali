@@ -120,6 +120,22 @@
           </div>
         {% endif %}
 
+        {% if content.field_neighbourhoods|render %}
+          <div class="content-card__neighbourhoods content-card__metadata-item">
+            <span class="content-card__metadata-item__text">
+              {{ content.field_neighbourhoods }}
+            </span>
+          </div>
+        {% endif %}
+
+        {% if content.field_turning_points|render %}
+          <div class="content-card__turning_points content-card__metadata-item">
+            <span class="content-card__metadata-item__text">
+              {{ content.field_turning_points }}
+            </span>
+          </div>
+        {% endif %}
+
         {% if content.field_start_year|render %}
           <div class="content-card__year content-card__metadata-item">
             {% set start_year = (content.field_start_year[0]['#markup'] > 0) ? content.field_start_year[0]['#markup'] : content.field_start_year[0]['#markup']|abs ~ ' ' ~ 'BCE'|t %}
@@ -140,7 +156,7 @@
         {{ label }}
       </h3>
       {{ title_suffix }}
-      
+
       <span class="content-card__arrow{% if target_new %} is-outbound{% endif %}">
         {% include '@hdbt/misc/icon.twig' with {icon: 'arrow-right', label: 'Go to content'|t } %}
       </span>

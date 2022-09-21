@@ -47,12 +47,8 @@ visibility:
     pages: "/search\r\n/haku\r\n/sok"
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    negate: false
+    negate: true
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      article: article
-      landing_page: landing_page
-      listing_page: listing_page
-      map_layer: map_layer
-      page: page
+      map_page: map_page

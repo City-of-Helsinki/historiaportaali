@@ -106,29 +106,29 @@
       }
 
       .select2-selection__clear {
-        // TODO: Replace with responsive units.        
+        // TODO: Replace with responsive units.
         height: 26px;
         width: 26px;
         top: 15px;
         right: 30px;
         background: $color-white;
-        mask-image:url(../icons/hds/ui/cross-circle.svg);
-        -webkit-mask-image:url(../icons/hds/ui/cross-circle.svg);
+      //  mask-image:url(../icons/hds/ui/cross-circle.svg);
+      //  -webkit-mask-image:url(../icons/hds/ui/cross-circle.svg);
 
         &:hover {
-          mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
-          -webkit-mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+        //  mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+        //  -webkit-mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
         }
       }
 
       .select2-selection__arrow {
-        // TODO: Replace with responsive units.        
+        // TODO: Replace with responsive units.
         height: 26px;
         width: 26px;
         top: 15px;
         background: $color-white;
-        mask-image:url(../icons/hds/ui/angle-down.svg);
-        -webkit-mask-image:url(../icons/hds/ui/angle-down.svg);
+        // mask-image:url(../icons/hds/ui/angle-down.svg);
+        // -webkit-mask-image:url(../icons/hds/ui/angle-down.svg);
 
         b {
           display: none;
@@ -213,7 +213,7 @@
   // Add indent to mobile dropdown options.
   .select2-results__option {
     padding-left: 12px;
- 
+
     &[aria-disabled=true] {
       color: $color-black-60;
       font-weight: bold;

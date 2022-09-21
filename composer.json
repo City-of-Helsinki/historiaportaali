@@ -26,7 +26,7 @@
         "drupal/geofield_map": "^2.70",
         "drupal/graphql": "^3.1",
         "drupal/graphql_search_api": "^1.2",
-        "drupal/hdbt": "^1.0",
+        "drupal/hdbt": "^3.0",
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_ahjo": "^1.0",
         "drupal/helfi_azure_fs": "^1.0",
@@ -68,7 +68,7 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^9.4",
         "weitzman/drupal-test-traits": "^1.5"
     },
     "conflict": {

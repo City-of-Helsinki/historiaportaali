@@ -2,11 +2,22 @@
   display: none;
   position: static;
   z-index: 100;
-
+  grid-area: search;
   @include breakpoint($breakpoint-m) {
-    display: block;
+    display: flex;
     margin: 0 $spacing 0 auto;
     order: 2;
+    align-items: center;
+  }
+
+  .hds-button--search-toggle {
+    //override hds default arrow
+    &::before {
+      display: none !important;
+    }
+    .hds-button__label {
+      margin: 0;
+    }
   }
 
   .hds-button--search-toggle[aria-expanded="true"] {
@@ -42,7 +53,7 @@
       .hds-button {
         position: absolute;
         right: 0;
-
+        height: 100%;
         &:hover {
           background-color: transparent;
         }

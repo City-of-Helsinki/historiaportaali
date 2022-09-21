@@ -1,15 +1,15 @@
-.mobile-navigation.mm-menu {
+.mobile-navigation.mm-menu,
+.cssnav {
   li.search-link {
-    padding: $spacing;
-
     a {
+      padding: $spacing;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: $color-black-80;
       color: white;
-
-      .icon {
+      text-decoration: none;
+      .hel-icon {
         vertical-align: middle;
         margin-right: $spacing;
       }

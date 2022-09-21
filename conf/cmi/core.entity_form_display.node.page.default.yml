@@ -137,13 +137,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  hide_sidebar_navigation:
-    type: boolean_checkbox
-    weight: 21
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 0
@@ -178,11 +171,6 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  simple_sitemap:
-    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -233,5 +221,12 @@ content:
     weight: 19
     region: content
     settings: {  }
+    third_party_settings: {  }
+  hide_sidebar_navigation:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

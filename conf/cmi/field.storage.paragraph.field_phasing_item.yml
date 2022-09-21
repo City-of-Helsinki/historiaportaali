@@ -1,12 +1,10 @@
-uuid: ac133e01-44bf-4cf0-b8ab-c378e3a60b49
+uuid: 103dac18-c7eb-42e9-b938-49cdd3970a4b
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-_core:
-  default_config_hash: gR1H_Q_DdEuumPPd-SKzuWOv1OO6jxwlv6FpHO4jatM
 id: paragraph.field_phasing_item
 field_name: field_phasing_item
 entity_type: paragraph

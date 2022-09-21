@@ -22,13 +22,6 @@ settings:
   label_display: '0'
   provider: core
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      map_page: map_page
   context_all:
     id: context_all
     negate: null
@@ -52,3 +45,14 @@ visibility:
     id: request_path
     negate: true
     pages: "/search\r\n/haku\r\n/sok"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      landing_page: landing_page
+      listing_page: listing_page
+      map_layer: map_layer
+      page: page

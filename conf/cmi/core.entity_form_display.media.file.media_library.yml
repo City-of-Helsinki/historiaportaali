@@ -31,6 +31,5 @@ hidden:
   field_media_file: true
   langcode: true
   path: true
-  replace_file: true
   status: true
   uid: true

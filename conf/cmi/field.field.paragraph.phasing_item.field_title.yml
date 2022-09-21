@@ -1,12 +1,10 @@
-uuid: f42201ee-347d-4807-a7bc-8d32b636ebd2
+uuid: e050caa2-cfdc-4c9e-9f30-bf5bebe65ce9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
     - paragraphs.paragraphs_type.phasing_item
-_core:
-  default_config_hash: TLzxS9c52mbdNKwoKoXfPUst_xoB8b9SWT05lGsFyJE
 id: paragraph.phasing_item.field_title
 field_name: field_title
 entity_type: paragraph

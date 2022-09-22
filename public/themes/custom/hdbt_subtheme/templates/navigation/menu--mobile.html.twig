@@ -43,12 +43,21 @@
     {% if items %}
       <ul{{ attributes.addClass(ul_class) }}>
       {% if menu_level == 0 %}
-      <li class="search-link">
-        <a href={{ search_page_url }}>
-          <span class="hel-icon hel-icon--search hds-icon--size-m"></span>
-          <span>{{ 'Search'|t({}, {'context': 'Mobile menu'}) }}</span>
-        </a>
-      </li>
+        {# Global variable $language has been removed? #}
+        {% if language == 'en' %}
+          {% set search_page_url = '/en/search' %}
+        {% elseif language == 'fi' %}
+          {% set search_page_url = '/fi/haku' %}
+        {% elseif language == 'sv' %}
+          {% set search_page_url = '/sv/sok' %}
+        {% endif %}
+        <li class="search-link">
+          {# Node 114 is search page. This might be done better. #}
+          <a href="{{ path('entity.node.canonical', {'node': '114'}) }}">
+            <span class="hel-icon hel-icon--search hds-icon--size-m"></span>
+            <span>{{ 'Search'|t({}, {'context': 'Mobile menu'}) }}</span>
+          </a>
+        </li>
       {% endif %}
       {% for item in items %}
         {% set level = menu_level + 1 %}

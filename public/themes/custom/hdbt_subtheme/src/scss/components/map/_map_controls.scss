@@ -112,12 +112,12 @@
         top: 15px;
         right: 30px;
         background: $color-white;
-      //  mask-image:url(../icons/hds/ui/cross-circle.svg);
-      //  -webkit-mask-image:url(../icons/hds/ui/cross-circle.svg);
+        mask-image:url(../icons/cross-circle.svg);
+        -webkit-mask-image:url(../icons/cross-circle.svg);
 
         &:hover {
-        //  mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
-        //  -webkit-mask-image:url(../icons/hds/ui/cross-circle-fill.svg);
+          mask-image:url(../icons/cross-circle-fill.svg);
+          -webkit-mask-image:url(../icons/cross-circle-fill.svg);
         }
       }
 
@@ -127,8 +127,8 @@
         width: 26px;
         top: 15px;
         background: $color-white;
-        // mask-image:url(../icons/hds/ui/angle-down.svg);
-        // -webkit-mask-image:url(../icons/hds/ui/angle-down.svg);
+         mask-image:url(../icons/angle-down.svg);
+         -webkit-mask-image:url(../icons/angle-down.svg);
 
         b {
           display: none;

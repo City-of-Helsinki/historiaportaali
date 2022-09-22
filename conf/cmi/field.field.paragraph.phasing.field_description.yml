@@ -1,4 +1,4 @@
-uuid: b96f4d3d-bfb7-41c9-8ba2-0266c62bcd4a
+uuid: f46edca4-f14d-470a-adf9-d6f0e598ed09
 langcode: en
 status: true
 dependencies:
@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - minimal
+_core:
+  default_config_hash: gH_N1GoopSp_rjjwfUZoe5eRYElw2OonIeyt4F7TQag
 id: paragraph.phasing.field_description
 field_name: field_description
 entity_type: paragraph

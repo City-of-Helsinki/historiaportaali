@@ -8,7 +8,7 @@ dependencies:
     - field.field.media.remote_video.field_video_description
     - media.type.remote_video
   module:
-    - colorbox
+    - media
 _core:
   default_config_hash: bAXIHAvYIrUpUDe9w9dDlA3cpdnn84JUL30GZ7yjGMM
 id: media.remote_video.remote_video
@@ -17,14 +17,11 @@ bundle: remote_video
 mode: remote_video
 content:
   field_media_oembed_video:
-    type: remote_video_colorbox
+    type: oembed
     label: visually_hidden
     settings:
-      max_width: '1024'
-      max_height: '768'
-      display: thumbnail
-      link_text: 'View Video'
-      image_style: 23_10_l_2x
+      max_width: 1264
+      max_height: 714
     third_party_settings: {  }
     weight: 0
     region: content

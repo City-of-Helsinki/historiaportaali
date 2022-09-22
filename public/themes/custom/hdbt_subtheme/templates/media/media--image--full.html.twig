@@ -153,9 +153,12 @@
             {% if content.field_finna_id|render %}
               <div class="{{ media.bundle()|clean_class }}__finna_id">
                 <h3 class="label">{{ content.field_finna_id['#title']|t({}, {'context': 'Content'}) }}</h3>
-                <a href="{{ 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'] }}" target="_blank" {{ create_attribute({'class': link_classes} ) }}>
-                  {% include '@hdbt/button/button.html.twig' with {type: 'primary', icon_first: true, icon_first_type: 'link-external', disabled: false, label: 'Open in new window'|t({}, {'context': 'Button'}) } %}
-                </a>
+                {% include '@hdbt/navigation/link-button.html.twig' with {
+                  type: 'primary',
+                  label: 'Open in new window'|t({}, {'context': 'Button'}),
+                  url: 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'],
+                  open_in_a_new_window: true,
+                } %}
               </div>
             {% endif %}
 

@@ -38,6 +38,7 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('media/oembed.formatter') }}
 
 {%
   set classes = [
@@ -75,17 +76,12 @@
                   {{ video_description }}
                 </div>
               {% endif %}
-              <a class="media--video__content__external-link" href="{{ video_url }}" target="_blank">
-                {% include '@hdbt/button/button.html.twig' with {
-                  type: 'secondary',
-                  disabled: false,
-                  label: 'Watch video'|t,
-                  icon_first: true,
-                  icon_first_type: 'link-external',
-                  icon_last: true,
-                  icon_last_type: 'arrow-right'
-                } %}
-              </a>
+              {% include '@hdbt/navigation/link-button.html.twig' with {
+                type: 'secondary',
+                label: 'Watch video'|t({}, {'context': 'Button'}),
+                url: video_url,
+                open_in_a_new_window: true,
+              } %}
             </div>
           {% endif %}
         </div>

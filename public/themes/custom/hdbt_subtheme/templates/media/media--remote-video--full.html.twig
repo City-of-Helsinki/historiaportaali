@@ -72,10 +72,17 @@
                 {{ content.field_media_oembed_video }}
               </div>
             {% endif %}
+            {% if content.field_video_description|render %}
+              {% spaceless %}
+                <figcaption class="media--image__caption">
+                  {{ content.field_video_description }}
+                </figcaption>
+              {% endspaceless %}
+            {% endif %}
           </div>
 
           <div class="{{ right_column_classes|join(' ') }}">
-
+            {{ drupal_block('helhist_media_usage_block', wrapper=false) }}
           </div>
         </div>
       {% endblock %}

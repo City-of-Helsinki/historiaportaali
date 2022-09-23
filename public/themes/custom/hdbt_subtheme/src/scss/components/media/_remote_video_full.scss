@@ -13,12 +13,76 @@
     .main-content {
       margin-top: $spacing;
 
-      .columns__container:nth-child(1) {
+      @include breakpoint($breakpoint-s) {
+        margin-top: $spacing-double;
+      }
 
+      @include breakpoint($breakpoint-m) {
+        margin-top: $spacing-quadruple;
+      }
+
+      .label {
+        @include font-size(18px, 30px);
+        color: $color-black-90;
+        font-weight: $font-weight-medium;
+        margin: 0 $spacing-quarter $spacing-half;
+
+        @include breakpoint($breakpoint-m) {
+          @include font-size(24px, 30px);
+          margin: 0 $spacing-quarter $spacing;
+        }
+      }
+
+      .columns__container:nth-child(1) {
+        .columns__content {
+          display: flex;
+
+          .media__usage {
+            article.content-card--design-listing-item {
+              width: 100%;
+              height: 100%;
+              margin-top: 0;
+              padding: 0;
+          
+              .content-card__link {
+                display: flex;
+                width: 100%;
+                height: 100%;
+          
+                .content-card__image {
+                  width: 35%;
+                  
+                  div,
+                  img {
+                    height: 100%;
+                  }
+                }
+          
+                .content-card__content {
+                  width: 65%;
+                }
+          
+                .content-card__metadata {
+                  display: flex;
+                  margin-top: $spacing;
+
+                  .content-card__phenomena,
+                  .content-card__year {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       .columns__container:nth-child(2) {
         margin-top: $spacing-double;
+
+        .columns__content {
+          display: flex;
+        }
       }
     }
   }

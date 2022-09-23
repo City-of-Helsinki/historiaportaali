@@ -86,9 +86,7 @@
                 <a href="/{{ media.langcode.0.value }}/kartta?id={{ media.id() }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</a>
               </div>
             {% endif %}
-
             {{ drupal_block('helhist_media_usage_block', wrapper=false) }}
-
           </div>
         </div>
       {% endblock %}

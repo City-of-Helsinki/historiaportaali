@@ -15,7 +15,7 @@ id: paragraph.remote_video.field_remote_video_description
 field_name: field_remote_video_description
 entity_type: paragraph
 bundle: remote_video
-label: Description
+label: 'Description (DEPRECATED)'
 description: ''
 required: false
 translatable: false

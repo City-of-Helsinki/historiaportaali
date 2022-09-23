@@ -71,10 +71,21 @@ $card_spacing: $spacing-and-half;
 .content-card {
   width: calc(245px + #{$card_spacing});
   padding-left: $card_spacing;
-  // Override helfi grid system
+  // Override helfi grid system.
   margin-top: 0 !important;
   flex: 1 1 33%;
   margin-bottom: $card_spacing;
+
+  // Override helfi grid system.
+  &.content-card--design-listing-item,
+  &.content-card--design-map-item,
+  &.content-card--design-search-index {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  &.content-card--design-teaser {
+    margin-left: 0;
+  }
 
   &:first-of-type {
     padding-left: 0;

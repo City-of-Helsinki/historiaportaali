@@ -1,28 +1,3 @@
 .eu-cookie-compliance-banner {
   background-color: $color-black-80;
-
-  .hds-button {
-    &.hds-button--primary {
-      color: $color-black-80;
-      border-color: $color-white;
-
-      &:active,
-      &:hover {
-        color: $color-black-80;
-        border-color: $color-white;
-      }
-    }
-
-    &.hds-button--secondary {
-      &:hover {
-        color: $color-black-80;
-        border-color: $color-white;
-
-        &:active {
-          color: $color-black-80;
-          border-color: $color-white;
-        }
-      }
-    }
-  }
 }

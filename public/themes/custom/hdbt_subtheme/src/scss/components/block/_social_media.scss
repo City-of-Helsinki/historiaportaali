@@ -9,7 +9,7 @@
 
     .hel-icon {
       margin-right: $spacing-half;
-      --icon-proportions: #{$spacing-and-half};
+      --icon-size: #{$spacing-and-half};
     }
 
     svg {
@@ -24,7 +24,7 @@
     text-decoration: none;
 
     .hel-icon {
-    --icon-proportions: #{$spacing-and-half};
+    --icon-size: #{$spacing-and-half};
     }
 
     &:focus,

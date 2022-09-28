@@ -232,16 +232,16 @@
   right: 10px;
   z-index: 501;
 
-  .icon {
-    --icon-proportions: 1.2rem;
+  .hel-icon {
+    --icon-size: 1.2rem;
   }
 
   @include breakpoint($breakpoint-m) {
     top: 250px;
     right: 30px;
 
-    .icon {
-      --icon-proportions: 1.5rem;
+    .hel-icon {
+      --icon-size: 1.5rem;
     }
   }
 
@@ -278,7 +278,7 @@
       transform: translate(0, -180px) rotate(90deg);
     }
 
-    .icon {
+    .hel-icon {
       margin-right: 16px;
     }
 

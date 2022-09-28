@@ -199,15 +199,15 @@ $card_spacing: $spacing-and-half;
 .content-card__arrow {
   color: $color-metro-dark;
 
-  .icon {
-    --icon-proportions: 1.5rem;
+  .hel-icon {
+    --icon-size: 1.5rem;
 
     @include breakpoint($breakpoint-m) {
-      --icon-proportions: 1.8rem;
+      --icon-size: 1.8rem;
     }
 
     @include breakpoint($breakpoint-l) {
-      --icon-proportions: 2rem;
+      --icon-size: 2rem;
     }
   }
 }

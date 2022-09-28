@@ -11,16 +11,11 @@
   }
 
   .hds-button--search-toggle {
-    //override hds default arrow
-    &::before {
-      display: none !important;
-    }
-    .hds-button__label {
-      margin: 0;
-    }
+    border: 0;
   }
 
   .hds-button--search-toggle[aria-expanded="true"] {
+    outline: var(--outline-width) solid var(--focus-outline-color);
     background-color: var(--color-black-5);
   }
 

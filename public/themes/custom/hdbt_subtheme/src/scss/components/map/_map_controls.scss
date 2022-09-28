@@ -58,6 +58,17 @@
     @include breakpoint($breakpoint-l) {
       left: 30px;
     }
+
+    // Use mobile dropdowns when comparing maps.
+    .map-controls__mid-container {
+      &.mobile {
+        display: flex;
+      }
+
+      &:not(.mobile) {
+        display: none;
+      }
+    }
   }
 
   .map-controls__control-button {

@@ -3,7 +3,7 @@
   background-color: $color-black-80;
   color: $color-white;
   margin: 0 $spacing $spacing-double;
-  padding-bottom: $spacing-double;
+  padding: $spacing-double 0;
   max-width: 900px;
 
   @include breakpoint($breakpoint-l) {

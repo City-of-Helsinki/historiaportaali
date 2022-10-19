@@ -8,7 +8,7 @@ if (PHP_SAPI === 'cli') {
 }
 
 // Disable the Render & Dynamic Page Caches.
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['container_yamls'][] = __DIR__ . '/services.yml';
 $settings['cache']['bins']['render'] = 'cache.backend.null';
 $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 

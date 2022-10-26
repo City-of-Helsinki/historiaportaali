@@ -3,6 +3,51 @@
     padding: 0;
   }
 
+  .accordion {
+      .accordion-item__button {
+        background-color: transparent;
+      }
+  }
+
+    // Grey accordion styles
+  .accordion--grey {
+    .accordion-item__header {
+      background-color: $color-black-5;
+      border-color: $color-white;
+
+      .accordion-item__button--toggle {
+        padding: $spacing ($spacing-double + 50px) $spacing $spacing;
+
+        @include breakpoint($breakpoint-l) {
+          padding: $spacing-and-half ($spacing-double + 50px) $spacing-and-half $spacing-and-half;
+        }
+
+        &::after {
+          right: $spacing;
+
+          @include breakpoint($breakpoint-l) {
+            right: $spacing-and-half;
+          }
+        }
+      }
+    }
+
+    .accordion__wrapper {
+      border-color: $color-black-5;
+    }
+
+    .accordion-item__content {
+      background-color: $color-black-5;
+      padding-left: $spacing;
+      padding-right: $spacing;
+
+      @include breakpoint($breakpoint-l) {
+        padding-left: $spacing-and-half;
+        padding-right: $spacing-and-half;
+      }
+    }
+  }
+  
   .search-filters {
     margin-bottom: 0;
 

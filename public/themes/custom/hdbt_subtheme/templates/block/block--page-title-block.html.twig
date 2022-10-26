@@ -14,19 +14,9 @@
 
 {% if hide_block != true %}
   <div{{ attributes.addClass(classes) }}>
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'page-title'} %}
-      {% block container_content %}
-        {% if subtitle %}
-          <h5 class="page-title__subtitle">{{ subtitle }}</h5>
-        {% endif %}
-
-        {{ title_prefix }}
-        {% if label %}
-          <h2{{ title_attributes }}>{{ label }}</h2>
-        {% endif %}
-        {{ title_suffix }}
-        {{ content }}
-      {% endblock %}
-    {% endembed %}
+    {% if subtitle %}
+      <h5 class="page-title__subtitle">{{ subtitle }}</h5>
+    {% endif %}
+    {{ content }}
   </div>
 {% endif %}

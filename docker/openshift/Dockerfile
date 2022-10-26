@@ -1,6 +1,12 @@
 ARG DRUPAL_DOCKER_TAG=8.0
 FROM ghcr.io/city-of-helsinki/drupal-docker-base:${DRUPAL_DOCKER_TAG}
 
+# Override upload max filesize and post max size
+RUN { \
+		echo 'upload_max_filesize=64M'; \
+		echo 'post_max_size=64M'; \
+	} > /etc/php${PHP_SHORT_VERSION}/conf.d/php-overrides.ini
+
 COPY / /var/www/html/
 WORKDIR /var/www/html
 RUN composer install --no-progress --profile --prefer-dist --no-interaction --no-dev --optimize-autoloader

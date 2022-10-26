@@ -11,7 +11,7 @@ dependencies:
 id: helhistsearchfrontend
 theme: hdbt_subtheme
 region: content
-weight: 0
+weight: -15
 provider: null
 plugin: helhist_search_search_frontend_block
 settings:

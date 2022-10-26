@@ -31,36 +31,39 @@
 #}
 {%
   set classes = [
-  'media--type-' ~ media.bundle()|clean_class,
-  view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
-]
+    'media--type-' ~ media.bundle()|clean_class,
+    view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
+  ]
 %}
 <article{{ attributes.addClass(classes) }}>
   <div class="before-content">
-    {% embed "@hdbt/misc/container.twig" with {container_element: media.bundle()|clean_class ~ '_header'} %}
+    <div class="page-title">
+      {{ drupal_block('page_title_block', wrapper=false) }}
+    </div>
+
+    {% embed "@hdbt/misc/container.twig" with { container_element: media.bundle()|clean_class ~ '_header' } %}
       {% block container_content %}
-        <div class="page-title">
-          {{ drupal_block('page_title_block', wrapper=false) }}
-        </div>
-        {% include "@hdbt_subtheme/misc/back-to-search-results.html.twig" %}
         {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
         {{ drupal_block('hdbt_content_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}
 
-    {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', color: '#FAF9F7'} %}
+    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#FAF9F7' } %}
   </div>
 
   <div class="main-content">
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'columns'} %}
-      {% block container_content %}
-        {% set left_column_classes = ['columns__column'] %}
-        {% set right_column_classes = ['columns__column'] %}
+    <div class="components components--upper">
+      {% embed "@hdbt/misc/component.twig" with
+        {
+          component_classes: [ 'component--columns' ],
+          component_content_class: 'columns',
+        }
+      %}
+        {% block component_content %}
 
-        {% set left_column_classes = left_column_classes|merge(['column--70']) %}
-        {% set right_column_classes = right_column_classes|merge(['column--30']) %}
+          {% set left_column_classes = ['columns__column', 'column--70'] %}
+          {% set right_column_classes = ['columns__column', 'column--30'] %}
 
-        <div class="columns__content">
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_media_image|render %}
               <div class="{{ media.bundle()|clean_class }}__media_image">
@@ -82,29 +85,29 @@
                 {{ content.field_geolocation }}
               </div>
               <div class="{{ media.bundle()|clean_class }}__map_link">
-                {% include '@hdbt/misc/icon.twig' with {icon: 'location', label: 'Location marker icon'|t } %}
+                {% include '@hdbt/misc/icon.twig' with { icon: 'location', label: 'Location marker icon'|t } %}
                 <a href="/{{ media.langcode.0.value }}/kartta?id={{ media.id() }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</a>
               </div>
             {% endif %}
-
             {{ drupal_block('helhist_media_usage_block', wrapper=false) }}
-
           </div>
-        </div>
-      {% endblock %}
-    {% endembed %}
+        {% endblock component_content %}
+      {% endembed %}
+    </div>
 
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'columns'} %}
-      {% block container_content %}
-        <h2 class="columns__title">{{ 'Additional information'|t({}, {'context': 'Content'}) }}</h2>
+    <div class="components components--lower">
+      {% embed "@hdbt/misc/component.twig" with
+        {
+          component_classes: [ 'component--columns' ],
+          component_title: 'Additional information'|t({}, {'context': 'Content'}),
+          component_content_class: 'columns',
+        }
+      %}
+        {% block component_content %}
 
-        {% set left_column_classes = ['columns__column'] %}
-        {% set right_column_classes = ['columns__column'] %}
+          {% set left_column_classes = ['columns__column', 'column--50'] %}
+          {% set right_column_classes = ['columns__column', 'column--50'] %}
 
-        {% set left_column_classes = left_column_classes|merge(['column--50']) %}
-        {% set right_column_classes = right_column_classes|merge(['column--50']) %}
-
-        <div class="columns__content">
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_photographer|render %}
               <div class="{{ media.bundle()|clean_class }}__photographer">
@@ -153,9 +156,12 @@
             {% if content.field_finna_id|render %}
               <div class="{{ media.bundle()|clean_class }}__finna_id">
                 <h3 class="label">{{ content.field_finna_id['#title']|t({}, {'context': 'Content'}) }}</h3>
-                <a href="{{ 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'] }}" target="_blank" {{ create_attribute({'class': link_classes} ) }}>
-                  {% include '@hdbt/button/button.html.twig' with {type: 'primary', icon_first: true, icon_first_type: 'link-external', disabled: false, label: 'Open in new window'|t({}, {'context': 'Button'}) } %}
-                </a>
+                {% include '@hdbt/navigation/link-button.html.twig' with {
+                  type: 'primary',
+                  label: 'Open in new window'|t({}, {'context': 'Button'}),
+                  url: 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'],
+                  open_in_a_new_window: true,
+                } %}
               </div>
             {% endif %}
 
@@ -195,8 +201,9 @@
               </div>
             {% endif %}
           </div>
-        </div>
-      {% endblock %}
-    {% endembed %}
+        {% endblock component_content %}
+      {% endembed %}
+    </div>
+
   </div>
 </article>

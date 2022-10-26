@@ -1,0 +1,9 @@
+.header-bottom {
+  // Menu toggle button
+  .menu__toggle-button {
+    background-color: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

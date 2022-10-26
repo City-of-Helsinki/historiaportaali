@@ -1,10 +1,11 @@
 $card_spacing: $spacing-and-half;
 
-.content-cards__content {
+.content-cards__content,
+.component__content.content-cards {
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  
+
   &::-webkit-scrollbar {
     background: transparent;
     height: 8px;
@@ -19,7 +20,7 @@ $card_spacing: $spacing-and-half;
     background: $color-metro-dark;
     border-radius: 8px;
   }
-  
+
   &::-webkit-scrollbar-thumb:hover {
     background: $color-metro-light;
   }
@@ -61,15 +62,37 @@ $card_spacing: $spacing-and-half;
     width: auto;
     padding-bottom: $spacing;
   }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    .content-card__arrow {
+      padding-left: $spacing;
+    }
+  }
 }
 
 .content-card {
   width: calc(245px + #{$card_spacing});
   padding-left: $card_spacing;
-  // Override helfi grid system
+  // Override helfi grid system.
   margin-top: 0 !important;
   flex: 1 1 33%;
   margin-bottom: $card_spacing;
+
+  // Override helfi grid system.
+  &.content-card--design-listing-item,
+  &.content-card--design-map-item,
+  &.content-card--design-search-index {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  &.content-card--design-teaser {
+    margin-left: 0;
+  }
 
   &:first-of-type {
     padding-left: 0;
@@ -81,6 +104,7 @@ $card_spacing: $spacing-and-half;
 
   @include breakpoint($breakpoint-l) {
     width: 25%;
+    flex: 1 1 25%;
   }
 }
 
@@ -165,7 +189,7 @@ $card_spacing: $spacing-and-half;
 
     svg {
       vertical-align: middle;
-    } 
+    }
   }
 
   h3 {
@@ -181,16 +205,28 @@ $card_spacing: $spacing-and-half;
 
 .content-card__arrow {
   color: $color-metro-dark;
-  
-  .icon {
-    --icon-proportions: 1.5rem;
+  display: block;
+  line-height: 0;
+  // Pull the arrow a bit to the left to align with text.
+  margin: $spacing 0 0 -2px;
+  padding-left: 0;
+  transition: all .3s;
+  width: 48px;
+
+  @include breakpoint($breakpoint-s) {
+    // Pull the arrow a bit to the left to align with text.
+    margin-left: -4px;
+  }
+
+  .hel-icon {
+    --icon-size: 1.5rem;
 
     @include breakpoint($breakpoint-m) {
-      --icon-proportions: 1.8rem;
+      --icon-size: 1.8rem;
     }
 
     @include breakpoint($breakpoint-l) {
-      --icon-proportions: 2rem;
+      --icon-size: 2rem;
     }
   }
 }

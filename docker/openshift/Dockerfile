@@ -1,6 +1,7 @@
 ARG DRUPAL_DOCKER_TAG=8.0
 FROM ghcr.io/city-of-helsinki/drupal-docker-base:${DRUPAL_DOCKER_TAG}
 
+ARG PHP_SHORT_VERSION
 # Override upload max filesize and post max size
 RUN { \
 		echo 'upload_max_filesize=64M'; \

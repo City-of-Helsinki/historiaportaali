@@ -64,8 +64,15 @@ $card_spacing: $spacing-and-half;
   }
 
   &::after {
-      display: none;
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    .content-card__arrow {
+      padding-left: $spacing;
     }
+  }
 }
 
 .content-card {
@@ -198,6 +205,18 @@ $card_spacing: $spacing-and-half;
 
 .content-card__arrow {
   color: $color-metro-dark;
+  display: block;
+  line-height: 0;
+  // Pull the arrow a bit to the left to align with text.
+  margin: $spacing 0 0 -2px;
+  padding-left: 0;
+  transition: all .3s;
+  width: 48px;
+
+  @include breakpoint($breakpoint-s) {
+    // Pull the arrow a bit to the left to align with text.
+    margin-left: -4px;
+  }
 
   .hel-icon {
     --icon-size: 1.5rem;

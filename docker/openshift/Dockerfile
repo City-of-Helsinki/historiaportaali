@@ -6,7 +6,7 @@ ARG PHP_SHORT_VERSION
 RUN { \
 		echo 'upload_max_filesize=64M'; \
 		echo 'post_max_size=64M'; \
-	} > /etc/php${PHP_SHORT_VERSION}/conf.d/php-overrides.ini
+	} > /etc/php8/conf.d/php-overrides.ini
 
 COPY / /var/www/html/
 WORKDIR /var/www/html

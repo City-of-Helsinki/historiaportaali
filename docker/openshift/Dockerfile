@@ -1,11 +1,12 @@
 ARG DRUPAL_DOCKER_TAG=8.0
 FROM ghcr.io/city-of-helsinki/drupal-docker-base:${DRUPAL_DOCKER_TAG}
 
-ARG PHP_SHORT_VERSION
 # Override upload max filesize and post max size
 RUN { \
+		echo 'memory_limit=512M'; \
 		echo 'upload_max_filesize=64M'; \
 		echo 'post_max_size=64M'; \
+    echo 'max_execution_time=180'; \
 	} > /etc/php8/conf.d/php-overrides.ini
 
 COPY / /var/www/html/

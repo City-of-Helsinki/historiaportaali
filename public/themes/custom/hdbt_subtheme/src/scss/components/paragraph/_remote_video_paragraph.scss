@@ -33,11 +33,11 @@
         margin: -40px 0 0 -40px;
       }
 
-      .icon {
-        --icon-proportions: 2rem;
+      .hel-icon {
+        --icon-size: 2rem;
 
         @include breakpoint($breakpoint-m) {
-          --icon-proportions: 3rem;
+          --icon-size: 3rem;
         }
       }
     }

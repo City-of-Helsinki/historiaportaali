@@ -2,9 +2,15 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
+// Increase PHP limits.
 if (PHP_SAPI === 'cli') {
   ini_set('memory_limit', '512M');
 }
+
+// Disable the Render & Dynamic Page Caches.
+$settings['container_yamls'][] = __DIR__ . '/services.yml';
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 if ($simpletest_db = getenv('SIMPLETEST_DB')) {
   $parts = parse_url($simpletest_db);

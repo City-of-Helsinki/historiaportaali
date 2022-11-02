@@ -59,7 +59,8 @@
       left: 50%;
       margin: -16px 0 0 -16px;
 
-      .icon {
+      .hel-icon {
+        --icon-size: 1.5rem;
         transform: rotate(45deg);
       }
     }

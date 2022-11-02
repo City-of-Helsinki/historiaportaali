@@ -1,4 +1,5 @@
-.path-frontpage .text {
+.path-frontpage .text,
+.path-frontpage .component--paragraph-text  {
   @include font-size(18px, 27px);
   margin-top: $spacing-double - $spacing-and-half;
   text-align: center;
@@ -7,7 +8,8 @@
     margin-top: $spacing-quadruple - $spacing-and-half;
   }
 
-  .text__text-content {
+  .text__text-content,
+  .component__content {
     max-width: $content-width-max;
 
     @include breakpoint($breakpoint-m) {

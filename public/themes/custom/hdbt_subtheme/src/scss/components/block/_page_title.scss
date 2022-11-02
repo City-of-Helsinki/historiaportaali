@@ -5,30 +5,28 @@
     margin-top: $spacing-triple;
   }
 
-  .page-title__container {
-    h5 {
-      max-width: $content-width-max;
-      text-transform: uppercase;
-      margin: $spacing 0 0;
+  h1 {
+    margin-bottom: $spacing;
+    margin-top: 0;
+    max-width: $content-width-max;
 
-      @include breakpoint($breakpoint-m) {
-        margin: $spacing-double 0 0;
-        padding-left: $spacing-triple * 2;
-      }
+    @include breakpoint($breakpoint-m) {
+      padding-left: $spacing-triple * 2;
     }
 
-    h1 {
-      margin-bottom: $spacing;
-      margin-top: 0;
-      max-width: $content-width-max;
+    @include breakpoint($breakpoint-l) {
+      @include font-size($fontsize-heading-xl, $lineheight-m);
+    }
+  }
 
-      @include breakpoint($breakpoint-m) {
-        padding-left: $spacing-triple * 2;
-      }
+  h5 {
+    max-width: $content-width-max;
+    text-transform: uppercase;
+    margin: $spacing 0 0;
 
-      @include breakpoint($breakpoint-l) {
-        @include font-size($fontsize-heading-xl, $lineheight-m);
-      }
+    @include breakpoint($breakpoint-m) {
+      margin: $spacing-double 0 0;
+      padding-left: $spacing-triple * 2;
     }
   }
 }

@@ -55,6 +55,11 @@
   --hdbt-color-black-hover: #000; // darken(var(--hdbt-color-black), 10%);
   --color-metro-dark-hover: #8a2200; // darken(var(--color-metro-dark), 10%);
   --placeholder-color: #666;
+
+  --hdbt-color-metro--primary: #fd4f00;
+  --hdbt-color-metro--secondary: #fff0f7;
+  --hdbt-color-metro--accent: #c2a251;
+  --hdbt-color-metro-text--primary: #f7f7f8;
 }
 
 $hdbt-color-black: var(--hdbt-color-black);

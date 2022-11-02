@@ -59,6 +59,7 @@
       li {
         display: inline-block;
         margin-left: $spacing-half;
+        margin-top: 0 !important;
       }
 
       button {
@@ -73,9 +74,9 @@
           text-decoration: none;
         }
 
-        .icon {
+        .hel-icon {
           color: $color-metro-dark;
-          --icon-proportions: 1.25rem;
+          --icon-size: 1.25rem;
         }
       }
 

@@ -39,6 +39,12 @@
     text-decoration: none;
   }
 
+  .map-lift {
+    .container {
+      padding-top: $spacing-double;
+    }
+  }
+
   .map-lift__image {
     margin-bottom: $spacing;
   }

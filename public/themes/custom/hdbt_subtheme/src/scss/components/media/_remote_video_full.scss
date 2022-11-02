@@ -1,11 +1,13 @@
 .media--type-remote-video {
   &.media--view-mode-full {
     .before-content {
-      .page-title {
-        h1 {
-          margin-bottom: $spacing;
-          margin-top: 0;
+      .remote-video-header__container {
+        > div {
           max-width: $content-width-max;
+  
+          @include breakpoint($breakpoint-m) {
+            padding-left: $spacing-triple * 2;
+          }
         }
       }
     }
@@ -13,25 +15,76 @@
     .main-content {
       margin-top: $spacing;
 
-      .columns__container:nth-child(1) {
-        .remote-video__media_remote_video {
-          position: relative;
-          width: 100%;
-          padding-bottom: 56.25%;
+      @include breakpoint($breakpoint-s) {
+        margin-top: $spacing-double;
+      }
 
-          iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+      @include breakpoint($breakpoint-m) {
+        margin-top: $spacing-quadruple;
+      }
+
+      .label {
+        @include font-size(18px, 30px);
+        color: $color-black-90;
+        font-weight: $font-weight-medium;
+        margin: 0 $spacing-quarter $spacing-half;
+
+        @include breakpoint($breakpoint-m) {
+          @include font-size(24px, 30px);
+          margin: 0 $spacing-quarter $spacing;
+        }
+      }
+
+      .components:nth-child(1) {
+        .component__content {
+          display: flex;
+
+          .media__usage {
+            article.content-card--design-listing-item {
+              width: 100%;
+              height: 100%;
+              margin-top: 0;
+              padding: 0;
+          
+              .content-card__link {
+                display: flex;
+                width: 100%;
+                height: 100%;
+          
+                .content-card__image {
+                  width: 35%;
+                  
+                  div,
+                  img {
+                    height: 100%;
+                  }
+                }
+          
+                .content-card__content {
+                  width: 65%;
+                }
+          
+                .content-card__metadata {
+                  display: flex;
+                  margin-top: $spacing;
+
+                  .content-card__phenomena,
+                  .content-card__year {
+                    display: none;
+                  }
+                }
+              }
+            }
           }
         }
       }
 
-      .columns__container:nth-child(2) {
+      .components:nth-child(2) {
         margin-top: $spacing-double;
+
+        .component__content {
+          display: flex;
+        }
       }
     }
   }

@@ -92,6 +92,7 @@ function hdbt_subtheme_preprocess_node(&$variables) {
   $node = $variables['node'];
   if ($node->bundle() == 'article') {
     $variables['#attached']['library'][] = 'hdbt_subtheme/reading-time';
+    $variables['#attached']['library'][] = 'hdbt_subtheme/gallery';
   }
 }
 

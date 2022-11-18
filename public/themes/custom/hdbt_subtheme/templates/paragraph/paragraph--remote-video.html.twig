@@ -40,52 +40,48 @@
 #}
 {{ attach_library('media/oembed.formatter') }}
 
-{%
-  set classes = [
-    'remote-video',
-    view_mode ? 'remote-video--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'remote-video--unpublished'
-  ]
-%}
-
 {% set video = content.field_remote_video %}
 {% set video_url = content.field_remote_video[0]['#media'].field_media_oembed_video[0].value %}
 {% set video_title = content.field_remote_video[0]['#media'].name.value %}
 {% set video_description = content.field_remote_video[0]['#media'].field_video_description.value %}
 
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'video'} %}
-      {% block container_content %}
-        <div class="media--video__content">
-          <div class="media--video__content__video">
-            {{ video }}
-          </div>
-          {% if video_title or video_description %}
-            <div class="media--video__content__info">
-              <div class="icon__external-link">
-                {% include '@hdbt/misc/icon.twig' with {icon: 'link-external', label: 'External link icon'|t } %}
-              </div>
-              {% if video_title %}
-                <div class="media--video__content__caption">
-                  {{ video_title }}
-                </div>
-              {% endif %}
-              {% if video_description %}
-                <div class="media--video__content__description">
-                  {{ video_description }}
-                </div>
-              {% endif %}
-              {% include '@hdbt/navigation/link-button.html.twig' with {
-                type: 'secondary',
-                label: 'Watch video'|t({}, {'context': 'Button'}),
-                url: video_url,
-                open_in_a_new_window: true,
-              } %}
-            </div>
-          {% endif %}
+  {% embed "@hdbt/misc/component.twig" with
+    {
+      component_classes: [
+        'component--remote-video-helhist',
+      ],
+      component_content_class: 'remote-video',
+    }
+  %}
+    {% block component_content %}
+
+      <div class="media--video__content">
+        <div class="media--video__content__video">
+          {{ video }}
         </div>
-      {% endblock %}
-    {% endembed %}
-  </div>
+        {% if video_title or video_description %}
+          <div class="media--video__content__info">
+            {% if video_title %}
+              <div class="media--video__content__caption">
+                {{ video_title }}
+              </div>
+            {% endif %}
+            {% if video_description %}
+              <div class="media--video__content__description">
+                {{ video_description }}
+              </div>
+            {% endif %}
+            {% include '@hdbt/navigation/link-button.html.twig' with {
+              type: 'secondary',
+              label: 'Watch video in external service'|t({}, {'context': 'Button'}),
+              url: video_url,
+              open_in_a_new_window: true,
+            } %}
+          </div>
+        {% endif %}
+      </div>
+
+    {% endblock component_content %}
+  {% endembed %}
 {% endblock paragraph %}

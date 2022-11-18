@@ -38,13 +38,6 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'image',
-    view_mode ? 'image--' ~ view_mode|clean_class,
-  ]
-%}
-
 {# Check if the image should be printed in original aspect ratio or not #}
 {% set original_aspect_ratio = false %}
 {% if content.field_original_aspect_ratio[0]['#markup'] == 'true' %}
@@ -52,90 +45,97 @@
 {% endif %}
 
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'image'} %}
-      {% block container_content %}
-        <div class="media--image__content">
-          {% set caption = content.field_image_caption[0]['#context']['value'] %}
-          {% if content.field_image|render %}
-            {# The image caption is attached to each image so we need to get it from the media entity #}
-            {% for key, image in content.field_image %}
-              {% if image.entity %}
-                {% if image.entity.hastranslation(language) %}
-                  {% set media = image.entity.translation(language) %}
-                {% else %}
-                  {% set media = image.entity %}
-                {% endif %}
-                {% set photographer = media.fields.field_photographer.value %}
-                {% if caption is null %}
-                  {# If paragraph image caption is not set, try to get it from the media entity #}
-                  {% set caption = media.fields.field_image_caption.0.value %}
-                {% endif %}
-                {% if photographer %}
-                  {% set caption = caption is not null ? caption ~ ' ' %}
-                  {% set caption = caption ~ 'Photo:'|trans ~ ' ' ~ photographer %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-          {# Check if there is image set and print it with correct aspect ratio #}
-          {% if content.field_image|render %}
-            {% for key, image in content.field_image %}
-              {% if image.entity %}
-                {% if image.entity.hastranslation(language) %}
-                  {% set media = image.entity.translation(language) %}
-                {% else %}
-                  {% set media = image.entity %}
-                {% endif %}
-                {% set alt = content.field_image_caption[0] is not empty ? caption : media.fields.field_media_image.alt %}
-                {% if original_aspect_ratio %}
-                  {% set image =
-                    drupal_image(media.fields.field_media_image.entity.uri.value, 'original', {alt: alt}, responsive=true)
-                  %}
-                {% else %}
-                  {% set image =
-                    drupal_image(media.fields.field_media_image.entity.uri.value, 'image__3_2', {alt: alt}, responsive=true)
-                  %}
-                {% endif %}
-                {# Link image to media entity page #}
-                <div class="media--image__content__image">
-                  <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">{{ image }}</a>
-                </div>
-                <div class="media--image__content__info">
-                  {% if caption %}
-                    <div class="media--image__content__caption">
-                      {{ caption }}
-                    </div>
-                  {% endif %}
-                  {% if media.fields.field_start_year is not empty or media.fields.field_geolocation is not empty %}
-                    <div class="divider"></div>
-                    
-                    <div class="media--image__content__meta">
-                      {% if media.fields.field_geolocation is not empty %}
-                        <div class="media--image__content__map_link">
-                          {% include '@hdbt/misc/icon.twig' with {icon: 'location', label: 'Location marker icon'|t } %}
-                          <a href="/{{ language }}/kartta?id={{ media.id() }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</a>
-                        </div>
-                      {% endif %}
+  {% embed "@hdbt/misc/component.twig" with
+    {
+      component_classes: [
+        'component--image',
+      ],
+      component_content_class: 'image',
+    }
+  %}
+    {% block component_content %}
 
-                      {% if media.fields.field_start_year.value is not empty %}
-                        <div class="media--image__content__era">
-                          {% include '@hdbt/misc/icon.twig' with {icon: 'calendar', label: 'Calendar'|t } %}
-                          <span class="era__start">{{ media.fields.field_start_year.value }}</span>
-                          {% if media.fields.field_end_year.value is not empty %}
-                            <span class="era__divider"> - </span>
-                            <span class="era__end">{{ media.fields.field_end_year.value }}</span>
-                          {% endif %}
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                </div>
+      <div class="media--image__content">
+        {% set caption = content.field_image_caption[0]['#context']['value'] %}
+        {% if content.field_image|render %}
+          {# The image caption is attached to each image so we need to get it from the media entity #}
+          {% for key, image in content.field_image %}
+            {% if image.entity %}
+              {% if image.entity.hastranslation(language) %}
+                {% set media = image.entity.translation(language) %}
+              {% else %}
+                {% set media = image.entity %}
               {% endif %}
-            {% endfor %}
-          {% endif %}
-        </div>
-      {% endblock %}
-    {% endembed %}
-  </div>
+              {% set photographer = media.fields.field_photographer.value %}
+              {% if caption is null %}
+                {# If paragraph image caption is not set, try to get it from the media entity #}
+                {% set caption = media.fields.field_image_caption.0.value %}
+              {% endif %}
+              {% if photographer %}
+                {% set caption = caption is not null ? caption ~ ' ' %}
+                {% set caption = caption ~ 'Photo:'|trans ~ ' ' ~ photographer %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {# Check if there is image set and print it with correct aspect ratio #}
+        {% if content.field_image|render %}
+          {% for key, image in content.field_image %}
+            {% if image.entity %}
+              {% if image.entity.hastranslation(language) %}
+                {% set media = image.entity.translation(language) %}
+              {% else %}
+                {% set media = image.entity %}
+              {% endif %}
+              {% set alt = content.field_image_caption[0] is not empty ? caption : media.fields.field_media_image.alt %}
+              {% if original_aspect_ratio %}
+                {% set image =
+                  drupal_image(media.fields.field_media_image.entity.uri.value, 'original', {alt: alt}, responsive=true)
+                %}
+              {% else %}
+                {% set image =
+                  drupal_image(media.fields.field_media_image.entity.uri.value, 'image__3_2', {alt: alt}, responsive=true)
+                %}
+              {% endif %}
+              {# Link image to media entity page #}
+              <div class="media--image__content__image">
+                <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">{{ image }}</a>
+              </div>
+              <div class="media--image__content__info">
+                {% if caption %}
+                  <div class="media--image__content__caption">
+                    {{ caption }}
+                  </div>
+                {% endif %}
+                {% if media.fields.field_start_year is not empty or media.fields.field_geolocation is not empty %}
+                  <div class="divider"></div>
+                  
+                  <div class="media--image__content__meta">
+                    {% if media.fields.field_geolocation is not empty %}
+                      <div class="media--image__content__map_link">
+                        {% include '@hdbt/misc/icon.twig' with {icon: 'location', label: 'Location marker icon'|t } %}
+                        <a href="/{{ language }}/kartta?id={{ media.id() }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</a>
+                      </div>
+                    {% endif %}
+
+                    {% if media.fields.field_start_year.value is not empty %}
+                      <div class="media--image__content__era">
+                        {% include '@hdbt/misc/icon.twig' with {icon: 'calendar', label: 'Calendar'|t } %}
+                        <span class="era__start">{{ media.fields.field_start_year.value }}</span>
+                        {% if media.fields.field_end_year.value is not empty %}
+                          <span class="era__divider"> - </span>
+                          <span class="era__end">{{ media.fields.field_end_year.value }}</span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+    {% endblock component_content %}
+  {% endembed %}
 {% endblock paragraph %}

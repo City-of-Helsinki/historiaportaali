@@ -48,3 +48,27 @@ reading-time:
   version: 1.x
   js:
     dist/js/reading-time.min.js: {}
+
+splide:
+  version: 2.4.21
+  js:
+    dist/js/splide/splide.min.js: {}
+  css:
+    theme:
+      dist/css/splide/splide-core.min.css: {}
+
+tiny-slider:
+  version: 2.9.3
+  js:
+    dist/js/tiny-slider/tiny-slider.js: {}
+  css:
+    theme:
+      dist/css/tiny-slider/tiny-slider.css: {}
+
+gallery:
+  version: 1.x
+  js:
+    dist/js/gallery-settings.min.js: {}
+  dependencies:
+    - hdbt_subtheme/splide
+    - hdbt_subtheme/tiny-slider

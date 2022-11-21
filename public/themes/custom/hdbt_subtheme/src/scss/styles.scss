@@ -3,12 +3,15 @@
 // This file includes all imports
 //
 
-@import "~breakpoint-sass";
+// Breakpoint helpers
+@import '~breakpoint-sass';
 
-@import "library/variables/*.*";
-@import "library/mixins/*.*";
-@import "library/fonts/*.*";
-@import "layout/*";
-@import "state/*";
-@import "base/**/*.*";
-@import "components/**/*.*";
+// Folder structure based on HDBT
+@import '03_generic/*.*';
+
+// Historia.hel.fi specific
+@import 'library/**/*.*';
+@import 'layout/*.*';
+@import 'state/*.*';
+@import 'base/*.*';
+@import 'components/**/*.*';

@@ -38,48 +38,43 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('media/oembed.formatter') }}
-
-{% set video = content.field_remote_video %}
-{% set video_url = content.field_remote_video[0]['#media'].field_media_oembed_video[0].value %}
-{% set video_title = content.field_remote_video[0]['#media'].name.value %}
-{% set video_description = content.field_remote_video[0]['#media'].field_video_description.value %}
-
 {% block paragraph %}
   {% embed "@hdbt/misc/component.twig" with
     {
       component_classes: [
-        'component--remote-video-helhist',
+        'component--gallery',
       ],
-      component_content_class: 'remote-video',
+      component_content_class: 'gallery',
     }
   %}
     {% block component_content %}
 
-      <div class="media--video__content">
-        <div class="media--video__content__video">
-          {{ video }}
+      <div class="gallery__main splide">
+        <div class="gallery__slides splide__track">
+          <ul class="splide__list">
+            {{ content }}
+          </ul>
         </div>
-        {% if video_title or video_description %}
-          <div class="media--video__content__info">
-            {% if video_title %}
-              <div class="media--video__content__caption">
-                {{ video_title }}
-              </div>
+      </div>
+      <div class="gallery__slide-count"></div>
+      <div class="gallery__thumbnails js-gallery__thumbnails">
+        <ul class="gallery__thumbnails__list">
+          {% for key, image in gallery_slide_thumbnails %}
+            {% set gallery_thumbnails_item = create_attribute({'class': 'gallery__thumbnails__item'}).setAttribute('role', 'button').setAttribute('tabindex', '0') %}
+            {% if gallery_slide_thumbnails_alt_texts[key].caption %}
+              {% set alt = gallery_slide_thumbnails_alt_texts[key].caption %}
+              {% set gallery_thumbnails_item = gallery_thumbnails_item.setAttribute('aria-label', gallery_slide_thumbnails_alt_texts[key].caption) %}
+            {% elseif gallery_slide_thumbnails_alt_texts[key].alt is not same as('""') %}
+              {% set alt = gallery_slide_thumbnails_alt_texts[key].alt %}
+              {% set gallery_thumbnails_item = gallery_thumbnails_item.setAttribute('aria-label', gallery_slide_thumbnails_alt_texts[key].alt) %}
+            {% else %}
+              {% set alt = false %}
             {% endif %}
-            {% if video_description %}
-              <div class="media--video__content__description">
-                {{ video_description }}
-              </div>
-            {% endif %}
-            {% include '@hdbt/navigation/link-button.html.twig' with {
-              type: 'secondary',
-              label: 'Watch video in external service'|t({}, {'context': 'Button'}),
-              url: video_url,
-              open_in_a_new_window: true,
-            } %}
-          </div>
-        {% endif %}
+            <li{{ gallery_thumbnails_item }}>
+              {{ drupal_image(image.uri.value, 'gallery_thumbnail', { alt: alt }, responsive=true) }}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
 
     {% endblock component_content %}

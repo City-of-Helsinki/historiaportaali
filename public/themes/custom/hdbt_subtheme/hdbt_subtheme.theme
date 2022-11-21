@@ -232,4 +232,54 @@ function _get_top_level_menu_parent_title_by_nid($node_id) {
 function hdbt_subtheme_preprocess_paragraph(&$variables) {
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['language'] = $language;
+
+  $paragraph = $variables['paragraph'];
+  $paragraph_type = $paragraph->getType();
+
+  // Salvaged from HDBT 1.4:
+  // Check if the paragraph is a type of gallery and prepare the slides
+  // and generate the thumbnails.
+  if ($paragraph_type == 'gallery') {
+    $variables['#attached']['library'][] = 'hdbt_subtheme/gallery';
+
+    $slide_paragraphs = $paragraph->get('field_gallery_slides')->getValue();
+    $slide_ids = [];
+
+    foreach ($slide_paragraphs as $slide_paragraph) {
+      $slide_ids[] = $slide_paragraph['target_id'];
+    }
+
+    // Get a paragraph storage object.
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    // Load all slide paragraphs.
+    $slides = $paragraph_storage->loadMultiple($slide_ids);
+
+    $slide_thumbnails = [];
+    $slide_thumbnails_alternative_texts = [];
+    foreach ($slides as $slide) {
+      $slide_media = $slide
+        ->get('field_gallery_slide_media')
+        ->first()
+        ->get('entity')
+        ->getTarget()
+        ->getValue();
+      $image = $slide_media
+        ->get('field_media_image')
+        ->first()
+        ->get('entity')
+        ->getTarget()
+        ->getValue();
+
+      $alternative_text = [
+        'caption' => $slide->field_gallery_slide_caption->value,
+        'alt' => $slide_media->field_media_image->first()->alt,
+      ];
+
+      $slide_thumbnails_alternative_texts[] = $alternative_text;
+      $slide_thumbnails[] = $image;
+    }
+
+    $variables['gallery_slide_thumbnails'] = $slide_thumbnails;
+    $variables['gallery_slide_thumbnails_alt_texts'] = $slide_thumbnails_alternative_texts;
+  }
 }

@@ -56,14 +56,12 @@
     padding: $spacing-double;
     background-color: $color-gold-light;
 
-    @include breakpoint($breakpoint-s) {
-      margin: (-$spacing-double) $spacing-double 0 (-$spacing-double);
+    .media--video__content__caption {
+      margin-bottom: $spacing;
     }
 
-    svg {
-      vertical-align: middle;
-      margin-top: -3px;
-      margin-right: 5px;
+    @include breakpoint($breakpoint-s) {
+      margin: (-$spacing-double) $spacing-double 0 (-$spacing-double);
     }
   }
 
@@ -72,34 +70,6 @@
     
     @include breakpoint($breakpoint-s) {
       margin: (-$spacing-double) (-$spacing-double) 0 $spacing-double;
-    }
-  }
-
-  .icon__external-link {
-    color: $color-metro-dark;
-    margin-bottom: $spacing-double;
-  }
-
-  a.media--video__content__external-link {
-    text-decoration: none;
-
-    button {
-      margin-top: $spacing-double;
-      border-color: $color-metro-dark;
-      color: $color-black;
-
-      .hds-icon--arrow-right {
-        color: $color-metro-dark;
-      }
-
-      &:hover {
-        background-color: $color-metro-dark;
-        color: $color-white;
-
-        .hds-icon--arrow-right {
-          color: $color-white;
-        }
-      }
     }
   }
 }

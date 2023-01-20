@@ -56,7 +56,7 @@
     {% block component_content %}
 
       <div class="media--image__content">
-        {% set caption = content.field_image_caption[0]['#context']['value'] %}
+        {% set caption = content.field_image_caption['#items'].getString() %}
         {% if content.field_image|render %}
           {# The image caption is attached to each image so we need to get it from the media entity #}
           {% for key, image in content.field_image %}

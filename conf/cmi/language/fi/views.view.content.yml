@@ -2,8 +2,6 @@ display:
   default:
     display_options:
       fields:
-        current_state_views_field:
-          label: Julkaisutila
         langcode:
           label: Kieli
           separator: ', '
@@ -23,19 +21,6 @@ display:
           label: Päivitetty
         operations:
           label: Toimenpiteet
-      filters:
-        current_state_views_filter:
-          expose:
-            label: Julkaisutila
-        title:
-          expose:
-            label: Otsikko
-        type:
-          expose:
-            label: Sisältötyyppi
-        langcode:
-          expose:
-            label: Kieli
       title: Sisältö
       pager:
         options:
@@ -54,6 +39,16 @@ display:
       empty:
         area_text_custom:
           content: 'Ei sisältöä.'
+      filters:
+        title:
+          expose:
+            label: Otsikko
+        type:
+          expose:
+            label: Sisältötyyppi
+        langcode:
+          expose:
+            label: Kieli
     display_title: Oletus
   page_1:
     display_title: Sivu

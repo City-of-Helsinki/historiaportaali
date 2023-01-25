@@ -3,7 +3,6 @@ _core:
 local_task_enabled_entity_types:
   - media
   - paragraphs_library_item
-  - paragraphs_library_item
 track_enabled_source_entity_types:
   - crop
   - media

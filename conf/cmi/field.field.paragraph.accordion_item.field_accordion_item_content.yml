@@ -6,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_accordion_item_content
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.phasing
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -24,12 +26,12 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       columns: columns
-      text: text
       image: image
+      text: text
       phasing: phasing
-    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 12
@@ -41,8 +43,8 @@ settings:
         weight: 23
         enabled: false
       columns:
-        weight: 14
         enabled: true
+        weight: 14
       content_cards:
         weight: 25
         enabled: false
@@ -62,12 +64,11 @@ settings:
         weight: 17
         enabled: false
       image:
-        weight: 18
         enabled: true
+        weight: 18
       liftup_with_image:
         weight: 32
         enabled: false
-      link: {  }
       list_of_links:
         weight: 20
         enabled: false
@@ -93,8 +94,8 @@ settings:
         weight: 38
         enabled: false
       text:
-        weight: 22
         enabled: true
+        weight: 22
       unit_search:
         weight: 40
         enabled: false

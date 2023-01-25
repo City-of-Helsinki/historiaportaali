@@ -44,6 +44,7 @@
         "drupal/smtp": "^1.1",
         "drupal/term_merge": "1.x-dev@dev",
         "drupal/twig_tweak": "^3.1",
+        "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_block_filter_block": "1.x-dev@dev",
         "drupal/views_cm_current_state": "^2.0",
         "drupal/views_menu_children_filter": "^1.0@RC",

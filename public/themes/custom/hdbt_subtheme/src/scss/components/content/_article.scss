@@ -10,7 +10,7 @@
   }
 
   .main-content {
-    margin-top: $spacing-double;
+    margin-top: 0;
   }
 
   .node--type-article {
@@ -42,11 +42,9 @@
     }
 
     &.node--view-mode-full {
-      margin-top: $spacing-double;
-
       .article-header {
         background-color: $color-white;
-        padding: 0 0 ($spacing * 1.5);
+        padding: $spacing-double 0 ($spacing * 1.5);
         margin-bottom: $spacing-double;
 
         .article-header__container {
@@ -125,33 +123,37 @@
       }
     }
 
-    .article__keywords,
-    .article__phenomena,
-    .article__neighbourhoods {
-      background: $color-silver-light;
-      margin-top: $spacing-double;
-      padding: $spacing-half 0 $spacing-double;
+    .component--taxonomies .component__content {
+      display: flex;
 
-      @include breakpoint($breakpoint-m) {
-        margin-top: $spacing-quadruple;
-        padding: ($spacing-quadruple - $spacing-and-half) 0 $spacing-quadruple;
-      }
+      .article__keywords,
+      .article__phenomena,
+      .article__neighbourhoods {
+        background: transparent;
+        margin-top: $spacing-double;
+        padding: $spacing-half 0 $spacing-double;
 
-      @include breakpoint($breakpoint-l) {
-        margin-top: $spacing-triple;
-      }
-
-      .container {
-        max-width: $content-area-wrapper-width-max;
-      }
-
-      &:last-child {
-        // Make the keywords element go "under" the footer.
-        margin-bottom: calc(-1 * (#{$footer-koro-height} + #{$spacing-triple}));
-        padding-bottom: $spacing-double + $footer-koro-height;
+        @include breakpoint($breakpoint-m) {
+          margin-top: $spacing-quadruple;
+          padding: ($spacing-quadruple - $spacing-and-half) 0 $spacing-quadruple;
+        }
 
         @include breakpoint($breakpoint-l) {
-          padding-bottom: $spacing-quadruple + $footer-koro-height;
+          margin-top: $spacing-triple;
+        }
+
+        .container {
+          max-width: $content-area-wrapper-width-max;
+        }
+
+        &:last-child {
+          // Make the keywords element go "under" the footer.
+          margin-bottom: calc(-1 * (#{$footer-koro-height} + #{$spacing-triple}));
+          padding-bottom: $spacing-double + $footer-koro-height;
+
+          @include breakpoint($breakpoint-l) {
+            padding-bottom: $spacing-quadruple + $footer-koro-height;
+          }
         }
       }
     }

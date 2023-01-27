@@ -6,7 +6,13 @@ url_https: 'https://webanalytics.digiaiiris.com/js/'
 domain_mode: 0
 visibility:
   request_path_mode: 0
-  request_path_pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
+  request_path_pages: |-
+    /admin
+    /admin/*
+    /batch
+    /node/add*
+    /node/*/*
+    /user/*/*
   user_role_mode: 0
   user_role_roles: {  }
   user_account_mode: 1
@@ -22,37 +28,12 @@ privacy:
   donottrack: true
   disablecookies: false
 custom:
-  variable:
-    1:
-      slot: 1
-      name: ''
-      value: ''
-      scope: visit
-    2:
-      slot: 2
-      name: ''
-      value: ''
-      scope: visit
-    3:
-      slot: 3
-      name: ''
-      value: ''
-      scope: visit
-    4:
-      slot: 4
-      name: ''
-      value: ''
-      scope: visit
-    5:
-      slot: 5
-      name: ''
-      value: ''
-      scope: visit
+  variable: {  }
 codesnippet:
   before: ''
   after: ''
 translation_set: false
-disable_tracking: true
+disable_tracking: false
 cache: false
 page_title_hierarchy: false
 page_title_hierarchy_exclude_home: true

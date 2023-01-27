@@ -2,15 +2,9 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
-// Increase PHP limits.
 if (PHP_SAPI === 'cli') {
   ini_set('memory_limit', '512M');
 }
-
-// Disable the Render & Dynamic Page Caches.
-$settings['container_yamls'][] = __DIR__ . '/services.yml';
-$settings['cache']['bins']['render'] = 'cache.backend.null';
-$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 if ($simpletest_db = getenv('SIMPLETEST_DB')) {
   $parts = parse_url($simpletest_db);
@@ -56,12 +50,15 @@ $config['siteimprove.settings']['api_key'] = getenv('SITEIMPROVE_API_KEY');
 $settings['matomo_site_id'] = getenv('MATOMO_SITE_ID');
 $settings['siteimprove_id'] = getenv('SITEIMPROVE_ID');
 
+$routes = [];
 // Drupal route(s).
-$routes = (getenv('DRUPAL_ROUTES')) ? explode(',', getenv('DRUPAL_ROUTES')) : [];
+if ($drupal_routes = getenv('DRUPAL_ROUTES')) {
+  $routes = array_map(fn (string $route) => trim($route), explode(',', $drupal_routes));
+}
 $routes[] = 'http://127.0.0.1';
 
 foreach ($routes as $route) {
-  $host = parse_url($route)['host'];
+  $host = parse_url($route, PHP_URL_HOST);
   $trusted_host = str_replace('.', '\.', $host);
   $settings['trusted_host_patterns'][] = '^' . $trusted_host . '$';
 }
@@ -217,6 +214,8 @@ if (
   $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
 }
 
+$settings['is_azure'] = FALSE;
+
 // Environment specific overrides.
 if (file_exists(__DIR__ . '/all.settings.php')) {
   include __DIR__ . '/all.settings.php';
@@ -227,8 +226,16 @@ if ($env = getenv('APP_ENV')) {
     include __DIR__ . '/' . $env . '.settings.php';
   }
 
-  if (file_exists(__DIR__ . '/' . $env . '.services.yml')) {
-    $settings['container_yamls'][] = __DIR__ . '/' . $env . '.services.yml';
+  $servicesFiles = [
+    'services.yml',
+    'all.services.yml',
+    $env . '.services.yml',
+  ];
+
+  foreach ($servicesFiles as $fileName) {
+    if (file_exists(__DIR__ . '/' . $fileName)) {
+      $settings['container_yamls'][] = __DIR__ . '/' . $fileName;
+    }
   }
 
   if (getenv('OPENSHIFT_BUILD_NAMESPACE') && file_exists(__DIR__ . '/azure.settings.php')) {

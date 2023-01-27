@@ -19,6 +19,7 @@ display:
         message:
           label: Сообщение
           alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
             alt: сообщение
         name:
           label: Пользователь

@@ -7,7 +7,3 @@ site_settings:
   koro: vibration
 footer_settings:
   footer_color: dark
-  footer_top_title: 'Contact information'
-  footer_top_content:
-    value: '<p><a class="hds-button hds-button--secondary" href="https://www.hel.fi/helsinki/en/administration/participate/feedback/"><span class="hds-button__label">Feedback And Questions</span></a></p>'
-    format: full_html

@@ -17,7 +17,7 @@ base_field: id
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
@@ -161,8 +161,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Seuraava ›'
-            previous: '‹ Edellinen'
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page: false
             items_per_page_label: 'Merkintöjä sivua kohti'
@@ -235,7 +235,7 @@ display:
           exposed: true
           expose:
             operator_id: label_op
-            label: Otsikko
+            label: Label
             description: ''
             use_operator: false
             operator: label_op
@@ -310,7 +310,7 @@ display:
       tags: {  }
   entity_reference:
     id: entity_reference
-    display_title: Entiteettiviittaus
+    display_title: 'Entity reference'
     display_plugin: entity_reference
     position: 1
     display_options:

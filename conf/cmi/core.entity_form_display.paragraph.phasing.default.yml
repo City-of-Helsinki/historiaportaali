@@ -44,12 +44,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_phasing_item_title_level:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_phasing_title_level:
     type: options_select
     weight: 0
@@ -73,4 +67,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_phasing_item_title_level: true
   status: true

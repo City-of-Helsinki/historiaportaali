@@ -10,9 +10,9 @@ general_settings:
       enabled: true
       weight: 0
     split_fields:
-      enabled: false
+      enabled: true
       weight: 1
     unified_fields:
-      enabled: false
+      enabled: true
       weight: 2
-  visual_inline_theme: admin
+  visual_inline_theme: default

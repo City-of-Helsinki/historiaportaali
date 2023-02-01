@@ -51,5 +51,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_iframe_title: true
   status: true

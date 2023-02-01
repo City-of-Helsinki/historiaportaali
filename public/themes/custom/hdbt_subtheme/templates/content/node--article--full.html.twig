@@ -113,49 +113,50 @@
     </div>
   {% endif %}
 
-  {% embed "@hdbt/misc/container.twig" with {container_element: 'columns'} %}
-    {% block container_content %}
-      {% set left_column_classes = ['columns__column'] %}
-      {% set right_column_classes = ['columns__column'] %}
+  {% embed "@hdbt/misc/component.twig" with
+    {
+      component_classes: [ 'component--taxonomies' ],
+      component_content_class: 'columns',
+    }
+  %}
+    {% block component_content %}
 
-      {% set left_column_classes = left_column_classes|merge(['column--50']) %}
-      {% set right_column_classes = right_column_classes|merge(['column--50']) %}
+      {% set left_column_classes = ['columns__column', 'column--50'] %}
+      {% set right_column_classes = ['columns__column', 'column--50'] %}
 
-      <div class="columns__content">
-        <div class="{{ left_column_classes|join(' ') }}">
-          {% if content.field_keywords|render %}
-            <div class="{{ node.bundle|clean_class }}__keywords">
-              {% embed "@hdbt/misc/container.twig" with {container_element: 'keywords'} %}
-                {% block container_content %}
-                  {{ content.field_keywords }}
-                {% endblock container_content %}
-              {% endembed %}
-            </div>
-          {% endif %}
-        </div>
-
-        <div class="{{ right_column_classes|join(' ') }}">
-          {% if content.field_phenomena|render %}
-            <div class="{{ node.bundle|clean_class }}__phenomena">
-              {% embed "@hdbt/misc/container.twig" with {container_element: 'phenomena'} %}
-                {% block container_content %}
-                  {{ content.field_phenomena }}
-                {% endblock container_content %}
-              {% endembed %}
-            </div>
-          {% endif %}
-
-          {% if content.field_neighbourhoods|render %}
-            <div class="{{ node.bundle|clean_class }}__neighbourhoods">
-              {% embed "@hdbt/misc/container.twig" with {container_element: 'neighbourhoods'} %}
-                {% block container_content %}
-                  {{ content.field_neighbourhoods }}
-                {% endblock container_content %}
-              {% endembed %}
-            </div>
-          {% endif %}
-        </div>
+      <div class="{{ left_column_classes|join(' ') }}">
+        {% if content.field_keywords|render %}
+          <div class="{{ node.bundle|clean_class }}__keywords">
+            {% embed "@hdbt/misc/container.twig" with {container_element: 'keywords'} %}
+              {% block container_content %}
+                {{ content.field_keywords }}
+              {% endblock container_content %}
+            {% endembed %}
+          </div>
+        {% endif %}
       </div>
-    {% endblock %}
+
+      <div class="{{ right_column_classes|join(' ') }}">
+        {% if content.field_phenomena|render %}
+          <div class="{{ node.bundle|clean_class }}__phenomena">
+            {% embed "@hdbt/misc/container.twig" with {container_element: 'phenomena'} %}
+              {% block container_content %}
+                {{ content.field_phenomena }}
+              {% endblock container_content %}
+            {% endembed %}
+          </div>
+        {% endif %}
+
+        {% if content.field_neighbourhoods|render %}
+          <div class="{{ node.bundle|clean_class }}__neighbourhoods">
+            {% embed "@hdbt/misc/container.twig" with {container_element: 'neighbourhoods'} %}
+              {% block container_content %}
+                {{ content.field_neighbourhoods }}
+              {% endblock container_content %}
+            {% endembed %}
+          </div>
+        {% endif %}
+      </div>
+    {% endblock component_content %}
   {% endembed %}
 </article>

@@ -30,7 +30,6 @@ dependencies:
     - content_lock
     - content_moderation
     - content_translation
-    - editoria11y
     - entity_usage
     - eu_cookie_compliance
     - file
@@ -254,7 +253,6 @@ permissions:
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view article revisions'
-  - 'view editoria11y checker'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'

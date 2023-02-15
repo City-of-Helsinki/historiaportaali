@@ -18,8 +18,7 @@
 
           $formats_field = [
             {
-              // uuid: '63DcPSsYfssc_2rLO90Cmlk-c4DwPmfe_Aj4iFdxcpM',
-              uuid: 'hYnvnamR6ag_AxPcntKd-XexOpwMkaLhAxui6lsUShU',
+              url: $.parseJSON($('#edit-field-formats').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-formats'),
               json_wrapper: 'formats',
               json_key: 'translated'
@@ -28,8 +27,7 @@
 
           $authors_field = [
             {
-              // uuid: 'nL39PHzAu3uXzCPe2BBSlw4VVVuZsLVS6RtbkaMLdS8',
-              uuid: 'o5vLXb8HgB7zYu_XHLPrCslmmt-Hnd87yCE1cOrRvsE',
+              url: $.parseJSON($('#edit-field-authors').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-authors'),
               json_wrapper: 'nonPresenterAuthors',
               json_key: 'name'
@@ -38,8 +36,7 @@
 
           $copyrights_field = [
             {
-              // uuid: 'HSgHktR7ejpMhZd1Y-atx9Axw7SuNtwq0FT_sAh8smU',
-              uuid: 'uLeAPTPSYBImqlrCXa80txmYaj1B7rrTbPvmvunHjxE',
+              url: $.parseJSON($('#edit-field-copyrights').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-copyrights'),
               json_wrapper: 'imageRights',
               json_key: 'copyright'
@@ -48,8 +45,7 @@
 
           $buildings_field = [
             {
-              // uuid: '8S0fSi9mz_jgq_PU9xvyDN2ir3lHAnsjmz7_9rnCThY',
-              uuid: '9ohEZZrClEf1sGsxVQvK0ye9W9HKlh0k6ZuNhZyRi5o',
+              url: $.parseJSON($('#edit-field-buildings').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-buildings'),
               json_wrapper: 'buildings',
               json_key: 'translated'
@@ -68,7 +64,7 @@
                 text: element[field.json_key]
               };
               // Programmatically get Select2 results
-              $.getJSON('/' + $langcode + '/select2_autocomplete/taxonomy_term/default:taxonomy_term/' + field.uuid + '?term=' + option_data.text + '&_type=query&q=' + option_data.text, function(data) {
+              $.getJSON(field.url + '?term=' + option_data.text + '&_type=query&q=' + option_data.text, function(data) {
                 if (data['results'].length > 0 && data['results'][0]['text'] === option_data.text) {
                   // Match found, use existing term ID for option
                   option_data.id = data['results'][0]['id'];

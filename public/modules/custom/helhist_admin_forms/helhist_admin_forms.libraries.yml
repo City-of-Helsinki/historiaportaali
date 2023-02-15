@@ -1,5 +1,8 @@
 finna_import:
   version: 1.x
+  css:
+    theme:
+      css/styles.css: {}
   js:
     js/finna_import.js: {}
   dependencies:

@@ -1,0 +1,7 @@
+#taxonomy-merge-terms .fieldset__label {
+  margin-bottom: 0.25rem;
+}
+
+#taxonomy-merge-terms #edit-terms label {
+  font-size: 1rem !important;
+}

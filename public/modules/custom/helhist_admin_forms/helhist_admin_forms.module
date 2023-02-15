@@ -127,6 +127,13 @@ function helhist_admin_forms_form_alter(&$form, &$form_state, $form_id) {
       $form['#attached']['library'][] = 'helhist_admin_forms/finna_import';
 
       break;
+
+    case 'taxonomy_merge_terms':
+      $form['#attached']['library'][] = 'helhist_admin_forms/finna_import';
+      $form['terms']['#type'] = 'checkboxes';
+      asort($form['terms']['#options']);
+
+      break;
   }
 
   return $form;

@@ -1,0 +1,16 @@
+label: 'Käännä luokittelutermejä'
+display:
+  default:
+    display_options:
+      title: 'Käännä luokittelutermejä'
+      filters:
+        name:
+          expose:
+            label: 'Hae nimellä'
+        vid:
+          expose:
+            label: Sanasto
+  page_1:
+    display_options:
+      menu:
+        title: 'Käännä luokittelutermejä'

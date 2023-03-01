@@ -1,4 +1,5 @@
 label: 'Schemalagt innehåll'
+description: 'Hitta och hantera schemalagt innehåll.'
 display:
   default:
     display_options:
@@ -63,7 +64,10 @@ display:
           expose:
             label: Språk
       title: 'Schemalagt innehåll'
-    display_title: Förvald
+      empty:
+        area_text_custom:
+          content: 'Inget schemalagt innehåll.'
+    display_title: Huvud
   overview:
     display_options:
       menu:

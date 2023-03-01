@@ -1,0 +1,68 @@
+display:
+  default:
+    display_title: Oletus
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Nousevasti
+          sort_desc_label: Laskevasti
+      pager:
+        options:
+          tags:
+            previous: '‹ Edellinen'
+            next: 'Seuraava ›'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
+      fields:
+        entity_field:
+          separator: ', '
+        entity_langcode:
+          label: 'Kokonaisuuden kieli'
+          separator: ', '
+        url:
+          label: URL-osoite
+          separator: ', '
+        last_check:
+          separator: ', '
+        method:
+          label: Tapa
+          separator: ', '
+        code:
+          label: Tilakoodi
+          separator: ', '
+        error:
+          label: Virhe
+          separator: ', '
+        fail_count:
+          separator: ', '
+        status:
+          separator: ', '
+        operations:
+          label: Toimenpiteet
+      filters:
+        url:
+          expose:
+            label: URL-osoite
+        code_1:
+          expose:
+            label: Tilakoodi
+          group_info:
+            label: Tulos
+        code:
+          expose:
+            label: Tilakoodi
+        entity_langcode:
+          expose:
+            label: 'Kokonaisuuden kieli'
+      footer:
+        result:
+          content: 'Näytetään @start - @end / @total'
+  page_1:
+    display_title: Sivu

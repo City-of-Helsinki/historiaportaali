@@ -34,6 +34,7 @@
         "drupal/helfi_proxy": "^2.2",
         "drupal/leaflet": "^2.1",
         "drupal/leaflet_more_maps": "^2.1",
+        "drupal/linkchecker": "^2.0@alpha",
         "drupal/optional_end_date": "^1.2",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/role_delegation": "^1.1",

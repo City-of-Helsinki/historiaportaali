@@ -9,6 +9,7 @@ dependencies:
     - filter
     - graphql
     - helfi_api_base
+    - linkchecker
     - matomo
     - media
     - search_api_autocomplete
@@ -21,7 +22,9 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access broken links report'
   - 'access content'
+  - 'access own broken links report'
   - 'access toolbar'
   - 'display eu cookie compliance popup'
   - 'execute graphql requests'

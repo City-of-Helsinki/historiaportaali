@@ -1,4 +1,3 @@
-label: 'Låst innehåll'
 display:
   default:
     display_title: Huvud
@@ -22,39 +21,47 @@ display:
             items_per_page_options_all_label: '- Alla -'
             offset_label: Kompensera
       fields:
-        node_bulk_form:
-          action_title: Åtgärd
-        title:
-          label: Titel
+        entity_field:
           separator: ', '
-        type:
-          label: Innehållstyp
+        entity_langcode:
           separator: ', '
-        name:
-          label: 'Lås ägare'
+        url:
+          label: URL
+          separator: ', '
+        last_check:
+          separator: ', '
+        method:
+          label: Metod
+          separator: ', '
+        code:
+          label: Statuskod
+          separator: ', '
+        error:
+          label: Fel
+          separator: ', '
+        fail_count:
+          separator: ', '
+        status:
           separator: ', '
         operations:
           label: Funktioner
       filters:
-        status:
+        url:
           expose:
-            label: 'Status för publicering'
+            label: URL
+        code_1:
+          expose:
+            label: Statuskod
           group_info:
-            label: 'Status för publicering'
+            label: Resultat
             group_items:
               1:
-                title: Publicerad
-              2:
-                title: 'Ej publicerad'
-        type:
+                title: Misslyckades
+        code:
           expose:
-            label: Innehållstyp
-        title:
-          expose:
-            label: Titel
-      title: 'Låst innehåll'
+            label: Statuskod
+      footer:
+        result:
+          content: 'Visar @start - @end av @total'
   page_1:
     display_title: Sida
-    display_options:
-      menu:
-        title: 'Låst innehåll'

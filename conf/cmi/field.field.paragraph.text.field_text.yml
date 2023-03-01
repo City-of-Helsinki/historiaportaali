@@ -7,11 +7,15 @@ dependencies:
     - paragraphs.paragraphs_type.text
   module:
     - allowed_formats
+    - linkchecker
     - text
 third_party_settings:
   allowed_formats:
     allowed_formats:
       - full_html
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
 _core:
   default_config_hash: 22M73w0UGCJ_JWhbQn53ycPhg4fBmMbTmjjI6qMYlD0
 id: paragraph.text.field_text

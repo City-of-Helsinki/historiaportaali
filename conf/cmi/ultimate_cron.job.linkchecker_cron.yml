@@ -1,14 +1,14 @@
-uuid: bff8a0a4-cff3-4d13-989c-24a00dde980e
+uuid: aeef536c-ac51-48f7-a6e3-c35d6b8361f4
 langcode: en
 status: true
 dependencies:
   module:
-    - locale
+    - linkchecker
 title: 'Default cron handler'
-id: locale_cron
+id: linkchecker_cron
 weight: 0
-module: locale
-callback: locale_cron
+module: linkchecker
+callback: linkchecker_cron
 scheduler:
   id: simple
 launcher:

@@ -1,4 +1,5 @@
 .paragraph-content .image {
+  max-width: $content-width-max;
   margin-bottom: $spacing-double;
 
   @include breakpoint(0px $breakpoint-s) {

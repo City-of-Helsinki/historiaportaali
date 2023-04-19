@@ -44,7 +44,10 @@
       
       map.eachLayer(layer => {
         if (layer.options?.entity_id == id) {
-          selectedMarker = layer;
+          if (layer._popup?._content.includes('ajax-entity="media')) {
+            selectedMarker = layer;
+            layerInsideGroup = true; // Debug random zoom/spiderfy behaviour
+          }
         }
 
         // Try to find the layer from marker groups
@@ -52,8 +55,10 @@
           const childMarkers = layer.getAllChildMarkers();
           childMarkers.forEach(childMarker => {
             if (childMarker.options?.entity_id == id) {
-              selectedMarker = childMarker;
-              layerInsideGroup = true;
+              if (childMarker._popup?._content.includes('ajax-entity="media')) {
+                selectedMarker = childMarker;
+                layerInsideGroup = true;
+              }
             }
           });
         }

@@ -6,12 +6,13 @@
 // Breakpoint helpers
 @import '~breakpoint-sass';
 
-// Folder structure based on HDBT
-@import '03_generic/*.*';
-
 // Historia.hel.fi specific
 @import 'library/**/*.*';
 @import 'layout/*.*';
 @import 'state/*.*';
 @import 'base/*.*';
 @import 'components/**/*.*';
+
+// HDBT fixes and overrides
+@import '03_generic/*.*';
+@import '06_components/paragraphs/*.*';

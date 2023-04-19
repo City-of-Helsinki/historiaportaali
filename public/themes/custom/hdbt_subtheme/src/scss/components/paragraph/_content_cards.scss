@@ -77,6 +77,7 @@ $card_spacing: $spacing-and-half;
 
 .content-card {
   width: calc(245px + #{$card_spacing});
+  max-width: 50%;
   padding-left: $card_spacing;
   // Override helfi grid system.
   margin-top: 0 !important;

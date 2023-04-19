@@ -1,12 +1,8 @@
 $arrow-container-height: 48px;
 
-.gallery {
-  margin-top: $spacing-triple;
+.paragraph-content .gallery {
+  max-width: $content-width-max;
   position: relative;
-
-  @include breakpoint($breakpoint-l) {
-    margin-top: $spacing-quadruple;
-  }
 
   .media--image__caption {
     padding-left: 0;
@@ -24,7 +20,6 @@ $arrow-container-height: 48px;
 
 .gallery__main {
   padding-bottom: $arrow-container-height + $spacing-half;
-  width: 100%;
 
   @include breakpoint($breakpoint-m) {
     padding-bottom: $arrow-container-height + $spacing-double;

@@ -1,0 +1,16 @@
+/**
+ * Fix arrows cutting off horizontally on external links.
+ */
+
+.list-of-links__item {
+  .list-of-links__item__link {
+    .link__type {
+      --icon-size: 1.5rem;
+      min-width: var(--icon-size);
+
+      @include breakpoint($breakpoint-s) {
+        --icon-size: 3rem;
+      }
+    }
+  }
+}

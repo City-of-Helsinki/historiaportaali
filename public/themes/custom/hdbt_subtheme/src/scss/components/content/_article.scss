@@ -108,7 +108,10 @@
         padding: 0 $spacing-double;
       }
 
-      // Normalize paragraph content Y-margins.
+      /* Normalize paragraph content Y-margins.
+       * After latest hdbt update, this seems
+       * unnecessary and breaks styling of
+       * component title + component.
       .paragraph-content {
         .text,
         .image,
@@ -121,6 +124,7 @@
           margin-bottom: $spacing-triple;
         }
       }
+       */
     }
 
     .component--taxonomies .component__content {

@@ -120,7 +120,7 @@
 
   article.content-card {
     padding-left: 0;
-    width: 100%;
+    min-width: 100%;
 
     .content-card__link {
       width: auto;

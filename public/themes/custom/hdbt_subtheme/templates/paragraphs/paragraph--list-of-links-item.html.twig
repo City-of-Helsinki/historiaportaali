@@ -50,12 +50,22 @@
 {% set image = content.field_list_of_links_image %}
 {% set desc = content.field_list_of_links_desc.0 %}
 
+{# Use node liftup image, if available, and no link image set #}
+{% if content.field_list_of_links_link.0['#url'].isRouted() and not image.0 %}
+  {% set nid = content.field_list_of_links_link.0['#url'].getRouteParameters() %}
+  {% set node = drupal_entity('node', nid['node']) %}
+  {% set mid = node['#node'].field_liftup_image.0.target_id %}
+  {% if mid %}
+    {% set image = drupal_entity('media', mid, 'list_of_links') %}
+  {% endif %}
+{% endif %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if list_of_links_design == 'with-image' %}
         <div class="list-of-links__item__image">
-          {% if image.0 %}
+          {% if image.0 or image['#media'] %}
             {{ image }}
           {% else %}
             {% include '@hdbt/media/image--card.html.twig' with {content: '' } %}

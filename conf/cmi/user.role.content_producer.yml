@@ -9,7 +9,6 @@ dependencies:
     - media.type.helfi_chart
     - media.type.image
     - media.type.remote_video
-    - media.type.soundcloud
     - node.type.article
     - node.type.landing_page
     - node.type.listing_page
@@ -72,7 +71,6 @@ permissions:
   - 'create page content'
   - 'create paragraph library item'
   - 'create remote_video media'
-  - 'create soundcloud media'
   - 'create terms in authors'
   - 'create terms in buildings'
   - 'create terms in copyrights'
@@ -92,7 +90,6 @@ permissions:
   - 'delete own landing_page content'
   - 'delete own page content'
   - 'delete own remote_video media'
-  - 'delete own soundcloud media'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any helfi_chart media'
@@ -102,14 +99,12 @@ permissions:
   - 'edit any map_layer content'
   - 'edit any page content'
   - 'edit any remote_video media'
-  - 'edit any soundcloud media'
   - 'edit own file media'
   - 'edit own helfi_chart media'
   - 'edit own image media'
   - 'edit own landing_page content'
   - 'edit own page content'
   - 'edit own remote_video media'
-  - 'edit own soundcloud media'
   - 'edit paragraph library item'
   - 'edit terms in authors'
   - 'edit terms in buildings'

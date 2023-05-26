@@ -133,6 +133,20 @@
               </div>
             {% endif %}
           {% endfor %}
+        {% else %}
+        {# Render placeholder image #}
+          <div class="media--image__content__image">
+            <div class="image-placeholder">
+              {% include "@hdbt/misc/icon.twig" with { icon: 'helsinki' } %}
+            </div>
+          </div>
+          <div class="media--image__content__info">
+            {% if caption %}
+              <div class="media--image__content__caption">
+                {{ caption }}
+              </div>
+            {% endif %}
+          </div>
         {% endif %}
       </div>
 

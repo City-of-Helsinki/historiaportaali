@@ -9,7 +9,6 @@ dependencies:
     - media.type.helfi_chart
     - media.type.image
     - media.type.remote_video
-    - media.type.soundcloud
     - node.type.article
     - node.type.landing_page
     - node.type.listing_page
@@ -115,7 +114,6 @@ permissions:
   - 'create paragraph library item'
   - 'create remote entities'
   - 'create remote_video media'
-  - 'create soundcloud media'
   - 'create terms in authors'
   - 'create terms in buildings'
   - 'create terms in copyrights'
@@ -139,7 +137,6 @@ permissions:
   - 'delete any media'
   - 'delete any page content'
   - 'delete any remote_video media'
-  - 'delete any soundcloud media'
   - 'delete article revisions'
   - 'delete content translations'
   - 'delete landing_page revisions'
@@ -155,7 +152,6 @@ permissions:
   - 'delete own map_layer content'
   - 'delete own page content'
   - 'delete own remote_video media'
-  - 'delete own soundcloud media'
   - 'delete page revisions'
   - 'delete remote entities'
   - 'delete terms in authors'
@@ -178,7 +174,6 @@ permissions:
   - 'edit any map_layer content'
   - 'edit any page content'
   - 'edit any remote_video media'
-  - 'edit any soundcloud media'
   - 'edit own article content'
   - 'edit own file media'
   - 'edit own helfi_chart media'
@@ -188,7 +183,6 @@ permissions:
   - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
-  - 'edit own soundcloud media'
   - 'edit paragraph library item'
   - 'edit remote entities'
   - 'edit terms in authors'
@@ -236,7 +230,6 @@ permissions:
   - 'translate phenomena taxonomy_term'
   - 'translate phenomenon taxonomy_term'
   - 'translate remote_video media'
-  - 'translate soundcloud media'
   - 'translate source taxonomy_term'
   - 'update any media'
   - 'update content translations'

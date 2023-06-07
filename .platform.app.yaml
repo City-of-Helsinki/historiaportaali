@@ -25,7 +25,7 @@ runtime:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-  database: "mysqldb3:mysql"
+  database: "mysqldb:mysql"
   redis: "rediscache:redis"
   elasticsearch: "elasticsearch:elasticsearch"
   #solr: "solrsearch:solr"

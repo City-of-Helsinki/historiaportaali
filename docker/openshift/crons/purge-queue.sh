@@ -12,7 +12,7 @@ function has_items {
 while true
 do
   if has_items; then
-    # drush p:queue-work --no-interaction --finish --format=json | jq --arg DATE "$(date +'%Y-%m-%dT%H:%M:%S%:z')" -c '.[] |= . + {"date" : $DATE}'
+    drush p:queue-work --no-interaction --finish --format=json | jq --arg DATE "$(date +'%Y-%m-%dT%H:%M:%S%:z')" -c '.[] |= . + {"date" : $DATE}'
   fi
   # Sleep for 60 seconds.
   sleep 60

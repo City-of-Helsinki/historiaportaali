@@ -2,7 +2,7 @@
 
 mysqldb:
   type: mysql:10.3
-  disk: 1536
+  disk: 3584
 rediscache:
   type: redis:3.2
 elasticsearch:

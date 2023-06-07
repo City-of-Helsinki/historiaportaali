@@ -1,12 +1,8 @@
 # The services of the project.
 
 mysqldb:
-  type: mysql:10.11
+  type: oracle-mysql:8.0
   disk: 3584
-  configuration:
-    properties:
-      default_charset: utf8mb4
-      default_collation: utf8mb4_0900_ai_ci
 rediscache:
   type: redis:3.2
 elasticsearch:

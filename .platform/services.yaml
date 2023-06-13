@@ -1,6 +1,6 @@
 # The services of the project.
 
-mysqldb:
+mysql:
   type: oracle-mysql:8.0
   disk: 3584
 rediscache:

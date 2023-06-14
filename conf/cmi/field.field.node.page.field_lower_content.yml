@@ -7,15 +7,17 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.chart
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
     - paragraphs.paragraphs_type.content_liftup
-    - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.liftup_with_image
     - paragraphs.paragraphs_type.list_of_links
     - paragraphs.paragraphs_type.phasing
     - paragraphs.paragraphs_type.remote_video
+    - paragraphs.paragraphs_type.target_group_links
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.timeline
   module:
@@ -38,72 +40,71 @@ settings:
     target_bundles:
       text: text
       columns: columns
-      accordion: accordion
       image: image
       gallery: gallery
       list_of_links: list_of_links
       content_cards: content_cards
-      content_liftup: content_liftup
+      accordion: accordion
       banner: banner
-      from_library: from_library
+      liftup_with_image: liftup_with_image
       remote_video: remote_video
       chart: chart
       timeline: timeline
-      contact_card_listing: contact_card_listing
-      event_list: event_list
+      content_liftup: content_liftup
       phasing: phasing
+      target_group_links: target_group_links
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -27
-        enabled: true
-      accordion_item:
-        weight: -22
-        enabled: false
-      banner:
         weight: -21
         enabled: true
-      chart:
-        weight: 25
-        enabled: true
-      columns:
-        weight: -28
-        enabled: true
-      contact_card:
-        weight: 30
-        enabled: false
-      contact_card_listing:
-        weight: 31
-        enabled: true
-      content_cards:
-        weight: -23
-        enabled: true
-      content_liftup:
-        weight: -22
-        enabled: true
-      event_list:
-        weight: 30
-        enabled: true
-      from_library:
-        weight: 21
-        enabled: true
-      gallery:
-        weight: -25
-        enabled: true
-      gallery_slide:
+      accordion_item:
         weight: -20
         enabled: false
-      hero:
-        weight: -19
-        enabled: false
-      image:
+      banner:
+        weight: -16
+        enabled: true
+      chart:
+        weight: 35
+        enabled: true
+      columns:
         weight: -26
         enabled: true
-      liftup_with_image:
+      contact_card:
+        weight: 37
+        enabled: false
+      contact_card_listing:
+        weight: 38
+        enabled: false
+      content_cards:
+        weight: -22
+        enabled: true
+      content_liftup:
+        weight: 40
+        enabled: true
+      event_list:
+        weight: 41
+        enabled: false
+      from_library:
+        weight: 21
+        enabled: false
+      gallery:
+        weight: -24
+        enabled: true
+      gallery_slide:
+        weight: -19
+        enabled: false
+      hero:
         weight: -18
         enabled: false
+      image:
+        weight: -25
+        enabled: true
+      liftup_with_image:
+        weight: -15
+        enabled: true
       list_of_links:
-        weight: -24
+        weight: -23
         enabled: true
       list_of_links_item:
         weight: -17
@@ -112,19 +113,34 @@ settings:
         weight: 32
         enabled: false
       phasing:
-        weight: 50
+        weight: 51
         enabled: true
       phasing_item:
-        weight: 30
+        weight: 52
+        enabled: false
+      popular_service_item:
+        weight: 54
+        enabled: false
+      popular_services:
+        weight: 53
         enabled: false
       remote_video:
-        weight: 32
+        weight: 27
         enabled: true
-      social_media_link:
-        weight: 46
+      sidebar_text:
+        weight: 56
         enabled: false
+      social_media_link:
+        weight: 57
+        enabled: false
+      target_group_link_item:
+        weight: 59
+        enabled: false
+      target_group_links:
+        weight: 58
+        enabled: true
       text:
-        weight: -29
+        weight: -27
         enabled: true
       timeline:
         weight: 35

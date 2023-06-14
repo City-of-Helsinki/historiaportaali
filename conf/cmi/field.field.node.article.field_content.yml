@@ -7,7 +7,6 @@ dependencies:
     - node.type.article
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
-    - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.list_of_links
@@ -38,7 +37,6 @@ settings:
       gallery: gallery
       list_of_links: list_of_links
       content_cards: content_cards
-      from_library: from_library
       remote_video: remote_video
       timeline: timeline
     negate: 0
@@ -52,15 +50,30 @@ settings:
       banner:
         weight: -16
         enabled: false
+      chart:
+        weight: 35
+        enabled: false
       columns:
         weight: -26
         enabled: true
+      contact_card:
+        weight: 37
+        enabled: false
+      contact_card_listing:
+        weight: 38
+        enabled: false
       content_cards:
         weight: -22
         enabled: true
+      content_liftup:
+        weight: 40
+        enabled: false
+      event_list:
+        weight: 41
+        enabled: false
       from_library:
         weight: 21
-        enabled: true
+        enabled: false
       gallery:
         weight: -24
         enabled: true
@@ -85,9 +98,33 @@ settings:
       map_api_endpoint:
         weight: 32
         enabled: false
+      phasing:
+        weight: 51
+        enabled: false
+      phasing_item:
+        weight: 52
+        enabled: false
+      popular_service_item:
+        weight: 54
+        enabled: false
+      popular_services:
+        weight: 53
+        enabled: false
       remote_video:
         weight: 27
         enabled: true
+      sidebar_text:
+        weight: 56
+        enabled: false
+      social_media_link:
+        weight: 57
+        enabled: false
+      target_group_link_item:
+        weight: 59
+        enabled: false
+      target_group_links:
+        weight: 58
+        enabled: false
       text:
         weight: -27
         enabled: true

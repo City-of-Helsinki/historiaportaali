@@ -6,18 +6,14 @@ dependencies:
     - field.storage.node.field_content
     - node.type.page
     - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
-    - paragraphs.paragraphs_type.content_liftup
-    - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.liftup_with_image
     - paragraphs.paragraphs_type.list_of_links
-    - paragraphs.paragraphs_type.phasing
     - paragraphs.paragraphs_type.remote_video
     - paragraphs.paragraphs_type.text
-    - paragraphs.paragraphs_type.timeline
   module:
     - entity_reference_revisions
 _core:
@@ -38,57 +34,50 @@ settings:
     target_bundles:
       text: text
       columns: columns
-      accordion: accordion
       image: image
       gallery: gallery
       list_of_links: list_of_links
       content_cards: content_cards
-      content_liftup: content_liftup
-      banner: banner
-      from_library: from_library
+      accordion: accordion
+      liftup_with_image: liftup_with_image
       remote_video: remote_video
-      chart: chart
-      timeline: timeline
-      contact_card_listing: contact_card_listing
-      event_list: event_list
-      phasing: phasing
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -25
+        weight: -21
         enabled: true
       accordion_item:
         weight: -20
         enabled: false
       banner:
         weight: -16
-        enabled: true
+        enabled: false
       chart:
-        weight: 25
-        enabled: true
+        weight: 35
+        enabled: false
       columns:
         weight: -26
         enabled: true
       contact_card:
-        weight: 30
+        weight: 37
         enabled: false
       contact_card_listing:
-        weight: 31
-        enabled: true
+        weight: 38
+        enabled: false
       content_cards:
-        weight: -21
-        enabled: true
-      content_liftup:
         weight: -22
         enabled: true
+      content_liftup:
+        weight: 40
+        enabled: false
       event_list:
-        weight: 30
-        enabled: true
+        weight: 41
+        enabled: false
       from_library:
         weight: 21
-        enabled: true
+        enabled: false
       gallery:
-        weight: -23
+        weight: -24
         enabled: true
       gallery_slide:
         weight: -19
@@ -97,13 +86,13 @@ settings:
         weight: -18
         enabled: false
       image:
-        weight: -24
+        weight: -25
         enabled: true
       liftup_with_image:
         weight: -15
-        enabled: false
+        enabled: true
       list_of_links:
-        weight: -22
+        weight: -23
         enabled: true
       list_of_links_item:
         weight: -17
@@ -112,23 +101,38 @@ settings:
         weight: 32
         enabled: false
       phasing:
-        weight: 50
-        enabled: true
+        weight: 51
+        enabled: false
       phasing_item:
-        weight: 30
+        weight: 52
+        enabled: false
+      popular_service_item:
+        weight: 54
+        enabled: false
+      popular_services:
+        weight: 53
         enabled: false
       remote_video:
         weight: 27
         enabled: true
+      sidebar_text:
+        weight: 56
+        enabled: false
       social_media_link:
-        weight: 46
+        weight: 57
+        enabled: false
+      target_group_link_item:
+        weight: 59
+        enabled: false
+      target_group_links:
+        weight: 58
         enabled: false
       text:
         weight: -27
         enabled: true
       timeline:
         weight: 35
-        enabled: true
+        enabled: false
       timeline_item:
         weight: 36
         enabled: false

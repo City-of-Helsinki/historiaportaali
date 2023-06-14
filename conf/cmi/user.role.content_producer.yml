@@ -13,6 +13,7 @@ dependencies:
     - node.type.landing_page
     - node.type.listing_page
     - node.type.map_layer
+    - node.type.map_page
     - node.type.page
     - taxonomy.vocabulary.authors
     - taxonomy.vocabulary.buildings
@@ -22,20 +23,20 @@ dependencies:
     - taxonomy.vocabulary.languages
     - taxonomy.vocabulary.neighbourhoods
     - taxonomy.vocabulary.phenomena
+    - taxonomy.vocabulary.turning_points
     - workflows.workflow.articles_editorial_workflow
   module:
     - content_moderation
     - content_translation
-    - file
+    - entity_usage
     - filter
-    - helfi_api_base
     - locale
     - media
+    - menu_link_content
     - node
     - paragraphs
-    - paragraphs_library
     - path
-    - scheduler
+    - redirect
     - system
     - taxonomy
     - toolbar
@@ -43,33 +44,32 @@ dependencies:
 _core:
   default_config_hash: EVzxFtbOrGVTXWw2GTh1fEzzqruPEqSo84k10-BF6eA
 id: content_producer
-label: 'Content producer'
+label: 'Sisällöntuottaja suppea'
 weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access files overview'
+  - 'access entity usage statistics'
   - 'access media overview'
-  - 'access remote entities overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer menu'
   - 'administer nodes'
-  - 'administer paragraphs library'
+  - 'administer redirects'
   - 'cancel account'
   - 'change own username'
   - 'create article content'
+  - 'create content translations'
   - 'create file media'
   - 'create helfi_chart media'
   - 'create image media'
-  - 'create landing_page content'
   - 'create listing_page content'
   - 'create map_layer content'
   - 'create media'
   - 'create page content'
-  - 'create paragraph library item'
   - 'create remote_video media'
   - 'create terms in authors'
   - 'create terms in buildings'
@@ -82,14 +82,9 @@ permissions:
   - 'create terms in phenomena'
   - 'create terms in phenomenon'
   - 'create terms in source'
+  - 'create terms in turning_points'
   - 'create url aliases'
   - 'delete media'
-  - 'delete own file media'
-  - 'delete own helfi_chart media'
-  - 'delete own image media'
-  - 'delete own landing_page content'
-  - 'delete own page content'
-  - 'delete own remote_video media'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any helfi_chart media'
@@ -99,13 +94,15 @@ permissions:
   - 'edit any map_layer content'
   - 'edit any page content'
   - 'edit any remote_video media'
+  - 'edit own article content'
   - 'edit own file media'
   - 'edit own helfi_chart media'
   - 'edit own image media'
   - 'edit own landing_page content'
+  - 'edit own listing_page content'
+  - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
-  - 'edit paragraph library item'
   - 'edit terms in authors'
   - 'edit terms in buildings'
   - 'edit terms in copyrights'
@@ -117,17 +114,37 @@ permissions:
   - 'edit terms in phenomena'
   - 'edit terms in phenomenon'
   - 'edit terms in source'
+  - 'edit terms in turning_points'
   - 'revert article revisions'
-  - 'revert landing_page revisions'
   - 'revert listing_page revisions'
   - 'revert map_layer revisions'
   - 'revert page revisions'
-  - 'schedule publishing of nodes'
   - 'set landing_page published on date'
   - 'set page published on date'
+  - 'translate any entity'
+  - 'translate article node'
+  - 'translate authors taxonomy_term'
+  - 'translate buildings taxonomy_term'
+  - 'translate copyrights taxonomy_term'
   - 'translate editable entities'
+  - 'translate file media'
+  - 'translate formats taxonomy_term'
+  - 'translate image media'
   - 'translate interface'
+  - 'translate keywords taxonomy_term'
+  - 'translate landing_page node'
+  - 'translate languages taxonomy_term'
+  - 'translate listing_page node'
+  - 'translate map_layer node'
+  - 'translate map_page node'
+  - 'translate menu_link_content'
+  - 'translate neighbourhoods taxonomy_term'
+  - 'translate page node'
+  - 'translate phenomena taxonomy_term'
+  - 'translate remote_video media'
+  - 'translate turning_points taxonomy_term'
   - 'update any media'
+  - 'update content translations'
   - 'update media'
   - 'use articles_editorial_workflow transition create_new_draft'
   - 'use articles_editorial_workflow transition submit_for_review'
@@ -135,18 +152,21 @@ permissions:
   - 'use text format minimal'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any unpublished article content'
   - 'view any unpublished content'
   - 'view any unpublished landing_page content'
+  - 'view any unpublished listing_page content'
+  - 'view any unpublished map_layer content'
+  - 'view any unpublished map_page content'
   - 'view any unpublished page content'
   - 'view article revisions'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'
   - 'view map_layer revisions'
+  - 'view map_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
-  - 'view remote entities'
-  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'

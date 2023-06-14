@@ -2,13 +2,9 @@ uuid: 2aaa90d3-acc1-4c5f-9a79-7b913a848123
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.full_html
   module:
     - eu_cookie_compliance
-    - filter
     - graphql
-    - helfi_api_base
     - linkchecker
     - matomo
     - media
@@ -18,7 +14,7 @@ dependencies:
 _core:
   default_config_hash: 83Nuup-6oYkkdAsvg3nrR2pBOgtTXEV1JrzpCCLkYLM
 id: authenticated
-label: 'Authenticated user'
+label: 'Sisäänkirjautunut käyttäjä'
 weight: 1
 is_admin: false
 permissions:
@@ -30,6 +26,4 @@ permissions:
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
   - 'use search_api_autocomplete for search'
-  - 'use text format full_html'
   - 'view media'
-  - 'view remote entities'

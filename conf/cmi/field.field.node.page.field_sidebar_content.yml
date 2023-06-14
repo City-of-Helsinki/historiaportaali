@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_sidebar_content
     - node.type.page
-    - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.sidebar_text
   module:
     - entity_reference_revisions
@@ -26,7 +25,6 @@ settings:
   handler_settings:
     target_bundles:
       sidebar_text: sidebar_text
-      from_library: from_library
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -38,8 +36,17 @@ settings:
       banner:
         weight: -37
         enabled: false
+      chart:
+        weight: 35
+        enabled: false
       columns:
         weight: -36
+        enabled: false
+      contact_card:
+        weight: 37
+        enabled: false
+      contact_card_listing:
+        weight: 38
         enabled: false
       content_cards:
         weight: -35
@@ -47,9 +54,12 @@ settings:
       content_liftup:
         weight: -34
         enabled: false
+      event_list:
+        weight: 41
+        enabled: false
       from_library:
         weight: -32
-        enabled: true
+        enabled: false
       gallery:
         weight: -31
         enabled: false
@@ -71,8 +81,20 @@ settings:
       list_of_links_item:
         weight: -25
         enabled: false
-      map:
-        weight: -24
+      map_api_endpoint:
+        weight: 50
+        enabled: false
+      phasing:
+        weight: 51
+        enabled: false
+      phasing_item:
+        weight: 52
+        enabled: false
+      popular_service_item:
+        weight: 53
+        enabled: false
+      popular_services:
+        weight: 54
         enabled: false
       remote_video:
         weight: -23
@@ -80,10 +102,22 @@ settings:
       sidebar_text:
         weight: -33
         enabled: true
+      social_media_link:
+        weight: 57
+        enabled: false
+      target_group_link_item:
+        weight: 58
+        enabled: false
+      target_group_links:
+        weight: 59
+        enabled: false
       text:
         weight: -22
         enabled: false
-      unit_search:
-        weight: -21
+      timeline:
+        weight: 61
+        enabled: false
+      timeline_item:
+        weight: 62
         enabled: false
 field_type: entity_reference_revisions

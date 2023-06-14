@@ -13,6 +13,7 @@ dependencies:
     - node.type.landing_page
     - node.type.listing_page
     - node.type.map_layer
+    - node.type.map_page
     - node.type.page
     - taxonomy.vocabulary.authors
     - taxonomy.vocabulary.buildings
@@ -22,41 +23,34 @@ dependencies:
     - taxonomy.vocabulary.languages
     - taxonomy.vocabulary.neighbourhoods
     - taxonomy.vocabulary.phenomena
+    - taxonomy.vocabulary.turning_points
     - workflows.workflow.articles_editorial_workflow
   module:
-    - block
     - config_translation
     - content_lock
     - content_moderation
     - content_translation
     - entity_usage
-    - eu_cookie_compliance
-    - file
     - filter
-    - helfi_api_base
     - locale
     - media
     - menu_link_attributes
     - menu_link_content
     - node
     - paragraphs
-    - paragraphs_library
     - path
-    - pathauto
     - redirect
     - role_delegation
-    - scheduler
-    - simple_sitemap
     - system
     - taxonomy
     - term_merge
     - toolbar
-    - update
+    - view_unpublished
     - views_bulk_edit
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
-label: Administrator
+label: Pääkäyttäjä
 weight: 5
 is_admin: null
 permissions:
@@ -64,30 +58,19 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access entity usage statistics'
-  - 'access files overview'
   - 'access media overview'
-  - 'access remote entities overview'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
-  - 'administer blocks'
   - 'administer content translation'
   - 'administer content types'
-  - 'administer eu cookie compliance categories'
-  - 'administer eu cookie compliance popup'
   - 'administer hotjar settings'
   - 'administer menu'
   - 'administer nodes'
-  - 'administer paragraphs library'
-  - 'administer paragraphs settings'
-  - 'administer paragraphs types'
-  - 'administer pathauto'
   - 'administer redirects'
-  - 'administer scheduler'
   - 'administer site configuration'
-  - 'administer sitemap settings'
   - 'administer taxonomy'
   - 'administer url aliases'
   - 'administer users'
@@ -106,13 +89,10 @@ permissions:
   - 'create file media'
   - 'create helfi_chart media'
   - 'create image media'
-  - 'create landing_page content'
   - 'create listing_page content'
   - 'create map_layer content'
   - 'create media'
   - 'create page content'
-  - 'create paragraph library item'
-  - 'create remote entities'
   - 'create remote_video media'
   - 'create terms in authors'
   - 'create terms in buildings'
@@ -125,13 +105,13 @@ permissions:
   - 'create terms in phenomena'
   - 'create terms in phenomenon'
   - 'create terms in source'
+  - 'create terms in turning_points'
   - 'create url aliases'
   - 'delete all revisions'
   - 'delete any article content'
   - 'delete any file media'
   - 'delete any helfi_chart media'
   - 'delete any image media'
-  - 'delete any landing_page content'
   - 'delete any listing_page content'
   - 'delete any map_layer content'
   - 'delete any media'
@@ -139,7 +119,6 @@ permissions:
   - 'delete any remote_video media'
   - 'delete article revisions'
   - 'delete content translations'
-  - 'delete landing_page revisions'
   - 'delete listing_page revisions'
   - 'delete map_layer revisions'
   - 'delete media'
@@ -147,13 +126,11 @@ permissions:
   - 'delete own file media'
   - 'delete own helfi_chart media'
   - 'delete own image media'
-  - 'delete own landing_page content'
   - 'delete own listing_page content'
   - 'delete own map_layer content'
   - 'delete own page content'
   - 'delete own remote_video media'
   - 'delete page revisions'
-  - 'delete remote entities'
   - 'delete terms in authors'
   - 'delete terms in buildings'
   - 'delete terms in copyrights'
@@ -165,6 +142,7 @@ permissions:
   - 'delete terms in phenomena'
   - 'delete terms in phenomenon'
   - 'delete terms in source'
+  - 'delete terms in turning_points'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any helfi_chart media'
@@ -183,8 +161,6 @@ permissions:
   - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
-  - 'edit paragraph library item'
-  - 'edit remote entities'
   - 'edit terms in authors'
   - 'edit terms in buildings'
   - 'edit terms in copyrights'
@@ -196,15 +172,14 @@ permissions:
   - 'edit terms in phenomena'
   - 'edit terms in phenomenon'
   - 'edit terms in source'
+  - 'edit terms in turning_points'
   - 'link to any page'
   - 'merge taxonomy terms'
   - 'revert all revisions'
   - 'revert article revisions'
-  - 'revert landing_page revisions'
   - 'revert listing_page revisions'
   - 'revert map_layer revisions'
   - 'revert page revisions'
-  - 'schedule publishing of nodes'
   - 'set landing_page published on date'
   - 'set page published on date'
   - 'translate any entity'
@@ -224,6 +199,8 @@ permissions:
   - 'translate landing_page node'
   - 'translate languages taxonomy_term'
   - 'translate listing_page node'
+  - 'translate map_layer node'
+  - 'translate map_page node'
   - 'translate menu_link_content'
   - 'translate neighbourhoods taxonomy_term'
   - 'translate page node'
@@ -231,6 +208,7 @@ permissions:
   - 'translate phenomenon taxonomy_term'
   - 'translate remote_video media'
   - 'translate source taxonomy_term'
+  - 'translate turning_points taxonomy_term'
   - 'update any media'
   - 'update content translations'
   - 'update media'
@@ -244,18 +222,23 @@ permissions:
   - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any unpublished article content'
   - 'view any unpublished content'
+  - 'view any unpublished landing_page content'
+  - 'view any unpublished listing_page content'
+  - 'view any unpublished map_layer content'
+  - 'view any unpublished map_page content'
+  - 'view any unpublished page content'
   - 'view article revisions'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'
   - 'view map_layer revisions'
+  - 'view map_page revisions'
   - 'view media'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
-  - 'view remote entities'
-  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
-  - 'view update notifications'
+  - 'view user email addresses'

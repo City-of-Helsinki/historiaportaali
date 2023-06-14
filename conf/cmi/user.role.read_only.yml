@@ -2,16 +2,45 @@ uuid: 4048aa3f-63f8-4790-9ad2-663351837c97
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.article
+    - node.type.landing_page
+    - node.type.listing_page
+    - node.type.map_layer
+    - node.type.map_page
+    - node.type.page
   module:
+    - content_moderation
+    - entity_usage
+    - media
+    - node
     - paragraphs
     - toolbar
     - view_unpublished
 id: read_only
-label: 'Read only'
+label: Lukija
 weight: 2
 is_admin: null
 permissions:
+  - 'access content overview'
+  - 'access entity usage statistics'
+  - 'access media overview'
   - 'access toolbar'
+  - 'view all revisions'
+  - 'view any unpublished article content'
+  - 'view any unpublished content'
   - 'view any unpublished landing_page content'
+  - 'view any unpublished listing_page content'
+  - 'view any unpublished map_layer content'
+  - 'view any unpublished map_page content'
   - 'view any unpublished page content'
+  - 'view article revisions'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view listing_page revisions'
+  - 'view map_layer revisions'
+  - 'view map_page revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
   - 'view unpublished paragraphs'

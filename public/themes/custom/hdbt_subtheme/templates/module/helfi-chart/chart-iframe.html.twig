@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Theme override to present a chart iframe.
+ *
+ * @see helfi_charts_preprocess_chart_iframe()
+ * @see helfi_platform_config/helfi_features/helfi_charts/templates/chart-iframe.html.twig.
+ */
+#}
+{% if url and title %}
+  <iframe class="helfi-charts-content" allow="fullscreen" src="{{ url }}" title="{{ title }}"></iframe>
+{% endif %}

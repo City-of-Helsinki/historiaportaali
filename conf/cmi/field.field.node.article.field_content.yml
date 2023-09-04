@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.article
+    - paragraphs.paragraphs_type.chart
     - paragraphs.paragraphs_type.columns
     - paragraphs.paragraphs_type.content_cards
     - paragraphs.paragraphs_type.gallery
@@ -38,6 +39,7 @@ settings:
       list_of_links: list_of_links
       content_cards: content_cards
       remote_video: remote_video
+      chart: chart
       timeline: timeline
     negate: 0
     target_bundles_drag_drop:
@@ -52,7 +54,7 @@ settings:
         enabled: false
       chart:
         weight: 35
-        enabled: false
+        enabled: true
       columns:
         weight: -26
         enabled: true

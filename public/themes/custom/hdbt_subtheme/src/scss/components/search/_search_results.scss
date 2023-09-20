@@ -2,7 +2,15 @@
   position: relative;
 
   .search-wrapper.is-loading & {
-    opacity: 0.4;
+    .search-header__left,
+    .search-header__right {
+      opacity: 0.4;
+
+      // Hide "0 results" while loading.
+      h3 {
+        display: none;
+      }
+    }
   }
 
   .spinner-container {

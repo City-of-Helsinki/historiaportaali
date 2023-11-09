@@ -2,7 +2,8 @@
   .page-type--article &,
   .page-type--listing-page &,
   .media--type-image &,
-  .media--type-remote-video & {
+  .media--type-remote-video &,
+  .webform-submission-form & {
     background-color: $color-bg-yellow;
     padding-top: $spacing;
 

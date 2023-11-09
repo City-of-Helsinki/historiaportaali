@@ -46,6 +46,32 @@
 
         }
       }
+
+      .webform-quiz-element-result-list {
+        padding-left: $spacing-half;
+
+        .messages--status {
+          box-shadow: -$spacing-half 0 0 $color-metro-dark;
+          padding: $spacing;
+          border: 1px solid;
+          background-color: var(--color-copper-medium-light);
+        }
+
+        .messages--neutral {
+          box-shadow: -$spacing-half 0 0 var(--color-fog);
+        }
+
+        .messages--error {
+          box-shadow: -$spacing-half 0 0 $color-metro-dark;
+          padding: $spacing;
+          border: 1px solid;
+          background-color: var(--color-metro-medium-light);
+        }
+      }
+
+      .webform-confirmation__back {
+
+      }
     }
   }
 }

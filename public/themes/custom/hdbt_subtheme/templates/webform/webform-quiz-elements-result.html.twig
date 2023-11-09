@@ -21,10 +21,10 @@
       <li class="messages messages--{{ quiz_option.is_selected ? (quiz_option.is_correct ? 'status' : 'error') : 'neutral' }}">
         <strong>{{ quiz_option.option }}</strong>
         {% if quiz_option.is_selected %}
-        <p class="form-item">{{ quiz_option.feedback|raw }}</p>
+          <p>{{ quiz_option.feedback|raw }}</p>
         {% endif %}
       </li>
-      {%- endfor %}
+    {%- endfor %}
     </ul>
   </div>
 </p>

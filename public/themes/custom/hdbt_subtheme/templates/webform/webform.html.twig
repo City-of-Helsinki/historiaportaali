@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme implementation for a 'webform' element.
+ *
+ * This is an copy of the webform.html.twig theme_wrapper which includes the
+ * 'title_prefix' and 'title_suffix' variables needed for
+ * contextual links to appear.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the webform.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_webform()
+ * @see _webform_form_after_build()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes.addClass(classes) }}>
+  <div class="before-content">
+    <div class="page-title">
+      {{ drupal_block('page_title_block', wrapper=false) }}
+    </div>
+
+    {% embed "@hdbt/misc/container.twig" with { container_element: 'webform_header' } %}
+      {% block container_content %}
+        {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
+        {{ drupal_block('hdbt_content_social_sharing_block') }}
+      {% endblock container_content %}
+    {% endembed %}
+
+    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#FAF9F7' } %}
+  </div>
+
+  <div class="main-content">
+    <form{{ attributes }}>
+      {{ title_prefix }}
+      {{ children }}
+      {{ title_suffix }}
+    </form>
+  </div>
+</article>

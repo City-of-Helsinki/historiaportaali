@@ -6,7 +6,7 @@
     "@apollo/client": "^3.5.6",
     "@apollo/react-hooks": "^4.0.0",
     "framer-motion": "^5.6.0",
-    "graphql": "^16.2.0",
+    "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "hds-react": "^1.12.0",
     "react": "^17.0.2",

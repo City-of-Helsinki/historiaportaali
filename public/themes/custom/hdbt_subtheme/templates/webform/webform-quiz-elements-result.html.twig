@@ -21,7 +21,7 @@
       <li class="messages messages--{{ quiz_option.is_selected ? (quiz_option.is_correct ? 'status' : 'error') : 'neutral' }}">
         <strong>{{ quiz_option.option }}</strong>
         {% if quiz_option.is_selected %}
-          <p>{{ quiz_option.feedback|raw }}</p>
+          <p>{{ quiz_option.feedback|preg_replace('/http[s]?:\\/\\/[a-zA-Z0-9.\\-\\/?#=&]+/', '<a href=\"$0\">$0</a>')|raw }}</p>
         {% endif %}
       </li>
     {%- endfor %}

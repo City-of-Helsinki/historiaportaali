@@ -34,8 +34,8 @@ settings:
         -
           name: Media
           items:
-            - highlight
             - quote
+            - DrupalMediaLibrary
         -
           name: Links
           items:

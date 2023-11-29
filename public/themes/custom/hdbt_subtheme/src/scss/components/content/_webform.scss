@@ -1,0 +1,77 @@
+.page-type--webform {
+
+  .before-content {
+    .webform-header__container {
+      > div {
+        max-width: $content-width-max;
+
+        @include breakpoint($breakpoint-m) {
+          padding-left: $spacing-triple * 2;
+        }
+      }
+    }
+  }
+
+  .main-content {
+    form {
+      width: 100%;
+      max-width: $content-width-max;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: $spacing;
+      padding-right: $spacing;
+
+      @include breakpoint($breakpoint-l) {
+        padding-left: $spacing-and-half;
+        padding-right: $spacing-and-half;
+      }
+
+      fieldset {
+        legend {
+          span {
+            @include font-size(18px, 30px);
+            display: block;
+            color: $color-black-90;
+            font-weight: $font-weight-medium;
+            margin: $spacing-half 0;
+    
+            @include breakpoint($breakpoint-m) {
+              @include font-size(24px, 30px);
+              margin: $spacing 0;
+            }
+          }
+        }
+
+        .fieldset-wrapper {
+
+        }
+      }
+
+      .webform-quiz-element-result-list {
+        padding-left: $spacing-half;
+
+        .messages--status {
+          box-shadow: -$spacing-half 0 0 $color-metro-dark;
+          padding: $spacing;
+          border: 1px solid;
+          background-color: var(--color-copper-medium-light);
+        }
+
+        .messages--neutral {
+          box-shadow: -$spacing-half 0 0 var(--color-fog);
+        }
+
+        .messages--error {
+          box-shadow: -$spacing-half 0 0 $color-metro-dark;
+          padding: $spacing;
+          border: 1px solid;
+          background-color: var(--color-metro-medium-light);
+        }
+      }
+
+      .webform-confirmation__back {
+
+      }
+    }
+  }
+}

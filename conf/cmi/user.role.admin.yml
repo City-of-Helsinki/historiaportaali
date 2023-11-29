@@ -47,6 +47,7 @@ dependencies:
     - toolbar
     - view_unpublished
     - views_bulk_edit
+    - webform
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
@@ -74,6 +75,7 @@ permissions:
   - 'administer taxonomy'
   - 'administer url aliases'
   - 'administer users'
+  - 'administer webform'
   - 'assign admin role'
   - 'assign all roles'
   - 'assign content_producer role'

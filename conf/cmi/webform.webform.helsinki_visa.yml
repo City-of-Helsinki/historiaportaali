@@ -22,13 +22,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
     '#options':
       q1_a: 'Kustaa Vaasa'
       q1_b: 'Kuningatar Kristiina'
@@ -37,10 +37,6 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
-  q1_result:
-    '#type': webform_quiz_elements_result
-    '#title': q1_result
-    '#source': q1
   q2:
     '#type': quiz_element_radios
     '#title': 'Mihin Helsinki alun perin perustettiin?'
@@ -50,13 +46,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
     '#options':
       q2_a: Vanhankaupunginlahdelle
       q2_b: Sörnäistenniemeen
@@ -65,10 +61,6 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
-  q2_result:
-    '#type': webform_quiz_elements_result
-    '#title': q2_result
-    '#source': q2
   q3:
     '#type': quiz_element_radios
     '#title': 'Minä vuonna Helsinki perustettiin?'
@@ -78,13 +70,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
     '#options':
       q3_a: '1550'
       q3_b: '1640'
@@ -93,10 +85,6 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
-  q3_result:
-    '#type': webform_quiz_elements_result
-    '#title': q3_result
-    '#source': q3
   q4:
     '#type': quiz_element_radios
     '#title': 'Mikä on Helsingin perustamispäivä?'
@@ -106,13 +94,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.'
+        feedback: 'Vastauksesi oli väärin'
     '#options':
       q4_a: 12.6.
       q4_b: 14.6.
@@ -121,6 +109,18 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
+  q1_result:
+    '#type': webform_quiz_elements_result
+    '#title': q1_result
+    '#source': q1
+  q2_result:
+    '#type': webform_quiz_elements_result
+    '#title': q2_result
+    '#source': q2
+  q3_result:
+    '#type': webform_quiz_elements_result
+    '#title': q3_result
+    '#source': q3
   q4_result:
     '#type': webform_quiz_elements_result
     '#title': q4_result
@@ -241,7 +241,7 @@ settings:
   confirmation_message: '[webform_submission:values:html]'
   confirmation_attributes: {  }
   confirmation_back: true
-  confirmation_back_label: 'Takaisin tietovisaan'
+  confirmation_back_label: 'Takaisin visaan'
   confirmation_back_attributes:
     class:
       - hds-button

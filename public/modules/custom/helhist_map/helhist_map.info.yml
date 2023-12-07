@@ -1,5 +1,5 @@
 name: 'HelHist Map'
 type: module
 description: 'Provides map related customizations.'
-core_version_requirement: '^9'
+core_version_requirement: ^9 || ^10
 package: 'Custom'

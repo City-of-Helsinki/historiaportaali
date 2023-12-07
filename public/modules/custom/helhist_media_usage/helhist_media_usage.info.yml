@@ -1,5 +1,5 @@
 name: 'HelHist Media Usage'
 type: module
 description: 'Provides a custom media usage block'
-core_version_requirement: '^9'
+core_version_requirement: ^9 || ^10
 package: 'Custom'

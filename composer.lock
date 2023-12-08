@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02ad38c89534276b03442ace1ec20d6a",
+    "content-hash": "feb1b7a6ce6127656b7095e74e53092e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3966,7 +3966,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/facets.git",
-                "reference": "c3110f5b6dc6b7f9a9e296288259983a7dc05ed0"
+                "reference": "4f1be7528c442ff1f1867799220dfb59114c5735"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10.0"
@@ -3975,9 +3975,9 @@
                 "drupal/search_api": "<1.14"
             },
             "require-dev": {
-                "drupal/jquery_ui_slider": "~1.1",
-                "drupal/jquery_ui_touch_punch": "~1.0",
-                "drupal/search_api": "^1.25||1.x-dev"
+                "drupal/jquery_ui_slider": "~2.0",
+                "drupal/jquery_ui_touch_punch": "~1.1",
+                "drupal/search_api": "^1.28||1.x-dev"
             },
             "suggest": {
                 "drupal/jquery_ui_slider": "Required for the 'Facets Range Widget' module to work",
@@ -3989,8 +3989,8 @@
                     "dev-2.0.x": "2.0.x-dev"
                 },
                 "drupal": {
-                    "version": "2.0.5+8-dev",
-                    "datestamp": "1662714556",
+                    "version": "2.0.6+1-dev",
+                    "datestamp": "1695893990",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."

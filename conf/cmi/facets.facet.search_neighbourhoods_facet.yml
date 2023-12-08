@@ -11,6 +11,8 @@ id: search_neighbourhoods_facet
 name: 'Search: Neighbourhoods facet'
 weight: 0
 min_count: 1
+missing: false
+missing_label: others
 url_alias: neighbourhood
 facet_source_id: 'search_api:views_page__search__page'
 field_identifier: aggregated_autocomplete

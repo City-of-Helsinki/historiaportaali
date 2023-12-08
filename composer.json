@@ -18,7 +18,7 @@
         "drupal/context_entity_field": "1.x-dev@dev",
         "drupal/core-composer-scaffold": "^9.5 || ^10",
         "drupal/elasticsearch_connector": "7.x-dev@dev",
-        "drupal/facets": "2.0.x-dev@dev",
+        "drupal/facets": "^2.0.x-dev@dev",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
         "drupal/geofield_map": "^3.0",

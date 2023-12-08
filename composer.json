@@ -30,6 +30,7 @@
         "drupal/helfi_drupal_tools": "dev-main",
         "drupal/helfi_platform_config": "^2.0",
         "drupal/helfi_proxy": "^2.2",
+        "drupal/jquery_ui_touch_punch": "^1.1",
         "drupal/leaflet": "^2.1",
         "drupal/leaflet_more_maps": "^2.1",
         "drupal/linkchecker": "^2.0@alpha",

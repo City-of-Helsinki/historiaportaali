@@ -1,0 +1,7 @@
+title: 'Ota yhteyttä'
+settings:
+  confirmation_message: 'Viestisi on lähetetty.'
+  confirmation_url: /cookie-information-and-settings
+handlers:
+  email_notification:
+    label: Sähköposti-ilmoitus

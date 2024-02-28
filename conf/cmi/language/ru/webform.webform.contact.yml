@@ -1,0 +1,9 @@
+title: Контакт
+settings:
+  confirmation_message: 'Ваше сообщение отправлено.'
+  confirmation_url: /node/1
+handlers:
+  email_confirmation:
+    label: 'Подтверждение почтой'
+  email_notification:
+    label: 'Уведомления по email'

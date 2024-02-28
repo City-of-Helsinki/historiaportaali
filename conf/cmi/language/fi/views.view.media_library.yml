@@ -11,8 +11,8 @@ display:
       pager:
         options:
           tags:
-            next: 'Seuraava ›'
-            previous: '‹ Edellinen'
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
@@ -46,8 +46,6 @@ display:
             group_items:
               1:
                 title: Julkaistu
-              2:
-                title: Julkaisematon
         name:
           expose:
             label: Nimi

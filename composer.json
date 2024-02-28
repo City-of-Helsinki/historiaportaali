@@ -14,13 +14,13 @@
         "drupal/blocache": "^1.1",
         "drupal/colorbox": "^1.7",
         "drupal/context": "^5.0@RC",
-        "drupal/context_entity_field": "1.x-dev@dev",
+        "drupal/context_entity_field": "dev-8.x-1.x",
         "drupal/core-composer-scaffold": "^9.5 || ^10",
         "drupal/facets": "2.0.x-dev@dev",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
         "drupal/geofield_map": "^3.0",
-        "drupal/graphql": "^3.1",
+        "drupal/graphql": "^3.4",
         "drupal/graphql_search_api": "^1.2",
         "drupal/hdbt": "^3.0",
         "drupal/hdbt_admin": "^1.0",
@@ -45,7 +45,7 @@
         "drupal/twig_tweak": "^3.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_block_filter_block": "^2.0",
-        "drupal/views_cm_current_state": "^2.0",
+        "drupal/views_cm_current_state": "dev-3290445-automated-drupal-10",
         "drupal/views_menu_children_filter": "^1.0@RC",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
@@ -107,9 +107,6 @@
                 "Paragraph widget buttons not visible in Claro/Gin admin theme (https://www.drupal.org/project/drupal/issues/3099026#comment-13786709)": "https://www.drupal.org/files/issues/2020-08-13/3099026-17.patch",
                 "Wrong language field labels after drupal_rebuild()" : "https://www.drupal.org/files/issues/2021-12-01/3221375-27-workaround.patch"
             },
-            "drupal/context_entity_field": {
-                "Update deprecated entity bundle deriver plugin (https://www.drupal.org/project/context_entity_field/issues/3303163)": "https://www.drupal.org/files/issues/2022-08-11/3303163-update-ctools-deriver-plugin-2.patch"
-            },
             "drupal/leaflet": {
                 "Add entity id to marker options": "custom-patches/leaflet_add_entity_id_to_marker_options.patch"
             },
@@ -129,14 +126,8 @@
             "drupal/search_api": {
                 "Properties via entity reference fields are not translated (https://www.drupal.org/project/search_api/issues/3039139#comment-13016070)": "https://www.drupal.org/files/issues/2019-03-11/3039139-3.patch"
             },
-            "drupal/graphql": {
-                "3.x phpunit tests are broken on PHP 7.4 (https://github.com/drupal-graphql/graphql/issues/982)": "custom-patches/graphql_fix_php_7_notice.patch"
-            },
             "drupal/graphql_search_api": {
                 "Automated D10 compatibility": "https://www.drupal.org/files/issues/2022-07-18/graphql_search_api.1.x-dev.rector.patch"
-            },
-            "drupal/views_cm_current_state": {
-                "Automated D10 compatibility": "https://www.drupal.org/files/issues/2023-05-22/views_cm_current_state_d10-3290445-10.patch"
             }
         },
         "installer-types": ["bower-asset", "npm-asset"],
@@ -185,6 +176,14 @@
         }
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/context_entity_field-3349931.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/views_cm_current_state-3290445.git"
+        },
         {
             "type": "composer",
             "url": "https://repository.drupal.hel.ninja"

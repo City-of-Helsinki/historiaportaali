@@ -7,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.from_library
   module:
     - select2
-_core:
-  default_config_hash: RBhuX9npNnq2pmFG3bnj9977tRJQYZ1VTb45-BHjmqE
 id: paragraph.from_library.default
 targetEntityType: paragraph
 bundle: from_library
@@ -19,12 +17,9 @@ content:
     weight: 0
     region: content
     settings:
-      width: 100%
       autocomplete: false
       match_operator: CONTAINS
       match_limit: 20
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

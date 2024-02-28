@@ -1,6 +1,4 @@
-_core:
-  default_config_hash: PipyKPJHaHaJB3D4LeRoRJxSSd7QbBM0gb5wpSrEFfc
 ignored_config_entities:
-  - 'eu_cookie_compliance.cookie_category*'
-  - hdbt_admin_tools.site_settings
   - 'system.site:page.front'
+  - 'hdbt_admin_tools.site_settings:site_settings'
+  - 'easy_breadcrumb.settings:home_segment_title'

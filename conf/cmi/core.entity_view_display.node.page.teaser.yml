@@ -15,8 +15,6 @@ dependencies:
     - node.type.page
   module:
     - user
-_core:
-  default_config_hash: YrnOo0175KtZqKjepPd-xcsMt8hETdl7s9AKQbo9t94
 id: node.page.teaser
 targetEntityType: node
 bundle: page
@@ -29,11 +27,6 @@ content:
       view_mode: content_card
       link: false
     third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
@@ -45,5 +38,7 @@ hidden:
   field_metatags: true
   field_sidebar_content: true
   langcode: true
+  links: true
+  published_at: true
   search_api_excerpt: true
   toc_enabled: true

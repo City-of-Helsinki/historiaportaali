@@ -11,11 +11,8 @@ dependencies:
     - field.field.paragraph.accordion.field_accordion_title_level
     - paragraphs.paragraphs_type.accordion
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - paragraphs
-    - text
-_core:
-  default_config_hash: tZ6NtHmnjneasCaF7pacBXWuaSGMMI-LdkayZNerXro
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion

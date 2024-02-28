@@ -1,0 +1,10 @@
+uuid: 0ee3a61c-f058-4e68-90db-64883a679b7a
+langcode: en
+status: true
+dependencies: {  }
+id: hearings
+label: Hearings
+icon_uuid: null
+icon_default: null
+description: 'Lists latest hearings from Kerrokantasi service. '
+behavior_plugins: {  }

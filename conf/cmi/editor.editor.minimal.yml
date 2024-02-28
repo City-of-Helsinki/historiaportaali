@@ -6,8 +6,6 @@ dependencies:
     - filter.format.minimal
   module:
     - ckeditor
-_core:
-  default_config_hash: HEqlBl4yZwyvwM419DdClQNeHaD3d5x3pSB-0brI7oM
 format: minimal
 editor: ckeditor
 settings:

@@ -1,4 +1,3 @@
-label: Mediabibliotek
 description: 'Hitta och hantera media.'
 display:
   default:
@@ -19,7 +18,7 @@ display:
             offset_label: Kompensera
       exposed_form:
         options:
-          submit_button: 'Applicera filter'
+          submit_button: 'Tillämpa filter'
           reset_button_label: Återställ
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
@@ -46,8 +45,6 @@ display:
             group_items:
               1:
                 title: Publicerad
-              2:
-                title: 'Ej publicerad'
         name:
           expose:
             label: Namn

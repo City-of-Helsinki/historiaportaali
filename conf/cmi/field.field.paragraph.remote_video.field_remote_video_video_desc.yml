@@ -17,7 +17,7 @@ entity_type: paragraph
 bundle: remote_video
 label: 'Description of the video'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

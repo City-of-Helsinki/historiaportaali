@@ -1,0 +1,16 @@
+uuid: b6da3c43-e17e-4db8-b8e9-d571b997c880
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.announcement
+target_entity_type_id: node
+target_bundle: announcement
+default_langcode: fi
+language_alterable: true

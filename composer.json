@@ -24,7 +24,7 @@
         "drupal/graphql_search_api": "^1.2",
         "drupal/hdbt": "^3.0",
         "drupal/hdbt_admin": "^1.0",
-        "drupal/helfi_azure_fs": "^1.0",
+        "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
         "drupal/helfi_platform_config": "^2.0",
         "drupal/helfi_proxy": "^2.2",
@@ -216,18 +216,6 @@
                 "type": "drupal-library",
                 "dist": {
                     "url": "https://github.com/jieter/Leaflet.Sync/archive/0.2.4.zip",
-                    "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "city-of-helsinki/helfi_azure_fs",
-                "version": "1.0.6",
-                "type": "drupal-module",
-                "dist": {
-                    "url": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs/archive/1.0.6.zip",
                     "type": "zip"
                 }
             }

@@ -12,7 +12,7 @@
         "cweagans/composer-patches": "^1.6.7",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/blocache": "^1.1",
-        "drupal/colorbox": "^1.7",
+        "drupal/colorbox": "^2.0",
         "drupal/context": "^5.0@RC",
         "drupal/context_entity_field": "dev-8.x-1.x",
         "drupal/core-composer-scaffold": "^9.5 || ^10",

@@ -48,7 +48,6 @@ module:
   file_mdm: 0
   filter: 0
   flysystem: 0
-  flysystem_azure: 0
   focal_point: 0
   geocoder: 0
   geocoder_field: 0

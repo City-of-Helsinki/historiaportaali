@@ -24,11 +24,13 @@ display:
         entity_field:
           separator: ', '
         entity_langcode:
+          label: Entitetsspråk
           separator: ', '
         url:
           label: URL
           separator: ', '
         last_check:
+          label: 'Senast kontrollerad'
           separator: ', '
         method:
           label: Metod
@@ -60,8 +62,14 @@ display:
         code:
           expose:
             label: Statuskod
+        entity_langcode:
+          expose:
+            label: Entitetsspråk
       footer:
         result:
           content: 'Visar @start - @end av @total'
   page_1:
     display_title: Sida
+    display_options:
+      menu:
+        title: 'Trasiga länkar'

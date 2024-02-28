@@ -1,0 +1,23 @@
+uuid: 82a370b1-7d46-4cef-9dd2-f2659348ef29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.kore_school
+  module:
+    - text
+id: node.kore_school.body
+field_name: body
+entity_type: node
+bundle: kore_school
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

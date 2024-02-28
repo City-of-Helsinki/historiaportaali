@@ -45,7 +45,6 @@
         "drupal/term_merge": "^2.0@beta",
         "drupal/twig_tweak": "^3.1",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drupal/update_helper": "^2.0",
         "drupal/views_block_filter_block": "^2.0",
         "drupal/views_cm_current_state": "dev-3290445-automated-drupal-10",
         "drupal/views_menu_children_filter": "^1.0@RC",

@@ -2,6 +2,8 @@ uuid: 1ae3625e-8ea5-4fba-a5a9-f7838a68b90c
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: O5xf9wOwKSAh88H1rnkoppQV-VCePrxHd3AAJV8gfm4
 id: social_media_link
 label: 'Social media link'
 icon_uuid: null

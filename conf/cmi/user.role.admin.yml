@@ -68,7 +68,6 @@ permissions:
   - 'access user profiles'
   - 'administer content translation'
   - 'administer content types'
-  - 'administer hotjar settings'
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'

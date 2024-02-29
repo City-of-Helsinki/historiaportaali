@@ -39,6 +39,7 @@ module:
   entity: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  external_entities: 0
   facets: 0
   facets_summary: 0
   field: 0
@@ -85,6 +86,7 @@ module:
   helhist_tokens: 0
   image: 0
   image_style_quality: 0
+  imagecache_external: 0
   imagemagick: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0

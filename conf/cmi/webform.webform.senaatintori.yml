@@ -11,7 +11,7 @@ archive: false
 id: senaatintori
 title: Senaatintori
 description: ''
-category: ''
+categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios

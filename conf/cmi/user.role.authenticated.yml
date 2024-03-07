@@ -2,8 +2,11 @@ uuid: 2aaa90d3-acc1-4c5f-9a79-7b913a848123
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.webform_default
   module:
     - eu_cookie_compliance
+    - filter
     - graphql
     - linkchecker
     - matomo
@@ -26,4 +29,5 @@ permissions:
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
   - 'use search_api_autocomplete for search'
+  - 'use text format webform_default'
   - 'view media'

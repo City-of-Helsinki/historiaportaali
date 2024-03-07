@@ -11,7 +11,7 @@ archive: false
 id: kaupungintalo_visa
 title: Kaupungintalo-visa
 description: ''
-category: ''
+categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios

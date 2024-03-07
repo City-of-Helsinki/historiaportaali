@@ -391,14 +391,17 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.content_and_media'
+        - 'search_api_list:content_and_media'
   page:
     id: page
     display_title: 'Search page'
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: none
       defaults:
-        cache: true
+        cache: false
       display_description: ''
       exposed_block: true
       display_extenders:
@@ -415,3 +418,4 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.content_and_media'
+        - 'search_api_list:content_and_media'

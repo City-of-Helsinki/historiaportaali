@@ -1,5 +1,5 @@
 name: 'HelHist Tokens'
 type: module
 description: 'Provides custom tokens.'
-core_version_requirement: '^9'
+core_version_requirement: ^9 || ^10
 package: 'Custom'

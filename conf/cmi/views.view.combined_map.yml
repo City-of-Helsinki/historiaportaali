@@ -378,25 +378,40 @@ display:
         type: leaflet_map
         options:
           grouping: {  }
-          data_source: field_geolocation
+          data_source:
+            field_geolocation: field_geolocation
           entity_source: __base_table
           name_field: ''
-          description_field: '#rendered_entity_ajax'
-          view_mode: map_item
+          leaflet_tooltip:
+            value: ''
+            options: '{"permanent":false,"direction":"center"}'
+          leaflet_popup:
+            value: '#rendered_entity_ajax'
+            options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
+            view_mode: map_item
           leaflet_map: esri-world_topo_map
           height: '70'
           height_unit: vh
           hide_empty_map: false
           disable_wheel: false
           gesture_handling: true
+          fitbounds_options: '{"padding":[0,0]}'
           reset_map:
             control: false
-            position: topright
+            options: '{"position":"topleft","title":"Reset View"}'
+          map_scale:
+            control: false
+            options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+          locate:
+            control: false
+            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+            automatic: false
           map_position:
             force: true
             center:
               lat: 60.169856330105
               lon: 24.93838811948
+            zoomControlPosition: topleft
             zoom: 14
             minZoom: 4
             maxZoom: 18
@@ -427,8 +442,9 @@ display:
             circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: true
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false}'
             include_path: false
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false}'
+            excluded: '0'
           fullscreen:
             control: false
             options: '{"position":"topleft","pseudoFullscreen":false}'
@@ -436,6 +452,9 @@ display:
           geocoder:
             control: false
             settings:
+              autocomplete:
+                placeholder: 'Search Address'
+                title: 'Search an Address on the Map'
               position: topright
               input_size: 25
               providers:
@@ -447,6 +466,10 @@ display:
               zoom: 16
               popup: false
               options: ''
+          map_lazy_load:
+            lazy_load: false
+          feature_properties:
+            values: ''
       row:
         type: 'entity:node'
         options:
@@ -487,6 +510,17 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+        matomo:
+          enabled: false
+          keyword_gets: ''
+          keyword_behavior: first
+          keyword_concat_separator: ' '
+          category_behavior: none
+          category_gets: ''
+          category_concat_separator: ' '
+          category_fallback: ''
+          category_facets: {  }
+          category_facets_concat_separator: ', '
     cache_metadata:
       max-age: -1
       contexts:

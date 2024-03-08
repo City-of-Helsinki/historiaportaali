@@ -13,14 +13,16 @@ dependencies:
     - field.field.node.page.field_sidebar_content
     - node.type.page
   module:
-    - hdbt_admin_editorial
+    - content_moderation
+    - hdbt_admin_tools
     - media_library
     - metatag
     - paragraphs
     - path
+    - publication_date
     - scheduler
 _core:
-  default_config_hash: EPCTu6FncCXtwwG8kjUCHWz1iM7aMtx2ifRzZte5fDg
+  default_config_hash: IrTthHmbnCZxuMpndzRlr9-t2RT3szU18RcM_bpnrz0
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -78,10 +80,12 @@ content:
         duplicate: '0'
     third_party_settings: {  }
   field_lead_in:
-    type: string_textarea
+    type: textarea_character_counter
     weight: 13
     region: content
     settings:
+      counter_step: 160
+      counter_total: 200
       rows: 3
       placeholder: ''
     third_party_settings: {  }
@@ -117,6 +121,7 @@ content:
     region: content
     settings:
       sidebar: false
+      use_details: true
     third_party_settings: {  }
   field_sidebar_content:
     type: paragraphs
@@ -154,8 +159,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 100
-    region: content
     settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path
@@ -173,6 +178,12 @@ content:
   publish_on:
     type: datetime_timestamp_no_default
     weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  published_at:
+    type: publication_date_timestamp
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -201,10 +212,12 @@ content:
       display_label: true
     third_party_settings: {  }
   title:
-    type: string_textfield
+    type: textfield_character_counter
     weight: 1
     region: content
     settings:
+      counter_step: 0
+      counter_total: 55
       size: 60
       placeholder: ''
     third_party_settings: {  }

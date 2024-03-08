@@ -23,35 +23,49 @@
  * @see template_preprocess_html()
  */
 #}
-{%
-  set body_classes = [
-    logged_in ? 'user-logged-in',
-    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
-    node_type ? 'node--type-' ~ node_type|clean_class,
-  ]
-%}
+
+{# Available color themes, hardcoded to enable searching and to force thinking when adding these :) #}
+{% if theme_color == 'bus'  %}
+  {% set class = 'hdbt-theme--bus' %}
+{% elseif theme_color == 'coat-of-arms' %}
+  {% set class = 'hdbt-theme--coat-of-arms' %}
+{% elseif theme_color == 'copper' %}
+  {% set class = 'hdbt-theme--copper' %}
+{% elseif theme_color == 'engel' %}
+  {% set class = 'hdbt-theme--engel' %}
+{% elseif theme_color == 'gold' %}
+  {% set class = 'hdbt-theme--gold' %}
+{% elseif theme_color == 'metro' %}
+  {% set class = 'hdbt-theme--metro' %}
+{% elseif theme_color == 'silver' %}
+  {% set class = 'hdbt-theme--silver' %}
+{% elseif theme_color == 'summer' %}
+  {% set class = 'hdbt-theme--summer' %}
+{% elseif theme_color == 'suomenlinna' %}
+  {% set class = 'hdbt-theme--suomenlinna' %}
+{% elseif theme_color == 'tram' %}
+  {% set class = 'hdbt-theme--tram' %}
+{% endif %}
+
+
 <!DOCTYPE html>
-<html{{ html_attributes }}>
+<html{{ html_attributes.addClass(class) }}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
+    <link rel="icon" href="{{ theme_path }}/src/images/favicon/favicon-32x32.ico" sizes="any">
+    <link rel="icon" href="{{ theme_path }}/src/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ theme_path }}/src/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="{{ theme_path }}/src/images/favicon/manifest.webmanifest">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>
-  {%
-    set hdbt_defaults = '--hdbt-color-palette--primary: var(--hdbt-color-' ~ theme_color ~ '--primary);'
-                      ~ '--hdbt-color-palette--secondary: var(--hdbt-color-' ~ theme_color ~ '--secondary);'
-                      ~ '--hdbt-color-palette--accent: var(--hdbt-color-' ~ theme_color ~ '--accent);'
-                      ~ '--hdbt-color-palette-text--primary: var(--hdbt-color-' ~ theme_color ~ '-text--primary);'
-                      ~ '--hdbt-color-palette-text--secondary: var(--hdbt-color-' ~ theme_color ~ '-text--secondary);'
-                      ~ '--hdbt-color-palette-text--accent: var(--hdbt-color-' ~ theme_color ~ '-text--accent);'
-  %}
-  <body{{ attributes.addClass(body_classes) }} {{ attributes.setAttribute('style', hdbt_defaults) }}>
+  <body{{ attributes }}>
     {#
       Keyboard navigation/accessibility link to main content section in
       page.html.twig.
     #}
-    <a href="#main-content" class="focusable skip-to-main" id="skip-to-main">
+    <a href="#main-content" class="focusable skip-link skip-link--skip-to-main" id="skip-to-main">
       {{ 'Skip to main content'|t }}
     </a>
     {{ page_top }}

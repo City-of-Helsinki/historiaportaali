@@ -49,6 +49,7 @@
 {% set text = content.field_list_of_links_link.0['#title'] %}
 {% set image = content.field_list_of_links_image %}
 {% set desc = content.field_list_of_links_desc.0 %}
+{% set list_of_links_design = paragraph.getDesign() %}
 
 {# Use node liftup image, if available, and no link image set #}
 {% if content.field_list_of_links_link.0['#url'].isRouted() and not image.0 %}

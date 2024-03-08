@@ -6,4 +6,6 @@ social_media:
   twitter:
     text: 'Jaa Twitter-palvelussa'
   email:
-    text: 'Lähetä sivu sähköpostitse'
+    text: Sähköposti
+  print:
+    text: Tulosta

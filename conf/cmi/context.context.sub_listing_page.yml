@@ -13,7 +13,7 @@ requireAllConditions: true
 disabled: false
 conditions:
   node_type:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: f8ee5c4a-18a6-4490-bb2d-0772589610ef
     context_mapping:

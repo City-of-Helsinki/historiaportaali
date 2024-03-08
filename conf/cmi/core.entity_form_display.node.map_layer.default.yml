@@ -12,7 +12,7 @@ dependencies:
     - node.type.map_layer
   module:
     - content_moderation
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - paragraphs
     - path
     - scheduler
@@ -89,6 +89,17 @@ content:
   publish_on:
     type: datetime_timestamp_no_default
     weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  published_at:
+    type: publication_date_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -44,7 +44,7 @@
     {% embed "@hdbt/misc/container.twig" with { container_element: media.bundle()|clean_class ~ '_header' } %}
       {% block container_content %}
         {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
-        {{ drupal_block('hdbt_content_social_sharing_block') }}
+        {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}
 
@@ -71,11 +71,11 @@
               </div>
             {% endif %}
             {% if content.field_video_description|render %}
-              {% spaceless %}
+              {% apply spaceless %}
                 <figcaption class="media--image__caption">
                   {{ content.field_video_description }}
                 </figcaption>
-              {% endspaceless %}
+              {% endapply %}
             {% endif %}
           </div>
 

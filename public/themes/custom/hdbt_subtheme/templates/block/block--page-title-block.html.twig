@@ -4,14 +4,12 @@
  * Theme override to display a Page title block.
  */
 #}
-
 {%
   set classes = [
     'page-title',
     subtitle ? 'has-subtitle',
   ]
 %}
-
 {% if hide_block != true %}
   <div{{ attributes.addClass(classes) }}>
     {% if subtitle %}

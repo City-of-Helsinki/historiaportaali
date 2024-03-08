@@ -2,12 +2,10 @@ uuid: 48a79382-2625-44be-a68b-565889dd2fc7
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
 id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
-  og_image_url: '[node:field_liftup_image:entity:field_media_image:og_image:url],[site:base-url]/themes/contrib/hdbt/src/images/og-global.png'
   shortlink: '[site:url]'
-  twitter_cards_image: '[node:field_liftup_image:entity:field_media_image:og_image:url],[site:base-url]/themes/contrib/hdbt/src/images/og-global.png'
+  og_image: '[node:shareable-image]'
+  twitter_cards_image: '[node:shareable-image]'

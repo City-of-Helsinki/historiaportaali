@@ -29,15 +29,20 @@ dependencies:
     - content_moderation
     - content_translation
     - entity_usage
+    - file
     - filter
+    - helfi_api_base
     - locale
     - media
     - menu_link_attributes
     - menu_link_content
     - node
     - paragraphs
+    - paragraphs_library
     - path
+    - publication_date
     - redirect
+    - scheduler
     - system
     - taxonomy
     - term_merge
@@ -52,12 +57,14 @@ permissions:
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access media overview'
+  - 'access remote entities overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'administer menu'
   - 'administer nodes'
+  - 'administer paragraphs library'
   - 'administer redirects'
   - 'administer url aliases'
   - 'cancel account'
@@ -71,6 +78,8 @@ permissions:
   - 'create map_layer content'
   - 'create media'
   - 'create page content'
+  - 'create paragraph library item'
+  - 'create remote entities'
   - 'create remote_video media'
   - 'create terms in authors'
   - 'create terms in buildings'
@@ -82,7 +91,10 @@ permissions:
   - 'create terms in phenomena'
   - 'create terms in turning_points'
   - 'create url aliases'
+  - 'delete content translations'
   - 'delete media'
+  - 'delete own files'
+  - 'delete remote entities'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any helfi_chart media'
@@ -101,6 +113,8 @@ permissions:
   - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'edit paragraph library item'
+  - 'edit remote entities'
   - 'edit terms in authors'
   - 'edit terms in buildings'
   - 'edit terms in copyrights'
@@ -115,6 +129,7 @@ permissions:
   - 'revert listing_page revisions'
   - 'revert map_layer revisions'
   - 'revert page revisions'
+  - 'schedule publishing of nodes'
   - 'set landing_page published on date'
   - 'set page published on date'
   - 'translate any entity'
@@ -165,5 +180,6 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'

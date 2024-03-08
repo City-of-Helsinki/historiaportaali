@@ -44,7 +44,7 @@
     {% embed "@hdbt/misc/container.twig" with { container_element: media.bundle()|clean_class ~ '_header' } %}
       {% block container_content %}
         {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
-        {{ drupal_block('hdbt_content_social_sharing_block') }}
+        {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}
 
@@ -71,18 +71,20 @@
               </div>
             {% endif %}
             {% if content.field_image_caption|render %}
-              {% spaceless %}
+              {% apply spaceless %}
                 <figcaption class="media--image__caption">
                   {{ content.field_image_caption }}
                 </figcaption>
-              {% endspaceless %}
+              {% endapply %}
             {% endif %}
           </div>
 
           <div class="{{ right_column_classes|join(' ') }}">
             {% if content.field_geolocation|render %}
               <div class="{{ media.bundle()|clean_class }}__geolocation">
-                {{ content.field_geolocation }}
+                <a href="/{{ media.langcode.0.value }}/kartta?id={{ media.id() }}">
+                  {{ content.field_geolocation }}
+                </a>
               </div>
               <div class="{{ media.bundle()|clean_class }}__map_link">
                 {% include '@hdbt/misc/icon.twig' with { icon: 'location', label: 'Location marker icon'|t } %}

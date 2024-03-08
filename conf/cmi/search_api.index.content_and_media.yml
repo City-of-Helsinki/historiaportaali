@@ -146,7 +146,7 @@ field_settings:
     label: 'Aggregated title'
     property_path: aggregated_field
     type: text
-    boost: !!float 3
+    boost: 3.0
     configuration:
       type: union
       fields:
@@ -238,16 +238,16 @@ processor_settings:
       preprocess_index: -42
     boosts:
       'entity:media':
-        datasource_boost: !!float 0
+        datasource_boost: 0.0
         bundle_boosts:
-          file: !!float 0
-          image: !!float 0
-          remote_video: !!float 0
-          soundcloud: !!float 0
+          file: 0.0
+          image: 0.0
+          remote_video: 0.0
+          soundcloud: 0.0
       'entity:node':
-        datasource_boost: !!float 0
+        datasource_boost: 0.0
         bundle_boosts:
-          article: !!float 0
+          article: 0.0
 tracker_settings:
   default:
     indexing_order: fifo

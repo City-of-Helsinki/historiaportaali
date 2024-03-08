@@ -29,14 +29,19 @@ dependencies:
     - content_moderation
     - content_translation
     - entity_usage
+    - file
     - filter
+    - helfi_api_base
     - locale
     - media
     - menu_link_content
     - node
     - paragraphs
+    - paragraphs_library
     - path
+    - publication_date
     - redirect
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -52,12 +57,14 @@ permissions:
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access media overview'
+  - 'access remote entities overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'administer menu'
   - 'administer nodes'
+  - 'administer paragraphs library'
   - 'administer redirects'
   - 'cancel account'
   - 'change own username'
@@ -70,21 +77,20 @@ permissions:
   - 'create map_layer content'
   - 'create media'
   - 'create page content'
+  - 'create paragraph library item'
   - 'create remote_video media'
   - 'create terms in authors'
   - 'create terms in buildings'
   - 'create terms in copyrights'
-  - 'create terms in epoch'
   - 'create terms in formats'
   - 'create terms in keywords'
   - 'create terms in languages'
   - 'create terms in neighbourhoods'
   - 'create terms in phenomena'
-  - 'create terms in phenomenon'
-  - 'create terms in source'
   - 'create terms in turning_points'
   - 'create url aliases'
   - 'delete media'
+  - 'delete own files'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any helfi_chart media'
@@ -103,22 +109,21 @@ permissions:
   - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'edit paragraph library item'
   - 'edit terms in authors'
   - 'edit terms in buildings'
   - 'edit terms in copyrights'
-  - 'edit terms in epoch'
   - 'edit terms in formats'
   - 'edit terms in keywords'
   - 'edit terms in languages'
   - 'edit terms in neighbourhoods'
   - 'edit terms in phenomena'
-  - 'edit terms in phenomenon'
-  - 'edit terms in source'
   - 'edit terms in turning_points'
   - 'revert article revisions'
   - 'revert listing_page revisions'
   - 'revert map_layer revisions'
   - 'revert page revisions'
+  - 'schedule publishing of nodes'
   - 'set landing_page published on date'
   - 'set page published on date'
   - 'translate any entity'
@@ -168,5 +173,6 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'

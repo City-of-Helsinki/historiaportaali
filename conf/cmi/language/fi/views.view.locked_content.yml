@@ -30,8 +30,8 @@ display:
       pager:
         options:
           tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
+            previous: ‹‹
+            next: ››
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
           expose:
@@ -57,7 +57,7 @@ display:
       empty:
         area_text_custom:
           content: 'Lukittua sisältöä ei ole.'
-    display_title: Oletus
+    display_title: Isäntä
   page_1:
     display_title: Sivu
     display_options:

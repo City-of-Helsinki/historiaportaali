@@ -1,0 +1,35 @@
+uuid: e10a72bc-4f7e-47da-b04a-121dbde3af06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.kore_school.body
+    - field.field.node.kore_school.field_geolocation
+    - node.type.kore_school
+  module:
+    - text
+    - user
+id: node.kore_school.teaser
+targetEntityType: node
+bundle: kore_school
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_geolocation: true
+  langcode: true
+  search_api_excerpt: true
+  toc_enabled: true

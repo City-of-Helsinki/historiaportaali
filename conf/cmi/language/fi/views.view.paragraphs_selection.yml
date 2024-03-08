@@ -7,8 +7,8 @@ display:
           expose:
             offset_label: Offset
           tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
+            previous: ‹‹
+            next: ››
       fields:
         id:
           separator: ', '

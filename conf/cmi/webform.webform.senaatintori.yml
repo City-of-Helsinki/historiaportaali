@@ -1,21 +1,21 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: 77916096-fed6-4916-a551-2e1f1c927f04
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: Helsinki-visa
+id: senaatintori
+title: Senaatintori
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': '1. Mikä oli Senaatintorin alkuperäinen nimi?'
     '#quiz__options':
       q1_a:
         is_correct: true
@@ -30,16 +30,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: Suurtori
+      q1_b: Senaatintori
+      q1_c: Nikolaintori
+      q1_d: Aleksanterintori
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Mitä tyylisuuntaa toria ympäröivät rakennukset edustavat?'
     '#quiz__options':
       q2_a:
         is_correct: true
@@ -54,16 +55,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: empire
+      q2_b: jugend
+      q2_c: funktionalismi
+      q2_d: uusrenessanssi
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Minkä eläimen mukaan Helsingin kaupungintalokortteli on nimetty?'
     '#quiz__options':
       q3_a:
         is_correct: true
@@ -78,16 +80,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: leijonan
+      q3_b: tiikerin
+      q3_c: servaalin
+      q3_d: elefantin
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Mikä näistä rakennuksista valmistui ensimmäisenä?'
     '#quiz__options':
       q4_a:
         is_correct: true
@@ -102,13 +105,39 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: 'Valtioneuvoston linna'
+      q4_b: Tuomiokirkko
+      q4_c: Kansalliskirjasto
+      q4_d: 'yliopiston päärakennus'
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#type': quiz_element_radios
+    '#title': '5. Mikä näistä ei ole toiminut Senaatintorin eteläreunassa?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q5_a: kansakoulu
+      q5_b: Stockmann
+      q5_c: poliisilaitos
+      q5_d: sokeritehdas
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
   q1_result:
     '#type': webform_quiz_elements_result
     '#title': q1_result
@@ -131,6 +160,135 @@ elements: |-
     '#passing_score_percentage': 50
     '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
     '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Minä vuonna Tuomiokirkko vihittiin käyttöön?'
+    '#quiz__options':
+      q4_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q4_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q4_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q4_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q4_a: '1852'
+      q4_b: '1831'
+      q4_c: '1899'
+      q4_d: '1931'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7. Missä sijaitsi Ulrika Eleonoran kirkko vuosina 1727–1827?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q5_a: 'Tuomiokirkon edessä'
+      q5_b: 'Tuomiokirkon takana'
+      q5_c: 'Tuomiokirkon paikalla'
+      q5_d: 'Valtioneuvoston linnan edustalla'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#type': quiz_element_radios
+    '#title': "8.\tBockin talo on nimetty rakennuttajansa, kauppias ja raatimies Gustav Johan Bockin mukaan. Missä käytössä se ei ole ollut?"
+    '#quiz__options':
+      q4_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q4_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q4_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q4_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q4_a: 'kenraalikuvernöörin asuntona'
+      q4_b: sotasairaalana
+      q4_c: maistraattina
+      q4_d: raastuvanoikeutena
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#type': quiz_element_radios
+    '#title': '9. Mikä oli Helsingin yliopiston alkuperäinen nimi?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q5_a: 'Kungliga Akademien i Åbo'
+      q5_b: 'Keisarillinen Aleksanterin-yliopisto'
+      q5_c: 'Universitatis Helsingiensis'
+      q5_d: 'Turun Akatemia'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#type': quiz_element_radios
+    '#title': '10. Mitä Senaatintalon portaikossa tapahtui 16.6.1904?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin'
+    '#options':
+      q5_a: 'Eugen Schauman ampui ensin kenraalikuvernööri Bobrikovin ja sitten itsensä.'
+      q5_b: 'Kenraalikuvernööri Nikolai Bobrikov ampui Eugen Schaumanin.'
+      q5_c: 'Eugen Schauman ampui kenraalikuvernööri Nikolai Bobrikovin.'
+      q5_d: 'Eugen Schauman ampui itsensä. '
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
 css: ''
 javascript: ''
 settings:

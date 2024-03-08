@@ -39,6 +39,7 @@ module:
   entity: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  external_entities: 0
   facets: 0
   facets_summary: 0
   field: 0
@@ -48,7 +49,6 @@ module:
   file_mdm: 0
   filter: 0
   flysystem: 0
-  flysystem_azure: 0
   focal_point: 0
   geocoder: 0
   geocoder_field: 0
@@ -71,7 +71,6 @@ module:
   helfi_charts: 0
   helfi_contact_cards: 0
   helfi_content: 0
-  helfi_example_content: 0
   helfi_gdpr_compliance: 0
   helfi_languages: 0
   helfi_media: 0
@@ -87,6 +86,7 @@ module:
   helhist_tokens: 0
   image: 0
   image_style_quality: 0
+  imagecache_external: 0
   imagemagick: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
@@ -115,6 +115,8 @@ module:
   metatag_twitter_cards: 0
   metatag_views: 0
   migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
   mysql: 0
   node: 0
   oembed_providers: 0

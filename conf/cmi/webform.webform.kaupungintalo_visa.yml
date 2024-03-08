@@ -1,21 +1,21 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: 8f1821c9-7bbe-4647-9e43-d06d87d664cd
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 7
 template: false
 archive: false
-id: helsinki_visa
-title: Helsinki-visa
+id: kaupungintalo_visa
+title: Kaupungintalo-visa
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': 'Mihin tarkoitukseen kaupungintalo on alun perin rakennettu? '
     '#quiz__options':
       q1_a:
         is_correct: true
@@ -30,16 +30,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: hotelliksi
+      q1_b: 'Keisarin asunnoksi'
+      q1_c: Kaupungintaloksi
+      q1_d: Presidentinlinnaksi
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': 'Kuka on suunnitellut kaupungintalon eli Hotelli Seurahuoneen? '
     '#quiz__options':
       q2_a:
         is_correct: true
@@ -54,16 +55,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'Carl Ludvig Engel '
+      q2_b: 'Aarno Ruusuvuori'
+      q2_c: 'Alvar Aalto'
+      q2_d: 'Anitra Lucander'
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': 'Minä vuonna järjestettiin Suomen ensimmäinen elokuvaesitys Hotelli Seurahuoneella eli Kaupungintalolla?'
     '#quiz__options':
       q3_a:
         is_correct: true
@@ -78,16 +80,17 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: 'vuonna 1896'
+      q3_b: 'vuonna 1906'
+      q3_c: 'vuonna 1916'
+      q3_d: 'vuonna 1926'
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': 'Missä ei ole ollut Huokausten siltaa?'
     '#quiz__options':
       q4_a:
         is_correct: true
@@ -102,13 +105,14 @@ elements: |-
         is_correct: false
         feedback: 'Vastauksesi oli väärin'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: Korkeasaaressa
+      q4_b: kaupungintalolla
+      q4_c: Venetsiassa
+      q4_d: 'Kakolan vankilassa'
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q1_result:
     '#type': webform_quiz_elements_result
     '#title': q1_result
@@ -127,10 +131,10 @@ elements: |-
     '#source': q4
   quiz_result:
     '#type': webform_quiz_elements_score
-    '#title': quiz_result
+    '#title': Tulokset
     '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen kaupungintalon historian tuntija! Tunnetko yhtä hyvin vanhempaa historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/kaupungintalo">Kaupungintalo</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

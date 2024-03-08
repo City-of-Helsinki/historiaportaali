@@ -88,31 +88,33 @@
           %}
             {% set link_type = content.field_hero_link_design[0]['#markup'] %}
             <div class="hero__cta">
-              {% for key, item in content.field_hero_link if key|first != '#' %}
-                {% set link = item['#url'] %}
-                {% set text = item['#title'] %}
-                {% set target_new = item['#options']['target_new'] %}
-                {% set icon = item['#options']['icon'] %}
+              {% for key, item in content.field_hero_link %}
+                {% if key|first != '#' %} %}
+                  {% set link = item['#url'] %}
+                  {% set text = item['#title'] %}
+                  {% set target_new = item['#options']['target_new'] %}
+                  {% set icon = item['#options']['icon'] %}
 
-                {%
-                  set link_classes = [
-                    'hero__button',
-                    'hds-button',
-                    link_type ? 'hds-button--' ~ link_type|clean_class,
-                    icon or target_new ? 'hdbt-icon',
-                    icon ? 'hdbt-icon--' ~ icon|clean_class,
-                    target_new and not icon ? 'hdbt-icon--link-external'
-                  ]
-                %}
-                <a href="{{ link }}" {% if target_new %}target="_blank"{% endif %}{{ create_attribute({'class': link_classes} ) }}>
-                  <span class="hds-button__label">{{ text }}</span>
-                </a>
+                  {%
+                    set link_classes = [
+                      'hero__button',
+                      'hds-button',
+                      link_type ? 'hds-button--' ~ link_type|clean_class,
+                      icon or target_new ? 'hdbt-icon',
+                      icon ? 'hdbt-icon--' ~ icon|clean_class,
+                      target_new and not icon ? 'hdbt-icon--link-external'
+                    ]
+                  %}
+                  <a href="{{ link }}" {% if target_new %}target="_blank"{% endif %}{{ create_attribute({'class': link_classes} ) }}>
+                    <span class="hds-button__label">{{ text }}</span>
+                  </a>
+                {% endif %}
               {% endfor %}
             </div>
           {% endif %}
         </div>
 
-        {{ drupal_block('hdbt_content_social_sharing_block') }}
+        {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock %}
     {% endembed %}
 

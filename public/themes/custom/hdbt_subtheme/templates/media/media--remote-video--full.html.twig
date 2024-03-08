@@ -71,11 +71,11 @@
               </div>
             {% endif %}
             {% if content.field_video_description|render %}
-              {% spaceless %}
+              {% apply spaceless %}
                 <figcaption class="media--image__caption">
                   {{ content.field_video_description }}
                 </figcaption>
-              {% endspaceless %}
+              {% endapply %}
             {% endif %}
           </div>
 

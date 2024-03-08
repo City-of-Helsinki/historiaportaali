@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.content_listing
 label: 'Content listing'
+description: ''
 targetEntityType: media
 cache: true

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.listing_item
 label: 'Listing item'
+description: ''
 targetEntityType: node
 cache: true

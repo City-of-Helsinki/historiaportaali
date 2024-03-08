@@ -12,7 +12,7 @@ dependencies:
     - media_library
     - text
 _core:
-  default_config_hash: ZzwlJ2SwF1RVqS2C99xcFRBm5QTF6HqHjtgtQTBxAq8
+  default_config_hash: JfX1NDmZllc_fHMeOSFBgWspFRoEEmivcXOUu014O-k
 id: paragraph.chart.default
 targetEntityType: paragraph
 bundle: chart
@@ -36,6 +36,14 @@ content:
   field_chart_title:
     type: string_textfield
     weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_iframe_title:
+    type: string_textfield
+    weight: 3
     region: content
     settings:
       size: 60

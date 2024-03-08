@@ -109,8 +109,6 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
-_core:
-  default_config_hash: _j-Y1d8xzIrrkE3VLGHbEks1vFdg7kMl68UaYmxSGBo
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -192,8 +190,8 @@ content:
     settings:
       html5_geolocation: false
       default_value:
-        lat: !!float 0
-        lon: !!float 0
+        lat: 0.0
+        lon: 0.0
       map_library: leaflet
       map_google_api_key: ''
       map_google_places:

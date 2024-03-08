@@ -2,8 +2,6 @@ uuid: b15e09fb-1a6f-4ccd-b407-8a8af254bf91
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: wOZ8r5RIKVoeEJK80DVpalsx3uxDdoWbHM_0_-B1VtI
 name: original_xxs
 label: 'Original XXS'
 effects:

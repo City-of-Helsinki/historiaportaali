@@ -1,0 +1,6 @@
+settings:
+  allowed_values:
+    0:
+      label: Уведомление
+    2:
+      label: Оповещение

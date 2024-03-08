@@ -18,11 +18,14 @@ display:
           label: Meddelande
           alter:
             alt: '{{ message }}'
+            path: 'admin/reports/dblog/event/{{ wid }}'
         name:
           label: Användare
           separator: ', '
         link:
           label: Funktioner
+        wid:
+          label: WID
       pager:
         options:
           tags:

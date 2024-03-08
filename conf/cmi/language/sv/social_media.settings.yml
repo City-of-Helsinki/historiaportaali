@@ -1,0 +1,11 @@
+social_media:
+  facebook_share:
+    text: Facebook
+  twitter:
+    text: Twitter
+  pinterest:
+    text: Pinterest
+  email:
+    text: E-post
+  print:
+    text: Utskrift

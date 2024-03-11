@@ -8,7 +8,7 @@
  * - has_sidebar_second: A boolean indicating if the second sidebar is available
  * - active_theme: A string indicating the active theme
  *
- * @see hdbt_content_preprocess_page() and hdbt_preprocess_page()
+ * @see hdbt_admin_tools_preprocess_page() and hdbt_preprocess_page()
 #}
 
 {% set page_classes = [
@@ -17,6 +17,7 @@
     has_sidebar_first or has_sidebar_second ? 'has-sidebar' : 'no-sidebar',
     has_sidebar_first ? 'has-sidebar--first' : 'no-sidebar-first',
     has_sidebar_second ? 'has-sidebar--second' : 'no-sidebar-second',
+    has_section_nav ? 'has-section-nav' : 'no-section-nav',
   ]
 %}
 
@@ -34,10 +35,27 @@
 
 {# Do we want to render navigation with content from another instance "globally" #}
 {% if use_global_navigation %}
-  GLOBAL NAV MENU TOGGLE
+  {#
+  Anchor targets for global navi and other-langs nojs fallbacks.
+  Also works as a CSS data-attr selector reference point for JS version.
+  These must be on top and at root.
+  #}
+  <div id="menu" class="nav-toggle-target"></div>
 {% else %}
   {# This checkbox handles opening and closing mobile menu #}
-  <input type="checkbox" id="cssmenu-toggle-checkbox" class="cssmenu-toggle-checkbox js-cssmenu-toggle-checkbox" role="button" aria-labelledby="cssmenu-toggle">
+  <div id="cssmenu" class="nav-toggle-target"></div>
+{% endif %}
+
+{% if use_search_block %}
+  <div id="search" class="nav-toggle-target"></div>
+{% endif %}
+
+{% if use_otherlangs_block %}
+  <div id="otherlangs" class="nav-toggle-target"></div>
+{% endif %}
+
+{% if use_profile_block %}
+  <div id="profile" class="nav-toggle-target"></div>
 {% endif %}
 
 <div{{ create_attribute( publishAttribute ).addClass(page_classes) }}>
@@ -48,7 +66,67 @@
       {% endif %}
 
       {% if page.header_branding %}
-        {{ page.header_branding }}
+        {% set header_branding_attributes = {
+            'id': 'header-branding',
+            'class': ['header-branding']
+          }
+        %}
+        {% if alternative_language %}
+          {% set header_branding_attributes = header_branding_attributes|merge({
+              'dir': lang_attributes.fallback_dir,
+              'lang': lang_attributes.fallback_lang
+            })
+          %}
+        {% endif %}
+        <div {{ create_attribute(header_branding_attributes) }}>
+          {% set prefix = active_theme == 'hdbt_subtheme' ? 'hdbt_subtheme_' : '' %}
+
+          {# Manually select which blocks to render in header branding region. #}
+          {% set block__site_branding = prefix ~ 'sitebranding' %}
+          {% set block__external_fallback_menu = 'external_fallback_menu' %}
+          {% set block__external_menu_mega_menu = 'external_menu_mega_menu' %}
+          {% set block__language_switcher = prefix ~ 'language_switcher' %}
+          {% set block__external_header_language_links = 'external_header_language_links' %}
+
+          {#
+            Render the header branding region blocks in a specific order: mobile tabbing order
+            Exclude the external menu mega menu block as it will be rendered
+            manually in external fallback menu.
+            See. block--external-menu-block-fallback.html.twig:61.
+          #}
+
+          {{ drupal_entity('block', block__site_branding) }} {# Logo #}
+
+          <div class="language-wrapper">
+            {{ drupal_entity('block', block__language_switcher) }} {# Change language-menu and content in other languages-menu #}
+
+            {% if use_global_navigation %}
+              {# Other languages button #}
+              {% include "@hdbt/component/otherlanguages.twig" with {
+                renderButton: true,
+              } %}
+            {% endif %}
+          </div>
+
+          {% if use_global_navigation %}
+            {# Other languages menu content #}
+            {{ drupal_entity('block', block__external_header_language_links) }}
+
+            {# Header search button and menu #}
+            {% include "@hdbt/component/header-search.twig" %}
+          {% endif %}
+
+          {{ drupal_entity('block', block__external_fallback_menu) }} {# Mobile menu #}
+
+          {# Render the header branding region without manually rendered blocks #}
+          {{ page.header_branding|without([
+            block__site_branding,
+            block__external_fallback_menu,
+            block__language_switcher,
+            block__external_header_language_links,
+            block__external_menu_mega_menu
+          ]) }}
+        </div>
       {% endif %}
 
       {% if page.header_bottom %}
@@ -72,17 +150,36 @@
       {{ page.messages }}
     {% endif %}
 
-    {# Construct page_title_block based on active theme. #}
-    {% set page_title_block = active_theme ~ '_page_title' %}
-
-    {% block page_content %}
-      {# We want page_title always to be before other page.content #}
-      {% if not has_hero %}
-        {{ page.content[page_title_block] }}
+    {% block page_before_content %}
+      {% if page.before_content %}
+        {{ page.before_content }}
       {% endif %}
-      {{ page.content|without(page_title_block) }}
-    {% endblock page_content %}
+    {% endblock page_before_content %}
 
+    {% if page.search_filters %}
+      {{ page.search_filters }}
+    {% endif %}
+
+    <div class="layout-content">
+
+      {# Construct page_title_block based on active theme. #}
+      {% set page_title_block = active_theme ~ '_page_title' %}
+
+      {% block page_content %}
+        {# We want page_title always to be before other page.content #}
+        {% if not has_hero %}
+          {{ page.content[page_title_block] }}
+        {% endif %}
+        {{ page.content|without(page_title_block) }}
+      {% endblock page_content %}
+
+    </div>
+
+    {% if page.after_content %}
+      {% block page_after_content %}
+        {{ page.after_content }}
+      {% endblock page_after_content %}
+    {% endif %}
   </main>
 </div>
 

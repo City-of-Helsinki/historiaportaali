@@ -6,17 +6,15 @@ dependencies:
     - language
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: exT4lfsQK-ekjJqsVu1l0uJ7eGvkRqcwOZdzEXQFBqw
 id: hdbt_subtheme_language_switcher
 theme: hdbt_subtheme
 region: header_branding
-weight: -14
-provider: null
+weight: 2
+provider: helfi_base_content
 plugin: 'language_block:language_content'
 settings:
   id: 'language_block:language_content'
   label: 'Language switcher'
-  label_display: '0'
+  label_display: ''
   provider: language
 visibility: {  }

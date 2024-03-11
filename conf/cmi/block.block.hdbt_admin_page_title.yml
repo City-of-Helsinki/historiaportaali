@@ -5,7 +5,7 @@ dependencies:
   theme:
     - hdbt_admin
 _core:
-  default_config_hash: EztpDM54zOLhDtOY1bVezOnoYe9yJsUaVQ0hF5zMs0M
+  default_config_hash: 8A3hI0TVyrgHlC77Kv-TSYM1C0JbwZuAguNuHM44zF4
 id: hdbt_admin_page_title
 theme: hdbt_admin
 region: header

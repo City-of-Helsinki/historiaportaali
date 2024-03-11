@@ -1,11 +1,38 @@
 .page-type--article {
-  .back-to-search-results__container {
-    padding-top: 0;
-  }
+  .before-content {
+    .back-to-search-results__container {
+      padding-top: 0;
+    }
 
-  .back-to-search-results {
-    @include breakpoint($breakpoint-m) {
-      padding-left: $spacing-triple * 2;
+    .back-to-search-results {
+      @include breakpoint($breakpoint-m) {
+        padding-left: $spacing-triple * 2;
+      }
+    }
+
+    .node--type-article {
+      &.node--view-mode-before-content {
+        .article-header__container {
+          margin-bottom: $spacing-double;
+          padding-top: 0;
+
+          @include breakpoint($breakpoint-m) {
+            margin-bottom: $spacing-triple;
+          }
+
+          @include breakpoint(0px $breakpoint-s) {
+            padding-top: $spacing;
+          }
+
+          > div {
+            max-width: $content-width-max;
+        
+            @include breakpoint($breakpoint-m) {
+              padding-left: $spacing-triple * 2;
+            }
+          }
+        }
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-uuid: c76f4b75-987d-4f4e-8cd5-a2117ff46566
+uuid: 73757f76-3ea9-4141-8190-ca9501bcd9ca
 langcode: en
 status: true
 dependencies:
@@ -7,18 +7,16 @@ dependencies:
     - system
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: cWAyHuLWbIx_Tsd04YPaUUGBOdvtYeKIjFXBXJhmi2w
 id: hdbt_page_title
 theme: hdbt_subtheme
 region: before_content
-weight: -15
-provider: null
+weight: 0
+provider: helfi_base_content
 plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Page title'
-  label_display: '0'
+  label_display: ''
   provider: core
 visibility:
   request_path:

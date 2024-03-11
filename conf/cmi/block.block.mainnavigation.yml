@@ -8,18 +8,16 @@ dependencies:
     - menu_block_current_language
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: LFpP0B7Bn5-vdFznBqRMt2cjFIbBUltjlPdqS1dqYs0
 id: mainnavigation
 theme: hdbt_subtheme
 region: header_bottom
 weight: 0
-provider: null
+provider: helfi_base_content
 plugin: 'menu_block_current_language:main'
 settings:
   id: 'menu_block_current_language:main'
   label: 'Main navigation'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 1
   expand_all_items: true

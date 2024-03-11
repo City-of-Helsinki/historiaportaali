@@ -1,4 +1,4 @@
-uuid: 47b53961-3ffa-4359-a1e6-364b788a82d0
+uuid: 02e26f32-5e1e-46ba-908e-288dbb806ba3
 langcode: en
 status: true
 dependencies:
@@ -8,18 +8,16 @@ dependencies:
     - menu_block_current_language
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: TqKhplHg19l9TlmwIC4Uta9DJOMllkU8lkKEEmvyTRc
-id: headertopnavigation
+id: hdbt_subtheme_headertopnavigation
 theme: hdbt_subtheme
 region: header_top
 weight: 0
-provider: null
+provider: helfi_base_content
 plugin: 'menu_block_current_language:header-top-navigation'
 settings:
   id: 'menu_block_current_language:header-top-navigation'
   label: 'Header - Top navigation'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 1
   expand_all_items: false

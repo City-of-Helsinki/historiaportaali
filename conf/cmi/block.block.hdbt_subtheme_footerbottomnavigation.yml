@@ -1,4 +1,4 @@
-uuid: 3ae34d00-a23c-48ff-9f0f-37bf6314d037
+uuid: 6e876cb6-4729-411a-b2fa-418b2768e84a
 langcode: en
 status: true
 dependencies:
@@ -8,18 +8,16 @@ dependencies:
     - menu_block_current_language
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: Lq0uz6Wcg4xRo7w6BmzuzPTwOXtY8Q4qmYGUcGCvBLA
-id: footerbottomnavigation
+id: hdbt_subtheme_footerbottomnavigation
 theme: hdbt_subtheme
 region: footer_bottom
 weight: 0
-provider: null
+provider: helfi_base_content
 plugin: 'menu_block_current_language:footer-bottom-navigation'
 settings:
   id: 'menu_block_current_language:footer-bottom-navigation'
   label: 'Footer - Bottom navigation'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 1
   expand_all_items: false

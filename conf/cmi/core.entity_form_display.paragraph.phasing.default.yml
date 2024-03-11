@@ -13,6 +13,8 @@ dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: GQC9vHnTQZGHSz0j-gePXYCBiZgR6jG6eljtf6LZni0
 id: paragraph.phasing.default
 targetEntityType: paragraph
 bundle: phasing
@@ -44,6 +46,8 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_phasing_item_title_level:
+    region: content
   field_phasing_title_level:
     type: options_select
     weight: 0
@@ -67,5 +71,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_phasing_item_title_level: true
   status: true

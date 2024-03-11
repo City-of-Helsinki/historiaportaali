@@ -1,0 +1,13 @@
+social_media:
+  facebook_share:
+    text: Facebook
+  linkedin:
+    text: Linkedin
+  twitter:
+    text: Twitter
+  pinterest:
+    text: Pinterest
+  email:
+    text: Email
+  print:
+    text: Печать

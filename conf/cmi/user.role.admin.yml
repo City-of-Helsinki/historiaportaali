@@ -26,21 +26,29 @@ dependencies:
     - taxonomy.vocabulary.turning_points
     - workflows.workflow.articles_editorial_workflow
   module:
+    - block
     - config_translation
     - content_lock
     - content_moderation
     - content_translation
     - entity_usage
+    - file
     - filter
+    - helfi_api_base
     - locale
     - media
     - menu_link_attributes
     - menu_link_content
     - node
     - paragraphs
+    - paragraphs_library
     - path
+    - pathauto
+    - publication_date
     - redirect
     - role_delegation
+    - scheduler
+    - simple_sitemap
     - system
     - taxonomy
     - term_merge
@@ -60,18 +68,22 @@ permissions:
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access media overview'
+  - 'access remote entities overview'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer blocks'
   - 'administer content translation'
   - 'administer content types'
-  - 'administer hotjar settings'
   - 'administer menu'
   - 'administer nodes'
+  - 'administer paragraphs library'
+  - 'administer pathauto'
   - 'administer redirects'
   - 'administer site configuration'
+  - 'administer sitemap settings'
   - 'administer taxonomy'
   - 'administer url aliases'
   - 'administer users'
@@ -95,18 +107,17 @@ permissions:
   - 'create map_layer content'
   - 'create media'
   - 'create page content'
+  - 'create paragraph library item'
+  - 'create remote entities'
   - 'create remote_video media'
   - 'create terms in authors'
   - 'create terms in buildings'
   - 'create terms in copyrights'
-  - 'create terms in epoch'
   - 'create terms in formats'
   - 'create terms in keywords'
   - 'create terms in languages'
   - 'create terms in neighbourhoods'
   - 'create terms in phenomena'
-  - 'create terms in phenomenon'
-  - 'create terms in source'
   - 'create terms in turning_points'
   - 'create url aliases'
   - 'delete all revisions'
@@ -126,6 +137,7 @@ permissions:
   - 'delete media'
   - 'delete own article content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own helfi_chart media'
   - 'delete own image media'
   - 'delete own listing_page content'
@@ -133,17 +145,15 @@ permissions:
   - 'delete own page content'
   - 'delete own remote_video media'
   - 'delete page revisions'
+  - 'delete remote entities'
   - 'delete terms in authors'
   - 'delete terms in buildings'
   - 'delete terms in copyrights'
-  - 'delete terms in epoch'
   - 'delete terms in formats'
   - 'delete terms in keywords'
   - 'delete terms in languages'
   - 'delete terms in neighbourhoods'
   - 'delete terms in phenomena'
-  - 'delete terms in phenomenon'
-  - 'delete terms in source'
   - 'delete terms in turning_points'
   - 'edit any article content'
   - 'edit any file media'
@@ -163,17 +173,16 @@ permissions:
   - 'edit own map_layer content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'edit paragraph library item'
+  - 'edit remote entities'
   - 'edit terms in authors'
   - 'edit terms in buildings'
   - 'edit terms in copyrights'
-  - 'edit terms in epoch'
   - 'edit terms in formats'
   - 'edit terms in keywords'
   - 'edit terms in languages'
   - 'edit terms in neighbourhoods'
   - 'edit terms in phenomena'
-  - 'edit terms in phenomenon'
-  - 'edit terms in source'
   - 'edit terms in turning_points'
   - 'link to any page'
   - 'merge taxonomy terms'
@@ -182,6 +191,7 @@ permissions:
   - 'revert listing_page revisions'
   - 'revert map_layer revisions'
   - 'revert page revisions'
+  - 'schedule publishing of nodes'
   - 'set landing_page published on date'
   - 'set page published on date'
   - 'translate any entity'
@@ -191,10 +201,8 @@ permissions:
   - 'translate configuration'
   - 'translate copyrights taxonomy_term'
   - 'translate editable entities'
-  - 'translate epoch taxonomy_term'
   - 'translate file media'
   - 'translate formats taxonomy_term'
-  - 'translate hauki_resource'
   - 'translate image media'
   - 'translate interface'
   - 'translate keywords taxonomy_term'
@@ -207,9 +215,7 @@ permissions:
   - 'translate neighbourhoods taxonomy_term'
   - 'translate page node'
   - 'translate phenomena taxonomy_term'
-  - 'translate phenomenon taxonomy_term'
   - 'translate remote_video media'
-  - 'translate source taxonomy_term'
   - 'translate turning_points taxonomy_term'
   - 'update any media'
   - 'update content translations'
@@ -241,6 +247,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view user email addresses'

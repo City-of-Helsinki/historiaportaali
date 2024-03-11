@@ -1,0 +1,24 @@
+uuid: 2acab035-005b-4b28-9e4f-9cf1a4ae8189
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_map_description
+    - paragraphs.paragraphs_type.map
+  module:
+    - text
+_core:
+  default_config_hash: GTqHeaGGxBnLDqjumoVhE_XvyR69mb5i9OZZhVfvxdA
+id: paragraph.map.field_map_description
+field_name: field_map_description
+entity_type: paragraph
+bundle: map
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

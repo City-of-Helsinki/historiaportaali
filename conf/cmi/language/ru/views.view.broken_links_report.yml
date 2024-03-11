@@ -30,6 +30,7 @@ display:
           label: URL
           separator: ', '
         last_check:
+          label: 'Посл. проверка'
           separator: ', '
         method:
           label: Метод
@@ -69,3 +70,6 @@ display:
           content: 'Отображается с @start по @end из @total'
   page_1:
     display_title: Страница
+    display_options:
+      menu:
+        title: 'Битые ссылки'

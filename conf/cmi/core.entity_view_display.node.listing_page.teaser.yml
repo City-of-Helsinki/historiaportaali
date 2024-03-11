@@ -43,5 +43,6 @@ hidden:
   field_phenomena: true
   field_turning_points: true
   langcode: true
+  published_at: true
   search_api_excerpt: true
   toc_enabled: true

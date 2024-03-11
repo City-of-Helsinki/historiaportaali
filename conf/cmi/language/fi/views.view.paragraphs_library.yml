@@ -1,7 +1,7 @@
 label: 'Uudelleenkäytettävät lohkot'
 display:
   default:
-    display_title: Oletus
+    display_title: Isäntä
     display_options:
       exposed_form:
         options:
@@ -13,8 +13,8 @@ display:
       pager:
         options:
           tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'

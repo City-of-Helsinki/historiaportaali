@@ -469,7 +469,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_geolocation'
@@ -489,7 +488,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_geolocation'

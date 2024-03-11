@@ -66,7 +66,7 @@
         %}
       {% endif %}
       <a href="{{ path('entity.media.canonical', { 'media': content.field_gallery_slide_media[0]['#media'].id }) }}">{{ image }}</a>
-      {% spaceless %}
+      {% apply spaceless %}
         <figcaption class="media--image__caption">
           {% set caption = content.field_gallery_slide_caption[0]['#context']['value'] %}
           {% if content.field_gallery_slide_media|render %}
@@ -94,7 +94,7 @@
             {{ caption }}
           {% endif %}
         </figcaption>
-      {% endspaceless %}
+      {% endapply %}
     </div>
   </li>
 {% endblock paragraph %}

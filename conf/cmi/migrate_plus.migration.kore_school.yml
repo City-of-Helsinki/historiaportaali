@@ -1,0 +1,50 @@
+uuid: 9bc11f92-87e1-4f38-95d1-07231bda556b
+langcode: en
+status: true
+dependencies: {  }
+id: kore_school
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: koulurekisteri
+label: Koulurekisteri
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls:
+    - 'https://api.hel.fi/kore/v1/school/?format=json&limit=100'
+  item_selector: results
+  fields:
+    -
+      name: id
+      selector: id
+    -
+      name: title
+      selector: names/0/official_name
+    -
+      name: lat
+      selector: buildings/0/building/addresses/0/location/coordinates/1
+    -
+      name: lon
+      selector: buildings/0/building/addresses/0/location/coordinates/0
+  ids:
+    id:
+      type: integer
+process:
+  type:
+    plugin: default_value
+    default_value: kore_school
+  title: title
+  field_geolocation:
+    plugin: geofield_latlon
+    source:
+      - lat
+      - lon
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }

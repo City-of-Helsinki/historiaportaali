@@ -12,6 +12,7 @@ dependencies:
   module:
     - content_moderation
     - entity_usage
+    - file
     - media
     - node
     - paragraphs
@@ -26,6 +27,7 @@ permissions:
   - 'access entity usage statistics'
   - 'access media overview'
   - 'access toolbar'
+  - 'delete own files'
   - 'view all revisions'
   - 'view any unpublished article content'
   - 'view any unpublished content'

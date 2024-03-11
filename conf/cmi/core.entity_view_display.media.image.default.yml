@@ -26,8 +26,6 @@ dependencies:
     - image
     - leaflet
     - text
-_core:
-  default_config_hash: in_XCvnpxCs_Bfi1xBUEGLq1TwGghNZOnnJsyyeWqQE
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -109,8 +107,8 @@ content:
       map_position:
         force: false
         center:
-          lat: !!float 0
-          lon: !!float 0
+          lat: 0.0
+          lon: 0.0
         zoom: 15
         minZoom: 1
         maxZoom: 18

@@ -1,87 +1,20 @@
-{#
-/**
- * @file
- * Default theme implementation to display a paragraph.
- *
- * Available variables:
- * - paragraph: Full paragraph entity.
- *   Only method names starting with "get", "has", or "is" and a few common
- *   methods such as "id", "label", and "bundle" are available. For example:
- *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
- *   - paragraph.id(): The paragraph ID.
- *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
- *   - paragraph.getOwnerId(): The user ID of the paragraph author.
- *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
- *   and methods for the paragraph object.
- * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
- *   {{ content|without('field_example') }} to temporarily suppress the printing
- *   of a given child element.
- * - attributes: HTML attributes for the containing element.
- *   The attributes.class element may contain one or more of the following
- *   classes:
- *   - paragraphs: The current template type (also known as a "theming hook").
- *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
- *     "Image" it would result in "paragraphs--type--image". Note that the machine
- *     name will often be in a short form of the human readable label.
- *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
- *     preview would result in: "paragraphs--view-mode--preview", and
- *     default: "paragraphs--view-mode--default".
- * - view_mode: View mode; for example, "preview" or "full".
- * - logged_in: Flag for authenticated user status. Will be true when the
- *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
- *   is an administrator.
- *
- * @see template_preprocess_paragraph()
- *
- * @ingroup themeable
- */
-#}
-{{ attach_library('media/oembed.formatter') }}
-
+{% set paragraph_title = content.field_remote_video_title %}
+{% set paragraph_desc = content.field_remote_video_description %}
 {% set video = content.field_remote_video %}
-{% set video_url = content.field_remote_video[0]['#media'].field_media_oembed_video[0].value %}
-{% set video_title = content.field_remote_video[0]['#media'].name.value %}
-{% set video_description = content.field_remote_video[0]['#media'].field_video_description.value %}
+{% set video_title = content.field_remote_video_video_title %}
+{% set video_desc = content.field_remote_video_video_desc %}
+
+{% if not paragraph_title|render and not paragraph_desc|render %}
+  {% set header_class = 'component--no-header' %}
+{% endif %}
 
 {% block paragraph %}
-  {% embed "@hdbt/misc/component.twig" with
-    {
-      component_classes: [
-        'component--remote-video-helhist',
-      ],
-      component_content_class: 'remote-video',
-    }
-  %}
-    {% block component_content %}
-
-      <div class="media--video__content">
-        <div class="media--video__content__video">
-          {{ video }}
-        </div>
-        {% if video_title or video_description %}
-          <div class="media--video__content__info">
-            {% if video_title %}
-              <div class="media--video__content__caption">
-                {{ video_title }}
-              </div>
-            {% endif %}
-            {% if video_description %}
-              <div class="media--video__content__description">
-                {{ video_description }}
-              </div>
-            {% endif %}
-            {% include '@hdbt/navigation/link-button.html.twig' with {
-              type: 'secondary',
-              label: 'Watch video in external service'|t({}, {'context': 'Button'}),
-              url: video_url,
-              open_in_a_new_window: true,
-            } %}
-          </div>
-        {% endif %}
-      </div>
-
-    {% endblock component_content %}
-  {% endembed %}
+  {% include '@hdbt/component/remote-video.twig' with {
+    paragraph_title: paragraph_title,
+    paragraph_desc: paragraph_desc,
+    video: video,
+    video_title: video_title,
+    video_desc: video_desc
+  }%}
 {% endblock paragraph %}
+

@@ -1,0 +1,10 @@
+uuid: 435afcac-b167-4a41-a9d0-1ea65486a8e6
+langcode: en
+status: true
+dependencies: {  }
+id: koulurekisteri
+label: Koulurekisteri
+description: ''
+source_type: null
+module: null
+shared_configuration: null

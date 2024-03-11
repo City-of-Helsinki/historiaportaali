@@ -28,100 +28,92 @@
  *   - next: Present if the visible list of pages ends before the last page.
  *
  * @see template_preprocess_pager()
- *
- * @todo review all uses of the replace() filter below in
- *   https://www.drupal.org/node/3053707 as the behavior it addresses will
- *   likely change when that issue is completed.
  */
 #}
 {% if items %}
-  <nav class="pager" role="navigation" aria-labelledby="{{ heading_id }}">
-    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
-    <ul class="pager__items js-pager__items">
-      {# Print first item if we are not on the first page. #}
-      {% if items.first %}
-        {% apply spaceless %}
-        <li class="pager__item pager__item--action pager__item--first">
-          <a href="{{ items.first.href }}" class="pager__link pager__link--action-link" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
-            <span class="visually-hidden">{{ 'First page'|t }}</span>
-            <span class="pager__item-title pager__item-title--backwards" aria-hidden="true">
-              {{ items.first.text|default('First'|t)|replace({'«': ''}) }}
-            </span>
-          </a>
-        </li>
-        {% endapply %}
-      {% endif %}
-
+  <div class="hds-pagination-container">
+    <nav class="hds-pagination pager" role="navigation" aria-label="{{ 'Pagination'|t({}, {'context': 'Pagination aria-label'}) }}" data-next="{{ items.next.text|default('Next'|t({}, {'context': 'Pagination next page link text'})) }}">
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
-        {% apply spaceless %}
-        <li class="pager__item pager__item--action pager__item--previous">
-          <a href="{{ items.previous.href }}" class="pager__link pager__link--action-link" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
-            <span class="visually-hidden">{{ 'Previous page'|t }}</span>
-            <span class="pager__item-title pager__item-title--backwards" aria-hidden="true">
-              {{ items.previous.text|default('Previous'|t)|replace({'‹': ''}) }}
-            </span>
-          </a>
-        </li>
-        {% endapply %}
+        {% set prev_button_classes = [
+          'hds-button'
+          ]
+        %}
+        <ul class="js-pager__items hds-pagination__button-prev">
+          <li>
+            <a href="{{ items.previous.href }}" role="button" title="{{ 'Go to previous page number'|t({}, {'context': 'Pagination previous page link title'}) }} {{ current - 1 }}" aria-label="{{ 'Go to previous page number'|t({}, {'context': 'Pagination previous page link title'}) }} {{ current - 1 }}" rel="prev"{{ items.previous.attributes.addClass(prev_button_classes)|without('href', 'title', 'rel') }}>
+              {% include '@hdbt/misc/icon.twig' ignore missing with {icon: 'angle-left'} %}
+              <span aria-hidden="true" class="hds-pagination__button-prev-label">{{ items.previous.text|default('Previous'|t({}, {'context': 'Pagination previous page link text'})) }}</span>
+            </a>
+          </li>
+        </ul>
+      {% else %}
+        <button type="button" disabled title="{{ 'Go to previous page number'|t({}, {'context': 'Pagination previous page link title'}) }} {{ current - 1 }}" class="hds-button hds-pagination__button-prev">
+          {% include '@hdbt/misc/icon.twig' ignore missing with {icon: 'angle-left'} %}
+          <span aria-hidden="true" class="hds-pagination__button-prev-label">{{ items.previous.text|default('Previous'|t({}, {'context': 'Pagination previous page link text'})) }}</span>
+        </button>
       {% endif %}
 
-      {# Add an ellipsis if there are further previous pages. #}
-      {% if ellipses.previous %}
-        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
-      {% endif %}
-
-      {# Now generate the actual pager piece. #}
-      {% for key, item in items.pages %}
-        {% apply spaceless %}
-        <li class="pager__item{{ current == key ? ' pager__item--active' : '' }} pager__item--number">
-          {% if current == key %}
-            {% set title = 'Current page'|t %}
-          {% else %}
-            {% set title = 'Go to page @key'|t({'@key': key}) %}
-          {% endif %}
-          <a href="{{ item.href }}" class="pager__link{{ current == key ? ' is-active' }}" title="{{ title }}"{{ item.attributes|without('href', 'title', 'class') }}>
-            <span class="visually-hidden">
-              {{ current == key ? 'Current page'|t : 'Page'|t }}
-            </span>
-            {{ key }}
-          </a>
-        </li>
-        {% endapply %}
-      {% endfor %}
-
-      {# Add an ellipsis if there are further next pages. #}
-      {% if ellipses.next %}
-        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
-      {% endif %}
+      <ul class="pager__items js-pager__items hds-pagination__pages">
+        {# Add an ellipsis if there are further previous pages. #}
+        {% if ellipses.previous %}
+          <li class="pager__item">
+            <a href="{{ items.first.href }}" aria-label="{{ 'Page'|t({}, {'context': 'Pagination page number aria-label'}) ~ ' 1' }}" title="{{ 'Go to page'|t({}, {'context': 'Pagination page number title'}) ~ ' 1' }}"{{ items.first.attributes.addClass('hds-pagination__item-link')|without('href', 'title') }}>1</a>
+          </li>
+          <li class="pager__item pager__item--ellipsis" role="presentation"><span class="hds-pagination__item-ellipsis">&hellip;</span></li>
+        {% endif %}
+        {# Now generate the actual pager piece. #}
+        {% for key, item in items.pages %}
+          <li class="pager__item{{ current == key ? ' is-active' : '' }}">
+            {% if current == key %}
+              {% set title = 'Current page'|t({}, {'context': 'Pagination current page title'}) %}
+              {% set classes = [
+                'hds-pagination__item-link',
+                'hds-pagination__item-link--active',
+                ]
+              %}
+              {% set aria_current = true %}
+            {% else %}
+              {% set title = 'Go to page @key'|t({'@key': key}) %}
+              {% set classes = 'hds-pagination__item-link' %}
+              {% set aria_current = false %}
+            {% endif %}
+            <a href="{{ item.href }}" aria-label="{{ 'Page'|t({}, {'context': 'Pagination page number aria-label'}) ~ ' ' ~ key }}" title="{{ title }}"{{ item.attributes.addClass(classes)|without('href', 'title') }} {% if aria_current %}aria-current="page"{% endif %}>
+              {{- key -}}
+            </a>
+          </li>
+        {% endfor %}
+        {# Add an ellipsis if there are further next pages. #}
+        {% if ellipses.next %}
+          <li class="pager__item pager__item--ellipsis" role="presentation"><span class="hds-pagination__item-ellipsis">&hellip;</span></li>
+          <li class="pager__item">
+            <a href="{{ items.last.href }}" aria-label="{{ 'Page'|t({}, {'context': 'Pagination page number aria-label'}) ~ ' ' ~ total_pages }}" title="{{ 'Go to page'|t({}, {'context': 'Pagination page number title'}) ~ ' ' ~ total_pages }}"{{ items.last.attributes.addClass('hds-pagination__item-link')|without('href', 'title') }}>
+              {{ total_pages }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
 
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
-        {% apply spaceless %}
-        <li class="pager__item pager__item--action pager__item--next">
-          <a href="{{ items.next.href }}" class="pager__link pager__link--action-link" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
-            <span class="visually-hidden">{{ 'Next page'|t }}</span>
-            <span class="pager__item-title pager__item-title--forward" aria-hidden="true">
-              {{ items.next.text|default('Next'|t)|replace({'›': ''}) }}
-            </span>
-          </a>
-        </li>
-        {% endapply %}
+        {% set next_button_classes = [
+          'hds-button'
+          ]
+        %}
+        <ul class="js-pager__items hds-pagination__button-next">
+          <li>
+            <a href="{{ items.next.href }}" title="{{ 'Go to next page number'|t({}, {'context': 'Pagination next page link title'}) }} {{ current + 1 }}" aria-label="{{ 'Go to next page number'|t({}, {'context': 'Pagination next page link title'}) }} {{ current + 1 }}" role="button" rel="next"{{ items.next.attributes.addClass(next_button_classes)|without('href', 'title', 'rel') }}>
+              <span aria-hidden="true" class="hds-pagination__button-next-label">{{ items.next.text|default('Next'|t({}, {'context': 'Pagination next page link text'})) }}</span>
+              {% include '@hdbt/misc/icon.twig' ignore missing with {icon: 'angle-right'} %}
+            </a>
+          </li>
+        </ul>
+      {% else %}
+        <button type="button" disabled title="{{ 'Go to next page number'|t({}, {'context': 'Pagination next page link title'}) }} {{ current + 1 }}" class="hds-button hds-pagination__button-next">
+          <span aria-hidden="true" class="hds-pagination__button-next-label">{{ items.next.text|default('Next'|t({}, {'context': 'Pagination next page link text'})) }}</span>
+          {% include '@hdbt/misc/icon.twig' ignore missing with {icon: 'angle-right'} %}
+        </button>
       {% endif %}
-
-      {# Print last item if we are not on the last page. #}
-      {% if items.last %}
-        {% apply spaceless %}
-        <li class="pager__item pager__item--action pager__item--last">
-          <a href="{{ items.last.href }}" class="pager__link pager__link--action-link" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
-            <span class="visually-hidden">{{ 'Last page'|t }}</span>
-            <span class="pager__item-title pager__item-title--forward" aria-hidden="true">
-              {{ items.last.text|default('Last'|t)|replace({'»': ''}) }}
-            </span>
-          </a>
-        </li>
-        {% endapply %}
-      {% endif %}
-    </ul>
-  </nav>
+    </nav>
+  </div>
 {% endif %}

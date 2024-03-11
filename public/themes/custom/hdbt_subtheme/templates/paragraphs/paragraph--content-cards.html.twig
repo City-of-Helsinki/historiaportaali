@@ -9,17 +9,17 @@
 {% elseif design == 'large-cards' %}
   {% set design_class = 'component--content-cards-large' %}
 {% elseif design == 'small-cards-grey' %}
-  {% set design_class = 'component--content-cards-small component--content-cards-grey' %}
+  {% set design_class = 'component--full-width component--content-cards-small component--content-cards-grey' %}
   {% set has_koro = true %}
 {% elseif design == 'large-cards-grey' %}
-  {% set design_class = 'component--content-cards-large component--content-cards-grey' %}
+  {% set design_class = 'component--full-width component--content-cards-large component--content-cards-grey' %}
   {% set has_koro = true %}
 {% else %}
   {% set design_class = null %} {# This should not happen #}
 {% endif %}
 
 {% block paragraph %}
-  {% embed "@hdbt_subtheme/component/frontpage-view-component.twig" with
+  {% embed "@hdbt/misc/component.twig" with
     {
       component_classes: [
         'component--content-cards',

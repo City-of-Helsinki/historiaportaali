@@ -164,7 +164,7 @@ class NodeResaveForm extends FormBase {
    */
   public function getNodeIds(array $node_types) {
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
-    $nids = $query->condition('type', $node_types, 'IN')->execute();
+    $nids = $query->condition('type', $node_types, 'IN')->accessCheck(FALSE)->execute();
 
     return $nids;
   }

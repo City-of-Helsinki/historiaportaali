@@ -1,4 +1,4 @@
-ARG DRUPAL_DOCKER_TAG=8.1
+ARG DRUPAL_DOCKER_TAG=8.2
 FROM ghcr.io/city-of-helsinki/drupal-docker-base:${DRUPAL_DOCKER_TAG}
 
 # Override upload max filesize and post max size
@@ -7,15 +7,16 @@ RUN { \
 		echo 'upload_max_filesize=64M'; \
 		echo 'post_max_size=64M'; \
     echo 'max_execution_time=240'; \
-	} > /etc/php81/conf.d/php-overrides.ini
+	} > /etc/php82/conf.d/php-overrides.ini
 
 COPY / /var/www/html/
 WORKDIR /var/www/html
 RUN composer install --no-progress --profile --prefer-dist --no-interaction --no-dev --optimize-autoloader
 
-# Copy deploy script
-COPY docker/openshift/entrypoints/20-deploy.sh /entrypoints
-RUN chmod +x /entrypoints/20-deploy.sh
+# Copy ALL deploy scripts
+COPY docker/openshift/entrypoints/ /entrypoints
+RUN chmod +x /entrypoints/*
+
 
 # Copy cron scripts
 RUN mkdir /crons

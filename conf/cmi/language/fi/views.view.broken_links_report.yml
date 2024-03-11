@@ -1,6 +1,6 @@
 display:
   default:
-    display_title: Oletus
+    display_title: Isäntä
     display_options:
       exposed_form:
         options:
@@ -12,8 +12,8 @@ display:
       pager:
         options:
           tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
+            previous: ‹‹
+            next: ››
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
           expose:
@@ -22,14 +22,16 @@ display:
             offset_label: Offset
       fields:
         entity_field:
+          label: 'Entiteetin kenttä'
           separator: ', '
         entity_langcode:
           label: 'Kokonaisuuden kieli'
           separator: ', '
         url:
-          label: URL-osoite
+          label: URL
           separator: ', '
         last_check:
+          label: 'Tarkistettu viimeksi'
           separator: ', '
         method:
           label: Tapa
@@ -49,7 +51,7 @@ display:
       filters:
         url:
           expose:
-            label: URL-osoite
+            label: URL
         code_1:
           expose:
             label: Tilakoodi
@@ -66,3 +68,6 @@ display:
           content: 'Näytetään @start - @end / @total'
   page_1:
     display_title: Sivu
+    display_options:
+      menu:
+        title: 'Rikkinäiset linkit'

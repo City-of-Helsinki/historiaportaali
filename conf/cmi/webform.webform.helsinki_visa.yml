@@ -11,7 +11,7 @@ archive: false
 id: helsinki_visa
 title: Helsinki-visa
 description: ''
-category: ''
+categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios

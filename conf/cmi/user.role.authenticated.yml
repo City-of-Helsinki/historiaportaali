@@ -2,12 +2,19 @@ uuid: 2aaa90d3-acc1-4c5f-9a79-7b913a848123
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.webform_default
   module:
     - eu_cookie_compliance
+    - external_entities
+    - file
+    - filter
     - graphql
+    - helfi_api_base
     - linkchecker
     - matomo
     - media
+    - paragraphs
     - search_api_autocomplete
     - system
     - toolbar
@@ -22,8 +29,13 @@ permissions:
   - 'access content'
   - 'access own broken links report'
   - 'access toolbar'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
   - 'use search_api_autocomplete for search'
+  - 'use text format webform_default'
+  - 'view helfi_announcements external entity'
   - 'view media'
+  - 'view remote entities'
+  - 'view unpublished paragraphs'

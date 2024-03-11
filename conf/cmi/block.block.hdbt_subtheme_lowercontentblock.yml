@@ -1,4 +1,4 @@
-uuid: 34304600-2abd-4411-adac-811dd5b42118
+uuid: 9d2b61cb-27f4-4ddb-8e6a-55382de5579c
 langcode: en
 status: true
 dependencies:
@@ -6,17 +6,15 @@ dependencies:
     - helfi_platform_config
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: Fj7wa438NI5JwupqhKW9VRrCarkKJ7Ad0gVbeObGfsg
-id: lowercontentblock
+id: hdbt_subtheme_lowercontentblock
 theme: hdbt_subtheme
 region: after_content
-weight: -9
-provider: null
+weight: 0
+provider: helfi_base_content
 plugin: lower_content_block
 settings:
   id: lower_content_block
   label: 'Lower content block'
-  label_display: '0'
-  provider: hdbt_admin_tools
+  label_display: ''
+  provider: helfi_platform_config
 visibility: {  }

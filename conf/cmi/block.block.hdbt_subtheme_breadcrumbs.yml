@@ -1,24 +1,21 @@
-uuid: e4b51115-27cd-4688-b9c7-af8c412d9896
+uuid: 1919f2ef-e24b-4920-8151-54eed95657f7
 langcode: en
 status: true
 dependencies:
   module:
-    - node
     - system
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: X6F3oSAls1r1jwOVU5n7EG6Uaz0yFqo-GQcEXDzxxLk
-id: breadcrumbs
+id: hdbt_subtheme_breadcrumbs
 theme: hdbt_subtheme
 region: breadcrumb
 weight: 0
-provider: null
+provider: helfi_base_content
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
-  label: Murupolku
-  label_display: '0'
+  label: Breadcrumbs
+  label_display: ''
   provider: system
 visibility:
   request_path:

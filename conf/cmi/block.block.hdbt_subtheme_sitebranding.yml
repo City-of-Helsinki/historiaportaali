@@ -6,18 +6,16 @@ dependencies:
     - system
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: zieswfNu7cMhhsRwkEpe2HFgOvWeHcKNW9iXlTcq49k
 id: hdbt_subtheme_sitebranding
 theme: hdbt_subtheme
 region: header_branding
-weight: -16
-provider: null
+weight: 1
+provider: helfi_base_content
 plugin: system_branding_block
 settings:
   id: system_branding_block
   label: 'Site branding'
-  label_display: '0'
+  label_display: ''
   provider: system
   use_site_logo: true
   use_site_name: true

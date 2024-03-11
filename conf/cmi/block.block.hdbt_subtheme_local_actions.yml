@@ -1,4 +1,4 @@
-uuid: 847d68a5-40c7-416f-b0f9-d9cf2eedfb72
+uuid: c3f5bd71-1176-471a-8c85-541a92d12883
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,10 @@ dependencies:
     - hdbt_subtheme
 _core:
   default_config_hash: H69FvwR04I2gfiz-9B_vOzX7lLLZrz-6FJvXMvMR1yc
-id: hdbt_local_actions
+id: hdbt_subtheme_local_actions
 theme: hdbt_subtheme
 region: tools
-weight: -3
+weight: 1
 provider: null
 plugin: local_actions_block
 settings:

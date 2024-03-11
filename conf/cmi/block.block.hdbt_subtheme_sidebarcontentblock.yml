@@ -1,25 +1,23 @@
-uuid: 83a93add-727b-4bef-883e-077fcdd09422
+uuid: 6a17e3dc-294c-4066-8b08-beffa507897d
 langcode: en
 status: true
 dependencies:
   module:
-    - hdbt_admin_tools
+    - helfi_platform_config
     - node
   theme:
-    - hdbt
-_core:
-  default_config_hash: gRV-mUfktXuUWzDVDnmsMnc08HECbMJj0Prdtp4Yl8M
-id: sidebarcontentblock
-theme: hdbt
-region: sidebar_first
-weight: 1
-provider: null
+    - hdbt_subtheme
+id: hdbt_subtheme_sidebarcontentblock
+theme: hdbt_subtheme
+region: sidebar_second
+weight: 0
+provider: helfi_base_content
 plugin: sidebar_content_block
 settings:
   id: sidebar_content_block
   label: 'Sidebar content block'
-  label_display: '0'
-  provider: hdbt_admin_tools
+  label_display: ''
+  provider: helfi_platform_config
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -27,5 +25,4 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      article: article
       landing_page: landing_page

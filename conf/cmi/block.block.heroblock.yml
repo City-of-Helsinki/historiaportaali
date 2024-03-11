@@ -7,19 +7,17 @@ dependencies:
     - node
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: nH8M6u66xNnGzjplyiDZAKKeyzDR6NFyTMXNwDYzldk
 id: heroblock
 theme: hdbt_subtheme
 region: before_content
-weight: -13
-provider: null
+weight: 3
+provider: helfi_base_content
 plugin: hero_block
 settings:
   id: hero_block
   label: 'Hero block'
-  label_display: '0'
-  provider: hdbt_admin_tools
+  label_display: ''
+  provider: helfi_platform_config
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -27,6 +25,5 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      article: article
       landing_page: landing_page
       page: page

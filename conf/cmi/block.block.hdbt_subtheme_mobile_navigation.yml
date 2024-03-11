@@ -1,4 +1,4 @@
-uuid: 8f19f931-5ab4-4d0e-b4d5-635966a0c002
+uuid: d4740e70-16fa-4c54-908e-cd0ddf390252
 langcode: en
 status: true
 dependencies:
@@ -8,18 +8,16 @@ dependencies:
     - menu_block_current_language
   theme:
     - hdbt_subtheme
-_core:
-  default_config_hash: zSvqGMlhIHfM1eegCM8Ac0GLT1dhK62SG6upu3PiS2c
-id: mobile_navigation
+id: hdbt_subtheme_mobile_navigation
 theme: hdbt_subtheme
 region: header_branding
-weight: -12
-provider: null
+weight: 3
+provider: helfi_base_content
 plugin: 'menu_block_current_language:main'
 settings:
   id: 'menu_block_current_language:main'
   label: 'Mobile navigation'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 1
   expand_all_items: true

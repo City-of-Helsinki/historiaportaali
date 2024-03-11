@@ -7,7 +7,7 @@ dependencies:
   theme:
     - hdbt_admin
 _core:
-  default_config_hash: lXicDCw1mJycXa-lVLg25akK5VJta8Mu9I503mW9uzg
+  default_config_hash: lFlSS_nx667sE0BHPDby4HbWPIa2JyeoFn33Q0uYgtY
 id: hdbt_admin_messages
 theme: hdbt_admin
 region: highlighted

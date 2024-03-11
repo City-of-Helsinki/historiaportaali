@@ -11,7 +11,7 @@
         if (!readingTimeValue) {
           const readTimeEstimate = require('read-time-estimate');
       
-          const content = $('.region-content article.node--view-mode-full').html();
+          const content = $('.layout-content article.node--view-mode-full').html();
           const { duration: minutes } = readTimeEstimate(content, 275, 2, 500, ['img', 'Image']);
 
           $('.reading-time__value').text(Math.round(minutes));

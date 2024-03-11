@@ -1,25 +1,25 @@
-uuid: 65174e7a-3836-48fc-ad99-0f08351757f3
+uuid: 9a42c727-3167-422e-be37-e248856756af
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
   module:
     - system
   theme:
-    - stark
+    - hdbt_subtheme
 _core:
-  default_config_hash: uUF2GYN2x5fcmOu26M-gwqUA-yVWMDD_MRmnYfmPzlM
-id: stark_tools
-theme: stark
-region: sidebar_first
+  default_config_hash: z1s_0oxpOjcA1atdCgI_EmNSXDJj76BuQclUwezMmcw
+id: hdbt_subtheme_tools
+theme: hdbt_subtheme
+region: tools
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
   id: 'system_menu_block:tools'
   label: Tools
-  label_display: visible
+  label_display: '0'
   provider: system
   level: 1
   depth: 0

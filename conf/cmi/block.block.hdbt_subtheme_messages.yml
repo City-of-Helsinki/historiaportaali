@@ -1,16 +1,16 @@
-uuid: 934275bc-abf3-413c-964e-7e0b2c381cbd
+uuid: e1f7d458-178f-4150-ba67-e41cbfddd787
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - hdbt_subtheme
 _core:
-  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
-id: stark_messages
-theme: stark
-region: highlighted
+  default_config_hash: cIXgZqCUh5llJLOsOxqd5Tfm0ExTbsfImZVx3yS_jsA
+id: hdbt_subtheme_messages
+theme: hdbt_subtheme
+region: messages
 weight: 0
 provider: null
 plugin: system_messages_block

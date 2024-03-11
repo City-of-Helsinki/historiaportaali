@@ -9,7 +9,7 @@ dependencies:
 id: hdbt_subtheme_lowercontentblock
 theme: hdbt_subtheme
 region: after_content
-weight: -9
+weight: 0
 provider: helfi_base_content
 plugin: lower_content_block
 settings:

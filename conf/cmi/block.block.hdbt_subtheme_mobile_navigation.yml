@@ -11,7 +11,7 @@ dependencies:
 id: hdbt_subtheme_mobile_navigation
 theme: hdbt_subtheme
 region: header_branding
-weight: 4
+weight: 3
 provider: helfi_base_content
 plugin: 'menu_block_current_language:main'
 settings:

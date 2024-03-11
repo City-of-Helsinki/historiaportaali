@@ -11,7 +11,7 @@ dependencies:
 id: hdbt_subtheme_main_navigation_level_2
 theme: hdbt_subtheme
 region: sidebar_first
-weight: -12
+weight: 0
 provider: helfi_base_content
 plugin: 'menu_block_current_language:main'
 settings:

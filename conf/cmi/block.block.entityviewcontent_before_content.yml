@@ -10,7 +10,7 @@ dependencies:
 id: entityviewcontent_before_content
 theme: hdbt_subtheme
 region: before_content
-weight: -14
+weight: 1
 provider: null
 plugin: 'entity_view:node'
 settings:

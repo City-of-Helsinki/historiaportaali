@@ -1,29 +1,32 @@
-uuid: 44d1bb61-da36-4dc7-8651-ba9937972206
+uuid: 73757f76-3ea9-4141-8190-ca9501bcd9ca
 langcode: en
 status: true
 dependencies:
   module:
-    - helfi_platform_config
     - node
+    - system
   theme:
     - hdbt_subtheme
-id: hdbt_subtheme_heroblock
+id: hdbt_page_title
 theme: hdbt_subtheme
 region: before_content
-weight: -11
+weight: 0
 provider: helfi_base_content
-plugin: hero_block
+plugin: page_title_block
 settings:
-  id: hero_block
-  label: 'Hero block'
+  id: page_title_block
+  label: 'Page title'
   label_display: ''
-  provider: helfi_platform_config
+  provider: core
 visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n/haku\r\n/sok"
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    negate: false
+    negate: true
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      landing_page: landing_page
-      page: page
+      map_page: map_page

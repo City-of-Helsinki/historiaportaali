@@ -11,7 +11,7 @@ dependencies:
 id: hdbt_subtheme_footertopnavigation
 theme: hdbt_subtheme
 region: footer_top
-weight: -4
+weight: 0
 provider: helfi_base_content
 plugin: 'menu_block_current_language:footer-top-navigation'
 settings:

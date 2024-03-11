@@ -6,11 +6,11 @@ dependencies:
     - helfi_platform_config
     - node
   theme:
-    - hdbt
+    - hdbt_subtheme
 id: heroblock
-theme: hdbt
+theme: hdbt_subtheme
 region: before_content
-weight: -11
+weight: 3
 provider: helfi_base_content
 plugin: hero_block
 settings:

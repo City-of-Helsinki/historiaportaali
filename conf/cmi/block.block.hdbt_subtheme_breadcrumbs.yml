@@ -17,4 +17,16 @@ settings:
   label: Breadcrumbs
   label_display: ''
   provider: system
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n/map\r\n/kartta\r\n/haku"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      listing_page: listing_page

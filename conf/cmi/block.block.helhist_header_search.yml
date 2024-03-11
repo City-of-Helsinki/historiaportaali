@@ -9,7 +9,7 @@ dependencies:
 id: helhist_header_search
 theme: hdbt_subtheme
 region: header_branding
-weight: -15
+weight: 0
 provider: null
 plugin: helhist_search_header_search_block
 settings:

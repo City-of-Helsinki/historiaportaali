@@ -7,9 +7,9 @@ dependencies:
   module:
     - menu_block_current_language
   theme:
-    - hdbt
+    - hdbt_subtheme
 id: mainnavigation
-theme: hdbt
+theme: hdbt_subtheme
 region: header_bottom
 weight: 0
 provider: helfi_base_content

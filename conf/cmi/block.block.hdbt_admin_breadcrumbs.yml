@@ -7,7 +7,7 @@ dependencies:
   theme:
     - hdbt_admin
 _core:
-  default_config_hash: X-NO-h8bESG7JjLDlq0Kw1BO8R96CyxWPa-HXRBILlE
+  default_config_hash: ZDjDPVK-SNQeO5ht2pj9cg-SkTqPVcZDK05tUlQyHpQ
 id: hdbt_admin_breadcrumbs
 theme: hdbt_admin
 region: breadcrumb

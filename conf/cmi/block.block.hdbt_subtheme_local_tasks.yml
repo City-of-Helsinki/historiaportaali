@@ -1,15 +1,15 @@
-uuid: 74bd937c-7e13-4d96-adb2-a46e53f0633a
+uuid: f4af57f3-d88b-47b0-9f6b-2f8ba62a3036
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
+    - hdbt_subtheme
 _core:
-  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
-id: stark_local_tasks
-theme: stark
-region: content
-weight: -20
+  default_config_hash: _UoTG8MagibHn89173NtrwtSq5ylXJRanQkHTZmRGe4
+id: hdbt_subtheme_local_tasks
+theme: hdbt_subtheme
+region: tools
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

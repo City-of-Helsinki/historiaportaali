@@ -1,4 +1,4 @@
-uuid: 47b53961-3ffa-4359-a1e6-364b788a82d0
+uuid: 02e26f32-5e1e-46ba-908e-288dbb806ba3
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - menu_block_current_language
   theme:
-    - hdbt
-id: headertopnavigation
-theme: hdbt
+    - hdbt_subtheme
+id: hdbt_subtheme_headertopnavigation
+theme: hdbt_subtheme
 region: header_top
 weight: 0
 provider: helfi_base_content

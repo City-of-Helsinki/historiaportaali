@@ -5,11 +5,11 @@ dependencies:
   module:
     - system
   theme:
-    - hdbt_subtheme
+    - hdbt
 _core:
   default_config_hash: cIXgZqCUh5llJLOsOxqd5Tfm0ExTbsfImZVx3yS_jsA
 id: hdbt_messages
-theme: hdbt_subtheme
+theme: hdbt
 region: messages
 weight: -3
 provider: null

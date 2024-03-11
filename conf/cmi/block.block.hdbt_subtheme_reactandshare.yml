@@ -1,15 +1,15 @@
-uuid: af2ed590-f94a-4208-a6a4-21ca3e433f61
+uuid: 9a5ed4dd-d8f7-4fa0-a05d-f3780982282d
 langcode: en
 status: false
 dependencies:
   module:
     - helfi_platform_config
   theme:
-    - hdbt
+    - hdbt_subtheme
 _core:
   default_config_hash: NGwdfNLrACjqgqO8nuIYG7P4pXxSCQ51eykE4-xME6M
-id: reactandshare
-theme: hdbt
+id: hdbt_subtheme_reactandshare
+theme: hdbt_subtheme
 region: after_content
 weight: -7
 provider: null

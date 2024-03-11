@@ -1,22 +1,22 @@
-uuid: 47b53961-3ffa-4359-a1e6-364b788a82d0
+uuid: 6e876cb6-4729-411a-b2fa-418b2768e84a
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.header-top-navigation
+    - system.menu.footer-bottom-navigation
   module:
     - menu_block_current_language
   theme:
-    - hdbt
-id: headertopnavigation
-theme: hdbt
-region: header_top
+    - hdbt_subtheme
+id: hdbt_subtheme_footerbottomnavigation
+theme: hdbt_subtheme
+region: footer_bottom
 weight: 0
 provider: helfi_base_content
-plugin: 'menu_block_current_language:header-top-navigation'
+plugin: 'menu_block_current_language:footer-bottom-navigation'
 settings:
-  id: 'menu_block_current_language:header-top-navigation'
-  label: 'Header - Top navigation'
+  id: 'menu_block_current_language:footer-bottom-navigation'
+  label: 'Footer - Bottom navigation'
   label_display: ''
   provider: menu_block_current_language
   level: 1

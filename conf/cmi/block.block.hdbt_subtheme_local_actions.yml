@@ -1,15 +1,15 @@
-uuid: 71a36640-e40d-45fe-b21f-7c141076e451
+uuid: c3f5bd71-1176-471a-8c85-541a92d12883
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
+    - hdbt_subtheme
 _core:
-  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
-id: stark_local_actions
-theme: stark
-region: content
-weight: -10
+  default_config_hash: H69FvwR04I2gfiz-9B_vOzX7lLLZrz-6FJvXMvMR1yc
+id: hdbt_subtheme_local_actions
+theme: hdbt_subtheme
+region: tools
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

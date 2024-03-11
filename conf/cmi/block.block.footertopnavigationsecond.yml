@@ -1,23 +1,23 @@
-uuid: 47b53961-3ffa-4359-a1e6-364b788a82d0
+uuid: 0c2602f5-2884-4303-ad8d-c49aebc1326e
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.header-top-navigation
+    - system.menu.footer-top-navigation-2
   module:
     - menu_block_current_language
   theme:
     - hdbt
-id: headertopnavigation
+id: footertopnavigationsecond
 theme: hdbt
-region: header_top
-weight: 0
+region: footer_top
+weight: 2
 provider: helfi_base_content
-plugin: 'menu_block_current_language:header-top-navigation'
+plugin: 'menu_block_current_language:footer-top-navigation-2'
 settings:
-  id: 'menu_block_current_language:header-top-navigation'
-  label: 'Header - Top navigation'
-  label_display: ''
+  id: 'menu_block_current_language:footer-top-navigation-2'
+  label: Connect
+  label_display: '1'
   provider: menu_block_current_language
   level: 1
   expand_all_items: false

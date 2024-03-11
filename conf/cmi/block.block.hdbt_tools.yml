@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - hdbt_subtheme
+    - hdbt
 _core:
   default_config_hash: z1s_0oxpOjcA1atdCgI_EmNSXDJj76BuQclUwezMmcw
 id: hdbt_tools
-theme: hdbt_subtheme
+theme: hdbt
 region: tools
 weight: -3
 provider: null

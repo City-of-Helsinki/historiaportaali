@@ -4,6 +4,8 @@ status: true
 dependencies:
   theme:
     - hdbt_admin
+_core:
+  default_config_hash: s3DyHeR2bKeM-7K4WPCdBTAMVULYXkNs5eXSCeW3wtU
 id: hdbt_admin_secondary_local_tasks
 theme: hdbt_admin
 region: pre_content

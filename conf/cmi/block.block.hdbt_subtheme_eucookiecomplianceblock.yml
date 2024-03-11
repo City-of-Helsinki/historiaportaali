@@ -1,4 +1,4 @@
-uuid: 8c2fecf9-007c-41a5-adda-1bf15b4f337d
+uuid: 5dc43593-fe5b-428c-9da5-d62186692991
 langcode: en
 status: true
 dependencies:
@@ -6,9 +6,9 @@ dependencies:
     - eu_cookie_compliance
     - system
   theme:
-    - hdbt
-id: eucookiecomplianceblock
-theme: hdbt
+    - hdbt_subtheme
+id: hdbt_subtheme_eucookiecomplianceblock
+theme: hdbt_subtheme
 region: after_content
 weight: -8
 provider: helfi_eu_cookie_compliance

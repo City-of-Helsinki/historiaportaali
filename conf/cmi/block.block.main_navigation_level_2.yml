@@ -1,25 +1,23 @@
 uuid: b712a30e-3993-4c4d-9d70-e42ff6fb9171
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
   module:
     - menu_block_current_language
   theme:
-    - hdbt_subtheme
-_core:
-  default_config_hash: zS9zgTlcanrv75vk0WibXcekGUttnN4EwP1pwFdTAcM
+    - hdbt
 id: main_navigation_level_2
-theme: hdbt_subtheme
+theme: hdbt
 region: sidebar_first
 weight: -12
-provider: null
+provider: helfi_base_content
 plugin: 'menu_block_current_language:main'
 settings:
   id: 'menu_block_current_language:main'
   label: 'Main navigation (Level 2 ->)'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 2
   expand_all_items: true

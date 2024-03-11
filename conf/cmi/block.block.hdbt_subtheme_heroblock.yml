@@ -1,4 +1,4 @@
-uuid: 380e61d3-b514-4660-b9a7-d18fa2d664b1
+uuid: 44d1bb61-da36-4dc7-8651-ba9937972206
 langcode: en
 status: true
 dependencies:
@@ -6,9 +6,9 @@ dependencies:
     - helfi_platform_config
     - node
   theme:
-    - hdbt
-id: heroblock
-theme: hdbt
+    - hdbt_subtheme
+id: hdbt_subtheme_heroblock
+theme: hdbt_subtheme
 region: before_content
 weight: -11
 provider: helfi_base_content

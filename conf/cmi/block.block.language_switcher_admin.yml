@@ -8,11 +8,11 @@ dependencies:
   theme:
     - hdbt_admin
 _core:
-  default_config_hash: EgdQi5I38A9g1z8A-zNybRrIkjKM_M0sYfkG53hDJwc
+  default_config_hash: elfSz6Q1pJYMKZmEjWAjS3st0_XKf-XYD5RHEsZjhYM
 id: language_switcher_admin
 theme: hdbt_admin
 region: header
-weight: -6
+weight: -3
 provider: null
 plugin: 'language_block:language_content'
 settings:
@@ -23,5 +23,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
     pages: "/node/*\r\n/admin/content/integrations/tpr-unit/*/edit\r\n/admin/content/integrations/tpr-service/*/edit\r\n/group/*/content/create/*"
+    negate: true

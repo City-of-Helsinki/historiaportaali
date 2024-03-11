@@ -7,19 +7,17 @@ dependencies:
   module:
     - menu_block_current_language
   theme:
-    - hdbt_subtheme
-_core:
-  default_config_hash: Lq0uz6Wcg4xRo7w6BmzuzPTwOXtY8Q4qmYGUcGCvBLA
+    - hdbt
 id: footerbottomnavigation
-theme: hdbt_subtheme
+theme: hdbt
 region: footer_bottom
 weight: 0
-provider: null
+provider: helfi_base_content
 plugin: 'menu_block_current_language:footer-bottom-navigation'
 settings:
   id: 'menu_block_current_language:footer-bottom-navigation'
   label: 'Footer - Bottom navigation'
-  label_display: '0'
+  label_display: ''
   provider: menu_block_current_language
   level: 1
   expand_all_items: false

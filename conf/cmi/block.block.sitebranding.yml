@@ -1,13 +1,13 @@
-uuid: d402a18b-44cd-446c-befa-6488b02e50c2
+uuid: fe6dd768-2f6d-4ea6-a891-5b6aa908f7b8
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - hdbt_subtheme
-id: hdbt_subtheme_sitebranding
-theme: hdbt_subtheme
+    - hdbt
+id: sitebranding
+theme: hdbt
 region: header_branding
 weight: 1
 provider: helfi_base_content

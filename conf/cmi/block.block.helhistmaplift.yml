@@ -10,7 +10,7 @@ dependencies:
 id: helhistmaplift
 theme: hdbt_subtheme
 region: before_content
-weight: -12
+weight: -9
 provider: null
 plugin: helhist_map_map_lift_block
 settings:

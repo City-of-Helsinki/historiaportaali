@@ -23,8 +23,8 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      text: text
       image: image
+      text: text
     negate: 0
     target_bundles_drag_drop:
       image:

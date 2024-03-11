@@ -149,7 +149,7 @@ function _get_active_terms($taxonomy_field, $select_field) {
   // $query->condition('tname.langcode', $language);
   $query->fields('node_field_data', [$select_field]);
   $query->fields('tname', ['name']);
-  $result = $query->distinct()->execute();
+  $result = $query->accessCheck(TRUE)->distinct()->execute();
   while ($row = $result->fetchAssoc()) {
     array_push($term_list, [$row[$select_field], $row['name']]);
   }
@@ -164,7 +164,7 @@ function _get_active_terms($taxonomy_field, $select_field) {
   // $query->condition('tname.langcode', $language);
   $query->fields('media_field_data', [$select_field]);
   $query->fields('tname', ['name']);
-  $result = $query->distinct()->execute();
+  $result = $query->accessCheck(TRUE)->distinct()->execute();
   while ($row = $result->fetchAssoc()) {
     array_push($term_list, [$row[$select_field], $row['name']]);
   }

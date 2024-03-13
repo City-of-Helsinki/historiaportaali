@@ -60,6 +60,10 @@
   --hdbt-color-metro--secondary: #fff0f7;
   --hdbt-color-metro--accent: #c2a251;
   --hdbt-color-metro-text--primary: #f7f7f8;
+
+  // Override new HDBT variables.
+  --theme-fg2: var(--color-metro-dark) !important;
+  --theme-bg1: var(--color-metro-dark) !important;
 }
 
 $hdbt-color-black: var(--hdbt-color-black);

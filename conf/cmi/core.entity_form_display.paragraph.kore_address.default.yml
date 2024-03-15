@@ -1,0 +1,23 @@
+uuid: b1bfa5bc-cfdd-4af6-b623-0edfe6b8fa24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_address.field_kore_address
+    - paragraphs.paragraphs_type.kore_address
+id: paragraph.kore_address.default
+targetEntityType: paragraph
+bundle: kore_address
+mode: default
+content:
+  field_kore_address:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

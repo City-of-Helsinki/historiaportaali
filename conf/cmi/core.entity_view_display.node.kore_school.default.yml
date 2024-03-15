@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.kore_school.body
     - field.field.node.kore_school.field_geolocation
     - field.field.node.kore_school.field_kore_archives
+    - field.field.node.kore_school.field_kore_buildings
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_principals
     - node.type.kore_school
@@ -43,6 +44,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_kore_buildings:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view

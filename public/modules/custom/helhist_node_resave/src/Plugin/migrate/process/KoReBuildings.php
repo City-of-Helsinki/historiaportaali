@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_principals",
+ *   id = "kore_buildings",
  *   handle_multiples = TRUE
  * )
  */
-class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -96,11 +96,22 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_principal',
-      'field_kore_principal' => [
-        'value'  => $item['principal']['surname'] . ', ' . $item['principal']['first_name'],
-      ],
+      'type' => 'kore_building',
     ]);
+
+    // Create nested Address paragraphs.
+    foreach ($item['building']['addresses'] as $address) {
+      $address_para = Paragraph::create([
+        'langcode' => 'fi',
+        'field_kore_address' => [
+          'value'  => $address['street_name_fi'],
+        ],
+        'type' => 'kore_address',
+      ]);
+
+      $paragraph->field_kore_addresses->appendItem($address_para);
+        $address_para->save();
+    }
 
     $paragraph->save();
 

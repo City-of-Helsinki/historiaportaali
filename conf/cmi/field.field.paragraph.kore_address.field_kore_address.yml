@@ -1,0 +1,19 @@
+uuid: 1c93ec78-bf2a-444e-8893-51d77499232b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_address
+    - paragraphs.paragraphs_type.kore_address
+id: paragraph.kore_address.field_kore_address
+field_name: field_kore_address
+entity_type: paragraph
+bundle: kore_address
+label: 'KoRe address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

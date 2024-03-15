@@ -38,6 +38,9 @@ source:
     -
       name: archives
       selector: archives
+    -
+      name: buildings
+      selector: buildings
   ids:
     id:
       type: integer
@@ -60,6 +63,9 @@ process:
   field_kore_archives:
     plugin: kore_archives
     source: archives
+  field_kore_buildings:
+    plugin: kore_buildings
+    source: buildings
   uid:
     plugin: default_value
     default_value: 1

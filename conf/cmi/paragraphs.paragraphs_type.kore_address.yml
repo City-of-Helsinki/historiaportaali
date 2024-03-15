@@ -1,0 +1,10 @@
+uuid: ec4632fc-a010-417c-aea9-4a761a1e61e2
+langcode: en
+status: true
+dependencies: {  }
+id: kore_address
+label: 'KoRe address'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

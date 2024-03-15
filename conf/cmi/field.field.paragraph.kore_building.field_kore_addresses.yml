@@ -1,0 +1,142 @@
+uuid: b0e8a983-b093-4cef-9a55-3305ed364535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_addresses
+    - paragraphs.paragraphs_type.kore_address
+    - paragraphs.paragraphs_type.kore_building
+  module:
+    - entity_reference_revisions
+id: paragraph.kore_building.field_kore_addresses
+field_name: field_kore_addresses
+entity_type: paragraph
+bundle: kore_building
+label: 'KoRe addresses'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kore_address: kore_address
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 39
+        enabled: false
+      accordion_item:
+        weight: 40
+        enabled: false
+      banner:
+        weight: 41
+        enabled: false
+      chart:
+        weight: 42
+        enabled: false
+      columns:
+        weight: 43
+        enabled: false
+      contact_card:
+        weight: 44
+        enabled: false
+      contact_card_listing:
+        weight: 45
+        enabled: false
+      content_cards:
+        weight: 46
+        enabled: false
+      content_liftup:
+        weight: 47
+        enabled: false
+      event_list:
+        weight: 48
+        enabled: false
+      from_library:
+        weight: 49
+        enabled: false
+      gallery:
+        weight: 50
+        enabled: false
+      gallery_slide:
+        weight: 51
+        enabled: false
+      hearings:
+        weight: 52
+        enabled: false
+      hero:
+        weight: 53
+        enabled: false
+      image:
+        weight: 54
+        enabled: false
+      kore_address:
+        weight: 55
+        enabled: true
+      kore_archive:
+        weight: 56
+        enabled: false
+      kore_building:
+        weight: 57
+        enabled: false
+      kore_name:
+        weight: 58
+        enabled: false
+      kore_principal:
+        weight: 59
+        enabled: false
+      liftup_with_image:
+        weight: 60
+        enabled: false
+      list_of_links:
+        weight: 61
+        enabled: false
+      list_of_links_item:
+        weight: 62
+        enabled: false
+      map:
+        weight: 63
+        enabled: false
+      map_api_endpoint:
+        weight: 64
+        enabled: false
+      phasing:
+        weight: 65
+        enabled: false
+      phasing_item:
+        weight: 66
+        enabled: false
+      popular_service_item:
+        weight: 68
+        enabled: false
+      popular_services:
+        weight: 67
+        enabled: false
+      remote_video:
+        weight: 69
+        enabled: false
+      sidebar_text:
+        weight: 70
+        enabled: false
+      social_media_link:
+        weight: 71
+        enabled: false
+      target_group_link_item:
+        weight: 73
+        enabled: false
+      target_group_links:
+        weight: 72
+        enabled: false
+      text:
+        weight: 74
+        enabled: false
+      timeline:
+        weight: 75
+        enabled: false
+      timeline_item:
+        weight: 76
+        enabled: false
+field_type: entity_reference_revisions

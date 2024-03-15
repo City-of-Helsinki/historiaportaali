@@ -1,0 +1,21 @@
+uuid: 0fa3a09b-6e8d-44b5-8f4f-9d69fbb05851
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_kore_buildings
+field_name: field_kore_buildings
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

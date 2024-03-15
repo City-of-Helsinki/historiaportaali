@@ -1,0 +1,19 @@
+uuid: 2f43999a-90a1-4736-841d-c0b50afcfbd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_archive
+    - paragraphs.paragraphs_type.kore_archive
+id: paragraph.kore_archive.field_kore_archive
+field_name: field_kore_archive
+entity_type: paragraph
+bundle: kore_archive
+label: 'KoRe archive'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

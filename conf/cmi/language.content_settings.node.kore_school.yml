@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: node.kore_school
 target_entity_type_id: node
 target_bundle: kore_school
 default_langcode: fi
-language_alterable: true
+language_alterable: false

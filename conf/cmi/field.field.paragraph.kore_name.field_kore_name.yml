@@ -1,0 +1,19 @@
+uuid: f0cfeb05-2a48-40b8-b85d-e2178cc0db6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_name
+    - paragraphs.paragraphs_type.kore_name
+id: paragraph.kore_name.field_kore_name
+field_name: field_kore_name
+entity_type: paragraph
+bundle: kore_name
+label: 'KoRe name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

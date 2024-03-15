@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.kore_school.body
     - field.field.node.kore_school.field_geolocation
+    - field.field.node.kore_school.field_kore_archives
+    - field.field.node.kore_school.field_kore_names
+    - field.field.node.kore_school.field_kore_principals
     - node.type.kore_school
   module:
     - text
@@ -30,6 +33,9 @@ content:
     region: content
 hidden:
   field_geolocation: true
+  field_kore_archives: true
+  field_kore_names: true
+  field_kore_principals: true
   langcode: true
   published_at: true
   search_api_excerpt: true

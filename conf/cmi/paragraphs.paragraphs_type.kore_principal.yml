@@ -1,0 +1,10 @@
+uuid: fb265e1a-93ec-436d-95cc-359a3c509cd6
+langcode: en
+status: true
+dependencies: {  }
+id: kore_principal
+label: 'KoRe principal'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

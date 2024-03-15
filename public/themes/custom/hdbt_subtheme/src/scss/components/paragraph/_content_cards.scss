@@ -64,7 +64,7 @@ $card_spacing: $spacing-and-half;
   }
 
   &::after {
-    display: none;
+    display: none !important;
   }
 
   &:hover,

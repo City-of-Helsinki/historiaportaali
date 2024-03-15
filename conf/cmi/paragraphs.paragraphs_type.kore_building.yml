@@ -1,0 +1,10 @@
+uuid: a4a81efd-c3c1-4335-abd8-b30a0e8f6c72
+langcode: en
+status: true
+dependencies: {  }
+id: kore_building
+label: 'KoRe building'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

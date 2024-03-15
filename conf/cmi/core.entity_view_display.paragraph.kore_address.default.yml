@@ -1,0 +1,22 @@
+uuid: a864ab26-1dce-4e27-a1a7-072097177286
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_address.field_kore_address
+    - paragraphs.paragraphs_type.kore_address
+id: paragraph.kore_address.default
+targetEntityType: paragraph
+bundle: kore_address
+mode: default
+content:
+  field_kore_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

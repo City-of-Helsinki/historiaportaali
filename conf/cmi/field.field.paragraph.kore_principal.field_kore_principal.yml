@@ -1,0 +1,19 @@
+uuid: ac37f2ab-5a78-4d15-9a07-e82817ee5ab4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_principal
+    - paragraphs.paragraphs_type.kore_principal
+id: paragraph.kore_principal.field_kore_principal
+field_name: field_kore_principal
+entity_type: paragraph
+bundle: kore_principal
+label: 'KoRe principal'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

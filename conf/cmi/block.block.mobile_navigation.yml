@@ -8,7 +8,7 @@ dependencies:
     - menu_block_current_language
   theme:
     - hdbt_subtheme
-id: hdbt_subtheme_mobile_navigation
+id: mobile_navigation
 theme: hdbt_subtheme
 region: header_branding
 weight: 3

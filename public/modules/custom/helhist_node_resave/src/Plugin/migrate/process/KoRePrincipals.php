@@ -60,7 +60,7 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs =[];
+  $paragraphs = [];
   
    if (isset($value)) {
       foreach ($value as $item) {
@@ -98,7 +98,7 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
       // Unique to this KoRe paragraph type.
       'type' => 'kore_principal',
       'field_kore_principal' => [
-        'value'  => $item['principal']['surname'] . ', ' . $item['principal']['first_name'],
+        'value' => $item['principal']['surname'] . ', ' . $item['principal']['first_name'],
       ],
     ]);
 

@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.kore_school.field_geolocation
     - field.field.node.kore_school.field_kore_archives
     - field.field.node.kore_school.field_kore_buildings
+    - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_principals
     - node.type.kore_school
@@ -86,6 +88,33 @@ content:
         collapse_edit_all: collapse_edit_all
         convert: '0'
         duplicate: '0'
+    third_party_settings: {  }
+  field_kore_continuums:
+    type: paragraphs
+    weight: 127
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_continuum
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_kore_id:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_kore_names:
     type: paragraphs

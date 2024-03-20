@@ -1,0 +1,10 @@
+uuid: dfb865e2-6d7d-4d4d-9356-3798729c3a9a
+langcode: en
+status: true
+dependencies: {  }
+id: kore_continuum
+label: 'KoRe continuum'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

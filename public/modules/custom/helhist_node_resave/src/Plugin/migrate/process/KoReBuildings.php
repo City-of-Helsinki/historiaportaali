@@ -60,7 +60,7 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs =[];
+  $paragraphs = [];
   
    if (isset($value)) {
       foreach ($value as $item) {
@@ -104,7 +104,7 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
       $address_para = Paragraph::create([
         'langcode' => 'fi',
         'field_kore_address' => [
-          'value'  => $address['street_name_fi'],
+          'value' => $address['street_name_fi'],
         ],
         'type' => 'kore_address',
       ]);

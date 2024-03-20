@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.kore_school.field_geolocation
     - field.field.node.kore_school.field_kore_archives
     - field.field.node.kore_school.field_kore_buildings
+    - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_principals
     - node.type.kore_school
@@ -53,6 +55,24 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_kore_continuums:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_kore_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view

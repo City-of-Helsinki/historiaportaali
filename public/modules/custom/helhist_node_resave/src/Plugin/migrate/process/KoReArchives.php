@@ -60,7 +60,7 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs =[];
+  $paragraphs = [];
   
    if (isset($value)) {
       foreach ($value as $item) {
@@ -98,7 +98,7 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
       // Unique to this KoRe paragraph type.
       'type' => 'kore_archive',
       'field_kore_archive' => [
-        'value'  => $item['location'],
+        'value' => $item['location'],
       ],
     ]);
 

@@ -44,6 +44,12 @@ source:
     -
       name: buildings
       selector: buildings
+    -
+      name: continuum_active
+      selector: continuum_active
+    -
+      name: continuum_target
+      selector: continuum_target
   ids:
     id:
       type: integer
@@ -64,6 +70,7 @@ process:
     source:
       - lat
       - lon
+  field_kore_id: id
   field_kore_names:
     plugin: kore_names
     source: names
@@ -76,6 +83,11 @@ process:
   field_kore_buildings:
     plugin: kore_buildings
     source: buildings
+  field_kore_continuums:
+    plugin: kore_continuums
+    source:
+      - continuum_active
+      - continuum_target
   uid:
     plugin: default_value
     default_value: 1

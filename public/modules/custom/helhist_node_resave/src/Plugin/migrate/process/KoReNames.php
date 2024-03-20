@@ -60,9 +60,10 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs = [];
-  
-   if (isset($value)) {
+    $paragraphs = [];
+
+    if (isset($value)) {
+      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -76,6 +77,16 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
    */
   public function multiple(): bool {
     return TRUE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function compare($a, $b) {
+    $ac = $a['end_year'];
+    $bc = $b['end_year'];
+    if ($ac and $bc) return 0; // no sort if not empty
+    return ($ac > $bc) ? -1 : 1; // else sort
   }
 
   protected function createParagraphsItem(array $item): array {

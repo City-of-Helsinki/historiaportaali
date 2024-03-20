@@ -68,7 +68,7 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
     $language = $this->languageManager->getCurrentLanguage();
     
     $map_nid = 54;
-    $map_node_url = Url::fromRoute('entity.node.canonical', ['node' => $map_nid], ['language' => $language])->toString();
+    $map_node_url = Url::fromRoute('entity.node.canonical', ['node' => $map_nid], ['language' => $language, 'absolute' => TRUE])->toString();
 
     $build = [
       '#theme' => 'map_lift_block',

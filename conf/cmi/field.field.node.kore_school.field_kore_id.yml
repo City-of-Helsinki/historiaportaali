@@ -1,0 +1,23 @@
+uuid: 7fb2ccc4-fa1e-428b-83a5-230e1eb33fe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kore_id
+    - node.type.kore_school
+id: node.kore_school.field_kore_id
+field_name: field_kore_id
+entity_type: node
+bundle: kore_school
+label: 'KoRe ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

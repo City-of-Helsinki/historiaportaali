@@ -5,12 +5,20 @@ dependencies:
   config:
     - field.field.node.kore_school.body
     - field.field.node.kore_school.field_geolocation
+    - field.field.node.kore_school.field_kore_archives
+    - field.field.node.kore_school.field_kore_buildings
+    - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_id
+    - field.field.node.kore_school.field_kore_names
+    - field.field.node.kore_school.field_kore_principals
     - node.type.kore_school
   module:
     - content_moderation
     - geofield
     - hdbt_admin_tools
+    - paragraphs
     - path
+    - publication_date
     - scheduler
     - text
 id: node.kore_school.default
@@ -40,6 +48,113 @@ content:
     region: content
     settings:
       html5_geolocation: false
+    third_party_settings: {  }
+  field_kore_archives:
+    type: paragraphs
+    weight: 125
+    region: content
+    settings:
+      title: Lohko
+      title_plural: Lohkot
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_archive
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_kore_buildings:
+    type: paragraphs
+    weight: 126
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_building
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_kore_continuums:
+    type: paragraphs
+    weight: 127
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_continuum
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_kore_id:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_kore_names:
+    type: paragraphs
+    weight: 124
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_name
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_kore_principals:
+    type: paragraphs
+    weight: 123
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_principal
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
     third_party_settings: {  }
   langcode:
     type: language_select

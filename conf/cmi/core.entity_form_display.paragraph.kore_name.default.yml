@@ -1,0 +1,32 @@
+uuid: 859d1ec9-a3a5-41c9-b326-f53ae8ef5993
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_name.field_kore_date
+    - field.field.paragraph.kore_name.field_kore_name
+    - paragraphs.paragraphs_type.kore_name
+  module:
+    - datetime_range
+id: paragraph.kore_name.default
+targetEntityType: paragraph
+bundle: kore_name
+mode: default
+content:
+  field_kore_date:
+    type: daterange_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kore_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

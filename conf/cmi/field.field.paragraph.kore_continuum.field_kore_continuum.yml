@@ -1,0 +1,21 @@
+uuid: fb27c419-fda4-46d3-9c3a-11104c9ee8ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_continuum
+    - paragraphs.paragraphs_type.kore_continuum
+  module:
+    - options
+id: paragraph.kore_continuum.field_kore_continuum
+field_name: field_kore_continuum
+entity_type: paragraph
+bundle: kore_continuum
+label: 'KoRe continuum'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

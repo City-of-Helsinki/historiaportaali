@@ -1,0 +1,21 @@
+uuid: 038602b8-2d9a-4276-937e-09c0e361618e
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - paragraphs
+id: paragraph.field_kore_date
+field_name: field_kore_date
+entity_type: paragraph
+type: daterange
+settings:
+  datetime_type: date
+  optional_end_date: true
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

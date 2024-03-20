@@ -1,0 +1,37 @@
+uuid: 545592ea-e032-44fe-88ed-f2be31fefd0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_building.field_kore_addresses
+    - field.field.paragraph.kore_building.field_kore_date
+    - paragraphs.paragraphs_type.kore_building
+  module:
+    - datetime_range
+    - entity_reference_revisions
+id: paragraph.kore_building.default
+targetEntityType: paragraph
+bundle: kore_building
+mode: default
+content:
+  field_kore_addresses:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_kore_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

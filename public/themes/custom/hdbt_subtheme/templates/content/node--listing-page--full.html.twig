@@ -84,15 +84,11 @@
 {% embed "@hdbt/misc/container.twig" with {container_element: node.bundle|clean_class ~ '_content'} %}
   {% block container_content %}
     <article{{ attributes.addClass(classes) }}>
-      {% embed "@hdbt/misc/container.twig" with {container_element: node.bundle|clean_class ~ '_body'} %}
-        {% block container_body %}
-          {% if content.body|render %}
-            <div class="{{ node.bundle|clean_class }}__body">
-              {{ content }}
-            </div>
-          {% endif %}
-        {% endblock container_body %}
-      {% endembed %}
+      {% if content.body|render %}
+        <div class="{{ node.bundle|clean_class }}__body">
+          {{ content }}
+        </div>
+      {% endif %}
     </article>
   {% endblock container_content %}
 {% endembed %}

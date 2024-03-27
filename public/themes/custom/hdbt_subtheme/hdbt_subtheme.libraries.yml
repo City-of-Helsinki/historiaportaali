@@ -35,9 +35,9 @@ leaflet-sync:
 map-view:
   version: 1.x
   js:
-    dist/js/map.min.js: {}
-    dist/js/map-controls.min.js: {}
-    dist/js/map-comparison.min.js: {}
+    dist/js/map.min.js: { weight: -10 }
+    dist/js/map-controls.min.js: { weight: -10 }
+    dist/js/map-comparison.min.js: { weight: -10 }
   dependencies:
     - core/jquery
     - core/once

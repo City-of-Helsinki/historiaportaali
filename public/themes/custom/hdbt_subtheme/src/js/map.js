@@ -1,29 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-(($, Drupal, drupalSettings) => {
+(($, Drupal, drupalSettings, once) => {
   let map;
 
   Drupal.behaviors.map = {
     attach: function(context, settings) {
       let self = this;
 
-      $(document).once('map').on('leaflet.map', function(e, settings, lMap, mapid) {
-        if (mapid.startsWith('leaflet-map-view-combined-map-block')) {
-          map = lMap;
-          const idFromUrl = self.getUrlParameter('id');
-
-          self.bindPopupPositioning();
-
-          if (idFromUrl) {
-            self.openPopupByNid(idFromUrl);
+      if (once('map', 'body').length) {
+        $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
+          if (mapid.startsWith('leaflet-map-view-combined-map-block')) {
+            map = lMap;
+            const idFromUrl = self.getUrlParameter('id');
+  
+            self.bindPopupPositioning();
+  
+            if (idFromUrl) {
+              self.openPopupByNid(idFromUrl);
+            }
           }
-        }
-      });
+        });
+      }
 
       self.bindFilterToggle(context);
     },
 
     bindFilterToggle: function(context) {
-      $filterToggleBtn = $('.exposed-filters .toggle-filters-btn button', context).once();
+      $filterToggleBtn = $(once('button', '.exposed-filters .toggle-filters-btn'));
       $filterContainer = $('.exposed-filters .exposed-filters__container');
 
       $filterToggleBtn.on('click', function() {
@@ -126,4 +128,4 @@
     }
   };
   // eslint-disable-next-line no-undef
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, drupalSettings, once);

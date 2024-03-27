@@ -1,0 +1,21 @@
+uuid: a6360773-53d4-4b78-be8d-8cca70a84f9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_date
+    - paragraphs.paragraphs_type.kore_type
+  module:
+    - datetime_range
+id: paragraph.kore_type.field_kore_date
+field_name: field_kore_date
+entity_type: paragraph
+bundle: kore_type
+label: 'KoRe date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

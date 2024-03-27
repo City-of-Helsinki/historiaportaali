@@ -1,0 +1,75 @@
+uuid: 17fe0bac-e278-4061-927d-a1d0601d8373
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_kore_type
+field_name: field_kore_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: reaalikoulu
+      label: reaalikoulu
+    -
+      value: kansalaiskoulu
+      label: kansalaiskoulu
+    -
+      value: korkeakoulu
+      label: korkeakoulu
+    -
+      value: oppikoulu
+      label: oppikoulu
+    -
+      value: valmistava_koulu
+      label: 'valmistava koulu'
+    -
+      value: apukoulu
+      label: apukoulu
+    -
+      value: alkeiskoulu
+      label: alkeiskoulu
+    -
+      value: lukio
+      label: lukio
+    -
+      value: keskikoulu
+      label: keskikoulu
+    -
+      value: sairaalakoulu
+      label: sairaalakoulu
+    -
+      value: iltalukio
+      label: iltalukio
+    -
+      value: ylaaste
+      label: yläaste
+    -
+      value: jatkokoulu
+      label: jatkokoulu
+    -
+      value: alakansakoulu
+      label: alakansakoulu
+    -
+      value: ala_aste
+      label: ala-aste
+    -
+      value: kansakoulu
+      label: kansakoulu
+    -
+      value: ammattikoulu
+      label: ammattikoulu
+    -
+      value: ylakansakoulu
+      label: yläkansakoulu
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

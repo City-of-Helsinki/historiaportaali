@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_principals",
+ *   id = "kore_types",
  *   handle_multiples = TRUE
  * )
  */
-class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -96,9 +96,9 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_principal',
-      'field_kore_principal' => [
-        'value' => $item['principal']['surname'] . ', ' . $item['principal']['first_name'],
+      'type' => 'kore_type',
+      'field_kore_type' => [
+        'value' => str_replace(['-', ' '], '_', $item['type']['name']),
       ],
     ]);
 

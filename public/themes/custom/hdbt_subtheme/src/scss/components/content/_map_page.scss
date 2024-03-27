@@ -3,121 +3,52 @@
     padding: 0;
   }
 
-  .accordion {
-      .accordion-item__button {
-        background-color: transparent;
-      }
-  }
-
-    // Grey accordion styles
-  .accordion--grey {
-    .accordion-item__header {
-      background-color: $color-black-5;
-      border-color: $color-white;
-
-      .accordion-item__button--toggle {
-        padding: $spacing ($spacing-double + 50px) $spacing $spacing;
-
-        @include breakpoint($breakpoint-l) {
-          padding: $spacing-and-half ($spacing-double + 50px) $spacing-and-half $spacing-and-half;
-        }
-
-        &::after {
-          right: $spacing;
-
-          @include breakpoint($breakpoint-l) {
-            right: $spacing-and-half;
-          }
-        }
-      }
-    }
-
-    .accordion__wrapper {
-      border-color: $color-black-5;
-    }
-
-    .accordion-item__content {
-      background-color: $color-black-5;
-      padding-left: $spacing;
-      padding-right: $spacing;
-
-      @include breakpoint($breakpoint-l) {
-        padding-left: $spacing-and-half;
-        padding-right: $spacing-and-half;
-      }
-    }
-  }
-  
   .search-filters {
     margin-bottom: 0;
 
-    .block__container {
-      padding-top: 0;
+    .accordion__wrapper {
+      border: 2px solid var(--color-white);
 
-      .filters {
-        padding: $spacing-and-half 0;
-        margin: 0 auto;
-        max-width: $breakpoint-s;
+      .accordion-item__header {
+        border-top: none;
+
+        .accordion-item__button--toggle {
+          font-size: 1rem;
+          color: var(--color-white);
+
+          @include breakpoint($breakpoint-l) {
+            font-size: 1.25rem;
+            color: var(--color-white);
+          }
+
+          &[aria-expanded="false"] {
+            &:hover,
+            &:focus {
+              background: darken($color-black-80, 10%);
+            }
+          }
+
+          &:after {
+            filter: invert(1);
+          }
+        }
       }
 
-      .exposed-filters__accordion {
-        margin-top: 0;
+      .accordion-item__content {
+        color: var(--color-white);
+        background-color: transparent;
 
-        .accordion__container {
-          padding: 0;
-
-            .accordion__wrapper {
-              border: 2px solid var(--color-white);
-
-            .accordion-item__header {
-              color: var(--color-white);
-              background-color: transparent;
-              border-top: none;
-
-              .accordion-item__button--toggle {
-                padding-top: $spacing-three-quarters;
-                padding-bottom: $spacing-three-quarters;
-                font-size: 1rem;
-
-                @include breakpoint($breakpoint-l) {
-                  padding-top: $spacing-three-quarters;
-                  padding-bottom: $spacing-three-quarters;
-                  font-size: 1.25rem;
-                }
-
-                &[aria-expanded="false"] {
-                  &:hover,
-                  &:focus {
-                    background: darken($color-black-80, 10%);
-                  }
-                }
-
-                &:after {
-                  filter: invert(1);
-                }
-              }
+        .accordion-item__content__inner {
+          .form-item-field-keywords-target-id {
+            .hds-text-input__input {
+              background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0ibTEyIDEzLjUgNS01IDEuNSAxLjUtNi41IDYuNUw1LjUgMTAgNyA4LjV6Ii8+PC9nPjwvc3ZnPg==);
+              background-repeat: no-repeat;
+              background-size: 24px;
             }
+          }
 
-            .accordion-item__content {
-              color: var(--color-white);
-              background-color: transparent;
-
-              .accordion-item__content__inner {
-                padding-bottom: 32px;
-
-                .form-item-field-keywords-target-id {
-                  .hds-text-input__input {
-                    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0ibTEyIDEzLjUgNS01IDEuNSAxLjUtNi41IDYuNUw1LjUgMTAgNyA4LjV6Ii8+PC9nPjwvc3ZnPg==);
-                    background-repeat: no-repeat;
-                    background-size: 24px;
-                  }
-                }
-
-                .accordion-item__button--close:focus {
-                  box-shadow: 0 0 0 3px var(--color-white);
-                }
-              }
-            }
+          .accordion-item__button--close {
+            color: var(--color-white);
           }
         }
       }

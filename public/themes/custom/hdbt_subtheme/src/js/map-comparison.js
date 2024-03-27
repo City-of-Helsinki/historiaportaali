@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-(($, Drupal, drupalSettings) => {
+(($, Drupal, drupalSettings, once) => {
   let mainMap;
   let comparisonMap;
 
@@ -7,7 +7,7 @@
     attach: function(context, settings) {
       let self = this;
 
-      $(document).on('leaflet.map', function(e, settings, lMap, mapid) {
+      $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
         mainMap = lMap;
         self.bindCompareButton(context);
       });
@@ -16,7 +16,7 @@
     bindCompareButton: function(context) {
       let self = this;
       let $viewContainer = $('.views--combined-map', context);
-      let $button = $('.map-controls__control #map-comparison-btn', context).once('comparison-button');
+      let $button = $(once('comparison-button', '.map-controls__control #map-comparison-btn', context));
 
       $button.on('click', function() {
         if (!$viewContainer.is('.comparison-enabled')) {
@@ -59,7 +59,6 @@
       // Copy map definiton from the main map
       let mapDefinition = mainMapLeaflet.map;
       mapDefinition.settings.mapName = 'comparison-map';
-      mapDefinition.settings.zoomControl = false;
 
       // Init comparison map
       if ($container.data('leaflet') === undefined) {
@@ -68,12 +67,14 @@
         // Save map to a global variable
         comparisonMap = $container.data('leaflet').lMap;
 
+        $container.data('leaflet').lMap.zoomControl.remove();
+
         // Add Leaflet Map Features from the main map.
         if (mainMapLeaflet.features.length > 0) {
-          Drupal.Leaflet[mapId].markers = {};
-          Drupal.Leaflet[mapId].features = {};
+          $container.data('leaflet').markers = {};
+          $container.data('leaflet').features = {};
 
-          $container.data('leaflet').add_features(mapId, mainMapLeaflet.features, true);
+          $container.data('leaflet').add_features(mainMapLeaflet.features, true);
         }
       }
 
@@ -82,7 +83,8 @@
 
     attachPopupListeners: function(mapId) {
       // Attach leaflet ajax popup listeners.
-      Drupal.Leaflet[mapId].lMap.on('popupopen', function(e) {
+      let $container = $(`#${mapId}`);
+      $container.data('leaflet').lMap.on('popupopen', function(e) {
         let element = e.popup._contentNode;
         let content = $('[data-leaflet-ajax-popup]', element);
 
@@ -129,4 +131,4 @@
     }
   };
   // eslint-disable-next-line no-undef
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, drupalSettings, once);

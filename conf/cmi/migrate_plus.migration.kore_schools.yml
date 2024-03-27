@@ -36,6 +36,9 @@ source:
       name: names
       selector: names
     -
+      name: types
+      selector: types
+    -
       name: principals
       selector: principals
     -
@@ -88,6 +91,9 @@ process:
     source:
       - continuum_active
       - continuum_target
+  field_kore_types:
+    plugin: kore_types
+    source: types
   uid:
     plugin: default_value
     default_value: 1

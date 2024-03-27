@@ -71,19 +71,26 @@
     &.node--view-mode-full {
       .article-header {
         background-color: $color-white;
-        padding: $spacing-double 0 ($spacing * 1.5);
+        padding: $spacing-double ($spacing * 1.5);
         margin-bottom: $spacing-double;
 
         .article-header__container {
           margin-bottom: 0;
 
+          .article__lead {
+            @include font-size(18px, 24px);
+            font-weight: $font-weight-medium;
+            max-width: $content-width-max;
+            margin-bottom: $spacing;
+
+            @include breakpoint($breakpoint-m) {
+              @include font-size(24px, 30px);
+            }
+          }
+
           .article__date {
             color: var(--color-black-60);
           }
-        }
-
-        .article__date {
-          color: $text-color-gray;
         }
       }
 

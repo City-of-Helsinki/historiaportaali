@@ -35,6 +35,14 @@ $arrow-container-height: 48px;
     @include breakpoint($breakpoint-l) {
       max-width: 83%;
     }
+
+    .splide__list {
+      .splide__slide {
+        img {
+          height: auto;
+        }
+      }
+    }
   }
 }
 

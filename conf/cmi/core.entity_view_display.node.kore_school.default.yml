@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_principals
+    - field.field.node.kore_school.field_kore_types
     - node.type.kore_school
   module:
     - entity_reference_revisions
@@ -27,7 +28,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_geolocation:
     type: geofield_default
@@ -36,7 +37,7 @@ content:
       output_format: wkt
       output_escape: true
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_kore_archives:
     type: entity_reference_revisions_entity_view
@@ -45,7 +46,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 105
+    weight: 8
     region: content
   field_kore_buildings:
     type: entity_reference_revisions_entity_view
@@ -54,7 +55,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_kore_continuums:
     type: entity_reference_revisions_entity_view
@@ -63,7 +64,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 107
+    weight: 4
     region: content
   field_kore_id:
     type: number_integer
@@ -72,7 +73,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 108
+    weight: 9
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view
@@ -81,7 +82,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_kore_principals:
     type: entity_reference_revisions_entity_view
@@ -90,12 +91,21 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 7
+    region: content
+  field_kore_types:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

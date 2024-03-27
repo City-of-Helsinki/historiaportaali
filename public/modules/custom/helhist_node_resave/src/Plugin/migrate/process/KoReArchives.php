@@ -62,7 +62,7 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
 
   $paragraphs = [];
   
-   if (isset($value)) {
+    if (isset($value)) {
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }

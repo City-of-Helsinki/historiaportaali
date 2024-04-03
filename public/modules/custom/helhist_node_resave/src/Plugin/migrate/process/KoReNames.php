@@ -83,10 +83,9 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
    * {@inheritdoc}
    */
   protected function compare($a, $b) {
-    $ac = $a['end_year'];
-    $bc = $b['end_year'];
-    if ($ac and $bc) return 0; // no sort if not empty
-    return ($ac > $bc) ? -1 : 1; // else sort
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
+    return ($ac < $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {

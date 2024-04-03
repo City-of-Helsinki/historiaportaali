@@ -15,27 +15,19 @@ dependencies:
     - field.field.node.kore_school.field_kore_types
     - node.type.kore_school
   module:
-    - text
     - user
 id: node.kore_school.teaser
 targetEntityType: node
 bundle: kore_school
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  body: true
   field_geolocation: true
   field_kore_archives: true
   field_kore_buildings: true

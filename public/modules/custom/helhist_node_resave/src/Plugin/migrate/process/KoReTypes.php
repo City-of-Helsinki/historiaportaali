@@ -60,9 +60,10 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs = [];
-  
+    $paragraphs = [];
+
     if (isset($value)) {
+      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -76,6 +77,15 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
    */
   public function multiple(): bool {
     return TRUE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function compare($a, $b) {
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
+    return ($ac < $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {

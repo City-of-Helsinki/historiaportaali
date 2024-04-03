@@ -17,7 +17,7 @@ mode: default
 content:
   field_kore_continuum:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
@@ -34,7 +34,7 @@ content:
     region: content
   field_kore_school:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

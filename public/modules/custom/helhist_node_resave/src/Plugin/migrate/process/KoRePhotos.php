@@ -2,9 +2,11 @@
 
 namespace Drupal\helhist_node_resave\Plugin\migrate\process;
 
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\media\Entity\Media;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -13,11 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_archives",
+ *   id = "kore_photos",
  *   handle_multiples = TRUE
  * )
  */
-class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -62,8 +64,9 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
 
     $paragraphs = [];
 
+    $value = array_merge($value[0], $value[1]);
+
     if (isset($value)) {
-      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -79,46 +82,32 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
     return TRUE;
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  protected function compare($a, $b) {
-    $ac = $a['begin_year'];
-    $bc = $b['begin_year'];
-    return ($ac < $bc) ? -1 : 1;
-  }
-
   protected function createParagraphsItem(array $item): array {
 
-    if ($item['begin_year']) {
-      $date = '1.1.' . $item['begin_year'];
-    }
-
-    if ($item['end_year']) {
-      $end_date = '1.1.' . $item['end_year'];
-    }
-
-    $paragraph = Paragraph::create([
-      'langcode' => 'fi',
-      'field_kore_start_date' => [
-        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
+    $image_data = file_get_contents('https://gorannikolovski.com/themes/custom/gn2021/images/goran-nikolovski-signature.png');
+    $file_repository = \Drupal::service('file.repository');
+    $image = $file_repository->writeData($image_data, "public://goran-nikolovski-signature.png", FileSystemInterface::EXISTS_REPLACE);
+    
+    $image_media = Media::create([
+      'name' => 'My media name',
+      'bundle' => 'image',
+      'uid' => 1,
+      'langcode' => 'en',
+      'status' => 0,
+      'field_media_image' => [
+        'target_id' => $image->id(),
+        'alt' => t('My media alt attribute'),
+        'title' => t('My media title attribute'),
       ],
-      'field_kore_end_date' => [
-        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
-      ],
-
-      // Unique to this KoRe paragraph type.
-      'type' => 'kore_archive',
-      'field_kore_archive' => [
-        'value' => $item['location'],
-      ],
-    ]);
-
-    $paragraph->save();
+      'field_author' => 'Goran Nikolovski',
+      'field_date' => '2025-12-31T23:59:59',
+      'field_location' => 'Subotica',
+     ]);
+    $image_media->save();
 
     return [
-      'target_id' => $paragraph->id(),
-      'target_revision_id' => $paragraph->getRevisionId(),
+      'target_id' => $image_media->id(),
+      'target_revision_id' => $image_media->getRevisionId(),
     ];
   }
 

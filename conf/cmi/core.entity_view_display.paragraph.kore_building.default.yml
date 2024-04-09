@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_building.field_kore_addresses
-    - field.field.paragraph.kore_building.field_kore_date
+    - field.field.paragraph.kore_building.field_kore_end_date
+    - field.field.paragraph.kore_building.field_kore_start_date
     - paragraphs.paragraphs_type.kore_building
   module:
-    - datetime_range
+    - datetime
     - entity_reference_revisions
 id: paragraph.kore_building.default
 targetEntityType: paragraph
@@ -23,15 +24,23 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_kore_date:
-    type: daterange_default
+  field_kore_end_date:
+    type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
-      separator: '-'
+      date_format: 'Y'
     third_party_settings: {  }
-    weight: 1
+    weight: 3
+    region: content
+  field_kore_start_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y'
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

@@ -98,7 +98,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_date' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
 

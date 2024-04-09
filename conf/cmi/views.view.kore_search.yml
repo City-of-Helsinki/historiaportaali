@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_kore_date
+    - field.storage.paragraph.field_kore_end_date
     - field.storage.paragraph.field_kore_name
+    - field.storage.paragraph.field_kore_start_date
     - paragraphs.paragraphs_type.kore_name
   module:
     - better_exposed_filters
     - datetime
-    - datetime_range
     - paragraphs
 id: kore_search
 label: 'KoRe search'
@@ -91,6 +91,134 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_kore_start_date:
+          id: field_kore_start_date
+          table: paragraph__field_kore_start_date
+          field: field_kore_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: 'Y'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_kore_end_date:
+          id: field_kore_end_date
+          table: paragraph__field_kore_end_date
+          field: field_kore_end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: 'Y'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_kore_name:
           id: field_kore_name
           table: paragraph__field_kore_name
@@ -102,8 +230,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ field_kore_name }} {{ field_kore_start_date }}{% if field_kore_start_date or field_kore_end_date %} ⟶ {% endif %}{{ field_kore_end_date }}\r\n\r\n"
             make_link: true
             path: '/node/{{ parent_id }}'
             absolute: false
@@ -153,76 +281,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_kore_date:
-          id: field_kore_date
-          table: paragraph__field_kore_date
-          field: field_kore_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: html_year
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       pager:
         type: full
         options:
           offset: 0
-          items_per_page: 12
+          items_per_page: 40
           total_pages: null
           id: 0
           tags:
@@ -269,9 +332,16 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              field_kore_date_value:
+              field_kore_start_date_value:
                 plugin_id: bef_datepicker
                 advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_kore_end_date_value:
+                plugin_id: bef_datepicker
+                advanced:
+                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
       access:
@@ -281,21 +351,7 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        field_kore_date_value:
-          id: field_kore_date_value
-          table: paragraph__field_kore_date
-          field: field_kore_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: year
+      sorts: {  }
       arguments: {  }
       filters:
         status:
@@ -318,6 +374,7 @@ display:
           plugin_id: bundle
           value:
             kore_name: kore_name
+          group: 1
         field_kore_name_value:
           id: field_kore_name_value
           table: paragraph__field_kore_name
@@ -326,7 +383,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: string
-          operator: '='
+          operator: contains
           value: ''
           group: 1
           exposed: true
@@ -363,15 +420,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_kore_date_value:
-          id: field_kore_date_value
-          table: paragraph__field_kore_date
-          field: field_kore_date_value
+        field_kore_start_date_value:
+          id: field_kore_start_date_value
+          table: paragraph__field_kore_start_date
+          field: field_kore_start_date_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: between
+          operator: '>='
           value:
             min: ''
             max: ''
@@ -380,14 +437,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_kore_date_value_op
-            label: 'KoRe date'
+            operator_id: field_kore_start_date_value_op
+            label: 'KoRe start date (>)'
             description: ''
             use_operator: false
-            operator: field_kore_date_value_op
+            operator: field_kore_start_date_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_kore_date_value
+            identifier: field_kore_start_date_value
             required: false
             remember: false
             multiple: false
@@ -414,6 +471,61 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_kore_end_date_value:
+          id: field_kore_end_date_value
+          table: paragraph__field_kore_end_date
+          field: field_kore_end_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_kore_end_date_value_op
+            label: 'KoRe end date (<)'
+            description: ''
+            use_operator: false
+            operator: field_kore_end_date_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_kore_end_date_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              read_only: '0'
+              content_producer: '0'
+              editor: '0'
+              admin: '0'
+              super_administrator: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -442,8 +554,9 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.paragraph.field_kore_date'
+        - 'config:field.storage.paragraph.field_kore_end_date'
         - 'config:field.storage.paragraph.field_kore_name'
+        - 'config:field.storage.paragraph.field_kore_start_date'
   page_1:
     id: page_1
     display_title: Page
@@ -474,5 +587,6 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.paragraph.field_kore_date'
+        - 'config:field.storage.paragraph.field_kore_end_date'
         - 'config:field.storage.paragraph.field_kore_name'
+        - 'config:field.storage.paragraph.field_kore_start_date'

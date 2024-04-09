@@ -1,0 +1,21 @@
+uuid: 9e4fc474-03e0-4c96-888e-4e1fd9930ffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_start_date
+    - paragraphs.paragraphs_type.kore_type
+  module:
+    - datetime
+id: paragraph.kore_type.field_kore_start_date
+field_name: field_kore_start_date
+entity_type: paragraph
+bundle: kore_type
+label: 'KoRe start date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

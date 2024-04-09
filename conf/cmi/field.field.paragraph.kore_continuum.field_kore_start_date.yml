@@ -1,21 +1,21 @@
-uuid: 568e48d8-304b-48c7-971e-51053c6b29e7
+uuid: a0df132c-5cf9-4409-a3f0-e6fd05963181
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_kore_date
+    - field.storage.paragraph.field_kore_start_date
     - paragraphs.paragraphs_type.kore_continuum
   module:
-    - datetime_range
-id: paragraph.kore_continuum.field_kore_date
-field_name: field_kore_date
+    - datetime
+id: paragraph.kore_continuum.field_kore_start_date
+field_name: field_kore_start_date
 entity_type: paragraph
 bundle: kore_continuum
-label: 'KoRe date'
+label: 'KoRe start date'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: daterange
+field_type: datetime

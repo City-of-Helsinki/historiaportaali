@@ -100,9 +100,11 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_date' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
-        'end_value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+      ],
+      'field_kore_end_date' => [
+        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 
       // Unique to this KoRe paragraph type.

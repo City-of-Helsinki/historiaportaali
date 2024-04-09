@@ -1,0 +1,20 @@
+uuid: 9d041ff0-ee6b-4471-ab5b-cad16bab94e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_kore_end_date
+field_name: field_kore_end_date
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

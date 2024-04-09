@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_address.field_kore_address
+    - field.field.paragraph.kore_address.field_kore_end_date
+    - field.field.paragraph.kore_address.field_kore_start_date
     - paragraphs.paragraphs_type.kore_address
+  module:
+    - datetime
 id: paragraph.kore_address.default
 targetEntityType: paragraph
 bundle: kore_address
@@ -17,6 +21,24 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_kore_end_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_kore_start_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y'
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

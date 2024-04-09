@@ -3,19 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.kore_principal.field_kore_date
+    - field.field.paragraph.kore_principal.field_kore_end_date
     - field.field.paragraph.kore_principal.field_kore_principal
+    - field.field.paragraph.kore_principal.field_kore_start_date
     - paragraphs.paragraphs_type.kore_principal
   module:
-    - datetime_range
+    - datetime
 id: paragraph.kore_principal.default
 targetEntityType: paragraph
 bundle: kore_principal
 mode: default
 content:
-  field_kore_date:
-    type: daterange_default
-    weight: 0
+  field_kore_end_date:
+    type: datetime_default
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -26,6 +27,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_kore_start_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

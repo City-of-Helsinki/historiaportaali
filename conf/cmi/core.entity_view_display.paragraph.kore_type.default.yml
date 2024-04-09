@@ -3,26 +3,35 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.kore_type.field_kore_date
+    - field.field.paragraph.kore_type.field_kore_end_date
+    - field.field.paragraph.kore_type.field_kore_start_date
     - field.field.paragraph.kore_type.field_kore_type
     - paragraphs.paragraphs_type.kore_type
   module:
-    - datetime_range
+    - datetime
     - options
 id: paragraph.kore_type.default
 targetEntityType: paragraph
 bundle: kore_type
 mode: default
 content:
-  field_kore_date:
-    type: daterange_default
+  field_kore_end_date:
+    type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
-      separator: '-'
+      date_format: 'Y'
     third_party_settings: {  }
-    weight: 1
+    weight: 3
+    region: content
+  field_kore_start_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y'
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_kore_type:
     type: list_default

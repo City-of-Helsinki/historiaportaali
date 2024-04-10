@@ -10,11 +10,11 @@ migration_tags: {  }
 migration_group: koulurekisteri
 label: Koulurekisteri
 source:
-  plugin: url
+  plugin: http
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - modules/custom/helhist_node_resave/src/kore.json
+    - 'https://api.hel.fi/kore/v1/school/?format=json&limit=640'
   item_selector: results
   fields:
     -

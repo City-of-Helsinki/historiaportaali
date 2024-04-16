@@ -1,21 +1,21 @@
-uuid: c6bfdde5-d71e-4e06-a722-94b7e40b6615
+uuid: bc94f13f-c430-40c8-b972-70288428a510
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_kore_start_date
+    - field.storage.paragraph.field_kore_geofield
     - paragraphs.paragraphs_type.kore_address
   module:
-    - datetime
-id: paragraph.kore_address.field_kore_start_date
-field_name: field_kore_start_date
+    - geofield
+id: paragraph.kore_address.field_kore_geofield
+field_name: field_kore_geofield
 entity_type: paragraph
 bundle: kore_address
-label: 'KoRe start date'
+label: 'KoRe geofield'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: datetime
+field_type: geofield

@@ -85,7 +85,7 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
   protected function compare($a, $b) {
     $ac = $a['begin_year'];
     $bc = $b['begin_year'];
-    return ($ac < $bc) ? -1 : 1;
+    return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
@@ -100,10 +100,10 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_start_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
-      'field_kore_end_date' => [
+      'field_kore_end_year' => [
         'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 

@@ -165,6 +165,25 @@ function hdbt_subtheme_theme_suggestions_image_formatter_alter(array &$suggestio
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+
+  $kore_paragraphs = [
+    'kore_archive',
+    'kore_building',
+    'kore_name',
+    'kore_principal',
+    'kore_type',
+  ];
+
+  if (in_array($paragraph->bundle(), $kore_paragraphs)) {
+    $suggestions[] = 'paragraph__kore_paragraph';
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state, $form_id) {

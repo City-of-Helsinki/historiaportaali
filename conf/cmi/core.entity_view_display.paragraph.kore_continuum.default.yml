@@ -5,10 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.kore_continuum.field_kore_continuum
     - field.field.paragraph.kore_continuum.field_kore_school
-    - field.field.paragraph.kore_continuum.field_kore_start_date
+    - field.field.paragraph.kore_continuum.field_kore_start_year
     - paragraphs.paragraphs_type.kore_continuum
   module:
-    - datetime
     - options
 id: paragraph.kore_continuum.default
 targetEntityType: paragraph
@@ -30,12 +29,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_kore_start_date:
-    type: datetime_custom
+  field_kore_start_year:
+    type: number_integer
     label: hidden
     settings:
-      timezone_override: ''
-      date_format: 'Y'
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
     weight: 2
     region: content

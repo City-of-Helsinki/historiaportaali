@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_kore_end_date
+    - field.storage.paragraph.field_kore_end_year
     - field.storage.paragraph.field_kore_name
-    - field.storage.paragraph.field_kore_start_date
+    - field.storage.paragraph.field_kore_start_year
     - paragraphs.paragraphs_type.kore_name
   module:
     - better_exposed_filters
-    - datetime
     - paragraphs
 id: kore_search
 label: 'KoRe search'
@@ -91,10 +90,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_kore_start_date:
-          id: field_kore_start_date
-          table: paragraph__field_kore_start_date
-          field: field_kore_start_date
+        field_kore_start_year:
+          id: field_kore_start_year
+          table: paragraph__field_kore_start_year
+          field: field_kore_start_year
           relationship: none
           group_type: group
           admin_label: ''
@@ -141,10 +140,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: 'Y'
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -155,10 +152,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_kore_end_date:
-          id: field_kore_end_date
-          table: paragraph__field_kore_end_date
-          field: field_kore_end_date
+        field_kore_end_year:
+          id: field_kore_end_year
+          table: paragraph__field_kore_end_year
+          field: field_kore_end_year
           relationship: none
           group_type: group
           admin_label: ''
@@ -205,10 +202,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: 'Y'
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -231,7 +226,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_kore_name }} {{ field_kore_start_date }}{% if field_kore_start_date or field_kore_end_date %} ⟶ {% endif %}{{ field_kore_end_date }}\r\n\r\n"
+            text: '{{ field_kore_name }} {{ field_kore_start_year }}{% if field_kore_start_year or field_kore_end_year %} ⟶ {% endif %}{{ field_kore_end_year }}'
             make_link: true
             path: '/node/{{ parent_id }}'
             absolute: false
@@ -332,14 +327,14 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              field_kore_start_date_value:
-                plugin_id: bef_datepicker
+              field_kore_start_year_value:
+                plugin_id: default
                 advanced:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              field_kore_end_date_value:
-                plugin_id: bef_datepicker
+              field_kore_end_year_value:
+                plugin_id: default
                 advanced:
                   placeholder_text: ''
                   collapsible: false
@@ -420,31 +415,30 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_kore_start_date_value:
-          id: field_kore_start_date_value
-          table: paragraph__field_kore_start_date
-          field: field_kore_start_date_value
+        field_kore_start_year_value:
+          id: field_kore_start_year_value
+          table: paragraph__field_kore_start_year
+          field: field_kore_start_year_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: numeric
           operator: '>='
           value:
             min: ''
             max: ''
             value: ''
-            type: date
           group: 1
           exposed: true
           expose:
-            operator_id: field_kore_start_date_value_op
-            label: 'KoRe start date (>)'
+            operator_id: field_kore_start_year_value_op
+            label: 'start year (>)'
             description: ''
             use_operator: false
-            operator: field_kore_start_date_value_op
+            operator: field_kore_start_year_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_kore_start_date_value
+            identifier: field_kore_start_year_value
             required: false
             remember: false
             multiple: false
@@ -471,31 +465,30 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_kore_end_date_value:
-          id: field_kore_end_date_value
-          table: paragraph__field_kore_end_date
-          field: field_kore_end_date_value
+        field_kore_end_year_value:
+          id: field_kore_end_year_value
+          table: paragraph__field_kore_end_year
+          field: field_kore_end_year_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: numeric
           operator: '<='
           value:
             min: ''
             max: ''
             value: ''
-            type: date
           group: 1
           exposed: true
           expose:
-            operator_id: field_kore_end_date_value_op
-            label: 'KoRe end date (<)'
+            operator_id: field_kore_end_year_value_op
+            label: 'end year (<)'
             description: ''
             use_operator: false
-            operator: field_kore_end_date_value_op
+            operator: field_kore_end_year_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_kore_end_date_value
+            identifier: field_kore_end_year_value
             required: false
             remember: false
             multiple: false
@@ -554,9 +547,9 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.paragraph.field_kore_end_date'
+        - 'config:field.storage.paragraph.field_kore_end_year'
         - 'config:field.storage.paragraph.field_kore_name'
-        - 'config:field.storage.paragraph.field_kore_start_date'
+        - 'config:field.storage.paragraph.field_kore_start_year'
   page_1:
     id: page_1
     display_title: Page
@@ -587,6 +580,6 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.paragraph.field_kore_end_date'
+        - 'config:field.storage.paragraph.field_kore_end_year'
         - 'config:field.storage.paragraph.field_kore_name'
-        - 'config:field.storage.paragraph.field_kore_start_date'
+        - 'config:field.storage.paragraph.field_kore_start_year'

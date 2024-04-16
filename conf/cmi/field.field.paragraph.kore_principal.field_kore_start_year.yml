@@ -1,0 +1,23 @@
+uuid: baaf81d3-29bf-4561-a814-98befbba79f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_start_year
+    - paragraphs.paragraphs_type.kore_principal
+id: paragraph.kore_principal.field_kore_start_year
+field_name: field_kore_start_year
+entity_type: paragraph
+bundle: kore_principal
+label: 'KoRe start year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 9999
+  prefix: ''
+  suffix: ''
+field_type: integer

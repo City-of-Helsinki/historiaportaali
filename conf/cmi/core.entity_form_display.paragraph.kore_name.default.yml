@@ -3,22 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.kore_name.field_kore_end_date
+    - field.field.paragraph.kore_name.field_kore_end_year
     - field.field.paragraph.kore_name.field_kore_name
-    - field.field.paragraph.kore_name.field_kore_start_date
+    - field.field.paragraph.kore_name.field_kore_start_year
     - paragraphs.paragraphs_type.kore_name
-  module:
-    - datetime
 id: paragraph.kore_name.default
 targetEntityType: paragraph
 bundle: kore_name
 mode: default
 content:
-  field_kore_end_date:
-    type: datetime_default
+  field_kore_end_year:
+    type: number
     weight: 2
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_kore_name:
     type: string_textfield
@@ -28,11 +27,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_kore_start_date:
-    type: datetime_default
+  field_kore_start_year:
+    type: number
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

@@ -87,7 +87,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
   protected function compare($a, $b) {
     $ac = $a['year'];
     $bc = $b['year'];
-    return ($ac < $bc) ? -1 : 1;
+    return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
@@ -98,7 +98,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_start_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
 

@@ -1,17 +1,17 @@
-uuid: 9d041ff0-ee6b-4471-ab5b-cad16bab94e8
+uuid: de67cd31-15f7-46de-9d70-900d0609601b
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - geofield
     - paragraphs
-id: paragraph.field_kore_end_date
-field_name: field_kore_end_date
+id: paragraph.field_kore_geofield
+field_name: field_kore_geofield
 entity_type: paragraph
-type: datetime
+type: geofield
 settings:
-  datetime_type: date
-module: datetime
+  backend: geofield_backend_default
+module: geofield
 locked: false
 cardinality: 1
 translatable: true

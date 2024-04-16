@@ -85,7 +85,7 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
   protected function compare($a, $b) {
     $ac = $a['begin_year'];
     $bc = $b['begin_year'];
-    return ($ac < $bc) ? -1 : 1;
+    return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
@@ -100,10 +100,10 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_start_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
-      'field_kore_end_date' => [
+      'field_kore_end_year' => [
         'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 
@@ -121,8 +121,13 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
         'type' => 'kore_address',
       ]);
 
+      if (is_array($address['location'])) {
+        $address_para->set('field_kore_geofield', "POINT (" . $address['location']['coordinates'][0] . " " . $address['location']['coordinates'][1] . ")");
+      }
+
+      $address_para->save();
+
       $paragraph->field_kore_addresses->appendItem($address_para);
-        $address_para->save();
     }
 
     $paragraph->save();

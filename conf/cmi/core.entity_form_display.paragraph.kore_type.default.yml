@@ -3,28 +3,28 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.kore_type.field_kore_end_date
-    - field.field.paragraph.kore_type.field_kore_start_date
+    - field.field.paragraph.kore_type.field_kore_end_year
+    - field.field.paragraph.kore_type.field_kore_start_year
     - field.field.paragraph.kore_type.field_kore_type
     - paragraphs.paragraphs_type.kore_type
-  module:
-    - datetime
 id: paragraph.kore_type.default
 targetEntityType: paragraph
 bundle: kore_type
 mode: default
 content:
-  field_kore_end_date:
-    type: datetime_default
+  field_kore_end_year:
+    type: number
     weight: 2
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
-  field_kore_start_date:
-    type: datetime_default
+  field_kore_start_year:
+    type: number
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_kore_type:
     type: options_select

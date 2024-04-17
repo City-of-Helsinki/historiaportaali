@@ -56,13 +56,13 @@
       {% embed "@hdbt/misc/component.twig" with
         {
           component_classes: [ 'component--columns' ],
-          component_content_class: 'columns',
+          component_content_class: ['columns', 'columns--70-30']
         }
       %}
         {% block component_content %}
 
-          {% set left_column_classes = ['columns__column', 'column--70'] %}
-          {% set right_column_classes = ['columns__column', 'column--30'] %}
+          {% set left_column_classes = ['columns__column'] %}
+          {% set right_column_classes = ['columns__column']%}
 
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_media_image|render %}
@@ -101,13 +101,13 @@
       {% embed "@hdbt/misc/component.twig" with
         {
           component_classes: [ 'component--columns' ],
-          component_content_class: 'columns',
+          component_content_class: ['columns', 'columns--50-50']
         }
       %}
         {% block component_content %}
 
-          {% set left_column_classes = ['columns__column', 'column--50'] %}
-          {% set right_column_classes = ['columns__column', 'column--50'] %}
+          {% set left_column_classes = ['columns__column'] %}
+          {% set right_column_classes = ['columns__column'] %}
 
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_photographer|render %}

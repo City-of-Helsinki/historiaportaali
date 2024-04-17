@@ -36,86 +36,88 @@
       }
 
       .components:nth-child(1) {
-        .component__content {
-          display: flex;
+        .component {
+          max-width: unset;
 
-          .image__media_image {
-            img {
-              width: 100%;
-              height: auto;
-            }
-          }
-
-          .image__geolocation {
-            .leaflet-container {
-              // Disable map drag/zoomability
-              z-index: -999;
-
-              .leaflet-control-container,
-              .map-controls__top-container {
-                display: none;
+          .component__content {
+            .image__media_image {
+              img {
+                width: 100%;
+                height: auto;
               }
             }
-          }
 
-          .image__map_link {
-            background-color: $color-gold-light;
-            color: $color-metro-dark;
-            font-weight: $font-weight-bold;
-            padding: $spacing-double;
+            .image__geolocation {
+              .leaflet-container {
+                // Disable map drag/zoomability
+                z-index: -999;
 
-            @include breakpoint($breakpoint-m) {
-              margin: (-$spacing-double) $spacing-double $spacing-triple (-$spacing-double);
+                .leaflet-control-container,
+                .map-controls__top-container {
+                  display: none;
+                }
+              }
             }
 
-            & + .media__usage {
-              margin-top: $spacing-double;
-            }
-
-            svg {
-              vertical-align: middle;
-              margin-top: -3px;
-              margin-right: 5px;
-            }
-
-            a {
+            .image__map_link {
+              background-color: $color-gold-light;
               color: $color-metro-dark;
-              text-decoration: none;
+              font-weight: $font-weight-bold;
+              padding: $spacing-double;
+
+              @include breakpoint($breakpoint-m) {
+                margin: (-$spacing-double) $spacing-double $spacing-triple (-$spacing-double);
+              }
+
+              & + .media__usage {
+                margin-top: $spacing-double;
+              }
+
+              svg {
+                vertical-align: middle;
+                margin-top: -3px;
+                margin-right: 5px;
+              }
+
+              a {
+                color: $color-metro-dark;
+                text-decoration: none;
+              }
             }
-          }
 
-          .media__usage {
-            article.content-card--design-listing-item {
-              min-width: 100%;
-              height: 100%;
-              margin-top: 0;
-              padding: 0;
-          
-              .content-card__link {
-                display: flex;
-                width: 100%;
+            .media__usage {
+              article.content-card--design-listing-item {
+                min-width: 100%;
                 height: 100%;
-          
-                .content-card__image {
-                  width: 35%;
-                  
-                  div,
-                  img {
-                    height: 100%;
-                  }
-                }
-          
-                .content-card__content {
-                  width: 65%;
-                }
-          
-                .content-card__metadata {
+                margin-top: 0;
+                padding: 0;
+            
+                .content-card__link {
                   display: flex;
-                  margin-top: $spacing;
+                  width: 100%;
+                  height: 100%;
+            
+                  .content-card__image {
+                    width: 35%;
+                    
+                    div,
+                    img {
+                      height: 100%;
+                    }
+                  }
+            
+                  .content-card__content {
+                    width: 65%;
+                  }
+            
+                  .content-card__metadata {
+                    display: flex;
+                    margin-top: $spacing;
 
-                  .content-card__phenomena,
-                  .content-card__year {
-                    display: none;
+                    .content-card__phenomena,
+                    .content-card__year {
+                      display: none;
+                    }
                   }
                 }
               }
@@ -127,11 +129,13 @@
       .components:nth-child(2) {
         margin-top: $spacing-double;
 
-        .component__content {
-          display: flex;
+        .component {
+          max-width: unset;
 
-          .image__finna_id {
-            margin-bottom: $spacing-double;
+          .component__content {
+            .image__finna_id {
+              margin-bottom: $spacing-double;
+            }
           }
         }
       }

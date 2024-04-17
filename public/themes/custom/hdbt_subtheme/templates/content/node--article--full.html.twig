@@ -116,13 +116,13 @@
   {% embed "@hdbt/misc/component.twig" with
     {
       component_classes: [ 'component--taxonomies' ],
-      component_content_class: 'columns',
+      component_content_class: ['columns', 'columns--50-50']
     }
   %}
     {% block component_content %}
 
-      {% set left_column_classes = ['columns__column', 'column--50'] %}
-      {% set right_column_classes = ['columns__column', 'column--50'] %}
+      {% set left_column_classes = ['columns__column'] %}
+      {% set right_column_classes = ['columns__column'] %}
 
       <div class="{{ left_column_classes|join(' ') }}">
         {% if content.field_keywords|render %}

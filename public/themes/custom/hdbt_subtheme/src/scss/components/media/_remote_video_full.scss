@@ -36,41 +36,43 @@
       }
 
       .components:nth-child(1) {
-        .component__content {
-          display: flex;
+        .component {
+          max-width: unset;
 
-          .media__usage {
-            article.content-card--design-listing-item {
-              min-width: 100%;
-              height: 100%;
-              margin-top: 0;
-              padding: 0;
-          
-              .content-card__link {
-                display: flex;
-                width: 100%;
+          .component__content {
+            .media__usage {
+              article.content-card--design-listing-item {
+                min-width: 100%;
                 height: 100%;
-          
-                .content-card__image {
-                  width: 35%;
-                  
-                  div,
-                  img {
-                    height: 100%;
-                  }
-                }
-          
-                .content-card__content {
-                  width: 65%;
-                }
-          
-                .content-card__metadata {
+                margin-top: 0;
+                padding: 0;
+            
+                .content-card__link {
                   display: flex;
-                  margin-top: $spacing;
+                  width: 100%;
+                  height: 100%;
+            
+                  .content-card__image {
+                    width: 35%;
+                    
+                    div,
+                    img {
+                      height: 100%;
+                    }
+                  }
+            
+                  .content-card__content {
+                    width: 65%;
+                  }
+            
+                  .content-card__metadata {
+                    display: flex;
+                    margin-top: $spacing;
 
-                  .content-card__phenomena,
-                  .content-card__year {
-                    display: none;
+                    .content-card__phenomena,
+                    .content-card__year {
+                      display: none;
+                    }
                   }
                 }
               }
@@ -82,8 +84,8 @@
       .components:nth-child(2) {
         margin-top: $spacing-double;
 
-        .component__content {
-          display: flex;
+        .component {
+          max-width: unset;
         }
       }
     }

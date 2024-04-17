@@ -60,11 +60,12 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs = [];
+    $paragraphs = [];
 
-   $value = array_merge($value[0], $value[1]);
-  
-   if (isset($value)) {
+    $value = array_merge($value[0], $value[1]);
+   
+    if (isset($value)) {
+      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -80,6 +81,15 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
     return TRUE;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function compare($a, $b) {
+    $ac = $a['year'];
+    $bc = $b['year'];
+    return ($ac > $bc) ? -1 : 1;
+  }
+
   protected function createParagraphsItem(array $item): array {
 
     if ($item['year']) {
@@ -88,7 +98,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
 

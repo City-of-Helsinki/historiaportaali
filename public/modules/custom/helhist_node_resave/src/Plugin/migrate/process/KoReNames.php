@@ -83,10 +83,9 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
    * {@inheritdoc}
    */
   protected function compare($a, $b) {
-    $ac = $a['end_year'];
-    $bc = $b['end_year'];
-    if ($ac and $bc) return 0; // no sort if not empty
-    return ($ac > $bc) ? -1 : 1; // else sort
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
+    return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
@@ -101,9 +100,11 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
-        'end_value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+      ],
+      'field_kore_end_year' => [
+        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 
       // Unique to this KoRe paragraph type.

@@ -60,9 +60,10 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs = [];
-  
-   if (isset($value)) {
+    $paragraphs = [];
+
+    if (isset($value)) {
+      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -78,6 +79,15 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
     return TRUE;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function compare($a, $b) {
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
+    return ($ac > $bc) ? -1 : 1;
+  }
+
   protected function createParagraphsItem(array $item): array {
 
     if ($item['begin_year']) {
@@ -90,9 +100,11 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
-        'end_value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+      ],
+      'field_kore_end_year' => [
+        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 
       // Unique to this KoRe paragraph type.
@@ -109,8 +121,13 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
         'type' => 'kore_address',
       ]);
 
+      if (is_array($address['location'])) {
+        $address_para->set('field_kore_geofield', "POINT (" . $address['location']['coordinates'][0] . " " . $address['location']['coordinates'][1] . ")");
+      }
+
+      $address_para->save();
+
       $paragraph->field_kore_addresses->appendItem($address_para);
-        $address_para->save();
     }
 
     $paragraph->save();

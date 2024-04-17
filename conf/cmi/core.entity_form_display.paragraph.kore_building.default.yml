@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_building.field_kore_addresses
-    - field.field.paragraph.kore_building.field_kore_date
+    - field.field.paragraph.kore_building.field_kore_end_year
+    - field.field.paragraph.kore_building.field_kore_start_year
     - paragraphs.paragraphs_type.kore_building
   module:
-    - datetime_range
     - paragraphs
 id: paragraph.kore_building.default
 targetEntityType: paragraph
@@ -32,11 +32,19 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_kore_date:
-    type: daterange_default
+  field_kore_end_year:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_kore_start_year:
+    type: number
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

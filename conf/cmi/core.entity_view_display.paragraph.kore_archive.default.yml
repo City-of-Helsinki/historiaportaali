@@ -4,10 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_archive.field_kore_archive
-    - field.field.paragraph.kore_archive.field_kore_date
+    - field.field.paragraph.kore_archive.field_kore_end_year
+    - field.field.paragraph.kore_archive.field_kore_start_year
     - paragraphs.paragraphs_type.kore_archive
-  module:
-    - datetime_range
 id: paragraph.kore_archive.default
 targetEntityType: paragraph
 bundle: kore_archive
@@ -21,13 +20,21 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_kore_date:
-    type: daterange_default
+  field_kore_end_year:
+    type: number_integer
     label: hidden
     settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_kore_start_year:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
     weight: 1
     region: content

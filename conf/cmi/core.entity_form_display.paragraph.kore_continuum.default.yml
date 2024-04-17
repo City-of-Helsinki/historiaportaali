@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_continuum.field_kore_continuum
-    - field.field.paragraph.kore_continuum.field_kore_date
     - field.field.paragraph.kore_continuum.field_kore_school
+    - field.field.paragraph.kore_continuum.field_kore_start_year
     - paragraphs.paragraphs_type.kore_continuum
-  module:
-    - datetime_range
 id: paragraph.kore_continuum.default
 targetEntityType: paragraph
 bundle: kore_continuum
@@ -16,12 +14,6 @@ mode: default
 content:
   field_kore_continuum:
     type: options_select
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_kore_date:
-    type: daterange_default
     weight: 0
     region: content
     settings: {  }
@@ -34,6 +26,13 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_kore_start_year:
+    type: number
+    weight: 2
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
 hidden:

@@ -60,9 +60,10 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-  $paragraphs = [];
-  
+    $paragraphs = [];
+
     if (isset($value)) {
+      uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
       }
@@ -78,6 +79,15 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
     return TRUE;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function compare($a, $b) {
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
+    return ($ac > $bc) ? -1 : 1;
+  }
+
   protected function createParagraphsItem(array $item): array {
 
     if ($item['begin_year']) {
@@ -90,9 +100,11 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
-      'field_kore_date' => [
+      'field_kore_start_year' => [
         'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
-        'end_value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+      ],
+      'field_kore_end_year' => [
+        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
       ],
 
       // Unique to this KoRe paragraph type.

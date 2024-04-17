@@ -1,18 +1,17 @@
-uuid: 038602b8-2d9a-4276-937e-09c0e361618e
+uuid: d8b42e65-b919-4b7b-8df9-ebd80691c09f
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime_range
     - paragraphs
-id: paragraph.field_kore_date
-field_name: field_kore_date
+id: paragraph.field_kore_end_year
+field_name: field_kore_end_year
 entity_type: paragraph
-type: daterange
+type: integer
 settings:
-  datetime_type: date
-  optional_end_date: true
-module: datetime_range
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

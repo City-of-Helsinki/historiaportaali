@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.kore_address.field_kore_address
+    - field.field.paragraph.kore_address.field_kore_geofield
     - paragraphs.paragraphs_type.kore_address
+  module:
+    - geofield
 id: paragraph.kore_address.default
 targetEntityType: paragraph
 bundle: kore_address
@@ -17,6 +20,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_kore_geofield:
+    type: geofield_latlon
+    label: hidden
+    settings:
+      output_format: decimal
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.kore_school.field_kore_continuums
     - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
+    - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
     - field.field.node.kore_school.field_kore_types
     - node.type.kore_school
@@ -34,6 +35,7 @@ hidden:
   field_kore_continuums: true
   field_kore_id: true
   field_kore_names: true
+  field_kore_photos: true
   field_kore_principals: true
   field_kore_types: true
   langcode: true

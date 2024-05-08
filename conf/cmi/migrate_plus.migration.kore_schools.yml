@@ -90,6 +90,9 @@ process:
   field_kore_buildings:
     plugin: kore_buildings
     source: buildings
+  field_kore_photos:
+    plugin: kore_photos
+    source: buildings
   field_kore_continuums:
     plugin: kore_continuums
     source:

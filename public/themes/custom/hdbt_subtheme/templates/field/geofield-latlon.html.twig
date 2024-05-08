@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Custom implementation for Geofield LatLon.
+ *
+ * Available variables:
+ * - lat: The Latitude value.
+ * - lon: The Longitude value.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'hds-button',
+    'hds-button--primary',
+    'kore-address',
+  ]
+%}
+
+<button{{ attributes.addClass(classes) }} data-lat="{{ lat }}" data-lon="{{ lon }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</button>

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.kore_school.field_kore_continuums
     - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
+    - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
     - field.field.node.kore_school.field_kore_types
     - node.type.kore_school
@@ -32,7 +33,7 @@ content:
     region: content
   field_geolocation:
     type: leaflet_formatter_default
-    label: above
+    label: hidden
     settings:
       multiple_map: false
       leaflet_map: esri-world_topo_map
@@ -161,7 +162,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view
@@ -171,6 +172,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_kore_photos:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_kore_principals:
     type: entity_reference_revisions_entity_view

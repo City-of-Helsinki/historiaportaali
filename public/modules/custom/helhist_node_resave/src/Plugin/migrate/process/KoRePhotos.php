@@ -62,17 +62,17 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-    $paragraphs = [];
-
-    $value = array_merge($value[0], $value[1]);
+    $media = [];
 
     if (isset($value)) {
       foreach ($value as $item) {
-        $paragraphs[] = $this->createParagraphsItem($item);
+        foreach ($item['building']['photos'] as $photo) {
+          $media[] = $this->createMediaItem($photo);
+        }
       }
     }
 
-    return $paragraphs;
+    return $media;
   }
 
   /**
@@ -82,28 +82,57 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
     return TRUE;
   }
 
-  protected function createParagraphsItem(array $item): array {
+  protected function createMediaItem(array $item): array {
 
-    $image_data = file_get_contents('https://gorannikolovski.com/themes/custom/gn2021/images/goran-nikolovski-signature.png');
+    if (!$image_data = file_get_contents($item['url'])) {
+      return [];
+    }
+
+    // Get Finna ID
+    // preg_match('/(?<=id=)[^&]+/', $item['url'], $image_id);
+    // $image_id = $image_id[0];
+
+    if(str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
+      $finna_url = str_replace('https://hkm.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
+      $finna_json = file_get_contents($finna_url);
+      $finna_json = json_decode($finna_json);
+    }
+    elseif(str_starts_with($item['url'], 'https://www.finna.fi/Cover/Show?id=')) {
+      $finna_url = str_replace('https://www.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
+      $finna_json = file_get_contents($finna_url);
+      $finna_json = json_decode($finna_json);
+    }
+
     $file_repository = \Drupal::service('file.repository');
-    $image = $file_repository->writeData($image_data, "public://goran-nikolovski-signature.png", FileSystemInterface::EXISTS_REPLACE);
-    
-    $image_media = Media::create([
-      'name' => 'My media name',
-      'bundle' => 'image',
-      'uid' => 1,
-      'langcode' => 'en',
-      'status' => 0,
-      'field_media_image' => [
-        'target_id' => $image->id(),
-        'alt' => t('My media alt attribute'),
-        'title' => t('My media title attribute'),
-      ],
-      'field_author' => 'Goran Nikolovski',
-      'field_date' => '2025-12-31T23:59:59',
-      'field_location' => 'Subotica',
-     ]);
-    $image_media->save();
+    $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileSystemInterface::EXISTS_REPLACE);
+
+    $image_media = \Drupal::entityQuery('media')
+                   ->accessCheck(FALSE)
+                   ->condition('bundle', 'kore_image')
+                   ->condition('name', $item['id'])
+                   ->execute();
+
+    if (!empty($image_media)) {
+      foreach($image_media as $mid) {
+        $image_media = Media::load($mid);
+      }
+    }
+    else {
+      $image_media = Media::create([
+        'name' => $item['id'],
+        'bundle' => 'kore_image',
+        'uid' => 1,
+        'langcode' => 'fi',
+        'status' => 1,
+        'field_media_image' => [
+          'target_id' => $image->id(),
+          'alt' => $finna_json->records[0]->title,
+        ],
+        'field_finna_id' => $finna_json->records[0]->id,
+        'field_photographer' => $finna_json->records[0]->nonPresenterAuthors[0]->name,
+      ]);
+      $image_media->save();
+    }
 
     return [
       'target_id' => $image_media->id(),

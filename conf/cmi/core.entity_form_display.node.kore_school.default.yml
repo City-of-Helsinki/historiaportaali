@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.kore_school.field_kore_continuums
     - field.field.node.kore_school.field_kore_id
     - field.field.node.kore_school.field_kore_names
+    - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
     - field.field.node.kore_school.field_kore_types
     - node.type.kore_school
@@ -17,6 +18,7 @@ dependencies:
     - content_moderation
     - geofield
     - hdbt_admin_tools
+    - media_library
     - paragraphs
     - path
     - publication_date
@@ -136,6 +138,13 @@ content:
         collapse_edit_all: collapse_edit_all
         convert: '0'
         duplicate: '0'
+    third_party_settings: {  }
+  field_kore_photos:
+    type: media_library_widget
+    weight: 26
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_kore_principals:
     type: paragraphs

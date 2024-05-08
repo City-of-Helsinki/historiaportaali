@@ -1,0 +1,20 @@
+uuid: 34ca2f3c-d6a0-46e3-873f-efb4751b1e18
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_kore_photos
+field_name: field_kore_photos
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

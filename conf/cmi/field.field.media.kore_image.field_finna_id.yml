@@ -1,0 +1,19 @@
+uuid: 6200aabe-a5df-4f1a-a779-0368e373268e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_finna_id
+    - media.type.kore_image
+id: media.kore_image.field_finna_id
+field_name: field_finna_id
+entity_type: media
+bundle: kore_image
+label: 'Finna.fi record'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

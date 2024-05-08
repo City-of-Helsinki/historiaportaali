@@ -33,7 +33,7 @@ content:
     region: content
   field_geolocation:
     type: leaflet_formatter_default
-    label: above
+    label: hidden
     settings:
       multiple_map: false
       leaflet_map: esri-world_topo_map
@@ -177,7 +177,7 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: image
+      view_mode: default
       link: false
     third_party_settings: {  }
     weight: 9

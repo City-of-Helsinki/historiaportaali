@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.kore_image.field_finna_id
     - field.field.media.kore_image.field_media_image
+    - field.field.media.kore_image.field_photographer
     - image.style.thumbnail
     - media.type.kore_image
   module:
@@ -20,6 +22,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_finna_id:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_media_image:
     type: image_image
     weight: 0
@@ -27,6 +37,14 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_photographer:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

@@ -24,6 +24,26 @@
         @include font-size($fontsize-heading-l);
         margin-top: $spacing-double;
       }
+
+      .kore--field {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .paragraph--type--kore,
+        .paragraph--type--kore-continuum {
+          padding: $spacing;
+          border: 1px solid $color-black-40;
+          font-size: 1.25rem;
+
+          .kore--date {
+            width: max-content;
+            padding: $spacing-half;
+            border: 1px solid $color-black-60;
+            font-size: 1rem;
+            color: $color-black-80;
+          }
+        }
+      }
     }
   }
 

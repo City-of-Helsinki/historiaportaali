@@ -6,10 +6,10 @@ dependencies:
     - field.field.media.kore_image.field_finna_id
     - field.field.media.kore_image.field_media_image
     - field.field.media.kore_image.field_photographer
-    - image.style.large
     - media.type.kore_image
+    - responsive_image.styles.image__3_2_content_area
   module:
-    - image
+    - responsive_image
 id: media.kore_image.default
 targetEntityType: media
 bundle: kore_image
@@ -24,11 +24,11 @@ content:
     weight: 11
     region: content
   field_media_image:
-    type: image
+    type: responsive_image
     label: visually_hidden
     settings:
+      responsive_image_style: image__3_2_content_area
       image_link: ''
-      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }

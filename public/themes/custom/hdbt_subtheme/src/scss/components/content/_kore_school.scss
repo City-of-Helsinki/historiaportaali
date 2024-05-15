@@ -27,7 +27,7 @@
 
       .kore--field {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
 
         .paragraph--type--kore,
         .paragraph--type--kore-continuum {
@@ -41,6 +41,18 @@
             border: 1px solid $color-black-60;
             font-size: 1rem;
             color: $color-black-80;
+          }
+        }
+      }
+
+      .kore--photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+
+        .kore--photo {
+          img {
+            height: auto;
           }
         }
       }

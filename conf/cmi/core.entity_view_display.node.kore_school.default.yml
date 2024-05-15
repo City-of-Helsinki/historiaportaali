@@ -17,20 +17,12 @@ dependencies:
   module:
     - entity_reference_revisions
     - leaflet
-    - text
     - user
 id: node.kore_school.default
 targetEntityType: node
 bundle: kore_school
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_geolocation:
     type: leaflet_formatter_default
     label: hidden
@@ -126,7 +118,7 @@ content:
         lazy_load: false
       weight: null
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_kore_archives:
     type: entity_reference_revisions_entity_view
@@ -162,7 +154,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 10
+    weight: 2
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view
@@ -206,6 +198,7 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   langcode: true
   published_at: true
   search_api_excerpt: true

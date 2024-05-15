@@ -29,8 +29,10 @@
  * @see template_preprocess_media()
  */
 #}
-<div{{ attributes }}>
-  <a href="https://finna.fi/Record/{{ content.field_finna_id.0 }}">{{ content.field_media_image }}</a>
-  <p>{{ 'Photo:'|trans ~ ' ' ~ content.field_photographer.0['#context'].value }}<p>
-  <p><a href="https://finna.fi/Record/{{ content.field_finna_id.0 }}">https://finna.fi/Record/{{ content.field_finna_id.0 }}</a></p>
+<div class="kore--photo">
+  <a href="https://finna.fi/Record/{{ content.field_finna_id.0 }}" target="_blank">{{ content.field_media_image }}</a>
+  {{ 'Photo:'|trans ~ ' ' ~ content.field_photographer.0['#context'].value }}
+  {% set link_title = 'https://finna.fi/Record/' ~ content.field_finna_id.0['#context'].value %}
+  {% set link_url = 'https://finna.fi/Record/' ~ content.field_finna_id.0['#context'].value %}
+  {{ link(link_title, link_url, []) }}
 </div>

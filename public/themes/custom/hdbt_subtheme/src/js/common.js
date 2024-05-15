@@ -79,9 +79,18 @@
     addKoreMarkers: function(context) {
       $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
 
-        $paragraphs = $('div.paragraph--type--kore-address', context);
+        $buildings = $('div.paragraph--type--kore-building', context);
+        $buildings.each(function() {
+          // Remove buttons with identical geolocation.
+          let addresses = $(this).find('div.paragraph--type--kore-address');
+          addresses.each(function() {
+            let buttons = $(this).find('button.kore-address');
+            buttons.each(function() {
+              $('[data-lat="'+$(this).attr('data-lat')+'"][data-lon="'+$(this).attr('data-lon')+'"]:not(:first)').remove();
+            });
+          });
 
-        $paragraphs.each(function() {
+          // Add markers to map.
           let lat = $(this).find('button.kore-address').attr('data-lat');
           let lon = $(this).find('button.kore-address').attr('data-lon');
           if (lat != lon) {
@@ -96,7 +105,6 @@
         });
 
         $buttons = $('button.kore-address', context);
-
         $buttons.on('click', function() {
           let lat = $(this).attr('data-lat');
           let lon = $(this).attr('data-lon');

@@ -2,3 +2,16 @@ display:
   default:
     display_options:
       title: Koulurekisteri
+      filters:
+        field_kore_name_value:
+          expose:
+            label: 'Koulun nimi'
+        field_kore_start_year_value:
+          expose:
+            label: 'Vuosi alkaen'
+        field_kore_end_year_value:
+          expose:
+            label: 'Vuosi päättyen'
+      exposed_form:
+        options:
+          submit_button: Hae

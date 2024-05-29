@@ -86,7 +86,7 @@
           addresses.each(function() {
             let buttons = $(this).find('button.kore-address');
             buttons.each(function() {
-              $('[data-lat="'+$(this).attr('data-lat')+'"][data-lon="'+$(this).attr('data-lon')+'"]:not(:first)').remove();
+              $('[data-lat="'+$(this).attr('data-lat')+'"][data-lon="'+$(this).attr('data-lon')+'"]:not(:last)').remove();
             });
           });
 

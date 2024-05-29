@@ -52,8 +52,8 @@
     {% block content %}
       {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
     {% endblock %}
-    <div class="kore--date">
+    <span class="kore--date">
       {{ content.field_kore_start_year }} ⟶ {{ content.field_kore_end_year }}
-    </div>
+    </span>
   </div>
 {% endblock paragraph %}

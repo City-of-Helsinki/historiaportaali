@@ -27,20 +27,36 @@
 
       .kore--field {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
 
-        .paragraph--type--kore,
-        .paragraph--type--kore-continuum {
+        .paragraph--type--kore {
           padding: $spacing;
           border: 1px solid $color-black-40;
           font-size: 1.25rem;
+          display: flex;
 
           .kore--date {
             width: max-content;
             padding: $spacing-half;
             border: 1px solid $color-black-60;
+            margin-left: auto;
             font-size: 1rem;
             color: $color-black-80;
+          }
+
+          &.paragraph--type--kore-building {
+            .paragraph--type--kore-address {
+              margin-right: 1rem;
+
+              &:not(:last-of-type)::after {
+                margin-right: 0.25rem;
+                content: '=';
+              }
+
+              .hds-button {
+                margin-left: 1rem;
+              }
+            }
           }
         }
       }

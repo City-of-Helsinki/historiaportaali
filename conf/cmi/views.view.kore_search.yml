@@ -226,7 +226,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_kore_name }} {{ field_kore_start_year }}{% if field_kore_start_year or field_kore_end_year %} ⟶ {% endif %}{{ field_kore_end_year }}'
+            text: "{{ field_kore_name }}\t<span class=\"kore-date\">{{ field_kore_start_year }}{% if field_kore_start_year or field_kore_end_year %} ⟶ {% endif %}{{ field_kore_end_year }}</span>"
             make_link: true
             path: '/node/{{ parent_id }}'
             absolute: false
@@ -328,17 +328,29 @@ display:
                   collapsible: false
                   is_secondary: false
               field_kore_start_year_value:
-                plugin_id: default
+                plugin_id: bef_sliders
                 advanced:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+                min: '1550'
+                max: '2024'
+                step: '1'
+                animate: none
+                animate_ms: '0'
+                orientation: horizontal
               field_kore_end_year_value:
-                plugin_id: default
+                plugin_id: bef_sliders
                 advanced:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+                min: '1550'
+                max: '2024'
+                step: '1'
+                animate: none
+                animate_ms: '0'
+                orientation: horizontal
       access:
         type: none
         options: {  }
@@ -477,7 +489,7 @@ display:
           value:
             min: ''
             max: ''
-            value: ''
+            value: '2024'
           group: 1
           exposed: true
           expose:

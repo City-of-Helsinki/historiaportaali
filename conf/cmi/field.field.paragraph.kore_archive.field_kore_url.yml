@@ -1,0 +1,23 @@
+uuid: 6b4ab26b-bb2d-4c67-a16b-b7cdcc514080
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_url
+    - paragraphs.paragraphs_type.kore_archive
+  module:
+    - link
+id: paragraph.kore_archive.field_kore_url
+field_name: field_kore_url
+entity_type: paragraph
+bundle: kore_archive
+label: 'KoRe url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

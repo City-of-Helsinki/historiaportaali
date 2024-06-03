@@ -172,8 +172,9 @@ function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, ar
 
   $kore_paragraphs = [
     'kore_archive',
-    'kore_continuum',
     'kore_building',
+    'kore_continuum',
+    'kore_gender',
     'kore_name',
     'kore_principal',
     'kore_type',

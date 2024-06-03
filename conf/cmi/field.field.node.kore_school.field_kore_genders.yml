@@ -1,0 +1,151 @@
+uuid: 5a143e80-17f2-41a6-b9dd-598d0005ab15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kore_genders
+    - node.type.kore_school
+    - paragraphs.paragraphs_type.kore_gender
+  module:
+    - entity_reference_revisions
+id: node.kore_school.field_kore_genders
+field_name: field_kore_genders
+entity_type: node
+bundle: kore_school
+label: 'KoRe genders'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kore_gender: kore_gender
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 42
+        enabled: false
+      accordion_item:
+        weight: 43
+        enabled: false
+      banner:
+        weight: 44
+        enabled: false
+      chart:
+        weight: 45
+        enabled: false
+      columns:
+        weight: 46
+        enabled: false
+      contact_card:
+        weight: 47
+        enabled: false
+      contact_card_listing:
+        weight: 48
+        enabled: false
+      content_cards:
+        weight: 49
+        enabled: false
+      content_liftup:
+        weight: 50
+        enabled: false
+      event_list:
+        weight: 51
+        enabled: false
+      from_library:
+        weight: 52
+        enabled: false
+      gallery:
+        weight: 53
+        enabled: false
+      gallery_slide:
+        weight: 54
+        enabled: false
+      hearings:
+        weight: 55
+        enabled: false
+      hero:
+        weight: 56
+        enabled: false
+      image:
+        weight: 57
+        enabled: false
+      kore_address:
+        weight: 58
+        enabled: false
+      kore_archive:
+        weight: 59
+        enabled: false
+      kore_building:
+        weight: 60
+        enabled: false
+      kore_continuum:
+        weight: 61
+        enabled: false
+      kore_gender:
+        weight: 62
+        enabled: true
+      kore_name:
+        weight: 63
+        enabled: false
+      kore_principal:
+        weight: 64
+        enabled: false
+      kore_type:
+        weight: 65
+        enabled: false
+      liftup_with_image:
+        weight: 66
+        enabled: false
+      list_of_links:
+        weight: 67
+        enabled: false
+      list_of_links_item:
+        weight: 68
+        enabled: false
+      map:
+        weight: 69
+        enabled: false
+      map_api_endpoint:
+        weight: 70
+        enabled: false
+      phasing:
+        weight: 71
+        enabled: false
+      phasing_item:
+        weight: 72
+        enabled: false
+      popular_service_item:
+        weight: 74
+        enabled: false
+      popular_services:
+        weight: 73
+        enabled: false
+      remote_video:
+        weight: 75
+        enabled: false
+      sidebar_text:
+        weight: 76
+        enabled: false
+      social_media_link:
+        weight: 77
+        enabled: false
+      target_group_link_item:
+        weight: 79
+        enabled: false
+      target_group_links:
+        weight: 78
+        enabled: false
+      text:
+        weight: 80
+        enabled: false
+      timeline:
+        weight: 81
+        enabled: false
+      timeline_item:
+        weight: 82
+        enabled: false
+field_type: entity_reference_revisions

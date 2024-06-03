@@ -21,6 +21,9 @@ $config['filelog.settings']['location'] = '/tmp';
 // Keep old assets for three months (default is one month).
 $config['system.performance']['stale_file_threshold'] = 7776000;
 
+// Increase http timeout.
+$settings['http_client_config']['timeout'] = 60;
+
 $settings['is_azure'] = TRUE;
 
 /**

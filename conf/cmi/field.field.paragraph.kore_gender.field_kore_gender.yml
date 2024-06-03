@@ -1,0 +1,21 @@
+uuid: 926fbf23-0978-4f77-8f71-dfa64ca35eed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_gender
+    - paragraphs.paragraphs_type.kore_gender
+  module:
+    - options
+id: paragraph.kore_gender.field_kore_gender
+field_name: field_kore_gender
+entity_type: paragraph
+bundle: kore_gender
+label: 'KoRe gender'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

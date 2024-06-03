@@ -88,10 +88,7 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       return [];
     }
 
-    // Get Finna ID
-    // preg_match('/(?<=id=)[^&]+/', $item['url'], $image_id);
-    // $image_id = $image_id[0];
-
+    // Get Finna metadata
     if(str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
       $finna_url = str_replace('https://hkm.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
@@ -101,6 +98,10 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       $finna_url = str_replace('https://www.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
       $finna_json = json_decode($finna_json);
+    }
+
+    if (!isset($finna_json->records)) {
+      return [];
     }
 
     $file_repository = \Drupal::service('file.repository');

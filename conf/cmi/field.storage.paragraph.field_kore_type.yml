@@ -65,6 +65,39 @@ settings:
     -
       value: ylakansakoulu
       label: yläkansakoulu
+    -
+      value: erityiskoulu
+      label: erityiskoulu
+    -
+      value: iltakoulu
+      label: iltakoulu
+    -
+      value: lyseo
+      label: lyseo
+    -
+      value: maatalouslyseo
+      label: maatalouslyseo
+    -
+      value: peruskoulu
+      label: peruskoulu
+    -
+      value: peruskoulu_ja_lukio
+      label: 'peruskoulu ja lukio'
+    -
+      value: reaalilyseo
+      label: reaalilyseo
+    -
+      value: realilyseo
+      label: realilyseo
+    -
+      value: ylaaste_ja_lukio
+      label: 'yläaste ja lukio'
+    -
+      value: ammattikorkeakoulu
+      label: ammattikorkeakoulu
+    -
+      value: sivukoulu
+      label: sivukoulu
   allowed_values_function: ''
 module: options
 locked: false

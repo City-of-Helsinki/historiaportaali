@@ -44,9 +44,11 @@
 %}
 
 {% if label_hidden %}
-  {% for item in items %}
-    {{ item.content }}
-  {% endfor %}
+  <div class="kore--field">
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  </div>
 {% else %}
   <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
   <div class="kore--field">

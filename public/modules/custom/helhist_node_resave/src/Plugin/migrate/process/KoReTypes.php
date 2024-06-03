@@ -98,6 +98,9 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
       $end_date = (($item['end_day']) ? $item['end_day'] : '1') . '.' . (($item['end_month']) ? $item['end_month'] : '1') . '.' . $item['end_year'];
     }
 
+    $item['type']['name'] = str_replace(['-', ' '], '_', $item['type']['name']);
+    $item['type']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['type']['name']);
+
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
@@ -110,7 +113,7 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
       // Unique to this KoRe paragraph type.
       'type' => 'kore_type',
       'field_kore_type' => [
-        'value' => str_replace(['-', ' '], '_', $item['type']['name']),
+        'value' => $item['type']['name'],
       ],
     ]);
 

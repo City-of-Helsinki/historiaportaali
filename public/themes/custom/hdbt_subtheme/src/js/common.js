@@ -81,7 +81,7 @@
 
         $buildings = $('div.paragraph--type--kore-building', context);
         $buildings.each(function() {
-          // Remove buttons with identical geolocation.
+          /* Remove buttons with identical geolocation.
           let addresses = $(this).find('div.paragraph--type--kore-address');
           addresses.each(function() {
             let buttons = $(this).find('button.kore-address');
@@ -89,6 +89,8 @@
               $('[data-lat="'+$(this).attr('data-lat')+'"][data-lon="'+$(this).attr('data-lon')+'"]:not(:last)').remove();
             });
           });
+          */
+         $(this).find('button.kore-address').not(':last').remove();
 
           // Add markers to map.
           let lat = $(this).find('button.kore-address').attr('data-lat');

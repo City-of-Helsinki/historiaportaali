@@ -112,6 +112,10 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
       'field_kore_archive' => [
         'value' => $item['location'],
       ],
+      'field_kore_url' => [
+        'uri' => str_replace('https://yksa3.darchive.fi/YKSA3/id/', 'https://yksa.disec.fi/Yksa4/id/', $item['url']),
+        'title' => $item['arkiston_nimi'],
+      ]
     ]);
 
     $paragraph->save();

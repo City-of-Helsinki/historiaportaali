@@ -8,10 +8,10 @@ display:
             label: 'Koulun nimi'
         field_kore_start_year_value:
           expose:
-            label: 'Vuosi alkaen'
+            label: 'Vuosi päättyen'
         field_kore_end_year_value:
           expose:
-            label: 'Vuosi päättyen'
+            label: 'Vuosi alkaen'
       exposed_form:
         options:
           submit_button: Hae

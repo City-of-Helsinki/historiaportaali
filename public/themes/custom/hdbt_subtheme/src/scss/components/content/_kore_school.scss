@@ -41,6 +41,10 @@
 
           &.paragraph--type--kore-archive {
             flex-wrap: wrap;
+
+            a {
+              margin-left: 0.25rem;
+            }
           }
 
           &.paragraph--type--kore-building {

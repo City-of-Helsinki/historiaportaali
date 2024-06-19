@@ -1,0 +1,10 @@
+uuid: bf1bd00c-cec9-4efd-af81-c7dd9331e5ff
+langcode: en
+status: true
+dependencies: {  }
+id: kore_gender
+label: 'KoRe gender'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

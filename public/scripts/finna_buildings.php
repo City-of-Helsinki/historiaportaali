@@ -4,6 +4,7 @@ use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
 
 $mids = \Drupal::entityQuery('media')
+  ->accessCheck(FALSE)
   ->condition('field_finna_id', '', '<>')
   ->execute();
 

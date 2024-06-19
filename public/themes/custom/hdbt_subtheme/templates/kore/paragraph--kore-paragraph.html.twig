@@ -41,6 +41,7 @@
 {%
   set classes = [
     'paragraph',
+    'paragraph--type--kore',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -51,8 +52,8 @@
     {% block content %}
       {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
     {% endblock %}
-  </div>
-  <div>
-    {{ content.field_kore_start_year }} ⟶ {{ content.field_kore_end_year }}
+    <span class="kore--date">
+      {{ content.field_kore_start_year }} ⟶ {{ content.field_kore_end_year }}
+    </span>
   </div>
 {% endblock paragraph %}

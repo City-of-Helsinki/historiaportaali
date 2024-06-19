@@ -18,11 +18,85 @@
   .node--type-kore-school {
     &.node--view-mode-full {
       max-width: $content-width-max;
-      margin: 0 auto;
+      margin: 0 $spacing-double;
+
+      @include breakpoint($breakpoint-m) {
+        margin: 0 auto;
+      }
 
       .label {
         @include font-size($fontsize-heading-l);
         margin-top: $spacing-double;
+      }
+
+      .kore--field {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .paragraph--type--kore {
+          padding: $spacing;
+          border: 1px solid $color-black-40;
+          font-size: 1.25rem;
+          display: flex;
+
+          &.paragraph--type--kore-archive {
+            flex-wrap: wrap;
+
+            a {
+              margin-left: 0.25rem;
+            }
+          }
+
+          &.paragraph--type--kore-building {
+            .paragraph--type--kore-address {
+              &:not(:last-of-type)::after {
+                margin-right: 0.25rem;
+                content: '=';
+              }
+
+              .hds-button {
+                margin-left: 1rem;
+              }
+            }
+          }
+
+          &.paragraph--type--kore-continuum {
+            a {
+              margin-left: 0.25rem;
+            }
+          }
+
+          .kore--date {
+            width: max-content;
+            padding: $spacing-half;
+            border: 1px solid $color-black-60;
+            margin-left: auto;
+            font-size: 1rem;
+            color: $color-black-80;
+          }
+        }
+      }
+
+      .kore--photos {
+        display: grid;
+        column-gap: $spacing;
+        grid-template-columns: 1fr;
+
+        @include breakpoint($breakpoint-m) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .kore--photo {
+          margin-bottom: $spacing-double;
+
+          img {
+            height: auto;
+          }
+        }
       }
     }
   }

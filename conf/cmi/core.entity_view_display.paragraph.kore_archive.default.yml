@@ -6,7 +6,10 @@ dependencies:
     - field.field.paragraph.kore_archive.field_kore_archive
     - field.field.paragraph.kore_archive.field_kore_end_year
     - field.field.paragraph.kore_archive.field_kore_start_year
+    - field.field.paragraph.kore_archive.field_kore_url
     - paragraphs.paragraphs_type.kore_archive
+  module:
+    - link
 id: paragraph.kore_archive.default
 targetEntityType: paragraph
 bundle: kore_archive
@@ -37,6 +40,18 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_kore_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   search_api_excerpt: true

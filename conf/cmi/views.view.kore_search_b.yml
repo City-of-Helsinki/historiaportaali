@@ -1,22 +1,23 @@
-uuid: ea9ac75c-c080-4104-91f2-3bcd900702d8
+uuid: 6e64170a-ee2a-4878-ae50-d39b76fdb84f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_kore_end_year
-    - field.storage.paragraph.field_kore_name
-    - field.storage.paragraph.field_kore_start_year
-    - paragraphs.paragraphs_type.kore_name
+    - field.storage.node.field_kore_names
+    - node.type.kore_school
   module:
     - better_exposed_filters
+    - entity_reference_revisions
+    - node
     - paragraphs
-id: kore_search
-label: 'KoRe search'
+    - user
+id: kore_search_b
+label: 'KoRe search B'
 module: views
 description: ''
 tag: ''
-base_table: paragraphs_item_field_data
-base_field: id
+base_table: node_field_data
+base_field: nid
 display:
   default:
     id: default
@@ -24,18 +25,17 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'KoRe search'
+      title: 'KoRe search B'
       fields:
-        parent_id:
-          id: parent_id
-          table: paragraphs_item_field_data
-          field: parent_id
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: paragraph
-          entity_field: parent_id
-          plugin_id: field
+          entity_type: node
+          plugin_id: entity_link
           label: ''
           exclude: true
           alter:
@@ -77,147 +77,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_kore_start_year:
-          id: field_kore_start_year
-          table: paragraph__field_kore_start_year
-          field: field_kore_start_year
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_unformatted
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_kore_end_year:
-          id: field_kore_end_year
-          table: paragraph__field_kore_end_year
-          field: field_kore_end_year
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_unformatted
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_kore_name:
-          id: field_kore_name
-          table: paragraph__field_kore_name
-          field: field_kore_name
+          text: view
+          output_url_as_text: true
+          absolute: false
+        field_kore_names:
+          id: field_kore_names
+          table: node__field_kore_names
+          field: field_kore_names
           relationship: none
           group_type: group
           admin_label: ''
@@ -225,10 +91,10 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "{{ field_kore_name }}\t<span class=\"kore-date\">{{ field_kore_start_year }}{% if field_kore_start_year or field_kore_end_year %} ⟶ {% endif %}{{ field_kore_end_year }}</span>"
+            alter_text: false
+            text: ''
             make_link: true
-            path: '/node/{{ parent_id }}'
+            path: '{{ view_node }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -263,10 +129,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -274,7 +141,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ''
           field_api_classes: false
       pager:
         type: full
@@ -346,20 +213,36 @@ display:
                   collapsible: false
                   is_secondary: false
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
           id: status
-          table: paragraphs_item_field_data
+          table: node_field_data
           field: status
-          entity_type: paragraph
+          entity_type: node
           entity_field: status
           plugin_id: boolean
           value: '1'
@@ -368,19 +251,18 @@ display:
             operator: ''
         type:
           id: type
-          table: paragraphs_item_field_data
+          table: node_field_data
           field: type
-          entity_type: paragraph
+          entity_type: node
           entity_field: type
           plugin_id: bundle
           value:
-            kore_name: kore_name
-          group: 1
+            kore_school: kore_school
         field_kore_name_value:
           id: field_kore_name_value
           table: paragraph__field_kore_name
           field: field_kore_name_value
-          relationship: none
+          relationship: field_kore_names
           group_type: group
           admin_label: ''
           plugin_id: string
@@ -390,7 +272,7 @@ display:
           exposed: true
           expose:
             operator_id: field_kore_name_value_op
-            label: 'KoRe name'
+            label: Name
             description: ''
             use_operator: false
             operator: field_kore_name_value_op
@@ -425,7 +307,7 @@ display:
           id: field_kore_end_year_value
           table: paragraph__field_kore_end_year
           field: field_kore_end_year_value
-          relationship: none
+          relationship: field_kore_names
           group_type: group
           admin_label: ''
           plugin_id: numeric
@@ -433,7 +315,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '1550'
+            value: ''
           group: 1
           exposed: true
           expose:
@@ -475,7 +357,7 @@ display:
           id: field_kore_start_year_value
           table: paragraph__field_kore_start_year
           field: field_kore_start_year_value
-          relationship: none
+          relationship: field_kore_names
           group_type: group
           admin_label: ''
           plugin_id: numeric
@@ -521,14 +403,14 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
         type: default
         options:
-          grouping: {  }
+          grouping:
+            -
+              field: field_kore_names
+              rendered: true
+              rendered_strip: false
           row_class: ''
           default_row_class: true
       row:
@@ -538,10 +420,19 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_kore_names:
+          id: field_kore_names
+          table: node__field_kore_names
+          field: field_kore_names
+          relationship: none
+          group_type: group
+          admin_label: 'field_kore_names: Paragraph'
+          plugin_id: standard
+          required: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -552,10 +443,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
       tags:
-        - 'config:field.storage.paragraph.field_kore_end_year'
-        - 'config:field.storage.paragraph.field_kore_name'
-        - 'config:field.storage.paragraph.field_kore_start_year'
+        - 'config:field.storage.node.field_kore_names'
   page_1:
     id: page_1
     display_title: Page
@@ -577,7 +468,7 @@ display:
           category_fallback: ''
           category_facets: {  }
           category_facets_concat_separator: ', '
-      path: koulurekisteri
+      path: koulurekisteri-b
     cache_metadata:
       max-age: -1
       contexts:
@@ -585,7 +476,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
       tags:
-        - 'config:field.storage.paragraph.field_kore_end_year'
-        - 'config:field.storage.paragraph.field_kore_name'
-        - 'config:field.storage.paragraph.field_kore_start_year'
+        - 'config:field.storage.node.field_kore_names'

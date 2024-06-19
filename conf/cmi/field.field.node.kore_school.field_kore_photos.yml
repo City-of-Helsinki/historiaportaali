@@ -1,0 +1,29 @@
+uuid: 7b909063-303c-4797-ae61-6d13d0c2a050
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kore_photos
+    - media.type.kore_image
+    - node.type.kore_school
+id: node.kore_school.field_kore_photos
+field_name: field_kore_photos
+entity_type: node
+bundle: kore_school
+label: 'KoRe photos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      kore_image: kore_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

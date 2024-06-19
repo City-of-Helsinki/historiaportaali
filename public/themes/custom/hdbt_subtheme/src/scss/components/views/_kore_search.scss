@@ -1,0 +1,99 @@
+.views--kore-search {
+  
+  .views-exposed-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .form-item-field-kore-name-value {
+      flex-basis: 100%;
+    }
+
+    .form-item-field-kore-start-year-value {
+      flex-basis: 49%;
+
+      .hds-text-input__input-wrapper {
+        flex-flow: column;
+      }
+    }
+
+    .form-item-field-kore-end-year-value {
+      flex-basis: 49%;
+
+      .hds-text-input__input-wrapper {
+        flex-flow: column;
+      }
+    }
+  }
+
+  .views-row {
+    width: fit-content;
+    padding: 0.5rem;
+
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    @include breakpoint($breakpoint-m) {
+      
+    }
+    
+    .kore-date {
+      // margin-left: 0.5rem;
+    }
+  }
+}
+
+.views--kore-search-b {
+
+  .views-exposed-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .form-item-field-kore-name-value {
+      flex-basis: 100%;
+    }
+
+    .form-item-field-kore-start-year-value {
+      flex-basis: 49%;
+
+      .hds-text-input__input-wrapper {
+        flex-flow: column;
+      }
+    }
+
+    .form-item-field-kore-end-year-value {
+      flex-basis: 49%;
+
+      .hds-text-input__input-wrapper {
+        flex-flow: column;
+      }
+    }
+  }
+
+  .views-row {
+    display: none;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    &:nth-of-type(even) {
+      background-color: #f2f2f2;
+    }
+
+    @include breakpoint($breakpoint-m) {
+      
+    }
+    
+    .kore-date {
+      // margin-left: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+uuid: fe309be8-3411-4d78-91b5-2153c22b6f76
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.kore_image
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: media.kore_image
+target_entity_type_id: media
+target_bundle: kore_image
+default_langcode: fi
+language_alterable: true

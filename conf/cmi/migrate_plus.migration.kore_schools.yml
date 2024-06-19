@@ -39,6 +39,9 @@ source:
       name: types
       selector: types
     -
+      name: genders
+      selector: genders
+    -
       name: principals
       selector: principals
     -
@@ -90,6 +93,9 @@ process:
   field_kore_buildings:
     plugin: kore_buildings
     source: buildings
+  field_kore_photos:
+    plugin: kore_photos
+    source: buildings
   field_kore_continuums:
     plugin: kore_continuums
     source:
@@ -98,6 +104,9 @@ process:
   field_kore_types:
     plugin: kore_types
     source: types
+  field_kore_genders:
+    plugin: kore_genders
+    source: genders
   uid:
     plugin: default_value
     default_value: 1

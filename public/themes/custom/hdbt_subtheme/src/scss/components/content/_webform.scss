@@ -47,6 +47,19 @@
         }
       }
 
+      img {
+        max-width: 70%;
+        height: auto;
+
+        @include breakpoint($breakpoint-l) {
+          max-width: 80%;
+        }
+
+        @include breakpoint($breakpoint-s) {
+          max-width: 100%;
+        }
+      }
+
       .webform-quiz-element-result-list {
         padding-left: $spacing-half;
 

@@ -22,7 +22,7 @@ source:
       selector: id
     -
       name: title
-      selector: names/0/official_name
+      selector: names
     -
       name: photo
       selector: buildings/0/building/photos/0/url
@@ -60,14 +60,12 @@ source:
     id:
       type: integer
 process:
-  title_exists:
-    plugin: skip_on_empty
-    method: row
-    source: title
   type:
     plugin: default_value
     default_value: kore_school
-  title: title
+  title:
+    plugin: kore_title
+    source: title
   body/value: photo
   body/summary:
     plugin: default_value

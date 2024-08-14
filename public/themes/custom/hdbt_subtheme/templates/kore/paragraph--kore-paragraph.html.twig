@@ -53,7 +53,7 @@
       {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
     {% endblock %}
     <span class="kore--date">
-      {{ content.field_kore_start_year }} ⟶ {{ content.field_kore_end_year }}
+      {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }} ⟶ {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
     </span>
   </div>
 {% endblock paragraph %}

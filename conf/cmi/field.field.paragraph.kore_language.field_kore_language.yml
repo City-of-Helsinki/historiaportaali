@@ -1,0 +1,19 @@
+uuid: 81accc1b-241e-4c8f-9a27-0d734f3b3347
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_language
+    - paragraphs.paragraphs_type.kore_language
+id: paragraph.kore_language.field_kore_language
+field_name: field_kore_language
+entity_type: paragraph
+bundle: kore_language
+label: 'KoRe language'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

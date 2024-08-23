@@ -175,6 +175,7 @@ function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, ar
     'kore_building',
     'kore_continuum',
     'kore_gender',
+    'kore_language',
     'kore_name',
     'kore_principal',
     'kore_type',

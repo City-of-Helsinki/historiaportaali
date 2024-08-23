@@ -1,0 +1,21 @@
+uuid: 3e2c8281-b594-4261-b8f7-05038e6f9d15
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_kore_language
+field_name: field_kore_language
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

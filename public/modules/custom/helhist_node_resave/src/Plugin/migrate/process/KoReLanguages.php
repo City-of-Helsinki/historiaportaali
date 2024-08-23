@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_types",
+ *   id = "kore_languages",
  *   handle_multiples = TRUE
  * )
  */
-class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReLanguages extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,9 +90,6 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
 
   protected function createParagraphsItem(array $item): array {
 
-    $item['type']['name'] = str_replace(['-', ' '], '_', $item['type']['name']);
-    $item['type']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['type']['name']);
-
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
@@ -103,9 +100,9 @@ class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInter
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_type',
-      'field_kore_type' => [
-        'value' => $item['type']['name'],
+      'type' => 'kore_language',
+      'field_kore_language' => [
+        'value' => $item['language'],
       ],
     ]);
 

@@ -33,20 +33,37 @@
 
   h3 {
     margin: 0;
-    padding: 0.5rem;
+    padding: 1rem;
     font-size: 1rem;
     line-height: 1.5rem;
 
     &:nth-of-type(odd) {
       background-color: #f2f2f2;
     }
+    
+    &:hover {
+      a:first-child {
+        text-decoration: underline;
+      }
+    }
 
     @include breakpoint($breakpoint-m) {
       
     }
-    
-    .kore-date {
-      // margin-left: 0.5rem;
+
+    a {
+      text-decoration: none;
+
+      &:first-child {
+        .paragraph--type--kore-name {
+          font-size: 1.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      .kore-date {
+        // margin-left: 0.5rem;
+      }
     }
   }
 }

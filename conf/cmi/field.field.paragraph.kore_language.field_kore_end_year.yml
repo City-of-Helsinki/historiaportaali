@@ -1,0 +1,23 @@
+uuid: 1f8f794e-e330-4504-9dec-5d173f8e2fd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_end_year
+    - paragraphs.paragraphs_type.kore_language
+id: paragraph.kore_language.field_kore_end_year
+field_name: field_kore_end_year
+entity_type: paragraph
+bundle: kore_language
+label: 'KoRe end year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 9999
+  prefix: ''
+  suffix: ''
+field_type: integer

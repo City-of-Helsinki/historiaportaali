@@ -1,0 +1,10 @@
+uuid: 5586d433-1c00-4a28-ad6f-7ba7c8164c77
+langcode: en
+status: true
+dependencies: {  }
+id: kore_language
+label: 'KoRe language'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

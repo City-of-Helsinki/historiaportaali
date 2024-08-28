@@ -101,6 +101,7 @@ class KoReGenders extends ProcessPluginBase implements ContainerFactoryPluginInt
       'field_kore_end_year' => [
         'value' => $item['end_year'] ? $item['end_year'] : NULL,
       ],
+
       // Unique to this KoRe paragraph type.
       'type' => 'kore_gender',
       'field_kore_gender' => [

@@ -1,0 +1,21 @@
+uuid: 623bb986-ed2c-4d32-a7bc-e6755da3cca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_field
+    - paragraphs.paragraphs_type.kore_field
+  module:
+    - options
+id: paragraph.kore_field.field_kore_field
+field_name: field_kore_field
+entity_type: paragraph
+bundle: kore_field
+label: 'KoRe field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

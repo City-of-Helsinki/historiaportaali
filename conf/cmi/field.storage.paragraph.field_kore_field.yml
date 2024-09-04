@@ -12,11 +12,56 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: elintarvikeala
+      label: Elintarvikeala
+    -
+      value: hotelli__ja_ravintola_ala
+      label: 'Hotelli- ja ravintola-ala'
+    -
+      value: ilmailuala
+      label: Ilmailuala
+    -
+      value: kauneudenhoitoala
+      label: Kauneudenhoitoala
+    -
+      value: kulttuuriala
+      label: Kulttuuriala
+    -
+      value: kasityoala
+      label: Käsityöala
+    -
+      value: liikenneala
+      label: Liikenneala
+    -
+      value: liiketalouden_ala
+      label: 'Liiketalouden ala'
+    -
+      value: liikunta_ala
+      label: Liikunta-ala
+    -
       value: merenkulkuala
       label: Merenkulkuala
     -
+      value: palveluala
+      label: Palveluala
+    -
+      value: sosiaaliala
+      label: Sosiaaliala
+    -
       value: tekniikan_ala
       label: 'Tekniikan ala'
+    -
+      value: tekstiili__ja_vaatetusala
+      label: 'Tekstiili- ja vaatetusala'
+    -
+      value: terveysala
+      label: Terveysala
+    -
+      value: turvallisuusala
+      label: Turvallisuusala
+    -
+      value: viherala
+      label: Viherala
   allowed_values_function: ''
 module: options
 locked: false

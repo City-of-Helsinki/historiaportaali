@@ -1,0 +1,21 @@
+uuid: b2b1fb70-bdfd-4c9f-95fe-198b1e7c3c59
+langcode: en
+status: true
+dependencies:
+  module:
+    - helfi_api_base
+    - serialization
+    - user
+_core:
+  default_config_hash: J20j8Km9iCpVfm0ojzmu15sCxGGeLtxQFw3jdLF7tkU
+id: helfi_debug_data
+plugin_id: helfi_debug_data
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
+    - basic_auth

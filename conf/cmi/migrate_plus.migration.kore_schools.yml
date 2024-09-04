@@ -39,6 +39,9 @@ source:
       name: types
       selector: types
     -
+      name: fields
+      selector: fields
+    -
       name: languages
       selector: languages
     -
@@ -105,6 +108,9 @@ process:
   field_kore_types:
     plugin: kore_types
     source: types
+  field_kore_fields:
+    plugin: kore_fields
+    source: fields
   field_kore_languages:
     plugin: kore_languages
     source: languages

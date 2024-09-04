@@ -1,0 +1,43 @@
+uuid: 4048a08d-c916-4b97-8e78-c9faaee5dd75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_field.field_kore_end_year
+    - field.field.paragraph.kore_field.field_kore_field
+    - field.field.paragraph.kore_field.field_kore_start_year
+    - paragraphs.paragraphs_type.kore_field
+  module:
+    - options
+id: paragraph.kore_field.default
+targetEntityType: paragraph
+bundle: kore_field
+mode: default
+content:
+  field_kore_end_year:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_kore_field:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_kore_start_year:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -90,6 +90,9 @@ class KoReLanguages extends ProcessPluginBase implements ContainerFactoryPluginI
 
   protected function createParagraphsItem(array $item): array {
 
+    $item['language'] = str_replace(['-', ' '], '_', $item['language']);
+    $item['language'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['language']);
+
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [

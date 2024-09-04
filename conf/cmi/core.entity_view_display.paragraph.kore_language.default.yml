@@ -7,6 +7,8 @@ dependencies:
     - field.field.paragraph.kore_language.field_kore_language
     - field.field.paragraph.kore_language.field_kore_start_year
     - paragraphs.paragraphs_type.kore_language
+  module:
+    - options
 id: paragraph.kore_language.default
 targetEntityType: paragraph
 bundle: kore_language
@@ -22,10 +24,9 @@ content:
     weight: 2
     region: content
   field_kore_language:
-    type: string
+    type: list_default
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content

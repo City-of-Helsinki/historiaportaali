@@ -1,18 +1,36 @@
-uuid: 3e2c8281-b594-4261-b8f7-05038e6f9d15
+uuid: d8708a36-9cde-44d1-b777-b948bfe31df6
 langcode: en
 status: true
 dependencies:
   module:
+    - options
     - paragraphs
 id: paragraph.field_kore_language
 field_name: field_kore_language
 entity_type: paragraph
-type: string
+type: list_string
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  allowed_values:
+    -
+      value: suomi
+      label: suomi
+    -
+      value: ruotsi
+      label: ruotsi
+    -
+      value: englanti
+      label: englanti
+    -
+      value: ranska
+      label: ranska
+    -
+      value: saksa
+      label: saksa
+    -
+      value: venaja
+      label: venäjä
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

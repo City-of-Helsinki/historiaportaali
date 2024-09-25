@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_languages",
+ *   id = "kore_archives",
  *   handle_multiples = TRUE
  * )
  */
-class KoReLanguages extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,9 +90,6 @@ class KoReLanguages extends ProcessPluginBase implements ContainerFactoryPluginI
 
   protected function createParagraphsItem(array $item): array {
 
-    $item['language'] = str_replace(['-', ' '], '_', $item['language']);
-    $item['language'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['language']);
-
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
@@ -103,10 +100,14 @@ class KoReLanguages extends ProcessPluginBase implements ContainerFactoryPluginI
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_language',
-      'field_kore_language' => [
-        'value' => $item['language'],
+      'type' => 'kore_archive',
+      'field_kore_archive' => [
+        'value' => $item['location'],
       ],
+      'field_kore_url' => [
+        'uri' => str_replace('https://yksa3.darchive.fi/YKSA3/id/', 'https://yksa.disec.fi/Yksa4/id/', $item['url']),
+        'title' => $item['arkiston_nimi'],
+      ]
     ]);
 
     $paragraph->save();

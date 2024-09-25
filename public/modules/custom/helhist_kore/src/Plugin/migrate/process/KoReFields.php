@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_buildings",
+ *   id = "kore_fields",
  *   handle_multiples = TRUE
  * )
  */
-class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,6 +90,9 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
 
   protected function createParagraphsItem(array $item): array {
 
+    $item['field']['name'] = str_replace(['-', ' '], '_', $item['field']['name']);
+    $item['field']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['field']['name']);
+
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
@@ -100,41 +103,11 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_building',
+      'type' => 'kore_field',
+      'field_kore_field' => [
+        'value' => $item['field']['name'],
+      ],
     ]);
-
-    // Create nested Address paragraphs.
-    if (empty($item['building']['addresses'])) {
-      $address_para = Paragraph::create([
-        'langcode' => 'fi',
-        'field_kore_address' => [
-          'value' => 'Osoite tuntematon',
-        ],
-        'type' => 'kore_address',
-      ]);
-
-      $address_para->save();
-
-      $paragraph->field_kore_addresses->appendItem($address_para);
-    }
-
-    foreach ($item['building']['addresses'] as $address) {
-      $address_para = Paragraph::create([
-        'langcode' => 'fi',
-        'field_kore_address' => [
-          'value' => $address['street_name_fi'],
-        ],
-        'type' => 'kore_address',
-      ]);
-
-      if (is_array($address['location'])) {
-        $address_para->set('field_kore_geofield', "POINT (" . $address['location']['coordinates'][0] . " " . $address['location']['coordinates'][1] . ")");
-      }
-
-      $address_para->save();
-
-      $paragraph->field_kore_addresses->appendItem($address_para);
-    }
 
     $paragraph->save();
 

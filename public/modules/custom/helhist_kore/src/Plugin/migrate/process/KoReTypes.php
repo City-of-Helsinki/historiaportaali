@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_genders",
+ *   id = "kore_types",
  *   handle_multiples = TRUE
  * )
  */
-class KoReGenders extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReTypes extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,8 +90,8 @@ class KoReGenders extends ProcessPluginBase implements ContainerFactoryPluginInt
 
   protected function createParagraphsItem(array $item): array {
 
-    $item['gender'] = str_replace(['-', ' '], '_', $item['gender']);
-    $item['gender'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['gender']);
+    $item['type']['name'] = str_replace(['-', ' '], '_', $item['type']['name']);
+    $item['type']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['type']['name']);
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
@@ -103,9 +103,9 @@ class KoReGenders extends ProcessPluginBase implements ContainerFactoryPluginInt
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_gender',
-      'field_kore_gender' => [
-        'value' => $item['gender'],
+      'type' => 'kore_type',
+      'field_kore_type' => [
+        'value' => $item['type']['name'],
       ],
     ]);
 

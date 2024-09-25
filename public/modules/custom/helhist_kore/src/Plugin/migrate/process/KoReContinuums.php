@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_fields",
+ *   id = "kore_continuums",
  *   handle_multiples = TRUE
  * )
  */
-class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -62,6 +62,8 @@ class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInte
 
     $paragraphs = [];
 
+    $value = array_merge($value[0], $value[1]);
+   
     if (isset($value)) {
       uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
@@ -83,31 +85,52 @@ class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   protected function compare($a, $b) {
-    $ac = $a['begin_year'];
-    $bc = $b['begin_year'];
+    $ac = $a['year'];
+    $bc = $b['year'];
     return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
 
-    $item['field']['name'] = str_replace(['-', ' '], '_', $item['field']['name']);
-    $item['field']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['field']['name']);
+    if ($item['year']) {
+      $date = (($item['day']) ? $item['day'] : '1') . '.' . (($item['month']) ? $item['month'] : '1') . '.' . $item['year'];
+    }
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
-        'value' => $item['begin_year'] ? $item['begin_year'] : NULL,
-      ],
-      'field_kore_end_year' => [
-        'value' => $item['end_year'] ? $item['end_year'] : NULL,
+        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_field',
-      'field_kore_field' => [
-        'value' => $item['field']['name'],
+      'type' => 'kore_continuum',
+      'field_kore_continuum' => [
+        'value' => str_replace(' ', '_', $item['description']),
       ],
     ]);
+
+    if (is_array($item['target_school'])) {
+      foreach ($item['target_school']['names'] as $name) {
+        $school_node = \Drupal::entityQuery('node')
+        ->accessCheck(FALSE)
+        ->condition('type', 'kore_school')
+        ->condition('field_kore_id', $item['target_school']['id'])
+        ->execute();
+      }
+    }
+    else if (is_array($item['active_school'])) {
+      foreach ($item['active_school']['names'] as $name) {
+        $school_node = \Drupal::entityQuery('node')
+        ->accessCheck(FALSE)
+        ->condition('type', 'kore_school')
+        ->condition('field_kore_id', $item['active_school']['id'])
+        ->execute();
+      }
+    }
+
+    if (isset($school_node)) {
+      $paragraph->set('field_kore_school', $school_node);
+    }
 
     $paragraph->save();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_principals",
+ *   id = "kore_names",
  *   handle_multiples = TRUE
  * )
  */
-class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -100,9 +100,9 @@ class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPlugin
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_principal',
-      'field_kore_principal' => [
-        'value' => $item['principal']['surname'] . ', ' . $item['principal']['first_name'],
+      'type' => 'kore_name',
+      'field_kore_name' => [
+        'value' => $item['official_name'] ? $item['official_name'] : $item['other_names'][0]['value'],
       ],
     ]);
 

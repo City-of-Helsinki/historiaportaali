@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_buildings",
+ *   id = "kore_fields",
  *   handle_multiples = TRUE
  * )
  */
-class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,59 +90,24 @@ class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginI
 
   protected function createParagraphsItem(array $item): array {
 
-    if ($item['begin_year']) {
-      $date = (($item['begin_day']) ? $item['begin_day'] : '1') . '.' . (($item['begin_month']) ? $item['begin_month'] : '1') . '.' . $item['begin_year'];
-    }
-
-    if ($item['end_year']) {
-      $end_date = (($item['end_day']) ? $item['end_day'] : '1') . '.' . (($item['end_month']) ? $item['end_month'] : '1') . '.' . $item['end_year'];
-    }
+    $item['field']['name'] = str_replace(['-', ' '], '_', $item['field']['name']);
+    $item['field']['name'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['field']['name']);
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
-        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
+        'value' => $item['begin_year'] ? $item['begin_year'] : NULL,
       ],
       'field_kore_end_year' => [
-        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+        'value' => $item['end_year'] ? $item['end_year'] : NULL,
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_building',
+      'type' => 'kore_field',
+      'field_kore_field' => [
+        'value' => $item['field']['name'],
+      ],
     ]);
-
-    // Create nested Address paragraphs.
-    if (empty($item['building']['addresses'])) {
-      $address_para = Paragraph::create([
-        'langcode' => 'fi',
-        'field_kore_address' => [
-          'value' => 'Osoite tuntematon',
-        ],
-        'type' => 'kore_address',
-      ]);
-
-      $address_para->save();
-
-      $paragraph->field_kore_addresses->appendItem($address_para);
-    }
-
-    foreach ($item['building']['addresses'] as $address) {
-      $address_para = Paragraph::create([
-        'langcode' => 'fi',
-        'field_kore_address' => [
-          'value' => $address['street_name_fi'],
-        ],
-        'type' => 'kore_address',
-      ]);
-
-      if (is_array($address['location'])) {
-        $address_para->set('field_kore_geofield', "POINT (" . $address['location']['coordinates'][0] . " " . $address['location']['coordinates'][1] . ")");
-      }
-
-      $address_para->save();
-
-      $paragraph->field_kore_addresses->appendItem($address_para);
-    }
 
     $paragraph->save();
 

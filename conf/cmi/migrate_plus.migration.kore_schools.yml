@@ -22,10 +22,7 @@ source:
       selector: id
     -
       name: title
-      selector: names/0/official_name
-    -
-      name: photo
-      selector: buildings/0/building/photos/0/url
+      selector: names
     -
       name: lat
       selector: buildings/0/building/addresses/0/location/coordinates/1
@@ -38,6 +35,12 @@ source:
     -
       name: types
       selector: types
+    -
+      name: fields
+      selector: fields
+    -
+      name: languages
+      selector: languages
     -
       name: genders
       selector: genders
@@ -60,21 +63,12 @@ source:
     id:
       type: integer
 process:
-  title_exists:
-    plugin: skip_on_empty
-    method: row
-    source: title
   type:
     plugin: default_value
     default_value: kore_school
-  title: title
-  body/value: photo
-  body/summary:
-    plugin: default_value
-    default_value: ''
-  body/format:
-    plugin: default_value
-    default_value: full_html
+  title:
+    plugin: kore_title
+    source: title
   field_geolocation:
     plugin: geofield_latlon
     source:
@@ -104,6 +98,12 @@ process:
   field_kore_types:
     plugin: kore_types
     source: types
+  field_kore_fields:
+    plugin: kore_fields
+    source: fields
+  field_kore_languages:
+    plugin: kore_languages
+    source: languages
   field_kore_genders:
     plugin: kore_genders
     source: genders

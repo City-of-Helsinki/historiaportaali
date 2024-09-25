@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_names",
+ *   id = "kore_genders",
  *   handle_multiples = TRUE
  * )
  */
-class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReGenders extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -90,27 +90,22 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
 
   protected function createParagraphsItem(array $item): array {
 
-    if ($item['begin_year']) {
-      $date = (($item['begin_day']) ? $item['begin_day'] : '1') . '.' . (($item['begin_month']) ? $item['begin_month'] : '1') . '.' . $item['begin_year'];
-    }
-
-    if ($item['end_year']) {
-      $end_date = (($item['end_day']) ? $item['end_day'] : '1') . '.' . (($item['end_month']) ? $item['end_month'] : '1') . '.' . $item['end_year'];
-    }
+    $item['gender'] = str_replace(['-', ' '], '_', $item['gender']);
+    $item['gender'] = str_replace(['ä', 'ö'], ['a', 'o'], $item['gender']);
 
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
-        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
+        'value' => $item['begin_year'] ? $item['begin_year'] : NULL,
       ],
       'field_kore_end_year' => [
-        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
+        'value' => $item['end_year'] ? $item['end_year'] : NULL,
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_name',
-      'field_kore_name' => [
-        'value' => $item['official_name'],
+      'type' => 'kore_gender',
+      'field_kore_gender' => [
+        'value' => $item['gender'],
       ],
     ]);
 

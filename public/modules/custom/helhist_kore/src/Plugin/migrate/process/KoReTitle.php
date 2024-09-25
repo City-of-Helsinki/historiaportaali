@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_archives",
+ *   id = "kore_title",
  *   handle_multiples = TRUE
  * )
  */
-class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReTitle extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -60,16 +60,19 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
-    $paragraphs = [];
-
-    if (isset($value)) {
+    if (isset($value) && is_array($value)) {
       uasort($value, [$this, 'compare']);
-      foreach ($value as $item) {
-        $paragraphs[] = $this->createParagraphsItem($item);
+      $latest = current($value);
+
+      if (is_array($latest) && !empty($latest['official_name'])) {
+        return $latest['official_name'];
+      }
+      else if (is_array($latest['other_names']) && !empty($latest['other_names'][0]['value'])) {
+        return $latest['other_names'][0]['value'];
       }
     }
 
-    return $paragraphs;
+    return "NULL TITLE";
   }
 
   /**
@@ -86,44 +89,6 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
     $ac = $a['begin_year'];
     $bc = $b['begin_year'];
     return ($ac > $bc) ? -1 : 1;
-  }
-
-  protected function createParagraphsItem(array $item): array {
-
-    if ($item['begin_year']) {
-      $date = '1.1.' . $item['begin_year'];
-    }
-
-    if ($item['end_year']) {
-      $end_date = '1.1.' . $item['end_year'];
-    }
-
-    $paragraph = Paragraph::create([
-      'langcode' => 'fi',
-      'field_kore_start_year' => [
-        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
-      ],
-      'field_kore_end_year' => [
-        'value' => isset($end_date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($end_date)) : NULL,
-      ],
-
-      // Unique to this KoRe paragraph type.
-      'type' => 'kore_archive',
-      'field_kore_archive' => [
-        'value' => $item['location'],
-      ],
-      'field_kore_url' => [
-        'uri' => str_replace('https://yksa3.darchive.fi/YKSA3/id/', 'https://yksa.disec.fi/Yksa4/id/', $item['url']),
-        'title' => $item['arkiston_nimi'],
-      ]
-    ]);
-
-    $paragraph->save();
-
-    return [
-      'target_id' => $paragraph->id(),
-      'target_revision_id' => $paragraph->getRevisionId(),
-    ];
   }
 
 }

@@ -12,6 +12,12 @@ display:
         field_kore_end_year_value:
           expose:
             label: 'Vuosi alkaen'
+        field_kore_type_value:
+          expose:
+            label: Koulutyyppi
+        field_kore_language_value:
+          expose:
+            label: Opetuskieli
       exposed_form:
         options:
           submit_button: Hae

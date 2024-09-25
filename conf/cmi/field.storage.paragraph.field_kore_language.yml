@@ -1,0 +1,39 @@
+uuid: d8708a36-9cde-44d1-b777-b948bfe31df6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_kore_language
+field_name: field_kore_language
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: suomi
+      label: suomi
+    -
+      value: ruotsi
+      label: ruotsi
+    -
+      value: englanti
+      label: englanti
+    -
+      value: ranska
+      label: ranska
+    -
+      value: saksa
+      label: saksa
+    -
+      value: venaja
+      label: venäjä
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

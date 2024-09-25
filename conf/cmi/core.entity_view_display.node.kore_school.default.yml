@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.kore_school.field_kore_archives
     - field.field.node.kore_school.field_kore_buildings
     - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_fields
     - field.field.node.kore_school.field_kore_genders
     - field.field.node.kore_school.field_kore_id
+    - field.field.node.kore_school.field_kore_languages
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
@@ -128,7 +130,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
   field_kore_buildings:
     type: entity_reference_revisions_entity_view
@@ -148,7 +150,7 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_kore_genders:
+  field_kore_fields:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
@@ -156,6 +158,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_kore_genders:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_kore_id:
     type: number_integer
@@ -165,6 +176,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_kore_languages:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_kore_names:
     type: entity_reference_revisions_entity_view
@@ -182,7 +202,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: content
   field_kore_principals:
     type: entity_reference_revisions_entity_view
@@ -191,7 +211,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 10
     region: content
   field_kore_types:
     type: entity_reference_revisions_entity_view

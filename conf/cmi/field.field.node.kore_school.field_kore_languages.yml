@@ -1,0 +1,154 @@
+uuid: 9ef1ea8c-ab65-491a-b533-f9df2a01e3ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kore_languages
+    - node.type.kore_school
+    - paragraphs.paragraphs_type.kore_language
+  module:
+    - entity_reference_revisions
+id: node.kore_school.field_kore_languages
+field_name: field_kore_languages
+entity_type: node
+bundle: kore_school
+label: 'KoRe languages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kore_language: kore_language
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 43
+        enabled: false
+      accordion_item:
+        weight: 44
+        enabled: false
+      banner:
+        weight: 45
+        enabled: false
+      chart:
+        weight: 46
+        enabled: false
+      columns:
+        weight: 47
+        enabled: false
+      contact_card:
+        weight: 48
+        enabled: false
+      contact_card_listing:
+        weight: 49
+        enabled: false
+      content_cards:
+        weight: 50
+        enabled: false
+      content_liftup:
+        weight: 51
+        enabled: false
+      event_list:
+        weight: 52
+        enabled: false
+      from_library:
+        weight: 53
+        enabled: false
+      gallery:
+        weight: 54
+        enabled: false
+      gallery_slide:
+        weight: 55
+        enabled: false
+      hearings:
+        weight: 56
+        enabled: false
+      hero:
+        weight: 57
+        enabled: false
+      image:
+        weight: 58
+        enabled: false
+      kore_address:
+        weight: 59
+        enabled: false
+      kore_archive:
+        weight: 60
+        enabled: false
+      kore_building:
+        weight: 61
+        enabled: false
+      kore_continuum:
+        weight: 62
+        enabled: false
+      kore_gender:
+        weight: 63
+        enabled: false
+      kore_language:
+        weight: 64
+        enabled: true
+      kore_name:
+        weight: 65
+        enabled: false
+      kore_principal:
+        weight: 66
+        enabled: false
+      kore_type:
+        weight: 67
+        enabled: false
+      liftup_with_image:
+        weight: 68
+        enabled: false
+      list_of_links:
+        weight: 69
+        enabled: false
+      list_of_links_item:
+        weight: 70
+        enabled: false
+      map:
+        weight: 71
+        enabled: false
+      map_api_endpoint:
+        weight: 72
+        enabled: false
+      phasing:
+        weight: 73
+        enabled: false
+      phasing_item:
+        weight: 74
+        enabled: false
+      popular_service_item:
+        weight: 76
+        enabled: false
+      popular_services:
+        weight: 75
+        enabled: false
+      remote_video:
+        weight: 77
+        enabled: false
+      sidebar_text:
+        weight: 78
+        enabled: false
+      social_media_link:
+        weight: 79
+        enabled: false
+      target_group_link_item:
+        weight: 81
+        enabled: false
+      target_group_links:
+        weight: 80
+        enabled: false
+      text:
+        weight: 82
+        enabled: false
+      timeline:
+        weight: 83
+        enabled: false
+      timeline_item:
+        weight: 84
+        enabled: false
+field_type: entity_reference_revisions

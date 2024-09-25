@@ -9,8 +9,10 @@ dependencies:
     - field.field.node.kore_school.field_kore_archives
     - field.field.node.kore_school.field_kore_buildings
     - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_fields
     - field.field.node.kore_school.field_kore_genders
     - field.field.node.kore_school.field_kore_id
+    - field.field.node.kore_school.field_kore_languages
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
@@ -34,8 +36,10 @@ hidden:
   field_kore_archives: true
   field_kore_buildings: true
   field_kore_continuums: true
+  field_kore_fields: true
   field_kore_genders: true
   field_kore_id: true
+  field_kore_languages: true
   field_kore_names: true
   field_kore_photos: true
   field_kore_principals: true

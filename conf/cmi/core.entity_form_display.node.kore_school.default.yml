@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.kore_school.field_kore_archives
     - field.field.node.kore_school.field_kore_buildings
     - field.field.node.kore_school.field_kore_continuums
+    - field.field.node.kore_school.field_kore_fields
     - field.field.node.kore_school.field_kore_genders
     - field.field.node.kore_school.field_kore_id
+    - field.field.node.kore_school.field_kore_languages
     - field.field.node.kore_school.field_kore_names
     - field.field.node.kore_school.field_kore_photos
     - field.field.node.kore_school.field_kore_principals
@@ -17,29 +19,18 @@ dependencies:
     - node.type.kore_school
   module:
     - content_moderation
-    - geofield
+    - geofield_map
     - hdbt_admin_tools
     - media_library
     - paragraphs
     - path
     - publication_date
     - scheduler
-    - text
 id: node.kore_school.default
 targetEntityType: node
 bundle: kore_school
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 14
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 3
@@ -47,15 +38,54 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_geolocation:
-    type: geofield_latlon
-    weight: 15
+    type: geofield_map
+    weight: 14
     region: content
     settings:
       html5_geolocation: false
+      default_value:
+        lat: 0.0
+        lon: 0.0
+      map_library: leaflet
+      map_google_api_key: ''
+      map_google_places:
+        places_control: false
+        places_additional_options: ''
+      map_dimensions:
+        width: 100%
+        height: 450px
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      zoom_level: 5
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      click_to_find_marker: false
+      click_to_place_marker: false
+      click_to_remove_marker: false
+      hide_geocode_address: false
+      hide_coordinates: false
+      geoaddress_field:
+        field: '0'
+        hidden: false
+        disabled: true
+      map_geocoder:
+        control: 1
+        settings:
+          providers:
+            openstreetmap:
+              weight: 0
+              checked: true
+          min_terms: 4
+          delay: 800
+          options: ''
     third_party_settings: {  }
   field_kore_archives:
     type: paragraphs
-    weight: 22
+    weight: 23
     region: content
     settings:
       title: Lohko
@@ -75,7 +105,7 @@ content:
     third_party_settings: {  }
   field_kore_buildings:
     type: paragraphs
-    weight: 18
+    weight: 17
     region: content
     settings:
       title: Paragraph
@@ -95,7 +125,7 @@ content:
     third_party_settings: {  }
   field_kore_continuums:
     type: paragraphs
-    weight: 17
+    weight: 16
     region: content
     settings:
       title: Paragraph
@@ -112,6 +142,24 @@ content:
         collapse_edit_all: collapse_edit_all
         convert: '0'
         duplicate: '0'
+    third_party_settings: {  }
+  field_kore_fields:
+    type: paragraphs
+    weight: 19
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_field
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_kore_genders:
     type: paragraphs
@@ -135,14 +183,34 @@ content:
     third_party_settings: {  }
   field_kore_id:
     type: number
-    weight: 23
+    weight: 24
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_kore_languages:
+    type: paragraphs
+    weight: 21
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: kore_language
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings: {  }
   field_kore_names:
     type: paragraphs
-    weight: 16
+    weight: 15
     region: content
     settings:
       title: Paragraph
@@ -162,14 +230,14 @@ content:
     third_party_settings: {  }
   field_kore_photos:
     type: media_library_widget
-    weight: 24
+    weight: 25
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_kore_principals:
     type: paragraphs
-    weight: 21
+    weight: 22
     region: content
     settings:
       title: Paragraph
@@ -189,7 +257,7 @@ content:
     third_party_settings: {  }
   field_kore_types:
     type: paragraphs
-    weight: 19
+    weight: 18
     region: content
     settings:
       title: Paragraph
@@ -299,4 +367,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   hide_sidebar_navigation: true

@@ -1,0 +1,10 @@
+uuid: c2edea89-35be-48f4-855f-f28118426ce8
+langcode: en
+status: true
+dependencies: {  }
+id: kore_field
+label: 'KoRe field'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

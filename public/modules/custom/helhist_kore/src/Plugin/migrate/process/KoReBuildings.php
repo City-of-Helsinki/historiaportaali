@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\helhist_node_resave\Plugin\migrate\process;
+namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "kore_continuums",
+ *   id = "kore_buildings",
  *   handle_multiples = TRUE
  * )
  */
-class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class KoReBuildings extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
@@ -62,8 +62,6 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $paragraphs = [];
 
-    $value = array_merge($value[0], $value[1]);
-   
     if (isset($value)) {
       uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
@@ -85,51 +83,57 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   protected function compare($a, $b) {
-    $ac = $a['year'];
-    $bc = $b['year'];
+    $ac = $a['begin_year'];
+    $bc = $b['begin_year'];
     return ($ac > $bc) ? -1 : 1;
   }
 
   protected function createParagraphsItem(array $item): array {
 
-    if ($item['year']) {
-      $date = (($item['day']) ? $item['day'] : '1') . '.' . (($item['month']) ? $item['month'] : '1') . '.' . $item['year'];
-    }
-
     $paragraph = Paragraph::create([
       'langcode' => 'fi',
       'field_kore_start_year' => [
-        'value' => isset($date) ? date(DateTimeItemInterface::DATE_STORAGE_FORMAT, strtotime($date)) : NULL,
+        'value' => $item['begin_year'] ? $item['begin_year'] : NULL,
+      ],
+      'field_kore_end_year' => [
+        'value' => $item['end_year'] ? $item['end_year'] : NULL,
       ],
 
       // Unique to this KoRe paragraph type.
-      'type' => 'kore_continuum',
-      'field_kore_continuum' => [
-        'value' => str_replace(' ', '_', $item['description']),
-      ],
+      'type' => 'kore_building',
     ]);
 
-    if (is_array($item['target_school'])) {
-      foreach ($item['target_school']['names'] as $name) {
-        $school_node = \Drupal::entityQuery('node')
-        ->accessCheck(FALSE)
-        ->condition('type', 'kore_school')
-        ->condition('field_kore_id', $item['target_school']['id'])
-        ->execute();
-      }
-    }
-    else if (is_array($item['active_school'])) {
-      foreach ($item['active_school']['names'] as $name) {
-        $school_node = \Drupal::entityQuery('node')
-        ->accessCheck(FALSE)
-        ->condition('type', 'kore_school')
-        ->condition('field_kore_id', $item['active_school']['id'])
-        ->execute();
-      }
+    // Create nested Address paragraphs.
+    if (empty($item['building']['addresses'])) {
+      $address_para = Paragraph::create([
+        'langcode' => 'fi',
+        'field_kore_address' => [
+          'value' => 'Osoite tuntematon',
+        ],
+        'type' => 'kore_address',
+      ]);
+
+      $address_para->save();
+
+      $paragraph->field_kore_addresses->appendItem($address_para);
     }
 
-    if (isset($school_node)) {
-      $paragraph->set('field_kore_school', $school_node);
+    foreach ($item['building']['addresses'] as $address) {
+      $address_para = Paragraph::create([
+        'langcode' => 'fi',
+        'field_kore_address' => [
+          'value' => $address['street_name_fi'],
+        ],
+        'type' => 'kore_address',
+      ]);
+
+      if (is_array($address['location'])) {
+        $address_para->set('field_kore_geofield', "POINT (" . $address['location']['coordinates'][0] . " " . $address['location']['coordinates'][1] . ")");
+      }
+
+      $address_para->save();
+
+      $paragraph->field_kore_addresses->appendItem($address_para);
     }
 
     $paragraph->save();

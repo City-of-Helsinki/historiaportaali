@@ -24,9 +24,6 @@ source:
       name: title
       selector: names
     -
-      name: photo
-      selector: buildings/0/building/photos/0/url
-    -
       name: lat
       selector: buildings/0/building/addresses/0/location/coordinates/1
     -
@@ -72,13 +69,6 @@ process:
   title:
     plugin: kore_title
     source: title
-  body/value: photo
-  body/summary:
-    plugin: default_value
-    default_value: ''
-  body/format:
-    plugin: default_value
-    default_value: full_html
   field_geolocation:
     plugin: geofield_latlon
     source:

@@ -1,4 +1,4 @@
-uuid: 77916096-fed6-4916-a551-2e1f1c927f04
+uuid: 30ada9af-d74b-404b-978a-85fb8cef45b0
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,257 +8,232 @@ close: null
 uid: 116
 template: false
 archive: false
-id: senaatintori
-title: Senaatintori
+id: satamat_ja_meriliikenne
+title: 'Satamat ja meriliikenne'
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Mikä oli Senaatintorin alkuperäinen nimi?'
+    '#title': '1. Milloin Helsingin jäänmurtajien aika alkoi?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. 1600- ja 1700-luvuilla torin nimi oli Suurtori.'
+        feedback: 'Vastauksesi oli väärin. Jäänmurtajien aika alkoi 1890.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. 1600- ja 1700-luvuilla torin nimi oli Suurtori.'
+        feedback: 'Vastauksesi oli väärin. Jäänmurtajien aika alkoi 1890.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. 1600- ja 1700-luvuilla torin nimi oli Suurtori.'
+        feedback: 'Jäänmurtajien aika alkoi 1890.'
     '#options':
-      q1_a: Suurtori
-      q1_b: Senaatintori
-      q1_c: Nikolaintori
-      q1_d: Aleksanterintori
+      q1_a: '1890'
+      q1_b: '1900'
+      q1_c: '1850'
+      q1_d: '1800'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Mitä tyylisuuntaa toria ympäröivät rakennukset edustavat?'
+    '#title': '2. Mikä satama oli Helsingin tärkein tuontisatama ennen toista maailmansotaa?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Toria ympäröivät rakennuksen ovat uusklassista eli empire-tyyliä.'
+        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Toria ympäröivät rakennuksen ovat uusklassista eli empire-tyyliä.'
+        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Toria ympäröivät rakennuksen ovat uusklassista eli empire-tyyliä.'
+        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
     '#options':
-      q2_a: empire
-      q2_b: jugend
-      q2_c: funktionalismi
-      q2_d: uusrenessanssi
+      q2_a: Eteläsatama
+      q2_b: Länsisatama
+      q2_c: 'Herttoniemen satama'
+      q2_d: 'Sörnäisten satama'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minkä eläimen mukaan Helsingin kaupungintalokortteli on nimetty?'
+    '#title': '3. Milloin Eteläsatama ja Pohjoissatama yhdistettiin kanavalla?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kaupungintalo on Leijona-korttelissa.'
+        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kaupungintalo on Leijona-korttelissa.'
+        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kaupungintalo on Leijona-korttelissa.'
+        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
     '#options':
-      q3_a: leijonan
-      q3_b: tiikerin
-      q3_c: servaalin
-      q3_d: elefantin
+      q3_a: '1844'
+      q3_b: '1800'
+      q3_c: '1820'
+      q3_d: '1860'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä näistä rakennuksista valmistui ensimmäisenä?'
+    '#title': '4. Mikä oli Helsingin ensimmäinen höyryalus?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Valtioneuvoston Aleksanterinkadun puoleinen päärakennus valmistui vuonna 1822. Yliopiston päärakennus valmistui vuonna 1828, Kansalliskirjasto vuonna 1847 ja Tuomiokirkko vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Valtioneuvoston Aleksanterinkadun puoleinen päärakennus valmistui vuonna 1822. Yliopiston päärakennus valmistui vuonna 1828, Kansalliskirjasto vuonna 1847 ja Tuomiokirkko vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Valtioneuvoston Aleksanterinkadun puoleinen päärakennus valmistui vuonna 1822. Yliopiston päärakennus valmistui vuonna 1828, Kansalliskirjasto vuonna 1847 ja Tuomiokirkko vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
     '#options':
-      q4_a: 'Valtioneuvoston linna'
-      q4_b: Tuomiokirkko
-      q4_c: Kansalliskirjasto
-      q4_d: 'yliopiston päärakennus'
+      q4_a: Lentäjä
+      q4_b: Urania
+      q4_c: Wellamo
+      q4_d: Ariadne
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
     '#type': quiz_element_radios
-    '#title': '5. Mikä näistä ei ole toiminut Senaatintorin eteläreunassa?'
+    '#title': '5. Mikä satama kehitettiin tavaraliikenteen ohessa matkustajalauttasatamaksi 1960-luvulla?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stockmannin tavaratalo, Suomen ensimmäinen tavaratalo, avattiin Kiseleffin talossa osoitteessa Aleksanterinkatu 28 vuonna 1880.'
+        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Poliisilaitos siirtyi Aleksanterinkatu 22:ssa sijaitsevaan Burtzin taloon vuonna 1892.'
+        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kauppias Bernhard Manecke perusti sokeritehtaan nykyisen Aleksanterinkatu 28:n kohdalle vuonna 1806.  '
+        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
     '#options':
-      q5_a: kansakoulu
-      q5_b: Stockmann
-      q5_c: poliisilaitos
-      q5_d: sokeritehdas
+      q5_a: 'Sörnäisten satama'
+      q5_b: Länsisatama
+      q5_c: Pohjoissatama
+      q5_d: 'Herttoniemen satama'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+  6_milloin_moottorilaiva_finlandia_valmistui:
     '#type': quiz_element_radios
-    '#title': '6. Minä vuonna Tuomiokirkko vihittiin käyttöön?'
+    '#title': '6. Milloin moottorilaiva Finlandia valmistui?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Tuomiokirkko vihittiin käyttöön vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Tuomiokirkko vihittiin käyttöön vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Tuomiokirkko vihittiin käyttöön vuonna 1852.'
+        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
     '#options':
-      q6_a: '1852'
-      q6_b: '1831'
-      q6_c: '1899'
-      q6_d: '1931'
+      q6_a: 'Vuonna 1967'
+      q6_b: 'Vuonna 1960'
+      q6_c: 'Vuonna 1965'
+      q6_d: 'Vuonna 1970'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+  7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
     '#type': quiz_element_radios
-    '#title': '7. Missä sijaitsi Ulrika Eleonoran kirkko vuosina 1727–1827?'
+    '#title': '7. Mikä oli Helsingin matkustajaliikenteen vilkkain vuosi ennen toista maailmansotaa?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Ulrika Eleonoran kirkko sijaitsi Tuomiokirkon edessä. Senaatintorin kiveykseen on merkitty kirkon ääriviivat.'
+        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937.'
       q7_c:
         is_correct: false
-        feedback: ' Vastauksesi oli väärin. Ulrika Eleonoran kirkko sijaitsi Tuomiokirkon edessä. Senaatintorin kiveykseen on merkitty kirkon ääriviivat.'
+        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Ulrika Eleonoran kirkko sijaitsi Tuomiokirkon edessä. Senaatintorin kiveykseen on merkitty kirkon ääriviivat.'
+        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937'
     '#options':
-      q7_a: 'Tuomiokirkon edessä'
-      q7_b: 'Tuomiokirkon takana'
-      q7_c: 'Tuomiokirkon paikalla'
-      q7_d: 'Valtioneuvoston linnan edustalla'
+      q7_a: '1937'
+      q7_b: '1935'
+      q7_c: '1930'
+      q7_d: '1939'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+  8_milloin_viking_line_aloitti_liikenteen_helsingista_tukholmaan:
     '#type': quiz_element_radios
-    '#title': "8.\tBockin talo on nimetty rakennuttajansa, kauppias ja raatimies Gustav Johan Bockin mukaan. Missä käytössä se ei ole ollut?"
+    '#title': '8. Milloin Viking Line aloitti liikenteen Helsingistä Tukholmaan?'
     '#quiz__options':
       q8_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q8_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bockin talo on ollut kenraalikuvernöörin asuntona, raatihuoneena ja maistraattina, mutta ei sotasairaalana.'
+        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
       q8_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bockin talo on ollut kenraalikuvernöörin asuntona, raatihuoneena ja maistraattina, mutta ei sotasairaalana.'
+        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
       q8_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bockin talo on ollut kenraalikuvernöörin asuntona, raatihuoneena ja maistraattina, mutta ei sotasairaalana.'
+        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
     '#options':
-      q8_a: sotasairaalana
-      q8_b: 'kenraalikuvernöörin asuntona'
-      q8_c: maistraattina
-      q8_d: raastuvanoikeutena
+      q8_a: '1974'
+      q8_b: '1970'
+      q8_c: '1972'
+      q8_d: '1965'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+  9_mina_vuonna_uusi_satama_valmistui_vuosaareen:
     '#type': quiz_element_radios
-    '#title': '9. Mikä oli Helsingin yliopiston alkuperäinen nimi?'
+    '#title': '9. Minä vuonna uusi satama valmistui Vuosaareen?'
     '#quiz__options':
       q9_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q9_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin yliopiston nimi oli alkujaan Kungliga Akademien i Åbo. Yliopisto siirrettiin Turusta Helsinkiin vuonna 1827 Turun palon jälkeen.'
+        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
       q9_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin yliopiston nimi oli alkujaan Kungliga Akademien i Åbo. Yliopisto siirrettiin Turusta Helsinkiin vuonna 1827 Turun palon jälkeen.'
+        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
       q9_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin yliopiston nimi oli alkujaan Kungliga Akademien i Åbo. Yliopisto siirrettiin Turusta Helsinkiin vuonna 1827 Turun palon jälkeen.'
+        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
     '#options':
-      q9_a: 'Kungliga Akademien i Åbo'
-      q9_b: 'Keisarillinen Aleksanterin-yliopisto'
-      q9_c: 'Universitatis Helsingiensis'
-      q9_d: 'Turun Akatemia'
-    '#options_randomize': true
-    '#required': true
-    '#format': custom
-    '#options__properties': ''
-  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
-    '#type': quiz_element_radios
-    '#title': '10. Mitä Senaatintalon portaikossa tapahtui 16.6.1904?'
-    '#quiz__options':
-      q10_a:
-        is_correct: true
-        feedback: 'Vastasit oikein!'
-      q10_b:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin, sillä Eugen Schauman ampui ensin kenraalikuvernööri Bobrikovin ja sitten itsensä'
-      q10_c:
-        is_correct: false
-        feedback: 'Vastauksesi oli vain osin oikein. Eugen Schauman ampui ensin kenraalikuvernööri Bobrikovin ja sitten itsensä'
-      q10_d:
-        is_correct: false
-        feedback: 'Vastauksesi oli vain osin oikein. Eugen Schauman ampui ensin kenraalikuvernööri Bobrikovin ja sitten itsensä'
-    '#options':
-      q10_a: 'Eugen Schauman ampui ensin kenraalikuvernööri Bobrikovin ja sitten itsensä.'
-      q10_b: 'Kenraalikuvernööri Nikolai Bobrikov ampui Eugen Schaumanin.'
-      q10_c: 'Eugen Schauman ampui kenraalikuvernööri Nikolai Bobrikovin.'
-      q10_d: 'Eugen Schauman ampui itsensä. '
+      q9_a: '2008'
+      q9_b: '2010'
+      q9_c: '2005'
+      q9_d: '2010'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -282,33 +257,29 @@ elements: |-
   q5_result:
     '#type': webform_quiz_elements_result
     '#title': q5_result
-    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+    '#source': 5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut
   q6_result:
     '#type': webform_quiz_elements_result
     '#title': q6_result
-    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+    '#source': 6_milloin_moottorilaiva_finlandia_valmistui
   q7_result:
     '#type': webform_quiz_elements_result
     '#title': q7_result
-    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
+    '#source': 7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t
   q8_result:
     '#type': webform_quiz_elements_result
     '#title': q8_result
-    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
+    '#source': 8_milloin_viking_line_aloitti_liikenteen_helsingista_tukholmaan
   q9_result:
     '#type': webform_quiz_elements_result
     '#title': q9_result
-    '#source': mika_oli_helsingin_yliopiston_alkuperainen_nimi_
-  q10_result:
-    '#type': webform_quiz_elements_result
-    '#title': q10_result
-    '#source': mita_senaatintalon_portaikossa_tapahtui_16_6_1904_
+    '#source': 9_mina_vuonna_uusi_satama_valmistui_vuosaareen
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-1500-luku/helsingin-esihistoriaa">Helsingin esihistoriaa</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/senaatintori">Senaatintori</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Helsingin satamien ja meriliikenteen historian tuntija! Lue myös autoliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a> -artikkelista.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue myös autoliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a> -artikkelista.'
 css: ''
 javascript: ''
 settings:

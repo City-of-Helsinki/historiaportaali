@@ -22,13 +22,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
     '#options':
       q1_a: 'Kustaa Vaasa'
       q1_b: 'Kuningatar Kristiina'
@@ -37,6 +37,7 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q2:
     '#type': quiz_element_radios
     '#title': 'Mihin Helsinki alun perin perustettiin?'
@@ -46,13 +47,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
     '#options':
       q2_a: Vanhankaupunginlahdelle
       q2_b: Sörnäistenniemeen
@@ -61,6 +62,7 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q3:
     '#type': quiz_element_radios
     '#title': 'Minä vuonna Helsinki perustettiin?'
@@ -70,13 +72,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
     '#options':
       q3_a: '1550'
       q3_b: '1640'
@@ -85,6 +87,7 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q4:
     '#type': quiz_element_radios
     '#title': 'Mikä on Helsingin perustamispäivä?'
@@ -94,13 +97,13 @@ elements: |-
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin'
+        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
     '#options':
       q4_a: 12.6.
       q4_b: 14.6.
@@ -109,6 +112,7 @@ elements: |-
     '#options_randomize': true
     '#required': true
     '#format': custom
+    '#options__properties': ''
   q1_result:
     '#type': webform_quiz_elements_result
     '#title': q1_result
@@ -129,7 +133,7 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
     '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''

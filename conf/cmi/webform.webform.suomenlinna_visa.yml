@@ -1,4 +1,4 @@
-uuid: 8f1821c9-7bbe-4647-9e43-d06d87d664cd
+uuid: 892cbb65-823f-4f7e-9627-9b6d15b4f8d8
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,107 +8,107 @@ close: null
 uid: 7
 template: false
 archive: false
-id: kaupungintalo_visa
-title: Kaupungintalo-visa
+id: suomenlinna_visa
+title: Suomenlinna-visa
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Mihin tarkoitukseen kaupungintalo on alun perin rakennettu? '
+    '#title': 'Onko Viapori...'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on hotelliksi.'
+        feedback: 'Vastauksesi oli väärin. Viaporin nimi muutettiin Suomenlinnaksi vuonna 1918. Ruotsiksi Suomenlinna on Sveaborg. Suomenlinnan pääsaaren nimi on Susisaari.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on hotelliksi.'
+        feedback: 'Vastauksesi oli väärin. Viaporin nimi muutettiin Suomenlinnaksi vuonna 1918. Ruotsiksi Suomenlinna on Sveaborg. Suomenlinnan pääsaaren nimi on Susisaari.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on hotelliksi.'
+        feedback: 'Vastauksesi oli väärin. Viaporin nimi muutettiin Suomenlinnaksi vuonna 1918. Ruotsiksi Suomenlinna on Sveaborg. Suomenlinnan pääsaaren nimi on Susisaari.'
     '#options':
-      q1_a: hotelliksi
-      q1_b: 'Keisarin asunnoksi'
-      q1_c: Kaupungintaloksi
-      q1_d: Presidentinlinnaksi
+      q1_a: '...Suomenlinnan nimitys ennen vuotta 1918?'
+      q1_b: '...Suomenlinnan nimi ruotsiksi?'
+      q1_c: '...Suomenlinnan pääsaaren nimi?'
+      q1_d: '... Suomenlinnan virallinen nimi?'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Kuka on suunnitellut kaupungintalon? '
+    '#title': 'Minä vuonna Suomenlinnan linnoitusta alettiin rakentaa?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin, sillä kaupungintalon suunnitteli Carl Ludvig Engel. Osuit silti aika lähelle. Aarno Ruusuvuori suunnitteli kaupungintalon sisätilojen uudistuksen 1960-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnan linnoitustyöt alkoivat vuonna 1748.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Carl Ludvig Engel suunnitteli kaupungintalon.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnan linnoitustyöt alkoivat vuonna 1748.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin, sillä kaupungintalon suunnitteli Carl Ludvig Engel. Osuit sinne päin, sillä Anitra Lucander suunnitteli kaupungintalon sisätilojen värimaailman 1960-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnan linnoitustyöt alkoivat vuonna 1748.'
     '#options':
-      q2_a: 'Carl Ludvig Engel '
-      q2_b: 'Aarno Ruusuvuori'
-      q2_c: 'Alvar Aalto'
-      q2_d: 'Anitra Lucander'
+      q2_a: '1748'
+      q2_b: '1648'
+      q2_c: '1548'
+      q2_d: '1848'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna järjestettiin Suomen ensimmäinen elokuvaesitys nykyisessä kaupungintalossa?'
+    '#title': 'Mikä näistä uutuuksista ei liity Suomenlinnan linnoitustöihin?'
     '#quiz__options':
       q3_a:
         is_correct: true
-        feedback: 'Vastasit oikein!'
+        feedback: 'Vastasit oikein! Naisten äänioikeus saatiin Suomeen toisena maailmassa vuonna 1906, jolloin Suomenlinnassa ei enää juuri rakennettu.'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on vuonna 1896.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnaa rakennettiin paljolti vankityövoimalla. Naisten äänioikeudella sen sijaan ei ole tekemistä Suomenlinnan rakentamisen kanssa.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on vuonna 1896.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnan linnoitustöiden johtaja Augustin Ehrensvärd otti käyttöön yleiset vessat parantaakseen yleistä hygieniatasoa. Naisten äänioikeudella sen sijaan ei ole tekemistä Suomenlinnan rakentamisen kanssa.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oikea vastaus on vuonna 1896.'
+        feedback: 'Vastauksesi oli väärin. Suomenlinnan rakennustyöt ja samanaikainen Pommerin sota aiheuttivat Ruotsissa inflaation, jonka vuoksi Ruotsissa alettiin painaa setelirahaa. Naisten äänioikeudella sen sijaan ei ole tekemistä Suomenlinnan rakentamisen kanssa.'
     '#options':
-      q3_a: 'vuonna 1896'
-      q3_b: 'vuonna 1906'
-      q3_c: 'vuonna 1916'
-      q3_d: 'vuonna 1926'
+      q3_a: 'Naisten äänioikeus'
+      q3_b: Vankityövoima
+      q3_c: 'Yleiset vessat'
+      q3_d: Seteliraha
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Missä ei ole ollut Huokausten siltaa?'
+    '#title': 'Minkä maalaisista laivoista ei ole ammuttu Suomenlinnaa?'
     '#quiz__options':
       q4_a:
         is_correct: true
-        feedback: 'Vastasit oikein! Korkeasaaren silta rakennettiin muuten vuonna 1974.'
+        feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kaupungintalon henkilökunta pääsi katettua yhdyskäytävää eli Huokausten siltaa Sofiankadun yli viereiseen kaupungin rahatoimistoon 1930-luvulta 1960-luvulle.'
+        feedback: 'Vastauksesi oli väärin. Vuonna 1808 venäläiset laivat ampuivat Suomenlinnaa. Krimin sodan aikana vuonna 1855 ranskalaiset ja englantilaiset laivat pommittivat Suomenlinnaa. Toisen maailmansodan pommitukset eivät osuneet Suomenlinnaan vaan Helsingin kaupunkiin.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Venetsian Huokausten silta valmistui  vuonna 1602. Se yhdisti tutkintotuomareiden toimitilat ja dogen palatsin sellit vankilaan.'
+        feedback: 'Vastauksesi oli väärin. Vuonna 1808 venäläiset laivat ampuivat Suomenlinnaa. Krimin sodan aikana vuonna 1855 ranskalaiset ja englantilaiset laivat pommittivat Suomenlinnaa. Toisen maailmansodan pommitukset eivät osuneet Suomenlinnaan vaan Helsingin kaupunkiin.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kakolan vankilan Huokausten silta yhdisti matkasellit varsinaiseen vankilaan.'
+        feedback: 'Vastauksesi oli väärin. Vuonna 1808 venäläiset laivat ampuivat Suomenlinnaa. Krimin sodan aikana vuonna 1855 ranskalaiset ja englantilaiset laivat pommittivat Suomenlinnaa. Toisen maailmansodan pommitukset eivät osuneet Suomenlinnaan vaan Helsingin kaupunkiin.'
     '#options':
-      q4_a: Korkeasaaressa
-      q4_b: kaupungintalolla
-      q4_c: Venetsiassa
-      q4_d: 'Kakolan vankilassa'
+      q4_a: neuvostoliittolaisista
+      q4_b: venäläisistä
+      q4_c: ranskalaisista
+      q4_d: englantilaisista
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -131,10 +131,10 @@ elements: |-
     '#source': q4
   quiz_result:
     '#type': webform_quiz_elements_score
-    '#title': Tulokset
+    '#title': quiz_result
     '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen kaupungintalon historian tuntija! Tunnetko yhtä hyvin vanhempaa historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/kaupungintalo">Kaupungintalo</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/mortuis-suomenlinnan-verinen-historia</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

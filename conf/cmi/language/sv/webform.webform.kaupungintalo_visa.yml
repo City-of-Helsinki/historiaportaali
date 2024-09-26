@@ -1,0 +1,65 @@
+title: Stadshuset
+elements: |
+  q1:
+    '#title': 'För vilket ändamål har stadshuset ursprungligen byggts?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Du svarade fel. Stadshuset byggdes ursprungligen som hotell.'
+      q1_c:
+        feedback: 'Du svarade fel. Stadshuset byggdes ursprungligen som hotell'
+      q1_d:
+        feedback: 'Du svarade fel. Stadshuset byggdes ursprungligen som hotell.'
+    '#options':
+      q1_a: 'Som hotell'
+      q1_b: 'Som bostad för kejsaren'
+      q1_c: 'Som stadshus'
+      q1_d: 'Som presidentens slott'
+  q2:
+    '#title': 'Vem har ritat stadshuset?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Du svarade fel, eftersom huset ritades av Carl Ludvig Engel. Men Aarno Ruusuvuori planerade förnyelsen av husets interiör på 1960-talet.'
+      q2_c:
+        feedback: 'Fel svar. Carl Ludvig Engel ritade stadshuset.'
+      q2_d:
+        feedback: 'Fel svar, eftersom det var Carl Ludvig Engel. Lite ditåt i alla fall, eftersom Anitra Lucander valde interiörens färger på 1960-talet.'
+  q3:
+    '#title': 'Vilket år ordnades Finlands första filmförevisning i nuvarande stadshuset?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Fel svar.Det var år 1896.'
+      q3_c:
+        feedback: 'Fel svar. Det var år 1896.'
+      q3_d:
+        feedback: 'Fel svar.Det var år 1896.'
+    '#options':
+      q3_a: '1896'
+      q3_b: '1906'
+      q3_c: '1916'
+      q3_d: '1926'
+  q4:
+    '#title': 'Var fanns inte Suckarnas bro?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar. Och Brändö bro byggdes förresten år 1974.'
+      q4_b:
+        feedback: 'Fel svar. Stadshusets personal kunde ta sig längs en inglasad gångbro, Suckarnas bro, till stadens drätselkontor i huset på andra sidan gatan från 1930-talet till 1960-talet.'
+      q4_c:
+        feedback: 'Fel svar. Suckarnas bro i Venedig fullbordades år 1602. Den förenade rannsakningsdomarnas lokal och cellerna i dogens palats.'
+      q4_d:
+        feedback: 'Fel svar. Suckarnas bro i Kakolafängelset förenade resecellerna med det egentliga fängelset.'
+    '#options':
+      q4_a: 'På Högholmen'
+      q4_b: 'Vid stadshuset'
+      q4_c: 'I Venedig'
+      q4_d: 'I Kakolafängelset'
+  quiz_result:
+    '#title': Resultat
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

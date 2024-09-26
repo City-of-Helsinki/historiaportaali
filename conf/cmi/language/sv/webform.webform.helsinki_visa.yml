@@ -1,0 +1,58 @@
+elements: |
+  q1:
+    '#title': '1. Vem grundade Helsingfors?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Sveriges kung Gustav Vasa grundade Helsingfors.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Sveriges kung Gustav Vasa grundade Helsingfors.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Sveriges kung Gustav Vasa grundade Helsingfors.'
+    '#options':
+      q1_a: 'Gustav Vasa'
+      q1_b: 'Drottning Kristina'
+      q1_c: 'Karl XII'
+      q1_d: 'Karl IX'
+  q2:
+    '#title': 'tiiVar grundades Helsingfors ursprungligen?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Helsingfors grundades ursprungligen vid Gammelstadsviken.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Helsingfors grundades ursprungligen vid Gammelstadsviken.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Helsingfors grundades ursprungligen vid Gammelstadsviken.'
+    '#options':
+      q2_a: 'Vid Gammelstadsviken'
+      q2_b: 'På Södernäs'
+      q2_c: 'På Estnäs'
+      q2_d: 'I Helsinge socken'
+  q3:
+    '#title': 'Vilket år grundades Helsingfors?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Helsingfors grundades år 1550.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Helsingfors grundades år 1550.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Helsingfors grundades år 1550.'
+  q4:
+    '#title': 'Vilket datum grundades Helsingfors?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
+      q4_c:
+        feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
+      q4_d:
+        feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: 'Helsingfors grundas'

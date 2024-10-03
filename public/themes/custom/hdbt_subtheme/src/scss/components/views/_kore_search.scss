@@ -52,22 +52,27 @@
       }
     }
 
-    @include breakpoint($breakpoint-m) {
-      
-    }
-
     a {
       text-decoration: none;
+
+      .paragraph--type--kore-name {
+        .hel-icon {
+          display: none;
+        }
+      }
 
       &:first-child {
         .paragraph--type--kore-name {
           font-size: 1.5rem;
           padding-bottom: 0.5rem;
-        }
-      }
 
-      .kore-date {
-        // margin-left: 0.5rem;
+          .hel-icon {
+            display: inline-block;
+            margin-bottom: 4px;
+            height: 1.25rem;
+            width: 1.25rem;
+          }
+        }
       }
     }
   }

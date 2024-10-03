@@ -1,0 +1,22 @@
+diff --git a/src/Plugin/WebformElement/WebformQuizElementsScore.php b/src/Plugin/WebformElement/WebformQuizElementsScore.php
+index df6d5a0..0fd6b60 100644
+--- a/src/Plugin/WebformElement/WebformQuizElementsScore.php
++++ b/src/Plugin/WebformElement/WebformQuizElementsScore.php
+@@ -76,6 +76,17 @@ class WebformQuizElementsScore extends WebformElementBase implements WebformElem
+     return $element + $this->getElementVariables($element, $webform_submission);
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  protected function defineTranslatableProperties() {
++    return array_merge(
++      parent::defineTranslatableProperties(),
++      ['feedback_message_pass'],
++      ['feedback_message_fail']
++    );
++  }
++
+   /**
+    * {@inheritdoc}
+    */

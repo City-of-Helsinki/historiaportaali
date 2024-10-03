@@ -11,10 +11,6 @@
     }
   }
 
-  .main-content {
-    margin-top: 0;
-  }
-
   .node--type-kore-school {
     &.node--view-mode-full {
       max-width: $content-width-max;
@@ -105,5 +101,4 @@
       }
     }
   }
-
 }

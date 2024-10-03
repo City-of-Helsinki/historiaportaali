@@ -128,6 +128,9 @@
             "drupal/views_cm_current_state": {
                 "Filter by Moderation Current State (https://www.drupal.org/project/views_cm_current_state/issues/3158762#comment-14191350)": "https://www.drupal.org/files/issues/2021-08-16/add-current-moderation-filter_0.patch",
                 "Get translated revision": "custom-patches/views_cm_current_state_get_translated_revision.patch"
+            },
+            "drupal/webform_quiz_elements": {
+                "Translate feedback messages": "custom-patches/webform_quiz_elements_translate_feedback.patch"
             }
         },
         "installer-types": ["bower-asset", "npm-asset"],

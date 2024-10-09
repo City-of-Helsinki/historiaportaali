@@ -34,24 +34,61 @@
           border: 1px solid $color-black-40;
           font-size: 1.25rem;
           display: flex;
+          flex-wrap: wrap;
+
+          .hel-icon {
+            margin-right: 1rem;
+            width: 22px;
+          }
+
+          .kore--content {
+            flex-wrap: nowrap;
+            display: flex;
+          }
+
+          .kore--date {
+            width: max-content;
+            height: max-content;
+            padding: $spacing-half;
+            border: 1px solid $color-black-60;
+            margin-left: auto;
+            font-size: 1rem;
+            color: $color-black-80;
+          }
 
           &.paragraph--type--kore-archive {
-            flex-wrap: wrap;
-
             a {
               margin-left: 0.25rem;
             }
           }
 
           &.paragraph--type--kore-building {
-            .paragraph--type--kore-address {
-              &:not(:last-of-type)::after {
-                margin-right: 0.25rem;
-                content: '=';
-              }
+            .kore--content {
+              flex-wrap: wrap;
 
-              .hds-button {
-                margin-left: 1rem;
+              .paragraph--type--kore-address {
+                &:not(:last-of-type)::after {
+                  margin-right: 0.25rem;
+                  content: '=';
+                }
+                &:last-of-type,
+                &:only-of-type {
+                  display: flex;
+                  flex-flow: column;
+
+                  @include breakpoint($breakpoint-m) {
+                    flex-flow: row;
+                  }
+                }
+
+                .hds-button {
+                  width: max-content;
+                  margin: 0 3rem 1rem 0;
+
+                  @include breakpoint($breakpoint-m) {
+                    margin: 0 0 0 1rem;
+                  }
+                }
               }
             }
           }
@@ -60,20 +97,6 @@
             a {
               margin-left: 0.25rem;
             }
-          }
-
-          .hel-icon {
-            margin-right: 1rem;
-            width: 22px;
-          }
-
-          .kore--date {
-            width: max-content;
-            padding: $spacing-half;
-            border: 1px solid $color-black-60;
-            margin-left: auto;
-            font-size: 1rem;
-            color: $color-black-80;
           }
         }
       }

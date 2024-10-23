@@ -62,10 +62,12 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
-      {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
-    {% endblock %}
+    <span class="kore--content">
+      {% block content %}
+        {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
+        {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
+      {% endblock %}
+    </span>
     <span class="kore--date">
       {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }} ⟶ {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
     </span>

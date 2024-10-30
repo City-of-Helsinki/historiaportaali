@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.helfi_chart.field_helfi_chart_infogram_id
     - field.field.media.helfi_chart.field_helfi_chart_title
     - field.field.media.helfi_chart.field_helfi_chart_transcript
     - field.field.media.helfi_chart.field_helfi_chart_url
@@ -41,6 +42,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_helfi_chart_infogram_id: true
   field_helfi_chart_url: true
   langcode: true
   path: true

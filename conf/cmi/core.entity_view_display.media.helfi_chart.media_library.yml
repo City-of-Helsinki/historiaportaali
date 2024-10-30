@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.helfi_chart.field_helfi_chart_infogram_id
     - field.field.media.helfi_chart.field_helfi_chart_title
     - field.field.media.helfi_chart.field_helfi_chart_transcript
     - field.field.media.helfi_chart.field_helfi_chart_url
@@ -15,12 +16,20 @@ targetEntityType: media
 bundle: helfi_chart
 mode: media_library
 content:
+  field_helfi_chart_infogram_id:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_helfi_chart_url:
     type: helfi_chart_media_library
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   created: true

@@ -12,6 +12,13 @@
     <div class="chart__container">
       {{ content.field_helfi_chart_url }}
     </div>
-    <figcaption class="chart__transcript">{{ content.field_helfi_chart_transcript }}</figcaption>
+    <figcaption class="chart__transcript visually-hidden">{{ content.field_helfi_chart_transcript }}</figcaption>
+  </figure>
+{% elseif content.field_helfi_chart_infogram_id|render %}
+  <figure>
+    <div class="chart__container">
+      <script id="{{ content.field_helfi_chart_infogram_id.0 }}" title="{{ content.field_helfi_chart_title.0 }}" src="https://e.infogram.com/js/dist/embed.js" type="text/javascript"></script>
+    </div>
+    <figcaption class="chart__transcript visually-hidden">{{ content.field_helfi_chart_transcript }}</figcaption>
   </figure>
 {% endif %}

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.helfi_chart.field_helfi_chart_infogram_id
     - field.field.media.helfi_chart.field_helfi_chart_title
     - field.field.media.helfi_chart.field_helfi_chart_transcript
     - field.field.media.helfi_chart.field_helfi_chart_url
@@ -15,6 +16,14 @@ targetEntityType: media
 bundle: helfi_chart
 mode: default
 content:
+  field_helfi_chart_infogram_id:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_helfi_chart_title:
     type: string
     label: hidden
@@ -28,7 +37,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_helfi_chart_url:
     type: helfi_chart

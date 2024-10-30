@@ -6,7 +6,7 @@ dependencies:
     - helfi_media_chart
 id: helfi_chart
 label: Chart
-description: 'Media type Chart can be used to present interactive charts. Supports Microsoft Power BI.'
+description: 'Media type Chart can be used to present interactive charts. Supports Microsoft Power BI and Infogram.'
 source: helfi_chart
 queue_thumbnail_downloads: false
 new_revision: false

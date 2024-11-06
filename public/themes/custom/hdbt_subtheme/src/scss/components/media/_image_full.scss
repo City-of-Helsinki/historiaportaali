@@ -1,7 +1,8 @@
 .media--type-image {
   &.media--view-mode-full {
     .before-content {
-      .image-header__container {
+      .image-header__container,
+      .back-to-search-results__container {
         > div {
           max-width: $content-width-max;
   

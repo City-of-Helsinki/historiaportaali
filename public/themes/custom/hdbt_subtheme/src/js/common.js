@@ -16,7 +16,12 @@
             previousUrl.includes('/search')) {
           $backLinkEl = $('.back-to-search-results', context);
         }
-        
+
+        // If browser history exists, use it
+        if (history.length > 1) {
+          previousUrl = 'javascript:history.go(-1)';
+        }
+
         const $container = $backLinkEl.closest('.container');
 
         if ($backLinkEl.length) {

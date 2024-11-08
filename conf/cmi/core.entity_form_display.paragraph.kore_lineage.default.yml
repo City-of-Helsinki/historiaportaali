@@ -1,0 +1,40 @@
+uuid: 38622c7a-3288-4ae1-af8e-d4d46976684c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kore_lineage.field_kore_lineage
+    - field.field.paragraph.kore_lineage.field_kore_school
+    - field.field.paragraph.kore_lineage.field_kore_start_year
+    - paragraphs.paragraphs_type.kore_lineage
+id: paragraph.kore_lineage.default
+targetEntityType: paragraph
+bundle: kore_lineage
+mode: default
+content:
+  field_kore_lineage:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kore_school:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_kore_start_year:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: c84bba50-4ccd-4d34-a955-84e67dfd426d
+langcode: en
+status: true
+dependencies: {  }
+id: kore_lineage
+label: 'KoRe lineage'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -29,10 +29,15 @@
  * @see template_preprocess_media()
  */
 #}
+{% set finna_link = content.field_finna_id.0['#context'].value ? 'https://finna.fi/Record/' ~ content.field_finna_id.0['#context'].value %}
+{% set photographer = content.field_photographer.0['#context'].value ? 'Photo:'|trans ~ ' ' ~ content.field_photographer.0['#context'].value %}
+
 <div class="kore--photo">
-  <a href="https://finna.fi/Record/{{ content.field_finna_id.0 }}" target="_blank">{{ content.field_media_image }}</a>
-  {{ 'Photo:'|trans ~ ' ' ~ content.field_photographer.0['#context'].value }}
-  {% set link_title = 'https://finna.fi/Record/' ~ content.field_finna_id.0['#context'].value %}
-  {% set link_url = 'https://finna.fi/Record/' ~ content.field_finna_id.0['#context'].value %}
-  {{ link(link_title, link_url, []) }}
+  {{ content.field_media_image }}
+  {% if photographer %}
+    <p>{{ photographer }}</p>
+  {% endif %}
+  {% if finna_link %}
+    {{ link(finna_link, finna_link, create_attribute({'target': 'blank'})) }}
+  {% endif %}
 </div>

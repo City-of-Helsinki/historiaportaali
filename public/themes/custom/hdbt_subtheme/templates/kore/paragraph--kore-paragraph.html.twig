@@ -69,7 +69,10 @@
       {% endblock %}
     </span>
     <span class="kore--date">
-      {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }} ⟶ {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
+      {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }}
+      {% if content.field_kore_end_year is defined %}
+       ⟶ {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
+      {% endif %}
     </span>
   </div>
 {% endblock paragraph %}

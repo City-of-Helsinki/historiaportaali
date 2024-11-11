@@ -49,16 +49,8 @@
 %}
 {%
   set icons = {
-    'kore_archive': 'document',
-    'kore_building': 'company',
     'kore_continuum': 'link',
-    'kore_field': 'occupation',
-    'kore_gender': 'group',
-    'kore_language': 'globe',
     'kore_lineage': 'link',
-    'kore_name': 'paperclip',
-    'kore_principal': 'entrepreneur',
-    'kore_type': 'layers'
   }
 %}
 {% block paragraph %}
@@ -66,7 +58,12 @@
     <span class="kore--content">
       {% block content %}
         {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
-        {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
+          {{ content|without('field_kore_school', 'field_kore_start_year', 'field_kore_end_year') }}
+          {% if node_id %}
+            <a href="{{ path('entity.node.canonical', {'node': node_id}) }}">{{ node_title }}</a>
+          {% else %}
+            {{ content.field_kore_school }}
+          {% endif %}
       {% endblock %}
     </span>
     <span class="kore--date">

@@ -173,7 +173,6 @@ function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, ar
   $kore_paragraphs = [
     'kore_archive',
     'kore_building',
-    'kore_continuum',
     'kore_field',
     'kore_gender',
     'kore_language',
@@ -184,6 +183,15 @@ function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, ar
 
   if (in_array($paragraph->bundle(), $kore_paragraphs)) {
     $suggestions[] = 'paragraph__kore_paragraph';
+  }
+
+  $kore_single_paragraphs = [
+    'kore_continuum',
+    'kore_lineage',
+  ];
+
+  if (in_array($paragraph->bundle(), $kore_single_paragraphs)) {
+    $suggestions[] = 'paragraph__kore_paragraph_single';
   }
 }
 
@@ -304,5 +312,24 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
 
     $variables['gallery_slide_thumbnails'] = $slide_thumbnails;
     $variables['gallery_slide_thumbnails_alt_texts'] = $slide_thumbnails_alternative_texts;
+  }
+
+  if (in_array($paragraph_type, ['kore_continuum', 'kore_lineage'])) {
+    $year = $paragraph->get('field_kore_start_year')->value;
+
+    $node = $paragraph->get('field_kore_school')->referencedEntities();
+    $school_names = $node[0]->get('field_kore_names')->referencedEntities();
+    foreach ($school_names as $name) {
+
+      $start = $name->get('field_kore_start_year')->value;
+      $end = $name->get('field_kore_end_year')->value;
+
+      if (!is_null($year) && !is_null($start) && !is_null($end)) {
+        if ((intval($start) < intval($year)) && (intval($end) >= intval($year))) {
+          $variables['node_title'] = $name->get('field_kore_name')->value;
+          $variables['node_id'] = $node[0]->id();
+        }
+      }
+    }
   }
 }

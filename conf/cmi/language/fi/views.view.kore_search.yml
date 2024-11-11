@@ -21,3 +21,8 @@ display:
       exposed_form:
         options:
           submit_button: Hae
+          reset_button_label: Tyhjennä
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Tuloksia sivulla'

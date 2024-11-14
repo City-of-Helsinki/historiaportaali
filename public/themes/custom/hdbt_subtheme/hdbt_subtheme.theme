@@ -325,11 +325,29 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
       $end = $name->get('field_kore_end_year')->value;
 
       if (!is_null($year) && !is_null($start) && !is_null($end)) {
-        if ((intval($start) < intval($year)) && (intval($end) >= intval($year))) {
+
+        // Event took place between name years.
+        if ((intval($start) < intval($year)) && (intval($end) > intval($year))) {
           $variables['node_title'] = $name->get('field_kore_name')->value;
           $variables['node_id'] = $node[0]->id();
+        } else {
+          // Event took place on name change year.
+          if (intval($start) == intval($year)) {
+            $variables['node_title'] = $name->get('field_kore_name')->value;
+            $variables['node_id'] = $node[0]->id();
+            $start_name = $name->get('field_kore_name')->value;
+          }
+          if (intval($end) == intval($year)) {
+            $variables['node_title'] = $name->get('field_kore_name')->value;
+            $variables['node_id'] = $node[0]->id();
+            $end_name = $name->get('field_kore_name')->value;
+          }
         }
       }
+    }
+
+    if (isset($start_name) && isset($end_name)) {
+      $variables['node_title'] = $start_name . " / " . $end_name;
     }
   }
 }

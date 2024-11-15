@@ -1,0 +1,66 @@
+title: Sveaborg
+elements: |
+  q1:
+    '#title': '1. Vem ledde fästningsbygget på Sveaborg?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Du svarade fel. Projektet leddes av Augustin Ehrensvärd.'
+      q1_c:
+        feedback: 'Du svarade fel. Projektet leddes av Augustin Ehrensvärd.'
+      q1_d:
+        feedback: 'Du svarade fel. Projektet leddes av Augustin Ehrensvärd.'
+    '#options':
+      q1_a: 'Augustin Ehrensvärd'
+      q1_b: 'Johan Sederholm'
+      q1_c: 'Johannes Hoffman'
+      q1_d: 'Elias Martin'
+  q2:
+    '#title': '2. Vilket år började man bygga fästningen på Sveaborg?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Fästningsarbeten inleddes år 1748.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Fästningsarbeten inleddes år 1748.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Fästningsarbeten inleddes år 1748.'
+  q3:
+    '#title': '3. Vilken av dessa nyheter hör inte ihop med Sveaborgs fästningsarbeten?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt! Kvinnor fick rösträtt i Finland som tvåa i världen år 1906, när man inte längre byggde på Sveaborg.'
+      q3_b:
+        feedback: 'Du svarade fel. Sveaborg byggdes i stort sett med fångarbetskraft. Kvinnors rösträtt däremot har inget att göra med byggandet av Sveaborg.'
+      q3_c:
+        feedback: 'Du svarade fel. Augustin Ehrensvärd som ledde fästningsarbeten tog allmänna toaletter i bruk för att förbättra den allmänna hygiennivån. Kvinnors rösträtt däremot har inget att göra med byggandet av Sveaborg.'
+      q3_d:
+        feedback: 'Du svarade fel. Sveaborgs byggnadsarbeten och Pommerska kriget orsakade i Sverige en inflation, som ledde till att man började trycka sedelmynt. Kvinnors rösträtt däremot har inget att göra med byggandet av Sveaborg.'
+    '#options':
+      q3_a: 'kvinnors rösträtt'
+      q3_b: fångarbetskraft
+      q3_c: 'allmänna toaletter'
+      q3_d: sedelmynt
+  q4:
+    '#title': '4. Från vilket lands fartyg har man inte skjutit på Sveaborg?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. År 1808 sköt ryska fartyg mot Sveaborg. Under Krimkriget år 1855 bombades Sveaborg av engelska och franska fartyg. Andra världskrigets bombningar träffade inte Sveaborg, utan själva staden Helsingfors.'
+      q4_c:
+        feedback: 'Svaret var fel. År 1808 sköt ryska fartyg mot Sveaborg. Under Krimkriget år 1855 bombades Sveaborg av engelska och franska fartyg. Andra världskrigets bombningar träffade inte Sveaborg, utan själva staden Helsingfors.'
+      q4_d:
+        feedback: 'Svaret var fel. År 1808 sköt ryska fartyg mot Sveaborg. Under Krimkriget år 1855 bombades Sveaborg av engelska och franska fartyg. Andra världskrigets bombningar träffade inte Sveaborg, utan själva staden Helsingfors.'
+    '#options':
+      q4_a: Sovjetunionens
+      q4_b: Rysslands
+      q4_c: Frankrikes
+      q4_d: Englands
+  quiz_result:
+    '#feedback_message_pass': 'Du är en sann expert på Sveaborgs historia. Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Värm upp genom att bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/mortuis-sveaborgs-blodiga-historia">Mortuis – Sveaborgs blodiga historia</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

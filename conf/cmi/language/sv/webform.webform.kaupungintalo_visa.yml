@@ -61,5 +61,7 @@ elements: |
       q4_d: 'I Kakolafängelset'
   quiz_result:
     '#title': Resultat
+    '#feedback_message_pass': 'Du är rätt bra på stadshuset historia! Är du lika duktig på äldre historia? Läs också <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a> -artikeln.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om stadhuset. Bekanta dig med artikeln om stadshuset <a href="https://historia.hel.fi/sv/helheter/maktbruk-och-forvaltning/stadshuset">Stadshuset</a> och gör quizen på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'

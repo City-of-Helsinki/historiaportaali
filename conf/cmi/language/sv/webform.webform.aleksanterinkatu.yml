@@ -1,0 +1,103 @@
+title: Alexandersgatan
+elements: |
+  q1:
+    '#title': '1. Vad hade Alexandersgatan för alternativt namn på en plankarta från början av 1800-talet?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Du svarade fel, eftersom Alexandersgatans andra namn var Konungs eller Långa gatan.'
+      q1_c:
+        feedback: 'Du svarade fel, eftersom Alexandersgatans andra namn var Konungs eller Långa gatan.'
+      q1_d:
+        feedback: 'Du svarade fel, eftersom Alexandersgatans andra namn var Konungs eller Långa gatan.'
+    '#options':
+      q1_a: 'Konungs eller Långa gatan'
+      q1_b: Kungsgatan
+      q1_c: Kungsvägen
+      q1_d: Långgatan
+  q2:
+    '#title': '2. Vem lät bygga Helsingfors första stenhus på Alexandersgatan?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Du svarade fel. Köpman Torsten Burgman byggde Helsingfors första stenhus på 1690-talet.'
+      q2_c:
+        feedback: 'Du svarade fel. Köpman Torsten Burgman byggde Helsingfors första stenhus på 1690-talet.'
+      q2_d:
+        feedback: 'Du svarade fel. Köpman Torsten Burgman byggde Helsingfors första stenhus på 1690-talet.'
+    '#options':
+      q2_a: 'Köpman Torsten Burgman'
+      q2_b: 'Köpman Johan Michelsson'
+      q2_c: 'Köpmann Johan Sederholm'
+      q2_d: 'Kejsare Alexander  I'
+  q3:
+    '#title': '3. Vilket år flyttades Helsingfors till sitt nuvarande ställe på Estnässkatan?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+  q4:
+    '#title': '4. Hur många byggnader fanns det i Helsingfors före branden av året 1654'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+      q4_c:
+        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+      q4_d:
+        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilket år förstörde stora nordiska kriget Helsingfors?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Rätt svar!'
+      q5_b:
+        feedback: 'Fel svar. Det hände år 1713.'
+      q5_c:
+        feedback: 'Fel svar. Det hände år 1713.'
+      q5_d:
+        feedback: 'Fel svar. Det hände år 1713.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Sedan vilken tid har Alexandersgatan varit en del av Helsingfors?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Rätt svar!'
+      q6_b:
+        feedback: 'Fel svar. Första delen av Alexandersgatan fanns redan i medlet av 1600-talet.'
+      q6_c:
+        feedback: 'Fel svar. Första delen av Alexandersgatan fanns redan i medlet av 1600-talet.'
+      q6_d:
+        feedback: 'Fel svar. Första delen av Alexandersgatan fanns redan i medlet av 1600-talet.'
+    '#options':
+      q6_a: 'medlet av 1600-talet'
+      q6_b: 'början av 1700-talet'
+      q6_c: 'början av 1800-talet'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7.  Vilket av dessa har inte varit ett namn på Alexandersgatans tvärgata Riddargatan?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+      q7_c:
+        feedback: ' Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+      q7_d:
+        feedback: 'Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+    '#options':
+      q7_a: 'Stora gatan '
+      q7_b: 'Stota Berggatan '
+      q7_c: 'Residenshusgatan '
+      q7_d: 'Berggatan '
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Alexandersgatan! Hur är det då med stadsdelen där gatan finns? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande läsning kvar. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/alexandersgatans-historia">Alexandersgatans historia</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

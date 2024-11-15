@@ -1,114 +1,189 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: d908b692-c76c-4fa8-be9a-6324b3569a29
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: vesiliikenne_lahisaarille
+title: 'Vesiliikenne lähisaarille'
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': "1.\tMikä oli Helsingin ensimmäinen säännöllinen höyrylaivareitti?"
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Ensimmäinen reitti oli Kauppatori – Kaivopuiston kylpylä – Viapori.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Ensimmäinen reitti oli Kauppatori – Kaivopuiston kylpylä – Viapori.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Ensimmäinen reitti oli Kauppatori – Kaivopuiston kylpylä – Viapori.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: 'Kauppatori – Kaivopuiston kylpylä – Viapori'
+      q1_b: 'Kauppatori – Lammassaari – Kallvik'
+      q1_c: 'Kauppatori – Laajasalo – Korkeasaari'
+      q1_d: 'Kauppatori – Suomenlinna – Kulosaaren kasino'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Mikä vähensi vesiliikennettä Helsingissä 1900-luvun alkupuolella?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Vesiliikennettä vähensi raitiovaunuverkoston laajeneminen ja linja-autojen yleistyminen.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Vesiliikennettä vähensi raitiovaunuverkoston laajeneminen ja linja-autojen yleistyminen.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin.Vesiliikennettä vähensi raitiovaunuverkoston laajeneminen ja linja-autojen yleistyminen.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'Raitiovaunuverkoston laajeneminen ja linja-autojen yleistyminen'
+      q2_b: 'Korkeat polttoainekustannukset'
+      q2_c: 'Kaluston vanheneminen'
+      q2_d: 'Säännösten tiukentuminen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Milloin Korkeasaareen alettiin liikennöidä höyryaluksella?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1918.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1918.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1918.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: '1918'
+      q3_b: '1922'
+      q3_c: '1930'
+      q3_d: '1905'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Kuinka monta matkaa Korkeasaareen tehtiin vuonna 1922?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Matkoja tehtiin 283 000.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Matkoja tehtiin 283 000.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Matkoja tehtiin 283 000.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: '283 000'
+      q4_b: '209 000'
+      q4_c: '49 000'
+      q4_d: '371 000'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#type': quiz_element_radios
+    '#title': '5. Mitä ongelmia paikallinen vesiliikenne kohtasi 1860-luvulla?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Ongelmia aiheuttivat alusten kippareiden piittaamattomuus ja konerikot.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Ongelmia aiheuttivat alusten kippareiden piittaamattomuus ja konerikot.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Ongelmia aiheuttivat alusten kippareiden piittaamattomuus ja konerikot.'
+    '#options':
+      q5_a: 'Alusten kippareiden piittaamattomuus ja konerikot'
+      q5_b: 'Polttoaineen saatavuus'
+      q5_c: 'Matkustajamäärien vähäisyys'
+      q5_d: 'Vesiliikenteen ruuhkat'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#type': quiz_element_radios
+    '#title': '6. Mikä alus korvasi S/S Korkeasaaren sodan jälkeen?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Höyrylaiva Korkeasaaren tilalle otettiin J. L. Runeberg.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Höyrylaiva Korkeasaaren tilalle otettiin J. L. Runeberg.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Höyrylaiva Korkeasaaren tilalle otettiin J. L. Runeberg.'
+    '#options':
+      q6_a: 'J. L. Runeberg'
+      q6_b: Alice
+      q6_c: Wappu
+      q6_d: Svea
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
+    '#type': quiz_element_radios
+    '#title': '7. Kuinka monta höyryvenettä hankittiin 1890-luvulla?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Niitä hankittiin noin 30.'
+      q7_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Niitä hankittiin noin 30.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Niitä hankittiin noin 30.'
+    '#options':
+      q7_a: 'noin 30'
+      q7_b: 'noin 50'
+      q7_c: 'noin 20'
+      q7_d: '15'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -129,12 +204,24 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q4_result
     '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': 5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': 6_milloin_moottorilaiva_finlandia_valmistui
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Helsingin lähisaarten vesiliikenteen tuntija! Lue myös meriliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a> '
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/vesiliikenne-lahisaarille">Vesiliikenne lähisaarille</a> -artikkeli ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

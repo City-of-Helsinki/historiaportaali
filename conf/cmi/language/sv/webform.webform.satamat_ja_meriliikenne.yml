@@ -1,0 +1,123 @@
+title: 'Hamnar och sjöfart'
+elements: |
+  q1:
+    '#title': '1. När började isbrytarnas tid i Helsingfors?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Du svarade fel, den började nämligen år 1890.'
+      q1_c:
+        feedback: 'Du svarade fel, den började nämligen år 1890.'
+      q1_d:
+        feedback: 'Du svarade fel, den började nämligen år 1890.'
+  q2:
+    '#title': '2. Vilken hamn var Helsingfors viktigaste importhamn före andra världskriget?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Svaret var fel. Stadens viktigaste importhamn var Södra hamnen.'
+      q2_c:
+        feedback: 'Svaret var fel. Stadens viktigaste importhamn var Södra hamnen.'
+      q2_d:
+        feedback: 'Svaret var fel. Stadens viktigaste importhamn var Södra hamnen'
+    '#options':
+      q2_a: 'Södra hamnen'
+      q2_b: 'Västra hamnen'
+      q2_c: 'Hertonäs hamn'
+      q2_d: 'Sörnäs hamn'
+  q3:
+    '#title': '3. När förenades Södra hamnen och Norra hamnen med en kanal?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Skatuddens kanal byggdes år 1844.'
+      q3_c:
+        feedback: 'Svaret var fel. Skatuddens kanal byggdes år 1844.'
+      q3_d:
+        feedback: 'Svaret var fel. Skatuddens kanal byggdes år 1844.'
+  q4:
+    '#title': '4. Vilket var Helsingfors första ångfartyg?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svarat!'
+      q4_b:
+        feedback: 'Svaret var fel, eftersom det var Flygaren.'
+      q4_c:
+        feedback: 'Svaret var fel, eftersom det var Flygaren.'
+      q4_d:
+        feedback: 'Svaret var fel, eftersom det var Flygaren.'
+    '#options':
+      q4_a: Flygaren
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#title': '5. Vilken hamn utvecklades till en hamn för passagerarfärjor vid sidan om godstrafiken på 1960-talet?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Rätt svarat!'
+      q5_b:
+        feedback: 'Svaret var fel, för det var Sörnäs hamn.'
+      q5_c:
+        feedback: 'Svaret var fel, för det var Sörnäs hamn.'
+      q5_d:
+        feedback: 'Svaret var fel, för det var Sörnäs hamn.'
+    '#options':
+      q5_a: 'Sörnäs hamn'
+      q5_b: 'Västra hamnen'
+      q5_c: 'Norra hamnen'
+      q5_d: 'Hertonäs hamn'
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#title': '6. När fullbordades motorfartyget Finlandia?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Den blev färdig år 1967.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Den blev färdig år 1967.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Den blev färdig år 1967.'
+    '#options':
+      q6_a: 'år 1967'
+      q6_b: 'år 1960'
+      q6_c: 'år 1965'
+      q6_d: 'år 1970'
+  7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
+    '#title': '7.  Vilket var det livligaste året för Helsingfors passagerartrafik före andra världskriget?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Svaret var fel. Det livligaste året var1937.'
+      q7_c:
+        feedback: 'Svaret var fel. Det livligaste året var1937.'
+      q7_d:
+        feedback: 'Svaret var fel. Det livligaste året var 1937.'
+  8_milloin_viking_line_aloitti_liikenteen_helsingista_tukholmaan:
+    '#title': '8. När inledde Viking Line sin trafik mellan Helsingfors och Stockholm?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+      q8_c:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+      q8_d:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+  9_mina_vuonna_uusi_satama_valmistui_vuosaareen:
+    '#title': '9. När blev den nya hamnen i Nordsjö färdig?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+      q9_c:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+      q9_d:
+        feedback: 'Svaret var fel. Det skedde år 1974.'
+  quiz_result:
+    '#feedback_message_pass': 'Du tycks vara en riktig expert på Helsingfors hamnar och sjöfart! Läs också om biltrafikens historia: <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/biltrafikens-borjan">Biltrafikens början</a>.'
+    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/hamnar-och-sjofart">Hamnar och sjöfart</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

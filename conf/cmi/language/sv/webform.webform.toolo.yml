@@ -1,0 +1,134 @@
+elements: |
+  q1:
+    '#title': '1. Var fanns Tölö sockerbruk?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Sockerbruket stod på nuvarande Nationaloperans tomt.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Soockerbruket stod på nuvarande Nationaloperans tomt.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Soockerbruket stod på nuvarande Nationaloperans tomt.'
+    '#options':
+      q1_a: 'på nuvarande Nationaloperans plats'
+      q1_b: 'på Riksdagshusets plats'
+      q1_c: 'på Finlandiahusets plats'
+      q1_d: 'i Sibeliusparken'
+  q2:
+    '#title': '2. Var går gränsen mellan Främre Tölö och Bortre Tölö?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Du svarade fel. Gränsen går mellan Hesperia esplanaderna.'
+      q2_c:
+        feedback: 'Du svarade fel. Gränsen går i mellan Hesperia esplanaderna.'
+      q2_d:
+        feedback: 'Du svarade fel. Gränsen går mellan Hesperia esplanaderna.'
+    '#options':
+      q2_a: 'i Hesperiaparken'
+      q2_b: 'på Sandelsgatan i nedre kanten av Tölö torg'
+      q2_c: 'på Eino Leinos gata och Hummelgatan'
+      q2_d: 'på Runebergsgatan'
+  q3:
+    '#title': '3. För vilket ändamål byggdes Sporthallen ursprungligen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Sporthallen hette ursprungligen Mässhallen enligt sitt användningsändamål.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Sporthallen hette ursprungligen Mässhallen enligt sitt användningsändamål.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Sporthallen hette ursprungligen Mässhallen enligt sitt användningsändamål.'
+    '#options':
+      q3_a: mässhall
+      q3_b: sporthall
+      q3_c: konsertsal
+      q3_d: ridmanege
+  q4:
+    '#title': '4. Vilken av följande kulturinstitutioner finns inte i Tölö?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. Riksarkivet finns inte i Tölö, utan i Kronohagen.'
+      q4_c:
+        feedback: 'Ditt svar var fel. Riksarkivet finns inte i Tölö, utan i Kronohagen.'
+      q4_d:
+        feedback: 'Ditt svar var fel. Riksarkivet finns inte i Tölö, utan i Kronohagen.'
+    '#options':
+      q4_a: Riksarkivet
+      q4_b: Nationalmuseet
+      q4_c: 'Nationaloperan och -baletten'
+      q4_d: 'Konstuniversitetets Sibeliusakademi'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vad fanns på stället av Bollis eller Tölö bollplan på 1700-talet?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Där fanns Krasnasieffs kärr.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Där fanns Krasnasieffs kärr.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Där fanns Krasnasieffs kärr.'
+    '#options':
+      q5_a: 'ett kärr'
+      q5_b: 'ett potatisland'
+      q5_c: 'ett växthus'
+      q5_d: 'en trädgård'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. När öppnades Sandudds badstrand för publiken?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Hietsu öppnades på midsommaren 1930.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Hietsu öppnades på midsommaren 1930.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Hietsu öppnades på midsommaren 1930.'
+    '#options':
+      q6_a: 'midsommaren 1930'
+      q6_b: 'midsommaren 1929'
+      q6_c: 'midsommaren 1931'
+      q6_d: 'midsommaren 1940'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vad var speciellt med Sandudds badstrand jämfört med tidigare utebad?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Ditt svar var fel. Nytt var att inte åtskilja män och kvinnor.'
+      q7_c:
+        feedback: 'Ditt svar var fel. Nytt var att inte åtskilja män och kvinnor.'
+      q7_d:
+        feedback: 'Ditt svar var fel. Nytt var att inte åtskilja män och kvinnor.'
+    '#options':
+      q7_a: 'Där fanns inga separata avdelningar för män och kvinnor.'
+      q7_b: 'Där fick man vara naken.'
+      q7_c: 'Den var barnförbjuden.'
+      q7_d: 'Man fick inte röka där.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vad fanns förr på Musikhusets ställe?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Du svarade fel. På Musikhusets ställe fanns Tölö godsstation.'
+      q8_c:
+        feedback: 'Du svarade fel. På Musikhusets ställe fanns Tölö godsstation.'
+      q8_d:
+        feedback: 'Du svarade fel. På Musikhusets ställe fanns Tölö godsstation.'
+    '#options':
+      q8_a: 'Tölö godsstation'
+      q8_b: 'Tölö bibliotek'
+      q8_c: 'ett slakteri'
+      q8_d: 'en gasfabrik'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Tölö? Hur är det då med grannstadsdelen? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/vastra/mejlans">Mejlans</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

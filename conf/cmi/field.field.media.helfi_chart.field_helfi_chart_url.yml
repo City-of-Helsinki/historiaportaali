@@ -11,9 +11,9 @@ id: media.helfi_chart.field_helfi_chart_url
 field_name: field_helfi_chart_url
 entity_type: media
 bundle: helfi_chart
-label: URL
-description: "Enter the Chart URL. Should be in format <i>https://app.powerbi.com/view?r=eyJrIjo..</i>.\r\n"
-required: true
+label: 'Power BI URL'
+description: "Enter the Power BI Chart URL. Should be in format <i>https://app.powerbi.com/view?r=eyJrIjo..</i>.\r\n"
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

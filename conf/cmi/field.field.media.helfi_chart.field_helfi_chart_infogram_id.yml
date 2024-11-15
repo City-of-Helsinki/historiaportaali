@@ -1,0 +1,19 @@
+uuid: dd9b7503-9d50-4140-9744-253edf6064e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_helfi_chart_infogram_id
+    - media.type.helfi_chart
+id: media.helfi_chart.field_helfi_chart_infogram_id
+field_name: field_helfi_chart_infogram_id
+entity_type: media
+bundle: helfi_chart
+label: 'Infogram ID'
+description: 'Enter the Chart Infogram ID. Should be in format <i>infogram_0_7dcc7396-e0eb...</i>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

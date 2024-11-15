@@ -4,7 +4,16 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 2rem;
+
+    label {
+      color: var(--label-color-default);
+      display: block;
+      font-size: var(--fontsize-body-m);
+      font-weight: 500;
+      margin-bottom: var(--spacing-3-xs);
+    }
 
     .form-item-field-kore-name-value {
       flex-basis: 100%;
@@ -29,6 +38,10 @@
       .hds-text-input__input-wrapper {
         flex-flow: column;
       }
+    }
+
+    .form-actions {
+      margin-bottom: $gutter;
     }
   }
 

@@ -1,0 +1,21 @@
+uuid: 572f50a5-d09c-4f5f-aaaa-c73b67a5e1a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_kore_lineage
+    - paragraphs.paragraphs_type.kore_lineage
+  module:
+    - options
+id: paragraph.kore_lineage.field_kore_lineage
+field_name: field_kore_lineage
+entity_type: paragraph
+bundle: kore_lineage
+label: 'KoRe lineage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

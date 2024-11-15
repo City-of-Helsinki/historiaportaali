@@ -1,0 +1,27 @@
+uuid: 684465d0-6700-473a-a114-d192464d0652
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_kore_lineage
+field_name: field_kore_lineage
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: predecessor
+      label: Predecessor
+    -
+      value: follower
+      label: Follower
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,130 @@
+title: Haga
+elements: |
+  q1:
+    '#title': '1. När anslöts Haga till Helsingfors?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Haga anslöts till Helsingfors 1946.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Haga anslöts till Helsingfors 1946.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Haga anslöts till Helsingfors 1946.'
+  q2:
+    '#title': '2. Vem köpte gården Backas år 1886?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom gården köptes av Mårten Gabriel Stenius.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom gården köptes av Mårten Gabriel Stenius.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom gården köptes av Mårten Gabriel Stenius.'
+  q3:
+    '#title': '3. När började den reguljära tågtrafiken i Haga?'
+    '#quiz__options':
+      q3_b:
+        feedback: 'Svaret var fel. Den inleddes år 1903.'
+      q3_c:
+        feedback: 'Svaret var fel. Den inleddes år 1903.'
+      q3_d:
+        feedback: 'Svaret var fel. Den inleddes år 1903.'
+  q4:
+    '#title': '4. När grundades Haga köping?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Den grundades 1922.'
+      q4_c:
+        feedback: 'Svaret var fel. Den grundades 1922.'
+      q4_d:
+        feedback: 'Svaret var fel. Den grundades 1922.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilken villa finns ännu kvar från Haga villasamhälle?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, det är nämligen Villa Hörneborg som ännu finns kvar.'
+      q5_c:
+        feedback: 'Inte riktigt, det är nämligen Villa Hörneborg som ännu finns kvar.'
+      q5_d:
+        feedback: 'Inte riktigt, det är nämligen Villa Hörneborg som ännu finns kvar.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. När revs Hoplax gård?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Gården revs på 1960-talet.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Gården revs på 1960-talet.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Gården revs på 1960-talet.'
+    '#options':
+      q6_a: 'på 1960-talet'
+      q6_b: 'på 1970-talet'
+      q6_c: 'på 1920-talet'
+      q6_d: 'på 1950-talet'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilket var det första byggnadsskedet i Norra Haga?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det första skedet var nämligen Borglägersplatsen.'
+      q7_c:
+        feedback: 'Fel svarat, det första skedet var nämligen Borglägersplatsen.'
+      q7_d:
+        feedback: 'Fel svarat, det första skedet var nämligen Borglägersplatsen.'
+    '#options':
+      q7_a: Borglägersplatsen
+      q7_b: Thaliaplatsen
+      q7_c: 'Norra Haga köpcentrum'
+      q7_d: 'Köpingsvägens Elanto'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vem skapade den äldsta detaljplanen för Haga?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Det var  Eliel Saarinen.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Det var  Eliel Saarinen.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Det var  Eliel Saarinen.'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. När grundades Pohjois-Haagan yhteiskoulu?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Skolan grundades 1956.'
+      q9_c:
+        feedback: 'Svaret var fel. Skolan grundades 1956.'
+      q9_d:
+        feedback: 'Svaret var fel. Skolan grundades 1956.'
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#title': "10.\tVarifrån fick de första invånarna i Norra Hagas frontmannavåningshus sina matvaror?"
+    '#quiz__options':
+      q10_a:
+        feedback: 'Rätt svar!'
+      q10_b:
+        feedback: 'Fel svar. Maten köptes av odlare som hade kommit till området.'
+      q10_c:
+        feedback: 'Fel svar. Maten köptes av odlare som hade kommit till området.'
+      q10_d:
+        feedback: 'Fel svar. Maten köptes av odlare som hade kommit till området.'
+    '#options':
+      q10_a: 'av odlare som sålde från sin hästkärra'
+      q10_b: 'från egna odlingslotter'
+      q10_c: 'från en supermarket'
+      q10_d: 'från Helsingfors centrum'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Hagas historia! Hur är det då med Brändö villastad? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sydostra/brando-villastad-en-borsnoterad-kommun">Brändö villastad – en börsnoterad kommun</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/vastra/haga-fran-villasamhalle-till-idealforort">Haga, från villasamhälle till idealförort</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

@@ -1,0 +1,98 @@
+elements: |
+  q1:
+    '#title': '1. Varifrån kommer namnet Sörnäs?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Det är en förkortning av Södernäs.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Det är en förkortning av Södernäs.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Det är en förkortning av Södernäs.'
+    '#options':
+      q1_a: 'Det är en förkortning av namnet Södernäs.'
+      q1_b: 'Det är en version av det finska namnet Sörnäinen.'
+      q1_c: 'Det baserar sig på en term som användes av lokala fiskare.'
+      q1_d: 'Man känner inte till varifrån det kommer.'
+  q2:
+    '#title': '2. Hur påverkades Sörnäs av järnvägen?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Järnvägen skötte godstrafiken mellan stadens olika hamnar.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Järnvägen skötte godstrafiken mellan stadens olika hamnar.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Järnvägen skötte godstrafiken mellan stadens olika hamnar.'
+    '#options':
+      q2_a: 'Den skötte godstrafiken mellan stadens olika hamnar.'
+      q2_b: 'Den förde med sig utbildad arbetskraft till området.'
+      q2_c: 'Den förenade Sörnäs invånare med andra städer.'
+      q2_d: 'Den möjliggjorde expanderingen av odlingsmarkerna.'
+  q3:
+    '#title': '3. Hurdant var det sociala läget i Sörnäs i början av 1900-talet?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Svaret var fel, eftersom Sörnäs var ett oroligt område med ofta förekommande arbetslöshet.'
+      q3_c:
+        feedback: 'Svaret var fel, eftersom eftersom Sörnäs var ett oroligt område med ofta förekommande arbetslöshet.'
+      q3_d:
+        feedback: 'Svaret var fel, eftersom eftersom Sörnäs var ett oroligt område med ofta förekommande arbetslöshet.'
+    '#options':
+      q3_a: 'Det var ett oroligt område med ofta förekommande arbetslöshet.'
+      q3_b: 'Det var ett lugnt och välbärgat område.'
+      q3_c: 'Det var för det mesta ett jordbruksområde.'
+      q3_d: 'Där fanns många skolor.'
+  q4:
+    '#title': '4. När blev Sörnäs en detaljplanerad stadsdel?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar!'
+      q4_b:
+        feedback: 'Svaret var fel. Sörnäs anslöts till Helsingfors detaljplan år 1893.'
+      q4_c:
+        feedback: 'Svaret var fel. Sörnäs anslöts till Helsingfors detaljplan år 1893.'
+      q4_d:
+        feedback: 'Svaret var fel. Sörnäs anslöts till Helsingfors detaljplan år 1893.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5.  Vad hände år 1959 med Sörnäs?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Svaret var fel. Stadsdelen fick sitt officiella namn Sörnäs, Sörnäinen.'
+      q5_c:
+        feedback: 'Svaret var fel. Stadsdelen fick sitt officiella namn Sörnäs, Sörnäinen.'
+      q5_d:
+        feedback: 'Svaret var fel. Stadsdelen fick sitt officiella namn Sörnäs, Sörnäinen.'
+    '#options':
+      q5_a: 'Stadsdelens namn Sörnäs (fi. Sörnäinen) blev officiellt.'
+      q5_b: 'Det blev en del av Helsingfors centrum.'
+      q5_c: 'Det blev ett betydande industriområde.'
+      q5_d: 'Områdets första skola öppnades.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vad syftade namnet Pannkakan på?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Du svarade fel. Pannkakan var en ö som förenades med fastlandet genom markutfyllnad.'
+      q6_c:
+        feedback: 'Du svarade fel.  Pannkakan var en ö som förenades med fastlandet genom markutfyllnad.'
+      q6_d:
+        feedback: 'Du svarade fel.  Pannkakan var en ö som förenades med fastlandet genom markutfyllnad.'
+    '#options':
+      q6_a: 'En ö som låg där Havshagen nu ligger och som anslöts till fastlandet genom markutfyllnad.'
+      q6_b: 'Elantos bageributik.'
+      q6_c: 'En sjömanskrog som låg i Sörnäs hamn.'
+      q6_d: 'En sommarkoloni för Elantos anställdas barn.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktg expert på Sörnäs historia! Hur är det då med Helsingfors industriella historia? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/huvudstadstatus-och-europeisering/helsingfors-som-industristad">Helsingfors som industristad</a>.'
+    '#feedback_message_fail': "Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade\">Helsingfors som industristad</a>\r\noch gör testet på nytt."
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Sörnäs

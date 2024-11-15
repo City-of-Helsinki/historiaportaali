@@ -1,0 +1,152 @@
+elements: |
+  q1:
+    '#title': '1. Vilket är Östra centrums invånarantal?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Det är cirka 5000.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Det är cirka 5000.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Det är cirka 5000.'
+    '#options':
+      q1_a: 'cirka 5000'
+      q1_b: 'cirka 10 000'
+      q1_c: 'cirka 15 000'
+      q1_d: 'cirka 20 000'
+  q2:
+    '#title': '2. Till vilken stadsdel hör Östra centrum?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom det är en del av Botby.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom det är en del av Botby.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom det är en del av Botby.'
+    '#options':
+      q2_a: Botby
+      q2_b: Nordsjö
+      q2_c: Hertonäs
+      q2_d: Malm
+  q3:
+    '#title': '3. När började Östra centrum utvecklas till ett lokalcentrum?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Svaret var fel, eftersom det skedde på 1970-talet.'
+      q3_c:
+        feedback: 'Svaret var fel, eftersom det skedde på 1970-talet.'
+      q3_d:
+        feedback: 'Svaret var fel, det skedde på 1970-talet.'
+    '#options':
+      q3_a: 'på 1970-talet'
+      q3_b: 'på 1960-talet'
+      q3_c: 'på 1980-talet'
+      q3_d: 'på 1990-talet'
+  q4:
+    '#title': '4. Hur beskrev tidningen Uusi Suomi det blivande Östra centrums landskap år 1977?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar!'
+      q4_b:
+        feedback: 'Svaret var fel. Området karakteriserades som ett dystert och flackt åkerlandskap.'
+      q4_c:
+        feedback: 'Svaret var fel. Området karakteriserades som ett dystert och flackt åkerlandskap.'
+      q4_d:
+        feedback: 'Svaret var fel. Området karakteriserades som ett dystert och flackt åkerlandskap.'
+    '#options':
+      q4_a: 'ett dystert och flackt åkerlandskap'
+      q4_b: 'ett vackert skogsområde'
+      q4_c: 'en ståtlig bergstrakt'
+      q4_d: 'en grönskande äng'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilket är det största köpcentret i Östra centrum?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Svaret var fel. Det största köpcenret är Itis.'
+      q5_c:
+        feedback: 'Svaret var fel. Det största köpcenret är Itis.'
+      q5_d:
+        feedback: 'Svaret var fel. Det största köpcenret är Itis.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Till vilken herrgårds ägor hörde nuvarande Östra centrum tidigare?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Du svarade fel. Östra centrums marker hörde till Botby gård.'
+      q6_c:
+        feedback: 'Du svarade fel. Östra centrums marker hörde till Botby gård.'
+      q6_d:
+        feedback: 'Du svarade fel. Östra centrums marker hörde till Botby gård.'
+    '#options':
+      q6_a: 'Botby gård'
+      q6_b: 'Viks gård'
+      q6_c: 'Hertonäs gård'
+      q6_d: 'Domarby gård'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. När anslöts Botby gårds marker till Helsingfors?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svar!'
+      q7_b:
+        feedback: 'Fel svar. Det skedde 1946.'
+      q7_c:
+        feedback: 'Fel svar. Det skedde 1946.'
+      q7_d:
+        feedback: 'Fel svar. Det skedde 1946.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilket var syftet med Helsingfors Generalplan år 1970?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Syftet var att koncetrera byggandet längs spårtrafiken.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Syftet var att koncetrera byggandet längs spårtrafiken.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Syftet var att koncetrera byggandet längs spårtrafiken.'
+    '#options':
+      q8_a: 'att koncetrera byggandet längs spårtrafiken'
+      q8_b: 'att expandera stadskärnan'
+      q8_c: 'att öka spårvagnsrutter'
+      q8_d: 'att bygga fler bilvägar'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Till vilket antal förväntades Helsingfors befolkning växa?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Rätt svarat!'
+      q9_b:
+        feedback: 'Fel svar. Helsingfors förväntades uppnå invånarantalet 600 000.'
+      q9_c:
+        feedback: 'Fel svar. Helsingfors förväntades uppnå invånarantalet 600 000.'
+      q9_d:
+        feedback: 'Fel svar. Helsingfors förväntades uppnå invånarantalet 600 000.'
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#title': '10. Vad fanns förr på stället av köpcentret Itis?'
+    '#quiz__options':
+      q10_a:
+        feedback: 'Du svarade rätt!'
+      q10_b:
+        feedback: 'Du svarade fel, eftersom där fanns ett kålland.'
+      q10_c:
+        feedback: 'Du svarade fel, eftersom där fanns ett kålland.'
+      q10_d:
+        feedback: 'Du svarade fel, eftersom där fanns ett kålland.'
+    '#options':
+      q10_a: 'ett kålland'
+      q10_b: industribyggnader
+      q10_c: 'en koloniträdgård'
+      q10_d: 'tillfälliga inkvarteringsbaracker för bostadslösa'
+  quiz_result:
+    '#feedback_message_pass': 'Du har bra koll på Östra centrum! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': "Du har mycket spännande att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/ostra/ostra-centrum\">Östra centrum</a>\r\noch gör testet på nytt."
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: 'Östra centrum'

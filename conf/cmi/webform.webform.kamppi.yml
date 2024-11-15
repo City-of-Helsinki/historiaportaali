@@ -1,114 +1,164 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: f8377e52-e689-49c8-97d0-5e385d60ef4b
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: kamppi
+title: Kamppi
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': '1. Mitä näistä Lasipalatsin ja Kampin keskuksen kohdalla ei ole ennen ollut?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Lasipalatsin ja Kampin keskuksen kohdalla ei ole ollut hautausmaata.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Lasipalatsin ja Kampin keskuksen kohdalla ei ole ollut hautausmaata.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Lasipalatsin ja Kampin keskuksen kohdalla ei ole ollut hautausmaata.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: hautausmaa
+      q1_b: linja-autoasema
+      q1_c: sotilaskasarmi
+      q1_d: 'käytettyjen vaatteiden tori'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Mitä nykyisen Baanan tilalla oli ennen?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Baanan paikalla oli satamarata.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Baanan paikalla oli satamarata.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Baanan paikalla oli satamarata.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'junarata, joka kulki kaupungin satamien välillä'
+      q2_b: 'kävely- ja pyöräilyreitti'
+      q2_c: köydenpunontarata
+      q2_d: 'moottoripyörien kilpailurata'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Mitä Tennispalatsin ympärillä oli 1930-luvulla?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsin ympäristössä oli matalia puutaloja ja tehdasrakennuksia.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsin ympäristössä oli matalia puutaloja ja tehdasrakennuksia.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsin ympäristössä oli matalia puutaloja ja tehdasrakennuksia.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: 'matalia puutaloja ja tehdasrakennuksia'
+      q3_b: 'tyhjiä tontteja'
+      q3_c: 'metsää ja kallioita'
+      q3_d: kerrostaloja
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Mitä tapahtumaa varten Tennispalatsi alun perin rakennettiin?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsi rakennettiin vuodeksi 1940 suunniteltuja olympialaisia varten.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsi rakennettiin vuodeksi 1940 suunniteltuja olympialaisia varten.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Tennispalatsi rakennettiin vuodeksi 1940 suunniteltuja olympialaisia varten.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: 'vuoden 1940 olympialaisia'
+      q4_b: 'vuoden 1952 olympialaisia'
+      q4_c: 'vuoden 1952 suurmessuja'
+      q4_d: 'ei mitään erityistä'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#type': quiz_element_radios
+    '#title': '5. Mitä tyylisuuntaa Lasipalatsin arkkitehtuuri edustaa?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Lasipalatsi edustaa funktionalismia.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Lasipalatsi edustaa funktionalismia.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Lasipalatsi edustaa funktionalismia.'
+    '#options':
+      q5_a: funktionalismi
+      q5_b: kansallisromantiikka
+      q5_c: klassismi
+      q5_d: modernismi
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#type': quiz_element_radios
+    '#title': '6. Missä Kampin kaasukello sijaitsi?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaasukello sijaitsi Runeberginkadun ja Eteläisen Rautatiekadun kulmassa.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaasukello sijaitsi Runeberginkadun ja Eteläisen Rautatiekadun kulmassa.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaasukello sijaitsi Runeberginkadun ja Eteläisen Rautatiekadun kulmassa.'
+    '#options':
+      q6_a: 'Runeberginkadun ja Eteläisen Rautatiekadun kulmassa'
+      q6_b: 'Kampin metroaseman kohdalla'
+      q6_c: 'Nykyisen Scandic-hotellin kohdalla'
+      q6_d: 'Lapinlahdenkadun ja Porkkalankadun kulmassa'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -129,12 +179,20 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q4_result
     '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': 5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': 6_milloin_moottorilaiva_finlandia_valmistui
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Tunnet hyvin Kampin historiaa! Lue myös <a href="https://historia.hel.fi/fi/ilmiot/kaupunkikulttuurin-monet-muodot/tavastia-klubi">Tavastia-klubi</a>-artikkeli.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/kamppi-helsingin-tuntematon-ydinkeskusta">Kamppi – Helsingin tuntematon ydinkeskusta</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

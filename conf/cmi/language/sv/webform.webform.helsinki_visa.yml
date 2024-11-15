@@ -53,6 +53,9 @@ elements: |
         feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
       q4_d:
         feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Men känner du till historia före historia? Läs även artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om Helsingfors historia. Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/1550-helsingfors-grundas">1550 – Helsingfors grundas</a> och gör om testen.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
 title: 'Helsingfors grundas'

@@ -1,114 +1,164 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: a353075d-90fa-4843-b7d8-29af3a3b8690
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: sornainen
+title: Sörnäinen
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': '1. Mistä nimi Sörnäinen on peräisin?'
     '#quiz__options':
       q1_a:
         is_correct: true
-        feedback: 'Vastasit oikein!'
+        feedback: 'Oikein vastattu!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Sörnäinen on mukaelma ruotsinkielisestä nimestä Södernäs.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Sörnäinen on mukaelma ruotsinkielisestä nimestä Södernäs.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen on mukaelma ruotsinkielisestä nimestä Södernäs.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: 'Ruotsinkielisestä nimestä Södernäs'
+      q1_b: 'Ruotsinkielisestä nimestä Sörgård'
+      q1_c: 'Suomalaisten kalastajien käyttämästä termistä'
+      q1_d: 'Sitä ei tiedetä.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Miten rautatie vaikutti Sörnäisiin?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Rautatie yhdisti Helsingin niemen satamat.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Rautatie yhdisti Helsingin niemen satamat.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Rautatie yhdisti Helsingin niemen satamat.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'Se huolehti tavaraliikenteestä Helsingin kantakaupungin satamien välillä.'
+      q2_b: 'Se toi alueelle koulutettua työväkeä.'
+      q2_c: 'Se yhdisti Sörnäisten asukkaat muihin kaupunkeihin.'
+      q2_d: 'Se mahdollisti viljelyalueiden laajentamisen.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': "3.\tMikä oli Sörnäisten sosiaalinen tilanne 1900-luvun alussa?"
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen oli levoton alue, jossa oli paljon työttömyyttä.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen oli levoton alue, jossa oli paljon työttömyyttä.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen oli levoton alue, jossa oli paljon työttömyyttä.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: 'Se oli levoton alue, jossa työttömyys oli yleistä.'
+      q3_b: 'Se oli rauhallinen ja vauras alue.'
+      q3_c: 'Se oli pääosin maatalousaluetta.'
+      q3_d: 'Siellä oli monia kouluja.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': "4.\tMilloin Sörnäisistä tuli asemakaavoitettu kaupunginosa?"
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen liitettiin Helsingin asemakaavaan vuonna 1893.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen liitettiin Helsingin asemakaavaan vuonna 1893.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Sörnäinen liitettiin Helsingin asemakaavaan vuonna 1893.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: '1893'
+      q4_b: '1875'
+      q4_c: '1959'
+      q4_d: '1812'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#type': quiz_element_radios
+    '#title': '5. Mitä tapahtui vuonna 1959 Sörnäisten osalta?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaupunginosan nimeksi vahvistettiin Sörnäinen, Sörnäs.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaupunginosan nimeksi vahvistettiin Sörnäinen, Sörnäs.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Kaupunginosan nimeksi vahvistettiin Sörnäinen, Sörnäs.'
+    '#options':
+      q5_a: 'Sen nimeksi vahvistettiin Sörnäinen, Sörnäs.'
+      q5_b: 'Se liitettiin osaksi Helsingin ydinkeskustaa.'
+      q5_c: 'Siitä tuli merkittävä teollisuuskeskus.'
+      q5_d: 'Alueella avattiin ensimmäinen koulu.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Mihin nimi Pannukakku viittasi?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueella avattiin ensimmäinen koulu.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueella avattiin ensimmäinen koulu.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueella avattiin ensimmäinen koulu.'
+    '#options':
+      q6_a: 'Saareen, joka sijaitsi nykyisen Merihaan kohdalla ja liitettiin maantäytöllä mantereeseen.'
+      q6_b: 'Elannon leipätehtaan myymälään.'
+      q6_c: 'Merimieskapakkaan, joka sijaitsi Sörnäisten satamassa.'
+      q6_d: 'Elannon työntekijöiden lasten kesäsiirtolaan.'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -129,12 +179,20 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q4_result
     '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Sörnäisten historian tuntija! Entä Helsingin teollinen historia? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/1800-luku/helsinki-teollisuuskaupunkina">Helsinki teollisuuskaupunkina</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/keskinen/sornainen-entinen-satama-ja-teollisuusalue">Sörnäinen, entinen satama- ja teollisuusalue</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

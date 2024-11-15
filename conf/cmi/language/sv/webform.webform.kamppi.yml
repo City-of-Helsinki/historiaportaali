@@ -1,0 +1,103 @@
+title: Kampen
+elements: |
+  q1:
+    '#title': '1. Vilken av dessa har aldrig funnits på stället av Glaspalatset och Kampens centrum?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Där har aldrig funnits en begravningsplats.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Där har aldrig funnits en begravningsplats.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Där har aldrig funnits en begravningsplats.'
+    '#options':
+      q1_a: 'en begravningsplats'
+      q1_b: 'en busstation'
+      q1_c: 'en soldatkasern'
+      q1_d: 'ett torg för begagnade kläder'
+  q2:
+    '#title': '2. Vad fanns förr där nuvarande Banan löper?'
+    '#quiz__options':
+      q2_a:
+        feedback: Rätt!
+      q2_b:
+        feedback: 'Fel. Där gick en hamnbana.'
+      q2_c:
+        feedback: 'Fel. Där gick en hamnbana.'
+      q2_d:
+        feedback: 'Fel. Där gick en hamnbana.'
+    '#options':
+      q2_a: 'en järnväg som gick mellan stadens hamnar'
+      q2_b: 'en promenad- och cykelrutt'
+      q2_c: 'en repslagningsbana'
+      q2_d: 'en tävlingsbana för motorcyklar'
+  q3:
+    '#title': '3. Vad fanns runt Tennispalatset på 1930-talet?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Fel svarat, eftersom där fanns låga trähus och fabriksbyggnader.'
+      q3_c:
+        feedback: 'Fel svarat, eftersom där fanns låga trähus och fabriksbyggnader.'
+      q3_d:
+        feedback: 'Fel svarat, eftersom där fanns låga trähus och fabriksbyggnader.'
+    '#options':
+      q3_a: 'låga trähus och fabriksbyggnader'
+      q3_b: 'tomma tomter'
+      q3_c: 'skog och klippor'
+      q3_d: flervåningshus
+  q4:
+    '#title': '4. För vilket evenemang byggdes Tennispalatset ursprungligen?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Helt rätt!'
+      q4_b:
+        feedback: 'Inte riktigt. Tennispalatset byggdes för de olympiska spelen av år 1940, som aldrig blev av.'
+      q4_c:
+        feedback: 'Inte riktigt. Tennispalatset byggdes för de olympiska spelen av år 1940, som aldrig blev av.'
+      q4_d:
+        feedback: 'Inte riktigt. Tennispalatset byggdes för de olympiska spelen av år 1940, som aldrig blev av.'
+    '#options':
+      q4_a: 'olympiska spelen av 1940'
+      q4_b: 'olympiska spelen av 1952'
+      q4_c: 'stormässan av 1952'
+      q4_d: 'inget särskilt'
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#title': '5. Vilken stilriktning repserenterar Slaspalatsets arkitektur?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Glaspalatset representerar funktionalismen.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Glaspalatset representerar funktionalismen.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Glaspalatset representerar funktionalismen.'
+    '#options':
+      q5_a: funktionalismen
+      q5_b: nationalromantiken
+      q5_c: klassicismen
+      q5_d: modernismen
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#title': '6. Var stod Kampens gasklocka?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Rätt svar!'
+      q6_b:
+        feedback: 'Fel svar, eftersom den stod i hörnet av Runebergsgatan och Södra Järnvägsgatan.'
+      q6_c:
+        feedback: 'Fel svar, eftersom den stod i hörnet av Runebergsgatan och Södra Järnvägsgatan.'
+      q6_d:
+        feedback: 'Fel svar, eftersom den stod i hörnet av Runebergsgatan och Södra Järnvägsgatan.'
+    '#options':
+      q6_a: 'i hörnet av Runebergsgatan och Södra Järnvägsgatan'
+      q6_b: 'på stället av Kampens metrostation'
+      q6_c: 'på stället av nuvarande Scandichotellet'
+      q6_d: 'i hörnet av Lappviksgatan och Porkalagatan'
+  quiz_result:
+    '#feedback_message_pass': 'Du kan nog Kampens historia! Läs också om Tavastiaklubben som finns i Kampen: <a href="https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/tavastiaklubben">Tavastiaklubben</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kampen-helsingfors-gatfulla-hjarta">Kampen – Helsingfors gåtfulla hjärta</a> och gör om testet.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

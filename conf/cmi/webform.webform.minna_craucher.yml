@@ -1,114 +1,189 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: 832d6134-3414-4a12-b9d6-8e96db874823
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: minna_craucher
+title: 'Minna Craucher'
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': '1. Mikä oli Minna Craucherin oikea nimi?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Minna Craucherin oikea nimi oli Maria Vilhelmiina Lindell.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Minna Craucherin oikea nimi oli Maria Vilhelmiina Lindell.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Minna Craucherin oikea nimi oli Maria Vilhelmiina Lindell.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: 'Maria Vilhelmiina Lindell'
+      q1_b: 'Olga Matilda Aalto'
+      q1_c: 'Vilhelmiina Craucher'
+      q1_d: 'Anita Hertta Ridebor'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Minna Craucher syntyi...'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Minna Craucher syntyi Nokialla.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Minna Craucher syntyi Nokialla.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Minna Craucher syntyi Nokialla.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: Nokialla
+      q2_b: Hämeenkyrössä
+      q2_c: Helsingissä
+      q2_d: Tampereella
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Minna Craucher matkusti Saksaan...'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Craucher matkusti lapsenhoitajana.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Craucher matkusti lapsenhoitajana.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Craucher matkusti lapsenhoitajana.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: 'varakkaan perheen lapsenhoitajana.'
+      q3_b: opiskelemaan.
+      q3_c: 'tuodakseen sieltä Suomeen kosmetiikkaa.'
+      q3_d: 'pakoon virkavaltaa.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Missä Craucherin kuuluisa salonki ensin sijaitsi?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Salonki sijaitsi Freesenkadulla.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Salonki sijaitsi Freesenkadulla.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Salonki sijaitsi Freesenkadulla.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: Freesenkadulla
+      q4_b: Fredrikinkadulla
+      q4_c: Caloniuksenkadulla
+      q4_d: 'Pohjoisella Rautatiekadulla'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#type': quiz_element_radios
+    '#title': '5. Kuka murhasi Minna Craucherin?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Murhaaja oli Olavi Runolinna.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Murhaaja oli Olavi Runolinna.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Murhaaja oli Olavi Runolinna.'
+    '#options':
+      q5_a: 'Olavi Runolinna'
+      q5_b: 'Usko Oiva Ilmari Niinivaara'
+      q5_c: 'Arne Slöör'
+      q5_d: 'Vihtori Kosola'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Mikä oli Minna Craucherin viimeinen osoite?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Craucherin viimeinen osoite oli Mechelininkatu 23 A 20.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Craucherin viimeinen osoite oli Mechelininkatu 23 A 20.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Craucherin viimeinen osoite oli Mechelininkatu 23 A 20.'
+    '#options':
+      q6_a: 'Mechelininkatu 23 A 20'
+      q6_b: 'Caloniuksenkatu 3 A 11'
+      q6_c: 'Freesenkatu 4'
+      q6_d: 'Huopalahden huvilayhdyskunta'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7. Minkä merkkisen auton Minna onnistui hankkimaan pienellä käsirahalla?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Auto oli merkkiä Willys-Knight.'
+      q7_c:
+        is_correct: false
+        feedback: ' Vastauksesi oli väärin. Auto oli merkkiä Willys-Knight.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Auto oli merkkiä Willys-Knight.'
+    '#options':
+      q7_a: Willys-Knight
+      q7_b: 'Hudson Roadster'
+      q7_c: Hispano-Suiza
+      q7_d: Rolls-Royce
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -129,12 +204,24 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q4_result
     '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Minna Craucher -asiantuntija! Entä hänen asuinkaupunginosansa Töölö? Tutustu <a href="https://historia.hel.fi/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/helsingin-asukkaat/minna-craucher-totta-ja-tarua">Minna Craucher, totta ja tarua</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

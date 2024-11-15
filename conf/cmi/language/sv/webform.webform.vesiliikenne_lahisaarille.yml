@@ -1,0 +1,103 @@
+title: 'Sjötrafik till närliggande öar'
+elements: |
+  q1:
+    '#title': '1. Vilken var Helsingfors första ångfartygsrutt?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Den första rutten var Salutorget – Brunnsparkens badhus – Sveaborg.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Den första rutten var Salutorget – Brunnsparkens badhus – Sveaborg.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Den första rutten var Salutorget – Brunnsparkens badhus – Sveaborg.'
+    '#options':
+      q1_a: 'Salutorget – Brunnsparkens badhus – Sveaborg'
+      q1_b: 'Salutorget – Fårholmen – Kallvik'
+      q1_c: 'Salutorget – Degerö – Högholmen'
+      q1_d: 'Salutorget – Sveaborg – Brändö casino'
+  q2:
+    '#title': '2. Vad gjorde att sjötrafiken minskade i Helsingfors i början av 1900-talet? '
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Sjötrafiken minskade på grund av att spårvägsnätet expanderade och bussar blev vanligare.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Sjötrafiken minskade på grund av att spårvägsnätet expanderade och bussar blev vanligare.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Sjötrafiken minskade på grund av att spårvägsnätet expanderade och bussar blev vanligare.'
+    '#options':
+      q2_a: 'expansionen av spårvagnsnätet och busstrafiken'
+      q2_b: 'höga bränslekostnader'
+      q2_c: 'föråldrandet av materielen'
+      q2_d: 'en hårdare reglering'
+  q3:
+    '#title': '3. När inleddes ångslupstrafiken till Högholmen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Det hände år 1918.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Det hände år 1918.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Det hände år 1918.'
+  q4:
+    '#title': '4. Hur många resor gjordes till Högholmen år 1922?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. Resorna var 283 000.'
+      q4_c:
+        feedback: 'Ditt svar var fel. Resorna var 283 000.'
+      q4_d:
+        feedback: 'Ditt svar var fel. Resorna var 283 000.'
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#title': '5. Vilka problem mötte den lokala sjötrafiken på 1860-talet?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Problem orsakades av maskinhaverier och skeppares likgiltighet.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Problem orsakades av maskinhaverier och skeppares likgiltighet.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Problem orsakades av maskinhaverier och skeppares likgiltighet.'
+    '#options':
+      q5_a: 'maskinhaverier och skeppares likgiltighet '
+      q5_b: 'tillgången till bränsle'
+      q5_c: 'låga passagerarantal'
+      q5_d: 'anhopning i sjötrafiken'
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#title': '6. Vilket fartyg ersatte S/S Högholmen efter kriget?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Ångaren Högholmen ersattes av J. L. Runeberg.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Ångaren Högholmen ersattes av J. L. Runeberg.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Ångaren Högholmen ersattes av J. L. Runeberg.'
+  7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
+    '#title': '7. Hur många ångbåtar skaffades på 1890-talet?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Ditt svar var fel. Man skaffade cirka 30.'
+      q7_c:
+        feedback: 'Ditt svar var fel. Man skaffade cirka 30.'
+      q7_d:
+        feedback: 'Ditt svar var fel. Man skaffade cirka 30.'
+    '#options':
+      q7_a: 'cirka 30'
+      q7_b: 'cirka 50'
+      q7_c: 'cirka 20'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en veritabel expert på sjötrafiken till Helsingfors näröar! Hur är det då med hamnar och sjöfart? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/hamnar-och-sjofart">Hamnar och sjöfart</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sjotrafik-till-narliggande-oar">Sjötrafik till närliggande öar</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

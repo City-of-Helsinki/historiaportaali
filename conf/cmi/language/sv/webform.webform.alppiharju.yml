@@ -1,0 +1,135 @@
+title: Åshöjden
+elements: |
+  q1:
+    '#title': '1. Med vilket ordningsnummer blev Åshöjden en del av Helsingfors stadskärna?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Åshöjden är Helsingfors 12. stadsdel.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Åshöjden är Helsingfors 12. stadsdel.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Åshöjden är Helsingfors 12. stadsdel.'
+  q2:
+    '#title': '2. Vilken känd skådespelare bodde som barn på Borgågatan?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Svaret var fel. Det var Tauno Palo.'
+      q2_c:
+        feedback: 'Svaret var fel. Det var Tauno Palo.'
+      q2_d:
+        feedback: 'Svaret var fel. Det var Tauno Palo.'
+  q3:
+    '#title': '3. På vilket ställe hade man ursprungligen planerat parkgator i stil med Esplanaderna och ett torg?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Parkgatorna och torget skulle ha kommit på Braheplans ställe.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Parkgatorna och torget skulle ha kommit på Braheplans ställe.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Parkgatorna och torget skulle ha kommit på Braheplans ställe.'
+    '#options':
+      q3_a: Braheplan
+      q3_b: 'Alpens kyrka'
+      q3_c: Kulturhuset
+      q3_d: Vasahallen
+  q4:
+    '#title': '4. Vilket år blev Aleksis Kivis folkskola färdig?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svarat!'
+      q4_b:
+        feedback: 'Svaret var fel. Aleksis Kivis folkskola blev färdig 1934.'
+      q4_c:
+        feedback: 'Svaret var fel. Aleksis Kivis folkskola blev färdig 1934.'
+      q4_d:
+        feedback: 'Svaret var fel. Aleksis Kivis folkskola blev färdig 1934.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vem srev jenkan som gav värdefull draghjälp åt Josafats parkrörelse?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Du svarade fel. Josafats jenka skrevs av M. A. Numminen.'
+      q5_c:
+        feedback: 'Svaret var fel. Aleksis Kivis folkskola blev färdig 1934.'
+      q5_d:
+        feedback: 'Svaret var fel. Aleksis Kivis folkskola blev färdig 1934.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. På vilken adress låg tråhuset som hade valts till skyddsobjekt och som brann svårt på våren 1985?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Svaret var fel. Husets adress var Vattenborgsgatan 21.'
+      q6_c:
+        feedback: 'Svaret var fel. Husets adress var Vattenborgsgatan 21.'
+      q6_d:
+        feedback: 'Svaret var fel. Husets adress var Vattenborgsgatan 21.'
+    '#options':
+      q6_a: 'Vattenborgsgatan 21'
+      q6_b: 'Sturegatan 12'
+      q6_c: 'Borgågatan 15'
+      q6_d: 'Viborgsgatan 11'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilken uppskattad diakonissa bodde i församlingshemmet vid Alpens kyrka?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Svaret var rätt!'
+      q7_b:
+        feedback: 'Svaret var fel. Diakonissan hette Elli Mattila.'
+      q7_c:
+        feedback: 'Svaret var fel. Diakonissan hette Elli Mattila.'
+      q7_d:
+        feedback: 'Svaret var fel. Diakonissan hette Elli Mattila.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilket år öppnades Borgbackens nöjespark för publiken?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Ditt svar var rätt!'
+      q8_b:
+        feedback: 'Svaret var fel. Nöjesparken öppnades 1950.'
+      q8_c:
+        feedback: 'Svaret var fel. Nöjesparken öppnades 1950.'
+      q8_d:
+        feedback: 'Svaret var fel. Nöjesparken öppnades 1950.'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. På vilken biograf fick skådespelaren och regissören Åke Lindman sin första kontakt med filmvärlden?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Biografen hette Tenho.'
+      q9_c:
+        feedback: 'Svaret var fel. Biografen hette Tenho.'
+      q9_d:
+        feedback: 'Svaret var fel. Biografen hette Tenho.'
+    '#options':
+      q9_c: Vasahallen
+      q9_d: Vasahallen
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#title': '10. Vilken arkitekturstil representerar Aleksis Kivis folkskolas byggnad?'
+    '#quiz__options':
+      q10_a:
+        feedback: 'Du svarade rätt!'
+      q10_b:
+        feedback: 'Svaret var fel, eftersom byggnaden representerar funktionalism eller funkis.'
+      q10_c:
+        feedback: 'Svaret var fel, eftersom byggnaden representerar funktionalism eller funkis.'
+      q10_d:
+        feedback: 'Svaret var fel, eftersom byggnaden representerar funktionalism eller funkis.'
+    '#options':
+      q10_a: funktionalism
+      q10_b: klassicism
+      q10_c: nyrenässans
+      q10_d: jugend
+  quiz_result:
+    '#feedback_message_pass': 'Du har bra koll på Åshöjdens historia! Hur är det då med Sörnäs? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade">Sörnäs, före detta hamn- och industriområde</a>.'
+    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/ashojden">Åshöjden</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

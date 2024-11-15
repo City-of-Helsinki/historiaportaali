@@ -1,114 +1,189 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: 6a035422-c52e-4137-bde7-5154eb2d1dca
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: aleksanterinkatu
+title: Aleksanterinkatu
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': 'Kuka perusti Helsingin?'
+    '#title': '1. Mikä on Aleksanterinkadun toinen nimi 1800-luvun alun kaavakartassa?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun toinen nimi oli Kuninkaan eli Pitkä katu.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun toinen nimi oli Kuninkaan eli Pitkä katu.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun toinen nimi oli Kuninkaan eli Pitkä katu.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: 'Kuninkaan eli Pitkä katu'
+      q1_b: Kuningaskatu
+      q1_c: 'Kuninkaan tie'
+      q1_d: Pitkäkatu
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': 'Mihin Helsinki alun perin perustettiin?'
+    '#title': '2. Kuka rakennutti Helsingin ensimmäisen kivitalon Aleksanterinkadulle?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Kauppias Torsten Burgman rakensi Helsingin ensimmäisen kivitalon 1690-luvulla.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Kauppias Torsten Burgman rakensi Helsingin ensimmäisen kivitalon 1690-luvulla.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Kauppias Torsten Burgman rakensi Helsingin ensimmäisen kivitalon 1690-luvulla.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'Kauppias Torsten Burgman'
+      q2_b: 'Kauppias Juhana Michelsson'
+      q2_c: 'Kauppias Johan Sederholm'
+      q2_d: 'Keisari Aleksanteri I'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': 'Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Minä vuonna Helsinki siirrettiin nykyiselle paikalleen Vironniemelle?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1640.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1640.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1640.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: '1640'
+      q3_b: '1600'
+      q3_c: '1654'
+      q3_d: '1690'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': 'Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Kuinka monta rakennusta Helsingissä oli ennen vuoden 1654 tulipaloa?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Rakennuksia oli 60.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Rakennuksia oli 60.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Rakennuksia oli 60.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: '60'
+      q4_b: '30'
+      q4_c: '45'
+      q4_d: '75'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#type': quiz_element_radios
+    '#title': '5. Minä vuonna suuri Pohjan sota tuhosi Helsingin?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1713.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1713.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1713.'
+    '#options':
+      q5_a: '1713'
+      q5_b: '1709'
+      q5_c: '1721'
+      q5_d: '1741'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Mistä ajasta lähtien Aleksanterinkatu on ollut osa Helsinkiä?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun alkupää oli olemassa jo 1600-luvun puolivälissä.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun alkupää oli olemassa jo 1600-luvun puolivälissä.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aleksanterinkadun alkupää oli olemassa jo 1600-luvun puolivälissä.'
+    '#options':
+      q6_a: '1600-luvun puolivälistä'
+      q6_b: '1700-luvun alusta'
+      q6_c: '1800-luvun alusta'
+      q6_d: '1900-luvun alusta'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7.  Mikä näistä ei ole ollut Aleksanterinkadun poikkikadun Ritarikadun nimenä?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Suurkatu ei ole ollut Ritarikadun nimenä vaan Aleksanterinkadun.'
+      q7_c:
+        is_correct: false
+        feedback: ' Vastauksesi oli väärin. Suurkatu ei ole ollut Ritarikadun nimenä vaan Aleksanterinkadun.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Suurkatu ei ole ollut Ritarikadun nimenä vaan Aleksanterinkadun.'
+    '#options':
+      q7_a: 'Stora gatan (Suurkatu)'
+      q7_b: 'Stota Berggatan (Iso Vuorikatu)'
+      q7_c: 'Residenshusgatan (Virkatalonkatu)'
+      q7_d: 'Berggatan (Vuorikatu)'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -129,12 +204,24 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q4_result
     '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Aleksanterinkadun asiantuntija! Entä kaupunginosa, johon katu kuuluu? Tutustu <a href="https://historia.hel.fi/fi/alueet/etelainen/kluuvi-hetteikosta-liikekeskustaksi">Kluuvi – hetteiköstä liikekeskustaksi</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/aleksanterinkadun-historiaa">Aleksanterinkadun historiaa</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

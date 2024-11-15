@@ -1,0 +1,157 @@
+elements: |
+  q1:
+    '#title': '1. Vilket var Senatstorgets ursprungliga namn?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. På 1600- och 1700-talen hette det Stortorget.'
+      q1_c:
+        feedback: 'Ditt svar var fel. På 1600- och 1700-talen hette det Stortorget.'
+      q1_d:
+        feedback: 'Ditt svar var fel. På 1600- och 1700-talen hette det Stortorget.'
+    '#options':
+      q1_a: Stortorget
+      q1_b: Senatstorget
+      q1_c: Nikolaitorget
+      q1_d: Alexanderstorget
+  q2:
+    '#title': '2. Vilken stilriktning representerar byggnaderna som omger torget?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom byggnaderna representerar emnpire eller nyklassicism.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom byggnaderna representerar emnpire eller nyklassicism.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom byggnaderna representerar emnpire eller nyklassicism.'
+    '#options':
+      q2_c: funktionalism
+      q2_d: nyrenässans
+  q3:
+    '#title': '3. Efter vilket djur har stadshuskvarteret fått sitt namn?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Svaret var fel, eftersom stadshuset finns i Lejonets kvarter.'
+      q3_c:
+        feedback: 'Svaret var fel, eftersom stadshuset finns i Lejonets kvarter.'
+      q3_d:
+        feedback: 'Svaret var fel, eftersom stadshuset finns i Lejonets kvarter.'
+    '#options':
+      q3_a: lejonet
+      q3_b: tigern
+      q3_c: servalen
+      q3_d: elefanten
+  q4:
+    '#title': '4. Vilken av dessa byggnader blev först färdig?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar!'
+      q4_b:
+        feedback: 'Svaret var fel. Statsrådsborgens huvudbyggnad mot Alexandersgatan blev färdig år 1822. Universitetets huvudbyggnad blev färdig år 1828, Nationalbiblioteket år 1847 och Domkyrkan år 1852.'
+      q4_c:
+        feedback: 'Svaret var fel. Statsrådsborgens huvudbyggnad mot Alexandersgatan blev färdig år 1822. Universitetets huvudbyggnad blev färdig år 1828, Nationalbiblioteket år 1847 och Domkyrkan år 1852.'
+      q4_d:
+        feedback: 'Svaret var fel. Statsrådsborgens huvudbyggnad mot Alexandersgatan blev färdig år 1822. Universitetets huvudbyggnad blev färdig år 1828, Nationalbiblioteket år 1847 och Domkyrkan år 1852.'
+    '#options':
+      q4_a: Statsrådsborgen
+      q4_b: Domkyrkan
+      q4_c: Nationalbiblioteket
+      q4_d: 'universitetets huvudbyggnad'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilken av dessa har inte fungerat i Senatstorgets södra kant?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Svaret var fel. Stockmanns varuhus, Finlands första varuhus, öppnades i Kiseleffska huset på Alexandersgatan 28 år 1880.'
+      q5_c:
+        feedback: 'Svaret var fel. Polisinrättningen flyttade till Burtzka huset på Alexandersgatan 22 år 1892.'
+      q5_d:
+        feedback: 'Svaret var fel. Köpman Bernhard Manecke grundade en sockerfabrik vid Alexandersgatan 28 år 1806.'
+    '#options':
+      q5_a: folkskola
+      q5_c: polisinrättning
+      q5_d: sockerfabrik
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vilket år invigdes Domkyrkan?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Du svarade fel. Domkyrkan invigdes år 1852.'
+      q6_c:
+        feedback: 'Du svarade fel. Domkyrkan invigdes år 1852.'
+      q6_d:
+        feedback: 'Du svarade fel. Domkyrkan invigdes år 1852.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Var låg Ulrika Eleonoras kyrka åren 1727–1827?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svar!'
+      q7_b:
+        feedback: 'Fel svar. Ulrika Eleonoras kyrka stod framför Domkyrkan. Kyrkans konturer har markerats på Senatstorgets stenläggning.'
+      q7_c:
+        feedback: 'Fel svar. Ulrika Eleonoras kyrka stod framför Domkyrkan. Kyrkans konturer har markerats på Senatstorgets stenläggning.'
+      q7_d:
+        feedback: 'Fel svar. Ulrika Eleonoras kyrka stod framför Domkyrkan. Kyrkans konturer har markerats på Senatstorgets stenläggning.'
+    '#options':
+      q7_a: 'Framför Domkyrkan'
+      q7_b: 'Bakom Domkyrkan'
+      q7_c: 'På Domkyrkans plats'
+      q7_d: 'Framför Statsrådsborgen'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Bockska huset har uppkallats efter köpmannen och rådmannen Gustav Johan Bock. I vilket bruk har huset inte varit?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Bockska huset har fungerat som generalguvernörens bostad, rådhus och magistrat men inte som krigssjukhus.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Bockska huset har fungerat som generalguvernörens bostad, rådhus och magistrat men inte som krigssjukhus.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Bockska huset har fungerat som generalguvernörens bostad, rådhus och magistrat men inte som krigssjukhus.'
+    '#options':
+      q8_a: 'som krigssjukhus'
+      q8_b: 'som generalguvernörens bostad'
+      q8_c: 'som magistrat'
+      q8_d: 'som rådstuvurätt'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vilket var Helsingfors universitets ursprungliga namn?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Rätt svarat!'
+      q9_b:
+        feedback: 'Fel svar. Helsingfors universitet hette ursprungligen Kungliga Akademien i Åbo. Universitetet flyttades från Åbo till Helsingfors år 1827 efter Åbo brand.'
+      q9_c:
+        feedback: 'Fel svar. Helsingfors universitet hette ursprungligen Kungliga Akademien i Åbo. Universitetet flyttades från Åbo till Helsingfors år 1827 efter Åbo brand.'
+      q9_d:
+        feedback: 'Fel svar. Helsingfors universitet hette ursprungligen Kungliga Akademien i Åbo. Universitetet flyttades från Åbo till Helsingfors år 1827 efter Åbo brand.'
+    '#options':
+      q9_b: 'Kejserliga Alexanders-universitetet'
+      q9_d: 'Åbo Akademi'
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#title': '10. Vad hände i Senatens trappa 16.6.1904?'
+    '#quiz__options':
+      q10_a:
+        feedback: 'Du svarade rätt!'
+      q10_b:
+        feedback: 'Du svarade fel, eftersom Eugen Schauman först skör generalguvernör Bobrikov och sedan sig själv.'
+      q10_c:
+        feedback: 'Du svarade fel, eftersom Eugen Schauman först skör generalguvernör Bobrikov och sedan sig själv.'
+      q10_d:
+        feedback: 'Du svarade fel, eftersom Eugen Schauman först skör generalguvernör Bobrikov och sedan sig själv.'
+    '#options':
+      q10_a: 'Eugen Schauman skör först generalguvernör Bobrikov och sedan sig själv.'
+      q10_b: 'Generalguvernör Nikolai Bobrikov sköt Eugen Schauman.'
+      q10_c: 'Eugen Schauman sköt generalguvernör Nikolai Bobrikov.'
+      q10_d: 'Eugen Schauman sköt sig själv. '
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktg expert på Helsingfors historia! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': "Du har mycket spännande att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/sodra/senatstorget\">Senatstorget</a>\r\noch gör testet på nytt."
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Senatstorget

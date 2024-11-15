@@ -1,0 +1,131 @@
+title: Gloet
+elements: |
+  q1:
+    '#title': '1. Vilket ordningstal har stadsdelen Gloet? '
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Gloet är Helsingfors andra stadsdel.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Gloet är Helsingfors andra stadsdel.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Gloet är Helsingfors andra stadsdel.'
+  q2:
+    '#title': '2. Varifrån har Gloet fått sitt namn?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Alldeles riktigt!'
+      q2_b:
+        feedback: 'Inte riktgt. Stadsdelen har nänmligen fått sitt namn från en vik som i tiden nådde ända till Esplanaden.'
+      q2_c:
+        feedback: 'Inte riktgt. Stadsdelen har nänmligen fått sitt namn från en vik som i tiden nådde ända till Esplanaden.'
+      q2_d:
+        feedback: 'Inte riktgt. Stadsdelen har nänmligen fått sitt namn från en vik som i tiden nådde ända till Esplanaden.'
+    '#options':
+      q2_a: 'från Gloviken'
+      q2_b: 'från Gloparken'
+      q2_c: 'från Glosjön'
+      q2_d: 'från Glotjärnen'
+  q3:
+    '#title': '3. Vilket år invigdes nuvarande järnvägsstationen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Den invigdes år 1919.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Den invigdes år 1919.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Den invigdes år 1919.'
+  q4:
+    '#title': '4. Hur många invånare hade Gloet år 2016?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. De var under 600.'
+      q4_c:
+        feedback: 'Ditt svar var fel. De var under 600.'
+      q4_d:
+        feedback: 'Ditt svar var fel. De var under 600.'
+    '#options':
+      q4_a: 'under 600'
+      q4_b: 'under 1000'
+      q4_c: 'under 1500'
+      q4_d: 'under 2000'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. När ändrade man svansjön i Kajsaniemiparken till en kvadratformig bassäng?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Det skedde år 1927.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Det skedde år 1927.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Det skedde år 1927.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vem ritade Botaniska trädgårdens växthus i gjutjärn?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Rätt svarat!'
+      q6_b:
+        feedback: 'Svaret var fel. Växthuset ritades av Gustaf Nyström.'
+      q6_c:
+        feedback: 'Svaret var fel. Växthuset ritades av Gustaf Nyström.'
+      q6_d:
+        feedback: 'Svaret var fel. Växthuset ritades av Gustaf Nyström.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vad fanns på platsen av det nuvarande Posthuset i början av 1900-talet?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Ditt svar var feln. Det fanns en gasfabrik på stället åren 1869–1910. Byggnaden revs år 1935.'
+      q7_c:
+        feedback: 'Ditt svar var feln. Det fanns en gasfabrik på stället åren 1869–1910. Byggnaden revs år 1935.'
+      q7_d:
+        feedback: 'Ditt svar var feln. Det fanns en gasfabrik på stället åren 1869–1910. Byggnaden revs år 1935.'
+    '#options':
+      q7_a: 'en gasfabrik'
+      q7_b: 'en godsstation'
+      q7_c: 'en hyreskuskstation'
+      q7_d: 'ett torg för begagnade kläder'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilken gata har byggts genom att klyva det jättelika kvarteret Gasellen?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Alldeles rätt!'
+      q8_b:
+        feedback: 'Inte riktigt. Det var Centralgatan som byggdes genom att bredda Hagasundsgatan och fortsätta den genom Gasellens kvarter från Alexandersgatan till Norra esplanaden.'
+      q8_c:
+        feedback: 'Inte riktigt. Det var Centralgatan som byggdes genom att bredda Hagasundsgatan och fortsätta den genom Gasellens kvarter från Alexandersgatan till Norra esplanaden.'
+      q8_d:
+        feedback: 'Inte riktigt. Det var Centralgatan som byggdes genom att bredda Hagasundsgatan och fortsätta den genom Gasellens kvarter från Alexandersgatan till Norra esplanaden.'
+    '#options':
+      q8_a: Centralgatan
+      q8_b: Kajsaniemigatan
+      q8_c: Postgatan
+      q8_d: Brunnsgatan
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vem var Cajsa Wahllund enligt vilken Kajsaniemi fått sitt namn?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Cajsa Wahllund var restauratör och gästgivare.'
+      q9_c:
+        feedback: 'Svaret var fel. Cajsa Wahllund var restauratör och gästgivare.'
+      q9_d:
+        feedback: 'Svaret var fel. Cajsa Wahllund var restauratör och gästgivare.'
+    '#options':
+      q9_a: 'restauratör och gästgivare'
+      q9_b: 'skådespelare och sångare'
+      q9_c: barnboksförfattare
+      q9_d: 'en känd societetsskönhet'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Hur är det då med kafékulturen? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/kafeet-en-oas-i-staden">https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/kafeet-en-oas-i-staden</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

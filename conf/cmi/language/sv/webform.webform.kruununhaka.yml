@@ -1,0 +1,146 @@
+title: Kronohagen
+elements: |
+  q1:
+    '#title': '1. Vilket av dessa påståenden gäller Kronohagen?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Kronohagen har alltid präglats av social mångfald.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Kronohagen har alltid präglats av social mångfald.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Kronohagen har alltid präglats av social mångfald.'
+    '#options':
+      q1_a: 'Den har alltid bebotts av olika folkskikt.'
+      q1_b: 'Den har alltid varit en stadsdel för högre samhällsklasser.'
+      q1_c: 'På 1800-talet var den en arbetarstadsdel.'
+      q1_d: 'Där fanns just inga bostadshus i början av 1800-talet.'
+  q2:
+    '#title': '2. Vilken av dessa har inte funnits i Kronohagen?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom det inte har funnits någon kakelfabrik i Kronohagen.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom det inte har funnits någon kakelfabrik i Kronohagen.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom det inte har funnits någon kakelfabrik i Kronohagen.'
+    '#options':
+      q2_a: 'en kakelfabrik'
+      q2_b: 'en tobaksfabrik'
+      q2_c: 'en silverfabrik'
+      q2_d: 'en klädfabrik'
+  q3:
+    '#title': '3. Vilken av dessa har inte fungerat i Kronohagen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Där har inte funnits någon tapetfabrik.'
+      q3_c:
+        feedback: 'Svaret var fel. Där har inte funnits någon tapetfabrik.'
+      q3_d:
+        feedback: 'Svaret var fel. Där har inte funnits någon tapetfabrik.'
+    '#options':
+      q3_a: 'en tapetfabrik'
+      q3_b: 'en glassfabrik'
+      q3_c: 'en spritfabrik'
+      q3_d: 'en stickningsfabrik'
+  q4:
+    '#title': '4. Vad fanns på innergården av Elisabetsgatan 14 under åren 1944–1963?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Där fanns en filmstudio av Suomen Filmiteollisuus Oy.'
+      q4_c:
+        feedback: 'Svaret var fel. Där fanns en filmstudio av Suomen Filmiteollisuus Oy.'
+      q4_d:
+        feedback: 'Svaret var fel. Där fanns en filmstudio av Suomen Filmiteollisuus Oy.'
+    '#options':
+      q4_a: 'Suomen Filmiteollisuus Oy:s studio'
+      q4_b: 'glassfabriken Helsingin jäätelötehdas'
+      q4_c: 'barnskyddets ungdomshem '
+      q4_d: 'Lucina Hagmans privata skola Uusi yhteiskoulu'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vad fanns vid Vedkajen i början av 1970-talet?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, där fanns nämligen olovliga husbåtar.'
+      q5_c:
+        feedback: 'Inte riktigt, där fanns nämligen olovliga husbåtar.'
+      q5_d:
+        feedback: 'Inte riktigt, där fanns nämligen olovliga husbåtar.'
+    '#options':
+      q5_a: 'olovliga husbåtar'
+      q5_b: 'fartyg för vedtransport'
+      q5_c: 'ett hippieläger'
+      q5_d: 'en tivoli'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Var fanns Snuskvarnsbacken på 1700-talet?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Den fanns på nuvarande Riksarkivets tomt.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Den fanns på nuvarande Riksarkivets tomt.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Den fanns på nuvarande Riksarkivets tomt.'
+    '#options':
+      q6_a: 'på Riksarkivets tomt'
+      q6_b: 'på Domkyrkans ställe'
+      q6_c: 'på Broberget'
+      q6_d: 'på Sjötullstorget'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilket av dessa stämmer inte på Elisabetsskvären?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, eftersom den inte har grundats på 1700-talet.'
+      q7_c:
+        feedback: 'Fel svarat, eftersom den inte har grundats på 1700-talet.'
+      q7_d:
+        feedback: 'Fel svarat, eftersom den inte har grundats på 1700-talet'
+    '#options':
+      q7_a: 'Den har grundats på 1700-talet.'
+      q7_b: 'Den har grundats på schaktmassor i början av 1800-talet.'
+      q7_c: 'Den hette först Elisabetstorget.'
+      q7_d: 'Den omgavs av trähus i empirestil.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilket år blev Hagnäs bro färdig?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Bron blev färdig 1961.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Bron blev färdig 1961.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Bron blev färdig 1961.'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vem var Henrik Borgström?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Han var en affärsman och tobaksfabrikör.'
+      q9_c:
+        feedback: 'Svaret var fel. Han var en affärsman och tobaksfabrikör.'
+      q9_d:
+        feedback: 'Svaret var fel. Han var en affärsman och tobaksfabrikör.'
+    '#options':
+      q9_a: 'en affärsman och tobaksfabrikör'
+      q9_b: 'en rektor och författare'
+      q9_c: 'en violinist och kompositör'
+      q9_d: 'en mecenat och konstsamlare'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Kronohagens historia! Hur är det då med Skatudden? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

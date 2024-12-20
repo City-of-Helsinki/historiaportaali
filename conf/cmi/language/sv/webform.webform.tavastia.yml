@@ -1,0 +1,124 @@
+elements: |
+  q1:
+    '#title': '1. När började Tavastlänningarnas nation anordna danser i sitt hus?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. De började anordna danser för att kunna betala sina skulder som uppstått av husbygget.'
+      q1_c:
+        feedback: 'Ditt svar var fel. De började anordna danser för att kunna betala sina skulder som uppstått av husbygget.'
+      q1_d:
+        feedback: 'Ditt svar var fel. De började anordna danser för att kunna betala sina skulder som uppstått av husbygget.'
+    '#options':
+      q1_a: 'för att betala de skulder som orsakats av byggandet'
+      q1_b: 'för att få pengar för sin verksamhet'
+      q1_c: 'för att understöda fattiga studerande'
+      q1_d: 'för att främja studenternas fysiska kondition'
+  q2:
+    '#title': '2. Vad hette restaurangen som nationens restaurangaktiebolag fick efter kriget?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom restaurangen hette (och heter) Ilves.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom restaurangen hette (och heter) Ilves.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom restaurangen hette (och heter) Ilves.'
+  q3:
+    '#title': '3. Vilket smeknamn fick nationshuset?'
+    '#quiz__options':
+      q3_b:
+        feedback: 'Svaret var fel. Smeknamnet var Hämis.'
+      q3_c:
+        feedback: 'Svaret var fel. Smeknamnet var Hämis.'
+      q3_d:
+        feedback: 'Svaret var fel. Smeknamnet var Hämis.'
+  q4:
+    '#title': '4. Vad har man inte ordnat i nationshuset?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Man ordnade inte pokerkvällar.'
+      q4_c:
+        feedback: 'Svaret var fel. Man ordnade inte pokerkvällar.'
+      q4_d:
+        feedback: 'Svaret var fel.  Man ordnade inte pokerkvällar.'
+    '#options':
+      q4_a: pokerkvällar
+      q4_b: tekvällar
+      q4_c: teaterkvällar
+      q4_d: 'allmänna danser'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilket datum öppnades Tavastiaklubben för första gången?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, det var nämligen 2.10.1970.'
+      q5_c:
+        feedback: 'Inte riktigt, det är nämligen 2.10.1970.'
+      q5_d:
+        feedback: 'Inte riktigt, det är nämligen 2.10.1970.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vem var den långvarigaste ledaren av Tavastia?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Det var Juhani Merimaa.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Det var Juhani Merimaa.'
+      q6_d:
+        feedback: 'Det var Juhani Merimaa.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vad fanns i Semifinals utrymmen innan de inkorporerades med Tavastiaklubben?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det var nämligen en motionsskola.'
+      q7_c:
+        feedback: 'Fel svarat, det var nämligen en motionsskola.'
+      q7_d:
+        feedback: 'Fel svarat, det var nämligen en motionsskola.'
+    '#options':
+      q7_a: 'en motionsskola'
+      q7_b: 'ett disko'
+      q7_c: 'en bowlinghall'
+      q7_d: 'nationens läsesal'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vad fanns i Semifinals utrymmen före Semifinal?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Där fanns Villen Disco.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Där fanns Villen Disco.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Där fanns Villen Disco.'
+    '#options':
+      q8_b: 'en motionsskola'
+      q8_c: 'en bowlinghall'
+      q8_d: 'en bowlinghall'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vad var Ladi för något?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Ladi var smeknamnet för lördagsdiskot som ordnades åren 2009–2024.'
+      q9_c:
+        feedback: 'Svaret var fel. Ladi var smeknamnet för lördagsdiskot som ordnades åren 2009–2024.'
+      q9_d:
+        feedback: 'Ladi var smeknamnet för lördagsdiskot som ordnades åren 2009–2024.'
+    '#options':
+      q9_a: 'Tavastias disko under åren 2009–2024 '
+      q9_b: 'Tavastias disko på 1970- och 1980-talen'
+      q9_c: 'Tavastias långvariga dj'
+      q9_d: 'klubben på Tavastias övervåning'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

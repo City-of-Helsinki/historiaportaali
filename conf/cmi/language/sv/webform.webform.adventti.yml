@@ -1,0 +1,141 @@
+elements: |
+  q1:
+    '#title': '1. Vilket är lillajulens ursprung?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. I vissa familjer började man fira kvällen före den första adventssöndagen som lillajul i slutet av 1800-talet.'
+      q1_c:
+        feedback: 'Ditt svar var fel. I vissa familjer började man fira kvällen före den första adventssöndagen som lillajul i slutet av 1800-talet.'
+      q1_d:
+        feedback: 'I vissa familjer började man fira kvällen före den första adventssöndagen som lillajul i slutet av 1800-talet.'
+    '#options':
+      q1_a: 'I borgerliga familjer började man fira kvällen före den första adventssöndagen som lillajul i slutet av 1800-talet.'
+      q1_b: 'Man började fira slutet på den katolska fastan på medeltiden.'
+      q1_c: 'Man började hålla granfester i slutet av skolornas hösttermin på 1860-talet.'
+      q1_d: 'Föreningar och litteraturcirklar ordnade grötfester i början av 1900-talet.'
+  q2:
+    '#title': '2. När började man fira lillajul på arbetsplatser?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom det skedde på 1920- och 1930-talet.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom det skedde på 1920- och 1930-talet.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom det skedde på 1920- och 1930-talet.'
+    '#options':
+      q2_a: 'på 1920- och 1930-talet'
+      q2_b: 'efter krigen'
+      q2_c: 'på 1970-talet'
+      q2_d: 'i början av 1900-talet'
+  q3:
+    '#title': '3. Varifrån härstammar julgranstraditionen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Svaret var fel, eftersom den härstammar från Tyskland.'
+      q3_c:
+        feedback: 'Svaret var fel, eftersom den härstammar från Tyskland.'
+      q3_d:
+        feedback: 'Svaret var fel, eftersom den härstammar från Tyskland.'
+    '#options':
+      q3_a: Tyskland
+      q3_b: Sverige
+      q3_c: Finland
+      q3_d: England
+  q4:
+    '#title': '4. Var fanns Finlands veterligen första julgran?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar!'
+      q4_b:
+        feedback: 'Svaret var fel. Helsingfors och Finlands första julgran fanns i senator Otto Mikael Klinckowströms hem år 1829.'
+      q4_c:
+        feedback: 'Svaret var fel. Helsingfors och Finlands första julgran fanns i senator Otto Mikael Klinckowströms hem år 1829.'
+      q4_d:
+        feedback: 'Helsingfors och Finlands första julgran fanns i senator Otto Mikael Klinckowströms hem år 1829.'
+    '#options':
+      q4_a: 'i senator Otto Mikael Klinckowströms hem år 1829'
+      q4_b: 'på Rådhustorget i Åbo år 1810'
+      q4_c: 'på Stortorget i Helsingfors 1851'
+      q4_d: 'Man känner inte till det.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. När fick Senatstorget för första gången en julgran som dekorerats med elektriska ljus?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Svaret var fel. Det skedde år 1930.'
+      q5_c:
+        feedback: 'Svaret var fel. Det skedde år 1930.'
+      q5_d:
+        feedback: 'Svaret var fel.  Det skedde år 1930.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Varifrån kom Luciatraditionen till Finland?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Du svarade fel. Den kom från Sverige.'
+      q6_c:
+        feedback: 'Du svarade fel. Den kom från Sverige.'
+      q6_d:
+        feedback: 'Du svarade fel. Den kom från Sverige.'
+    '#options':
+      q6_a: 'från Sverige'
+      q6_b: 'från Italien'
+      q6_c: 'från Tyskland'
+      q6_d: 'från Ryssland'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Sedan vilket år har man årligen krönt en Lucia i Helsingfors?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svar!'
+      q7_b:
+        feedback: 'Fel svar. Lucia har krönts varje år sedan 1950.'
+      q7_c:
+        feedback: 'Fel svar. Lucia har krönts varje år sedan 1950.'
+      q7_d:
+        feedback: 'Fel svar. Lucia har krönts varje år sedan 1950.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. När hade julgranstraditionen spridit sig i hela Finland?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Julgranstraditionen hade spridits i hela Finland före början av 1900-talet.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Julgranstraditionen hade spridits i hela Finland före början av 1900-talet.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Julgranstraditionen hade spridits i hela Finland före början av 1900-talet.'
+    '#options':
+      q8_a: 'före början av 1900-talet'
+      q8_b: 'i slutet av 1850-talet'
+      q8_c: 'i slutet av 1870-talet'
+      q8_d: 'år 1920'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vilken av dessa har aldrig hört till Luciatraditionen i Helsingfors?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Rätt svarat!'
+      q9_b:
+        feedback: 'Fel svar. Till Luciatraditionen har hört tåg, välgörenhet och kommersialism men inte vintersport.'
+      q9_c:
+        feedback: 'Fel svar. Till Luciatraditionen har hört tåg, välgörenhet och kommersialism men inte vintersport.'
+      q9_d:
+        feedback: 'Fel svar. Till Luciatraditionen har hört tåg, välgörenhet och kommersialism men inte vintersport.'
+    '#options':
+      q9_a: vintersport
+      q9_b: välgörenhet
+      q9_c: tåg
+      q9_d: kommersialism
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktg adventexpert! Hur är det då med Senatstorgets historia? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/senatstorget">Senatstorget</a>'
+    '#feedback_message_fail': "Du har mycket spännande att läsa. Läs artikeln <a href=\"https://historia.hel.fi/sv/helheter/evenemang-aret-runt/luciadagens-festligheter-i-helsingfors\">Luciadagens festligheter i Helsingfors</a>\r\noch gör testet på nytt."
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Adventstiden

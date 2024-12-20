@@ -1,0 +1,82 @@
+elements: |
+  q1:
+    '#title': '1. När fick största delen av Rödbergen en detaljplan?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Den största delen av Rödbergen planlades 1875.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Den största delen av Rödbergen planlades 1875.'
+      q1_d:
+        feedback: 'Ditt svar var fel.  Den största delen av Rödbergen planlades 1875.'
+  q2:
+    '#title': '2. Varifrån kommer namnet Rödbergen?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Det kommer från berggrunden av rödgranit.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Det kommer från berggrunden av rödgranit.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Det kommer från berggrunden av rödgranit.'
+    '#options':
+      q2_a: 'från områdets berggrund av rödgranit'
+      q2_b: 'från rödmålade bostadsbyggnader'
+      q2_c: 'från områdets politiska historia'
+      q2_d: 'från ett blodbad under förbudslagen'
+  q3:
+    '#title': '3. Hurdant vvar det första byggnadsbeståndet i Rödbergen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Rätt svarat!'
+      q3_b:
+        feedback: 'Svaret var fel. Där fanns stugor med torvtak lite var som helst.'
+      q3_c:
+        feedback: 'Svaret var fel. Där fanns stugor med torvtak lite var som helst.'
+      q3_d:
+        feedback: 'Svaret var fel. Där fanns stugor med torvtak lite var som helst.'
+    '#options':
+      q3_a: 'stugor med torvtak lite var som helst'
+      q3_b: 'empirehus av trä'
+      q3_c: industribyggnader
+      q3_d: 'ståtliga stenhus'
+  q4:
+    '#title': '4. Vilken av dessa har inte funnits i Rödbergen?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Rätt svar!'
+      q4_b:
+        feedback: 'Svaret var fel. Sandudds tapetfabrik har inte funnits i Rödbergen.'
+      q4_c:
+        feedback: 'Svaret var fel. Sandudds tapetfabrik har inte funnits i Rödbergen.'
+      q4_d:
+        feedback: 'Svaret var fel. Sandudds tapetfabrik har inte funnits i Rödbergen.'
+    '#options':
+      q4_a: 'Sanudds tapetfabrik'
+      q4_b: 'Finlands kabelfabrik'
+      q4_c: 'Sinebrychoffs bryggeri'
+      q4_d: 'Fazers sötsaksfabrik'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5.  Vilken av dessa stämmer inte på Rödbergen?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Svaret var fel. Rödbergen har inte alltid varit ett bostadsområde för högre samhällsklasser.'
+      q5_c:
+        feedback: 'Svaret var fel. Rödbergen har inte alltid varit ett bostadsområde för högre samhällsklasser.'
+      q5_d:
+        feedback: 'Svaret var fel. Rödbergen har inte alltid varit ett bostadsområde för högre samhällsklasser.'
+    '#options':
+      q5_a: 'Stadsdelen har alltid bebotts av högre samhällsklasser.'
+      q5_b: 'Där fanns mycket kriminalitet och störande av ordning.'
+      q5_c: 'Den blev på 1800-talet en traditionell arbetarstadsdel.'
+      q5_d: 'Där revs även många stenhus på 1960–70-talen.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktg expert på Rödbergens historia! Hur är det då med Sandvikens varv? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/sandvikens-varv">Sandvikens varv</a>.'
+    '#feedback_message_fail': "Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/sodra/rodbergen-fran-slum-i-stadens-utkant-till-trendomrade\">Rödbergen – från slum i stadens utkant till trendområde</a>\r\noch gör testet på nytt."
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Rödbergen

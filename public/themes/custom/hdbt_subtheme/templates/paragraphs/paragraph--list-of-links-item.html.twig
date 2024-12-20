@@ -54,10 +54,14 @@
 {# Use node liftup image, if available, and no link image set #}
 {% if content.field_list_of_links_link.0['#url'].isRouted() and not image.0 %}
   {% set nid = content.field_list_of_links_link.0['#url'].getRouteParameters() %}
-  {% if nid %}
+  {% if nid['node'] %}
     {% set node = drupal_entity('node', nid['node']) %}
+    {% set mid = node['#node'].field_liftup_image.0.target_id %}
   {% endif %}
-  {% set mid = node['#node'].field_liftup_image.0.target_id %}
+  {% if nid['webform'] %}
+    {# Hardcoded placeholder for webform (quiz) image links #}
+    {% set mid = 2392 %}
+  {% endif %}
   {% if mid %}
     {% set image = drupal_entity('media', mid, 'list_of_links') %}
   {% endif %}

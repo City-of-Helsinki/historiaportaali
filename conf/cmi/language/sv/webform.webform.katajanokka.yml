@@ -1,0 +1,141 @@
+title: Skatudden
+elements: |
+  q1:
+    '#title': '1. Vilket av dessa påståenden stämmer inte?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Skatudden var inte ett borgerligt bostadsområde på 1870-talet.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Skatudden var inte ett borgerligt bostadsområde på 1870-talet.'
+      q1_d:
+        feedback: 'Skatudden var inte ett borgerligt bostadsområde på 1870-talet.'
+    '#options':
+      q1_a: 'Skatudden var ett borgerligt bostadsområde på 1870-talet.'
+      q1_b: 'Skatudden var en snuskig slum på 1870-talet.'
+      q1_c: 'Ett fängelse grundades på Skatudden cirka 1750.'
+      q1_d: 'Man planerade en fästning på Skatudden före Sveaborg.'
+  q2:
+    '#title': '2. Vad föreslog Engel på platsen av Uspenskikatedralen år 1836?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, eftersom Engel föreslog ett nytt kejserligt palats.'
+      q2_c:
+        feedback: 'Ditt svar var fel, eftersom eftersom Engel föreslog ett nytt kejserligt palats.'
+      q2_d:
+        feedback: 'Ditt svar var fel, eftersom eftersom Engel föreslog ett nytt kejserligt palats.'
+    '#options':
+      q2_a: 'ett nytt kejserligt palats'
+      q2_b: 'ett kejserligt lasarett'
+      q2_c: 'en fyr'
+      q2_d: 'ett observatorium'
+  q3:
+    '#title': '3. På vilken nuvarande adress fanns styrman Granbergs skola?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Den nuvarande adressen skulle vara Myntgatan 3.'
+      q3_c:
+        feedback: 'Svaret var fel. Den nuvarande adressen skulle vara Myntgatan 3.'
+      q3_d:
+        feedback: 'Svaret var fel. Den nuvarande adressen skulle vara Myntgatan 3.'
+    '#options':
+      q3_a: 'Myntgatan 3'
+      q3_b: 'Lotsgatan 5'
+      q3_c: 'Köpmansgatan 3'
+      q3_d: 'Hamngatan 5'
+  q4:
+    '#title': '4. Vem av dessa har gått i styrman Granbergs skola?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Aleksis Kivi har gått i Granbergs skola.'
+      q4_c:
+        feedback: 'Svaret var fel. Aleksis Kivi har gått i Granbergs skola.'
+      q4_d:
+        feedback: 'Svaret var fel. Aleksis Kivi har gått i Granbergs skola.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vad var karakteristiskt för Skatudden ännu på 1970-talet?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, Skatudden präglades nämligen av godshamnar, ett skeppsvarv och magasinsbyggnader.'
+      q5_c:
+        feedback: 'Inte riktigt, Skatudden präglades nämligen av godshamnar, ett skeppsvarv och magasinsbyggnader.'
+      q5_d:
+        feedback: 'Inte riktigt, Skatudden präglades nämligen av godshamnar, ett skeppsvarv och magasinsbyggnader.'
+    '#options':
+      q5_a: 'godshamnar, ett skeppsvarv och magasinsbyggnader'
+      q5_b: 'mestadels bostadshus'
+      q5_c: 'en moderiktig idrottskoncentration'
+      q5_d: 'ett rikligt kulturutbud'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vilken av dessa har inte funnits på Skatudden?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Riksarkivet har inte funnits på Skatudden.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Riksarkivet har inte funnits på Skatudden.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Riksarkivet har inte funnits på Skatudden.'
+    '#options':
+      q6_a: Riksarkivet
+      q6_b: Myntverket
+      q6_c: länsfängelset
+      q6_d: 'ett kafferosteri'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilket av dessa stämmer inte på Skatudden?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, den har nämligen inte alltid varit en ö.'
+      q7_c:
+        feedback: 'Fel svarat, den har nämligen inte alltid varit en ö.'
+      q7_d:
+        feedback: 'Fel svarat, den har nämligen inte alltid varit en ö.'
+    '#options':
+      q7_a: 'Den har alltid varit en ö.'
+      q7_b: 'Dess areal har utökats hektarvis med hjälp av fyllnadsmark.'
+      q7_c: 'Där har funnits en flygstation.'
+      q7_d: 'Diakonissanstalten har funnits där.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vad kom till Warrantshuset år 1932?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Dit kom Oy Alkoholiliike Ab:s centrallager.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Dit kom Oy Alkoholiliike Ab:s centrallager.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Dit kom Oy Alkoholiliike Ab:s centrallager.'
+    '#options':
+      q8_a: 'Oy Alkoholiliike Ab:s centrallager'
+      q8_b: 'Osuustukkukauppa oy:s centrallager'
+      q8_c: 'Stockmanns lager'
+      q8_d: 'ett hotell'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vilken av dessa konstnärer har inte bott på Skatudden?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Akseli Gallén-Kallela har inte bott på Skatudden.'
+      q9_c:
+        feedback: 'Svaret var fel. Akseli Gallén-Kallela har inte bott på Skatudden.'
+      q9_d:
+        feedback: 'Svaret var fel. Akseli Gallén-Kallela har inte bott på Skatudden..'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Skatuddens historia! Hur är det då med Kronohagen? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

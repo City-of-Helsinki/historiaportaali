@@ -92,7 +92,7 @@ elements: |
       q6_d: 'En sommarkoloni för Elantos anställdas barn.'
   quiz_result:
     '#feedback_message_pass': 'Du är en riktg expert på Sörnäs historia! Hur är det då med Helsingfors industriella historia? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/huvudstadstatus-och-europeisering/helsingfors-som-industristad">Helsingfors som industristad</a>.'
-    '#feedback_message_fail': "Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade\">Helsingfors som industristad</a>\r\noch gör testet på nytt."
+    '#feedback_message_fail': "Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade\">Sörnäs, före detta hamn- och industriområde</a>\r\noch gör testet på nytt."
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
 title: Sörnäs

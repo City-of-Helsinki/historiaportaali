@@ -1,4 +1,3 @@
-title: 'Hamnar och sjöfart'
 elements: |
   q1:
     '#title': '1. När började isbrytarnas tid i Helsingfors?'
@@ -116,6 +115,8 @@ elements: |
         feedback: 'Svaret var fel. Det skedde år 1974.'
       q9_d:
         feedback: 'Svaret var fel. Det skedde år 1974.'
+    '#options':
+      q9_b: '2000'
   quiz_result:
     '#feedback_message_pass': 'Du tycks vara en riktig expert på Helsingfors hamnar och sjöfart! Läs också om biltrafikens historia: <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/biltrafikens-borjan">Biltrafikens början</a>.'
     '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/hamnar-och-sjofart">Hamnar och sjöfart</a> och gör testet på nytt.'

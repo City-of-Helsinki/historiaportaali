@@ -1,0 +1,103 @@
+elements: |
+  q1:
+    '#title': '1. Vilket var Minna Crauchers riktiga namn?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Rätt svarat!'
+      q1_b:
+        feedback: 'Svaret var fel. Hennes riktiga namn var Maria Vilhelmiina Lindell.'
+      q1_c:
+        feedback: 'Svaret var fel. Hennes riktiga namn var Maria Vilhelmiina Lindell.'
+      q1_d:
+        feedback: 'Svaret var fel. Hennes riktiga namn var Maria Vilhelmiina Lindell.'
+  q2:
+    '#title': '2. Minna Craucher föddes...'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Minna Craucher föddes i Nokia.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Minna Craucher föddes i Nokia.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Minna Craucher föddes i Nokia.'
+    '#options':
+      q2_a: 'i Nokia'
+      q2_b: 'i Tavastkyro'
+      q2_c: 'i Helsingfors'
+      q2_d: 'i Tammerfors'
+  q3:
+    '#title': '3. Minna Craucher reste till Tyskland...'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Hon reste som barnsköterska.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Hon reste som barnsköterska.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Hon reste som barnsköterska.'
+    '#options':
+      q3_a: 'som barnsköterska till en välbärgad familj.'
+      q3_b: 'för att studera.'
+      q3_c: 'för att importera kosmetika därifrån.'
+      q3_d: 'för att fly ordningsmakten.'
+  q4:
+    '#title': '4. Var fanns Crauchers kända salong först?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Du svarade fel. Den fanns på Freesegatan.'
+      q4_c:
+        feedback: 'Du svarade fel. Den fanns på Freesegatan.'
+      q4_d:
+        feedback: 'Du svarade fel. Den fanns på Freesegatan.'
+    '#options':
+      q4_a: 'på Freesegatan'
+      q4_b: 'på Fredriksgatan'
+      q4_c: 'på Caloniusgatan'
+      q4_d: 'på Norra Järnvägsgatan'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vem mördade Minna Craucher?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Mördaren var Olavi Runolinna.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Mördaren var Olavi Runolinna.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Mördaren var Olavi Runolinna.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vilken var Minna Crauchers sista adress?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Svaret var fel. Crauchers sista adress var Mechelingatan 23 A 20.'
+      q6_c:
+        feedback: 'Svaret var fel. Crauchers sista adress var Mechelingatan 23 A 20.'
+      q6_d:
+        feedback: 'Svaret var fel. Crauchers sista adress var Mechelingatan 23 A 20.'
+    '#options':
+      q6_a: 'Mechelingatan 23 A 20'
+      q6_b: 'Caloniusgatan 3 A 11'
+      q6_c: 'Freesegatan 4'
+      q6_d: 'Hoplax villasamhälle'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Av vilket märke var bilen som Minna lyckades skaffa mot en liten handpenning?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Svaret var fel. Det var en Willys-Knight.'
+      q7_c:
+        feedback: 'Svaret var fel. Det var en Willys-Knight.'
+      q7_d:
+        feedback: 'Svaret var fel. Det var en Willys-Knight.'
+  quiz_result:
+    '#feedback_message_pass': 'Du har faktiskt koll på Craucher! Hur är det då med hennes stadsdel Tölö? Läs artikeln: <a href="https://historia.hel.fi/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Börja med artikeln <a href="https://historia.hel.fi/sv/helheter/helsingfors-invanare/minna-craucher-sanning-och-sagen">Minna Craucher, sanning och sägen </a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

@@ -1,0 +1,114 @@
+title: Broholmen
+elements: |
+  q1:
+    '#title': '1. Till vilken stadsdel hör Broholmen?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Den hör till Berghäll.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Den hör till Berghäll.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Den hör till Berghäll.'
+    '#options':
+      q1_a: Berghäll
+      q1_b: 'Ingen, den är en egen stadsdel.'
+      q1_c: Hagnäs
+      q1_d: Kajsaniemi
+  q2:
+    '#title': '2. När fick Broholmen sitt nuvarande officiella namn?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Det skedde år 1832.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Det skedde år 1832.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Det skedde år 1832.'
+  q3:
+    '#title': '3. Vad hette Broholmen ursprungligen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Den hette Musholmen.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Den hette Musholmen.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Den hette Musholmen.'
+    '#options':
+      q3_a: Musholmen
+      q3_b: Råttholmen
+      q3_c: Lillholmen
+      q3_d: Djurholmen
+  q4:
+    '#title': '4. Var fanns Broholmens Cirkusmanege ännu i början av 1900-talet?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. Den fanns på stället av Elantos varuhus på adressen Broholmsgatan 10.'
+      q4_c:
+        feedback: 'Ditt svar var fel. Den fanns på stället av Elantos varuhus på adressen Broholmsgatan 10.'
+      q4_d:
+        feedback: 'Ditt svar var fel. Den fanns på stället av Elantos varuhus på adressen Broholmsgatan 10.'
+    '#options':
+      q4_a: 'På stället av Elantos varuhus, Broholmsgatan 10'
+      q4_b: 'På stället av Cirkelhuset'
+      q4_c: 'På stället av Metallhuset'
+      q4_d: 'På stället av Paasitorni'
+  5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
+    '#title': '5. Vad fanns i cirkusmanegens utrymmen ursprungligen?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Där fanns Rieks tapetfabrik.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Där fanns Rieks tapetfabrik.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Där fanns Rieks tapetfabrik.'
+    '#options':
+      q5_a: 'Rieks tapetfabrik'
+      q5_b: 'Langeéns bad- och bastuinrättning'
+      q5_c: 'arbetarföreningens lokaler'
+      q5_d: 'en restaurang populär bland studenter'
+  6_milloin_moottorilaiva_finlandia_valmistui:
+    '#title': '6. Vad var Emilienburg för något?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Det var Cajsa Wahllunds restaurang.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Det var Cajsa Wahllunds restaurang.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Det var Cajsa Wahllunds restaurang.'
+    '#options':
+      q6_a: 'Cajsa Wahllunds restaurang'
+      q6_b: 'ett ångfartyg'
+      q6_c: 'ett villaområde'
+      q6_d: 'en badinrättning och ett värdshus'
+  7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
+    '#title': '7. Hurdan industri uppstod i synnerhet på norra sidan av Långbron?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Ditt svar var fel. Där uppstod mestadels tung verkstadsindustri.'
+      q7_c:
+        feedback: 'Ditt svar var fel. Där uppstod mestadels tung verkstadsindustri.'
+      q7_d:
+        feedback: 'Ditt svar var fel. Där uppstod mestadels tung verkstadsindustri.'
+    '#options':
+      q7_a: 'tung verkstadsindustri'
+      q7_b: 'småskalig hantverksindustri'
+      q7_c: 'bageri- och byggeriindustri'
+      q7_d: träindustri
+  quiz_result:
+    '#feedback_message_pass': 'Du är en sann expert på Broholmen! Hur är det då med Hagnäs? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/hagnas">Hagnäs</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/broholmen">Broholmen</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

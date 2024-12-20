@@ -1,4 +1,4 @@
-uuid: 30ada9af-d74b-404b-978a-85fb8cef45b0
+uuid: fad6ef75-30f7-4a88-8aac-01118dc07442
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,232 +8,182 @@ close: null
 uid: 116
 template: false
 archive: false
-id: satamat_ja_meriliikenne
-title: 'Hamnar och sjöfart'
+id: siltasaari
+title: Siltasaari
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Milloin Helsingin jäänmurtajien aika alkoi?'
+    '#title': "1.\tMihin kaupunginosaan Siltasaari kuuluu?"
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Jäänmurtajien aika alkoi 1890.'
+        feedback: 'Vastauksesi oli väärin. Se kuuluu Kallioon.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Jäänmurtajien aika alkoi 1890.'
+        feedback: 'Vastauksesi oli väärin. Se kuuluu Kallioon.'
       q1_d:
         is_correct: false
-        feedback: 'Jäänmurtajien aika alkoi 1890.'
+        feedback: 'Vastauksesi oli väärin. Se kuuluu Kallioon.'
     '#options':
-      q1_a: '1890'
-      q1_b: '1900'
-      q1_c: '1850'
-      q1_d: '1800'
+      q1_a: Kallioon
+      q1_b: 'Ei mihinkään, se on oma kaupunginosansa.'
+      q1_c: Hakaniemeen
+      q1_d: Kaisaniemeen
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Mikä satama oli Helsingin tärkein tuontisatama ennen toista maailmansotaa?'
+    '#title': '2. Milloin Siltasaari sai nykyisen virallisen nimensä?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1832.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1832.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin tärkein tuontisatama oli Eteläsatama.'
+        feedback: 'Vastauksesi oli väärin.Se tapahtui vuonna 1832.'
     '#options':
-      q2_a: Eteläsatama
-      q2_b: Länsisatama
-      q2_c: 'Herttoniemen satama'
-      q2_d: 'Sörnäisten satama'
+      q2_a: '1832'
+      q2_b: '1912'
+      q2_c: '1880'
+      q2_d: '1918'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Milloin Eteläsatama ja Pohjoissatama yhdistettiin kanavalla?'
+    '#title': '3. Mikä Siltasaaren nimi oli alun perin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
+        feedback: 'Vastauksesi oli väärin. Sen nimi oli Hiirisaari.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
+        feedback: 'Vastauksesi oli väärin. Sen nimi oli Hiirisaari.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Katajanokan kanava rakennettiin 1844.'
+        feedback: 'Vastauksesi oli väärin. Sen nimi oli Hiirisaari.'
     '#options':
-      q3_a: '1844'
-      q3_b: '1800'
-      q3_c: '1820'
-      q3_d: '1860'
+      q3_a: 'Hiirisaari, Musholmen'
+      q3_b: 'Rottaholma, Råttholmen'
+      q3_c: 'Pikkusaari, Lillholmen'
+      q3_d: 'Eläinsaari, Djurholmen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä oli Helsingin ensimmäinen höyryalus?'
+    '#title': '4. Missä oli Siltasaaren sirkusmaneesi vielä 1900-luvun alussa?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
+        feedback: 'Vastauksesi oli väärin. Se oli Elannon tavaratalon kohdalla, osoitteessa Siltasaarenkatu 10.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
+        feedback: 'Vastauksesi oli väärin. Se oli Elannon tavaratalon kohdalla, osoitteessa Siltasaarenkatu 10.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin ensimmäinen höyryalus on Lentäjä.'
+        feedback: 'Vastauksesi oli väärin. Se oli Elannon tavaratalon kohdalla, osoitteessa Siltasaarenkatu 10.'
     '#options':
-      q4_a: Lentäjä
-      q4_b: Urania
-      q4_c: Wellamo
-      q4_d: Ariadne
+      q4_a: 'Elannon tavaratalon paikalla, osoitteessa Siltasaarenkatu 10'
+      q4_b: 'Ympyrätalon paikalla'
+      q4_c: 'Metallitalon paikalla'
+      q4_d: 'Paasitornin paikalla'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   5_mika_satama_kehitettiin_tavaraliikenteen_ohessa_matkustajalaut:
     '#type': quiz_element_radios
-    '#title': '5. Mikä satama kehitettiin tavaraliikenteen ohessa matkustajalauttasatamaksi 1960-luvulla?'
+    '#title': '5. Mitä tiloissa oli ennen sirkusmaneesia?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Tloissa oli Rieksin tapettitehdas.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Tloissa oli Rieksin tapettitehdas.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sörnäisten satama kehitettiin tavaraliikenteen ohessa matkustajasatamaksi 1960-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Tloissa oli Rieksin tapettitehdas.'
     '#options':
-      q5_a: 'Sörnäisten satama'
-      q5_b: Länsisatama
-      q5_c: Pohjoissatama
-      q5_d: 'Herttoniemen satama'
+      q5_a: 'Rieksin tapettitehdas'
+      q5_b: 'Langeénin kylpylä ja sauna'
+      q5_c: työväenyhdistys
+      q5_d: 'ylioppilaiden suosima ravintola'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   6_milloin_moottorilaiva_finlandia_valmistui:
     '#type': quiz_element_radios
-    '#title': '6. Milloin moottorilaiva Finlandia valmistui?'
+    '#title': '6. Mikä oli Emilienburg?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
+        feedback: 'Vastauksesi oli väärin. Se oli Cajsa Wahllundin ravintola.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
+        feedback: 'Vastauksesi oli väärin. Se oli Cajsa Wahllundin ravintola.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Moottorilaiva Finlandia valmistui vuonna 1967.'
+        feedback: 'Vastauksesi oli väärin. Se oli Cajsa Wahllundin ravintola.'
     '#options':
-      q6_a: 'Vuonna 1967'
-      q6_b: 'Vuonna 1960'
-      q6_c: 'Vuonna 1965'
-      q6_d: 'Vuonna 1970'
+      q6_a: 'Cajsa Wahllundin ravintola'
+      q6_b: höyrylaiva
+      q6_c: huvila-alue
+      q6_d: 'kylpylä ja majatalo'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t:
     '#type': quiz_element_radios
-    '#title': '7. Mikä oli Helsingin matkustajaliikenteen vilkkain vuosi ennen toista maailmansotaa?'
+    '#title': '7. Millaista teollisuutta Pitkänsillan pohjoispuolelle erityisesti syntyi 1850-luvulta lähtien?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937.'
+        feedback: 'Vastauksesi oli väärin. Sinne syntyi enimmäkseen raskasta konepajateollisuutta.'
       q7_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937.'
+        feedback: 'Vastauksesi oli väärin. Sinne syntyi enimmäkseen raskasta konepajateollisuutta.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsingin matkustajaliikenteen vilkkain vuosi oli 1937'
+        feedback: 'Vastauksesi oli väärin. Sinne syntyi enimmäkseen raskasta konepajateollisuutta.'
     '#options':
-      q7_a: '1937'
-      q7_b: '1935'
-      q7_c: '1930'
-      q7_d: '1939'
-    '#options_randomize': true
-    '#required': true
-    '#format': custom
-    '#options__properties': ''
-  8_milloin_viking_line_aloitti_liikenteen_helsingista_tukholmaan:
-    '#type': quiz_element_radios
-    '#title': '8. Milloin Viking Line aloitti liikenteen Helsingistä Tukholmaan?'
-    '#quiz__options':
-      q8_a:
-        is_correct: true
-        feedback: 'Vastasit oikein!'
-      q8_b:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
-      q8_c:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
-      q8_d:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Viking Line aloitti Helsingin ja Tukholman välisen liikenteensä 1974.'
-    '#options':
-      q8_a: '1974'
-      q8_b: '1970'
-      q8_c: '1972'
-      q8_d: '1965'
-    '#options_randomize': true
-    '#required': true
-    '#format': custom
-    '#options__properties': ''
-  9_mina_vuonna_uusi_satama_valmistui_vuosaareen:
-    '#type': quiz_element_radios
-    '#title': '9. Minä vuonna uusi satama valmistui Vuosaareen?'
-    '#quiz__options':
-      q9_a:
-        is_correct: true
-        feedback: 'Vastasit oikein!'
-      q9_b:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
-      q9_c:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
-      q9_d:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Vuosaaren satama valmistui 2008.'
-    '#options':
-      q9_a: '2008'
-      q9_b: '2000'
-      q9_c: '2005'
-      q9_d: '2010'
+      q7_a: 'raskasta konepajateollisuutta'
+      q7_b: 'pienimuotoista käsityöteollisuutta'
+      q7_c: 'leipomo- ja panimoteollisuutta'
+      q7_d: puuteollisuutta
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -266,20 +216,12 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q7_result
     '#source': 7_mika_oli_helsingin_matkustajaliikenteen_vilkkain_vuosi_ennen_t
-  q8_result:
-    '#type': webform_quiz_elements_result
-    '#title': q8_result
-    '#source': 8_milloin_viking_line_aloitti_liikenteen_helsingista_tukholmaan
-  q9_result:
-    '#type': webform_quiz_elements_result
-    '#title': q9_result
-    '#source': 9_mina_vuonna_uusi_satama_valmistui_vuosaareen
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Helsingin satamien ja meriliikenteen historian tuntija! Lue myös autoliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a> -artikkelista.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a> ja tee testi uudelleen.'
+    '#feedback_message_pass': 'Olet varsinainen Siltasaaren historian tuntija! Entäpä Hakaniemi? Lue artikkeli: <a href="https://historia.hel.fi/fi/alueet/keskinen/hakaniemi">Hakaniemi</a> '
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla <a href="https://historia.hel.fi/fi/alueet/keskinen/siltasaari">Siltasaari</a>-artikkeli ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

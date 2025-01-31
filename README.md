@@ -5,9 +5,10 @@
 Env | Branch | Drush alias | URL
 --- | ------ | ----------- | ---
 docker | - | - | http://historiaportaali.docker.so/
-sandbox | sandbox | - | https://sandbox-w6wvm5a-c6cjuxyujjv64.eu-5.platformsh.site/
-development | develop | - | https://develop-sr3snxi-c6cjuxyujjv64.eu-5.platformsh.site/
-production | master | - | https://master-7rqtwti-c6cjuxyujjv64.eu-5.platformsh.site/
+test | develop | - | https://nginx-helhist-test.agw.arodevtest.hel.fi/
+develop | develop | - | https://nginx-helhist-dev.agw.arodevtest.hel.fi/
+staging | master | - | -
+production | master | - | https://historia.hel.fi/
 
 ## Requirements
 
@@ -15,7 +16,7 @@ You need to have these applications installed to operate on all environments:
 
 - [Docker](https://github.com/druidfi/guidelines/blob/master/docs/docker.md)
 - [Stonehenge](https://github.com/druidfi/stonehenge)
-- [Platform.sh CLI](https://docs.platform.sh/development/cli.html)
+- [Openshift CLI](https://github.com/openshift/oc)
 
 ## Running Stonehenge
 

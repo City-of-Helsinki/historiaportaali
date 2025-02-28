@@ -31,9 +31,9 @@ elements: |-
         feedback: 'Vastauksesi oli väärin. Oikea vastaus on hotelliksi.'
     '#options':
       q1_a: hotelliksi
-      q1_b: 'Keisarin asunnoksi'
-      q1_c: Kaupungintaloksi
-      q1_d: Presidentinlinnaksi
+      q1_b: 'keisarin asunnoksi'
+      q1_c: kaupungintaloksi
+      q1_d: presidentinlinnaksi
     '#options_randomize': true
     '#required': true
     '#format': custom

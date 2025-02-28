@@ -1,139 +1,214 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: ce9d6485-3142-4c61-8d10-3e413b3c5c7c
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: hakaniemi
+title: Hakaniemi
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Kuka perusti Helsingin?'
+    '#title': '1. Mikä oli Hakaniemen alkuperäinen nimi?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Sen alkuperäinen nimi oli Generalshagen eli Kenraalinhaka.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Sen alkuperäinen nimi oli Generalshagen eli Kenraalinhaka.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Sen alkuperäinen nimi oli Generalshagen eli Kenraalinhaka.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
-    '#options_randomize': true
-    '#required': true
-    '#format': custom
-    '#options__properties': ''
-  q2:
-    '#type': quiz_element_radios
-    '#title': '2. Mihin Helsinki alun perin perustettiin?'
-    '#quiz__options':
-      q2_a:
-        is_correct: true
-        feedback: 'Vastasit oikein!'
-      q2_b:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
-      q2_c:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
-      q2_d:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
-    '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q1_a: 'Generalshagen eli Kenraalinhaka'
+      q1_b: Hagnäs
+      q1_c: Kruununhaka
+      q1_d: Kalliohaka
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna Helsinki perustettiin?'
+    '#title': '2. Milloin Hakaniemen tori rakennettiin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1880-luvulla.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1880-luvulla.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1880-luvulla.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: 1880-luvulla
+      q3_b: 1820-luvulla
+      q3_c: '1900-luvun alussa'
+      q3_d: 1700-luvulla
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  q2:
+    '#type': quiz_element_radios
+    '#title': '3. Mitä erityistä on Hakaniemen torissa?'
+    '#quiz__options':
+      q2_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q2_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on rakennettu täyttömaalle.'
+      q2_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on rakennettu täyttömaalle.'
+      q2_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on rakennettu täyttömaalle.'
+    '#options':
+      q2_a: 'Se on rakennettu täyttömaalle.'
+      q2_b: 'Se on aina ollut politiikan näyttämö.'
+      q2_c: 'Siellä myytiin alun perin käytettyjä vaatteita. '
+      q2_d: 'Sen paikalla oli ennen korkea mäki.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Missä sijaitsi Hämeen tulli?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Pitkänsillan pohjoispäässä.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Pitkänsillan pohjoispäässä.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Pitkänsillan pohjoispäässä.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: 'Pitkänsillan pohjoispäässä'
+      q4_b: 'Pitkänsillan eteläpäässä'
+      q4_c: 'Nykyisen Arenan talon kohdalla'
+      q4_d: 'Sörnäisten metroaseman tienoilla'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  5_mihin_tarkoitukseen_helsinki_perustettiin:
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mihin tarkoitukseen Helsinki perustettiin?'
+    '#title': '5. Minä vuonna nykyinen kivinen Pitkäsilta valmistui?'
     '#quiz__options':
-      q4_a:
+      q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
-      q4_b:
+      q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_c:
+        feedback: 'Vastauksesi oli väärin. Se valmistui vuonna 1912.'
+      q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_d:
+        feedback: 'Vastauksesi oli väärin. Se valmistui vuonna 1912.'
+      q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
+        feedback: 'Vastauksesi oli väärin. Se valmistui vuonna 1912.'
     '#options':
-      q4_a: 'kilpailemaan Itämeren hansakaupunkien kanssa'
-      q4_b: 'vahvistamaan valtakunnan itäisen osan puolustusta'
-      q4_c: 'kuninkaalliseksi lomakohteeksi'
-      q4_d: 'ei mihinkään erityiseen'
+      q5_a: '1912'
+      q5_b: '1892'
+      q5_c: '1909'
+      q5_d: '1853'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Hakaniemessä on John Stenbergin ranta. Stenberg oli'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Hän oli konepajateollisuuden uranuurtajia.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Hän oli konepajateollisuuden uranuurtajia.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Hän oli konepajateollisuuden uranuurtajia.'
+    '#options':
+      q6_a: 'konepajateollisuuden uranuurtajia'
+      q6_b: 'menestynyt urheilija'
+      q6_c: 'suosittu sirkustaiteilija'
+      q6_d: 'panimoteollisuuden uranuurtajia'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7. Mikä oli leimallista Hakaniemen torille 1900-luvulla kaupankäynnin lisäksi?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se oli työväenliikkeen kokoontumispaikka.'
+      q7_c:
+        is_correct: false
+        feedback: ' Vastauksesi oli väärin. Se oli työväenliikkeen kokoontumispaikka.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se oli työväenliikkeen kokoontumispaikka.'
+    '#options':
+      q7_a: 'työväenliikkeen kokoontumiset'
+      q7_b: 'ylioppilaiden kokoontumiset'
+      q7_c: 'isänmaalliset kokoontumiset'
+      q7_d: 'lavatanssit ja kansanmusiikki'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#type': quiz_element_radios
+    '#title': '8. Minä vuonna Ympyrätalo valmistui?'
+    '#quiz__options':
+      q8_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q8_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1968.'
+      q8_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1968.'
+      q8_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1968.'
+    '#options':
+      q8_a: '1968'
+      q8_b: '1972'
+      q8_c: '1961'
+      q8_d: '1979'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -157,13 +232,25 @@ elements: |-
   q5_result:
     '#type': webform_quiz_elements_result
     '#title': q5_result
-    '#source': 5_mihin_tarkoitukseen_helsinki_perustettiin
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
+  q8_result:
+    '#type': webform_quiz_elements_result
+    '#title': q8_result
+    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet varsinainen Hakaniemen historian tuntija! Tunnetko yhtä hyvin Siltasaaren historiaa? Tutustu artikkeliin <a href="https://historia.hel.fi/alueet/keskinen/siltasaari">Siltasaari</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla artikkeli <a href="https://historia.hel.fi/fi/alueet/keskinen/hakaniemi">Hakaniemi</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

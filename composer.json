@@ -128,6 +128,9 @@
             "drupal/search_api": {
                 "Properties via entity reference fields are not translated (https://www.drupal.org/project/search_api/issues/3039139#comment-13016070)": "https://www.drupal.org/files/issues/2019-03-11/3039139-3.patch"
             },
+            "drupal/ultimate_cron": {
+                "Deprecated Creation of dynamic property (https://www.drupal.org/node/3351276)": "https://www.drupal.org/files/issues/2023-04-03/3351276-4.patch"
+            },
             "drupal/views_cm_current_state": {
                 "Filter by Moderation Current State (https://www.drupal.org/project/views_cm_current_state/issues/3158762#comment-14191350)": "https://www.drupal.org/files/issues/2021-08-16/add-current-moderation-filter_0.patch",
                 "Get translated revision": "custom-patches/views_cm_current_state_get_translated_revision.patch"

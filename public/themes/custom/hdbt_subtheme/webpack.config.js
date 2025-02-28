@@ -6,6 +6,7 @@ const globImporter = require('node-sass-glob-importer');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('@nuxt/friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
@@ -158,6 +159,26 @@ module.exports = {
           'force': true,
           'flatten': true
         },
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'node_modules/@splidejs/splide/dist/css/splide-core.min.css',
+          to: 'css/splide/splide-core.min.css'
+        },
+        {
+          from: 'node_modules/@splidejs/splide/dist/js/splide.min.js',
+          to: 'js/splide/splide.min.js'
+        },
+        {
+          from: 'node_modules/tiny-slider/dist/tiny-slider.css',
+          to: 'css/tiny-slider/tiny-slider.css'
+        },
+        {
+          from: 'node_modules/tiny-slider/dist/tiny-slider.js',
+          to: 'js/tiny-slider/tiny-slider.js'
+        }
       ]
     }),
     new MiniCssExtractPlugin({

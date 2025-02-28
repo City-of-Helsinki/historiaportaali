@@ -1,139 +1,189 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: 29d29c31-7d6e-4c59-abac-3018ced05a2d
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: spora
+title: Spåran
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Kuka perusti Helsingin?'
+    '#title': '1. Milloin Helsingissä aloitettiin raitiovaunuliikenne?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: '1891'
+      q1_b: '1895'
+      q1_c: '1901'
+      q1_d: '1905'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Mihin Helsinki alun perin perustettiin?'
+    '#title': '2.  Mikä näistä ei ole raitiovaunun nimitys Stadin slangissa?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: stoge
+      q2_b: skuru
+      q2_c: sipoonjuna
+      q2_d: raitsika
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna Helsinki perustettiin?'
+    '#title': '3. Minä vuonna siirryttiin hevosen vetämistä raitiovaunuista sähköllä toimiviin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: '1900'
+      q3_b: '1905'
+      q3_c: '1910'
+      q3_d: '1895'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä on Helsingin perustamispäivä?'
+    '#title': '4. Mikä oli ensimmäinen sähköistetty raitiovaunulinja?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: Töölö–Hietalahti
+      q4_b: Sörnäinen–Kauppatori–Lapinlahti
+      q4_c: Töölö–Kauppatori–Kaivopuisto
+      q4_d: 'Katajanokka–Hietalahti '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  5_mihin_tarkoitukseen_helsinki_perustettiin:
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mihin tarkoitukseen Helsinki perustettiin?'
+    '#title': "5.\tRaitiovaunuliikenteen alkuaikoina sattui paljon onnettomuuksia. Mitä lehtikirjoittelussa usein oletettiin syyksi niihin?"
     '#quiz__options':
-      q4_a:
+      q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
-      q4_b:
+      q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_c:
+        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+      q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_d:
+        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+      q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
+        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
     '#options':
-      q4_a: 'kilpailemaan Itämeren hansakaupunkien kanssa'
-      q4_b: 'vahvistamaan valtakunnan itäisen osan puolustusta'
-      q4_c: 'kuninkaalliseksi lomakohteeksi'
-      q4_d: 'ei mihinkään erityiseen'
+      q5_a: 'maalaiset ja heidän mahdollinen juopottelunsa'
+      q5_b: 'hevosten pelko vaunuja kohtaan'
+      q5_c: 'huono katuvalaistus'
+      q5_d: 'liikenteen vilkkaus'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Mikä näistä pätee Helsingin raitiovaunujen väritykseen?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+    '#options':
+      q6_a: 'Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+      q6_b: 'Ne ovat aina olleet keltaisia ja vihreitä.'
+      q6_c: 'Kaikki vaunut maalattiin vuonna 1973 oransseiksi ja harmaiksi.'
+      q6_d: 'Ne olivat aluksi punaisia.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7. Mihin näistä silloisen Helsingin esikaupungeista ei ole 1900-luvun alkupuolella liikennöity raitiovaunuilla?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+      q7_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+    '#options':
+      q7_a: Oulunkylä
+      q7_b: Munkkiniemi
+      q7_c: Haaga
+      q7_d: Kulosaari
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -157,13 +207,21 @@ elements: |-
   q5_result:
     '#type': webform_quiz_elements_result
     '#title': q5_result
-    '#source': 5_mihin_tarkoitukseen_helsinki_perustettiin
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

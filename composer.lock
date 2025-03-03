@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fce5a8ccbf193a256f1a7dc44fe61d3a",
+    "content-hash": "6f3bd0dc653f48f1403985ce754774c6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4559,15 +4559,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/graphql"
             }
-        },
-        {
-            "name": "drupal/graphql_search_api",
-            "version": "1.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/crowdcg/graphql-search-api/archive/8.x-1.4.zip"
-            },
-            "type": "drupal-module"
         },
         {
             "name": "drupal/hal",
@@ -19084,7 +19075,9 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": {
+        "php": ">=7.2"
+    },
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

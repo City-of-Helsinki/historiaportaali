@@ -73,6 +73,36 @@ This will log you inside the app container:
 $ make shell
 ```
 
+## Site search
+React/graphql based search at `/search`
+
+Override ES host in local.settings.php
+```
+$config['elasticsearch_connector.cluster.local']['url'] = 'http://elastic:9200';
+
+drush sapi-c
+drush sapi-i
+```
+
+React search:
+```
+cd public/modules/custom/helhist_search/frontend
+nvm use 14
+npm i
+npm run build
+npm run start
+```
+
+If CORS are disturbing form localhost:3000 add following to local development services:
+```
+parameters:
+  cors.config:
+    enabled: true
+    allowedHeaders: ['*']
+    allowedMethods: ['*']
+    allowedOrigins: ['*']
+```
+
 ## Misc
 
 - Web root is `/public`

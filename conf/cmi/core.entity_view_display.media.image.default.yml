@@ -193,7 +193,7 @@ content:
       image_style: large
       image_loading:
         attribute: lazy
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 0
     region: content
   field_neighbourhoods:

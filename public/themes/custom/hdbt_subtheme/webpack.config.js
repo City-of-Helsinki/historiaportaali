@@ -4,9 +4,8 @@ const path = require('path');
 const glob = require('glob');
 const globImporter = require('node-sass-glob-importer');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('@nuxt/friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
@@ -30,8 +29,8 @@ const Entries = () => {
   ];
 
   glob.sync(pattern, {ignore: ignore}).map((item) => {
-    entries[path.parse(item).name] = item }
-  );
+    entries[path.parse(item).name] = item;
+  });
   return entries;
 };
 
@@ -114,12 +113,26 @@ module.exports = {
       path.join(__dirname, "node_modules")
     ],
     extensions: [".js", ".json"],
+    preferRelative: true
   },
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
     new RemoveEmptyScriptsPlugin(),
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['dist/**/*'],
+      cleanAfterEveryBuildPatterns: [],
+      protectWebpackAssets: false,
+      cleanStaleWebpackAssets: true,
+      dry: false,
+      verbose: true,
+      dangerouslyAllowCleanPatternsOutsideProject: false,
+      exclude: [
+        'css/splide/splide-core.min.css',
+        'css/tiny-slider/tiny-slider.css',
+        'js/gallery-settings.min.js',
+        'js/splide/splide.min.js',
+        'js/tiny-slider/tiny-slider.js'
+      ],
     }),
     new SVGSpritemapPlugin([
       path.resolve(__dirname, 'src/icons/**/*.svg'),
@@ -142,27 +155,31 @@ module.exports = {
       },
     }),
     new CopyPlugin({
-      'patterns': [
-        {
-          'context': './',
-          'from': 'node_modules/hyphenopoly/min/{Hyphenopoly_Loader,Hyphenopoly}.js',
-          'to': path.resolve(__dirname, 'dist') + '/js/hyphenopoly/',
-          'force': true,
-          'flatten': true
-        }, {
-          'context': './',
-          'from': 'node_modules/hyphenopoly/min/patterns/{fi,sv,en-gb,ru}.wasm',
-          'to': path.resolve(__dirname, 'dist') + '/js/hyphenopoly/patterns/',
-          'globOptions': {
-            'extglob': true
-          },
-          'force': true,
-          'flatten': true
-        },
-      ]
-    }),
-    new CopyWebpackPlugin({
       patterns: [
+        {
+          from: 'node_modules/hyphenopoly/min/Hyphenopoly_Loader.js',
+          to: 'js/hyphenopoly/Hyphenopoly_Loader.js'
+        },
+        {
+          from: 'node_modules/hyphenopoly/min/Hyphenopoly.js',
+          to: 'js/hyphenopoly/Hyphenopoly.js'
+        },
+        {
+          from: 'node_modules/hyphenopoly/min/patterns/fi.wasm',
+          to: 'js/hyphenopoly/patterns/fi.wasm'
+        },
+        {
+          from: 'node_modules/hyphenopoly/min/patterns/sv.wasm',
+          to: 'js/hyphenopoly/patterns/sv.wasm'
+        },
+        {
+          from: 'node_modules/hyphenopoly/min/patterns/en-gb.wasm',
+          to: 'js/hyphenopoly/patterns/en-gb.wasm'
+        },
+        {
+          from: 'node_modules/hyphenopoly/min/patterns/ru.wasm',
+          to: 'js/hyphenopoly/patterns/ru.wasm'
+        },
         {
           from: 'node_modules/@splidejs/splide/dist/css/splide-core.min.css',
           to: 'css/splide/splide-core.min.css'

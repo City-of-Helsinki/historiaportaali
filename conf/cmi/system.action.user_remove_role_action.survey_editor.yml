@@ -1,0 +1,14 @@
+uuid: b661e903-dbfe-4734-9f0b-57ba0f52a3e3
+langcode: fi
+status: true
+dependencies:
+  config:
+    - user.role.survey_editor
+  module:
+    - user
+id: user_remove_role_action.survey_editor
+label: 'Poista rooli Survey editor valituilta käyttäjiltä'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: survey_editor

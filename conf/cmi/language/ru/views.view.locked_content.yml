@@ -22,8 +22,8 @@ display:
             offset_label: Пропустить
       fields:
         node_bulk_form:
-          label: 'Форма массовых операций с материалами'
           action_title: Действие
+          label: 'Форма массовых операций с материалами'
         title:
           label: Заголовок
           separator: ', '

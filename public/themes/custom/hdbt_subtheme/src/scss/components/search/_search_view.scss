@@ -10,8 +10,8 @@
     }
 
     h3 {
-      margin: 0;
       font-size: 1.2rem;
+      margin: 0;
     }
   }
 
@@ -24,8 +24,8 @@
   }
 
   .search-header__sort-container {
-    display: flex;
     align-items: center;
+    display: flex;
 
     h4 {
       margin: 0;
@@ -43,8 +43,8 @@
       }
 
       a.sort-item {
-        display: flex;
         align-items: center;
+        display: flex;
 
         &.is-active {
           font-weight: $font-weight-bold;

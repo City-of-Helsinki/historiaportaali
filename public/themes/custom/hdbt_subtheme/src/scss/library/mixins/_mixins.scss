@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 // Function nounit strips any unit from variable.
 @function nounit($number) {
-  @return $number / ($number * 0 + 1);
+  @return math.div($number, ($number * 0 + 1));
 }
 
 // Calculate rem (root em) units from pixels for font-size and line-height.

@@ -3,16 +3,16 @@
     height: 200px;
     overflow: hidden;
     img {
-      width: 100%;
       object-fit: cover;
+      width: 100%;
     }
   }
   
   .search-result__video {
     height: 200px;
     iframe {
-      width: 100%;
       height: 100%;
+      width: 100%;
     }
   }
 
@@ -21,26 +21,26 @@
     padding: $spacing;
 
     .metadata-row {
-      display: flex;
       align-items: flex-start;
+      display: flex;
       margin: 0 0 $spacing;
     }
 
     .metadata-item {
-      display: flex;
       align-items: center;
       background-color: $color-sand;
       color: $color-metro-dark;
-      min-height: $spacing-double;
-      padding: 0 $spacing-half;
-      margin-right: $spacing;
+      display: flex;
       font-size: 14px;
       line-height: 1.4em;
+      margin-right: $spacing;
+      min-height: $spacing-double;
+      padding: 0 $spacing-half;
     }
 
     .bundle-wrapper {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
     }
 
@@ -53,9 +53,9 @@
     }
 
     h3 {
-      margin: 0 0 $spacing;
       font-size: 18px;
       font-weight: $font-weight-bold;
+      margin: 0 0 $spacing;
 
       a {
         text-decoration: none;

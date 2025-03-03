@@ -1,13 +1,13 @@
 .block--header-search {
   display: none;
+  grid-area: search;
   position: static;
   z-index: 100;
-  grid-area: search;
   @include breakpoint($breakpoint-m) {
+    align-items: center;
     display: flex;
     margin: 0 $spacing 0 auto;
     order: 2;
-    align-items: center;
   }
 
   .hds-button--search-toggle {
@@ -15,25 +15,25 @@
   }
 
   .hds-button--search-toggle[aria-expanded="true"] {
-    outline: var(--outline-width) solid var(--focus-outline-color);
     background-color: var(--color-black-5);
+    outline: var(--outline-width) solid var(--focus-outline-color);
   }
 
   .header-search__form-wrapper {
-    display: none;
-    position: absolute;
-    top: unset;
-    left: 0;
-    right: 0;
     background-color: $color-white;
-    padding: $spacing-and-half $spacing-double;
-    margin-top: 15px;
-    border-top: 1px solid #555;
     border-bottom: 1px solid #ccc;
+    border-top: 1px solid #555;
+    display: none;
+    left: 0;
+    margin-top: 15px;
+    padding: $spacing-and-half $spacing-double;
+    position: absolute;
+    right: 0;
+    top: unset;
 
     .hds-text-input--search {
-      max-width: 600px;
       margin: 0 auto;
+      max-width: 600px;
     }
 
     .hds-text-input__input-wrapper {
@@ -46,9 +46,9 @@
       }
 
       .hds-button {
+        height: 100%;
         position: absolute;
         right: 0;
-        height: 100%;
         &:hover {
           background-color: transparent;
         }

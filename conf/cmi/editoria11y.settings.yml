@@ -11,5 +11,7 @@ hidden_handlers: ''
 ed11y_theme: lightTheme
 disable_sync: false
 preserve_params: 'search,keys,page,language,language_content_entity'
+disable_live: false
+live_h2: 'form[id^="node-"] #edit-body-wrapper .ck-content'
 ignore_containers: ''
 allow_overflow: ''

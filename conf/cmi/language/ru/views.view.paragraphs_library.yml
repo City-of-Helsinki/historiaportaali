@@ -1,4 +1,3 @@
-label: 'Библиотека параграфов'
 display:
   default:
     display_title: Основной
@@ -36,7 +35,6 @@ display:
           label: ID
           separator: ', '
         count:
-          label: Использовано
           format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50WzJdINC80LXRgdGC
         changed:
           label: Изменение
@@ -52,9 +50,5 @@ display:
         type:
           expose:
             label: Тип
-      title: 'Библиотека параграфов'
-      empty:
-        area_text_custom:
-          content: 'В библиотеке нет доступных элементов.'
   page_1:
     display_title: Страница

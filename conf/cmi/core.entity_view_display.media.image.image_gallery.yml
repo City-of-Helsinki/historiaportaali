@@ -1,0 +1,68 @@
+uuid: 276c125d-e2db-44ce-9576-21c45385e0dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.image_gallery
+    - field.field.media.image.field_authors
+    - field.field.media.image.field_buildings
+    - field.field.media.image.field_buildings_info
+    - field.field.media.image.field_copyrights
+    - field.field.media.image.field_end_year
+    - field.field.media.image.field_finna_id
+    - field.field.media.image.field_formats
+    - field.field.media.image.field_geolocation
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_keywords
+    - field.field.media.image.field_languages
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_neighbourhoods
+    - field.field.media.image.field_phenomena
+    - field.field.media.image.field_photographer
+    - field.field.media.image.field_start_year
+    - field.field.media.image.field_transcript
+    - media.type.image
+    - responsive_image.styles.image_gallery_1_1
+  module:
+    - responsive_image
+_core:
+  default_config_hash: Ky7rUnc3u7APd8dH1E5EogiDjUtvkJvq0ZHfgG6OlQw
+id: media.image.image_gallery
+targetEntityType: media
+bundle: image
+mode: image_gallery
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: image_gallery_1_1
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_authors: true
+  field_buildings: true
+  field_buildings_info: true
+  field_copyrights: true
+  field_end_year: true
+  field_finna_id: true
+  field_formats: true
+  field_geolocation: true
+  field_image_caption: true
+  field_keywords: true
+  field_languages: true
+  field_neighbourhoods: true
+  field_phenomena: true
+  field_photographer: true
+  field_start_year: true
+  field_transcript: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

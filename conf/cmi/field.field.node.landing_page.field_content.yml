@@ -19,7 +19,6 @@ dependencies:
     - paragraphs.paragraphs_type.popular_services
     - paragraphs.paragraphs_type.remote_video
     - paragraphs.paragraphs_type.target_group_links
-    - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
 _core:
@@ -52,7 +51,6 @@ settings:
       target_group_links: target_group_links
       event_list: event_list
       hearings: hearings
-      text: text
     negate: 0
     target_bundles_drag_drop:
       banner:
@@ -96,8 +94,5 @@ settings:
         enabled: true
       target_group_links:
         weight: 12
-        enabled: true
-      text:
-        weight: 15
         enabled: true
 field_type: entity_reference_revisions

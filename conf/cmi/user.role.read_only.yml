@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.announcement
     - node.type.article
     - node.type.landing_page
     - node.type.listing_page
@@ -29,6 +30,7 @@ permissions:
   - 'access toolbar'
   - 'delete own files'
   - 'view all revisions'
+  - 'view any unpublished announcement content'
   - 'view any unpublished article content'
   - 'view any unpublished content'
   - 'view any unpublished landing_page content'

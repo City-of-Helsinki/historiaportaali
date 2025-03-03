@@ -11,8 +11,11 @@ vendor
 helfi-test-automation-python/
 public/sites/simpletest/
 
-# Ignore the folder created by PhpStorm
+# Ignore the folders created by IDE
 .idea/*
+.vscode/
+
+# Ignore local settings
 public/sites/default/local.settings.php
 
 *.sql

@@ -1,0 +1,103 @@
+elements: |
+  q1:
+    '#title': '1. När inleddes spårvagnstrafiken i Helsingfors?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Den inleddes år 1891.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Den inleddes år 1891.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Den inleddes år 1891.'
+  q2:
+    '#title': '2. Vilket av dessa betyder inte spårvagn i Helsingforsslang?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Stoge betyder tåg, inte spårvagn.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Stoge betyder tåg, inte spårvagn.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Stoge betyder tåg, inte spårvagn.'
+    '#options':
+      q2_c: 'sipoonjuna (sibbotåg)'
+  q3:
+    '#title': '3. Vilket år övergick man från hästdragna vagnar till eldrivna?'
+    '#quiz__options':
+      q3_b:
+        feedback: 'Svaret var fel. Der hände år 1900.'
+      q3_c:
+        feedback: 'Svaret var fel. Der hände år 1900.'
+      q3_d:
+        feedback: 'Svaret var fel. Der hände år 1900.'
+  q4:
+    '#title': '4. Vilken var den första elektrifierade spårvagnslinjen?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Det var Tölö–Sandviken.'
+      q4_c:
+        feedback: 'Svaret var fel. Det var Tölö–Sandviken.'
+      q4_d:
+        feedback: 'Svaret var fel. Det var Tölö–Sandviken.'
+    '#options':
+      q4_a: Tölö–Sandviken
+      q4_b: Sörnäs–Salutorget–Lappviken
+      q4_c: Tölö–Salutorget–Brunnsparken
+      q4_d: Skatudden–Sandviken
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. I början av spårvagnstrafiken skedde många olyckor. Vad antog tidningsskribenter ofta vara orsaken till dem? '
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt. Man trodde ofta olyckor orsakats av lantbor och deras superi.'
+      q5_c:
+        feedback: 'Inte riktigt. Man trodde ofta olyckor orsakats av lantbor och deras superi.'
+      q5_d:
+        feedback: 'Inte riktigt. Man trodde ofta olyckor orsakats av lantbor och deras superi.'
+    '#options':
+      q5_a: 'lantbor och möjligen deras supande'
+      q5_b: 'hästars rädsla mot vagnar'
+      q5_c: 'dålig gatubelysning'
+      q5_d: 'trafikens livlighet'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vilket av dessa stämmer på Helsingfors spårvagnars färgsättning?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Man prövade med orange och grått på somliga vagnar på 1970- och 1980-talen.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Man prövade med orange och grått på somliga vagnar på 1970- och 1980-talen.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Man prövade med orange och grått på somliga vagnar på 1970- och 1980-talen.'
+    '#options':
+      q6_a: 'Man prövade med orange och grått på somliga vagnar på 1970- och 1980-talen.'
+      q6_b: 'De har alltid varit gula och gröna.'
+      q6_c: 'Alla vagnar målades oranga och gråa år 1973.'
+      q6_d: 'De var röda i början.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Till vilken av dåvarande Helsingfors förorter trafikerade spårvagnar inte under första hälften av 1900-talet?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, för spårvagnar trafikerade inte till Åggelby.'
+      q7_c:
+        feedback: 'Fel svarat, för spårvagnar trafikerade inte till Åggelby.'
+      q7_d:
+        feedback: 'Fel svarat, för spårvagnar trafikerade inte till Åggelby.'
+    '#options':
+      q7_a: Åggelby
+      q7_b: Munksnäs
+      q7_c: Haga
+      q7_d: Brändö
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på spårans historia! Hur är det då med tidiga skeden i Helsingfors trafik i allmänhet? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/helsingfors-tidiga-trafik">Helsingfors tidiga trafik</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

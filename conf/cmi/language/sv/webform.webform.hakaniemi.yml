@@ -1,0 +1,124 @@
+title: Hagnäs
+elements: |
+  q1:
+    '#title': '1. Vilket var Hagnäs ursprungliga namn?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Det hette ursprungligen Generalshagen.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Det hette ursprungligen Generalshagen.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Det hette ursprungligen Generalshagen.'
+    '#options':
+      q1_a: Generalshagen
+      q1_c: Kronohagen
+      q1_d: Berghagen
+  q3:
+    '#title': 'När byggdes Hagnäs torg?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Det byggdes på 1880-talet.'
+      q3_c:
+        feedback: 'Svaret var fel. Det byggdes på 1880-talet.'
+      q3_d:
+        feedback: 'Svaret var fel. Det byggdes på 1880-talet.'
+    '#options':
+      q3_a: 'på 1880-talet'
+      q3_b: 'på 1920-talet'
+      q3_c: 'i början av 1900-talet'
+      q3_d: 'på 1700-talet'
+  q2:
+    '#title': '2. Vad är speciellt med Hagnäs torg?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel, torget har nämligen byggts på schaktmassor.'
+      q2_c:
+        feedback: 'Ditt svar var fel, torget har nämligen byggts på schaktmassor.'
+      q2_d:
+        feedback: 'Ditt svar var fel, torget har nämligen byggts på schaktmassor.'
+    '#options':
+      q2_a: 'Det har byggts på schaktmassor.'
+      q2_b: 'Det har alltid varit en politisk händelseplats.'
+      q2_c: 'Där såldes ursprungligen begagnade kläder. '
+      q2_d: 'På dess plats fanns förr en hög backe.'
+  q4:
+    '#title': '4. Var låg Tavasttullen?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Den fanns i norra ändan av Långa bron.'
+      q4_c:
+        feedback: 'Svaret var fel. Den fanns i norra ändan av Långa bron.'
+      q4_d:
+        feedback: 'Svaret var fel. Den fanns i norra ändan av Långa bron.'
+    '#options':
+      q4_a: 'i norra ändan av Långa bron'
+      q4_b: 'i södra ändan av Långa bron'
+      q4_c: 'på platsen av nuvarande Arenahuset'
+      q4_d: 'i trakten av nuvarande Sörnäs metrostation'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. VVilket år fullbordades den nuvarande Långa bron som är av sten?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, det skedde år 1912.'
+      q5_c:
+        feedback: 'Inte riktigt, det skedde år 1912.'
+      q5_d:
+        feedback: 'Inte riktigt, det skedde år 1912.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. I Hagnäs finns John Stenbergs strand. Stenberg var'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Han var en banbrytare inom verkstadsindustrin.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Han var en banbrytare inom verkstadsindustrin.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Han var en banbrytare inom verkstadsindustrin.'
+    '#options':
+      q6_a: 'en banbrytare inom verkstadsindustrin'
+      q6_b: 'en framgångsrik idrottare'
+      q6_c: 'en populär cirkusartist'
+      q6_d: 'en banbrytare inom bryggeriindustrin'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vad var kännetecknande för Hagnäs torg på 1900-talet, förutom torghandeln?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det var nämligen en samlingplats för arbetarrörelsen.'
+      q7_c:
+        feedback: 'Fel svarat, det var nämligen en samlingplats för arbetarrörelsen.'
+      q7_d:
+        feedback: 'Fel svarat, det var nämligen en samlingplats för arbetarrörelsen.'
+    '#options':
+      q7_a: 'arbetarrörelsens samlingar'
+      q7_b: 'studenternas samlingar '
+      q7_c: 'fosterländska samlingar'
+      q7_d: 'dansbanedanser och folkmusik'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilket år blev Cirkelhuset färdigt?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Det blev färdigt 1968.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Det blev färdigt 1968.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Det blev färdigt 1968.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Hagnäs historia! Hur är det då Broholmens historia? Bekanta dig med artikeln <a href="/sv/omraden/mellersta/broholmen">Broholmen</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om. Läs artikeln <a href="/sv/omraden/mellersta/hagnas">Hagnäs</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

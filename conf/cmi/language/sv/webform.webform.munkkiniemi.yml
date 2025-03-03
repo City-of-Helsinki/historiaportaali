@@ -1,0 +1,144 @@
+title: Munksnäs
+elements: |
+  q1:
+    '#title': '1. Varifrån kommer namnet Munksnäs?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Namnet kommer från munkarna i ett estniskt kloster som hade fiskerätt i Vanda å.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Namnet kommer från munkarna i ett estniskt kloster som hade fiskerätt i Vanda å.'
+      q1_d:
+        feedback: 'SNamnet kommer från munkarna i ett estniskt kloster som hade fiskerätt i Vanda å.'
+    '#options':
+      q1_a: 'från munkarna i ett estniskt kloster som hade fiskerätt i Vanda å'
+      q1_b: 'från mästerverken av en lokal bagare'
+      q1_c: 'från ett kloster som ryssar hade grundat på stället'
+      q1_d: 'från munkformade kullar som var kännetecknande för trakten'
+  q2:
+    '#title': '2. Vilket av dessa stämmer inte på Munksnäs herrgård?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Det är inte i bostadsbruk, utan Kone Ab:s användning.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Det är inte i bostadsbruk, utan Kone Ab:s användning.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Det är inte i bostadsbruk, utan Kone Ab:s användning.'
+    '#options':
+      q2_a: 'Den är fortfarande i bostadsbruk.'
+      q2_b: 'Den har grundats på 1600-talet.'
+      q2_c: 'Där fanns hyresbostäder på 1930-talet.'
+      q2_d: 'Det har varit i ägo av en holländsk släkt. '
+  q3:
+    '#title': '3. Vilket av dessa stämmer inte på herrgårdens spannmålsmagasin?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Det har inte rivits.'
+      q3_c:
+        feedback: 'Svaret var fel. Det har inte rivits.'
+      q3_d:
+        feedback: 'Svaret var fel. Det har inte rivits.'
+    '#options':
+      q3_a: 'Det har rivits.'
+      q3_b: 'Det har länge varit i bostadsbruk.'
+      q3_c: 'Det har fungerat som utkikstorn.'
+      q3_d: 'På dess topp har det funnits en hemlig optisk telegraf.'
+  q4:
+    '#title': '4. Vilka områden hörde till Hoplax kommun år 1920?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Till kommunen hörde Munksnäs, Drumsö och Haga.'
+      q4_c:
+        feedback: 'Svaret var fel. Till kommunen hörde Munksnäs, Drumsö och Haga.'
+      q4_d:
+        feedback: 'Svaret var fel. Till kommunen hörde Munksnäs, Drumsö och Haga.'
+    '#options':
+      q4_a: 'Munksnäs, Drumsö och Haga'
+      q4_b: 'Lillhoplax, Haga och Munksnäs'
+      q4_c: 'Munknäs, Mejlans och Brunakärr'
+      q4_d: 'Munksnäs, Drumsö och Böle'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vem var Sigurd Stenius?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt. Han kan betraktas som grundare av Munksnäs samhälle.'
+      q5_c:
+        feedback: 'Inte riktigt. Han kan betraktas som grundare av Munksnäs samhälle.'
+      q5_d:
+        feedback: 'Inte riktigt. Han kan betraktas som grundare av Munksnäs samhälle.'
+    '#options':
+      q5_a: 'grundaren av Munksnäs samhälle'
+      q5_b: 'en ägare till Munksnäs herrgård'
+      q5_c: 'en skådespelare och sångare från Munksnäs'
+      q5_d: 'en arkitekt som arbetat i Munksnäs'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. När införlivades Munksnäs med Helsingfors stad?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Det hände år 1946.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Det hände år 1946.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Det hände år 1946.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. När gjordes Munknäs herrgårds gamla fiskartorp till restaurang?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det hände nämligen år 1915.'
+      q7_c:
+        feedback: 'Fel svarat, det hände nämligen år 1915.'
+      q7_d:
+        feedback: 'Fel svarat, det hände nämligen år 1915.'
+    '#options':
+      q7_b: 'i slutet av 1800-talet'
+      q7_d: 'i slutet av 1800-talet'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vilken idrottsgren är tätt förknippad med Munkkiniemen Yhteiskoulu?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Det är korgboll.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Det är korgboll.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Det är korgboll.'
+    '#options':
+      q8_a: korgboll
+      q8_b: fotboll
+      q8_c: löpning
+      q8_d: skidlöpning
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Vad är speciellt med Munkhöjdens köpcentrum?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Under köpcentret finns en metrostation.'
+      q9_c:
+        feedback: 'Svaret var fel. Under köpcentret finns en metrostation.'
+      q9_d:
+        feedback: 'Svaret var fel. Under köpcentret finns en metrostation.'
+    '#options':
+      q9_a: 'Det finns en metrostation under köpcentret. '
+      q9_b: 'Inget, det är en typisk produkt av sin tid.'
+      q9_c: 'Där fungerar en privat skola.'
+      q9_d: 'Det har länge stått tomt. '
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Munksnäs historia! Hur är det då med Haga? Bekanta dig med artikeln <a href="/sv/omraden/vastra/haga-fran-villasamhalle-till-idealforort">Haga, från villasamhälle till idealförort</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/vastra/munksnas">Munksnäs</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

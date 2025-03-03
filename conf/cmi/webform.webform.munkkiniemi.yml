@@ -1,4 +1,4 @@
-uuid: 6b682f37-76f1-4204-ad35-f2d63b474538
+uuid: 0a2164e8-524f-438e-b248-99a13e7f2c7e
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,207 +8,232 @@ close: null
 uid: 116
 template: false
 archive: false
-id: toolo
-title: Töölö
+id: munkkiniemi
+title: Munkkiniemi
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Missä sijaitsi Töölön sokeritehdas?'
+    '#title': '1. Mistä nimi Munkkiniemi tulee?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Nimi tulee virolaisen luostarin munkeista, joilla oli kalastusoikeus Vantaanjoessa.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Nimi tulee virolaisen luostarin munkeista, joilla oli kalastusoikeus Vantaanjoessa.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Nimi tulee virolaisen luostarin munkeista, joilla oli kalastusoikeus Vantaanjoessa.'
     '#options':
-      q1_a: 'nykyisen Kansallisoopperan paikalla'
-      q1_b: 'Eduskuntatalon paikalla'
-      q1_c: 'Finlandia-talon paikalla'
-      q1_d: Sibelius-puistossa
+      q1_a: 'virolaisen luostarin munkeista, joilla oli kalastusoikeus Vantaanjoessa'
+      q1_b: 'paikallisen leipurin mestariteoksista'
+      q1_c: 'venäläisten paikalle perustamasta luostarista'
+      q1_d: 'munkin muotoisista kukkuloista, jotka olivat seudulle tyypillisiä'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Missä kulkee Etu-Töölön ja Taka-Töölön raja?'
+    '#title': '2. Mikä näistä ei päde Munkkiniemen kartanoon?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se ei ole asuinkäytössä vaan Kone Oyj:n käytössä.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se ei ole asuinkäytössä vaan Kone Oyj:n käytössä.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se ei ole asuinkäytössä vaan Kone Oyj:n käytössä.'
     '#options':
-      q2_a: 'Hesperian esplanadilla'
-      q2_b: 'Sandelsinkadulla Töölöntorin alalaidassa'
-      q2_c: 'Eino Leinon kadulla ja Humalistonkadulla'
-      q2_d: Runeberginkadulla
+      q2_a: 'Se on edelleen asuinkäytössä.'
+      q2_b: 'Se on perustettu 1600-luvulla. '
+      q2_c: 'Siellä oli vuokra-asuntoja 1930-luvulla.'
+      q2_d: 'Se on ollut hollantilaisen suvun omistuksessa.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Mihin tarkoitukseen nykyinen Kisahalli alun perin rakennettiin?'
+    '#title': '3. Mikä näistä ei päde kartanon viljamakasiiniin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Sitä ei ole purettu.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Sitä ei ole purettu.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Sitä ei ole purettu.'
     '#options':
-      q3_a: messuhalliksi
-      q3_b: urheiluhalliksi
-      q3_c: konserttisaliksi
-      q3_d: ratsastusmaneesiksi
+      q3_a: 'Se on purettu.'
+      q3_b: 'Se on pitkään ollut asuinkäytössä.'
+      q3_c: 'Se on toiminut tähystystornina. '
+      q3_d: 'Sen huipulla on ollut salainen optinen lennätin.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä seuraavista kulttuurilaitoksista ei sijaitse Töölössä?'
+    '#title': '4. Mitkä alueet kuuluivat Huopalahden kuntaan vuonna 1920?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Siihen kuuluivat Munkkiniemi, Lauttasaari ja Haaga.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Siihen kuuluivat Munkkiniemi, Lauttasaari ja Haaga.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Siihen kuuluivat Munkkiniemi, Lauttasaari ja Haaga.'
     '#options':
-      q4_a: Kansallisarkisto
-      q4_b: Kansallismuseo
-      q4_c: 'Kansallisooppera ja -baletti'
-      q4_d: 'Taideyliopiston Sibelius-akatemia'
+      q4_a: 'Munkkiniemi, Lauttasaari ja Haaga'
+      q4_b: 'Pikku Huopalahti, Haaga ja Munkkiniemi'
+      q4_c: 'Munkkiniemi, Meilahti ja Ruskeasuo'
+      q4_d: 'Munkkiniemi, Lauttasaari ja Pasila'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mitä Bolliksen eli Taka-Töölön pallokentän paikalla oli 1700-luvulla?'
+    '#title': "5.\tKuka oli Sigurd Stenius?"
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Häntä voidaan pitää Munkkiniemen yhdyskunnan perustajana.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Häntä voidaan pitää Munkkiniemen yhdyskunnan perustajana.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Häntä voidaan pitää Munkkiniemen yhdyskunnan perustajana.'
     '#options':
-      q5_a: suo
-      q5_b: perunamaa
-      q5_c: kasvihuone
-      q5_d: puutarha
+      q5_a: 'Munkkiniemen yhdyskunnan perustaja'
+      q5_b: 'Munkkiniemen kartanon omistaja'
+      q5_c: 'munkkiniemeläinen näyttelijä ja laulaja'
+      q5_d: 'Munkkiniemessä työskennellyt arkkitehti'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Milloin Hietaniemen uimaranta on avattu yleisölle?'
+    '#title': "6.\tMilloin Munkkiniemi liitettiin Helsingin kaupunkiin?"
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1946.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1946.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1946.'
     '#options':
-      q6_a: 'juhannuksena 1930'
-      q6_b: 'juhannuksena 1929'
-      q6_c: 'juhannuksena 1931'
-      q6_d: 'juhannuksena 1940'
+      q6_a: '1946'
+      q6_b: '1932'
+      q6_c: '1914'
+      q6_d: '1923'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mitä erikoista Hietaniemen uimarannassa oli verrattuna vanhempiin maauimaloihin?'
+    '#title': '7. Milloin Munkkiniemen kartanon entisestä kalastajan torpasta tehtiin ravintola?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1915.'
       q7_c:
         is_correct: false
-        feedback: ' Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: ' Vastauksesi oli väärin. Se tapahtui vuonna 1915.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1915.'
     '#options':
-      q7_a: 'Siellä ei ollut erillisiä osastoja miehille ja naisille.'
-      q7_b: 'Siellä sai olla alasti.'
-      q7_c: 'Se oli lapsilta kielletty.'
-      q7_d: 'Siellä oli tupakointi kielletty.'
+      q7_a: '1915'
+      q7_b: '1800-luvun lopussa'
+      q7_c: '1937'
+      q7_d: '1922'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
     '#type': quiz_element_radios
-    '#title': '8. Mitä Musiikkitalon kohdalla oli ennen?'
+    '#title': "8.\tMikä urheilulaji liittyy kiinteästi Munkkiniemen Yhteiskouluun?"
     '#quiz__options':
       q8_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q8_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Siihen liittyy koripallo.'
       q8_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Siihen liittyy koripallo.'
       q8_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Siihen liittyy koripallo.'
     '#options':
-      q8_a: 'Töölön tavara-asema'
-      q8_b: 'Töölön kirjasto'
-      q8_c: teurastamo
-      q8_d: kaasutehdas
+      q8_a: koripallo
+      q8_b: jalkapallo
+      q8_c: juoksu
+      q8_d: hiihto
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#type': quiz_element_radios
+    '#title': '9. Mitä erikoista on Munkkivuoren ostoskeskuksessa?'
+    '#quiz__options':
+      q9_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q9_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen alla on metroasema.'
+      q9_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen alla on metroasema.'
+      q9_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen alla on metroasema.'
+    '#options':
+      q9_a: 'Sen alla on metroasema.'
+      q9_b: 'Ei mitään, se on tyypillinen oman aikansa tuote.'
+      q9_c: 'Siellä toimii yksityinen koulu.'
+      q9_d: 'Se on seissyt pitkään tyhjillään.'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -245,12 +270,16 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q8_result
     '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
+  q9_result:
+    '#type': webform_quiz_elements_result
+    '#title': q9_result
+    '#source': mika_oli_helsingin_yliopiston_alkuperainen_nimi_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Töölön historian tuntija! Entä viereinen kaupunginosa Meilahti? Tutustu <a href="https://historia.hel.fi/fi/alueet/lantinen/meilahti">Meilahti</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet varsinainen Munkkiniemen historian tuntija! Tunnetko yhtä hyvin Haagan historiaa? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/alueet/lantinen/haaga-huvilayhdyskunnasta-ihannelahioksi">https://historia.hel.fi/fi/alueet/lantinen/haaga-huvilayhdyskunnasta-ihannelahioksi</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/lantinen/munkkiniemi">Munkkiniemi</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

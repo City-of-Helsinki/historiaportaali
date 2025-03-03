@@ -1,139 +1,214 @@
-uuid: 04426b85-28ca-4e33-a3fb-5411dd092cf2
+uuid: e7b515f3-072d-48bf-ae09-b876e756d83e
 langcode: fi
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 116
 template: false
 archive: false
-id: helsinki_visa
-title: 'Helsingin perustaminen'
+id: lentoliikenne
+title: Lentoliikenne
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Kuka perusti Helsingin?'
+    '#title': "1.\tKuka oli Reissu-Lasse?"
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Reissu-Lassella viitattiin presidentti Relanderiin.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin. '
+        feedback: 'Vastauksesi oli väärin. Reissu-Lassella viitattiin presidentti Relanderiin.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kustaa Vaasa, Ruotsin kuningas, perusti Helsingin.'
+        feedback: 'Vastauksesi oli väärin. Reissu-Lassella viitattiin presidentti Relanderiin.'
     '#options':
-      q1_a: 'Kustaa Vaasa'
-      q1_b: 'Kuningatar Kristiina'
-      q1_c: 'Kaarle XII'
-      q1_d: 'Kaarle IX'
+      q1_a: 'Suomen tasavallan presidentti'
+      q1_b: 'Aero Oy:n ensimmäinen johtaja'
+      q1_c: 'Aero Oy:n lentäjä'
+      q1_d: 'Suomen ilmavoimien komentaja'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Mihin Helsinki alun perin perustettiin?'
+    '#title': "2.\tMissä sijaitsi Helsingin ensimmäinen lentoasema?"
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Katajanokan kärjessä.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Katajanokan kärjessä.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin alkujaan Vanhankaupunginlahdelle.'
+        feedback: 'Vastauksesi oli väärin. Se sijaitsi Katajanokan kärjessä.'
     '#options':
-      q2_a: Vanhankaupunginlahdelle
-      q2_b: Sörnäistenniemeen
-      q2_c: Vironniemeen
-      q2_d: 'Helsingin pitäjään'
+      q2_a: 'Katajanokan kärjessä'
+      q2_b: 'Ruoholahden Kellosaaressa'
+      q2_c: Malmilla
+      q2_d: Santahaminassa
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna Helsinki perustettiin?'
+    '#title': "3.\tMinä vuonna aloitettiin lentoliikenne Helsingistä?"
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1924.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1924.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin vuonna 1550.'
+        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1924.'
     '#options':
-      q3_a: '1550'
-      q3_b: '1640'
-      q3_c: '1670'
-      q3_d: '1702'
+      q3_a: '1924'
+      q3_b: '1926'
+      q3_c: '1929'
+      q3_d: '1931'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä on Helsingin perustamispäivä?'
+    '#title': "4.\tMillaisia olivat siviililiikenteessä käytetyt lentokoneet ensimmäisen 10 vuoden aikana?"
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: "Vastauksesi oli väärin. Ne olivat\tpelkästään vesitasoja, joilla laskeuduttiin talvella jäälle."
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: "Vastauksesi oli väärin. Ne olivat\tpelkästään vesitasoja, joilla laskeuduttiin talvella jäälle."
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin 12.6.1550.'
+        feedback: "Vastauksesi oli väärin. Ne olivat\tpelkästään vesitasoja, joilla laskeuduttiin talvella jäälle."
     '#options':
-      q4_a: 12.6.
-      q4_b: 14.6.
-      q4_c: 12.7.
-      q4_d: 14.7.
+      q4_a: 'pelkästään vesitasoja, joilla laskeuduttiin talvella jäälle'
+      q4_b: 'vesitasoja ja pyörillä varustettuja lentokoneita'
+      q4_c: 'pyörillä varustettuja lentokoneita'
+      q4_d: 'pyörillä varustettuja lentokoneita ja ilmalaivoja'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
-  5_mihin_tarkoitukseen_helsinki_perustettiin:
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mihin tarkoitukseen Helsinki perustettiin?'
+    '#title': "5.\tKeskustan ulkopuolelle alettiin pian kaavailla lentokenttää. Mitä näistä ei ole harkittu?"
     '#quiz__options':
-      q4_a:
+      q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
-      q4_b:
+      q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_c:
+        feedback: 'Vastauksesi oli väärin. Töölönlahden kuivattamista lentokentäksi ei ole koskaan harkittu.'
+      q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
-      q4_d:
+        feedback: 'Vastauksesi oli väärin. Töölönlahden kuivattamista lentokentäksi ei ole koskaan harkittu.'
+      q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Helsinki perustettiin kilpailemaan Itämeren hansakaupunkien kanssa.'
+        feedback: 'Vastauksesi oli väärin. Töölönlahden kuivattamista lentokentäksi ei ole koskaan harkittu.'
     '#options':
-      q4_a: 'kilpailemaan Itämeren hansakaupunkien kanssa'
-      q4_b: 'vahvistamaan valtakunnan itäisen osan puolustusta'
-      q4_c: 'kuninkaalliseksi lomakohteeksi'
-      q4_d: 'ei mihinkään erityiseen'
+      q5_a: 'Töölönlahden kuivattaminen lentokentäksi'
+      q5_b: 'Vanhankaupunginlahden kuivattaminen lentokentäksi'
+      q5_c: 'lentokentän sijoittaminen Mankkaalle'
+      q5_d: 'lentokentän sijoittaminen Tuomarinkylään'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Milloin Malmin lentoasema vihittiin käyttöön?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä vihittiin käyttöön 1938.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä vihittiin käyttöön 1938.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä vihittiin käyttöön 1938.'
+    '#options':
+      q6_a: '1938'
+      q6_b: '1936'
+      q6_c: '1934'
+      q6_d: '1940'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': "7.\tMiksi Hyvinkään lentokenttä toimi vuosina 1944–1947 Helsingin lentokenttänä?"
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä oli liittoutuneiden valvontakomission yksityiskenttänä.'
+      q7_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä oli liittoutuneiden valvontakomission yksityiskenttänä.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Malmin lentokenttä oli liittoutuneiden valvontakomission yksityiskenttänä.'
+    '#options':
+      q7_a: 'Malmin lentokenttä oli liittoutuneiden valvontakomission yksityiskenttänä.'
+      q7_b: 'Malmin lentokenttä oli sodan jäljiltä korjauksen tarpeessa.'
+      q7_c: 'Sodan jälkeen lentoliikennettä ei voitu järjestää.'
+      q7_d: 'Malmin lentokenttä oli sotilaskäytössä.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#type': quiz_element_radios
+    '#title': "8.\tMilloin uusi lentokenttä valmistui Helsingin maalaiskunnan Seutulaan?"
+    '#quiz__options':
+      q8_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q8_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1952.'
+      q8_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1952.'
+      q8_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se valmistui 1952.'
+    '#options':
+      q8_a: '1952'
+      q8_b: '1950'
+      q8_c: '1954'
+      q8_d: '1948'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -157,13 +232,25 @@ elements: |-
   q5_result:
     '#type': webform_quiz_elements_result
     '#title': q5_result
-    '#source': 5_mihin_tarkoitukseen_helsinki_perustettiin
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
+  q8_result:
+    '#type': webform_quiz_elements_result
+    '#title': q8_result
+    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen lentoliikenteen historian tuntija! Entäpä raitiovaunuliikenne? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> .'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/lentoliikenne">Lentoliikenne</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

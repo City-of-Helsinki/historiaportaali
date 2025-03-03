@@ -1,0 +1,26 @@
+diff --git a/matomo.module b/matomo.module
+index 08daac0..7a41988 100644
+--- a/matomo.module
++++ b/matomo.module
+@@ -228,7 +228,7 @@ function matomo_page_attachments(array &$page) {
+     $script .= '(function(){';
+     $script .= 'var u=(("https:" == document.location.protocol) ? "' . UrlHelper::filterBadProtocol($url_https) . '" : "' . UrlHelper::filterBadProtocol($url_http) . '");';
+     $script .= '_paq.push(["setSiteId", ' . Json::encode($id) . ']);';
+-    $script .= '_paq.push(["setTrackerUrl", u+"matomo.php"]);';
++    $script .= '_paq.push(["setTrackerUrl", u+"tracker.php"]);';
+ 
+     // Track logged in users across all devices.
+     if ($config->get('track.userid') && $account->isAuthenticated()) {
+diff --git a/src/Form/MatomoAdminSettingsForm.php b/src/Form/MatomoAdminSettingsForm.php
+index aba9342..100f614 100644
+--- a/src/Form/MatomoAdminSettingsForm.php
++++ b/src/Form/MatomoAdminSettingsForm.php
+@@ -857,7 +857,7 @@ class MatomoAdminSettingsForm extends ConfigFormBase {
+       $url .= '/';
+       $form_state->setValueForElement($form['general'][$urlFormKey], $url);
+     }
+-    $url = $url . 'matomo.php';
++    $url = $url . 'tracker.php';
+     try {
+       $result = $this->httpClient->request('GET', $url);
+       if ($result->getStatusCode() != Response::HTTP_OK) {

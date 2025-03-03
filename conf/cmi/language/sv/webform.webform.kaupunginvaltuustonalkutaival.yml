@@ -1,0 +1,120 @@
+title: 'Stadsfullmäktiges början'
+elements: |
+  q1:
+    '#title': '1. När hölls det första stadsfullmäktigevalet?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Det hölls i december 1874.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Det hölls i december 1874.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Det hölls i december 1874.'
+    '#options':
+      q1_a: 'i december 1874'
+      q1_b: 'i december 1873'
+      q1_c: 'i januari 1875'
+      q1_d: 'i juni 1877'
+  q2:
+    '#title': '2. Hur många fullmäktiheledamöter hade stadsfullmäktige på 1800-talet?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. De var 48.'
+      q2_c:
+        feedback: 'Ditt svar var fel. De var 48.'
+      q2_d:
+        feedback: 'Ditt svar var fel. De var 48.'
+  q3:
+    '#title': '3. Vilket var Helsingfors invånarantal år 1875?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Det var 23 070.'
+      q3_c:
+        feedback: 'Svaret var fel. Det var 23 070.'
+      q3_d:
+        feedback: 'Svaret var fel. Det var 23 070.'
+  q4:
+    '#title': '4. Vilka var röstberättigade i det första fullmäktigevalet?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Röstberättigade var alla skattebetalande myndiga, godryktade män och myndiga kvinnor samt skattebetalande företag, stiftelser och sterbhus.'
+      q4_c:
+        feedback: 'Svaret var fel. Röstberättigade var alla skattebetalande myndiga, godryktade män och myndiga kvinnor samt skattebetalande företag, stiftelser och sterbhus.'
+      q4_d:
+        feedback: 'Svaret var fel. Röstberättigade var alla skattebetalande myndiga, godryktade män och myndiga kvinnor samt skattebetalande företag, stiftelser och sterbhus.'
+    '#options':
+      q4_a: 'alla skattebetalande, myndiga, godryktade män och myndiga kvinnor samt skattebetalande företag, stiftelser och sterbhus'
+      q4_b: 'alla skattebetalande, myndiga, godryktade män'
+      q4_c: 'alla myndiga stadsbor'
+      q4_d: 'alla skattebetalande, myndiga, godryktade stadsbor'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilket av påståendena stämmer?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt. Kvinnor var inte valbara men kunde kunde vara medlemmar i kommunala nämnder.'
+      q5_c:
+        feedback: 'Inte riktigt. Kvinnor var inte valbara men kunde kunde vara medlemmar i kommunala nämnder.'
+      q5_d:
+        feedback: 'Inte riktigt. Kvinnor var inte valbara men kunde kunde vara medlemmar i kommunala nämnder.'
+    '#options':
+      q5_a: 'Kvinnor var inte valbara men kunde kunde vara medlemmar i kommunala nämnder.'
+      q5_b: 'Kvinnor var valbara, dvs. kunde ställa upp som kandidater i fullmäktigeval.'
+      q5_c: 'Alla över 24-åriga män kunde kandidera i fullmäktigevalet.'
+      q5_d: 'Fullmäktigevalkandidaterna skulle tillhöra borgarståndet. '
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Röstningsaktiviteten var svag under hela 1800-talet och ännu i början av 1900-talet. Vilken av dessa var inte en orsak?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Det felaktiga svarsalternativet var att man inte förstod valets betydelse.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Det felaktiga svarsalternativet var att man inte förstod valets betydelse.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Det felaktiga svarsalternativet var att man inte förstod valets betydelse.'
+    '#options':
+      q6_a: 'Man förstod inte valets betydelse.'
+      q6_b: 'Röstningsproceduren var krånglig och långvarig.'
+      q6_c: 'Listvalet var krångligt.'
+      q6_d: 'Kommunalval hölls nästan varannan månad.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vem var det första fullmäktigevalets röstkung?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det var Leo Mechelin.'
+      q7_c:
+        feedback: 'Fel svarat, det var Leo Mechelin.'
+      q7_d:
+        feedback: 'Fel svarat, det var Leo Mechelin.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Hurdan social sammansättning hade första stadsfullmäktige?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. De flesta fullmäktigeledamöterna tillhörde den högsta samhällsklassen.'
+      q8_c:
+        feedback: 'Ditt svar var fel. De flesta fullmäktigeledamöterna tillhörde den högsta samhällsklassen.'
+      q8_d:
+        feedback: 'Ditt svar var fel. De flesta fullmäktigeledamöterna tillhörde den högsta samhällsklassen.'
+    '#options':
+      q8_a: 'De flesta fullmäktigeledamöterna tillhörde den högsta samhällsklassen.'
+      q8_b: 'De flesta fullmäktigeledamöterna tillhörde medelklassen.'
+      q8_c: 'Det fanns fullmäktigeledamöter jämnt från olika samhällsklasser.'
+      q8_d: 'Till stadsfullmäktige valdes en representant för arbetarklassen.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på stadsfullmäktiges! Hur är det då med stadshuset? Bekanta dig med artikeln <a href="/sv/helheter/maktbruk-och-forvaltning/stadshuset">Stadshuset</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/vastra/munksnas">Munksnäs</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

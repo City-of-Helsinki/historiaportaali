@@ -1,0 +1,120 @@
+elements: |
+  q1:
+    '#title': '1. Vem kallades Reslander, på finska Reissu-Lasse?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Benämningen syftade på Finlands president.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Benämningen syftade på Finlands president.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Benämningen syftade på Finlands president.'
+    '#options':
+      q1_a: 'Republiken Finlands president'
+      q1_b: 'Aero Ab:s första direktör'
+      q1_c: 'Aero Ab:s pilot'
+      q1_d: 'Kommendören av Finlands flygvapen'
+  q2:
+    '#title': '2. Var fanns Helsingfors första flygstation?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Du svarade fel. Den fanns på Skatuddens spets.'
+      q2_c:
+        feedback: 'Du svarade fel. Den fanns på Skatuddens spets.'
+      q2_d:
+        feedback: 'Du svarade fel. Den fanns på Skatuddens spets.'
+    '#options':
+      q2_a: 'på Skatuddens spets'
+      q2_b: 'på Skällaren vid Gräsviken'
+      q2_c: 'i Malm'
+      q2_d: 'i Sandhamn'
+  q3:
+    '#title': '3. Vilket år inleddes flygtrafiken i Helsingfors?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Den inleddes år 1924.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Den inleddes år 1924.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Den inleddes år 1924.'
+  q4:
+    '#title': '4. Hurdana var flygplanen som användes i den civila luftfarten under de första tio åren?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. De var enbart hydroplan som på vintern landade på isen.'
+      q4_c:
+        feedback: 'Ditt svar var fel. De var enbart hydroplan som på vintern landade på isen.'
+      q4_d:
+        feedback: 'Ditt svar var fel. De var enbart hydroplan som på vintern landade på isen.'
+    '#options':
+      q4_a: 'enbart hydroplan som på vintern landade på isen'
+      q4_b: 'hydroplan och flygplan med hjul'
+      q4_c: 'flygplan med hjul'
+      q4_d: 'flygplan med hjul och luftskepp'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Man började snart planera en flygstation utanför centrum. Vilket av dessa har inte övervägts?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Man har aldrig övervägt att torrlägga Tölöviken till flygplats.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Man har aldrig övervägt att torrlägga Tölöviken till flygplats.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Man har aldrig övervägt att torrlägga Tölöviken till flygplats.'
+    '#options':
+      q5_a: 'att torrlägga Tölöviken till flygplats'
+      q5_b: 'att torrlägga Gammelstadsviken till flygplats'
+      q5_c: 'att placera ut flygplatsen i Mankans'
+      q5_d: 'att placera ut flygplatsen i Domarby'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. När invigdes flygstationen i Malm?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Malms flygplats invigdes 1938.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Malms flygplats invigdes 1938.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Malms flygplats invigdes 1938.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Varför fungerade Hyvinge flygplats åren 1944–1947 som Helsingfors flygplats?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Ditt svar var fel. Malms flygplats hade övertagits av de allierades kontrollkommission för dess privata bruk.'
+      q7_c:
+        feedback: 'Ditt svar var fel. Malms flygplats hade övertagits av de allierades kontrollkommission för dess privata bruk.'
+      q7_d:
+        feedback: 'Malms flygplats hade övertagits av de allierades kontrollkommission för dess privata bruk.'
+    '#options':
+      q7_a: 'Malms flygplats hade övertagits av de allierades kontrollkommission för dess privata bruk.'
+      q7_b: 'Malms flygplats var efter kriget i nehov av reparation.'
+      q7_c: 'Efter kriget kunde ingen flygtrafik ordnas.'
+      q7_d: 'Malms flygplats var i militärbruk.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. När blev den nya flygplatsen färdig i Sjöskog i Helsinge kommun?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Du svarade fel. Den blev färdig år 1952.'
+      q8_c:
+        feedback: 'Du svarade fel. Den blev färdig år 1952.'
+      q8_d:
+        feedback: 'Du svarade fel. Den blev färdig år 1952.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på flygtrafikens historia! Hur är det då med spårvagnstrafiken? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/flygtrafiken">Flygtrafiken</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Flygtrafiken

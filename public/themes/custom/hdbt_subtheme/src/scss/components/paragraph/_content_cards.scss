@@ -31,14 +31,14 @@ $card_spacing: $spacing-and-half;
   }
 
   @include breakpoint($breakpoint-m) {
-    overflow-x: hidden;
     flex-wrap: wrap;
+    overflow-x: hidden;
   }
 }
 
 .content-cards__subtitle {
-  margin-top: 0;
   margin-bottom: $spacing-half;
+  margin-top: 0;
   text-transform: uppercase;
 }
 
@@ -54,13 +54,13 @@ $card_spacing: $spacing-and-half;
 }
 
 .content-card__link {
-  width: 245px;
-  padding-bottom: 0;
   height: 100%;
+  padding-bottom: 0;
+  width: 245px;
 
   @include breakpoint($breakpoint-m) {
-    width: auto;
     padding-bottom: $spacing;
+    width: auto;
   }
 
   &::after {
@@ -76,13 +76,13 @@ $card_spacing: $spacing-and-half;
 }
 
 .content-card {
-  width: calc(245px + #{$card_spacing});
-  max-width: 50%;
-  padding-left: $card_spacing;
-  // Override helfi grid system.
-  margin-top: 0 !important;
   flex: 1 1 33%;
   margin-bottom: $card_spacing;
+  // Override helfi grid system.
+  margin-top: 0 !important;
+  max-width: 50%;
+  padding-left: $card_spacing;
+  width: calc(245px + #{$card_spacing});
 
   // Override helfi grid system.
   &.content-card--design-listing-item,
@@ -104,8 +104,8 @@ $card_spacing: $spacing-and-half;
   }
 
   @include breakpoint($breakpoint-l) {
-    width: 25%;
     flex: 1 1 25%;
+    width: 25%;
   }
 
   &:only-child {
@@ -141,27 +141,27 @@ $card_spacing: $spacing-and-half;
 
 .content-card__content {
   background: $color-white;
-  padding: $spacing;
   height: 100%;
+  padding: $spacing;
 
   .content-card__metadata {
-    display: flex;
     align-items: flex-start;
+    display: flex;
     flex-wrap: wrap;
     margin: 0 0 $spacing-half;
   }
 
   .content-card__metadata-item {
-    display: flex;
     align-items: center;
     background-color: $color-sand;
     color: $color-metro-dark;
-    min-height: $spacing-double;
-    padding: 0 $spacing-half;
-    margin-right: $spacing;
-    margin-bottom: $spacing-half;
+    display: flex;
     font-size: 14px;
     line-height: 1.4em;
+    margin-bottom: $spacing-half;
+    margin-right: $spacing;
+    min-height: $spacing-double;
+    padding: 0 $spacing-half;
 
     svg {
       vertical-align: middle;
@@ -173,8 +173,8 @@ $card_spacing: $spacing-and-half;
   }
 
   .content-card__metadata-item__text {
-    padding: $spacing-half 0;
     line-height: $lineheight-s;
+    padding: $spacing-half 0;
 
     & > span {
       display: flex;
@@ -190,8 +190,8 @@ $card_spacing: $spacing-and-half;
   }
 
   .bundle-wrapper {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
   }
 
@@ -204,9 +204,9 @@ $card_spacing: $spacing-and-half;
   }
 
   h3 {
-    margin: 0;
     font-size: 18px;
     font-weight: $font-weight-bold;
+    margin: 0;
 
     a {
       text-decoration: none;

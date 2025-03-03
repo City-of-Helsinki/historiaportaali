@@ -1,6 +1,6 @@
 .paragraph-content .image {
-  max-width: $content-width-max;
   margin-bottom: $spacing-double;
+  max-width: $content-width-max;
 
   @include breakpoint(0px $breakpoint-s) {
     padding-left: $spacing-and-half;
@@ -8,19 +8,19 @@
   }
 
   .media--image__content__info {
-    position: relative;
+    background-color: $color-gold-light;
     margin: (-$spacing-and-half) $spacing-and-half 0 (-$spacing-and-half);
     padding: $spacing-double;
-    background-color: $color-gold-light;
+    position: relative;
 
     @include breakpoint($breakpoint-s) {
       margin: (-$spacing-double) $spacing-double 0 (-$spacing-double);
     }
 
     svg {
-      vertical-align: middle;
-      margin-top: -3px;
       margin-right: 5px;
+      margin-top: -3px;
+      vertical-align: middle;
     }
   }
 
@@ -33,16 +33,16 @@
   }
 
   .divider {
-    height: 2px;
-    width: 100%;
-    margin: $spacing 0;
     background-color: $color-black-30;
+    height: 2px;
+    margin: $spacing 0;
+    width: 100%;
   }
 
   .media--image__content__meta {
-    display: flex;
     align-items: center;
     color: $color-metro-dark;
+    display: flex;
     font-weight: $font-weight-bold;
 
     > div {

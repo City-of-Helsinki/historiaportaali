@@ -2,8 +2,8 @@
   margin-bottom: $spacing-double;
 
   .media--video__content__video {
-    position: relative;
     cursor: pointer;
+    position: relative;
     
     img {
       height: auto;
@@ -11,26 +11,26 @@
     }
 
     .media-video__play-btn {
-      display: flex;
       align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 2;
-      color: $color-silver;
-      width: 50px;
-      height: 50px;
-      margin: -25px 0 0 -25px;
+      background-color: $color-white;
       border: 0;
       border-radius: 50%;
-      background-color: $color-white;
+      color: $color-silver;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      left: 50%;
+      margin: -25px 0 0 -25px;
+      position: absolute;
+      top: 50%;
       transition: color 0.12s, box-shadow 0.12s;
+      width: 50px;
+      z-index: 2;
 
       @include breakpoint($breakpoint-m) {
-        width: 80px;
         height: 80px;
         margin: -40px 0 0 -40px;
+        width: 80px;
       }
 
       .hel-icon {
@@ -51,10 +51,10 @@
   }
 
   .media--video__content__info {
-    position: relative;
+    background-color: $color-gold-light;
     margin: (-$spacing-and-half) $spacing-and-half 0 (-$spacing-and-half);
     padding: $spacing-double;
-    background-color: $color-gold-light;
+    position: relative;
 
     .media--video__content__caption {
       margin-bottom: $spacing;

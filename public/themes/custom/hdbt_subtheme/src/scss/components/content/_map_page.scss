@@ -13,12 +13,12 @@
         border-top: none;
 
         .accordion-item__button--toggle {
-          font-size: 1rem;
           color: var(--color-white);
+          font-size: 1rem;
 
           @include breakpoint($breakpoint-l) {
-            font-size: 1.25rem;
             color: var(--color-white);
+            font-size: 1.25rem;
           }
 
           &[aria-expanded="false"] {
@@ -35,8 +35,8 @@
       }
 
       .accordion-item__content {
-        color: var(--color-white);
         background-color: transparent;
+        color: var(--color-white);
 
         .accordion-item__content__inner {
           .form-item-field-keywords-target-id {

@@ -5,13 +5,13 @@
     padding: 2px;
 
     a {
-      padding: $spacing;
-      display: flex;
       align-items: center;
-      justify-content: center;
       background-color: $color-black-80;
-      color: white;
       border: 2px solid white;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: $spacing;
       text-decoration: none;
 
       &:hover,
@@ -21,8 +21,8 @@
       }
 
       .hel-icon {
-        vertical-align: middle;
         margin-right: $spacing;
+        vertical-align: middle;
       }
     }
   }

@@ -49,10 +49,10 @@
       }
 
       .divider {
+        background-color: $color-silver-medium-light;
+        height: 3px;
         margin: $spacing auto 0;
         max-width: 300px;
-        height: 3px;
-        background-color: $color-silver-medium-light;
 
         @include breakpoint($breakpoint-s) {
           margin: $spacing-double auto 0;
@@ -71,8 +71,8 @@
     &.node--view-mode-full {
       .article-header {
         background-color: $color-white;
-        padding: $spacing-double ($spacing * 1.5);
         margin-bottom: $spacing-double;
+        padding: $spacing-double ($spacing * 1.5);
 
         .article-header__container {
           margin-bottom: 0;
@@ -80,8 +80,8 @@
           .article__lead {
             @include font-size(18px, 24px);
             font-weight: $font-weight-medium;
-            max-width: $content-width-max;
             margin-bottom: $spacing;
+            max-width: $content-width-max;
 
             @include breakpoint($breakpoint-m) {
               @include font-size(24px, 30px);
@@ -102,23 +102,23 @@
     }
 
     .article-content-top__container {
+      color: $color-metro-dark;
       display: flex;
       justify-content: center;
-      color: $color-metro-dark;
 
       @include breakpoint(0px $breakpoint-s) {
         padding-top: 0;
       }
 
       svg {
-        vertical-align: middle;
-        margin-top: -4px;
         margin-right: 5px;
+        margin-top: -4px;
+        vertical-align: middle;
       }
 
       .format-wrapper {
-        display: flex;
         align-items: center;
+        display: flex;
       }
 
       .era {

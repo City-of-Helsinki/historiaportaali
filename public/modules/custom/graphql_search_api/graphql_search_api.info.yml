@@ -1,0 +1,9 @@
+name: Graphql Search API
+type: module
+description: A Search API GraphQL schema.
+core: 8.x
+core_version_requirement: ^10 || ^11
+package: Search
+dependencies:
+  - graphql
+  - search_api

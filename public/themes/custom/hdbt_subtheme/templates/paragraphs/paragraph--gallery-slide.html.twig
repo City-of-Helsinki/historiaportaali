@@ -53,16 +53,18 @@
   {% set original_aspect_ratio = true %}
 {% endif %}
 
+{% set language = language.getId() %}
+
 {% block paragraph %}
   <li{{ attributes.addClass(classes).setAttribute('aria-hidden', 'true') }}>
     <div class="media--image__content">
       {% if original_aspect_ratio %}
         {% set image =
-          drupal_image(content.field_gallery_slide_media[0]['#media'].field_media_image.entity.uri.value, 'original', {alt: alt}, responsive=true)
+          drupal_image(content.field_gallery_slide_media[0]['#media'].field_media_image.entity.uri.value, 'image_orig', {alt: alt}, responsive=true)
         %}
       {% else %}
         {% set image =
-          drupal_image(content.field_gallery_slide_media[0]['#media'].field_media_image.entity.uri.value, 'image__3_2', {alt: alt}, responsive=true)
+          drupal_image(content.field_gallery_slide_media[0]['#media'].field_media_image.entity.uri.value, 'image_gallery_3_2', {alt: alt}, responsive=true)
         %}
       {% endif %}
       <a href="{{ path('entity.media.canonical', { 'media': content.field_gallery_slide_media[0]['#media'].id }) }}">{{ image }}</a>

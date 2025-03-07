@@ -1,6 +1,6 @@
 uuid: 15f17c87-cb70-4fac-b2e4-9956d54fcbe4
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - link
@@ -226,6 +226,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0

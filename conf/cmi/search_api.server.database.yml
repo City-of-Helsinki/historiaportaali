@@ -13,3 +13,6 @@ backend_config:
   min_chars: 3
   matching: partial
   phrase: disabled
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

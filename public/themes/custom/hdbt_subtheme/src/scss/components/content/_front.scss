@@ -39,12 +39,12 @@
     }
 
     a.link {
-      display: flex;
       align-items: center;
-      justify-content: center;
       color: $color-white;
-      text-decoration: none;
+      display: flex;
+      justify-content: center;
       margin-top: $spacing-double;
+      text-decoration: none;
 
       @include breakpoint($breakpoint-s) {
         justify-content: initial;
@@ -55,9 +55,9 @@
       }
 
       .hds-icon {
-        width: 24px;
         height: 24px;
-        margin-right: $spacing-half; 
+        margin-right: $spacing-half;
+        width: 24px; 
       }
     }
   }

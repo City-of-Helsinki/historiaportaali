@@ -5,3 +5,4 @@ package: Custom
 core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:system
+  - helfi_platform_config:hdbt_admin_tools

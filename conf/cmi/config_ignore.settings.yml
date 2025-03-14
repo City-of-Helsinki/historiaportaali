@@ -1,2 +1,3 @@
 mode: simple
-ignored_config_entities: {  }
+ignored_config_entities:
+  - helhist_kore_admin.settings

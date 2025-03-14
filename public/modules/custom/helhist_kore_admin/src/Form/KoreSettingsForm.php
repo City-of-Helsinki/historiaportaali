@@ -4,11 +4,7 @@
  * @file
  * Contains \Drupal\helhist_kore_admin\Form\KoreSettingsForm.
  *
- * Provides a form for managing Koulurekisteri content and settings.
- *
- * @category Form
- * @license  https://github.com/City-of-Helsinki/historiaportaali/blob/master/LICENSE MIT License
- * @link     https://historia.hel.fi
+ * Provides a form for managing Koulurekisteri search page content.
  */
 
 namespace Drupal\helhist_kore_admin\Form;

@@ -200,6 +200,7 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_type_value:
                 plugin_id: default
@@ -207,7 +208,9 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_language_value:
                 plugin_id: default
@@ -215,13 +218,16 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_end_year_value:
                 plugin_id: bef_sliders
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
                 max: '2024'
@@ -234,6 +240,7 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
                 max: '2024'
@@ -248,7 +255,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No results with current filters'
+          tokenize: false
       sorts:
         title:
           id: title

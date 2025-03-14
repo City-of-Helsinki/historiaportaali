@@ -1,17 +1,8 @@
 .breadcrumb {
   color: $color-metro-dark;
 
-  @include breakpoint($breakpoint-m) {
-    @include font-size(16px);
-  }
-
   .breadcrumb__link {
     color: $color-metro-dark;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 

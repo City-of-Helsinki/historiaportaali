@@ -40,7 +40,7 @@
       --submit-input-focus-gutter-color: var(--color-white);
     }
   }
-  
+
   .filters {
     padding: $spacing-double 0;
 
@@ -151,35 +151,35 @@
       line-height: normal;
       padding: 0 $spacing;
       width: 100%;
-  
+
       label {
         color: $color-black-90;
         margin-bottom: 0;
       }
     }
-  
+
     .year-interval__form {
       background: $color-white;
       border-top: 1px solid $color-black-10;
       padding: $spacing;
     }
-  
+
     .year-interval__form-items {
       align-items: center;
       display: flex;
-  
+
       label {
         color: $color-black-90;
       }
-  
+
       .hds-text-input .hds-text-input__input {
         border: 2px solid $color-black-50;
       }
-  
+
       .item-divider {
         margin-top: 7px;
         padding: 0 $spacing-quarter;
-  
+
         svg {
           vertical-align: middle;
         }

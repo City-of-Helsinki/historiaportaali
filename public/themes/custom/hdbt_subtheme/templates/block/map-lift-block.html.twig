@@ -1,8 +1,8 @@
 <div class="map-lift">
   {% embed "@hdbt/misc/container.twig" with {container_element: 'block'} %}
     {% block container_content %}
-      <h5 class="map-lift__subtitle">{{ 'Map'|t }}</h5>
-      <h3 class="map-lift__title">{{ 'Explore historical places by location'|t }}</h3>
+      <div class="map-lift__subtitle">{{ 'Map'|t }}</div>
+      <h2 class="map-lift__title">{{ 'Explore historical places by location'|t }}</h2>
       <p class="map-lift__description">{{ 'You can find historical places and events in Helsinki with our interactive map'|t }}</p>
       <div class="map-lift__image">
         <a href="{{ map_node_url }}">

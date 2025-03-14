@@ -1,40 +1,5 @@
 $card_spacing: $spacing-and-half;
 
-.content-cards__content,
-.component__content.content-cards {
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-
-  &::-webkit-scrollbar {
-    background: transparent;
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $color-black-10;
-    border-radius: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $color-metro-dark;
-    border-radius: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: $color-metro-light;
-  }
-
-  @include breakpoint($breakpoint-s) {
-    margin-left: initial;
-    width: initial;
-  }
-
-  @include breakpoint($breakpoint-m) {
-    flex-wrap: wrap;
-    overflow-x: hidden;
-  }
-}
 
 .content-cards__subtitle {
   margin-bottom: $spacing-half;
@@ -75,7 +40,7 @@ $card_spacing: $spacing-and-half;
   }
 }
 
-.content-card {
+.content-card { // DELETE????
   flex: 1 1 33%;
   margin-bottom: $card_spacing;
   // Override helfi grid system.

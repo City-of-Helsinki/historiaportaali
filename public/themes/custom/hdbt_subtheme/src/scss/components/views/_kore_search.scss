@@ -1,5 +1,16 @@
 .views--kore-search {
 
+  header {
+    margin-top: -90px;
+    margin-bottom: 2rem;
+    h2 {
+      @extend h1;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+
   .views-exposed-form {
     align-items: flex-end;
     display: flex;
@@ -58,7 +69,7 @@
     &:nth-of-type(odd) {
       background-color: #f2f2f2;
     }
-    
+
     &:hover {
       a:first-child {
         text-decoration: underline;

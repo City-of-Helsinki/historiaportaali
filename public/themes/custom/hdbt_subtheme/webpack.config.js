@@ -114,7 +114,8 @@ module.exports = {
             options: {
               sourceMap: isDev,
               sassOptions: {
-                importer: globImporter()
+                importer: globImporter(),
+                quietDeps: true
               },
             },
           },
@@ -132,6 +133,7 @@ module.exports = {
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
     new RemoveEmptyScriptsPlugin(),
+    new FriendlyErrorsWebpackPlugin({ clearConsole: false }),
     new CleanWebpackPlugin(),
     new SVGSpritemapPlugin([
       path.resolve(__dirname, 'src/icons/**/*.svg'),

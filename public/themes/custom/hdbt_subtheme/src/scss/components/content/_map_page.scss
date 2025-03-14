@@ -24,7 +24,7 @@
           &[aria-expanded="false"] {
             &:hover,
             &:focus {
-              background: darken($color-black-80, 10%);
+              background-color: color.scale($color-black-80, $lightness: 10%);
             }
           }
 

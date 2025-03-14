@@ -1,6 +1,5 @@
 $card_spacing: $spacing-and-half;
 
-
 .content-cards__subtitle {
   margin-bottom: $spacing-half;
   margin-top: 0;
@@ -15,6 +14,19 @@ $card_spacing: $spacing-and-half;
 
   @include breakpoint($breakpoint-s) {
     @include font-size($fontsize-heading-l, $lineheight-m);
+  }
+}
+
+.content-card {
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    .content-card__title {
+      text-decoration: underline;
+
+    }
   }
 }
 
@@ -37,64 +49,6 @@ $card_spacing: $spacing-and-half;
     .content-card__arrow {
       padding-left: $spacing;
     }
-  }
-}
-
-.content-card { // DELETE????
-  flex: 1 1 33%;
-  margin-bottom: $card_spacing;
-  // Override helfi grid system.
-  margin-top: 0 !important;
-  max-width: 50%;
-  padding-left: $card_spacing;
-  width: calc(245px + #{$card_spacing});
-
-  // Override helfi grid system.
-  &.content-card--design-listing-item,
-  &.content-card--design-map-item,
-  &.content-card--design-search-index {
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-  &.content-card--design-teaser {
-    margin-left: 0;
-  }
-
-  &:first-of-type {
-    padding-left: 0;
-
-    @include breakpoint($breakpoint-m) {
-      padding-left: $card_spacing;
-    }
-  }
-
-  @include breakpoint($breakpoint-l) {
-    flex: 1 1 25%;
-    width: 25%;
-  }
-
-  &:only-child {
-    @include breakpoint($breakpoint-m) {
-      flex: 0 1 33%;
-    }
-
-    @include breakpoint($breakpoint-l) {
-      flex: 0 1 25%;
-    }
-  }
-}
-
-.views--search {
-  .content-card {
-    width: auto;
-
-    &:first-of-type {
-      padding-left: 0;
-    }
-  }
-
-  .content-card__link {
-    width: 100%;
   }
 }
 

@@ -1,0 +1,15 @@
+kore_search_text:
+  format: full_html
+  en:
+    value: '<p>School register</p>'
+    format: full_html
+  fi:
+    value: '<p>Koulurekisteri</p>'
+    format: full_html
+  sv:
+    value: '<p>Skolregister</p>'
+    format: full_html
+kore_search_title:
+  fi: Koulurekisteri
+  sv: Skolregister
+  en: 'School register'

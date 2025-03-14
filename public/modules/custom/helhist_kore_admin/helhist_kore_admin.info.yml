@@ -1,0 +1,7 @@
+name: HEL Historia Kore Admin
+type: module
+description: 'Administration module for managing translated longtext content'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:system

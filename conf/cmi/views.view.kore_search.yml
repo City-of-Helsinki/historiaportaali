@@ -8,6 +8,7 @@ dependencies:
   module:
     - better_exposed_filters
     - entity_reference_revisions
+    - helhist_kore_admin
     - node
     - options
     - paragraphs
@@ -26,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'KoRe search'
+      title: 'School register'
       fields:
         view_node:
           id: view_node
@@ -666,7 +667,16 @@ display:
           admin_label: 'field_kore_languages: Paragraph'
           plugin_id: standard
           required: false
-      header: {  }
+      header:
+        kore_search_content:
+          id: kore_search_content
+          table: views
+          field: kore_search_content
+          relationship: none
+          group_type: group
+          admin_label: 'Kore Search Content'
+          plugin_id: kore_search_content
+          empty: true
       footer: {  }
       display_extenders: {  }
     cache_metadata:

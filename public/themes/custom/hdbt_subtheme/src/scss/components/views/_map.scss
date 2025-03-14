@@ -44,7 +44,7 @@
     .main-map-container {
       height: 40vh !important;
       width: 100%;
-      
+
       @include breakpoint($breakpoint-m) {
         height: 70vh !important;
         width: 50%;
@@ -88,6 +88,7 @@
 
   .leaflet-popup {
     .leaflet-popup-content-wrapper {
+      min-width: 300px;
       .leaflet-popup-content {
         margin: -1px;
 
@@ -98,7 +99,7 @@
           a {
             border-radius: 12px;
             color: var(--hdbt-default-link-color);
-            padding-bottom: 0;
+            padding: 0;
             width: 100%;
 
             .content-card__content {
@@ -117,8 +118,10 @@
       border-radius: 50%;
       color: $color-white;
       height: 24px;
-      padding: 6px 0 0 0;
+      padding: 0;
       width: 24px;
+      top: -10px;
+      right: -10px;
 
       &:hover,
       &:focus {
@@ -137,7 +140,7 @@
   top: 0;
   width: 100%;
   z-index: 410;
-  
+
   #spinner-container {
     align-items: center;
     display: flex;

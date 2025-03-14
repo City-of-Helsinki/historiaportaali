@@ -27,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'KoRe search'
+      title: 'School register'
       fields:
         view_node:
           id: view_node

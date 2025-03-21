@@ -1,4 +1,4 @@
-uuid: 29d29c31-7d6e-4c59-abac-3018ced05a2d
+uuid: 610b4a8a-a602-44e3-bac5-75420ccb89e8
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,182 +8,182 @@ close: null
 uid: 116
 template: false
 archive: false
-id: spora
-title: Spora
+id: metro
+title: Metro
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Milloin Helsingissä aloitettiin raitiovaunuliikenne?'
+    '#title': '1. Minä vuonna kaupunginvaltuusto käsitteli ensimmäisen kerran metron rakentamista Helsinkiin?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1955.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1955.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1955.'
     '#options':
-      q1_a: '1891'
-      q1_b: '1895'
-      q1_c: '1901'
-      q1_d: '1905'
+      q1_a: '1955'
+      q1_b: '1946'
+      q1_c: '1970'
+      q1_d: '1935'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2.  Mikä näistä ei ole raitiovaunun nimitys Stadin slangissa?'
+    '#title': '2.  Mistä mihin kaupunginvaltuusto päätti rakennuttaa metron?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Metron päätettiin liikennöivän Kampista Puotinharjuun.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Metron päätettiin liikennöivän Kampista Puotinharjuun.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Metron päätettiin liikennöivän Kampista Puotinharjuun.'
     '#options':
-      q2_a: stoge
-      q2_b: skuru
-      q2_c: sipoonjuna
-      q2_d: raitsika
+      q2_a: 'Kampista Puotinharjuun'
+      q2_b: 'Ruoholahdesta Itäkeskukseen'
+      q2_c: 'Rautatientorilta Puotinharjuun'
+      q2_d: 'Kampista Itäkeskukseen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna siirryttiin hevosen vetämistä raitiovaunuista sähköllä toimiviin?'
+    '#title': '3. Miksi osa itähelsinkiläisistä arvosteli metroa?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Metron pelättiin poistavan lähiöiden bussilinjat suoraan keskustaan.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Metron pelättiin poistavan lähiöiden bussilinjat suoraan keskustaan.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Metron pelättiin poistavan lähiöiden bussilinjat suoraan keskustaan.'
     '#options':
-      q3_a: '1900'
-      q3_b: '1905'
-      q3_c: '1910'
-      q3_d: '1895'
+      q3_a: 'Metron pelättiin poistavan lähiöiden bussilinjat suoraan keskustaan.'
+      q3_b: 'Metron pelättiin nostavan kunnallisveroprosenttia.'
+      q3_c: 'Metron turvallisuutta epäiltiin.'
+      q3_d: 'Metron käyttöä epäiltiin liian kalliiksi tavalliselle kansalle. '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä oli ensimmäinen sähköistetty raitiovaunulinja?'
+    '#title': '4. Milloin Helsingin metro avattiin?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1.6.1982.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1.6.1982.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1.6.1982.'
     '#options':
-      q4_a: Töölö–Hietalahti
-      q4_b: Sörnäinen–Kauppatori–Lapinlahti
-      q4_c: Töölö–Kauppatori–Kaivopuisto
-      q4_d: 'Katajanokka–Hietalahti '
+      q4_a: 1.6.1982
+      q4_b: 1.6.1984
+      q4_c: 1.6.1989
+      q4_d: 1.6.1987
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': "5.\tRaitiovaunuliikenteen alkuaikoina sattui paljon onnettomuuksia. Mitä lehtikirjoittelussa usein oletettiin syyksi niihin?"
+    '#title': '5. Mihin näistä metrolinjaa ei ole koskaan ehdotettu?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Martinlaaksoon ei ole koskaan ehdotettu metrolinjaa.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Martinlaaksoon ei ole koskaan ehdotettu metrolinjaa.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Martinlaaksoon ei ole koskaan ehdotettu metrolinjaa.'
     '#options':
-      q5_a: 'maalaiset ja heidän mahdollinen juopottelunsa'
-      q5_b: 'hevosten pelko vaunuja kohtaan'
-      q5_c: 'huono katuvalaistus'
-      q5_d: 'liikenteen vilkkaus'
+      q5_a: Martinlaakso
+      q5_b: lentokenttä
+      q5_c: Viikki
+      q5_d: Oulunkylä
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Mikä näistä pätee Helsingin raitiovaunujen väritykseen?'
+    '#title': '6. Mistä oli kysymys 1980-luvun alun metrojupakasta?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Kysymys oli korruptio- ja väärinkäytösepäilyistä.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Kysymys oli korruptio- ja väärinkäytösepäilyistä.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Kysymys oli korruptio- ja väärinkäytösepäilyistä.'
     '#options':
-      q6_a: 'Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
-      q6_b: 'Ne ovat aina olleet keltaisia ja vihreitä.'
-      q6_c: 'Kaikki vaunut maalattiin vuonna 1973 oransseiksi ja harmaiksi.'
-      q6_d: 'Ne olivat aluksi punaisia.'
+      q6_a: 'korruptio- ja väärinkäytösepäilyistä päätöksenteossa'
+      q6_b: 'tulevia metrolinjoja koskevista riidoista'
+      q6_c: 'paisuneista rakennuskustannuksista'
+      q6_d: 'metrotunnelien rakentajien työriidasta'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mihin näistä silloisen Helsingin esikaupungeista ei ole 1900-luvun alkupuolella liikennöity raitiovaunuilla?'
+    '#title': '7. Millä nimellä Suomen Kuvalehti kutsui valmistunutta metroa?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Lehti nimitti metroa hukkaputkeksi.'
       q7_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Lehti nimitti metroa hukkaputkeksi.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Lehti nimitti metroa hukkaputkeksi.'
     '#options':
-      q7_a: Oulunkylä
-      q7_b: Munkkiniemi
-      q7_c: Haaga
-      q7_d: Kulosaari
+      q7_a: hukkaputki
+      q7_b: rahaviemäri
+      q7_c: hukkapätkä
+      q7_d: jämäjuna
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -219,9 +219,9 @@ elements: |-
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet todellinen metron historian tuntija! Entäpä Helsingin autoliikenteen varhaisvaiheet? Tutustu artikkeliin <a href="/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/liikenteen-solmukohta/metro">Metro</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

@@ -1,0 +1,118 @@
+elements: |
+  q1:
+    '#title': '1. Vilka av dessa var Leo Mechelin inte?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Han var inte redaktör och inte författare.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Han var inte redaktör och inte författare.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Han var inte redaktör och inte författare.'
+    '#options':
+      q1_a: 'redaktör och författare'
+      q1_b: 'professor i kameral- och politiklagfarenhet samt statsrätt'
+      q1_c: 'senator ja senatens viceordförande'
+      q1_d: 'lantdagsrepresentant och riksdagsledamot'
+  q2:
+    '#title': '2. Vilken koppling har Leo Mechelin till Helsingfors stadsfullmäktige?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Han var dess första ordförande.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Han var dess första ordförande.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Han var dess första ordförande.'
+    '#options':
+      q2_a: 'Han var dess första ordförande.'
+      q2_b: 'Han var dess första sekreterare. '
+      q2_c: 'Han var dess medlem under åren 1875–1899.'
+      q2_d: 'Han var dess ordförande under åren 1875–1899.'
+  q3:
+    '#title': '3. Vilket var ett av de största projekten som stadsfullmäktige ledde?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Det var byggande av ett vattenledningsnät.'
+      q3_c:
+        feedback: 'Svaret var fel. Det var byggande av ett vattenledningsnät.'
+      q3_d:
+        feedback: 'Svaret var fel. Det var byggande av ett vattenledningsnät.'
+    '#options':
+      q3_a: 'byggande av ett vattenledningsnät'
+      q3_b: 'byggande av ett avloppsnät'
+      q3_c: 'inledande av spårvägstrafik'
+      q3_d: 'kommunalisering av elproduktion'
+  q4:
+    '#title': '4. Vilken viktig händelse stod Leo Mechelin värd för i Helsingfors sommaren 1876?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Det var Finlands första industriutställning som besöktes av kejsarparet.'
+      q4_c:
+        feedback: 'Svaret var fel. Det var Finlands första industriutställning som besöktes av kejsarparet.'
+      q4_d:
+        feedback: 'Svaret var fel. Det var Finlands första industriutställning som besöktes av kejsarparet.'
+    '#options':
+      q4_a: 'Finlands första industriutställning'
+      q4_b: 'kejsar Alexander II:s besök'
+      q4_c: 'öppnandet av urtima lantdagen'
+      q4_d: 'öppnandet av järnvägen mellan Helsingfors och St Petersburg'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Varför var Mechelin tvungen att avgå från sin senaten år 1890?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt. Det var på grund av förryskningsåtgärderna.'
+      q5_c:
+        feedback: 'Inte riktigt. Det var på grund av förryskningsåtgärderna.'
+      q5_d:
+        feedback: 'Inte riktigt. Det var på grund av förryskningsåtgärderna.'
+    '#options':
+      q5_a: 'på grund av förryskningsåtgärderna'
+      q5_b: 'på grund av sin svaga hälsa'
+      q5_c: 'på grund av en för tung arbetsbörda'
+      q5_d: 'på grund av flyttning utomlands'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vilket av dessa var inte ett betydande projekt i fullmäktiges verksamhet på 1890-talet?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Att utveckla den lokala ångslupstrafiken hörde inte till projekten som främjades av stadsfullmäktige.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Att utveckla den lokala ångslupstrafiken hörde inte till projekten som främjades av stadsfullmäktige.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Att utveckla den lokala ångslupstrafiken hörde inte till projekten som främjades av stadsfullmäktige.'
+    '#options':
+      q6_a: 'utvecklande av den lokala ångslupstrafiken'
+      q6_b: 'hamnbanan samt hamn- och magasinsbyggande'
+      q6_c: 'ett epidemisjukhus eller Maria sjukhus'
+      q6_d: 'utbyggande och elektrifiering av spårvägsnätet '
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilka var stadsfullmäktiges viktiga kulturprojekt i slutet av 1890-talet?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, fullmäktige ville nämligen starta byggande av Nationalmuseet och Nationalteatern.'
+      q7_c:
+        feedback: 'Fel svarat, fullmäktige ville nämligen starta byggande av Nationalmuseet och Nationalteatern.'
+      q7_d:
+        feedback: 'Fel svarat, fullmäktige ville nämligen starta byggande av Nationalmuseet och Nationalteatern.'
+    '#options':
+      q7_a: 'Nationalmuseet och Nationalteatern'
+      q7_b: 'Nationalteatern och Riksarkivet'
+      q7_c: 'Nationalmuseet och Nationaloperan'
+      q7_d: 'Nationalbiblioteket och Nationaloperan'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Leo Mechelin! Hur är det då med stadshusets historia? Läs artikeln <a href="/sv/helheter/maktbruk-och-forvaltning/stadshuset">Stadshuset</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/maktbruk-och-forvaltning/stadsfullmaktiges-forsta-ordforande-leo-mechelin">Leo Mechelin</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

@@ -1,0 +1,147 @@
+title: Hertonäs
+elements: |
+  q1:
+    '#title': '1. Hur många bronstida gravrösen har bevarats i Hertonäs??'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Två har bevarats.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Två har bevarats.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Två har bevarats.'
+    '#options':
+      q1_a: två
+      q1_b: fyra
+      q1_c: tre
+      q1_d: ett
+  q2:
+    '#title': '2. Vilka var de viktigaste näringarna i Hertonäs by på 1500-talet?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. De viktigaste näringarna var fiske och boskapsskötsel.'
+      q2_c:
+        feedback: 'Ditt svar var fel. De viktigaste näringarna var fiske och boskapsskötsel.'
+      q2_d:
+        feedback: 'Ditt svar var fel. De viktigaste näringarna var fiske och boskapsskötsel.'
+    '#options':
+      q2_a: 'fiske och boskapsskötsel'
+      q2_b: 'jordbruk och brännvinsbränning'
+      q2_c: 'jordbruk och skogsbruk'
+      q2_d: 'fiske och handel'
+  q3:
+    '#title': '3. Vilket av dessa stämmer inte på Abraham Wetter?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Wetter flydde inte till Sverige under stora ofreden.'
+      q3_c:
+        feedback: 'Svaret var fel. Wetter flydde inte till Sverige under stora ofreden.'
+      q3_d:
+        feedback: 'Svaret var fel. Wetter flydde inte till Sverige under stora ofreden.'
+    '#options':
+      q3_a: 'Han flydde till Sverige under stora ofreden som började år 1713.'
+      q3_b: 'Han utnämndes till Helsingfors borgmästare år 1722.'
+      q3_c: 'Han ägde flera bondgårdar men bodde själv i staden.'
+      q3_d: 'Han var skeppsredare och köpman.'
+  q4:
+    '#title': '4. Vilket av dessa stämmer inte på Hertonäs gård på 1700-talet?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Gården ägdes inte av samma släkt under hela 1700-talet.'
+      q4_c:
+        feedback: 'Svaret var fel. Gården ägdes inte av samma släkt under hela 1700-talet.'
+      q4_d:
+        feedback: 'Svaret var fel. Gården ägdes inte av samma släkt under hela 1700-talet.'
+    '#options':
+      q4_a: 'Den var hela tiden i samma släkts ägo.'
+      q4_b: 'På dess område uppstod betydande industri.'
+      q4_c: 'Den hade täta kopplingar med byggandet av Sveaborg.'
+      q4_d: 'Dess ägare byttes flera gånger.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vad hände Hertonäs gårds ägare, lantbruksrådet Johan Bergbom den 17 november 1917?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Du svarade rätt!'
+      q5_b:
+        feedback: 'Ditt svar var fel. Rödgardister trängde sig in i hans hem och sköt honom.'
+      q5_c:
+        feedback: 'Ditt svar var fel. Rödgardister trängde sig in i hans hem och sköt honom.'
+      q5_d:
+        feedback: 'Ditt svar var fel. Rödgardister trängde sig in i hans hem och sköt honom.'
+    '#options':
+      q5_a: 'Rödgardister trängde sig in i hans hem och sköt honom.'
+      q5_b: 'Han blev arresterad som misstänkt för omfattande olaga brännsvinshandel.'
+      q5_c: 'Han flydde traktens oroligheter till Sverige.'
+      q5_d: 'Han gav sin gård åt röda gardet som huvudkvarter.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Hur många invånare hade Hertonäs by år 1920?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Där fanns bara 312 invånare.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Där fanns bara 312 invånare.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Där fanns bara 312 invånare.'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. När anslöts Hertonäs till Helsingfors stad?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det skedde 1946.'
+      q7_c:
+        feedback: 'Fel svarat, det skedde 1946.'
+      q7_d:
+        feedback: 'Fel svarat, det skedde 1946.'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Vem var en känd kulturpersonlighet i Hertonäs?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Det var  Frans Emil Sillanpää.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Det var  Frans Emil Sillanpää.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Det var  Frans Emil Sillanpää.'
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#title': '9. Varför föregicks byggandet av bostadsområdet Hertonäs strand av långvariga förberedelsearbeten?'
+    '#quiz__options':
+      q9_a:
+        feedback: 'Du svarade rätt!'
+      q9_b:
+        feedback: 'Svaret var fel. Områdets jordmån var mycket förorenad, eftersom där hade funnits en oljehamn.'
+      q9_c:
+        feedback: 'Svaret var fel. Områdets jordmån var mycket förorenad, eftersom där hade funnits en oljehamn.'
+      q9_d:
+        feedback: 'Svaret var fel. Områdets jordmån var mycket förorenad, eftersom där hade funnits en oljehamn.'
+    '#options':
+      q9_a: 'Områdets jordmån var mycket förorenad, eftersom där hade funnits en oljehamn.'
+      q9_b: 'Områdets jordmån var mycket lerig och dyig.'
+      q9_c: 'På området gjordes betydande arkeologiska fynd som skulle undersökas och dokumenteras.'
+      q9_d: 'Otaliga överklaganden fördröjde projektet.'
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#title': '10. När beslöt stadsfullmäktige att omvandla Hertonäs hamn till ett bostadsområde?'
+    '#quiz__options':
+      q10_a:
+        feedback: 'Du svarade rätt!'
+      q10_b:
+        feedback: 'Du svarade fel. Beslutet fattades 1986.'
+      q10_c:
+        feedback: 'Du svarade fel. Beslutet fattades 1986.'
+      q10_d:
+        feedback: 'Du svarade fel. Beslutet fattades 1986.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Hertonäs historia! Hur är det då med Vårdös historia? Bekanta dig med artikeln <a href="/sv/omraden/sydostra/vardo-en-naturparla-i-oster">Vårdö – en naturpärla i öster</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/sydostra/hertonas-en-by-en-gard-en-stadsdel">Hertonäs – en by, en gård, en stadsdel</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

@@ -7,6 +7,7 @@ $arrow-container-height: 48px;
   .media--image__caption {
     padding-left: 0;
     padding-right: 0;
+    margin-top: $spacing-half;
 
     @include breakpoint($breakpoint-m) {
       @include font-size(14px, 18px);
@@ -40,6 +41,7 @@ $arrow-container-height: 48px;
       .splide__slide {
         img {
           height: auto;
+          width: 100%;
         }
       }
     }
@@ -124,10 +126,12 @@ $arrow-container-height: 48px;
   .splide__arrow {
     background-color: transparent;
     border: 0 none;
+    cursor: pointer;
     display: block;
     height: $arrow-container-height;
     margin: 0;
     padding: 0;
+    transition: transform 0.2s ease-in-out;
     width: $arrow-container-height;
 
     @include breakpoint($breakpoint-l) {
@@ -150,12 +154,18 @@ $arrow-container-height: 48px;
 
     &.splide__arrow--prev {
       background-image: url('../icons/arrow-left.svg');
-      margin-left: -$spacing-half;
+
+      &:hover {
+        transform: translateX(-5px);
+      }
     }
 
     &.splide__arrow--next {
       background-image: url('../icons/arrow-right.svg');
-      margin-right: -$spacing-half;
+
+      &:hover {
+        transform: translateX(5px);
+      }
     }
   }
 }

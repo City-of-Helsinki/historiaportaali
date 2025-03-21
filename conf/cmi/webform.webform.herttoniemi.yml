@@ -1,4 +1,4 @@
-uuid: 29d29c31-7d6e-4c59-abac-3018ced05a2d
+uuid: 401ccbe5-d4ea-4ad7-988a-ad89246a01a4
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,182 +8,257 @@ close: null
 uid: 116
 template: false
 archive: false
-id: spora
-title: Spora
+id: herttoniemi
+title: Herttoniemi
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Milloin Helsingissä aloitettiin raitiovaunuliikenne?'
+    '#title': '1. Montako pronssikautista hautaröykkiötä Herttoniemessä on säilynyt?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Niitä on säilynyt kaksi.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Niitä on säilynyt kaksi.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Niitä on säilynyt kaksi.'
     '#options':
-      q1_a: '1891'
-      q1_b: '1895'
-      q1_c: '1901'
-      q1_d: '1905'
+      q1_a: kaksi
+      q1_b: neljä
+      q1_c: kolme
+      q1_d: yksi
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2.  Mikä näistä ei ole raitiovaunun nimitys Stadin slangissa?'
+    '#title': '2. Mitkä olivat tärkeimmät elinkeinot Herttoniemen kylässä 1500-luvulla?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Tärkeimmät elinkeinot olivat kalastus ja karjanhoito.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Tärkeimmät elinkeinot olivat kalastus ja karjanhoito.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Tärkeimmät elinkeinot olivat kalastus ja karjanhoito.'
     '#options':
-      q2_a: stoge
-      q2_b: skuru
-      q2_c: sipoonjuna
-      q2_d: raitsika
+      q2_a: 'kalastus ja karjanhoito'
+      q2_b: 'maanviljely ja viinanpoltto'
+      q2_c: 'maanviljely ja metsätalous'
+      q2_d: 'kalastus ja kaupankäynti'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna siirryttiin hevosen vetämistä raitiovaunuista sähköllä toimiviin?'
+    '#title': '3. Mikä näistä ei päde Abraham Wetteriin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Wetter ei paennut isonvihan aikana Ruotsiin.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Wetter ei paennut isonvihan aikana Ruotsiin.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Wetter ei paennut isonvihan aikana Ruotsiin.'
     '#options':
-      q3_a: '1900'
-      q3_b: '1905'
-      q3_c: '1910'
-      q3_d: '1895'
+      q3_a: 'Hän pakeni vuonna 1713 alkaneen isonvihan aikana Ruotsiin.'
+      q3_b: 'Hänet nimitettiin Helsingin pormestariksi vuonna 1722.'
+      q3_c: 'Hän omisti useita maatiloja mutta asui itse kaupungissa.'
+      q3_d: 'Hän oli laivanvarustaja ja liikemies.  '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä oli ensimmäinen sähköistetty raitiovaunulinja?'
+    '#title': '4. Mikä näistä ei päde Herttoniemen kartanoon 1700-luvulla?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Kartano ei ollut 1700-luvun ajan saman suvun omistuksessa.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Kartano ei ollut 1700-luvun ajan saman suvun omistuksessa.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Kartano ei ollut 1700-luvun ajan saman suvun omistuksessa.'
     '#options':
-      q4_a: Töölö–Hietalahti
-      q4_b: Sörnäinen–Kauppatori–Lapinlahti
-      q4_c: Töölö–Kauppatori–Kaivopuisto
-      q4_d: 'Katajanokka–Hietalahti '
+      q4_a: 'Se oli koko ajan saman suvun omistuksessa.'
+      q4_b: 'Sen alueelle syntyi merkittävää teollisuutta.'
+      q4_c: 'Se oli tiiviisti kytköksissä Viaporin rakentamiseen.'
+      q4_d: 'Sen omistaja vaihtui useita kertoja.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': "5.\tRaitiovaunuliikenteen alkuaikoina sattui paljon onnettomuuksia. Mitä lehtikirjoittelussa usein oletettiin syyksi niihin?"
+    '#title': '5. Mitä tapahtui Herttoniemen kartanon omistajalle, maanviljelysneuvos John Bergbomille 17.11.1917?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Punakaartilaiset tunkeutuivat hänen kotiinsa ja ampuivat hänet.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Punakaartilaiset tunkeutuivat hänen kotiinsa ja ampuivat hänet.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Punakaartilaiset tunkeutuivat hänen kotiinsa ja ampuivat hänet.'
     '#options':
-      q5_a: 'maalaiset ja heidän mahdollinen juopottelunsa'
-      q5_b: 'hevosten pelko vaunuja kohtaan'
-      q5_c: 'huono katuvalaistus'
-      q5_d: 'liikenteen vilkkaus'
+      q5_a: 'Punakaartilaiset tunkeutuivat hänen kotiinsa ja ampuivat hänet.'
+      q5_b: 'Hänet pidätettiin epäiltynä laajasta viinan salakaupasta.'
+      q5_c: 'Hän pakeni seudun levottomuuksia Ruotsiin.'
+      q5_d: 'Hän antoi kartanonsa punakaartin tukikohdaksi. '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Mikä näistä pätee Helsingin raitiovaunujen väritykseen?'
+    '#title': '6. Montako asukasta Herttoniemen kylässä oli vuonna 1920?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Asukkaita oli vain 312.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Asukkaita oli vain 312.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Asukkaita oli vain 312.'
     '#options':
-      q6_a: 'Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
-      q6_b: 'Ne ovat aina olleet keltaisia ja vihreitä.'
-      q6_c: 'Kaikki vaunut maalattiin vuonna 1973 oransseiksi ja harmaiksi.'
-      q6_d: 'Ne olivat aluksi punaisia.'
+      q6_a: '312'
+      q6_b: '5012'
+      q6_c: '1312'
+      q6_d: '1512'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mihin näistä silloisen Helsingin esikaupungeista ei ole 1900-luvun alkupuolella liikennöity raitiovaunuilla?'
+    '#title': '7. Milloin Herttoniemi liitettiin Helsingin kaupunkiin?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1946.'
       q7_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: ' Vastauksesi oli väärin. Se tapahtui 1946.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1946.'
     '#options':
-      q7_a: Oulunkylä
-      q7_b: Munkkiniemi
-      q7_c: Haaga
-      q7_d: Kulosaari
+      q7_a: '1946'
+      q7_b: '1920'
+      q7_c: '1935'
+      q7_d: '1950'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#type': quiz_element_radios
+    '#title': '8. Kuka oli tunnettu herttoniemeläinen kulttuuripersoona?'
+    '#quiz__options':
+      q8_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q8_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oikea vastaus on Frans Emil Sillanpää.'
+      q8_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oikea vastaus on Frans Emil Sillanpää.'
+      q8_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Oikea vastaus on Frans Emil Sillanpää.'
+    '#options':
+      q8_a: 'Frans Emil Sillanpää'
+      q8_b: 'Tauno Palo'
+      q8_c: 'Mika Waltari'
+      q8_d: 'Rafael Wardi'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_oli_helsingin_yliopiston_alkuperainen_nimi_:
+    '#type': quiz_element_radios
+    '#title': '9. Miksi Herttoniemenrannan asuinalueen rakentamista edelsivät pitkäkestoiset valmistelutyöt?'
+    '#quiz__options':
+      q9_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q9_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueen maaperä oli pahasti saastunut, koska paikalla oli sijainnut öljysatama.'
+      q9_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueen maaperä oli pahasti saastunut, koska paikalla oli sijainnut öljysatama.'
+      q9_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Alueen maaperä oli pahasti saastunut, koska paikalla oli sijainnut öljysatama.'
+    '#options':
+      q9_a: 'Alueen maaperä oli pahasti saastunut, koska paikalla oli sijainnut öljysatama.'
+      q9_b: 'Alueen maaperä oli hyvin savista ja liejuista.'
+      q9_c: 'Alueelta löytyi merkittäviä arkeologisia jäännöksiä, jotka piti tutkia ja dokumentoida.'
+      q9_d: 'Lukuisat valitukset viivästyttivät hanketta.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mita_senaatintalon_portaikossa_tapahtui_16_6_1904_:
+    '#type': quiz_element_radios
+    '#title': "10.\tMilloin kaupunginvaltuusto päätti muuttaa Herttoniemen sataman asuinalueeksi?"
+    '#quiz__options':
+      q10_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q10_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Päätös tehtiin 1986.'
+      q10_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Päätös tehtiin 1986.'
+      q10_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Päätös tehtiin 1986.'
+    '#options':
+      q10_a: '1986'
+      q10_b: '1984'
+      q10_c: '1990'
+      q10_d: '1978'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -216,12 +291,24 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q7_result
     '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
+  q8_result:
+    '#type': webform_quiz_elements_result
+    '#title': q8_result
+    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
+  q9_result:
+    '#type': webform_quiz_elements_result
+    '#title': q9_result
+    '#source': mika_oli_helsingin_yliopiston_alkuperainen_nimi_
+  q10_result:
+    '#type': webform_quiz_elements_result
+    '#title': q10_result
+    '#source': mita_senaatintalon_portaikossa_tapahtui_16_6_1904_
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet varsinainen Herttoniemen historian tuntija! Tunnetko yhtä hyvin Vartiosaaren historiaa? Tutustu artikkeliin <a href="/fi/alueet/kaakkoinen/vartiosaari-idan-luontohelmi">Vartiosaari – idän luontohelmi</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/kaakkoinen/herttoniemi-kyla-kartano-kaupunginosa">Herttoniemi – kylä, kartano, kaupunginosa</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

@@ -5128,16 +5128,16 @@
         },
         {
             "name": "drupal/helfi_azure_fs",
-            "version": "2.0.10",
+            "version": "2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs.git",
-                "reference": "f8715d98b7db4a0c5ab671256fbda8e0c3316e31"
+                "reference": "d810755e220cdd578708e0c82ab628e4779a5de9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-azure-fs/zipball/f8715d98b7db4a0c5ab671256fbda8e0c3316e31",
-                "reference": "f8715d98b7db4a0c5ab671256fbda8e0c3316e31",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-azure-fs/zipball/d810755e220cdd578708e0c82ab628e4779a5de9",
+                "reference": "d810755e220cdd578708e0c82ab628e4779a5de9",
                 "shasum": ""
             },
             "require": {
@@ -5167,10 +5167,10 @@
             ],
             "description": "Helfi - Azure FS",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs/tree/2.0.10",
+                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs/tree/2.0.11",
                 "issues": "https://github.com/City-of-Helsinki/drupal-module-helfi-azure-fs/issues"
             },
-            "time": "2025-01-07T07:19:06+00:00"
+            "time": "2025-02-28T13:56:22+00:00"
         },
         {
             "name": "drupal/helfi_drupal_tools",
@@ -5399,16 +5399,16 @@
         },
         {
             "name": "drupal/helfi_proxy",
-            "version": "3.3.2",
+            "version": "3.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-module-helfi-proxy.git",
-                "reference": "95bff23de33c905b8830059ddb28daf951278f45"
+                "reference": "0344918c4f169f4ff0059c502845e9b033356176"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-proxy/zipball/95bff23de33c905b8830059ddb28daf951278f45",
-                "reference": "95bff23de33c905b8830059ddb28daf951278f45",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-proxy/zipball/0344918c4f169f4ff0059c502845e9b033356176",
+                "reference": "0344918c4f169f4ff0059c502845e9b033356176",
                 "shasum": ""
             },
             "require": {
@@ -5421,6 +5421,7 @@
             },
             "conflict": {
                 "drupal/core": "<10.3",
+                "drupal/helfi_api_base": "<2.7.25",
                 "drupal/helfi_tunnistamo": "<=2.2.1"
             },
             "require-dev": {
@@ -5437,10 +5438,10 @@
             ],
             "description": "Provides various fixes so we can serve multiple Drupal instances in one domain.",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-proxy/tree/3.3.2",
+                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-proxy/tree/3.3.3",
                 "issues": "https://github.com/City-of-Helsinki/drupal-module-helfi-proxy/issues"
             },
-            "time": "2025-02-21T11:22:08+00:00"
+            "time": "2025-03-10T14:05:39+00:00"
         },
         {
             "name": "drupal/helfi_tpr",

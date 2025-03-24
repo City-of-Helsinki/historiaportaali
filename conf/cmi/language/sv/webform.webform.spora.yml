@@ -26,12 +26,14 @@ elements: |
   q3:
     '#title': '3. Vilket år övergick man från hästdragna vagnar till eldrivna?'
     '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
       q3_b:
-        feedback: 'Svaret var fel. Der hände år 1900.'
+        feedback: 'Svaret var fel. Det hände år 1900.'
       q3_c:
-        feedback: 'Svaret var fel. Der hände år 1900.'
+        feedback: 'Svaret var fel. Det hände år 1900.'
       q3_d:
-        feedback: 'Svaret var fel. Der hände år 1900.'
+        feedback: 'Svaret var fel. Det hände år 1900.'
   q4:
     '#title': '4. Vilken var den första elektrifierade spårvagnslinjen?'
     '#quiz__options':
@@ -78,7 +80,7 @@ elements: |
     '#options':
       q6_a: 'Man prövade med orange och grått på somliga vagnar på 1970- och 1980-talen.'
       q6_b: 'De har alltid varit gula och gröna.'
-      q6_c: 'Alla vagnar målades oranga och gråa år 1973.'
+      q6_c: 'Alla vagnar målades orangea och gråa år 1973.'
       q6_d: 'De var röda i början.'
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#title': '7. Till vilken av dåvarande Helsingfors förorter trafikerade spårvagnar inte under första hälften av 1900-talet?'
@@ -97,7 +99,8 @@ elements: |
       q7_c: Haga
       q7_d: Brändö
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på spårans historia! Hur är det då med tidiga skeden i Helsingfors trafik i allmänhet? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/helsingfors-tidiga-trafik">Helsingfors tidiga trafik</a>.'
-    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på spårans historia! Hur är det då med tidiga skeden i Helsingfors trafik i allmänhet? Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/helsingfors-tidiga-trafik">Helsingfors tidiga trafik</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Spåran

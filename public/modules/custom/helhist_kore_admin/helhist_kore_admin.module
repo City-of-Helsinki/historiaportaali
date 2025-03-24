@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for helhist_kore_admin module.
+ */
+
+/**
+ * Implements hook_views_data().
+ */
+function helhist_kore_admin_views_data() {
+  $data['views']['kore_search_content'] = [
+    'title' => t('Kore Search Content'),
+    'help' => t('Displays the configured Kore Search title and text content.'),
+    'area' => [
+      'id' => 'kore_search_content',
+      'label' => t('Kore Search Content'),
+    ],
+  ];
+  return $data;
+}

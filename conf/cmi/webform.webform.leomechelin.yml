@@ -1,4 +1,4 @@
-uuid: 29d29c31-7d6e-4c59-abac-3018ced05a2d
+uuid: 3268d09b-8cd1-4089-9a1b-d51f172b5400
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,182 +8,182 @@ close: null
 uid: 116
 template: false
 archive: false
-id: spora
-title: Spora
+id: leomechelin
+title: 'Leo Mechelin'
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Milloin Helsingissä aloitettiin raitiovaunuliikenne?'
+    '#title': '1. Mitä näistä Leo Mechelin ei ollut?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Hän ei ollut kirjailija eikä toimittaja.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Hän ei ollut kirjailija eikä toimittaja.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se aloitettiin vuonna 1891.'
+        feedback: 'Vastauksesi oli väärin. Hän ei ollut kirjailija eikä toimittaja.'
     '#options':
-      q1_a: '1891'
-      q1_b: '1895'
-      q1_c: '1901'
-      q1_d: '1905'
+      q1_a: 'kirjailija ja toimittaja'
+      q1_b: 'lainopin ja valtio-oikeuden professori'
+      q1_c: 'senaattori ja senaatin varapuheenjohtaja'
+      q1_d: 'valtiopäiväedustaja ja kansanedustaja'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2.  Mikä näistä ei ole raitiovaunun nimitys Stadin slangissa?'
+    '#title': '2.  Miten Leo Mechelin liittyy Helsingin kaupunginvaltuustoon?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Hän oli sen ensimmäinen puheenjohtaja.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Hän oli sen ensimmäinen puheenjohtaja.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Stoge ei ole raitiovaunu vaan juna.'
+        feedback: 'Vastauksesi oli väärin. Hän oli sen ensimmäinen puheenjohtaja.'
     '#options':
-      q2_a: stoge
-      q2_b: skuru
-      q2_c: sipoonjuna
-      q2_d: raitsika
+      q2_a: 'Hän oli sen ensimmäinen puheenjohtaja.'
+      q2_b: 'Hän oli sen ensimmäinen sihteeri.'
+      q2_c: 'Hän oli sen jäsen vuosina 1875–1899.'
+      q2_d: 'Hän oli sen puheenjohtaja vuosina 1875–1899.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Minä vuonna siirryttiin hevosen vetämistä raitiovaunuista sähköllä toimiviin?'
+    '#title': '3. Mikä oli suurimpia kaupunginvaltuuston ohjaamia hankkeita 1870-luvulla?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Se oli vesijohtoverkoston rakennuttaminen.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Se oli vesijohtoverkoston rakennuttaminen.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1900.'
+        feedback: 'Vastauksesi oli väärin. Se oli vesijohtoverkoston rakennuttaminen.'
     '#options':
-      q3_a: '1900'
-      q3_b: '1905'
-      q3_c: '1910'
-      q3_d: '1895'
+      q3_a: 'vesijohtoverkoston rakennuttaminen'
+      q3_b: 'viemäriverkoston rakennuttaminen'
+      q3_c: 'raitiovaunuliikenteen aloittaminen'
+      q3_d: 'sähköntuotannon kunnallistaminen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä oli ensimmäinen sähköistetty raitiovaunulinja?'
+    '#title': '4. Mitä tärkeää tilaisuutta Leo Mechelin isännöi Helsingissä kesällä 1876?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Hän isännöi Suomen ensimmäistä teollisuusnäyttelyä, jossa keisaripari vieraili.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Hän isännöi Suomen ensimmäistä teollisuusnäyttelyä, jossa keisaripari vieraili.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Se oli Töölö–Hietalahti.'
+        feedback: 'Vastauksesi oli väärin. Hän isännöi Suomen ensimmäistä teollisuusnäyttelyä, jossa keisaripari vieraili.'
     '#options':
-      q4_a: Töölö–Hietalahti
-      q4_b: Sörnäinen–Kauppatori–Lapinlahti
-      q4_c: Töölö–Kauppatori–Kaivopuisto
-      q4_d: 'Katajanokka–Hietalahti '
+      q4_a: 'Suomen ensimmäistä teollisuusnäyttelyä'
+      q4_b: 'keisari Aleksanteri II:n vierailua'
+      q4_c: 'ylimääräisten valtiopäivien avajaisia'
+      q4_d: 'Helsingin ja Pietarin välisen rautatien avajaisia'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': "5.\tRaitiovaunuliikenteen alkuaikoina sattui paljon onnettomuuksia. Mitä lehtikirjoittelussa usein oletettiin syyksi niihin?"
+    '#title': '5. Miksi Mechelin joutui eroamaan senaattorin tehtävistään vuonna 1890?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Hän joutui eroamaan venäläistämistoimien takia.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Hän joutui eroamaan venäläistämistoimien takia.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Syyksi oletettiin usein maalaiset ja heidän mahdollinen juopottelunsa.'
+        feedback: 'Vastauksesi oli väärin. Hän joutui eroamaan venäläistämistoimien takia.'
     '#options':
-      q5_a: 'maalaiset ja heidän mahdollinen juopottelunsa'
-      q5_b: 'hevosten pelko vaunuja kohtaan'
-      q5_c: 'huono katuvalaistus'
-      q5_d: 'liikenteen vilkkaus'
+      q5_a: 'venäläistämistoimien vuoksi'
+      q5_b: 'heikon terveytensä takia'
+      q5_c: ' liiallisen työkuorman takia'
+      q5_d: 'ulkomaille muuton takia'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Mikä näistä pätee Helsingin raitiovaunujen väritykseen?'
+    '#title': '6. Mikä näistä ei ollut merkittävä hanke 1890-luvun valtuustotyöskentelyssä?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Paikallisen höyrylaivaliikenteen kehittäminen ei kuulunut valtuuston edistämiin hankkeisiin.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Paikallisen höyrylaivaliikenteen kehittäminen ei kuulunut valtuuston edistämiin hankkeisiin.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
+        feedback: 'Vastauksesi oli väärin. Paikallisen höyrylaivaliikenteen kehittäminen ei kuulunut valtuuston edistämiin hankkeisiin.'
     '#options':
-      q6_a: 'Joissakin vaunuissa kokeiltiin harmaata ja oranssia 1970- ja 1980-luvulla.'
-      q6_b: 'Ne ovat aina olleet keltaisia ja vihreitä.'
-      q6_c: 'Kaikki vaunut maalattiin vuonna 1973 oransseiksi ja harmaiksi.'
-      q6_d: 'Ne olivat aluksi punaisia.'
+      q6_a: 'paikallisen höyrylaivaliikenteen kehittäminen'
+      q6_b: 'satamarata sekä satama- ja makasiinirakentaminen'
+      q6_c: 'kulkutautisairaala eli Marian sairaala'
+      q6_d: 'raitiotieverkoston laajentaminen ja sähköistäminen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mihin näistä silloisen Helsingin esikaupungeista ei ole 1900-luvun alkupuolella liikennöity raitiovaunuilla?'
+    '#title': '7. Mitkä olivat kaupunginvaltuuston tärkeitä kulttuurihankkeita1890-luvun lopussa?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Valtuusto halusi edistää Kansallismuseon ja Kansallisteatterin rakentamista.'
       q7_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Valtuusto halusi edistää Kansallismuseon ja Kansallisteatterin rakentamista.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Oulunkylään ei liikennöity sporalla.'
+        feedback: 'Vastauksesi oli väärin. Valtuusto halusi edistää Kansallismuseon ja Kansallisteatterin rakentamista.'
     '#options':
-      q7_a: Oulunkylä
-      q7_b: Munkkiniemi
-      q7_c: Haaga
-      q7_d: Kulosaari
+      q7_a: 'Kansallismuseo ja Kansallisteatteri'
+      q7_b: 'Kansallisteatteri ja Kansallisarkisto'
+      q7_c: 'Kansallismuseo ja Kansallisooppera'
+      q7_d: 'Kansalliskirjasto ja Kansallisooppera'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -219,9 +219,9 @@ elements: |-
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet todellinen Leo Mechelin -asiantuntija! Entäpä Helsingin kaupungintalon historia? Tutustu artikkeliin <a href="/fi/ilmiot/vallankayttoa-ja-hallintoa/kaupungintalo">Kaupungintalo</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/helsingin-asukkaat/leo-mechelin-kaupunginvaltuuston-ensimmainen-puheenjohtaja">Leo Mechelin</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

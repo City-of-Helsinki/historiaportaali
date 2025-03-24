@@ -1,0 +1,109 @@
+elements: |
+  q1:
+    '#title': '1. Vilket år behandlade stadsfullmäktige första gången byggandet av en tunnelbana i Helsingfors?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Det skedde år 1955.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Det skedde år 1955.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Det skedde år 1955.'
+  q2:
+    '#title': '2. Varifrån och vart beslöt stadsfullmäktige låta bygga metron?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Man beslöt att den skulle trafikera från Kampen till Botby gård.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Man beslöt att den skulle trafikera från Kampen till Botby gård.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Man beslöt att den skulle trafikera från Kampen till Botby gård.'
+    '#options':
+      q2_a: 'från Kampen till Botby gård'
+      q2_b: 'från Gräsviken till Östra centrum'
+      q2_c: 'från Järnvägstorget till Botby gård'
+      q2_d: 'från Kampen till Östra centrum'
+  q3:
+    '#title': '3. Varför kritiserades metron av många invånare i östra Helsingfors?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. De var rädda att metron skulle göra slut på förorternas busslinjer direkt till centrum.'
+      q3_c:
+        feedback: 'Svaret var fel. De var rädda att metron skulle göra slut på förorternas busslinjer direkt till centrum.'
+      q3_d:
+        feedback: 'Svaret var fel. De var rädda att metron skulle göra slut på förorternas busslinjer direkt till centrum.'
+    '#options':
+      q3_a: 'De var rädda att metron skulle göra slut på förorternas busslinjer direkt till centrum'
+      q3_b: 'De var rädda att metron skulle höja kommunalskatteprocenten.'
+      q3_c: 'De tvivlade på metrons säkerhet.'
+      q3_d: 'De misstänkte att användningen av metron skulle vara för dyr för vanligt folk.'
+  q4:
+    '#title': '4. När öppnades metron i Helsingfors?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Det skedde 1.6.1982.'
+      q4_c:
+        feedback: 'Svaret var fel. Det skedde 1.6.1982.'
+      q4_d:
+        feedback: 'Svaret var fel. Det skedde 1.6.1982.'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Till vilket av dessa ställen har man aldrig föreslagit en metrolinje?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt. Till Mårtensdal har man aldrig föreslagit någon metrolinje.'
+      q5_c:
+        feedback: 'Inte riktigt. Till Mårtensdal har man aldrig föreslagit någon metrolinje.'
+      q5_d:
+        feedback: 'Inte riktigt. Till Mårtensdal har man aldrig föreslagit någon metrolinje.'
+    '#options':
+      q5_a: Mårtensdal
+      q5_b: flygplatsen
+      q5_c: Vik
+      q5_d: Åggelby
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Vad handlade metroskandalen om i början av 1980-talet?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Det handlade om misstankar om korruption och misshushållning.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Det handlade om misstankar om korruption och misshushållning.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Det handlade om misstankar om korruption och misshushållning.'
+    '#options':
+      q6_a: 'misstankar om korruption och misshushållning i beslutsfattandet'
+      q6_b: 'gräl om kommande metrolinjen'
+      q6_c: 'uppsvällda byggnadskostnader'
+      q6_d: 'tunnelbyggarnas arbetstvist'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. Vilket år började metron trafikera till Nordsjö?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det skedde nämligen 1998.'
+      q7_c:
+        feedback: 'Fel svarat, det skedde nämligen 1998.'
+      q7_d:
+        feedback: 'Fel svarat, det skedde nämligen 1998.'
+    '#options':
+      q7_a: '1998'
+      q7_b: '1993'
+      q7_c: '2001'
+      q7_d: '1989'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på metrons historia! Hur är det då med biltrafiken i Helsingfors? Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/biltrafikens-borjan">Biltrafikens början</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/metron">Metron</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Metron

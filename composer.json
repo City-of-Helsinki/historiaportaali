@@ -113,9 +113,6 @@
             "drupal/graphql": {
                 "Empty entity type error": "custom-patches/graphql_fix_empty_entity_type.patch"
             },
-            "drupal/elasticsearch_connector_autocomp": {
-                "Compatibility with elasticsearchconnector 8.x-7.x (https://www.drupal.org/project/elasticsearch_connector_autocomp/issues/3072676#comment-14208601)": "https://www.drupal.org/files/issues/2021-09-03/3072676-15.patch"
-            },
             "drupal/leaflet": {
                 "Add entity id to marker options": "custom-patches/leaflet_add_entity_id_to_marker_options.patch"
             },

@@ -1,18 +1,18 @@
 #block-helhistmaplift {
-  position: relative;
   background-color: $color-black-80;
   color: $color-white;
   margin: (-$spacing-quadruple) $spacing $spacing-double;
-  padding-bottom: $spacing-double;
   max-width: 900px;
+  padding-bottom: $spacing-double;
+  position: relative;
 
   @include breakpoint($breakpoint-l) {
     margin: (-$spacing-quadruple * 2) auto $spacing-double;
   }
 
   h3 {
-    margin: 0 0 $spacing;
     font-weight: $font-weight-bold;
+    margin: 0 0 $spacing;
 
     @include breakpoint($breakpoint-l) {
       @include font-size($fontsize-heading-m, $lineheight-s);
@@ -21,8 +21,8 @@
 
   h5 {
     @include font-size($fontsize-body-m, $lineheight-s);
-    margin-top: 0;
     margin-bottom: $spacing;
+    margin-top: 0;
     text-transform: uppercase;
   }
 
@@ -40,6 +40,13 @@
   }
 
   .map-lift {
+    .map-lift__subtitle {
+      @extend h5;
+    }
+    .map-lift__title {
+      @extend h3;
+    }
+
     .container {
       padding-top: $spacing-double;
     }

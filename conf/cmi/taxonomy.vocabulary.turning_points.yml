@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Turning points'
 vid: turning_points
-description: ''
+description: null
 weight: 0
+new_revision: false

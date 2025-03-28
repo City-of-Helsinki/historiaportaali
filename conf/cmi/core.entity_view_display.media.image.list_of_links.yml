@@ -22,7 +22,7 @@ dependencies:
     - field.field.media.image.field_start_year
     - field.field.media.image.field_transcript
     - media.type.image
-    - responsive_image.styles.list_of_links__thumbnail
+    - responsive_image.styles.list_of_links
   module:
     - responsive_image
 id: media.image.list_of_links
@@ -34,7 +34,7 @@ content:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: list_of_links__thumbnail
+      responsive_image_style: list_of_links
       image_link: ''
       image_loading:
         attribute: eager

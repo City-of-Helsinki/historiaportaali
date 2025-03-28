@@ -2,12 +2,14 @@ uuid: 56445a96-5e82-4581-b842-ffe8e7097acc
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Z5cLehFHTeqGLzRMPiYu5ifBzZ2bCw3JYViB-iLqVWA
 id: helfi_hearings
-label: 'Helfi: Hearings'
-label_plural: 'Helfi: Hearings'
+label: 'Helfi: Hearing'
+label_plural: 'Helfi: Hearing'
 description: 'Helfi hearings from hearing api.'
-read_only: true
 generate_aliases: false
+read_only: true
 field_mapper_id: jsonpath
 field_mapper_config:
   field_mappings:
@@ -17,8 +19,6 @@ field_mapper_config:
       value: $.id
     title:
       value: $.title
-    main_image:
-      uri: $.main_image_url
     close_at:
       value: $.close_at
     created_at:
@@ -33,18 +33,20 @@ field_mapper_config:
       value: $.organization
     abstract:
       value: $.abstract
+    main_image:
+      uri: $.main_image_url
     main_image_title:
       value: $.main_image_caption
-    url:
-      value: $.url
     count:
       value: $.count
+    url:
+      value: $.url
     langcode:
       value: $.langcode
     existing_translations:
       value: $.existing_translations
 storage_client_id: helfi_hearings
-storage_client_config: null
+storage_client_config: {  }
 persistent_cache_max_age: 3600
 annotation_entity_type_id: null
 annotation_bundle_id: null

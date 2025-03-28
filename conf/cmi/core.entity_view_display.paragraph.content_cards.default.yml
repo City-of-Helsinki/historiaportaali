@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.content_cards.field_content_cards_content
     - field.field.paragraph.content_cards.field_content_cards_design
+    - field.field.paragraph.content_cards.field_content_cards_subtitle
     - field.field.paragraph.content_cards.field_content_cards_title
     - paragraphs.paragraphs_type.content_cards
   module:

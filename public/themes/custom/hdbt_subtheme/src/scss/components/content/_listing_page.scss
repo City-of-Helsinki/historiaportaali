@@ -44,8 +44,8 @@
         .listing-page__body {
           @include font-size(18px, 24px);
           font-weight: $font-weight-medium;
-          max-width: $content-width-max;
           margin: $spacing-double 0 $spacing-triple 0;
+          max-width: $content-width-max;
 
           @include breakpoint($breakpoint-m) {
             @include font-size(24px, 30px);

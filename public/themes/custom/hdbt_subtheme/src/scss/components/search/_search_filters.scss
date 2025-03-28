@@ -1,7 +1,7 @@
 .search-filters {
-  position: relative;
   background-color: $color-black-80;
   margin-bottom: $spacing-sextuple;
+  position: relative;
 
   .path-frontpage & {
     margin: $spacing;
@@ -13,9 +13,9 @@
   }
 
   h4 {
-    margin: 0 0 10px;
     color: white;
     font-size: 1rem;
+    margin: 0 0 10px;
   }
 
   .form-actions {
@@ -40,7 +40,7 @@
       --submit-input-focus-gutter-color: var(--color-white);
     }
   }
-  
+
   .filters {
     padding: $spacing-double 0;
 
@@ -55,26 +55,26 @@
   }
 
   .hds-text-input .hds-text-input__input {
-    border: 0;
     background-position: calc(100% - var(--spacing-s)) center;
+    border: 0;
     cursor: pointer;
 
     &:focus {
-      outline: none;
       box-shadow: 0px 0px 0px 3px $color-metro-dark;
+      outline: none;
     }
   }
 
   button[type="button"]:focus {
-    outline: none;
     box-shadow: 0px 0px 0px 3px $color-metro-dark;
+    outline: none;
   }
 
   .hds-text-input__input-wrapper .hel-icon {
-    position: absolute;
-    top: 50%;
     margin-top: -12px;
+    position: absolute;
     right: 12px;
+    top: 50%;
   }
 
   form {
@@ -112,8 +112,8 @@
     padding-left: $spacing;
 
     div[role="button"] {
-      font-weight: 400;
       color: var(--placeholder-color);
+      font-weight: 400;
     }
 
     div[role="region"] {
@@ -126,8 +126,8 @@
     }
 
     .year-input-container {
-      display: flex;
       align-items: center;
+      display: flex;
 
       .item-divider {
         margin-top: $spacing-double;
@@ -138,48 +138,48 @@
 
   .year-interval {
     .year-interval__toggle {
-      display: flex;
       align-items: center;
-      justify-content: space-between;
       background-color: $color-white;
       border: 0;
       box-sizing: border-box;
       color: $color-black-90;
+      cursor: pointer;
+      display: flex;
       font-size: 1.125em;
-      width: 100%;
       height: 56px;
+      justify-content: space-between;
       line-height: normal;
       padding: 0 $spacing;
-      cursor: pointer;
-  
+      width: 100%;
+
       label {
         color: $color-black-90;
         margin-bottom: 0;
       }
     }
-  
+
     .year-interval__form {
       background: $color-white;
-      padding: $spacing;
       border-top: 1px solid $color-black-10;
+      padding: $spacing;
     }
-  
+
     .year-interval__form-items {
-      display: flex;
       align-items: center;
-  
+      display: flex;
+
       label {
         color: $color-black-90;
       }
-  
+
       .hds-text-input .hds-text-input__input {
         border: 2px solid $color-black-50;
       }
-  
+
       .item-divider {
         margin-top: 7px;
         padding: 0 $spacing-quarter;
-  
+
         svg {
           vertical-align: middle;
         }

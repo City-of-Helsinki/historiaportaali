@@ -1,46 +1,46 @@
 .pager {
-  margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 
   .pager__items {
+    align-items: flex-end;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: center;
-    margin: 1rem 0;
-    list-style: none;
-    text-align: center;
     font-weight: bold;
+    justify-content: center;
+    list-style: none;
+    margin: 1rem 0;
+    text-align: center;
 
     .pager__item {
       display: inline-block;
-      margin-right: 0.25rem;
       margin-left: 0.25rem;
+      margin-right: 0.25rem;
       vertical-align: top;
 
       .pager__link,
       &.pager__item--current {
-        display: flex;
         align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        min-width: 2rem;
-        height: 2rem;
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-        text-decoration: none;
-        color: #545560;
-        border-radius: 1rem; /* Pager size ÷ 2 */
         background: var(--color-white); /* Make sure that the text is visible on dark background. */
-        line-height: 1;
-        color: var(--color--black-70);
         background-color: transparent;
+        border-radius: 1rem; /* Pager size ÷ 2 */
+        box-sizing: border-box;
+        color: #545560;
+        color: var(--color--black-70);
+        display: flex;
+        height: 2rem;
+        justify-content: center;
+        line-height: 1;
+        min-width: 2rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        text-decoration: none;
       }
 
       .pager__link:hover,
       .pager__link:focus {
-        color: var(--color-white);
         background: var(--color-black-70);
+        color: var(--color-white);
       }
 
       &.pager__item--ellipsis {
@@ -67,8 +67,8 @@
 
         &:hover,
         &:focus {
-          color: var(--color-white);
           background: var(--color-black-70);
+          color: var(--color-white);
         }
       }
 
@@ -85,12 +85,12 @@
       &.pager__item--first .pager__link,
       &.pager__item--previous .pager__link {
         &::before {
-          position: relative;
-          display: inline-block;
-          width: 1rem;
-          height: 1rem;
-          content: "";
           background-color: var(--color-black-70);
+          content: "";
+          display: inline-block;
+          height: 1rem;
+          position: relative;
+          width: 1rem;
         }
 
         &:hover::before,
@@ -102,12 +102,12 @@
       &.pager__item--next .pager__link,
       &.pager__item--last .pager__link {
         &::after {
-          position: relative;
-          display: inline-block;
-          width: 1rem;
-          height: 1rem;
-          content: "";
           background-color: var(--color-black-70);
+          content: "";
+          display: inline-block;
+          height: 1rem;
+          position: relative;
+          width: 1rem;
         }
 
         &:hover::after,

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from 'hds-react/components/Button';
 import { Koros } from 'hds-react/components/Koros';
 import { SearchInput } from 'hds-react/components/SearchInput';
-import { fetchAutocompleteSuggestions } from '../helpers/autocomplete';
+// import { fetchAutocompleteSuggestions } from '../helpers/autocomplete';
 import { scrollTo } from '../helpers/scrollTo';
 import EraSelector from './EraSelector';
 import Facet from './Facet';
@@ -50,16 +50,17 @@ const SearchForm = ({
     resetSearch();
   }
 
-  const getSuggestions = (inputValue) => new Promise((resolve) => {
-    const suggestions = fetchAutocompleteSuggestions(inputValue);
-    resolve(suggestions);
-  });
+  // @todo fix autocomplete suggestions via HIS-313
+  // const getSuggestions = (inputValue) => new Promise((resolve) => {
+  //   const suggestions = fetchAutocompleteSuggestions(inputValue);
+  //   resolve(suggestions);
+  // });
 
   const getSearchInputPlaceholder = () => {
     /**
      * Because there is no way to pass default value to the SearchInput-component,
      * we have to use search field's placeholder to show the pre-defined keyword.
-     * 
+     *
      * This should be refactored when following issue is resolved:
      * https://github.com/City-of-Helsinki/helsinki-design-system/issues/666
      */
@@ -82,7 +83,7 @@ const SearchForm = ({
                 searchButtonAriaLabel={window.Drupal ? window.Drupal.t("Search", {}, {context: "Search"}) : "Search"}
                 clearButtonAriaLabel="Clear search field"
                 suggestionLabelField="value"
-                getSuggestions={getSuggestions}
+                // getSuggestions={getSuggestions} // @todo fix autocomplete suggestions via HIS-313
                 onChange={(value) => setTmpKeywords(value)}
                 onSubmit={(value) => handleSubmit(onSubmit(value))()}
               />

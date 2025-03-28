@@ -1,4 +1,3 @@
-label: Verkkolomakelähetykset
 display:
   default:
     display_title: Isäntä
@@ -153,3 +152,4 @@ display:
         locked:
           expose:
             label: Lukittu
+label: Verkkolomakelähetykset

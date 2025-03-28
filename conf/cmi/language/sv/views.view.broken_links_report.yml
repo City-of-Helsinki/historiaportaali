@@ -68,8 +68,11 @@ display:
       footer:
         result:
           content: 'Visar @start - @end av @total'
+      title: 'Rapport över trasiga länkar'
   page_1:
     display_title: Sida
     display_options:
       menu:
         title: 'Trasiga länkar'
+        description: 'Visar en lista av trasiga länkar i innehåll.'
+label: 'Rapport över trasiga länkar'

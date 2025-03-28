@@ -2,8 +2,6 @@ uuid: d38e041f-4544-4929-a453-5160222c518b
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api_autocomplete.search.search
   module:
     - eu_cookie_compliance
     - external_entities
@@ -11,7 +9,6 @@ dependencies:
     - helfi_api_base
     - media
     - raven
-    - search_api_autocomplete
     - system
 _core:
   default_config_hash: EDyVdaROG6pYzyEct43c01Wq4gpATszrk-qR6gqnQ84
@@ -24,7 +21,6 @@ permissions:
   - 'display eu cookie compliance popup'
   - 'execute graphql requests'
   - 'send javascript errors to sentry'
-  - 'use search_api_autocomplete for search'
   - 'view helfi_announcements external entity'
   - 'view helfi_surveys external entity'
   - 'view media'

@@ -7,6 +7,8 @@
 
 // Elasticsearch settings.
 if ($env = getenv('ELASTICSEARCH_URL')) {
+  $config['search_api.server.elasticsearch']['backend_config']['connector_config']['url'] = getenv('ELASTICSEARCH_URL');
+
   $config['elasticsearch_connector.cluster.local']['url'] = getenv('ELASTICSEARCH_URL');
   $config['elasticsearch_connector.cluster.local']['options']['use_authentication'] = '1';
   $config['elasticsearch_connector.cluster.local']['options']['username'] = getenv('ELASTIC_USER');

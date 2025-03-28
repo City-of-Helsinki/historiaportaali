@@ -11,6 +11,7 @@ backend: elasticsearch
 backend_config:
   connector: standard
   connector_config:
+    url: 'http://elastic:9200'
     enable_debug_logging: false
   advanced:
     fuzziness: auto

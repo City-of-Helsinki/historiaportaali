@@ -63,7 +63,7 @@ _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
 label: Ylläpitäjä
-weight: 5
+weight: -4
 is_admin: null
 permissions:
   - 'access administration pages'

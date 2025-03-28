@@ -52,7 +52,7 @@ _core:
   default_config_hash: EVzxFtbOrGVTXWw2GTh1fEzzqruPEqSo84k10-BF6eA
 id: content_producer
 label: 'Sisällöntuottaja suppea'
-weight: 3
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'

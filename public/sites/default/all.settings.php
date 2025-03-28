@@ -7,7 +7,11 @@
 
 // Elasticsearch settings.
 if ($env = getenv('ELASTICSEARCH_URL')) {
+  $config['search_api.server.elasticsearch']['backend_config']['connector'] = 'helfi_connector';
   $config['search_api.server.elasticsearch']['backend_config']['connector_config']['url'] = getenv('ELASTICSEARCH_URL');
+  $config['search_api.server.elasticsearch']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
+  $config['search_api.server.elasticsearch']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
+
 
   $config['elasticsearch_connector.cluster.local']['url'] = getenv('ELASTICSEARCH_URL');
   $config['elasticsearch_connector.cluster.local']['options']['use_authentication'] = '1';

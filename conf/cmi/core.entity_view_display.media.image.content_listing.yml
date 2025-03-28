@@ -21,7 +21,7 @@ dependencies:
     - field.field.media.image.field_photographer
     - field.field.media.image.field_start_year
     - field.field.media.image.field_transcript
-    - image.style.3_2_xxs
+    - image.style.2.3_575w_250h
     - media.type.image
   module:
     - image
@@ -37,7 +37,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: 3_2_xxs
+      image_style: 2.3_575w_250h
       image_loading:
         attribute: lazy
     third_party_settings: {  }

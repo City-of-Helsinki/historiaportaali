@@ -44,6 +44,8 @@
   {% set original_aspect_ratio = true %}
 {% endif %}
 
+{% set language = language.getId() %}
+
 {% block paragraph %}
   {% embed "@hdbt/misc/component.twig" with
     {
@@ -54,7 +56,6 @@
     }
   %}
     {% block component_content %}
-
       <div class="media--image__content">
         {% set caption = content.field_image_caption['#items'].getString() %}
         {% if content.field_image|render %}
@@ -99,7 +100,7 @@
               {% endif %}
               {# Link image to media entity page #}
               <div class="media--image__content__image">
-                <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">{{ image }}</a>
+                <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">{{ drupal_image(image['#uri']) }}</a>
               </div>
               <div class="media--image__content__info">
                 {% if caption %}
@@ -109,7 +110,7 @@
                 {% endif %}
                 {% if media.fields.field_start_year is not empty or media.fields.field_geolocation is not empty %}
                   <div class="divider"></div>
-                  
+
                   <div class="media--image__content__meta">
                     {% if media.fields.field_geolocation is not empty %}
                       <div class="media--image__content__map_link">

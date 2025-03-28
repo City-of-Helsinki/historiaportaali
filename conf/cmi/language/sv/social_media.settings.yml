@@ -1,11 +1,9 @@
 social_media:
   facebook_share:
-    text: Facebook
+    text: 'Dela på Facebook'
+  linkedin:
+    text: 'Dela på Linkedin'
   twitter:
-    text: Twitter
-  pinterest:
-    text: Pinterest
+    text: 'Dela på X'
   email:
-    text: E-post
-  print:
-    text: Utskrift
+    text: 'Skicka via e-post'

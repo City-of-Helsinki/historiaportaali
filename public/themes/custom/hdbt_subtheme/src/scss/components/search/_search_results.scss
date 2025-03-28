@@ -14,15 +14,15 @@
   }
 
   .spinner-container {
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 12rem;
-    left: 0;
     width: 100%;
-    height: 100%;
 
     svg {
-      max-width: 160px;
       height: auto;
+      max-width: 160px;
     }
   }
 
@@ -37,8 +37,8 @@
     }
 
     h3 {
-      margin: 0;
       font-size: 1.2rem;
+      margin: 0;
     }
   }
 
@@ -51,8 +51,8 @@
   }
 
   .search-header__sort-container {
-    display: flex;
     align-items: center;
+    display: flex;
 
     h4 {
       margin: 0;
@@ -63,7 +63,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-  
+
       li {
         display: inline-block;
         margin-left: $spacing-half;
@@ -71,13 +71,13 @@
       }
 
       button {
-        display: flex;
         align-items: center;
         background: transparent;
         border: 0;
-        cursor: pointer;
         color: $color-black;
-        
+        cursor: pointer;
+        display: flex;
+
         &:hover {
           text-decoration: none;
         }
@@ -99,9 +99,9 @@
     margin-top: $spacing-double;
 
     @include breakpoint($breakpoint-s) {
-      margin-top: $spacing-triple;
       display: flex;
       flex-wrap: wrap;
+      margin-top: $spacing-triple;
     }
   }
 
@@ -109,7 +109,7 @@
     background: $color-white;
     flex: 1 1 100%;
     margin-bottom: $spacing-double;
-    
+
     @include breakpoint($breakpoint-s) {
       flex: 0 1 46%;
       margin: 0 2% $spacing-double 2%;
@@ -127,8 +127,8 @@
   }
 
   article.content-card {
-    padding-left: 0;
     min-width: 100%;
+    padding-left: 0;
 
     .content-card__link {
       width: auto;

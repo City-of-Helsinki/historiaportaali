@@ -1,7 +1,0 @@
-label: Sök
-display:
-  default:
-    display_options:
-      title: Sök
-  page:
-    display_title: Söksida

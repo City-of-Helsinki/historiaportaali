@@ -1,8 +1,8 @@
 settings:
-  default_form_close_message: 'Tyvärr... Detta formulär är stängt för nya bidrag.'
   default_submit_button_label: Skicka
   default_reset_button_label: Återställ
   default_delete_button_label: Radera
+  default_form_close_message: 'Tyvärr... Detta formulär är stängt för nya bidrag.'
   default_wizard_prev_button_label: '< Föregående'
   default_wizard_next_button_label: 'Nästa >'
   default_wizard_start_label: Från

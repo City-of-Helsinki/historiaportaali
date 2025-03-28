@@ -3,8 +3,8 @@
   line-height: 0;
   margin: 0 0 $spacing-and-half; // By design the margin is 12px.
   .social-media-sharing__title {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-right: $spacing;
 
     .hel-icon {

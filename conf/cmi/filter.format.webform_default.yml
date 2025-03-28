@@ -2,10 +2,18 @@ uuid: 4afcd1c8-079f-43c8-83d3-d9972090690f
 langcode: en
 status: true
 dependencies:
+  module:
+    - helfi_api_base
   enforced:
     module:
       - webform
 name: 'Webform (Default) - DO NOT EDIT'
 format: webform_default
 weight: 100
-filters: {  }
+filters:
+  helfi_link_converter:
+    id: helfi_link_converter
+    provider: helfi_api_base
+    status: true
+    weight: -10
+    settings: {  }

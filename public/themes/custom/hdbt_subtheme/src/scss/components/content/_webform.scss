@@ -14,12 +14,12 @@
 
   .main-content {
     form {
-      width: 100%;
-      max-width: $content-width-max;
       margin-left: auto;
       margin-right: auto;
+      max-width: $content-width-max;
       padding-left: $spacing;
       padding-right: $spacing;
+      width: 100%;
 
       @include breakpoint($breakpoint-l) {
         padding-left: $spacing-and-half;
@@ -30,8 +30,8 @@
         legend {
           span {
             @include font-size(18px, 30px);
-            display: block;
             color: $color-black-90;
+            display: block;
             font-weight: $font-weight-medium;
             margin: $spacing-half 0;
     
@@ -48,8 +48,8 @@
       }
 
       img {
-        max-width: 70%;
         height: auto;
+        max-width: 70%;
 
         @include breakpoint($breakpoint-l) {
           max-width: 80%;
@@ -64,10 +64,10 @@
         padding-left: $spacing-half;
 
         .messages--status {
+          background-color: var(--color-copper-medium-light);
+          border: 1px solid;
           box-shadow: -$spacing-half 0 0 $color-metro-dark;
           padding: $spacing;
-          border: 1px solid;
-          background-color: var(--color-copper-medium-light);
         }
 
         .messages--neutral {
@@ -75,10 +75,10 @@
         }
 
         .messages--error {
+          background-color: var(--color-metro-medium-light);
+          border: 1px solid;
           box-shadow: -$spacing-half 0 0 $color-metro-dark;
           padding: $spacing;
-          border: 1px solid;
-          background-color: var(--color-metro-medium-light);
         }
       }
 

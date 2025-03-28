@@ -4,12 +4,14 @@ const path = require('path');
 const glob = require('glob');
 const globImporter = require('node-sass-glob-importer');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('@nuxt/friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // Handle entry points.
 const Entries = () => {
@@ -29,8 +31,8 @@ const Entries = () => {
   ];
 
   glob.sync(pattern, {ignore: ignore}).map((item) => {
-    entries[path.parse(item).name] = item }
-  );
+    entries[path.parse(item).name] = './' + item;
+  });
   return entries;
 };
 
@@ -44,6 +46,19 @@ module.exports = {
     pathinfo: true,
     filename: 'js/[name].min.js',
     publicPath: '../',
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
   },
   module: {
     rules: [
@@ -99,7 +114,8 @@ module.exports = {
             options: {
               sourceMap: isDev,
               sassOptions: {
-                importer: globImporter()
+                importer: globImporter(),
+                quietDeps: true
               },
             },
           },
@@ -117,9 +133,8 @@ module.exports = {
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
     new RemoveEmptyScriptsPlugin(),
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname),
-    }),
+    new FriendlyErrorsWebpackPlugin({ clearConsole: false }),
+    new CleanWebpackPlugin(),
     new SVGSpritemapPlugin([
       path.resolve(__dirname, 'src/icons/**/*.svg'),
     ], {
@@ -141,23 +156,35 @@ module.exports = {
       },
     }),
     new CopyPlugin({
-      'patterns': [
+      patterns: [
         {
-          'context': './',
-          'from': 'node_modules/hyphenopoly/min/{Hyphenopoly_Loader,Hyphenopoly}.js',
-          'to': path.resolve(__dirname, 'dist') + '/js/hyphenopoly/',
-          'force': true,
-          'flatten': true
+          from: 'node_modules/hyphenopoly/min/{Hyphenopoly_Loader,Hyphenopoly}.js',
+          to: 'js/hyphenopoly/[name][ext]',
+          force: true
         }, {
-          'context': './',
-          'from': 'node_modules/hyphenopoly/min/patterns/{fi,sv,en-gb,ru}.wasm',
-          'to': path.resolve(__dirname, 'dist') + '/js/hyphenopoly/patterns/',
-          'globOptions': {
-            'extglob': true
+          from: 'node_modules/hyphenopoly/min/patterns/{fi,sv,en-gb,ru}.wasm',
+          to: 'js/hyphenopoly/patterns/[name][ext]',
+          globOptions: {
+            extglob: true
           },
-          'force': true,
-          'flatten': true
+          force: true
         },
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'node_modules/@splidejs/splide/dist/css/splide-core.min.css',
+          to: 'css/splide/splide-core.min.css'
+        },
+        {
+          from: 'node_modules/@splidejs/splide/dist/js/splide.min.js',
+          to: 'js/splide/splide.min.js'
+        },
+        {
+          from: 'node_modules/tiny-slider/dist/tiny-slider.css',
+          to: 'css/tiny-slider/tiny-slider.css'
+        }
       ]
     }),
     new MiniCssExtractPlugin({

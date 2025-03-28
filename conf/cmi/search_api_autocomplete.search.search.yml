@@ -1,4 +1,4 @@
-uuid: 903cbb55-2d2a-4b2a-bad9-b2f0bc3609e8
+uuid: 84199fd7-4c69-491d-b2e9-ef4858eea0b7
 langcode: en
 status: true
 dependencies:
@@ -7,16 +7,29 @@ dependencies:
     - views.view.search
   module:
     - views
-    - search_api_autocomplete
 id: search
-label: Search
+label: 'Search autocomplete (search)'
 index_id: content_and_media
 suggester_settings:
-  server:
+  live_results:
     fields:
       - aggregated_autocomplete
+    highlight:
+      enabled: false
+      field: ''
+    suggest_keys: true
+    view_modes:
+      'entity:media':
+        file: ''
+        hel_map: ''
+        helfi_chart: ''
+        image: ''
+        kore_image: ''
+        remote_video: ''
+      'entity:node':
+        article: ''
 suggester_weights:
-  server: 0
+  live_results: 1
 suggester_limits: {  }
 search_settings:
   'views:search':

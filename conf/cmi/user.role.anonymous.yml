@@ -2,6 +2,8 @@ uuid: d38e041f-4544-4929-a453-5160222c518b
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api_autocomplete.search.search
   module:
     - eu_cookie_compliance
     - external_entities

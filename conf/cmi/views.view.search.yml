@@ -1,16 +1,15 @@
-uuid: 459bbae1-8110-47f5-af74-c93a30c6cbd2
+uuid: ed53dfc5-b3a9-42da-938b-95c810c36687
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.content_and_media
   module:
-    - better_exposed_filters
     - search_api
 id: search
-label: Search
+label: 'Search (autocomplete)'
 module: views
-description: ''
+description: 'The view for autocomplete implementation'
 tag: ''
 base_table: search_api_index_content_and_media
 base_field: search_api_id
@@ -21,7 +20,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Search
+      title: 'Search (autocomplete)'
       fields:
         search_api_rendered_item:
           id: search_api_rendered_item
@@ -75,11 +74,13 @@ display:
           view_modes:
             'entity:media':
               file: search_index
+              hel_map: search_index
+              helfi_chart: search_index
               image: search_index
+              kore_image: search_index
               remote_video: search_index
-              soundcloud: search_index
             'entity:node':
-              article: teaser
+              article: search_index
       pager:
         type: full
         options:
@@ -89,10 +90,10 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ›
-            previous: ‹
-            first: «
-            last: »
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -101,64 +102,17 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 9
       exposed_form:
-        type: bef
+        type: basic
         options:
-          submit_button: Search
-          reset_button: true
+          submit_button: Apply
+          reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: full_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: true
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            sort:
-              plugin_id: bef_links
-              advanced:
-                combine: false
-                combine_rewrite: ''
-                reset: false
-                reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
-                is_secondary: false
-            filter:
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
-                  collapsible: false
-                  collapsible_disable_automatic_open: false
-                  is_secondary: false
-              aggregated_start_year:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  collapsible: false
-                  collapsible_disable_automatic_open: false
-                  is_secondary: false
-              aggregated_end_year:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  collapsible: false
-                  collapsible_disable_automatic_open: false
-                  is_secondary: false
       access:
         type: none
         options: {  }
@@ -169,149 +123,6 @@ display:
       sorts: {  }
       arguments: {  }
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_content_and_media
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: and
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: 'Search history'
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: s
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
-            expose_fields: false
-            placeholder: 'Location, person, topic, event...'
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: phrase
-          min_length: null
-          fields:
-            - aggregated_autocomplete
-        aggregated_start_year:
-          id: aggregated_start_year
-          table: search_api_index_content_and_media
-          field: aggregated_start_year
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_numeric
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: aggregated_start_year_op
-            label: Starts
-            description: ''
-            use_operator: false
-            operator: aggregated_start_year_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: start_year
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        aggregated_end_year:
-          id: aggregated_end_year
-          table: search_api_index_content_and_media
-          field: aggregated_end_year
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_numeric
-          operator: '<='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: aggregated_end_year_op
-            label: Ends
-            description: ''
-            use_operator: false
-            operator: aggregated_end_year_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: end_year
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
         search_api_language:
           id: search_api_language
           table: search_api_index_content_and_media
@@ -352,46 +163,38 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
         type: default
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:media':
+              ':default': search_index
+              file: search_index
+              hel_map: search_index
+              helfi_chart: search_index
+              image: search_index
+              kore_image: search_index
+              remote_video: search_index
+            'entity:node':
+              ':default': search_index
+              article: search_index
       query:
         type: search_api_query
         options:
           bypass_access: false
           skip_access: false
-          preserve_facet_query_args: true
+          preserve_facet_query_args: false
+          query_tags: {  }
       relationships: {  }
-      use_ajax: false
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: false
-          content: "<h2>Search results</h2>\r\n[view:search_result_info]"
-          tokenize: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
       tags:
@@ -399,26 +202,30 @@ display:
         - 'search_api_list:content_and_media'
   page:
     id: page
-    display_title: 'Search page'
+    display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      cache:
-        type: search_api_none
-      defaults:
-        cache: false
-      display_description: ''
-      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+        matomo:
+          enabled: false
+          keyword_gets: ''
+          keyword_behavior: first
+          keyword_concat_separator: ' '
+          category_behavior: none
+          category_gets: ''
+          category_concat_separator: ' '
+          category_fallback: ''
+          category_facets: {  }
+          category_facets_concat_separator: ', '
       path: search-view
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
       tags:

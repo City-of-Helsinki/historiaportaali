@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.webform_default
   module:
-    - eu_cookie_compliance
     - external_entities
     - file
     - filter
@@ -30,7 +29,6 @@ permissions:
   - 'access own broken links report'
   - 'access toolbar'
   - 'delete own files'
-  - 'display eu cookie compliance popup'
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
   - 'send javascript errors to sentry'

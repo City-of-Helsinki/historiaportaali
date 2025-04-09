@@ -7,7 +7,7 @@ RUN { \
 		echo 'upload_max_filesize=64M'; \
 		echo 'post_max_size=64M'; \
     echo 'max_execution_time=240'; \
-	} > /etc/php82/conf.d/php-overrides.ini
+	} > /etc/php83/conf.d/php-overrides.ini
 
 COPY / /var/www/html/
 WORKDIR /var/www/html

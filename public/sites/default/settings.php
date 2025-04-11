@@ -338,6 +338,21 @@ if ($env = getenv('APP_ENV')) {
     // phpcs:ignore
     include_once __DIR__ . '/azure.settings.php'; // NOSONAR
   }
+
+  // Sentry configs
+  // @todo: Rather set via environment variables?
+  if ($sentry_env = getenv('SENTRY_ENVIRONMENT')) {
+    switch ($sentry_env) {
+      case 'development':
+        $config['raven.settings']['client_key'] = 'https://8065c42c8580ead8ec1e72342c5113c3@sentry.test.hel.ninja/250';
+        break;
+
+      case 'production':
+        $config['raven.settings']['client_key'] = 'https://9ac665fecfbf8784b7fba6b4764cb2b7@sentry.hel.fi/211';
+        break;
+
+    }
+  }
 }
 
 /**

@@ -1,8 +1,6 @@
 social_media:
   facebook_share:
     text: Facebook
-  linkedin:
-    text: Linkedin
   twitter:
     text: Twitter
   pinterest:
@@ -11,3 +9,5 @@ social_media:
     text: Email
   print:
     text: Печать
+  linkedin:
+    text: Linkedin

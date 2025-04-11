@@ -59,8 +59,6 @@ splide:
 
 tiny-slider:
   version: 2.9.3
-  js:
-    dist/js/tiny-slider/tiny-slider.js: {}
   css:
     theme:
       dist/css/tiny-slider/tiny-slider.css: {}

@@ -4,11 +4,11 @@
 
 Env | Branch | Drush alias | URL
 --- | ------ | ----------- | ---
-docker | - | - | http://historiaportaali.docker.so/
-test | develop | - | https://nginx-helhist-test.agw.arodevtest.hel.fi/
-develop | develop | - | https://nginx-helhist-dev.agw.arodevtest.hel.fi/
+docker | - | - | http://historiaportaali.docker.so
+test | develop | - | -
+develop | develop | - | https://nginx-helhist-dev.apps.arodevtest.hel.fi
 staging | master | - | -
-production | master | - | https://historia.hel.fi/
+production | master | - | https://historia.hel.fi
 
 ## Requirements
 
@@ -17,10 +17,14 @@ You need to have these applications installed to operate on all environments:
 - [Docker](https://github.com/druidfi/guidelines/blob/master/docs/docker.md)
 - [Stonehenge](https://github.com/druidfi/stonehenge)
 - [Openshift CLI](https://github.com/openshift/oc)
+  - See [Using OpenShift Origin Client (OC)](https://github.com/City-of-Helsinki/drupal-helfi-platform/wiki/Using-OpenShift-Origin-Client-(OC)) - e.g. db fetching
 
 ## Running Stonehenge
+```
+stonehenge up
+```
 
-In Stonehenge directory, start with:
+In project directory, start with:
 
 ```
 $ make up
@@ -49,25 +53,18 @@ sudo systemctl restart resolvconf.service
 
 ## Create and start the project
 
-To create and start the environment, in project directory:
+To create and start the environment, in project directory, have `dump.sql` and:
 
 ```
-$ make up
+$ make fresh
 ```
 
-(Do this twice if you get `ERROR 2002 (HY000): Can't connect to MySQL server on 'db' (115)`)
-
-## Import database
-
-Rename file to `dump.sql` and run:
-
+Or have site running with `make up` and sync `dump.sql`
 ```
 $ make drush-sync-db
 ```
 
 ## Login to Drupal container
-
-This will log you inside the app container:
 
 ```
 $ make shell

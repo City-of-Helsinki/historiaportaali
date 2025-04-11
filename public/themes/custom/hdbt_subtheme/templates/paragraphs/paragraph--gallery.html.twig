@@ -71,7 +71,7 @@
               {% set alt = false %}
             {% endif %}
             <li{{ gallery_thumbnails_item }}>
-              {{ drupal_image(image.uri.value, 'gallery_thumbnail', { alt: alt }, responsive=true) }}
+              {{ drupal_image(image.uri.value, 'thumbnail', { alt: alt }) }}
             </li>
           {% endfor %}
         </ul>

@@ -114,7 +114,7 @@ class SearchAPISearch extends FieldPluginBase implements ContainerFactoryPluginI
     }
     // Handle error, check exception type -> SearchApiException ?
     catch (\Exception $exception) {
-      $this->logger->get('graphql_search_api')->error($exception->getMessage());
+      // $this->logger->get('graphql_search_api')->error($exception->getMessage());
       $search_response = [];
       $search_response['result_count'] = 0;
       $search_response['type'] = 'SearchAPIResult';

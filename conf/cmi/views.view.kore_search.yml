@@ -8,7 +8,6 @@ dependencies:
   module:
     - better_exposed_filters
     - entity_reference_revisions
-    - helhist_kore_admin
     - node
     - options
     - paragraphs
@@ -232,7 +231,7 @@ display:
                 min: '1550'
                 max: '2024'
                 step: '1'
-                animate: none
+                animate: '0'
                 animate_ms: '0'
                 orientation: horizontal
               field_kore_start_year_value:
@@ -245,7 +244,7 @@ display:
                 min: '1550'
                 max: '2024'
                 step: '1'
-                animate: none
+                animate: '0'
                 animate_ms: '0'
                 orientation: horizontal
       access:
@@ -685,16 +684,8 @@ display:
           admin_label: 'field_kore_languages: Paragraph'
           plugin_id: standard
           required: false
-      header:
-        kore_search_content:
-          id: kore_search_content
-          table: views
-          field: kore_search_content
-          relationship: none
-          group_type: group
-          admin_label: 'Kore Search Content'
-          plugin_id: kore_search_content
-          empty: true
+      use_ajax: true
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -714,6 +705,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }

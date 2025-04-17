@@ -1,10 +1,4 @@
-.views--kore-search {
-
-  .kore-search-content {
-    margin-top: -90px; // rather hack for now, @todo fix when pull/345 get merged
-    margin-bottom: 2rem;
-  }
-
+#block-kore-search-filters {
   .views-exposed-form {
     align-items: flex-end;
     display: flex;
@@ -49,7 +43,9 @@
       margin-bottom: $gutter;
     }
   }
+}
 
+.views--kore-search {
   .views-row {
     display: none;
   }

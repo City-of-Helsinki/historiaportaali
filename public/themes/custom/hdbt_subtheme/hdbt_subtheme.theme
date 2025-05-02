@@ -5,6 +5,8 @@
  * Functions to support theming in the HDBT Subtheme.
  */
 
+use Drupal\node\Entity\Node;
+
 /**
  * Helper function to get the icons path.
  *
@@ -66,7 +68,7 @@ function hdbt_subtheme_preprocess_region(&$variables) {
   }
 
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node) {
+  if ($node instanceof Node) {
     if ($node->hasField('field_has_hero')) {
       $variables['has_hero'] = intval($node->get('field_has_hero')->getString());
     }
@@ -141,7 +143,7 @@ function hdbt_subtheme_theme_suggestions_field_alter(&$suggestions, $variables) 
  */
 function hdbt_subtheme_theme_suggestions_region_alter(&$suggestions, $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node) {
+  if ($node instanceof Node) {
     $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
   }
 }
@@ -223,8 +225,15 @@ function hdbt_subtheme_preprocess_block__hdbt_messages(&$variables) {
  */
 function hdbt_subtheme_preprocess_block__page_title_block(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node && $node->bundle() == 'listing_page') {
-    $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
+  if ($node instanceof Node) {
+    if ($node->bundle() == 'listing_page') {
+      $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
+    }
+    if ($node->bundle() == 'kore_school') {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $kore_title = \Drupal::config('helhist_kore_admin.settings')->get('kore_search_title');
+      $variables['subtitle'] = $kore_title[$langcode] ?? $kore_title['fi'] ?? '';
+    }
   }
 }
 

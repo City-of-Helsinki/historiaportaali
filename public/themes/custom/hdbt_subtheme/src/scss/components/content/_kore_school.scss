@@ -16,6 +16,10 @@
     }
   }
 
+  .main-content {
+    margin-top: $spacing;
+  }
+
   .node--type-kore-school {
     &.node--view-mode-full {
       margin: 0 $spacing-double;

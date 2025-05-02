@@ -85,15 +85,7 @@
 <article{{ attributes.addClass(classes) }}>
   {% embed "@hdbt/misc/container.twig" with {container_element: node.bundle|clean_class ~ '_header'} %}
     {% block container_content %}
-      {{ content|without('field_liftup_image', 'field_reading_time') }}
-
       {{ drupal_block('helfi_platform_config_social_sharing_block') }}
-
-      {% embed "@hdbt_subtheme/misc/reading-time.html.twig" %}
-        {% block reading_time_value %}
-          {{ content.field_reading_time }}
-        {% endblock %}
-      {% endembed %}
     {% endblock container_content %}
   {% endembed %}
 

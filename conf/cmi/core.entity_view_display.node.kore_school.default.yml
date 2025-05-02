@@ -169,15 +169,6 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
-  field_kore_id:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 13
-    region: content
   field_kore_languages:
     type: entity_reference_revisions_entity_view
     label: above
@@ -239,6 +230,7 @@ content:
     region: content
 hidden:
   body: true
+  field_kore_id: true
   langcode: true
   published_at: true
   search_api_excerpt: true

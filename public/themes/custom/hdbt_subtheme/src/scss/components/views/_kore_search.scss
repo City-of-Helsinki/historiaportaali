@@ -1,4 +1,15 @@
 #block-kore-search-filters {
+
+  .page-title,
+  .page-title > * {
+    padding-left: 0;
+  }
+
+  .kore-search-text {
+    margin-bottom: 2rem;
+  }
+
+
   .views-exposed-form {
     align-items: flex-end;
     display: flex;

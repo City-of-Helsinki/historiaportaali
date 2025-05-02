@@ -1,5 +1,10 @@
 .page-type--kore-school {
   .before-content {
+    .kore-school-header__container {
+      @include breakpoint($breakpoint-m) {
+        padding-left: $spacing-double * 4;
+      }
+    }
     .back-to-search-results__container {
       padding-top: 0;
     }

@@ -84,25 +84,15 @@ class KoreSearchContentBlock extends BlockBase implements ContainerFactoryPlugin
     $title = $config->get('kore_search_title.' . $language) ?? '';
     $text = $config->get('kore_search_text.' . $language)['value'] ?? '';
 
-    if (empty($title) && empty($text)) {
-      return [];
-    }
-
-    $build = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => ['kore-search-content'],
-      ],
-    ];
+    $build = [];
 
     if ($title) {
       $build['title'] = [
         '#type' => 'html_tag',
         '#tag' => 'h1',
         '#value' => $title,
-        '#attributes' => [
-          'class' => ['kore-search-title'],
-        ],
+        '#prefix' => '<div class="page-title">',
+        '#suffix' => '</div>',
       ];
     }
 
@@ -111,9 +101,8 @@ class KoreSearchContentBlock extends BlockBase implements ContainerFactoryPlugin
         '#type' => 'processed_text',
         '#text' => $text,
         '#format' => 'full_html',
-        '#attributes' => [
-          'class' => ['kore-search-text'],
-        ],
+        '#prefix' => '<div class="kore-search-text">',
+        '#suffix' => '</div>',
       ];
     }
 

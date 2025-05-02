@@ -202,8 +202,8 @@ function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\Fo
 
       $form['views_exposed_form']['#markup'] = '
         <a class="link" href="/' . $langcode . $alias .'">
-          <span aria-hidden="true" class="hds-icon hds-icon--location"></span>                                            
-          <span class="link__label">' . $label . '</span>                                            
+          <span aria-hidden="true" class="hds-icon hds-icon--location"></span>
+          <span class="link__label">' . $label . '</span>
         </a>';
     }
   }
@@ -306,7 +306,7 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
     $year = $paragraph->get('field_kore_start_year')->value;
 
     $node = $paragraph->get('field_kore_school')->referencedEntities();
-    $school_names = $node[0]->get('field_kore_names')->referencedEntities();
+    $school_names = isset($node[0]) ? $node[0]->get('field_kore_names')->referencedEntities() : [];
     foreach ($school_names as $name) {
 
       $start = $name->get('field_kore_start_year')->value;

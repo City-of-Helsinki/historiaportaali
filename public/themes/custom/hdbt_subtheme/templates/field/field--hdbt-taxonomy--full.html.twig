@@ -52,8 +52,7 @@
     <h3{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
     <div class="hdbt_taxonomy" aria-labelledby={{ field_name }}>
       {% for item in items %}
-        {# Node 114 is search page. This might be done better. #}
-        <a href="{{ path('entity.node.canonical', {'node': '114'}) }}?s={{ item.content }}"><span>{{ item.content }}</span></a>
+        <a href="{{ site_search_page_url }}?s={{ item.content }}"><span>{{ item.content }}</span></a>
       {% endfor %}
     </div>
   </div>

@@ -94,6 +94,8 @@ function hdbt_subtheme_preprocess_node(&$variables) {
 function hdbt_subtheme_preprocess_field(&$variables, $hook) {
   $field_name = $variables['element']['#field_name'];
 
+  $variables['site_search_page_url'] = _get_search_page_url();
+
   // Provide term's machine name as variable (prefer English)
   if ($field_name == 'field_formats') {
     $field_items = $variables['element']['#items']->getValue();
@@ -255,6 +257,26 @@ function _get_top_level_menu_parent_title_by_nid($node_id) {
   }
 
   return $parent_title;
+}
+
+/**
+ * Get the site's global search page URL.
+ *
+ * Search page is implemented as node/114. This helper function is used to get
+ * the URL for the search page to not duplicate the node id template files.
+ *
+ * @return string
+ *   The search page URL.
+ */
+function _get_search_page_url($nid = 114) {
+  return \Drupal::service('url_generator')->generateFromRoute('entity.node.canonical', ['node' => $nid]);
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function hdbt_subtheme_preprocess_media(&$variables) {
+  $variables['site_search_page_url'] = _get_search_page_url();
 }
 
 /**

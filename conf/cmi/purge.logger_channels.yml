@@ -15,3 +15,9 @@ channels:
     id: diagnostics
     grants:
       - 3
+  -
+    id: purger_varnish_zeroconfig_purger_b8040a2fdc
+    grants:
+      - 0
+      - 2
+      - 3

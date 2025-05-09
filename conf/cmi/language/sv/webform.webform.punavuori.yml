@@ -27,7 +27,7 @@ elements: |
       q2_c: 'från områdets politiska historia'
       q2_d: 'från ett blodbad under förbudslagen'
   q3:
-    '#title': '3. Hurdant vvar det första byggnadsbeståndet i Rödbergen?'
+    '#title': '3. Hurdant var det första byggnadsbeståndet i Rödbergen?'
     '#quiz__options':
       q3_a:
         feedback: 'Rätt svarat!'
@@ -75,8 +75,9 @@ elements: |
       q5_c: 'Den blev på 1800-talet en traditionell arbetarstadsdel.'
       q5_d: 'Där revs även många stenhus på 1960–70-talen.'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktg expert på Rödbergens historia! Hur är det då med Sandvikens varv? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/sandvikens-varv">Sandvikens varv</a>.'
-    '#feedback_message_fail': "Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/sodra/rodbergen-fran-slum-i-stadens-utkant-till-trendomrade\">Rödbergen – från slum i stadens utkant till trendområde</a>\r\noch gör testet på nytt."
+    '#feedback_message_pass': 'Du är en riktig expert på Rödbergens historia! Hur är det då med Sandvikens varv? Läs artikeln <a href="/sv/omraden/sodra/sandvikens-varv">Sandvikens varv</a>.'
+    '#feedback_message_fail': "Du har ännu ett och annat spännande kvar att läsa. Värm upp genom att läsa artikeln <a href=\"/sv/omraden/sodra/rodbergen-fran-slum-i-stadens-utkant-till-trendomrade\">Rödbergen – från slum i stadens utkant till trendområde</a>\r\noch gör testet på nytt."
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: Rödbergen

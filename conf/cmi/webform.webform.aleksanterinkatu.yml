@@ -220,8 +220,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Aleksanterinkadun asiantuntija! Entä kaupunginosa, johon katu kuuluu? Tutustu <a href="https://historia.hel.fi/fi/alueet/etelainen/kluuvi-hetteikosta-liikekeskustaksi">Kluuvi – hetteiköstä liikekeskustaksi</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/aleksanterinkadun-historiaa">Aleksanterinkadun historiaa</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Aleksanterinkadun asiantuntija! Entä kaupunginosa, johon katu kuuluu? Tutustu <a href="/fi/alueet/etelainen/kluuvi-hetteikosta-liikekeskustaksi">Kluuvi – hetteiköstä liikekeskustaksi</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/aleksanterinkadun-historiaa">Aleksanterinkadun historiaa</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

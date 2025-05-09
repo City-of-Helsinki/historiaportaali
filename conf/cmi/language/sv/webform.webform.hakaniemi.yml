@@ -64,7 +64,7 @@ elements: |
       q4_c: 'på platsen av nuvarande Arenahuset'
       q4_d: 'i trakten av nuvarande Sörnäs metrostation'
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
-    '#title': '5. VVilket år fullbordades den nuvarande Långa bron som är av sten?'
+    '#title': '5. Vilket år fullbordades den nuvarande Långa bron som är av sten?'
     '#quiz__options':
       q5_a:
         feedback: 'Alldeles riktigt!'
@@ -122,3 +122,4 @@ elements: |
     '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om. Läs artikeln <a href="/sv/omraden/mellersta/hagnas">Hagnäs</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

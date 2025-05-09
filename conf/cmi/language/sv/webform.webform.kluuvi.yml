@@ -125,7 +125,8 @@ elements: |
       q9_c: barnboksförfattare
       q9_d: 'en känd societetsskönhet'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Hur är det då med kafékulturen? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/kafeet-en-oas-i-staden">https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/kafeet-en-oas-i-staden</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Hur är det då med kafékulturen? Läs artikeln <a href="/sv/helheter/stadskulturens-manga-former/kafeet-en-oas-i-staden">Kaféet, en oas i staden</a>.'
+    '#feedback_message_fail': 'Du har ännu ett och annat intressant att läsa. Läs artikeln <a href="/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågorna'

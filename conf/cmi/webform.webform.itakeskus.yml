@@ -307,8 +307,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Varsin hyvin tunnet Itäkeskusta! Entäpä Helsingin esihistoria? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-1500-luku/helsingin-esihistoriaa">Helsingin esihistoriaa</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/itainen/itakeskus">Itäkeskus</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Varsin hyvin tunnet Itäkeskusta! Entäpä Helsingin esihistoria? Tutustu <a href="/fi/kaannekohdat/alkujuuret-ja-1500-luku/helsingin-esihistoriaa">Helsingin esihistoriaa</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/itainen/itakeskus">Itäkeskus</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

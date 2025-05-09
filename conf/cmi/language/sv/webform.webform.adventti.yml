@@ -134,8 +134,9 @@ elements: |
       q9_c: tåg
       q9_d: kommersialism
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktg adventexpert! Hur är det då med Senatstorgets historia? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/senatstorget">Senatstorget</a>'
-    '#feedback_message_fail': "Du har mycket spännande att läsa. Läs artikeln <a href=\"https://historia.hel.fi/sv/helheter/evenemang-aret-runt/luciadagens-festligheter-i-helsingfors\">Luciadagens festligheter i Helsingfors</a>\r\noch gör testet på nytt."
+    '#feedback_message_pass': 'Du är en riktg adventexpert! Hur är det då med Senatstorgets historia? Läs artikeln <a href="/sv/omraden/sodra/senatstorget">Senatstorget</a>'
+    '#feedback_message_fail': "Du har många spännande artiklar kvar att läsa. Läs artikeln <a href=\"/sv/helheter/evenemang-aret-runt/luciadagens-festligheter-i-helsingfors\">Luciadagens festligheter i Helsingfors</a>\r\noch gör testet på nytt."
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågorna'
 title: Adventstiden

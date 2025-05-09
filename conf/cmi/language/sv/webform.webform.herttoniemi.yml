@@ -145,3 +145,4 @@ elements: |
     '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/sydostra/hertonas-en-by-en-gard-en-stadsdel">Hertonäs – en by, en gård, en stadsdel</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

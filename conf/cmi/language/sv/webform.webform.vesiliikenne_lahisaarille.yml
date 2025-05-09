@@ -96,8 +96,10 @@ elements: |
       q7_a: 'cirka 30'
       q7_b: 'cirka 50'
       q7_c: 'cirka 20'
+      q7_d: 'cirka 20'
   quiz_result:
-    '#feedback_message_pass': 'Du är en veritabel expert på sjötrafiken till Helsingfors näröar! Hur är det då med hamnar och sjöfart? Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/hamnar-och-sjofart">Hamnar och sjöfart</a>.'
-    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sjotrafik-till-narliggande-oar">Sjötrafik till närliggande öar</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en veritabel expert på sjötrafiken till Helsingfors näröar! Hur är det då med hamnar och sjöfart? Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/hamnar-och-sjofart">Hamnar och sjöfart</a>.'
+    '#feedback_message_fail': 'Du har ännu kvar mycket spännande  att läsa. Värm upp genom att läsa artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/sjotrafik-till-narliggande-oar">Sjötrafik till närliggande öar</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till testet'

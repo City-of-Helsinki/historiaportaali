@@ -220,8 +220,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Helsingin lähisaarten vesiliikenteen tuntija! Lue myös meriliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a> '
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/vesiliikenne-lahisaarille">Vesiliikenne lähisaarille</a> -artikkeli ja tee testi uudelleen.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin lähisaarten vesiliikenteen tuntija! Lue myös meriliikenteestä: <a href="/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla <a href="/fi/ilmiot/liikenteen-solmukohta/vesiliikenne-lahisaarille">Vesiliikenne lähisaarille</a> -artikkeli ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

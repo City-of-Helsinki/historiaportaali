@@ -278,8 +278,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 70
-    '#feedback_message_pass': 'Olet varsinainen Kruununhaan historian tuntija! Tunnetko yhtä hyvin Katajanokan  historiaa? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/katajanokka-hapeapilkusta-jugendhelmeksi">Katajanokka – häpeäpilkusta jugendhelmeksi</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/kruununhaka-sosiaalisten-kerrostumien-kaupunginosa">Kruununhaka – sosiaalisten kerrostumien kaupunginosa</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Kruununhaan historian tuntija! Tunnetko yhtä hyvin Katajanokan  historiaa? Tutustu artikkeliin <a href="/fi/alueet/etelainen/katajanokka-hapeapilkusta-jugendhelmeksi">Katajanokka – häpeäpilkusta jugendhelmeksi</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/alueet/etelainen/kruununhaka-sosiaalisten-kerrostumien-kaupunginosa">Kruununhaka – sosiaalisten kerrostumien kaupunginosa</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

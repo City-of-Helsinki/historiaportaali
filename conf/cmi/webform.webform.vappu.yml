@@ -1,4 +1,4 @@
-uuid: 6b682f37-76f1-4204-ad35-f2d63b474538
+uuid: ada9db35-cb3f-448b-a7e0-56e17876b394
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,207 +8,182 @@ close: null
 uid: 116
 template: false
 archive: false
-id: toolo
-title: Töölö
+id: vappu
+title: Vappu
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Missä sijaitsi Töölön sokeritehdas?'
+    '#title': '1. Milloin erityinen naisten ylioppilashattu oli käytössä?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Se oli käytössä vain 1890-luvulla.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Se oli käytössä vain 1890-luvulla.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Se oli käytössä vain 1890-luvulla.'
     '#options':
-      q1_a: 'nykyisen Kansallisoopperan paikalla'
-      q1_b: 'Eduskuntatalon paikalla'
-      q1_c: 'Finlandia-talon paikalla'
-      q1_d: Sibelius-puistossa
+      q1_a: 'vain 1890-luvulla'
+      q1_b: 'koko 1800-luvun'
+      q1_c: 'noin 1890–1910'
+      q1_d: 'noin 1880–1900 '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Missä kulkee Etu-Töölön ja Taka-Töölön raja?'
+    '#title': '2. Mikä näistä ei ole perinteinen vappuhuvi?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Saunominen ei ole perinteinen vappuhuvi.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Saunominen ei ole perinteinen vappuhuvi.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Saunominen ei ole perinteinen vappuhuvi.'
     '#options':
-      q2_a: 'Hesperian esplanadilla'
-      q2_b: 'Sandelsinkadulla Töölöntorin alalaidassa'
-      q2_c: 'Eino Leinon kadulla ja Humalistonkadulla'
-      q2_d: Runeberginkadulla
+      q2_a: saunominen
+      q2_b: huviajelut
+      q2_c: kulkueet
+      q2_d: 'piknikit eli eväsretket'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Mihin tarkoitukseen nykyinen Kisahalli alun perin rakennettiin?'
+    '#title': '3. Minä vuonna vappuilmapallot tulivat Helsingissä ensimmäisen kerran myyntiin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1903.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1903.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1903.'
     '#options':
-      q3_a: messuhalliksi
-      q3_b: urheiluhalliksi
-      q3_c: konserttisaliksi
-      q3_d: ratsastusmaneesiksi
+      q3_a: '1903'
+      q3_b: '1913'
+      q3_c: '1893'
+      q3_d: '1923'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä seuraavista kulttuurilaitoksista ei sijaitse Töölössä?'
+    '#title': '4. Mikä näistä ei päde vappuun 1930-luvulla?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Eri kieliryhmät juhlivat visusti erillään.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Eri kieliryhmät juhlivat visusti erillään.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Eri kieliryhmät juhlivat visusti erillään.'
     '#options':
-      q4_a: Kansallisarkisto
-      q4_b: Kansallismuseo
-      q4_c: 'Kansallisooppera ja -baletti'
-      q4_d: 'Taideyliopiston Sibelius-akatemia'
+      q4_a: 'Eri kieliryhmät juhlivat sopuisasti yhdessä. '
+      q4_b: 'Ylioppilaslakkia kohdeltiin varovaisesti ja kunnioittavasti.'
+      q4_c: 'Porvarilliset piirit paheksuivat, että työläiset olivat omineet ylioppilaiden juhlan. '
+      q4_d: 'Manta lakitettiin salaa yöllä. '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mitä Bolliksen eli Taka-Töölön pallokentän paikalla oli 1700-luvulla?'
+    '#title': '5. Minä vuonna Mantan lakituksesta tuli luvallista?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1951.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1951.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui vuonna 1951.'
     '#options':
-      q5_a: suo
-      q5_b: perunamaa
-      q5_c: kasvihuone
-      q5_d: puutarha
+      q5_a: '1951'
+      q5_b: '1962'
+      q5_c: '1947'
+      q5_d: '1938'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Milloin Hietaniemen uimaranta on avattu yleisölle?'
+    '#title': '6. Milloin vapusta tuli Suomessa työväenliikkeen mielenosoitusjuhla?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1900-luvun alussa.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1900-luvun alussa.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui 1900-luvun alussa.'
     '#options':
-      q6_a: 'juhannuksena 1930'
-      q6_b: 'juhannuksena 1929'
-      q6_c: 'juhannuksena 1931'
-      q6_d: 'juhannuksena 1940'
+      q6_a: '1900-luvun alussa'
+      q6_b: 1920-luvulla
+      q6_c: 1880-luvulla
+      q6_d: 1930-luvulla
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mitä erikoista Hietaniemen uimarannassa oli verrattuna vanhempiin maauimaloihin?'
+    '#title': '7.  Miten vapunvietto on muuttunut 1960-luvulta nykypäivään?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Juhlimisen painopiste on siirtynyt vapunaatosta vapunpäivään.'
       q7_c:
         is_correct: false
-        feedback: ' Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: ' Vastauksesi oli väärin. Juhlimisen painopiste on siirtynyt vapunaatosta vapunpäivään.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Juhlimisen painopiste on siirtynyt vapunaatosta vapunpäivään.'
     '#options':
-      q7_a: 'Siellä ei ollut erillisiä osastoja miehille ja naisille.'
-      q7_b: 'Siellä sai olla alasti.'
-      q7_c: 'Se oli lapsilta kielletty.'
-      q7_d: 'Siellä oli tupakointi kielletty.'
-    '#options_randomize': true
-    '#required': true
-    '#format': custom
-    '#options__properties': ''
-  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
-    '#type': quiz_element_radios
-    '#title': '8. Mitä Musiikkitalon kohdalla oli ennen?'
-    '#quiz__options':
-      q8_a:
-        is_correct: true
-        feedback: 'Vastasit oikein!'
-      q8_b:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
-      q8_c:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
-      q8_d:
-        is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
-    '#options':
-      q8_a: 'Töölön tavara-asema'
-      q8_b: 'Töölön kirjasto'
-      q8_c: teurastamo
-      q8_d: kaasutehdas
+      q7_a: 'Juhlimisen painopiste on siirtynyt vapunaatosta vapunpäivään. '
+      q7_b: 'Poliittinen aktiivisuus on lisääntynyt.'
+      q7_c: 'Juhliminen yleisellä paikalla on siistiytynyt. '
+      q7_d: 'Se ei ole muuttunut olennaisesti.'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -241,16 +216,12 @@ elements: |-
     '#type': webform_quiz_elements_result
     '#title': q7_result
     '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
-  q8_result:
-    '#type': webform_quiz_elements_result
-    '#title': q8_result
-    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Töölön historian tuntija! Entä viereinen kaupunginosa Meilahti? Tutustu artikkeliin <a href="/fi/alueet/lantinen/meilahti">Meilahti</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 70
+    '#feedback_message_pass': 'Olet varsinainen vapunvieton asiantuntija! Entä Havis Amanda? Tutustu artikkeliin <a href="/fi/ilmiot/tiedetta-taidetta-ja-sivistysta/havis-amanda-patsas-helsingin-paraatipaikalla">Havis Amanda: patsas Helsingin paraatipaikalla</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/tapahtumia-vuoden-ympari/helsinkilaisten-vappu">Helsinkiläisten vappu</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

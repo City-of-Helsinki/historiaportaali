@@ -108,7 +108,8 @@ elements: |
       q7_c: 'bageri- och byggeriindustri'
       q7_d: träindustri
   quiz_result:
-    '#feedback_message_pass': 'Du är en sann expert på Broholmen! Hur är det då med Hagnäs? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/hagnas">Hagnäs</a>.'
-    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/broholmen">Broholmen</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en sann expert på Broholmen! Hur är det då med Hagnäs? Läs artikeln <a href="/sv/omraden/mellersta/hagnas">Hagnäs</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Värm upp genom att läsa artikeln <a href="/sv/omraden/mellersta/broholmen">Broholmen</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

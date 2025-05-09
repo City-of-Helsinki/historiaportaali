@@ -150,8 +150,9 @@ elements: |
       q10_c: 'Eugen Schauman sköt generalguvernör Nikolai Bobrikov.'
       q10_d: 'Eugen Schauman sköt sig själv. '
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktg expert på Helsingfors historia! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
-    '#feedback_message_fail': "Du har mycket spännande att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/sodra/senatstorget\">Senatstorget</a>\r\noch gör testet på nytt."
+    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': "Du har ännu kvar ett och annat spännande att läsa. Värm upp genom att läsa artikeln <a href=\"/sv/omraden/sodra/senatstorget\">Senatstorget</a>\r\noch gör testet på nytt."
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till testet'
 title: Senatstorget

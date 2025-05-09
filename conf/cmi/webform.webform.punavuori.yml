@@ -162,8 +162,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Punavuoren historian tuntija! Entä Hietalahden telakan historia? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/hietalahden-telakka">Hietalahden telakka</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon mielenkiintoista luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/punavuori-laitakaupungin-slummista-trendialueeksi">Punavuori – laitakaupungin slummista trendialueeksi</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Punavuoren historian tuntija! Entäpä Hietalahden telakan historia? Tutustu artikkeliin <a href="/fi/alueet/etelainen/hietalahden-telakka">Hietalahden telakka</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon mielenkiintoista luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/punavuori-laitakaupungin-slummista-trendialueeksi">Punavuori – laitakaupungin slummista trendialueeksi</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

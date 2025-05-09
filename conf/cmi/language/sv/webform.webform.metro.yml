@@ -103,7 +103,8 @@ elements: |
       q7_d: '1989'
   quiz_result:
     '#feedback_message_pass': 'Du är en riktig expert på metrons historia! Hur är det då med biltrafiken i Helsingfors? Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/biltrafikens-borjan">Biltrafikens början</a>.'
-    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/metron">Metron</a> och gör testet på nytt.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/metron">Metron</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: Metron

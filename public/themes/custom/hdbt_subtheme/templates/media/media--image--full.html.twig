@@ -134,17 +134,19 @@
               </div>
             {% endif %}
 
-            {% if content.field_phenomena|render %}
-              <div class="{{ media.bundle()|clean_class }}__phenomena">
-                {{ content.field_phenomena }}
-              </div>
-            {% endif %}
+            {# The field names to print as tag-like search links #}
+            {% set fields_set_1 = [
+              'field_phenomena',
+              'field_neighbourhoods',
+            ] %}
 
-            {% if content.field_neighbourhoods|render %}
-              <div class="{{ media.bundle()|clean_class }}__neighbourhoods">
-                {{ content.field_neighbourhoods }}
-              </div>
-            {% endif %}
+            {% for field in fields_set_1 %}
+              {% if content[field]|render %}
+                <div class="{{ media.bundle()|clean_class }}__{{ field }}">
+                  {{ content[field] }}
+                </div>
+              {% endif %}
+            {% endfor %}
 
             {% if content.field_start_year|render %}
               <div class="{{ media.bundle()|clean_class }}__group_year">
@@ -177,47 +179,25 @@
               </div>
             {% endif %}
 
-            {% if content.field_formats|render %}
-              <div class="{{ media.bundle()|clean_class }}__formats">
-                {{ content.field_formats }}
-              </div>
-            {% endif %}
+            {# The field names to print as tag-like search links #}
+            {% set fields_set_2 = [
+              'field_formats',
+              'field_keywords',
+              'field_authors',
+              'field_copyrights',
+              'field_languages',
+              'field_buildings',
+              'field_buildings_info'
+            ] %}
 
-            {% if content.field_keywords|render %}
-              <div class="{{ media.bundle()|clean_class }}__formats">
-                {{ content.field_keywords }}
-              </div>
-            {% endif %}
+            {% for field in fields_set_2 %}
+              {% if content[field]|render %}
+                <div class="{{ media.bundle()|clean_class }}__{{ field }}">
+                  {{ content[field] }}
+                </div>
+              {% endif %}
+            {% endfor %}
 
-            {% if content.field_authors|render %}
-              <div class="{{ media.bundle()|clean_class }}__authors">
-                {{ content.field_authors }}
-              </div>
-            {% endif %}
-
-            {% if content.field_copyrights|render %}
-              <div class="{{ media.bundle()|clean_class }}__copyrights">
-                {{ content.field_copyrights }}
-              </div>
-            {% endif %}
-
-            {% if content.field_languages|render %}
-              <div class="{{ media.bundle()|clean_class }}__languages">
-                {{ content.field_languages }}
-              </div>
-            {% endif %}
-
-            {% if content.field_buildings|render %}
-              <div class="{{ media.bundle()|clean_class }}__buildings">
-                {{ content.field_buildings }}
-              </div>
-            {% endif %}
-
-            {% if content.field_buildings_info|render %}
-              <div class="{{ media.bundle()|clean_class }}__buildings_info">
-                {{ content.field_buildings_info }}
-              </div>
-            {% endif %}
           </div>
         {% endblock component_content %}
       {% endembed %}

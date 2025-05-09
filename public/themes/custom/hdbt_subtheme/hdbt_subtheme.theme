@@ -71,14 +71,13 @@ function hdbt_subtheme_preprocess_html(&$variables) {
   }
 }
 
+/**
+ * Implements template_preprocess_region().
+ */
 function hdbt_subtheme_preprocess_region(&$variables) {
-  $variables['is_frontpage'] = false;
-  $variables['has_hero'] = false;
-  $variables['hide_koro'] = false;
-
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
-    $variables['is_frontpage'] = true;
-  }
+  $variables['is_frontpage'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['has_hero'] = FALSE;
+  $variables['hide_koro'] = FALSE;
 
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof Node) {
@@ -86,7 +85,7 @@ function hdbt_subtheme_preprocess_region(&$variables) {
       $variables['has_hero'] = intval($node->get('field_has_hero')->getString());
     }
     if ($node->bundle() == 'map_page') {
-      $variables['hide_koro'] = true;
+      $variables['hide_koro'] = TRUE;
     }
   }
 }

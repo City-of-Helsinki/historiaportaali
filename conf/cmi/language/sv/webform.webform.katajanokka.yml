@@ -135,7 +135,8 @@ elements: |
       q9_d:
         feedback: 'Svaret var fel. Akseli Gallén-Kallela har inte bott på Skatudden..'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Skatuddens historia! Hur är det då med Kronohagen? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Skatuddens historia! Hur är det då med Kronohagen? Bekanta dig med artikeln <a href="/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

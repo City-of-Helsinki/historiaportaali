@@ -132,9 +132,9 @@ elements: |-
   quiz_result:
     '#type': webform_quiz_elements_score
     '#title': quiz_result
-    '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaa</a>.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/mortuis-suomenlinnan-verinen-historia">Mortuis – Suomenlinnan verinen historia</a> ja tee testi uudestaan.'
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet varsinainen Suomenlinnan historian tuntija! Entä Helsingin perustaminen? Tutustu artikkeliin <a href="/fi/kaannekohdat/alkujuuret-ja-1500-luku/1550-helsingin-perustaminen">1550 – Helsingin perustaminen</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/alueet/etelainen/mortuis-suomenlinnan-verinen-historia">Mortuis – Suomenlinnan verinen historia</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

@@ -191,8 +191,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Tunnet hyvin Kampin historiaa! Lue myös <a href="https://historia.hel.fi/fi/ilmiot/kaupunkikulttuurin-monet-muodot/tavastia-klubi">Tavastia-klubi</a>-artikkeli.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/kamppi-helsingin-tuntematon-ydinkeskusta">Kamppi – Helsingin tuntematon ydinkeskusta</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Tunnet hyvin Kampin historiaa! Lue myös artikkeli siellä sijaitsevasta <a href="/fi/ilmiot/kaupunkikulttuurin-monet-muodot/tavastia-klubi">Tavastia-klubista</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/kamppi-helsingin-tuntematon-ydinkeskusta">Kamppi – Helsingin tuntematon ydinkeskusta</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

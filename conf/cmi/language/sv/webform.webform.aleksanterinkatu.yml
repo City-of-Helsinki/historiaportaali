@@ -38,22 +38,22 @@ elements: |
       q3_a:
         feedback: 'Du svarade rätt!'
       q3_b:
-        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+        feedback: 'Ditt svar var fel. Det skedde år 1640.'
       q3_c:
-        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+        feedback: 'Ditt svar var fel. Det skedde år 1640.'
       q3_d:
-        feedback: 'Ditt svar var fel. Det skedde åt 1640.'
+        feedback: 'Ditt svar var fel. Det skedde år 1640.'
   q4:
     '#title': '4. Hur många byggnader fanns det i Helsingfors före branden av året 1654'
     '#quiz__options':
       q4_a:
         feedback: 'Du svarade rätt!'
       q4_b:
-        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+        feedback: 'Du svarade fel. Det fanns 60 byggnader.'
       q4_c:
-        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+        feedback: 'Du svarade fel. Det fanns 60 byggnader.'
       q4_d:
-        feedback: 'Du svarade fel. Det fanns  60 byggnader.'
+        feedback: 'Du svarade fel. Det fanns 60 byggnader.'
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#title': '5. Vilket år förstörde stora nordiska kriget Helsingfors?'
     '#quiz__options':
@@ -80,24 +80,26 @@ elements: |
       q6_a: 'medlet av 1600-talet'
       q6_b: 'början av 1700-talet'
       q6_c: 'början av 1800-talet'
+      q6_d: 'början av 1900-talet'
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#title': '7.  Vilket av dessa har inte varit ett namn på Alexandersgatans tvärgata Riddargatan?'
     '#quiz__options':
       q7_a:
         feedback: 'Du svarade rätt!'
       q7_b:
-        feedback: 'Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+        feedback: 'Du svarade fel. Stora gatan har inte varit namnet på Riddargatan, utan på Alexandergatan.'
       q7_c:
-        feedback: ' Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+        feedback: ' Du svarade fel. Stora gatan har inte varit namnet på Riddargatan, utan på Alexandergatan.'
       q7_d:
-        feedback: 'Du svarade fel. Stora gatan har inte varit namnet Riddargatan, utan på Alexandergatan.'
+        feedback: 'Du svarade fel. Stora gatan har inte varit namnet på Riddargatan, utan på Alexandergatan.'
     '#options':
       q7_a: 'Stora gatan '
       q7_b: 'Stota Berggatan '
       q7_c: 'Residenshusgatan '
       q7_d: 'Berggatan '
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Alexandersgatan! Hur är det då med stadsdelen där gatan finns? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a>.'
-    '#feedback_message_fail': 'Du har mycket spännande läsning kvar. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/alexandersgatans-historia">Alexandersgatans historia</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Alexandersgatan! Hur är det då med stadsdelen där gatan finns? Läs artikeln <a href="/sv/omraden/sodra/gloet-fran-karrmark-till-affarscentrum">Gloet – från kärrmark till affärscentrum</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande läsning kvar. Läs artikeln <a href="/sv/omraden/sodra/alexandersgatans-historia">Alexandersgatans historia</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

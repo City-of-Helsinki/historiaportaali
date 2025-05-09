@@ -16,7 +16,7 @@ elements: |
       q1_c: 'för att understöda fattiga studerande'
       q1_d: 'för att främja studenternas fysiska kondition'
   q2:
-    '#title': '2. Vad hette restaurangen som nationens restaurangaktiebolag fick efter kriget?'
+    '#title': '2. Vad hette restaurangen som nationens restaurangaktiebolag fick i sin ägo efter kriget?'
     '#quiz__options':
       q2_a:
         feedback: 'Du svarade rätt!'
@@ -29,6 +29,8 @@ elements: |
   q3:
     '#title': '3. Vilket smeknamn fick nationshuset?'
     '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
       q3_b:
         feedback: 'Svaret var fel. Smeknamnet var Hämis.'
       q3_c:
@@ -45,7 +47,7 @@ elements: |
       q4_c:
         feedback: 'Svaret var fel. Man ordnade inte pokerkvällar.'
       q4_d:
-        feedback: 'Svaret var fel.  Man ordnade inte pokerkvällar.'
+        feedback: 'Svaret var fel. Man ordnade inte pokerkvällar.'
     '#options':
       q4_a: pokerkvällar
       q4_b: tekvällar
@@ -72,7 +74,7 @@ elements: |
       q6_c:
         feedback: 'Ditt svar var fel. Det var Juhani Merimaa.'
       q6_d:
-        feedback: 'Det var Juhani Merimaa.'
+        feedback: 'Ditt svar var fel. Det var Juhani Merimaa.'
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#title': '7. Vad fanns i Semifinals utrymmen innan de inkorporerades med Tavastiaklubben?'
     '#quiz__options':
@@ -116,9 +118,13 @@ elements: |
       q9_d:
         feedback: 'Ladi var smeknamnet för lördagsdiskot som ordnades åren 2009–2024.'
     '#options':
-      q9_a: 'Tavastias disko under åren 2009–2024 '
-      q9_b: 'Tavastias disko på 1970- och 1980-talen'
+      q9_a: 'Tavastias lördagsdisko under åren 2009–2024 '
+      q9_b: 'Tavastias lördagsdisko på 1970- och 1980-talen'
       q9_c: 'Tavastias långvariga dj'
       q9_d: 'klubben på Tavastias övervåning'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på Tavastiaklubbens historia! Hur är det då med Kampens historia? Bekanta dig med artikeln <a href="/sv/omraden/sodra/kampen-helsingfors-gatfulla-hjarta">Kampen – Helsingfors gåtfulla hjärta</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/stadskulturens-manga-former/tavastiaklubben">Tavastiaklubben</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+title: Tavastiaklubben

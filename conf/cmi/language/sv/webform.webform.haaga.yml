@@ -124,7 +124,8 @@ elements: |
       q10_c: 'från en supermarket'
       q10_d: 'från Helsingfors centrum'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Hagas historia! Hur är det då med Brändö villastad? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sydostra/brando-villastad-en-borsnoterad-kommun">Brändö villastad – en börsnoterad kommun</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/vastra/haga-fran-villasamhalle-till-idealforort">Haga, från villasamhälle till idealförort</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Hagas historia! Hur är det då med Brändö villastad? Bekanta dig med artikeln <a href="/sv/omraden/sydostra/brando-villastad-en-borsnoterad-kommun">Brändö villastad – en börsnoterad kommun</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa om. Läs artikeln <a href="/sv/omraden/vastra/haga-fran-villasamhalle-till-idealforort">Haga, från villasamhälle till idealförort</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

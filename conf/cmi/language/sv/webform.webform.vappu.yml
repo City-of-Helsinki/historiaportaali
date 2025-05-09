@@ -1,0 +1,109 @@
+title: Valborg
+elements: |
+  q1:
+    '#title': '1. När var en speciell kvinnlig studenthatt i bruk?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Du svarade fel, eftersom det var endast på 1890-talet.'
+      q1_c:
+        feedback: 'Du svarade fel, eftersom det var endast på 1890-talet.'
+      q1_d:
+        feedback: 'Du svarade fel, eftersom det var endast på 1890-talet.'
+    '#options':
+      q1_a: 'endast på 1890-talet'
+      q1_b: 'under hela 1800-talet'
+      q1_c: 'cirka 1890–1910'
+      q1_d: 'cirka 1880–1900'
+  q2:
+    '#title': '2. Vilket av dessa är inte ett traditionellt valborgsnöje?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Du svarade fel. Att bada bastu är inte en valborgstradition.'
+      q2_c:
+        feedback: 'Du svarade fel. Att bada bastu är inte en valborgstradition.'
+      q2_d:
+        feedback: 'Du svarade fel. Att bada bastu är inte en valborgstradition.'
+    '#options':
+      q2_a: bastubad
+      q2_b: nöjesåkningar
+      q2_c: processioner
+      q2_d: picknickar
+  q3:
+    '#title': '3. Vilket år såldes de första valborgsballongerna i Helsingfors?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Ditt svar var fel. Det skedde åt 1903.'
+      q3_c:
+        feedback: 'Ditt svar var fel. Det skedde åt 1903.'
+      q3_d:
+        feedback: 'Ditt svar var fel. Det skedde åt 1903.'
+  q4:
+    '#title': '4. Vilket av dessa gäller inte valborgen på 1930-talet? '
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Du svarade fel. De olika språkgrupperna firade nogsamt separat.'
+      q4_c:
+        feedback: 'Du svarade fel. De olika språkgrupperna firade nogsamt separat.'
+      q4_d:
+        feedback: 'Du svarade fel. De olika språkgrupperna firade nogsamt separat.'
+    '#options':
+      q4_a: 'De olika språkgrupperna firade tillsammans i god anda.'
+      q4_b: 'Studentmössan hanterades försiktigt och respektfullt.'
+      q4_c: 'Borgerliga kretsar ogillade att arbetarna hade snott studenternas fest.'
+      q4_d: 'Havis Amanda fick sin studentmössa i smyg på natten. '
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Vilket år blev det lovligt att placera en mössa på Havis Amanda?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Rätt svar!'
+      q5_b:
+        feedback: 'Fel svar. Det hände år 1951.'
+      q5_c:
+        feedback: 'Fel svar. Det hände år 1951.'
+      q5_d:
+        feedback: 'Fel svar. Det hände år 1951.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. När blev valborg en demonstrationsfest för arbetare?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Rätt svar!'
+      q6_b:
+        feedback: 'Fel svar. Det var i början av 1900-talet.'
+      q6_c:
+        feedback: 'Fel svar. Det var i början av 1900-talet.'
+      q6_d:
+        feedback: 'Fel svar. Det var i början av 1900-talet.'
+    '#options':
+      q6_a: 'i början av 1900-talet'
+      q6_b: 'på 1920-talet'
+      q6_c: 'på 1880-talet'
+      q6_d: 'på 1930-talet'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7.  Hur har valborgsfirandet ändrats sedan 1960-talet?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Du svarade rätt!'
+      q7_b:
+        feedback: 'Du svarade fel. Firandets tyngdpunkt har flyttat från valborgsmässoafton till valborgsdagen.'
+      q7_c:
+        feedback: ' Du svarade fel. Firandets tyngdpunkt har flyttat från valborgsmässoafton till valborgsdagen.'
+      q7_d:
+        feedback: 'Du svarade fel. Firandets tyngdpunkt har flyttat från valborgsmässoafton till valborgsdagen.'
+    '#options':
+      q7_a: 'Firandets tyngdpunkt har flyttat från valborgsmässoafton till valborgsdagen'
+      q7_b: 'Den politiska aktiviteten har ökat.'
+      q7_c: 'Firandet på offentlig plats har blivit lugnare.'
+      q7_d: 'Det har inte ändrats väsentligt. '
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig expert på valborg! Hur är det då med Havis Amanda? Läs artikeln <a href="/sv/helheter/tiedetta-taidetta-ja-sivistysta/havis-amanda-en-skulptur-pa-paradplats-i-helsingfors">Havis Amanda: en skulptur på paradplats i Helsingfors</a>.'
+    '#feedback_message_fail': 'Du har mycket spännande läsning kvar. Läs artikeln <a href="/sv/helheter/evenemang-aret-runt/helsingforsarnas-valborg">Helsingforsarnas valborg</a> och gör testet på nytt.'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'

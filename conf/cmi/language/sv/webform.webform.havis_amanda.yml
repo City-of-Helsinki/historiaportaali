@@ -1,0 +1,130 @@
+elements: |
+  q1:
+    '#title': '1. Vem har skapat springbrunnshelheten Havis Amanda?'
+    '#quiz__options':
+      q1_a:
+        feedback: 'Du svarade rätt!'
+      q1_b:
+        feedback: 'Ditt svar var fel. Den skapades av Ville Vallgren.'
+      q1_c:
+        feedback: 'Ditt svar var fel. Den skapades av Ville Vallgren.'
+      q1_d:
+        feedback: 'Ditt svar var fel. Den skapades av Ville Vallgren.'
+  q2:
+    '#title': '2. Vad symboliserar Havis Amanda?'
+    '#quiz__options':
+      q2_a:
+        feedback: 'Du svarade rätt!'
+      q2_b:
+        feedback: 'Ditt svar var fel. Den symboliserar Helsingfors som stiger upp ur havet.'
+      q2_c:
+        feedback: 'Ditt svar var fel. Den symboliserar Helsingfors som stiger upp ur havet.'
+      q2_d:
+        feedback: 'Ditt svar var fel. Den symboliserar Helsingfors som stiger upp ur havet.'
+    '#options':
+      q2_a: 'Helsingfors som stiger upp ur havet'
+      q2_b: 'naturen som vaknar upp på våren'
+      q2_c: 'blomstringen av Finlands konst'
+      q2_d: 'den uppvaknande nationalkänslan'
+  q3:
+    '#title': '3. Vem tog initiativ till springbrunnen?'
+    '#quiz__options':
+      q3_a:
+        feedback: 'Du svarade rätt!'
+      q3_b:
+        feedback: 'Svaret var fel. Det var Finska Konstföreningen.'
+      q3_c:
+        feedback: 'Svaret var fel. Det var Finska Konstföreningen.'
+      q3_d:
+        feedback: 'Svaret var fel. Det var Finska Konstföreningen.'
+    '#options':
+      q3_a: 'Finska konstföreningen'
+      q3_b: 'Helsingfors stadsfullmäktige'
+      q3_c: 'Helsingfors drätselkontor'
+      q3_d: 'Esplanadernas företagare'
+  q4:
+    '#title': '4. Vilken plats övervägdes för springbrunnshelheten?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Svaret var fel. Man övervägde Skillnaden.'
+      q4_c:
+        feedback: 'Svaret var fel. Man övervägde Skillnaden.'
+      q4_d:
+        feedback: 'Svaret var fel. Man övervägde Skillnaden.'
+    '#options':
+      q4_a: Skillnaden
+      q4_b: 'bara Salutorget'
+      q4_c: Senatstorget
+      q4_d: 'Brunnsparkens strand'
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#title': '5. Med vilken metod övervägdes platsen för Havis Amanda?'
+    '#quiz__options':
+      q5_a:
+        feedback: 'Alldeles riktigt!'
+      q5_b:
+        feedback: 'Inte riktigt, det skedde nämligen genom att placera en modell av naturlig storlek på olika platser.'
+      q5_c:
+        feedback: 'Inte riktigt, det skedde nämligen genom att placera en modell av naturlig storlek på olika platser.'
+      q5_d:
+        feedback: 'Inte riktigt, det skedde nämligen genom att placera en modell av naturlig storlek på olika platser.'
+    '#options':
+      q5_a: 'Man placerade ett utkast av trä i naturlig storlek på olika ställen. '
+      q5_b: 'Konstnären skapade visionsritningar över möjliga placeringsställen.'
+      q5_c: 'Man gjorde en invånarenkät.'
+      q5_d: 'Stadsfullmäktige röstade om ärendet.'
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#title': '6. Var har Havis Amanda tillverkats?'
+    '#quiz__options':
+      q6_a:
+        feedback: 'Du svarade rätt!'
+      q6_b:
+        feedback: 'Ditt svar var fel. Den är tillverkad i Paris.'
+      q6_c:
+        feedback: 'Ditt svar var fel. Den är tillverkad i Paris.'
+      q6_d:
+        feedback: 'Ditt svar var fel. Den är tillverkad i Paris.'
+    '#options':
+      q6_a: 'i Paris'
+      q6_b: 'i Helsingfors'
+      q6_c: 'i Borgå'
+      q6_d: 'i Stockholm'
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#title': '7. När avtäcktes Havis Amanda?'
+    '#quiz__options':
+      q7_a:
+        feedback: 'Rätt svarat!'
+      q7_b:
+        feedback: 'Fel svarat, det skedde nämligen i augusti 1908.'
+      q7_c:
+        feedback: 'Fel svarat, det skedde nämligen i augusti 1908.'
+      q7_d:
+        feedback: 'Fel svarat, det skedde nämligen i augusti 1908.'
+    '#options':
+      q7_a: ' i augusti 1908'
+      q7_b: 'i maj 1908'
+      q7_c: 'i augusti 1907'
+      q7_d: 'i maj 1901'
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#title': '8. Hurdant mottagande fick det nya offentliga konstverket?'
+    '#quiz__options':
+      q8_a:
+        feedback: 'Du svarade rätt!'
+      q8_b:
+        feedback: 'Ditt svar var fel. Kvinnorörelsen, arbetarrörelsen och fennomanerna ogillade den av sinsemellan olika orsaker.'
+      q8_c:
+        feedback: 'Ditt svar var fel. Kvinnorörelsen, arbetarrörelsen och fennomanerna ogillade den av sinsemellan olika orsaker.'
+      q8_d:
+        feedback: 'Ditt svar var fel. Kvinnorörelsen, arbetarrörelsen och fennomanerna ogillade den av sinsemellan olika orsaker.'
+    '#options':
+      q8_a: 'Kvinnorörelsen, arbetarrörelsen och fennomanerna ogillade den av sinsemellan olika orsaker.'
+      q8_b: 'Den väckte allmän entusiasm.'
+      q8_c: 'Kvinnorörelsen, arbetarrörelsen och fennomanerna ogillade den av samma orsaker.'
+      q8_d: 'Man förhöll sig neutralt till den.'
+  quiz_result:
+    '#feedback_message_pass': 'Du är en riktig Havis Amanda-kännare! Hur är det då med Salutorget och Esplanaderna? Bekanta dig med artikeln <a href="/sv/omraden/sodra/esplanaderna-och-salutorget-stadens-pulserande-hjarta">Esplanaderna och Salutorget – stadens pulserande hjärta</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/tiedetta-taidetta-ja-sivistysta/havis-amanda-en-skulptur-pa-paradplats-i-helsingfors">Havis Amanda: en skulptur på paradplats i Helsingfors</a> och gör testet på nytt..'
+settings:
+  confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

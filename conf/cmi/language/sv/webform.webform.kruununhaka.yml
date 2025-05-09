@@ -140,7 +140,8 @@ elements: |
       q9_c: 'en violinist och kompositör'
       q9_d: 'en mecenat och konstsamlare'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Kronohagens historia! Hur är det då med Skatudden? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Kronohagens historia! Hur är det då med Skatudden? Bekanta dig med artikeln <a href="/sv/omraden/sodra/skatudden-fran-skamflack-till-jugendparla">Skatudden – från skamfläck till jugendpärla</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om. Läs artikeln <a href="/sv/omraden/sodra/kronohagen-ett-hem-for-pigor-och-presidenter">Kronohagen – ett hem för pigor och presidenter</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

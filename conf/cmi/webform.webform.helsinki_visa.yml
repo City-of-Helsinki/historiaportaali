@@ -162,8 +162,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Entä historia ennen historiaa? Tutustu <a href="/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoria</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännää luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/kaannekohdat/alkujuuret-ja-perustaminen/1550-helsingin-perustaminen">1550-Helsingin perustaminen</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

@@ -1,4 +1,4 @@
-uuid: 6b682f37-76f1-4204-ad35-f2d63b474538
+uuid: e4ad5e2a-9c1e-460b-8a71-35269edad91d
 langcode: fi
 status: open
 dependencies: {  }
@@ -8,207 +8,207 @@ close: null
 uid: 116
 template: false
 archive: false
-id: toolo
-title: Töölö
+id: havis_amanda
+title: 'Havis Amanda'
 description: ''
 categories: {  }
 elements: |-
   q1:
     '#type': quiz_element_radios
-    '#title': '1. Missä sijaitsi Töölön sokeritehdas?'
+    '#title': '1. Kuka on tehnyt Havis Amandan suihkukaivokokonaisuuden?'
     '#quiz__options':
       q1_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q1_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
       q1_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
       q1_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Sokeritehdas sijaitsi nykyisen oopperatalon paikalla.'
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
     '#options':
-      q1_a: 'nykyisen Kansallisoopperan paikalla'
-      q1_b: 'Eduskuntatalon paikalla'
-      q1_c: 'Finlandia-talon paikalla'
-      q1_d: Sibelius-puistossa
+      q1_a: 'Ville Vallgren'
+      q1_b: 'Walter Runeberg'
+      q1_c: 'Viktor Jansson'
+      q1_d: 'Aimo Tukiainen'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q2:
     '#type': quiz_element_radios
-    '#title': '2. Missä kulkee Etu-Töölön ja Taka-Töölön raja?'
+    '#title': '2. Mitä Havis Amanda symboloi?'
     '#quiz__options':
       q2_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q2_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
       q2_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
       q2_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Etu- ja Taka-Töölön raja kulkee Hesperian esplanadilla.'
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
     '#options':
-      q2_a: 'Hesperian esplanadilla'
-      q2_b: 'Sandelsinkadulla Töölöntorin alalaidassa'
-      q2_c: 'Eino Leinon kadulla ja Humalistonkadulla'
-      q2_d: Runeberginkadulla
+      q2_a: 'merestä nousevaa Helsinkiä'
+      q2_b: 'kevään heräävää luontoa'
+      q2_c: 'Suomen taiteen kukoistusta'
+      q2_d: 'heräävää kansallistunnetta'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q3:
     '#type': quiz_element_radios
-    '#title': '3. Mihin tarkoitukseen nykyinen Kisahalli alun perin rakennettiin?'
+    '#title': '3. Kenen aloitteesta suihkukaivo tilattiin?'
     '#quiz__options':
       q3_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q3_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
       q3_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
       q3_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin.Kisahalli nimi oli alun perin käyttötarkoituksensa mukaisesti Messuhalli.'
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
     '#options':
-      q3_a: messuhalliksi
-      q3_b: urheiluhalliksi
-      q3_c: konserttisaliksi
-      q3_d: ratsastusmaneesiksi
+      q3_a: 'Suomen Taideyhdistyksen'
+      q3_b: 'Helsingin kaupunginvaltuuston'
+      q3_c: 'Helsingin rahatoimikamarin'
+      q3_d: 'Esplanadin yrittäjien '
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   q4:
     '#type': quiz_element_radios
-    '#title': '4. Mikä seuraavista kulttuurilaitoksista ei sijaitse Töölössä?'
+    '#title': '4. Mitä paikkaa harkittiin suihkukaivokokonaisuudelle?'
     '#quiz__options':
       q4_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q4_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
       q4_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
       q4_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Kansallisarkisto ei sijaitse Töölössä vaan Kruununhassa.'
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
     '#options':
-      q4_a: Kansallisarkisto
-      q4_b: Kansallismuseo
-      q4_c: 'Kansallisooppera ja -baletti'
-      q4_d: 'Taideyliopiston Sibelius-akatemia'
+      q4_a: Erottajaa
+      q4_b: 'vain Kauppatoria'
+      q4_c: Senaatintoria
+      q4_d: 'Kaivopuiston rantaa'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
     '#type': quiz_element_radios
-    '#title': '5. Mitä Bolliksen eli Taka-Töölön pallokentän paikalla oli 1700-luvulla?'
+    '#title': '5. Millä menetelmällä Havis Amandan paikkaa harkittiin?'
     '#quiz__options':
       q5_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q5_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
       q5_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
       q5_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Bolliksen paikalla oli Krasnasieffin suo.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
     '#options':
-      q5_a: suo
-      q5_b: perunamaa
-      q5_c: kasvihuone
-      q5_d: puutarha
+      q5_a: 'Luonnollisen kokoista puista mallikappaletta soviteltiin eri paikkoihin.'
+      q5_b: 'Taiteilija laati havainnepiirroksia suihkukaivon sijoituspaikoista.'
+      q5_c: 'Asukkaille tehtiin mielipidekysely.'
+      q5_d: 'Kaupunginvaltuusto äänesti asiasta.'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
     '#type': quiz_element_radios
-    '#title': '6. Milloin Hietaniemen uimaranta on avattu yleisölle?'
+    '#title': '6. Missä Havis Amanda on valmistettu?'
     '#quiz__options':
       q6_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q6_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
       q6_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
       q6_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Hietsu avattiin juhannuksena 1930.'
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
     '#options':
-      q6_a: 'juhannuksena 1930'
-      q6_b: 'juhannuksena 1929'
-      q6_c: 'juhannuksena 1931'
-      q6_d: 'juhannuksena 1940'
+      q6_a: Pariisissa
+      q6_b: Helsingissä
+      q6_c: Porvoossa
+      q6_d: Tukholmassa
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
     '#type': quiz_element_radios
-    '#title': '7. Mitä erikoista Hietaniemen uimarannassa oli verrattuna vanhempiin maauimaloihin?'
+    '#title': '7. Milloin Havis Amanda paljastettiin?'
     '#quiz__options':
       q7_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q7_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
       q7_c:
         is_correct: false
-        feedback: ' Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: ' Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
       q7_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Uutta oli, että käsijöitä ei eroteltu sukupuolen mukaan.'
+        feedback: 'Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
     '#options':
-      q7_a: 'Siellä ei ollut erillisiä osastoja miehille ja naisille.'
-      q7_b: 'Siellä sai olla alasti.'
-      q7_c: 'Se oli lapsilta kielletty.'
-      q7_d: 'Siellä oli tupakointi kielletty.'
+      q7_a: 'elokuussa 1908'
+      q7_b: 'toukokuussa 1908'
+      q7_c: 'elokuussa 1907'
+      q7_d: 'toukokuussa 1901'
     '#options_randomize': true
     '#required': true
     '#format': custom
     '#options__properties': ''
   8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
     '#type': quiz_element_radios
-    '#title': '8. Mitä Musiikkitalon kohdalla oli ennen?'
+    '#title': '8. Millaisen vastaanoton uusi julkinen taideteos sai?'
     '#quiz__options':
       q8_a:
         is_correct: true
         feedback: 'Vastasit oikein!'
       q8_b:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
       q8_c:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
       q8_d:
         is_correct: false
-        feedback: 'Vastauksesi oli väärin. Musiikkitalon paikalla oli Töölön tavara-asema.'
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
     '#options':
-      q8_a: 'Töölön tavara-asema'
-      q8_b: 'Töölön kirjasto'
-      q8_c: teurastamo
-      q8_d: kaasutehdas
+      q8_a: 'Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä. '
+      q8_b: 'Se herätti yleistä innostusta.'
+      q8_c: 'Naisliike, fennomaanit ja työväenliike paheksuivat sitä samoista syistä.'
+      q8_d: 'Siihen suhtauduttiin neutraalisti.'
     '#options_randomize': true
     '#required': true
     '#format': custom
@@ -249,8 +249,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Töölön historian tuntija! Entä viereinen kaupunginosa Meilahti? Tutustu artikkeliin <a href="/fi/alueet/lantinen/meilahti">Meilahti</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet todellinen Havis Amandan tuntija! Entä Esplanadit ja Kauppatori? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/esplanadit-ja-kauppatori-kaupungin-sykkiva-sydan">Esplanadit ja Kauppatori – kaupungin sykkivä sydän</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/tiedetta-taidetta-ja-sivistysta/havis-amanda-patsas-helsingin-paraatipaikalla">Havis Amanda: patsas Helsingin paraatipaikalla</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

@@ -191,8 +191,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Sörnäisten historian tuntija! Entä Helsingin teollinen historia? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/1800-luku/helsinki-teollisuuskaupunkina">Helsinki teollisuuskaupunkina</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/keskinen/sornainen-entinen-satama-ja-teollisuusalue">Sörnäinen, entinen satama- ja teollisuusalue</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Sörnäisten historian tuntija! Entä Helsingin teollinen historia? Tutustu <a href="/fi/kaannekohdat/1800-luku/helsinki-teollisuuskaupunkina">Helsinki teollisuuskaupunkina</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon mielenkiintoista luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/alueet/keskinen/sornainen-entinen-satama-ja-teollisuusalue">Sörnäinen, entinen satama- ja teollisuusalue</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

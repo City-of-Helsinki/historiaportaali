@@ -220,8 +220,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
+    '#feedback_message_pass': 'Olet todellinen sporan historian tuntija! Entäpä Helsingin liikenteen varhaisvaiheet? Tutustu artikkeliin <a href="/fi/ilmiot/liikenteen-solmukohta/helsingin-liikenteen-varhaisvaiheita">Helsingin liikenteen varhaisvaiheita</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

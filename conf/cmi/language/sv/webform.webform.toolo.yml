@@ -128,8 +128,8 @@ elements: |
       q8_c: 'ett slakteri'
       q8_d: 'en gasfabrik'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Tölö? Hur är det då med grannstadsdelen? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/vastra/mejlans">Mejlans</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på Tölö! Hur är det då med grannstadsdelen? Bekanta dig med artikeln <a href="/sv/omraden/vastra/mejlans">Mejlans</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Läs artikeln <a href="/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
 title: Tölö

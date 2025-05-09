@@ -9,7 +9,7 @@ uid: 116
 template: false
 archive: false
 id: satamat_ja_meriliikenne
-title: 'Hamnar och sjöfart'
+title: 'Satamat ja meriliikenne'
 description: ''
 categories: {  }
 elements: |-
@@ -278,8 +278,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Helsingin satamien ja meriliikenteen historian tuntija! Lue myös autoliikenteestä: <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a> -artikkelista.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a> ja tee testi uudelleen.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin satamien ja meriliikenteen historian tuntija! Lue myös autoliikenteestä: <a href="/fi/ilmiot/liikenteen-solmukohta/autoliikenteen-alkuvaiheita">Autoliikenteen alkuvaiheita</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/liikenteen-solmukohta/satamat-ja-meriliikenne">Satamat ja meriliikenne</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

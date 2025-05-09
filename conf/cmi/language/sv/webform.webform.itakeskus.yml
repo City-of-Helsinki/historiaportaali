@@ -145,8 +145,9 @@ elements: |
       q10_c: 'en koloniträdgård'
       q10_d: 'tillfälliga inkvarteringsbaracker för bostadslösa'
   quiz_result:
-    '#feedback_message_pass': 'Du har bra koll på Östra centrum! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
-    '#feedback_message_fail': "Du har mycket spännande att läsa. Värm upp genom att läsa artikeln <a href=\"https://historia.hel.fi/sv/omraden/ostra/ostra-centrum\">Östra centrum</a>\r\noch gör testet på nytt."
+    '#feedback_message_pass': 'Du har bra koll på Östra centrum! Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': "Du har mycket kvar spännande att läsa. Värm upp genom att läsa artikeln <a href=\"/sv/omraden/ostra/ostra-centrum\">Östra centrum</a>\r\noch gör testet på nytt."
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: 'Östra centrum'

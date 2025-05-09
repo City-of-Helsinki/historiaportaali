@@ -23,6 +23,7 @@ elements: |
         feedback: 'Ditt svar var fel. Stoge betyder tåg, inte spårvagn.'
     '#options':
       q2_c: 'sipoonjuna (sibbotåg)'
+      q2_d: 'sipoonjuna (sibbotåg)'
   q3:
     '#title': '3. Vilket år övergick man från hästdragna vagnar till eldrivna?'
     '#quiz__options':
@@ -103,4 +104,5 @@ elements: |
     '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: Spåran

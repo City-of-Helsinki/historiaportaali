@@ -307,8 +307,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Ent&auml; historia ennen historiaa? Tutustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-1500-luku/helsingin-esihistoriaa">Helsingin esihistoriaa</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/senaatintori">Senaatintori</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Entä historia ennen historiaa? Tutustu <a href="/fi/kaannekohdat/alkujuuret-ja-1500-luku/helsingin-esihistoriaa">Helsingin esihistoriaa</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/alueet/etelainen/senaatintori">Senaatintori</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

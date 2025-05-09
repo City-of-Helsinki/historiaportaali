@@ -97,7 +97,8 @@ elements: |
       q7_d:
         feedback: 'Svaret var fel. Det var en Willys-Knight.'
   quiz_result:
-    '#feedback_message_pass': 'Du har faktiskt koll på Craucher! Hur är det då med hennes stadsdel Tölö? Läs artikeln: <a href="https://historia.hel.fi/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Börja med artikeln <a href="https://historia.hel.fi/sv/helheter/helsingfors-invanare/minna-craucher-sanning-och-sagen">Minna Craucher, sanning och sägen </a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du har faktiskt koll på Craucher! Hur är det då med hennes stadsdel Tölö? Läs artikeln: <a href="/sv/omraden/sodra/tolo-fran-medeltida-by-till-symbol-for-modernt-leverne">Tölö – från medeltida by till symbol för modernt leverne</a>.'
+    '#feedback_message_fail': 'Du har ännu kvar ett och annat spännande att läsa. Börja med artikeln <a href="/sv/helheter/helsingfors-invanare/minna-craucher-sanning-och-sagen">Minna Craucher, sanning och sägen </a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

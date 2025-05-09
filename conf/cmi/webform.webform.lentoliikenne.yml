@@ -249,8 +249,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen lentoliikenteen historian tuntija! Entäpä raitiovaunuliikenne? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> .'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/liikenteen-solmukohta/lentoliikenne">Lentoliikenne</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen lentoliikenteen historian tuntija! Entäpä raitiovaunuliikenne? Tutustu artikkeliin <a href="/fi/ilmiot/liikenteen-solmukohta/spora">Spora</a> .'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/liikenteen-solmukohta/lentoliikenne">Lentoliikenne</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

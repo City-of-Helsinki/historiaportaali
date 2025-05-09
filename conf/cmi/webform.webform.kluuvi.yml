@@ -278,8 +278,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Entä kahvilakulttuuri? Tutustu <a href="https://historia.hel.fi/fi/ilmiot/kaupunkikulttuurin-monet-muodot/kahvila-kaupunkilaisten-keidas">Kahvila, kaupunkilaisten keidas</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on viel&auml; paljon j&auml;nnitt&auml;v&auml;&auml; luettavaa. L&auml;mmittele lukemalla artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/kluuvi-hetteikosta-liikekeskustaksi">Kluuvi – hetteiköstä liikekeskustaksi</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Helsingin historian tuntija! Entä kahvilakulttuuri? Tutustu <a href="/fi/ilmiot/kaupunkikulttuurin-monet-muodot/kahvila-kaupunkilaisten-keidas">Kahvila, kaupunkilaisten keidas</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännää luettavaa. Lämmittele lukemalla artikkeli <a href="/fi/alueet/etelainen/kluuvi-hetteikosta-liikekeskustaksi">Kluuvi – hetteiköstä liikekeskustaksi</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

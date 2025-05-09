@@ -97,7 +97,8 @@ elements: |
       q6_c: 'på stället av nuvarande Scandichotellet'
       q6_d: 'i hörnet av Lappviksgatan och Porkalagatan'
   quiz_result:
-    '#feedback_message_pass': 'Du kan nog Kampens historia! Läs också om Tavastiaklubben som finns i Kampen: <a href="https://historia.hel.fi/sv/helheter/stadskulturens-manga-former/tavastiaklubben">Tavastiaklubben</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket intressant att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/kampen-helsingfors-gatfulla-hjarta">Kampen – Helsingfors gåtfulla hjärta</a> och gör om testet.'
+    '#feedback_message_pass': 'Du kan nog Kampens historia! Läs också om Tavastiaklubben som finns i Kampen: <a href="/sv/helheter/stadskulturens-manga-former/tavastiaklubben">Tavastiaklubben</a>.'
+    '#feedback_message_fail': 'Du har ännu mycket intressant kvar att läsa. Läs artikeln <a href="/sv/omraden/sodra/kampen-helsingfors-gatfulla-hjarta">Kampen – Helsingfors gåtfulla hjärta</a> och gör om testet.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

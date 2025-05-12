@@ -87,8 +87,6 @@
     {% block container_content %}
       {{ content|without('field_liftup_image', 'field_reading_time') }}
 
-      {{ drupal_block('system_breadcrumb_block') }}
-
       {{ drupal_block('helfi_platform_config_social_sharing_block') }}
 
       {% embed "@hdbt_subtheme/misc/reading-time.html.twig" %}
@@ -102,9 +100,9 @@
   {% if content.field_liftup_image.0 %}
     {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', flip: true, color: '#FFE977'} %}
     <div class="main-image">
-      {{ drupal_image(content.field_liftup_image.0['#media']|file_uri, 'hero__background', responsive=true) }}
+      {{ drupal_image(content.field_liftup_image.0['#media']|file_uri, '2.4_1920w_800h') }}
     </div>
   {% else %}
-    {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', color: '#FAF9F7'} %}
+    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#fff' } %}
   {% endif %}
 </article>

@@ -33,18 +33,18 @@ elements: |
       q3_a:
         feedback: 'Rätt svarat!'
       q3_b:
-        feedback: 'Fel svar.Det var år 1896.'
+        feedback: 'Fel svar. Det var år 1896.'
       q3_c:
         feedback: 'Fel svar. Det var år 1896.'
       q3_d:
-        feedback: 'Fel svar.Det var år 1896.'
+        feedback: 'Fel svar. Det var år 1896.'
     '#options':
       q3_a: '1896'
       q3_b: '1906'
       q3_c: '1916'
       q3_d: '1926'
   q4:
-    '#title': 'Var fanns inte Suckarnas bro?'
+    '#title': 'Var har det inte funnits en Suckarnas bro?'
     '#quiz__options':
       q4_a:
         feedback: 'Rätt svar. Och Brändö bro byggdes förresten år 1974.'
@@ -61,7 +61,8 @@ elements: |
       q4_d: 'I Kakolafängelset'
   quiz_result:
     '#title': Resultat
-    '#feedback_message_pass': 'Du är rätt bra på stadshuset historia! Är du lika duktig på äldre historia? Läs också <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a> -artikeln.'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om stadhuset. Bekanta dig med artikeln om stadshuset <a href="https://historia.hel.fi/sv/helheter/maktbruk-och-forvaltning/stadshuset">Stadshuset</a> och gör quizen på nytt.'
+    '#feedback_message_pass': 'Du är rätt bra på stadshuset historia! Är du lika duktig på tidigare historia? Läs artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': 'Du har ännu kvar mycket spännande att läsa om stadhuset. Bekanta dig med artikeln <a href="/sv/helheter/maktbruk-och-forvaltning/stadshuset">Stadshuset</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

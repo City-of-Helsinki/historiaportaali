@@ -116,3 +116,4 @@ elements: |
     '#feedback_message_fail': 'Du har mycket spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/maktbruk-och-forvaltning/stadsfullmaktiges-forsta-ordforande-leo-mechelin">Leo Mechelin</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'

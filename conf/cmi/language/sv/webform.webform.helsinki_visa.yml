@@ -53,9 +53,26 @@ elements: |
         feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
       q4_d:
         feedback: 'Ditt svar var fel. Helsingfors grundades 12.6.1550.'
+  5_mihin_tarkoitukseen_helsinki_perustettiin:
+    '#title': '5. För vilket ändamål grundades Helsingfors?'
+    '#quiz__options':
+      q4_a:
+        feedback: 'Du svarade rätt!'
+      q4_b:
+        feedback: 'Ditt svar var fel. Helsingfors grundades för att tävla med Östersjöns hansastäder.'
+      q4_c:
+        feedback: 'Ditt svar var fel. Helsingfors grundades för att tävla med Östersjöns hansastäder.'
+      q4_d:
+        feedback: 'Ditt svar var fel. Helsingfors grundades för att tävla med Östersjöns hansastäder.'
+    '#options':
+      q4_a: 'för att tävla med Östersjöns hansastäder'
+      q4_b: 'för att förstärka försvaret av den östra riksdelen'
+      q4_c: 'som ett kungligt semestermål'
+      q4_d: 'för inget särskilt'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Men känner du till historia före historia? Läs även artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa om Helsingfors historia. Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/1550-helsingfors-grundas">1550 – Helsingfors grundas</a> och gör om testen.'
+    '#feedback_message_pass': 'Du är en riktig expert på Helsingfors historia! Men känner du till historia före historia? Läs artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>'
+    '#feedback_message_fail': 'Du har ännu mycket spännande kvar att läsa om Helsingfors historia. Bekanta dig med artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/1550-helsingfors-grundas">1550 – Helsingfors grundas</a> och gör om testet.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: 'Helsingfors grundas'

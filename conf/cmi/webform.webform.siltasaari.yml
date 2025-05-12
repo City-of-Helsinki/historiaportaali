@@ -220,8 +220,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Siltasaaren historian tuntija! Entäpä Hakaniemi? Lue artikkeli: <a href="https://historia.hel.fi/fi/alueet/keskinen/hakaniemi">Hakaniemi</a> '
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla <a href="https://historia.hel.fi/fi/alueet/keskinen/siltasaari">Siltasaari</a>-artikkeli ja tee testi uudelleen.'
+    '#feedback_message_pass': 'Olet varsinainen Siltasaaren historian tuntija! Entäpä Hakaniemi? Lue artikkeli <a href="/fi/alueet/keskinen/hakaniemi">Hakaniemi</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele lukemalla artikkeli <a href="/fi/alueet/keskinen/siltasaari">Siltasaari</a> ja tee testi uudelleen.'
 css: ''
 javascript: ''
 settings:

@@ -2,6 +2,8 @@
 // @file
 // This file includes all imports
 //
+@use "sass:color";
+@use "sass:math";
 
 // Breakpoint helpers
 @import '~breakpoint-sass';

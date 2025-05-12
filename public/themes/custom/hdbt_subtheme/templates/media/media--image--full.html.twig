@@ -35,6 +35,11 @@
     view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+
+{% if content.field_finna_id[0]['#context']['value'] is defined %}
+  {% set finna_url = 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'] %}
+{% endif %}
+
 <article{{ attributes.addClass(classes) }}>
   <div class="before-content">
     <div class="page-title">
@@ -54,7 +59,7 @@
       {% endblock container_content %}
     {% endembed %}
 
-    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#FAF9F7' } %}
+    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#fff' } %}
   </div>
 
   <div class="main-content">
@@ -73,7 +78,9 @@
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_media_image|render %}
               <div class="{{ media.bundle()|clean_class }}__media_image">
-                {{ content.field_media_image }}
+                <a href="{{ finna_url }}" target="_blank" title="{{ 'Open image to new window to Finna.fi'|t }}">
+                  {{ content.field_media_image }}
+                </a>
               </div>
             {% endif %}
             {% if content.field_image_caption|render %}
@@ -119,26 +126,27 @@
             {% if content.field_photographer|render %}
               <div class="{{ media.bundle()|clean_class }}__photographer">
                 <div class="hdbt_taxonomy__wrapper">
-                  <h3 class="label" id="field_photographer">{{ content.field_photographer['#title']|t({}, {'context': 'Content'}) }}</h3>
+                  <h3 class="label" id="field_photographer">{{ content.field_photographer['#title'] }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_photographer">
-                    {# Node 114 is search page. This might be done better. #}
-                    <a href="{{ path('entity.node.canonical', {'node': '114'}) }}?s={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
+                    <a href="{{ site_search_page_url }}?s={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
                   </div>
                 </div>
               </div>
             {% endif %}
 
-            {% if content.field_phenomena|render %}
-              <div class="{{ media.bundle()|clean_class }}__phenomena">
-                {{ content.field_phenomena }}
-              </div>
-            {% endif %}
+            {# The field names to print as tag-like search links #}
+            {% set fields_set_1 = [
+              'field_phenomena',
+              'field_neighbourhoods',
+            ] %}
 
-            {% if content.field_neighbourhoods|render %}
-              <div class="{{ media.bundle()|clean_class }}__neighbourhoods">
-                {{ content.field_neighbourhoods }}
-              </div>
-            {% endif %}
+            {% for field in fields_set_1 %}
+              {% if content[field]|render %}
+                <div class="{{ media.bundle()|clean_class }}__{{ field }}">
+                  {{ content[field] }}
+                </div>
+              {% endif %}
+            {% endfor %}
 
             {% if content.field_start_year|render %}
               <div class="{{ media.bundle()|clean_class }}__group_year">
@@ -151,8 +159,7 @@
               <div class="hdbt_taxonomy__wrapper">
                 <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_group_year">
-                    {# Node 114 is search page. This might be done better. #}
-                    <a href="{{ path('entity.node.canonical', {'node': '114'}) }}?s={{ period }}"><span>{{ period }}</span></a>
+                    <a href="{{ site_search_page_url }}?s={{ period }}"><span>{{ period }}</span></a>
                   </div>
                 </div>
               </div>
@@ -160,53 +167,37 @@
           </div>
 
           <div class="{{ right_column_classes|join(' ') }}">
-            {% if content.field_finna_id|render %}
+            {% if finna_url is defined %}
               <div class="{{ media.bundle()|clean_class }}__finna_id">
-                <h3 class="label">{{ content.field_finna_id['#title']|t({}, {'context': 'Content'}) }}</h3>
+                <h3 class="label">{{ content.field_finna_id['#title'] }}</h3>
                 {% include '@hdbt/navigation/link-button.html.twig' with {
                   type: 'primary',
                   label: 'Open in new window'|t({}, {'context': 'Button'}),
-                  url: 'https://finna.fi/Record/' ~ content.field_finna_id[0]['#context']['value'],
+                  url: finna_url,
                   open_in_a_new_window: true,
                 } %}
               </div>
             {% endif %}
 
-            {% if content.field_formats|render %}
-              <div class="{{ media.bundle()|clean_class }}__formats">
-                {{ content.field_formats }}
-              </div>
-            {% endif %}
+            {# The field names to print as tag-like search links #}
+            {% set fields_set_2 = [
+              'field_formats',
+              'field_keywords',
+              'field_authors',
+              'field_copyrights',
+              'field_languages',
+              'field_buildings',
+              'field_buildings_info'
+            ] %}
 
-            {% if content.field_authors|render %}
-              <div class="{{ media.bundle()|clean_class }}__authors">
-                {{ content.field_authors }}
-              </div>
-            {% endif %}
+            {% for field in fields_set_2 %}
+              {% if content[field]|render %}
+                <div class="{{ media.bundle()|clean_class }}__{{ field }}">
+                  {{ content[field] }}
+                </div>
+              {% endif %}
+            {% endfor %}
 
-            {% if content.field_copyrights|render %}
-              <div class="{{ media.bundle()|clean_class }}__copyrights">
-                {{ content.field_copyrights }}
-              </div>
-            {% endif %}
-
-            {% if content.field_languages|render %}
-              <div class="{{ media.bundle()|clean_class }}__languages">
-                {{ content.field_languages }}
-              </div>
-            {% endif %}
-
-            {% if content.field_buildings|render %}
-              <div class="{{ media.bundle()|clean_class }}__buildings">
-                {{ content.field_buildings }}
-              </div>
-            {% endif %}
-
-            {% if content.field_buildings_info|render %}
-              <div class="{{ media.bundle()|clean_class }}__buildings_info">
-                {{ content.field_buildings_info }}
-              </div>
-            {% endif %}
           </div>
         {% endblock component_content %}
       {% endembed %}

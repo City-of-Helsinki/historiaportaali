@@ -1,10 +1,10 @@
 .frontpage-search {
-  position: relative;
   background-color: $color-black-80;
   color: $color-white;
   margin: 0 $spacing $spacing-double;
-  padding: $spacing-double 0;
   max-width: 900px;
+  padding: $spacing-double 0;
+  position: relative;
 
   @include breakpoint($breakpoint-l) {
     margin: 0 auto $spacing-double;

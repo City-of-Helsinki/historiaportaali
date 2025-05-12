@@ -60,7 +60,7 @@ elements: |
       q4_c: Frankrikes
       q4_d: Englands
   quiz_result:
-    '#feedback_message_pass': 'Du är en sann expert på Sveaborgs historia. Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="https://historia.hel.fi/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
-    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Värm upp genom att bekanta dig med artikeln <a href="https://historia.hel.fi/sv/omraden/sodra/mortuis-sveaborgs-blodiga-historia">Mortuis – Sveaborgs blodiga historia</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en sann expert på Sveaborgs historia. Hur är det då med Helsingfors förhistoria? Läs artikeln <a href="/sv/vandpunkter/rotter-och-1500-talet/helsingfors-forhistoria">Helsingfors förhistoria</a>.'
+    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Värm upp genom att bekanta dig med artikeln <a href="/sv/omraden/sodra/mortuis-sveaborgs-blodiga-historia">Mortuis – Sveaborgs blodiga historia</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'

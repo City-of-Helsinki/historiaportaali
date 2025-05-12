@@ -3,7 +3,7 @@
 use Symfony\Component\HttpFoundation\Request;
 
 if (PHP_SAPI === 'cli') {
-  ini_set('memory_limit', '512M');
+  ini_set('memory_limit', '1024M');
 }
 else {
   // New relic triggers garbage collector which adds extra time on the request.

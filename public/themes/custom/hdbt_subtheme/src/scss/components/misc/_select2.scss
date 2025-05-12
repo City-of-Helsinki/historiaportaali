@@ -10,8 +10,8 @@
     .select2-search--dropdown {
 
       .select2-search__field {
-        line-height: var(--input-height);
         font-size: 1.125em;
+        line-height: var(--input-height);
       }
     }
   }
@@ -19,9 +19,9 @@
   .select2-selection--single {
     background-color: #fff;
     border: none;
-    height: var(--input-height);
     border-radius: 0;
     font-size: 1.125em;
+    height: var(--input-height);
 
     .select2-selection__placeholder {
       color: var(--placeholder-color);

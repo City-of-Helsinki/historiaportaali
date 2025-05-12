@@ -1,5 +1,10 @@
 .page-type--kore-school {
   .before-content {
+    .kore-school-header__container {
+      @include breakpoint($breakpoint-m) {
+        padding-left: $spacing-double * 4;
+      }
+    }
     .back-to-search-results__container {
       padding-top: 0;
     }
@@ -11,10 +16,14 @@
     }
   }
 
+  .main-content {
+    margin-top: $spacing;
+  }
+
   .node--type-kore-school {
     &.node--view-mode-full {
-      max-width: $content-width-max;
       margin: 0 $spacing-double;
+      max-width: $content-width-max;
 
       @include breakpoint($breakpoint-m) {
         margin: 0 auto;
@@ -30,11 +39,11 @@
         grid-template-columns: 1fr;
 
         .paragraph--type--kore {
-          padding: $spacing;
           border: 1px solid $color-black-40;
-          font-size: 1.25rem;
           display: flex;
           flex-wrap: wrap;
+          font-size: 1.25rem;
+          padding: $spacing;
 
           .hel-icon {
             margin-right: 1rem;
@@ -42,18 +51,18 @@
           }
 
           .kore--content {
-            flex-wrap: nowrap;
             display: flex;
+            flex-wrap: nowrap;
           }
 
           .kore--date {
-            width: max-content;
-            height: max-content;
-            padding: $spacing-half;
             border: 1px solid $color-black-60;
-            margin-left: auto;
-            font-size: 1rem;
             color: $color-black-80;
+            font-size: 1rem;
+            height: max-content;
+            margin-left: auto;
+            padding: $spacing-half;
+            width: max-content;
           }
 
           &.paragraph--type--kore-archive {
@@ -68,8 +77,8 @@
 
               .paragraph--type--kore-address {
                 &:not(:last-of-type)::after {
-                  margin-right: 0.25rem;
                   content: '=';
+                  margin-right: 0.25rem;
                 }
                 &:last-of-type,
                 &:only-of-type {
@@ -82,8 +91,8 @@
                 }
 
                 .hds-button {
-                  width: max-content;
                   margin: 0 3rem 1rem 0;
+                  width: max-content;
 
                   @include breakpoint($breakpoint-m) {
                     margin: 0 0 0 1rem;
@@ -103,8 +112,8 @@
       }
 
       .kore--photos {
-        display: grid;
         column-gap: $spacing;
+        display: grid;
         grid-template-columns: 1fr;
 
         @include breakpoint($breakpoint-m) {
@@ -120,6 +129,7 @@
 
           img {
             height: auto;
+            width: 100%;
           }
         }
       }

@@ -86,9 +86,6 @@
   {% embed "@hdbt/misc/container.twig" with {container_element: node.bundle|clean_class ~ '_header'} %}
     {% block container_content %}
       {{ content|without('field_liftup_image', 'field_reading_time') }}
-
-      {{ drupal_block('system_breadcrumb_block') }}
-
       {{ drupal_block('helfi_platform_config_social_sharing_block') }}
     {% endblock container_content %}
   {% endembed %}
@@ -97,6 +94,6 @@
     {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', flip: true, color: '#FFE977'} %}
     {{ content.field_liftup_image }}
   {% else %}
-    {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', color: '#FAF9F7'} %}
+    {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#fff' } %}
   {% endif %}
 </article>

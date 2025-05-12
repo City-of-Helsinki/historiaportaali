@@ -26,3 +26,6 @@ display:
         options:
           expose:
             items_per_page_label: 'Tuloksia sivulla'
+      empty:
+        area_text_custom:
+          content: 'Ei tuloksia valituilla suodattimilla'

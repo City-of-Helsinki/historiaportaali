@@ -20,7 +20,7 @@ dependencies:
     - field.field.media.image.field_photographer
     - field.field.media.image.field_start_year
     - field.field.media.image.field_transcript
-    - image.style.original_l
+    - image.style.large
     - media.type.image
   module:
     - image
@@ -189,12 +189,12 @@ content:
     type: image
     label: hidden
     settings:
-      image_link: file
-      image_style: original_l
+      image_link: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_neighbourhoods:
     type: entity_reference_label

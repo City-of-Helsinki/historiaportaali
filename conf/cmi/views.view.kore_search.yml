@@ -8,7 +8,6 @@ dependencies:
   module:
     - better_exposed_filters
     - entity_reference_revisions
-    - helhist_kore_admin
     - node
     - options
     - paragraphs
@@ -149,6 +148,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 40
           total_pages: null
           id: 0
@@ -199,6 +199,7 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_type_value:
                 plugin_id: default
@@ -206,7 +207,9 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_language_value:
                 plugin_id: default
@@ -214,18 +217,21 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_kore_end_year_value:
                 plugin_id: bef_sliders
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
                 max: '2024'
                 step: '1'
-                animate: none
+                animate: '0'
                 animate_ms: '0'
                 orientation: horizontal
               field_kore_start_year_value:
@@ -233,11 +239,12 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
                 max: '2024'
                 step: '1'
-                animate: none
+                animate: '0'
                 animate_ms: '0'
                 orientation: horizontal
       access:
@@ -247,7 +254,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No results with current filters'
+          tokenize: false
       sorts:
         title:
           id: title
@@ -666,16 +684,8 @@ display:
           admin_label: 'field_kore_languages: Paragraph'
           plugin_id: standard
           required: false
-      header:
-        kore_search_content:
-          id: kore_search_content
-          table: views
-          field: kore_search_content
-          relationship: none
-          group_type: group
-          admin_label: 'Kore Search Content'
-          plugin_id: kore_search_content
-          empty: true
+      use_ajax: true
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -695,6 +705,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }

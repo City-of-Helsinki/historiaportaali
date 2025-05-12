@@ -249,8 +249,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Töölön historian tuntija! Entä viereinen kaupunginosa Meilahti? Tutustu <a href="https://historia.hel.fi/fi/alueet/lantinen/meilahti">Meilahti</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Töölön historian tuntija! Entä viereinen kaupunginosa Meilahti? Tutustu artikkeliin <a href="/fi/alueet/lantinen/meilahti">Meilahti</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

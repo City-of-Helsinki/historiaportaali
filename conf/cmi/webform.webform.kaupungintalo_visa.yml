@@ -133,8 +133,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': Tulokset
     '#passing_score_percentage': 50
-    '#feedback_message_pass': 'Olet varsinainen kaupungintalon historian tuntija! Tunnetko yhtä hyvin vanhempaa historiaa? Tustustu <a href="https://historia.hel.fi/fi/kaannekohdat/alkujuuret-ja-perustaminen/helsingin-esihistoriaa">Helsingin esihistoriaan</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/kaupungintalo">Kaupungintalo</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen kaupungintalon historian tuntija! Tunnetko yhtä hyvin Senaatin historiaa? Tutustu artikkeliin <a href="/fi/alueet/etelainen/senaatintori">Senaatintori</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lämmittele tutustumalla artikkeliin <a href="/fi/alueet/etelainen/kaupungintalo">Kaupungintalo</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

@@ -1,0 +1,441 @@
+uuid: e4ad5e2a-9c1e-460b-8a71-35269edad91d
+langcode: fi
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 116
+template: false
+archive: false
+id: havis_amanda
+title: 'Havis Amanda'
+description: ''
+categories: {  }
+elements: |-
+  q1:
+    '#type': quiz_element_radios
+    '#title': '1. Kuka on tehnyt Havis Amandan suihkukaivokokonaisuuden?'
+    '#quiz__options':
+      q1_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q1_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
+      q1_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
+      q1_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Sen teki Ville Vallgren.'
+    '#options':
+      q1_a: 'Ville Vallgren'
+      q1_b: 'Walter Runeberg'
+      q1_c: 'Viktor Jansson'
+      q1_d: 'Aimo Tukiainen'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  q2:
+    '#type': quiz_element_radios
+    '#title': '2. Mitä Havis Amanda symboloi?'
+    '#quiz__options':
+      q2_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q2_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
+      q2_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
+      q2_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se symboloi merestä nousevaa Helsinkiä.'
+    '#options':
+      q2_a: 'merestä nousevaa Helsinkiä'
+      q2_b: 'kevään heräävää luontoa'
+      q2_c: 'Suomen taiteen kukoistusta'
+      q2_d: 'heräävää kansallistunnetta'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  q3:
+    '#type': quiz_element_radios
+    '#title': '3. Kenen aloitteesta suihkukaivo tilattiin?'
+    '#quiz__options':
+      q3_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q3_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
+      q3_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
+      q3_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Aloitteen teki Suomen Taideyhdistys.'
+    '#options':
+      q3_a: 'Suomen Taideyhdistyksen'
+      q3_b: 'Helsingin kaupunginvaltuuston'
+      q3_c: 'Helsingin rahatoimikamarin'
+      q3_d: 'Esplanadin yrittäjien '
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  q4:
+    '#type': quiz_element_radios
+    '#title': '4. Mitä paikkaa harkittiin suihkukaivokokonaisuudelle?'
+    '#quiz__options':
+      q4_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q4_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
+      q4_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
+      q4_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Erottajaa harkittiin.'
+    '#options':
+      q4_a: Erottajaa
+      q4_b: 'vain Kauppatoria'
+      q4_c: Senaatintoria
+      q4_d: 'Kaivopuiston rantaa'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_:
+    '#type': quiz_element_radios
+    '#title': '5. Millä menetelmällä Havis Amandan paikkaa harkittiin?'
+    '#quiz__options':
+      q5_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q5_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
+      q5_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
+      q5_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui sovittelemalla luonnollisen kokoista mallikappaletta eri paikkoihin.'
+    '#options':
+      q5_a: 'Luonnollisen kokoista puista mallikappaletta soviteltiin eri paikkoihin.'
+      q5_b: 'Taiteilija laati havainnepiirroksia suihkukaivon sijoituspaikoista.'
+      q5_c: 'Asukkaille tehtiin mielipidekysely.'
+      q5_d: 'Kaupunginvaltuusto äänesti asiasta.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  mina_vuonna_tuomiokirkko_vihittiin_kayttoon_:
+    '#type': quiz_element_radios
+    '#title': '6. Missä Havis Amanda on valmistettu?'
+    '#quiz__options':
+      q6_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q6_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
+      q6_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
+      q6_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se on valmistettu Pariisissa.'
+    '#options':
+      q6_a: Pariisissa
+      q6_b: Helsingissä
+      q6_c: Porvoossa
+      q6_d: Tukholmassa
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_:
+    '#type': quiz_element_radios
+    '#title': '7. Milloin Havis Amanda paljastettiin?'
+    '#quiz__options':
+      q7_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q7_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
+      q7_c:
+        is_correct: false
+        feedback: ' Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
+      q7_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Se tapahtui elokuussa 1908.'
+    '#options':
+      q7_a: 'elokuussa 1908'
+      q7_b: 'toukokuussa 1908'
+      q7_c: 'elokuussa 1907'
+      q7_d: 'toukokuussa 1901'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g:
+    '#type': quiz_element_radios
+    '#title': '8. Millaisen vastaanoton uusi julkinen taideteos sai?'
+    '#quiz__options':
+      q8_a:
+        is_correct: true
+        feedback: 'Vastasit oikein!'
+      q8_b:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
+      q8_c:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
+      q8_d:
+        is_correct: false
+        feedback: 'Vastauksesi oli väärin. Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä.'
+    '#options':
+      q8_a: 'Naisliike, työväenliike ja fennomaanit paheksuivat sitä kukin eri syistä. '
+      q8_b: 'Se herätti yleistä innostusta.'
+      q8_c: 'Naisliike, fennomaanit ja työväenliike paheksuivat sitä samoista syistä.'
+      q8_d: 'Siihen suhtauduttiin neutraalisti.'
+    '#options_randomize': true
+    '#required': true
+    '#format': custom
+    '#options__properties': ''
+  q1_result:
+    '#type': webform_quiz_elements_result
+    '#title': q1_result
+    '#source': q1
+  q2_result:
+    '#type': webform_quiz_elements_result
+    '#title': q2_result
+    '#source': q2
+  q3_result:
+    '#type': webform_quiz_elements_result
+    '#title': q3_result
+    '#source': q3
+  q4_result:
+    '#type': webform_quiz_elements_result
+    '#title': q4_result
+    '#source': q4
+  q5_result:
+    '#type': webform_quiz_elements_result
+    '#title': q5_result
+    '#source': mika_naista_ei_ole_toiminut_senaatintorin_etelareunassa_
+  q6_result:
+    '#type': webform_quiz_elements_result
+    '#title': q6_result
+    '#source': mina_vuonna_tuomiokirkko_vihittiin_kayttoon_
+  q7_result:
+    '#type': webform_quiz_elements_result
+    '#title': q7_result
+    '#source': 7_missa_sijaitsi_ulrika_eleonoran_kirkko_vuosina_1727_1827_
+  q8_result:
+    '#type': webform_quiz_elements_result
+    '#title': q8_result
+    '#source': 8_bockin_talo_on_nimetty_rakennuttajansa_kauppias_ja_raatimies_g
+  quiz_result:
+    '#type': webform_quiz_elements_score
+    '#title': quiz_result
+    '#passing_score_percentage': 60
+    '#feedback_message_pass': 'Olet todellinen Havis Amandan tuntija! Entä Esplanadit ja Kauppatori? Tutustu artikkeliin <a href="https://historia.hel.fi/fi/alueet/etelainen/esplanadit-ja-kauppatori-kaupungin-sykkiva-sydan">Esplanadit ja Kauppatori – kaupungin sykkivä sydän</a>.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/tiedetta-taidetta-ja-sivistysta/havis-amanda-patsas-helsingin-paraatipaikalla">Havis Amanda: patsas Helsingin paraatipaikalla</a> ja tee testi uudelleen.'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: false
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: inline
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: '[webform_submission:values:html]'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: 'Takaisin visaan'
+  confirmation_back_attributes:
+    class:
+      - hds-button
+      - hds-button--primary
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

@@ -1,18 +1,13 @@
-label: Медиа-библиотека
 description: 'Найти и управлять медиа.'
 display:
   default:
     display_title: 'По умолчанию'
     display_options:
-      title: Мультимедиа
       fields:
         media_bulk_form:
           action_title: Действие
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Элементов на страницу'
             items_per_page_options_all_label: '- Все -'
@@ -63,8 +58,6 @@ display:
       fields:
         media_bulk_form:
           action_title: Действие
-        name:
-          separator: ', '
         edit_media:
           alter:
             text: 'Редактировать {{ name }}'
@@ -76,7 +69,6 @@ display:
             alt: 'Удалить {{ name }}'
           text: Удалить
   widget:
-    display_title: Виджет
     display_options:
       arguments:
         bundle:

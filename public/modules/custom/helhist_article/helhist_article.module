@@ -26,7 +26,7 @@ function helhist_article_pathauto_alias_alter(&$alias, array &$context) {
       $termreference = $node->get('field_turning_points')->target_id;
     }
 
-    if ($termreference) {
+    if (isset($termreference) && $termreference) {
       $node_label = $node->label();
 
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($termreference);

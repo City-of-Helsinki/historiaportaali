@@ -5,6 +5,21 @@
  * Functions to support theming in the HDBT Subtheme.
  */
 
+use Drupal\node\Entity\Node;
+
+/**
+ * Get the site's global search page URL.
+ *
+ * Search page is implemented as node/114. This helper function is used to get
+ * the URL for the search page to not duplicate the node id template files.
+ *
+ * @return string
+ *   The search page URL.
+ */
+function hdbt_subtheme_get_search_page_url($nid = 114) {
+  return \Drupal::service('url_generator')->generateFromRoute('entity.node.canonical', ['node' => $nid]);
+}
+
 /**
  * Helper function to get the icons path.
  *
@@ -44,15 +59,6 @@ function hdbt_subtheme_theme_suggestions_block_alter(&$suggestions) {
 }
 
 /**
- * Implements hook_preprocess_menu().
- * @param $variables
- */
-function hdbt_subtheme_preprocess_menu(&$variables) {
-  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $variables['language'] = $langcode;
-}
-
-/**
  * Implements template_preprocess_html().
  */
 function hdbt_subtheme_preprocess_html(&$variables) {
@@ -65,22 +71,21 @@ function hdbt_subtheme_preprocess_html(&$variables) {
   }
 }
 
+/**
+ * Implements template_preprocess_region().
+ */
 function hdbt_subtheme_preprocess_region(&$variables) {
-  $variables['is_frontpage'] = false;
-  $variables['has_hero'] = false;
-  $variables['hide_koro'] = false;
-
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
-    $variables['is_frontpage'] = true;
-  }
+  $variables['is_frontpage'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['has_hero'] = FALSE;
+  $variables['hide_koro'] = FALSE;
 
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node) {
+  if ($node instanceof Node) {
     if ($node->hasField('field_has_hero')) {
       $variables['has_hero'] = intval($node->get('field_has_hero')->getString());
     }
     if ($node->bundle() == 'map_page') {
-      $variables['hide_koro'] = true;
+      $variables['hide_koro'] = TRUE;
     }
   }
 }
@@ -100,6 +105,8 @@ function hdbt_subtheme_preprocess_node(&$variables) {
  */
 function hdbt_subtheme_preprocess_field(&$variables, $hook) {
   $field_name = $variables['element']['#field_name'];
+
+  $variables['site_search_page_url'] = hdbt_subtheme_get_search_page_url();
 
   // Provide term's machine name as variable (prefer English)
   if ($field_name == 'field_formats') {
@@ -150,7 +157,7 @@ function hdbt_subtheme_theme_suggestions_field_alter(&$suggestions, $variables) 
  */
 function hdbt_subtheme_theme_suggestions_region_alter(&$suggestions, $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node) {
+  if ($node instanceof Node) {
     $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
   }
 }
@@ -211,8 +218,8 @@ function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\Fo
 
       $form['views_exposed_form']['#markup'] = '
         <a class="link" href="/' . $langcode . $alias .'">
-          <span aria-hidden="true" class="hds-icon hds-icon--location"></span>                                            
-          <span class="link__label">' . $label . '</span>                                            
+          <span aria-hidden="true" class="hds-icon hds-icon--location"></span>
+          <span class="link__label">' . $label . '</span>
         </a>';
     }
   }
@@ -232,8 +239,15 @@ function hdbt_subtheme_preprocess_block__hdbt_messages(&$variables) {
  */
 function hdbt_subtheme_preprocess_block__page_title_block(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\Entity\Node && $node->bundle() == 'listing_page') {
-    $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
+  if ($node instanceof Node) {
+    if ($node->bundle() == 'listing_page') {
+      $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
+    }
+    if ($node->bundle() == 'kore_school') {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $kore_title = \Drupal::config('helhist_kore_admin.settings')->get('kore_search_title');
+      $variables['subtitle'] = $kore_title[$langcode] ?? $kore_title['fi'] ?? '';
+    }
   }
 }
 
@@ -260,10 +274,14 @@ function _get_top_level_menu_parent_title_by_nid($node_id) {
 /**
  * Implements template_preprocess_paragraph().
  */
-function hdbt_subtheme_preprocess_paragraph(&$variables) {
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $variables['language'] = $language;
+function hdbt_subtheme_preprocess_media(&$variables) {
+  $variables['site_search_page_url'] = hdbt_subtheme_get_search_page_url();
+}
 
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function hdbt_subtheme_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $paragraph_type = $paragraph->getType();
 
@@ -318,7 +336,7 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
     $year = $paragraph->get('field_kore_start_year')->value;
 
     $node = $paragraph->get('field_kore_school')->referencedEntities();
-    $school_names = $node[0]->get('field_kore_names')->referencedEntities();
+    $school_names = isset($node[0]) ? $node[0]->get('field_kore_names')->referencedEntities() : [];
     foreach ($school_names as $name) {
 
       $start = $name->get('field_kore_start_year')->value;

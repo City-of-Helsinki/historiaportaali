@@ -220,8 +220,8 @@ elements: |-
     '#type': webform_quiz_elements_score
     '#title': quiz_result
     '#passing_score_percentage': 60
-    '#feedback_message_pass': 'Olet varsinainen Minna Craucher -asiantuntija! Entä hänen asuinkaupunginosansa Töölö? Tutustu <a href="https://historia.hel.fi/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> -artikkeliin.'
-    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="https://historia.hel.fi/fi/ilmiot/helsingin-asukkaat/minna-craucher-totta-ja-tarua">Minna Craucher, totta ja tarua</a> ja tee testi uudestaan.'
+    '#feedback_message_pass': 'Olet varsinainen Minna Craucher -asiantuntija! Entä hänen asuinkaupunginosansa Töölö? Tutustu <a href="/fi/alueet/etelainen/toolo-keskiaikaisesta-kylasta-modernin-elaman-symboliksi">Töölö – keskiaikaisesta kylästä modernin elämän symboliksi</a> -artikkeliin.'
+    '#feedback_message_fail': 'Sinulla on vielä paljon jännittävää luettavaa. Lue artikkeli <a href="/fi/ilmiot/helsingin-asukkaat/minna-craucher-totta-ja-tarua">Minna Craucher, totta ja tarua</a> ja tee testi uudestaan.'
 css: ''
 javascript: ''
 settings:

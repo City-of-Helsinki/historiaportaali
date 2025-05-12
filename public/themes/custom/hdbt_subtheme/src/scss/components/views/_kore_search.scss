@@ -1,15 +1,20 @@
-.views--kore-search {
+#block-kore-search-filters {
 
-  .kore-search-content {
-    margin-top: -90px; // rather hack for now, @todo fix when pull/345 get merged
+  .page-title,
+  .page-title > * {
+    padding-left: 0;
+  }
+
+  .kore-search-text {
     margin-bottom: 2rem;
   }
 
+
   .views-exposed-form {
+    align-items: flex-end;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: flex-end;
     margin-bottom: 2rem;
 
     label {
@@ -49,16 +54,18 @@
       margin-bottom: $gutter;
     }
   }
+}
 
+.views--kore-search {
   .views-row {
     display: none;
   }
 
   h3 {
-    margin: 0;
-    padding: 1rem;
     font-size: 1rem;
     line-height: 1.5rem;
+    margin: 0;
+    padding: 1rem;
 
     &:nth-of-type(odd) {
       background-color: #f2f2f2;
@@ -86,8 +93,8 @@
 
           .hel-icon {
             display: inline-block;
-            margin-bottom: 4px;
             height: 1.25rem;
+            margin-bottom: 4px;
             width: 1.25rem;
           }
         }

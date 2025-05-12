@@ -1,0 +1,68 @@
+uuid: 7d61f04c-f29d-4f89-a10f-4e99cbf2f3a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.unit_contact_card
+    - field.field.media.image.field_authors
+    - field.field.media.image.field_buildings
+    - field.field.media.image.field_buildings_info
+    - field.field.media.image.field_copyrights
+    - field.field.media.image.field_end_year
+    - field.field.media.image.field_finna_id
+    - field.field.media.image.field_formats
+    - field.field.media.image.field_geolocation
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_keywords
+    - field.field.media.image.field_languages
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_neighbourhoods
+    - field.field.media.image.field_phenomena
+    - field.field.media.image.field_photographer
+    - field.field.media.image.field_start_year
+    - field.field.media.image.field_transcript
+    - media.type.image
+    - responsive_image.styles.unit_contact_card
+  module:
+    - responsive_image
+_core:
+  default_config_hash: lnLfe1anwcPs3RGvJCdrWT5Uii5_95x33boAKaSrOZs
+id: media.image.unit_contact_card
+targetEntityType: media
+bundle: image
+mode: unit_contact_card
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: unit_contact_card
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_authors: true
+  field_buildings: true
+  field_buildings_info: true
+  field_copyrights: true
+  field_end_year: true
+  field_finna_id: true
+  field_formats: true
+  field_geolocation: true
+  field_image_caption: true
+  field_keywords: true
+  field_languages: true
+  field_neighbourhoods: true
+  field_phenomena: true
+  field_photographer: true
+  field_start_year: true
+  field_transcript: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

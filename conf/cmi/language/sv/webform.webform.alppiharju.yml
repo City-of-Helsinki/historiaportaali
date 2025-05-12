@@ -129,7 +129,8 @@ elements: |
       q10_c: nyrenässans
       q10_d: jugend
   quiz_result:
-    '#feedback_message_pass': 'Du har bra koll på Åshöjdens historia! Hur är det då med Sörnäs? Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade">Sörnäs, före detta hamn- och industriområde</a>.'
-    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/omraden/mellersta/ashojden">Åshöjden</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du har bra koll på Åshöjdens historia! Hur är det då med Sörnäs? Läs artikeln <a href="/sv/omraden/mellersta/sornas-fore-detta-hamn-och-industriomrade">Sörnäs, före detta hamn- och industriområde</a>.'
+    '#feedback_message_fail': 'Du har mycket intressant kvar att läsa. Läs artikeln <a href="/sv/omraden/mellersta/ashojden">Åshöjden</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till testet'

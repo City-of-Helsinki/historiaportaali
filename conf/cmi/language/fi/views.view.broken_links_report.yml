@@ -22,8 +22,8 @@ display:
             offset_label: Offset
       fields:
         entity_field:
-          label: 'Entiteetin kenttä'
           separator: ', '
+          label: 'Entiteetin kenttä'
         entity_langcode:
           label: 'Kokonaisuuden kieli'
           separator: ', '
@@ -66,8 +66,11 @@ display:
       footer:
         result:
           content: 'Näytetään @start - @end / @total'
+      title: 'Lista rikkinäisistä linkeistä'
   page_1:
     display_title: Sivu
     display_options:
       menu:
         title: 'Rikkinäiset linkit'
+        description: 'Näyttää listan rikkinäisistä linkeistä sisällössä.'
+label: 'Lista rikkinäisistä linkeistä'

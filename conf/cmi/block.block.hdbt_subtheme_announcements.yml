@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - helfi_node_announcement
+    - helfi_etusivu_entities
   theme:
     - hdbt_subtheme
 id: hdbt_subtheme_announcements
@@ -17,4 +17,5 @@ settings:
   label: Announcements
   label_display: ''
   provider: helfi_node_announcement
+  use_remote_entities: true
 visibility: {  }

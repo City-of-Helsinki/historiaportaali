@@ -56,11 +56,11 @@ class ListingImageUrl extends ProcessorPluginBase {
   public function addFieldValues(ItemInterface $item) {
     $entity = $item->getOriginalObject()->getValue();
     $entity_type = $entity->getEntityTypeId();
-    
+
     if ($entity_type == 'media') {
       $media = $entity;
     }
-  
+
     if ($entity_type == 'node') {
       $media = $entity->field_liftup_image->entity;
     }
@@ -69,11 +69,11 @@ class ListingImageUrl extends ProcessorPluginBase {
       $fid = $media->getSource()->getSourceFieldValue($media);
       $file = File::load($fid);
     }
-  
+
     if (isset($file)) {
-      $image_style = ImageStyle::load('3_2_xxs_2x');
+      $image_style = ImageStyle::load('1.5_600w_400h');
       $image_uri = $file->getFileUri();
-  
+
       if ($image_uri) {
         $destination_uri = $image_style->buildUri($file->uri->value);
         $image_style->createDerivative($image_uri, $destination_uri);

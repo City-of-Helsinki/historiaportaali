@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.webform_default
   module:
-    - eu_cookie_compliance
     - external_entities
     - file
     - filter
@@ -15,14 +14,14 @@ dependencies:
     - matomo
     - media
     - paragraphs
-    - search_api_autocomplete
+    - raven
     - system
     - toolbar
 _core:
   default_config_hash: 83Nuup-6oYkkdAsvg3nrR2pBOgtTXEV1JrzpCCLkYLM
 id: authenticated
 label: 'Sisäänkirjautunut käyttäjä'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access broken links report'
@@ -30,12 +29,12 @@ permissions:
   - 'access own broken links report'
   - 'access toolbar'
   - 'delete own files'
-  - 'display eu cookie compliance popup'
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
-  - 'use search_api_autocomplete for search'
+  - 'send javascript errors to sentry'
   - 'use text format webform_default'
   - 'view helfi_announcements external entity'
+  - 'view helfi_surveys external entity'
   - 'view media'
   - 'view remote entities'
   - 'view unpublished paragraphs'

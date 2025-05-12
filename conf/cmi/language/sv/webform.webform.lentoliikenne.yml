@@ -113,8 +113,9 @@ elements: |
       q8_d:
         feedback: 'Du svarade fel. Den blev färdig år 1952.'
   quiz_result:
-    '#feedback_message_pass': 'Du är en riktig expert på flygtrafikens historia! Hur är det då med spårvagnstrafiken? Bekanta dig med artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a>.'
-    '#feedback_message_fail': 'Du har ännu mycket spännande att läsa. Läs artikeln <a href="https://historia.hel.fi/sv/helheter/knutpunkt-for-trafiken/flygtrafiken">Flygtrafiken</a> och gör testet på nytt.'
+    '#feedback_message_pass': 'Du är en riktig expert på flygtrafikens historia! Hur är det då med spårvagnstrafiken? Bekanta dig med artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/sparan">Spåran</a>.'
+    '#feedback_message_fail': 'Du har ett och annat spännande kvar att läsa. Läs artikeln <a href="/sv/helheter/knutpunkt-for-trafiken/flygtrafiken">Flygtrafiken</a> och gör testet på nytt.'
 settings:
   confirmation_message: '<p>[webform_submission:values:html]</p>'
+  confirmation_back_label: 'Tillbaka till frågesporten'
 title: Flygtrafiken

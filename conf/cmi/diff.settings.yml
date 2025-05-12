@@ -1,3 +1,4 @@
+langcode: en
 general_settings:
   radio_behavior: simple
   context_lines_leading: 1
@@ -13,4 +14,5 @@ general_settings:
     unified_fields:
       enabled: false
       weight: 2
+  visual_default_view_mode: full
   visual_inline_theme: admin

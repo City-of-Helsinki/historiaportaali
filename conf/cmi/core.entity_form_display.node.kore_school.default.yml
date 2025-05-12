@@ -182,13 +182,6 @@ content:
         convert: '0'
         duplicate: '0'
     third_party_settings: {  }
-  field_kore_id:
-    type: number
-    weight: 25
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   field_kore_languages:
     type: paragraphs
     weight: 22
@@ -251,7 +244,7 @@ content:
     third_party_settings: {  }
   field_kore_photos:
     type: media_library_widget
-    weight: 26
+    weight: 25
     region: content
     settings:
       media_types: {  }
@@ -389,4 +382,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_kore_id: true
   hide_sidebar_navigation: true

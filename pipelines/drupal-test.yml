@@ -4,7 +4,7 @@ trigger:
   batch: true
   branches:
     include:
-      - master
+      - develop
   paths:
     exclude:
     - '*.md'
@@ -31,7 +31,6 @@ resources:
     # Azure DevOps repository
     - repository: helhist-pipelines
       type: git
-      ref: refs/heads/ansible_automation_update
       # Azure DevOps project/repository
       name: helhist/helhist-pipelines
 

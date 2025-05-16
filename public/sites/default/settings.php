@@ -150,21 +150,6 @@ if ($blob_storage_name = getenv('AZURE_BLOB_STORAGE_NAME')) {
   $settings['flysystem'] = $schemes;
 }
 
-
-if ($varnish_host = getenv('DRUPAL_VARNISH_HOST')) {
-  $config['varnish_purger.settings.default']['hostname'] = $varnish_host;
-  $config['varnish_purger.settings.varnish_purge_all']['hostname'] = $varnish_host;
-
-  if (!isset($config['system.performance']['cache']['page']['max_age'])) {
-    $config['system.performance']['cache']['page']['max_age'] = 86400;
-  }
-}
-
-if ($varnish_port = getenv('DRUPAL_VARNISH_PORT')) {
-  $config['varnish_purger.settings.default']['port'] = $varnish_port;
-  $config['varnish_purger.settings.varnish_purge_all']['port'] = $varnish_port;
-}
-
 if ($navigation_authentication_key = getenv('DRUPAL_NAVIGATION_API_KEY')) {
   $config['helfi_navigation.api']['key'] = $navigation_authentication_key;
 }
@@ -182,18 +167,26 @@ if ($github_repository = getenv('GITHUB_REPOSITORY')) {
 $config['helfi_api_base.environment_resolver.settings']['environment_name'] = getenv('APP_ENV');
 $config['helfi_api_base.environment_resolver.settings']['project_name'] = getenv('PROJECT_NAME');
 
-// settings.php doesn't know about existing configuration yet so we can't
+if ($varnish_host = getenv('DRUPAL_VARNISH_HOST')) {
+  $config['varnish_purger.settings.default']['hostname'] = $varnish_host;
+  $config['varnish_purger.settings.varnish_purge_all']['hostname'] = $varnish_host;
+}
+
+if ($varnish_port = getenv('DRUPAL_VARNISH_PORT')) {
+  $config['varnish_purger.settings.default']['port'] = $varnish_port;
+  $config['varnish_purger.settings.varnish_purge_all']['port'] = $varnish_port;
+}
+
+// Configuration doesn't know about existing config yet, so we can't
 // just append new headers to an already existing headers array here.
-// If you have configured any extra headers in your purge settings
-// you must add them in your all.settings.php as well.
-// @todo Replace this with config override service?
+// If you have configured any extra headers in your purge settings,
+// you must add them here as well.
 $config['varnish_purger.settings.default']['headers'] = [
   [
     'field' => 'Cache-Tags',
     'value' => '[invalidation:expression]',
   ],
 ];
-
 $config['varnish_purger.settings.varnish_purge_all']['headers'] = [
   [
     'field' => 'X-VC-Purge-Method',

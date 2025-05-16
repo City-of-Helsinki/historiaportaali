@@ -2,3 +2,5 @@ site_settings:
   theme_color: engel
   default_icon: abstract-1
   koro: vibration
+footer_settings:
+  footer_color: dark

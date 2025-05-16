@@ -16,13 +16,14 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.list_of_links
     - paragraphs.paragraphs_type.map
+    - paragraphs.paragraphs_type.number_highlights
     - paragraphs.paragraphs_type.phasing
     - paragraphs.paragraphs_type.remote_video
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: AejXN443GE3b159k_6fsqDyZ_BHs68SU9wBMY24Ueog
+  default_config_hash: v3n3ZeAjQ22N3kPPeDCIlFFcOuTiJ9F1CB0Gf4HQ6ZI
 id: node.page.field_lower_content
 field_name: field_lower_content
 entity_type: node
@@ -51,6 +52,7 @@ settings:
       chart: chart
       event_list: event_list
       contact_card_listing: contact_card_listing
+      number_highlights: number_highlights
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -85,6 +87,9 @@ settings:
         enabled: true
       map:
         weight: 9
+        enabled: true
+      number_highlights:
+        weight: 17
         enabled: true
       phasing:
         weight: 7

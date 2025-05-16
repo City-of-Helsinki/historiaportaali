@@ -78,9 +78,13 @@
           <div class="{{ left_column_classes|join(' ') }}">
             {% if content.field_media_image|render %}
               <div class="{{ media.bundle()|clean_class }}__media_image">
+              {% if finna_url is defined %}
                 <a href="{{ finna_url }}" target="_blank" title="{{ 'Open image to new window to Finna.fi'|t }}">
                   {{ content.field_media_image }}
                 </a>
+              {% else %}
+                {{ content.field_media_image }}
+              {% endif %}
               </div>
             {% endif %}
             {% if content.field_image_caption|render %}

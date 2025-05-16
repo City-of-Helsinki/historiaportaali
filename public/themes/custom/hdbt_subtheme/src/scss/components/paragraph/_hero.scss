@@ -43,17 +43,3 @@
     }
   }
 }
-
-.hero--bg-color--helhist-yellow {
-  background-color: $color-bg-yellow;
-  color: $color-sand;
-
-  .hero__image-container {
-    color: $color-bg-yellow;
-  }
-
-  .hds-button--secondary {
-    --background-color-hover: var(--color-gold-medium-light);
-    --background-color-hover-focus: var(--color-gold-medium-light);
-  }
-}

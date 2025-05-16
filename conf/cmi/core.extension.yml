@@ -5,6 +5,8 @@ module:
   admin_toolbar_tools: 0
   allowed_formats: 0
   better_exposed_filters: 0
+  big_pipe: 0
+  big_pipe_sessionless: 0
   blocache: 0
   block: 0
   breakpoint: 0
@@ -88,6 +90,7 @@ module:
   helfi_paragraphs_liftup_with_image: 0
   helfi_paragraphs_list_of_links: 0
   helfi_paragraphs_map: 0
+  helfi_paragraphs_number_highlights: 0
   helfi_paragraphs_phasing: 0
   helfi_paragraphs_popular_services: 0
   helfi_paragraphs_remote_video: 0

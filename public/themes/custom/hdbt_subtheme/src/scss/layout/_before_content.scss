@@ -5,7 +5,7 @@
   .media--type-image &,
   .media--type-remote-video &,
   .webform-submission-form & {
-    background-color: $color-bg-yellow;
+    background-color: var(--hdbt-color-palette--primary);
     padding-top: $spacing;
 
     @include breakpoint($breakpoint-s) {

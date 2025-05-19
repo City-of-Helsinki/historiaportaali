@@ -2,13 +2,12 @@
 
 ## Environments
 
-Env | Branch | Drush alias | URL
---- | ------ | ----------- | ---
-docker | - | - | http://historiaportaali.docker.so
-test | develop | - | -
-develop | develop | - | https://nginx-helhist-dev.apps.arodevtest.hel.fi
-staging | master | - | -
-production | master | - | https://historia.hel.fi
+Env | Branch | URL
+--- | ------ | ---
+local | - | http://historiaportaali.docker.so
+test | `dev` | https://historia.test.hel.ninja
+staging | `main` | https://historia.stage.hel.ninja
+production | `main` | https://historia.hel.fi
 
 ## Requirements
 
@@ -42,26 +41,12 @@ If only stopped, Stonehenge will run on boot. Destroy with:
 $ make down
 ```
 
-If stopping/destroying Stonehenge breaks networking, run:
-
-```
-cd /etc/
-sudo rm resolv.conf
-sudo ln -s /run/resolvconf/resolv.conf
-sudo systemctl restart resolvconf.service
-```
-
 ## Create and start the project
 
 To create and start the environment, in project directory, have `dump.sql` and:
 
 ```
 $ make fresh
-```
-
-Or have site running with `make up` and sync `dump.sql`
-```
-$ make drush-sync-db
 ```
 
 ## Login to Drupal container

@@ -16,7 +16,19 @@ channels:
     grants:
       - 3
   -
-    id: purger_varnish_zeroconfig_purger_b8040a2fdc
+    id: purger_varnish_default
+    grants:
+      - 0
+      - 2
+      - 3
+  -
+    id: purger_varnish_varnish_purge_all
+    grants:
+      - 0
+      - 2
+      - 3
+  -
+    id: purger_varnish_assets
     grants:
       - 0
       - 2

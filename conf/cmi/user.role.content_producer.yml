@@ -46,6 +46,7 @@ dependencies:
     - scheduler
     - system
     - taxonomy
+    - tfa
     - toolbar
     - view_unpublished
 _core:
@@ -105,6 +106,7 @@ permissions:
   - 'delete own landing_page content'
   - 'delete own page content'
   - 'delete own remote_video media'
+  - 'disable own tfa'
   - 'edit any announcement content'
   - 'edit any article content'
   - 'edit any file media'
@@ -147,6 +149,7 @@ permissions:
   - 'set announcement published on date'
   - 'set landing_page published on date'
   - 'set page published on date'
+  - 'setup own tfa'
   - 'translate any entity'
   - 'translate article node'
   - 'translate authors taxonomy_term'

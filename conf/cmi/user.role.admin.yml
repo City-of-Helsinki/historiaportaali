@@ -55,6 +55,7 @@ dependencies:
     - system
     - taxonomy
     - term_merge
+    - tfa
     - toolbar
     - view_unpublished
     - views_bulk_edit
@@ -170,6 +171,7 @@ permissions:
   - 'delete terms in neighbourhoods'
   - 'delete terms in phenomena'
   - 'delete terms in turning_points'
+  - 'disable own tfa'
   - 'edit any announcement content'
   - 'edit any article content'
   - 'edit any file media'
@@ -216,6 +218,7 @@ permissions:
   - 'set announcement published on date'
   - 'set landing_page published on date'
   - 'set page published on date'
+  - 'setup own tfa'
   - 'translate announcement node'
   - 'translate any entity'
   - 'translate article node'

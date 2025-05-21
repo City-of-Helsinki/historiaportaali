@@ -48,6 +48,7 @@ dependencies:
     - system
     - taxonomy
     - term_merge
+    - tfa
     - toolbar
     - view_unpublished
 id: editor
@@ -121,6 +122,7 @@ permissions:
   - 'delete own remote_video media'
   - 'delete page revisions'
   - 'delete remote entities'
+  - 'disable own tfa'
   - 'edit any announcement content'
   - 'edit any article content'
   - 'edit any file media'
@@ -165,6 +167,7 @@ permissions:
   - 'set announcement published on date'
   - 'set landing_page published on date'
   - 'set page published on date'
+  - 'setup own tfa'
   - 'translate announcement node'
   - 'translate any entity'
   - 'translate article node'

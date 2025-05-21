@@ -8,6 +8,19 @@
 use Drupal\node\Entity\Node;
 
 /**
+ * Get the site's global search page URL.
+ *
+ * Search page is implemented as node/114. This helper function is used to get
+ * the URL for the search page to not duplicate the node id template files.
+ *
+ * @return string
+ *   The search page URL.
+ */
+function hdbt_subtheme_get_search_page_url($nid = 114) {
+  return \Drupal::service('url_generator')->generateFromRoute('entity.node.canonical', ['node' => $nid]);
+}
+
+/**
  * Helper function to get the icons path.
  *
  * @return string|null
@@ -58,14 +71,13 @@ function hdbt_subtheme_preprocess_html(&$variables) {
   }
 }
 
+/**
+ * Implements template_preprocess_region().
+ */
 function hdbt_subtheme_preprocess_region(&$variables) {
-  $variables['is_frontpage'] = false;
-  $variables['has_hero'] = false;
-  $variables['hide_koro'] = false;
-
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
-    $variables['is_frontpage'] = true;
-  }
+  $variables['is_frontpage'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['has_hero'] = FALSE;
+  $variables['hide_koro'] = FALSE;
 
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof Node) {
@@ -73,7 +85,7 @@ function hdbt_subtheme_preprocess_region(&$variables) {
       $variables['has_hero'] = intval($node->get('field_has_hero')->getString());
     }
     if ($node->bundle() == 'map_page') {
-      $variables['hide_koro'] = true;
+      $variables['hide_koro'] = TRUE;
     }
   }
 }
@@ -93,6 +105,8 @@ function hdbt_subtheme_preprocess_node(&$variables) {
  */
 function hdbt_subtheme_preprocess_field(&$variables, $hook) {
   $field_name = $variables['element']['#field_name'];
+
+  $variables['site_search_page_url'] = hdbt_subtheme_get_search_page_url();
 
   // Provide term's machine name as variable (prefer English)
   if ($field_name == 'field_formats') {
@@ -255,6 +269,13 @@ function _get_top_level_menu_parent_title_by_nid($node_id) {
   }
 
   return $parent_title;
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function hdbt_subtheme_preprocess_media(&$variables) {
+  $variables['site_search_page_url'] = hdbt_subtheme_get_search_page_url();
 }
 
 /**

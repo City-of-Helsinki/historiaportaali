@@ -1,0 +1,25 @@
+uuid: c9b1b3e0-18bc-4825-a70e-cd18c1f7f672
+langcode: en
+status: true
+dependencies: {  }
+id: varnish_purge_all
+name: 'Purge all'
+invalidationtype: everything
+hostname: historiaportaali-varnish
+port: 6081
+path: /
+request_method: BAN
+scheme: http
+verify: '0'
+headers:
+  -
+    field: X-VC-Purge-Method
+    value: regex
+body: null
+body_content_type: null
+runtime_measurement: true
+timeout: 1.0
+connect_timeout: 1.0
+cooldown_time: 0.0
+max_requests: 100
+http_errors: true

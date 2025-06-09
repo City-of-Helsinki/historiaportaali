@@ -63,6 +63,8 @@ $databases['default']['default'] = [
 
 $settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: '000';
 
+$config['key.key.tfa']['key_provider_settings']['key_value'] = getenv('TFA_ENCRYPTION_KEY');
+
 // Only in Wodby environment.
 // @see https://wodby.com/docs/stacks/drupal/#overriding-settings-from-wodbysettingsphp
 if (isset($_SERVER['WODBY_APP_NAME'])) {

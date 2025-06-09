@@ -16,6 +16,7 @@ dependencies:
     - paragraphs
     - raven
     - system
+    - tfa
     - toolbar
 _core:
   default_config_hash: 83Nuup-6oYkkdAsvg3nrR2pBOgtTXEV1JrzpCCLkYLM
@@ -29,9 +30,11 @@ permissions:
   - 'access own broken links report'
   - 'access toolbar'
   - 'delete own files'
+  - 'disable own tfa'
   - 'execute graphql requests'
   - 'opt-in or out of matomo tracking'
   - 'send javascript errors to sentry'
+  - 'setup own tfa'
   - 'use text format webform_default'
   - 'view helfi_announcements external entity'
   - 'view helfi_surveys external entity'

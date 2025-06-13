@@ -1,6 +1,6 @@
 display:
   default:
-    display_title: Huvud
+    display_title: Förvald
     display_options:
       exposed_form:
         options:
@@ -12,8 +12,8 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
+            previous: Föregående
+            next: Nästa
           expose:
             items_per_page_label: 'Inlägg per sida'
             items_per_page_options_all_label: '- Alla -'

@@ -39,7 +39,7 @@ display:
             label: Julkaistu
       exposed_form:
         options:
-          submit_button: Suodata
+          submit_button: Filter
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
           sort_asc_label: Nousevasti
@@ -49,6 +49,7 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
           tags:
             previous: Edellinen
             next: Seuraava
@@ -59,17 +60,20 @@ display:
           action_title: Valinnalla
         redirect_source__path:
           label: Lähettäjä
+          separator: ', '
         created:
           label: Luotu
         is_custom:
           label: 'Käyttäjän luoma'
+          separator: ', '
         status:
           label: Julkaistu
+          separator: ', '
       empty:
         area_text_custom:
           content: 'Ei ole vielä uudelleenohjaksia.'
       title: Uudelleenohjaukset
-    display_title: Oletus
+    display_title: Isäntä
   page_1:
     display_title: Sivu
     display_options:

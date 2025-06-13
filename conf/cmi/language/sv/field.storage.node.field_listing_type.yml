@@ -1,0 +1,10 @@
+settings:
+  allowed_values:
+    -
+      label: Undersidor
+    -
+      label: 'Artiklar efter fenomen'
+    -
+      label: 'Artiklar efter område'
+    -
+      label: 'Artiklar efter vändpunkt'

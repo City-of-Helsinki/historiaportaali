@@ -79,7 +79,7 @@
             {% if content.field_media_image|render %}
               <div class="{{ media.bundle()|clean_class }}__media_image">
               {% if finna_url is defined %}
-                <a href="{{ finna_url }}" target="_blank" title="{{ 'Open image to new window to Finna.fi'|t }}">
+                <a href="{{ finna_url }}" title="{{ 'Open in finna.fi search service'|t }}">
                   {{ content.field_media_image }}
                 </a>
               {% else %}

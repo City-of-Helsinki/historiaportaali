@@ -1,6 +1,7 @@
 <div class="map-controls__top-container main-map">
   <div class="hds-text-input map-controls__mid-container">
-    <select class="map-controls__map-layer main-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}">
+    <label for="map-layer-select" class="visually-hidden">{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}</label>
+    <select id="map-layer-select" class="map-controls__map-layer main-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}">
       {% for layer in map_layers %}
         <option class="map-controls__map-layer-item main-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
           {{ layer.layer_title }}
@@ -9,7 +10,8 @@
     </select>
   </div>
   <div class="hds-text-input map-controls__mid-container">
-    <select class="map-controls__map-layer main-map" aria-label="{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}">
+    <label for="photo-layer-select" class="visually-hidden">{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}</label>
+    <select id="photo-layer-select" class="map-controls__map-layer main-map" aria-label="{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}">
       {% for layer in photo_layers %}
         <option class="map-controls__map-layer-item main-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
           {{ layer.layer_title }}
@@ -18,7 +20,8 @@
     </select>
   </div>
   <div class="hds-text-input map-controls__mid-container mobile">
-    <select class="map-controls__map-layer main-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Map layers'|t({}, {'context' : 'Map selectors'}) }}">
+    <label for="mobile-layer-select" class="visually-hidden">{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}</label>
+    <select id="mobile-layer-select" class="map-controls__map-layer main-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Map layers'|t({}, {'context' : 'Map selectors'}) }}">
       <option disabled>
         {{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}
       </option>
@@ -41,26 +44,26 @@
 
 <div class="map-controls__sidebar-container">
   <div class="map-controls__control">
-    <button class="map-controls__control-button" id="map-comparison-btn" role="button" aria-label={{ 'Map comparison button'|t({}, {'context' : 'Map selectors'}) }}>
+    <button class="map-controls__control-button" id="map-comparison-btn" aria-label="{{ 'Compare maps'|t({}, {'context': 'Map selectors'}) }}">
       {% include '@hdbt/misc/icon.twig' with {icon: 'map'} %}
       {{ 'Compare maps'|t({}, {'context': 'Map selectors'}) }}
     </button>
   </div>
 
   <div class="map-controls__control">
-    <button class="map-controls__control-button" id="zoom-in-btn" role="button" aria-label={{ 'Zoom in button'|t({}, {'context' : 'Map selectors'}) }}>
+    <button class="map-controls__control-button" id="zoom-in-btn" aria-label="{{ 'Zoom in'|t({}, {'context': 'Map selectors'}) }}">
       {% include '@hdbt/misc/icon.twig' with {icon: 'zoom-in', label: 'Zoom in'|t({}, {'context': 'Map selectors'}) } %}
     </button>
   </div>
 
   <div class="map-controls__control">
-    <button class="map-controls__control-button" id="zoom-out-btn" role="button" aria-label={{ 'Zoom in button'|t({}, {'context' : 'Map selectors'}) }}>
+    <button class="map-controls__control-button" id="zoom-out-btn" aria-label="{{ 'Zoom out'|t({}, {'context': 'Map selectors'}) }}">
       {% include '@hdbt/misc/icon.twig' with {icon: 'zoom-out', label: 'Zoom out'|t({}, {'context': 'Map selectors'}) } %}
     </button>
   </div>
 
   <div class="map-controls__control">
-    <button class="map-controls__control-button" id="locate-btn" role="button" aria-label={{ 'Locate me button'|t({}, {'context' : 'Map selectors'}) }}>
+    <button class="map-controls__control-button" id="locate-btn" aria-label="{{ 'Locate me'|t({}, {'context': 'Map selectors'}) }}">
       {% include '@hdbt/misc/icon.twig' with {icon: 'locate', label: 'Locate me'|t({}, {'context': 'Map selectors'}) } %}
     </button>
   </div>

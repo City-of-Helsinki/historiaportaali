@@ -100,7 +100,9 @@
               {% endif %}
               {# Link image to media entity page #}
               <div class="media--image__content__image">
-                <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">{{ drupal_image(image['#uri']) }}</a>
+                <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">
+                  {{ drupal_image(image['#uri'], 'orig_927w_free', {alt: image['#attributes']['alt']} ) }}
+                </a>
               </div>
               <div class="media--image__content__info">
                 {% if caption %}

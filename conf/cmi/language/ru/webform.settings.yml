@@ -28,6 +28,8 @@ settings:
   default_submission_access_denied_message: 'Войдите, чтобы получить доступ к этому отправлению.'
   default_limit_total_message: 'Больше никаких отправлений не разрешено.'
   default_limit_user_message: 'Больше никаких отправлений не разрешено.'
+  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
+  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
 element:
   default_more_title: Ещё
   default_section_title_tag: h2

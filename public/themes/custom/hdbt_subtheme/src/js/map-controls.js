@@ -3,7 +3,7 @@
   Drupal.behaviors.mapControls = {
     attach: function(context, settings) {
       let self = this;
-      
+
       L.Map.addInitHook(function () {
         if (this.options?.mapName == 'comparison-map') {
           self.bindLayerControls(this, 'comparison-map');
@@ -14,16 +14,38 @@
           this.removeControl(this.zoomControl);
         }
 
-        $('.map-controls__map-layer').select2({
-          minimumResultsForSearch: Infinity,
-          placeholder: function() {
-            $(this).data('placeholder');
-          },
-          allowClear: true
-        }).on('select2:clear', function (e) {
-          $(this).on('select2:opening.cancelOpen', function (e) {
-            e.preventDefault();
-            $(this).off('select2:opening.cancelOpen');
+        $('.map-controls__map-layer').each(function() {
+          const $select = $(this);
+          const ariaLabel = $select.attr('aria-label');
+
+          $select.select2({
+            minimumResultsForSearch: Infinity,
+            placeholder: function() {
+              return $(this).data('placeholder');
+            },
+            allowClear: true
+          });
+
+          // Target the specific selection container
+          const $selectionContainer = $select.next('.select2-container').find('.select2-selection__rendered');
+          $selectionContainer.attr({
+            'role': 'combobox',
+            'aria-label': ariaLabel,
+            'aria-haspopup': 'listbox',
+            'aria-expanded': 'false'
+          });
+
+          // Update ARIA attributes on open/close
+          $select.on('select2:open', function() {
+            $selectionContainer.attr('aria-expanded', 'true');
+          }).on('select2:close', function() {
+            $selectionContainer.attr('aria-expanded', 'false');
+          });
+
+          // Update ARIA attributes on selection
+          $select.on('select2:select', function(e) {
+            const selectedText = e.params.data.text;
+            $selectionContainer.attr('aria-label', `${ariaLabel}: ${selectedText}`);
           });
         });
 
@@ -63,7 +85,7 @@
 
     toggleLayerSelectorVisibility: function(mapName) {
       let $controlsContainer = $(`.map-controls__map-layer.${mapName}`);
-      
+
       if ($controlsContainer.is('.open')) {
         $controlsContainer.removeClass('open');
       } else {
@@ -73,7 +95,7 @@
 
     handleLayerSelection: function(lMap, selectedLayerTitle, mapApiEndpoints) {
       let self = this;
-      
+
       if (selectedLayerTitle == 'present') {
         self.removeOtherMapLayers(lMap, null);
         return;
@@ -119,7 +141,7 @@
       } else {
         layersToBeDeleted = allMapLayers.filter(([key, layer]) => layer.options.className !== newLayerTitle);
       }
-      
+
       if (layersToBeDeleted.length) {
         layersToBeDeleted.forEach(layer => layer[1].remove());
       }
@@ -168,15 +190,15 @@
           console.log('Geolocation is not supported by your browser');
         } else {
           self.showLoadingSpinner();
-          
+
           navigator.geolocation.getCurrentPosition((position) => {
             self.hideLoadingSpinner();
 
             const userLat = position.coords.latitude;
             const userLon = position.coords.longitude;
-            
+
             self.addUserLocationMarker(userLat, userLon, lMap);
-            
+
             lMap.panTo([userLat, userLon]);
             lMap.setZoom(15);
           }, (error) => {
@@ -200,7 +222,7 @@
       let userMarker = L.marker(userLatLng, {
         icon: userIcon
       });
-      
+
       userMarker.addTo(lMap);
     },
 

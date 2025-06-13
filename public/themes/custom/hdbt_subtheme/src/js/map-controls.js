@@ -4,7 +4,10 @@
     attach: function(context, settings) {
       let self = this;
 
+      console.log('TESTING !');
       L.Map.addInitHook(function () {
+        const map = this;
+
         if (this.options?.mapName == 'comparison-map') {
           self.bindLayerControls(this, 'comparison-map');
         } else {
@@ -56,6 +59,201 @@
             self.unBindLayerControls('comparison-map');
           } else {
             self.unBindLayerControls('main-map');
+          }
+        });
+
+        // Make markers keyboard focusable and handle navigation
+        map.on('layeradd', function(e) {
+          if (e.layer instanceof L.Marker) {
+            const markerElement = e.layer.getElement();
+            if (markerElement) {
+              markerElement.setAttribute('tabindex', '0');
+              markerElement.setAttribute('role', 'button');
+              markerElement.setAttribute('aria-label', e.layer.getPopup()?.getContent() || 'Map marker');
+
+              // Add focus event to center map on marker
+              markerElement.addEventListener('focus', function() {
+                const marker = e.layer;
+                if (marker) {
+                  // Check if marker is near the edge of the map
+                  const markerPoint = map.latLngToContainerPoint(marker.getLatLng());
+                  const mapSize = map.getSize();
+                  const edgeBuffer = 100; // pixels from edge
+
+                  if (markerPoint.x < edgeBuffer ||
+                      markerPoint.x > mapSize.x - edgeBuffer ||
+                      markerPoint.y < edgeBuffer ||
+                      markerPoint.y > mapSize.y - edgeBuffer) {
+                    // Center map on marker with padding
+                    map.setView(marker.getLatLng(), map.getZoom(), {
+                      animate: true,
+                      duration: 0.5,
+                      padding: [50, 50]
+                    });
+                  }
+                }
+              });
+
+              // Add keyboard event handler for opening popup
+              markerElement.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  e.layer.openPopup();
+                }
+              });
+            }
+          }
+        });
+
+        // Handle marker cluster keyboard interaction
+        map.on('layeradd', function(e) {
+          if (e.layer instanceof L.MarkerClusterGroup) {
+            const clusterGroup = e.layer;
+
+            // Set up mutation observer to watch for cluster elements
+            const observer = new MutationObserver(function(mutations) {
+              mutations.forEach(function(mutation) {
+                if (mutation.addedNodes) {
+                  mutation.addedNodes.forEach(function(node) {
+                    if (node.classList && node.classList.contains('marker-cluster')) {
+                      node.setAttribute('tabindex', '0');
+                      node.setAttribute('role', 'button');
+
+                      // Get the cluster count
+                      const count = node.querySelector('.marker-cluster-count')?.textContent || '0';
+                      node.setAttribute('aria-label', 'Cluster of ' + count + ' markers');
+
+                      // Add keyboard event handler for expanding cluster
+                      node.addEventListener('keydown', function(event) {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+
+                          // Get the cluster's position from the DOM element
+                          const rect = node.getBoundingClientRect();
+                          const mapRect = map.getContainer().getBoundingClientRect();
+                          const point = map.containerPointToLatLng([
+                            rect.left - mapRect.left + rect.width / 2,
+                            rect.top - mapRect.top + rect.height / 2
+                          ]);
+
+                          // Find the closest cluster
+                          const clusters = clusterGroup.getLayers();
+                          let closestCluster = null;
+                          let minDistance = Infinity;
+
+                          clusters.forEach(layer => {
+                            if (layer instanceof L.MarkerCluster) {
+                              const layerPoint = map.latLngToContainerPoint(layer.getLatLng());
+                              const nodePoint = map.latLngToContainerPoint(point);
+                              const distance = Math.sqrt(
+                                Math.pow(layerPoint.x - nodePoint.x, 2) +
+                                Math.pow(layerPoint.y - nodePoint.y, 2)
+                              );
+
+                              if (distance < minDistance) {
+                                minDistance = distance;
+                                closestCluster = layer;
+                              }
+                            }
+                          });
+
+                          if (closestCluster && minDistance < 100) {
+                            const markers = closestCluster.getAllChildMarkers();
+                            if (markers.length > 0) {
+                              const markerBounds = L.latLngBounds(markers.map(m => m.getLatLng()));
+                              map.fitBounds(markerBounds, {
+                                padding: [50, 50],
+                                animate: true,
+                                duration: 0.5
+                              });
+
+                              setTimeout(() => {
+                                const firstMarker = markers[0].getElement();
+                                if (firstMarker) {
+                                  firstMarker.focus();
+                                }
+                              }, 600);
+                            }
+                          }
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            });
+
+            // Start observing the map container for changes
+            observer.observe(map.getContainer(), {
+              childList: true,
+              subtree: true
+            });
+          }
+        });
+
+        // Handle popup opening
+        map.on('popupopen', function(e) {
+          const popup = e.popup;
+          const popupContent = popup.getElement();
+
+          if (popupContent) {
+            // Make popup content focusable
+            popupContent.setAttribute('tabindex', '0');
+
+            // Find the first interactive element in the popup
+            const firstInteractive = popupContent.querySelector('.content-card__link, a, button, [tabindex="0"]');
+            if (firstInteractive) {
+              firstInteractive.setAttribute('tabindex', '0');
+              firstInteractive.focus();
+            } else {
+              popupContent.focus();
+            }
+
+            // Center map on popup if it's near the edge
+            const popupPoint = map.latLngToContainerPoint(e.popup.getLatLng());
+            const mapSize = map.getSize();
+            const edgeBuffer = 100;
+
+            if (popupPoint.x < edgeBuffer ||
+                popupPoint.x > mapSize.x - edgeBuffer ||
+                popupPoint.y < edgeBuffer ||
+                popupPoint.y > mapSize.y - edgeBuffer) {
+              map.setView(e.popup.getLatLng(), map.getZoom(), {
+                animate: true,
+                duration: 0.5,
+                padding: [50, 50]
+              });
+            }
+          }
+        });
+
+        // Handle popup closing
+        map.on('popupclose', function(e) {
+          const marker = e.popup._source;
+          if (marker) {
+            const markerElement = marker.getElement();
+            if (markerElement) {
+              markerElement.focus();
+            }
+          }
+        });
+
+        // Handle keyboard navigation between markers
+        map.on('keydown', function(e) {
+          if (e.key === 'Tab') {
+            const markers = Array.from(map.getLayers())
+              .filter(layer => layer instanceof L.Marker)
+              .map(layer => layer.getElement())
+              .filter(el => el);
+
+            const currentIndex = markers.indexOf(document.activeElement);
+
+            if (currentIndex > -1) {
+              e.preventDefault();
+              const nextIndex = e.shiftKey ? currentIndex - 1 : currentIndex + 1;
+              const nextMarker = markers[nextIndex >= markers.length ? 0 : nextIndex < 0 ? markers.length - 1 : nextIndex];
+              nextMarker.focus();
+            }
           }
         });
       });

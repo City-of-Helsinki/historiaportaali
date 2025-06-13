@@ -33,6 +33,7 @@ dependencies:
     - content_lock
     - content_moderation
     - content_translation
+    - editoria11y
     - entity_usage
     - file
     - filter
@@ -206,6 +207,9 @@ permissions:
   - 'edit terms in phenomena'
   - 'edit terms in turning_points'
   - 'link to any page'
+  - 'manage editoria11y results'
+  - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
   - 'merge taxonomy terms'
   - 'revert all revisions'
   - 'revert announcement revisions'
@@ -265,6 +269,7 @@ permissions:
   - 'view any unpublished map_page content'
   - 'view any unpublished page content'
   - 'view article revisions'
+  - 'view editoria11y checker'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'

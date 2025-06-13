@@ -28,6 +28,9 @@
 {% embed "@hdbt/misc/container.twig" with {container_element: 'listings'} %}
   {% block container_content %}
     <div{{ attributes }}>
+      {% if hidden_block_title %}
+        <h2 class="visually-hidden">{{ hidden_block_title }}</h2>
+      {% endif %}
       {% block content %}
         {{ content }}
       {% endblock %}

@@ -1,0 +1,7 @@
+{% embed "@hdbt/misc/container.twig" with {container_element: 'cookie-settings'} %}
+  {% block container_content %}
+    {{ drupal_block('page_title_block', wrapper=false) }}
+    <p>{{ content|nl2br }}</p>
+    <div class="cookie-settings"></div>
+  {% endblock %}
+{% endembed %}

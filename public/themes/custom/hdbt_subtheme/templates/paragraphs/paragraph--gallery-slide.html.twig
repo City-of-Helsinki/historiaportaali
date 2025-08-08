@@ -56,7 +56,7 @@
 {% set language = language.getId() %}
 
 {% block paragraph %}
-  <li{{ attributes.addClass(classes).setAttribute('aria-hidden', 'true') }}>
+  <li{{ attributes.addClass(classes) }}>
     <div class="media--image__content">
       {% set alt = content.field_gallery_slide_media[0]['#media'].field_media_image.0.alt %}
       {% if original_aspect_ratio %}

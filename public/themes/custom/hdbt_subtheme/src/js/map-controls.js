@@ -68,7 +68,6 @@
             const markerElement = e.layer.getElement();
             if (markerElement) {
               markerElement.setAttribute('tabindex', '0');
-              markerElement.setAttribute('role', 'button');
               markerElement.setAttribute('aria-label', e.layer.getPopup()?.getContent() || 'Map marker');
 
               // Add focus event to center map on marker
@@ -117,7 +116,6 @@
                   mutation.addedNodes.forEach(function(node) {
                     if (node.classList && node.classList.contains('marker-cluster')) {
                       node.setAttribute('tabindex', '0');
-                      node.setAttribute('role', 'button');
 
                       // Get the cluster count
                       const count = node.querySelector('.marker-cluster-count')?.textContent || '0';

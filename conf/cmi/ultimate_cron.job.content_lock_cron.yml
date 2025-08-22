@@ -1,0 +1,17 @@
+uuid: fb4fdbbd-2336-42fd-bb03-d1c718e44408
+langcode: fi
+status: true
+dependencies:
+  module:
+    - content_lock
+title: 'Default cron handler'
+id: content_lock_cron
+weight: 0
+module: content_lock
+callback: content_lock_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

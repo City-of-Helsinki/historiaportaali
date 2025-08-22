@@ -4,19 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.contact_card.field_contact_description
-    - field.field.paragraph.contact_card.field_contact_image
     - field.field.paragraph.contact_card.field_contact_image_photographer
     - field.field.paragraph.contact_card.field_contact_name
-    - field.field.paragraph.contact_card.field_contact_social_media
     - field.field.paragraph.contact_card.field_contact_title
     - field.field.paragraph.contact_card.field_email
     - field.field.paragraph.contact_card.field_phone_number
     - paragraphs.paragraphs_type.contact_card
-    - responsive_image.styles.contact_card
   module:
-    - entity_reference_revisions
     - helfi_platform_config
-    - responsive_image
     - telephone
 _core:
   default_config_hash: X5x-5vSXj4FHXf2NNNyzzwVH7xlQUk6wGBYjejfb-iQ
@@ -31,17 +26,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_contact_image:
-    type: responsive_image
-    label: hidden
-    settings:
-      responsive_image_style: contact_card
-      image_link: ''
-      image_loading:
-        attribute: eager
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_contact_image_photographer:
     type: string
@@ -58,15 +42,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_contact_social_media:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_contact_title:
     type: string

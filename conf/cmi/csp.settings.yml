@@ -1,0 +1,52 @@
+_core:
+  default_config_hash: 68A3PDsSIoX2q7iFOa2lMdnYkgKgem4uh1_RBxcRVWU
+report-only:
+  enable: true
+  directives:
+    object-src:
+      base: none
+    script-src:
+      base: self
+      flags:
+        - report-sample
+    style-src:
+      base: self
+      flags:
+        - report-sample
+    webrtc: block
+    worker-src:
+      base: self
+    base-uri:
+      base: self
+    form-action:
+      base: self
+    frame-ancestors:
+      base: self
+  reporting:
+    plugin: none
+enforce:
+  enable: true
+  directives:
+    object-src:
+      base: none
+    script-src:
+      base: any
+      flags:
+        - unsafe-inline
+        - report-sample
+    style-src:
+      base: any
+      flags:
+        - unsafe-inline
+        - report-sample
+    webrtc: block
+    worker-src:
+      base: self
+    base-uri:
+      base: self
+    form-action:
+      base: self
+    frame-ancestors:
+      base: self
+  reporting:
+    plugin: none

@@ -32,7 +32,7 @@ report-only:
   reporting:
     plugin: none
 enforce:
-  enable: true
+  enable: false
   directives:
     object-src:
       base: none

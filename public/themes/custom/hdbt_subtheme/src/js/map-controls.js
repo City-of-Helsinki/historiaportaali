@@ -260,7 +260,6 @@
             const openPopup = document.querySelector('.leaflet-popup');
 
             if (openPopup) {
-              console.log('closing popup');
               e.preventDefault();
               map.closePopup();
             } else {

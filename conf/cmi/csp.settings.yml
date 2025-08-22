@@ -1,0 +1,65 @@
+_core:
+  default_config_hash: 68A3PDsSIoX2q7iFOa2lMdnYkgKgem4uh1_RBxcRVWU
+report-only:
+  enable: true
+  directives:
+    object-src:
+      base: none
+    script-src:
+      base: self
+      flags:
+        - report-sample
+    style-src:
+      base: self
+      flags:
+        - report-sample
+        - unsafe-inline
+    webrtc: block
+    worker-src:
+      base: self
+    base-uri:
+      base: self
+    form-action:
+      base: self
+    frame-ancestors:
+      base: self
+    script-src-elem:
+      base: self
+      flags:
+        - unsafe-inline
+      sources:
+        - 'https://webanalytics.digiaiiris.com'
+  reporting:
+    plugin: none
+enforce:
+  enable: false
+  directives:
+    object-src:
+      base: none
+    script-src:
+      base: any
+      flags:
+        - report-sample
+        - unsafe-inline
+    style-src:
+      base: any
+      flags:
+        - report-sample
+        - unsafe-inline
+    webrtc: block
+    worker-src:
+      base: self
+    base-uri:
+      base: self
+    form-action:
+      base: self
+    frame-ancestors:
+      base: self
+    script-src-elem:
+      base: self
+      flags:
+        - unsafe-inline
+      sources:
+        - 'https://webanalytics.digiaiiris.com'
+  reporting:
+    plugin: none

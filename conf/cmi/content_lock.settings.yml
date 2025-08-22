@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 6Ka3T1c-CIjEUO1Q64NXKksLthkMhj53a6zy4RJBtkc
-verbose: 1
+verbose: true
 types:
   content_moderation_state: {  }
   crop: {  }
@@ -19,7 +19,6 @@ types:
   user: {  }
   paragraph: {  }
 types_translation_lock: {  }
-types_js_lock: {  }
 form_op_lock:
   content_moderation_state:
     mode: 0
@@ -60,3 +59,4 @@ form_op_lock:
   paragraph:
     mode: 0
     values: {  }
+timeout: 7200

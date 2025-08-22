@@ -114,9 +114,6 @@
             "drupal/graphql": {
                 "Empty entity type error": "custom-patches/graphql_fix_empty_entity_type.patch"
             },
-            "drupal/leaflet": {
-                "Add entity id to marker options": "custom-patches/leaflet_add_entity_id_to_marker_options.patch"
-            },
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "custom-patches/HIS-303-matomo-digia-tracker-url.patch"
             },

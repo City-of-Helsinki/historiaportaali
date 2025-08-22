@@ -228,6 +228,22 @@ function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\Fo
 /**
  * Implements hook_preprocess_block().
  *
+ * Add a heading to fix semantics of the listing blocks
+ */
+function hdbt_subtheme_preprocess_block__views_block(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof Node && $node->hasField('field_listing_type')) {
+    $value = $node->field_listing_type->value;
+    if ($value) {
+      $variables['hidden_block_title'] = $node->field_listing_type->getFieldDefinition()
+        ->getSetting('allowed_values')[$value];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ *
  * Remove fallback content from message block so it doesn't get rendered when empty.
  */
 function hdbt_subtheme_preprocess_block__hdbt_messages(&$variables) {

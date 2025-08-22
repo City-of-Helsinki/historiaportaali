@@ -100,7 +100,8 @@
   {% if content.field_liftup_image.0 %}
     {% include '@hdbt/misc/koro.twig' with {koro: 'vibration', flip: true, color: '#FFE977'} %}
     <div class="main-image">
-      {{ drupal_image(content.field_liftup_image.0['#media']|file_uri, '2.4_1920w_800h') }}
+      {% set alt = content.field_liftup_image[0]['#media'].field_media_image.0.alt %}
+      {{ drupal_image(content.field_liftup_image.0['#media']|file_uri, '2.4_1920w_800h', {alt: alt}) }}
     </div>
   {% else %}
     {% include '@hdbt/misc/koro.twig' with { koro: 'vibration', color: '#fff' } %}

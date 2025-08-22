@@ -13,6 +13,7 @@ report-only:
       base: self
       flags:
         - report-sample
+        - unsafe-inline
     webrtc: block
     worker-src:
       base: self
@@ -22,6 +23,12 @@ report-only:
       base: self
     frame-ancestors:
       base: self
+    script-src-elem:
+      base: self
+      flags:
+        - unsafe-inline
+      sources:
+        - 'https://webanalytics.digiaiiris.com'
   reporting:
     plugin: none
 enforce:
@@ -32,13 +39,13 @@ enforce:
     script-src:
       base: any
       flags:
-        - unsafe-inline
         - report-sample
+        - unsafe-inline
     style-src:
       base: any
       flags:
-        - unsafe-inline
         - report-sample
+        - unsafe-inline
     webrtc: block
     worker-src:
       base: self
@@ -48,5 +55,11 @@ enforce:
       base: self
     frame-ancestors:
       base: self
+    script-src-elem:
+      base: self
+      flags:
+        - unsafe-inline
+      sources:
+        - 'https://webanalytics.digiaiiris.com'
   reporting:
     plugin: none

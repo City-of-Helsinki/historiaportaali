@@ -4,7 +4,6 @@
     attach: function(context, settings) {
       let self = this;
 
-      console.log('TESTING !');
       L.Map.addInitHook(function () {
         const map = this;
 
@@ -253,6 +252,42 @@
               nextMarker.focus();
             }
           }
+        });
+
+        const escapeHandler = function(e) {
+          if (e.key === 'Escape') {
+            // Check if there's an open popup first
+            const openPopup = document.querySelector('.leaflet-popup');
+
+            if (openPopup) {
+              console.log('closing popup');
+              e.preventDefault();
+              map.closePopup();
+            } else {
+              // Check if we're on a map element and exit the map
+              const mapContainer = map.getContainer();
+              const isOnMapElement = mapContainer.contains(document.activeElement);
+
+              if (isOnMapElement) {
+                e.preventDefault();
+                // Focus on next paragraph-content
+                const paragraphContent = document.querySelector('.paragraph-content');
+                if (paragraphContent) {
+                  if (paragraphContent.tabIndex === -1) {
+                    paragraphContent.tabIndex = 0;
+                  }
+                  paragraphContent.focus();
+                }
+              }
+            }
+          }
+        };
+
+        document.addEventListener('keydown', escapeHandler);
+
+        // Clean up event listener when map is unloaded
+        this.on('unload', function() {
+          document.removeEventListener('keydown', escapeHandler);
         });
       });
     },

@@ -100,7 +100,7 @@
 <article{{ attributes.addClass(classes) }}>
 
   <a href="{{ url }}" class="content-card__link" rel="bookmark">
-    <div class="content-card__image">
+    <div class="content-card__image" aria-hidden="true">
       {% if image.0 %}
         {{ image }}
       {% else %}

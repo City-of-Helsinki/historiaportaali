@@ -101,7 +101,7 @@
               {# Link image to media entity page #}
               <div class="media--image__content__image">
                 <a href="{{ path('entity.media.canonical', { 'media': media.id }) }}">
-                  {{ drupal_image(image['#uri'], 'orig_927w_free', {alt: image['#attributes']['alt']} ) }}
+                  {{ drupal_image(image['#uri'], 'orig_927w_free', {alt: media.label} ) }}
                 </a>
               </div>
               <div class="media--image__content__info">
@@ -145,7 +145,7 @@
           </div>
           <div class="media--image__content__info">
             {% if caption %}
-              <div class="media--image__content__caption">
+              <div class="media--image__content__caption" aria-hidden="true">
                 {{ caption }}
               </div>
             {% endif %}

@@ -6,3 +6,7 @@ msgstr "Gå till den interaktiva kartan"
 
 msgid "Open in finna.fi search service"
 msgstr "Öppna i finna.fi söktjänst"
+
+msgctxt "Button"
+msgid "Open in Finna"
+msgstr "Öppna i Finna"

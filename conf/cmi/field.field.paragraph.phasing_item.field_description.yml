@@ -14,7 +14,7 @@ id: paragraph.phasing_item.field_description
 field_name: field_description
 entity_type: paragraph
 bundle: phasing_item
-label: Kuvaus
+label: Description
 description: ''
 required: false
 translatable: true

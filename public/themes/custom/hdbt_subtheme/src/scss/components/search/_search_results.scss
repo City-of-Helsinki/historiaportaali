@@ -109,6 +109,8 @@
     background: $color-white;
     flex: 1 1 100%;
     margin-bottom: $spacing-double;
+    hyphens: auto;
+    overflow: hidden;
 
     @include breakpoint($breakpoint-s) {
       flex: 0 1 46%;

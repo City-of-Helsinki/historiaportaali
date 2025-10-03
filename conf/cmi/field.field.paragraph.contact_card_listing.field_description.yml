@@ -4,26 +4,23 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
+    - filter.format.minimal
     - paragraphs.paragraphs_type.contact_card_listing
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - minimal
 _core:
   default_config_hash: 54apkr-SUH-gN-iSmegZXnw0vux_R9kbXcZ30h0m3r4
 id: paragraph.contact_card_listing.field_description
 field_name: field_description
 entity_type: paragraph
 bundle: contact_card_listing
-label: Description
+label: Kuvaus
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - minimal
 field_type: text_long

@@ -5,52 +5,6 @@ on:
 name: Update config
 jobs:
   update-config:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/city-of-helsinki/drupal-php-docker:8.2-alpine
-
-    services:
-      db:
-        image: mariadb
-        env:
-          MYSQL_USER: drupal
-          MYSQL_PASSWORD: drupal
-          MYSQL_DATABASE: drupal
-          MYSQL_ROOT_PASSWORD: drupal
-        ports:
-          - 3306:3306
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-
-      - name: Download latest dump
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh run download -n latest.sql
-
-      - name: Build project
-        run: |
-          composer install --no-interaction
-          $(drush sql:connect) < latest.sql
-          drush cim -y && drush updb -y && drush cr
-          composer update drupal/helfi_* drupal/hdbt* -W --no-interaction
-          drush cr && drush updb -y && drush cex -y
-          # Update platform
-          drush helfi:tools:update-platform
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          committer: GitHub <noreply@github.com>
-          author: actions-bot <actions-bot@users.noreply.github.com>
-          commit-message: Update configuration
-          title: Automatic update
-          labels: auto-update
-          body: |
-            - Updated active configuration.
-            - Updated platform
-
-          branch: update-configuration
+    uses: city-of-helsinki/drupal-gh-actions/.github/workflows/update-config.yml@main
+    secrets:
+      automatic_update_token: ${{ secrets.AUTOMATIC_UPDATE_TOKEN }}

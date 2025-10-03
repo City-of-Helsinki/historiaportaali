@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_description
+    - filter.format.minimal
     - paragraphs.paragraphs_type.accordion
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - minimal
 _core:
   default_config_hash: kOxXsJuDVcymIAy7jnni6GM5q5SPGSrxwmWJiJ4Sr7c
 id: paragraph.accordion.field_accordion_description
@@ -25,5 +21,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - minimal
 field_type: text_long

@@ -117,9 +117,6 @@
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "custom-patches/HIS-303-matomo-digia-tracker-url.patch"
             },
-            "drupal/search_api": {
-                "Properties via entity reference fields are not translated (https://www.drupal.org/project/search_api/issues/3039139#comment-13016070)": "https://www.drupal.org/files/issues/2019-03-11/3039139-3.patch"
-            },
             "drupal/ultimate_cron": {
                 "Deprecated Creation of dynamic property (https://www.drupal.org/node/3351276)": "https://www.drupal.org/files/issues/2023-04-03/3351276-4.patch"
             },

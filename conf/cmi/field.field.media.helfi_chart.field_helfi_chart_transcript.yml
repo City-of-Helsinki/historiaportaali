@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_helfi_chart_transcript
+    - filter.format.minimal
     - media.type.helfi_chart
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - minimal
 id: media.helfi_chart.field_helfi_chart_transcript
 field_name: field_helfi_chart_transcript
 entity_type: media
@@ -23,5 +19,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - minimal
 field_type: text_long

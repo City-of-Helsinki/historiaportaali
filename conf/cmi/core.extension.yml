@@ -60,7 +60,6 @@ module:
   graphql: 0
   graphql_core: 0
   graphql_search_api: 0
-  hal: 0
   hdbt_admin_tools: 0
   hdbt_cookie_banner: 0
   health_check: 0

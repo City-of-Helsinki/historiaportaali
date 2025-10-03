@@ -4,7 +4,9 @@ import SortLink from './SortLink';
 const SortLinks = ({ currentSort, onSortChange, sortOrderAscending }) => {
   return (
     <div className="search-header__sort-container">
-      <h4>{window.Drupal ? window.Drupal.t("Sort:", {}, {context: "Search"}) : "Sort"}</h4>
+      <div className="sort-label">
+        {window.Drupal ? window.Drupal.t("Sort:", {}, {context: "Search"}) : "Sort"}
+      </div>
       <ul className="sort-options">
         <SortLink
           title={window.Drupal ? window.Drupal.t("Relevance", {}, {context: "Search"}) : "Relevance"}

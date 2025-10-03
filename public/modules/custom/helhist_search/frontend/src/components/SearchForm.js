@@ -96,7 +96,9 @@ const SearchForm = ({
               )}
             </div>
 
-            <h4>{window.Drupal ? window.Drupal.t("Filter results", {}, {context: "Search"}) : "Filter results"}</h4>
+            <div className="form-label">
+              {window.Drupal ? window.Drupal.t("Filter results", {}, {context: "Search"}) : "Filter results"}
+            </div>
 
             <div className="form-item">
               <EraSelector

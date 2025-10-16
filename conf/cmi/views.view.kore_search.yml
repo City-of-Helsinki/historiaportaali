@@ -229,7 +229,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
-                max: '2024'
+                max: '2025'
                 step: '1'
                 animate: '0'
                 animate_ms: '0'
@@ -242,7 +242,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 min: '1550'
-                max: '2024'
+                max: '2025'
                 step: '1'
                 animate: '0'
                 animate_ms: '0'
@@ -548,7 +548,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '2024'
+            value: '2025'
           group: 3
           exposed: true
           expose:
@@ -573,7 +573,7 @@ display:
               super_administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
-            placeholder: '2024'
+            placeholder: '2025'
           is_grouped: false
           group_info:
             label: ''

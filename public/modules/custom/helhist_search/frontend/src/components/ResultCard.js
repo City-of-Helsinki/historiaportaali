@@ -28,7 +28,7 @@ const ResultCard = ({
         <a href={url} className="content-card__link" rel="bookmark">
           <div className="content-card__image">
             {imageUrl && (
-              <img src={imageUrl} />
+              <img src={imageUrl} alt="" />
             )}
             {!imageUrl && (
               <PlaceholderImage />

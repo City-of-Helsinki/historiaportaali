@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
+    - filter.format.minimal
     - paragraphs.paragraphs_type.phasing_item
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - minimal
 _core:
   default_config_hash: R3xpZBQW6GkrWie9LRvO70PI9g5nYvm4VLVJ0ZFNmDY
 id: paragraph.phasing_item.field_description
@@ -25,5 +21,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - minimal
 field_type: text_long

@@ -20,11 +20,11 @@ dependencies:
     - field.field.media.image.field_photographer
     - field.field.media.image.field_start_year
     - field.field.media.image.field_transcript
-    - image.style.large
     - media.type.image
+    - responsive_image.styles.image_orig
   module:
-    - image
     - leaflet
+    - responsive_image
     - text
 id: media.image.default
 targetEntityType: media
@@ -99,11 +99,28 @@ content:
       hide_empty_map: true
       disable_wheel: false
       gesture_handling: false
+      fitbounds_options: '{"padding":[0,0]}'
       reset_map:
         control: false
         position: topright
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      locate:
+        control: false
+        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
+        automatic: false
+      leaflet_tooltip:
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
       popup: false
       popup_content: ''
+      leaflet_popup:
+        control: ''
+        content: ''
+        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
+        value: ''
+        view_mode: full
       map_position:
         force: false
         center:
@@ -113,6 +130,7 @@ content:
         minZoom: 1
         maxZoom: 18
         zoomFiner: 0
+      weight: ''
       icon:
         iconType: marker
         iconUrl: ''
@@ -144,9 +162,12 @@ content:
         control: false
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      feature_properties:
+        values: ''
       geocoder:
         control: false
         settings:
+          popup: false
           position: topright
           input_size: 25
           providers:
@@ -156,9 +177,9 @@ content:
           min_terms: 4
           delay: 800
           zoom: 16
-          popup: false
           options: ''
-      weight: ''
+      map_lazy_load:
+        lazy_load: false
     third_party_settings: {  }
     weight: 5
     region: content
@@ -186,11 +207,11 @@ content:
     weight: 15
     region: content
   field_media_image:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: image_orig
       image_link: ''
-      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }

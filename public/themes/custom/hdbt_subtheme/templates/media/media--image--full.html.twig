@@ -79,7 +79,7 @@
             {% if content.field_media_image|render %}
               <div class="{{ media.bundle()|clean_class }}__media_image">
               {% if finna_url is defined %}
-                <a href="{{ finna_url }}" target="_blank" title="{{ 'Open image to new window to Finna.fi'|t }}">
+                <a href="{{ finna_url }}" title="{{ 'Open in finna.fi search service'|t }}">
                   {{ content.field_media_image }}
                 </a>
               {% else %}
@@ -99,7 +99,7 @@
           <div class="{{ right_column_classes|join(' ') }}">
             {% if content.field_geolocation|render %}
               <div class="{{ media.bundle()|clean_class }}__geolocation">
-                <a href="/{{ media.langcode.0.value }}/kartta?id={{ media.id() }}">
+                <a href="/{{ media.langcode.0.value }}/kartta?id={{ media.id() }}" aria-label="{{ 'Show on map'|t({}, {'context': 'Content'}) }}">
                   {{ content.field_geolocation }}
                 </a>
               </div>
@@ -176,9 +176,9 @@
                 <h3 class="label">{{ content.field_finna_id['#title'] }}</h3>
                 {% include '@hdbt/navigation/link-button.html.twig' with {
                   type: 'primary',
-                  label: 'Open in new window'|t({}, {'context': 'Button'}),
+                  label: 'Open in Finna'|t({}, {'context': 'Button'}),
                   url: finna_url,
-                  open_in_a_new_window: true,
+                  open_in_a_new_window: false,
                 } %}
               </div>
             {% endif %}

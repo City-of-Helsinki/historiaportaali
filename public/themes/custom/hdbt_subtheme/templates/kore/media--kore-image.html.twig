@@ -38,6 +38,6 @@
     <p>{{ photographer }}</p>
   {% endif %}
   {% if finna_link %}
-    {{ link(finna_link, finna_link, create_attribute({'target': 'blank'})) }}
+    {{ link('Open in finna.fi search service'|t, finna_link) }}
   {% endif %}
 </div>

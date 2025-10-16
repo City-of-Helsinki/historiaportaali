@@ -36,6 +36,7 @@ display:
           separator: ', '
         count:
           format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50WzJdINC80LXRgdGC
+          label: Used
         changed:
           label: Изменение
           separator: ', '
@@ -50,5 +51,10 @@ display:
         type:
           expose:
             label: Тип
+      title: 'Paragraphs library'
+      empty:
+        area_text_custom:
+          content: 'No library items available.'
   page_1:
     display_title: Страница
+label: 'Paragraphs library'

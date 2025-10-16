@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+
+msgid "Go to interactive map"
+msgstr "Siirry interaktiiviselle kartalle"
+
+msgid "Open in finna.fi search service"
+msgstr "Avaa finna.fi hakupalvelussa"
+
+msgctxt "Button"
+msgid "Open in Finna"
+msgstr "Avaa Finnassa"

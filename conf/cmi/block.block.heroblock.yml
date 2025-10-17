@@ -10,7 +10,7 @@ dependencies:
 id: heroblock
 theme: hdbt_subtheme
 region: before_content
-weight: 3
+weight: -13
 provider: helfi_base_content
 plugin: hero_block
 settings:

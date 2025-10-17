@@ -70,3 +70,13 @@ gallery:
   dependencies:
     - hdbt_subtheme/splide
     - hdbt_subtheme/tiny-slider
+
+react-search-app:
+  version: 1.x
+  js:
+    dist/js/react-search.min.js: {}
+  css:
+    theme:
+      dist/css/styles.min.css: {}
+  dependencies:
+    - core/drupal

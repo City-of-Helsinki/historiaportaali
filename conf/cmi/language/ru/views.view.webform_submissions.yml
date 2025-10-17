@@ -1,3 +1,4 @@
+label: 'Отправленные формы'
 display:
   default:
     display_title: Основной
@@ -161,4 +162,3 @@ display:
         in_draft:
           expose:
             label: Черновик
-label: 'Отправленные формы'

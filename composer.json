@@ -13,8 +13,7 @@
         "drupal/blocache": "^2.0",
         "drupal/context": "^5.0@RC",
         "drupal/context_entity_field": "dev-8.x-1.x",
-        "drupal/core": "^10.1",
-        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-composer-scaffold": "^10|^11",
         "drupal/facets": "^2.0.x-dev@dev",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
@@ -49,9 +48,9 @@
         "drupal/views_menu_children_filter": "^1.0@RC",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
-        "drush/drush": "^13",
         "geocoder-php/nominatim-provider": "^5.5",
         "jieter/leaflet.sync": "^0.2",
+        "mglaman/composer-drupal-lenient": "*",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "^2.0"
@@ -60,7 +59,7 @@
         "dg/bypass-finals": "^1.5",
         "dmore/chrome-mink-driver": "^2.8",
         "donatj/mock-webserver": "^2.4",
-        "drupal/core-dev": "^10",
+        "drupal/core-dev": "^10|^11",
         "drupal/devel": "^5.3",
         "jangregor/phpstan-prophecy": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.1",
@@ -71,7 +70,8 @@
     },
     "config": {
         "audit": {
-            "abandoned": "report"
+            "abandoned": "report",
+            "ignore": ["GHSA-mg8j-w93w-xjgc"]
         },
         "optimize-autoloader": true,
         "sort-packages": true,
@@ -82,9 +82,10 @@
             "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true,
             "tbachert/spi": false,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "phpstan/extension-installer": true,
+            "mglaman/composer-drupal-lenient": true
         }
     },
     "extra": {
@@ -163,6 +164,9 @@
         },
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/big_pipe_sessionless"]
         }
     },
     "autoload-dev": {

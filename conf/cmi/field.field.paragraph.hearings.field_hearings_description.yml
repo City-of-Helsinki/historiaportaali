@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.hearings
   module:
     - text
+_core:
+  default_config_hash: 56e6Pwi1wCEdu9arPfBg6OxO4o3cik66eTrRVCF2lF4
 id: paragraph.hearings.field_hearings_description
 field_name: field_hearings_description
 entity_type: paragraph

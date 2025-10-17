@@ -8,6 +8,8 @@ dependencies:
     - media.type.helfi_chart
   module:
     - text
+_core:
+  default_config_hash: GBYHIvkMkuWDnmN7Og4ob53exglfCKTBmLqTKkMExLM
 id: media.helfi_chart.field_helfi_chart_transcript
 field_name: field_helfi_chart_transcript
 entity_type: media

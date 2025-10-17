@@ -1,3 +1,4 @@
+label: 'Rapport över trasiga länkar'
 display:
   default:
     display_title: Förvald
@@ -75,4 +76,3 @@ display:
       menu:
         title: 'Trasiga länkar'
         description: 'Visar en lista av trasiga länkar i innehåll.'
-label: 'Rapport över trasiga länkar'

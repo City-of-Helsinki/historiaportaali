@@ -13,7 +13,7 @@ display:
         severity:
           label: Важность
         type:
-          label: Тип
+          label: Type
         timestamp:
           label: Дата
         message:
@@ -49,7 +49,7 @@ display:
       filters:
         type:
           expose:
-            label: Тип
+            label: Type
         severity:
           expose:
             label: Важность

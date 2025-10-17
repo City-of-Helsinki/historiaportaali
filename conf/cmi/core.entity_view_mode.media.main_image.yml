@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: m9McQ-U6MDdkdO0MNdEUNck4HEt3-aHqYYdRRhxWAtU
 id: media.main_image
 label: 'Main Image'
 description: ''

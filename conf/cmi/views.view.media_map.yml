@@ -381,8 +381,6 @@ display:
           data_source: field_geolocation
           entity_source: __base_table
           name_field: ''
-          description_field: '#rendered_entity_ajax'
-          view_mode: map_item
           leaflet_map: esri-world_topo_map
           height: '70'
           height_unit: vh
@@ -433,6 +431,7 @@ display:
           geocoder:
             control: false
             settings:
+              popup: false
               position: topright
               input_size: 25
               providers:
@@ -442,8 +441,9 @@ display:
               min_terms: 4
               delay: 800
               zoom: 16
-              popup: false
               options: ''
+          description_field: '#rendered_entity_ajax'
+          view_mode: map_item
           fullscreen_control: false
       row:
         type: 'entity:media'

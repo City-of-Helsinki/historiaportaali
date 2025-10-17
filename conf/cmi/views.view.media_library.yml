@@ -142,8 +142,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: Next
+            previous: Previous
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -167,7 +167,7 @@ display:
         options:
           perm: 'access media overview'
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
         area_text_custom:
@@ -269,11 +269,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items:
-              -
+              1:
                 title: Published
                 operator: '='
                 value: '1'
-              -
+              2:
                 title: Unpublished
                 operator: '='
                 value: '0'
@@ -475,35 +475,14 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.hel_map.default'
-        - 'config:core.entity_view_display.media.hel_map.media_library'
-        - 'config:core.entity_view_display.media.helfi_chart.default'
-        - 'config:core.entity_view_display.media.helfi_chart.media_library'
-        - 'config:core.entity_view_display.media.image.content_card'
-        - 'config:core.entity_view_display.media.image.content_listing'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.hero'
-        - 'config:core.entity_view_display.media.image.image'
-        - 'config:core.entity_view_display.media.image.list_of_links'
-        - 'config:core.entity_view_display.media.image.main_image'
-        - 'config:core.entity_view_display.media.image.map_item'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.search_index'
-        - 'config:core.entity_view_display.media.kore_image.default'
-        - 'config:core.entity_view_display.media.kore_image.media_library'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
-        - 'config:core.entity_view_display.media.remote_video.search_index'
+      tags: {  }
   page:
     id: page
     display_title: Page
@@ -800,29 +779,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.hel_map.default'
-        - 'config:core.entity_view_display.media.hel_map.media_library'
-        - 'config:core.entity_view_display.media.helfi_chart.default'
-        - 'config:core.entity_view_display.media.helfi_chart.media_library'
-        - 'config:core.entity_view_display.media.image.content_card'
-        - 'config:core.entity_view_display.media.image.content_listing'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.hero'
-        - 'config:core.entity_view_display.media.image.image'
-        - 'config:core.entity_view_display.media.image.list_of_links'
-        - 'config:core.entity_view_display.media.image.main_image'
-        - 'config:core.entity_view_display.media.image.map_item'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.search_index'
-        - 'config:core.entity_view_display.media.kore_image.default'
-        - 'config:core.entity_view_display.media.kore_image.media_library'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
-        - 'config:core.entity_view_display.media.remote_video.search_index'
+      tags: {  }
   widget:
     id: widget
     display_title: Widget
@@ -1124,10 +1081,10 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
-            first: '« First'
-            last: 'Last »'
+            next: Next
+            previous: Previous
+            first: First
+            last: Last
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -1347,29 +1304,7 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.hel_map.default'
-        - 'config:core.entity_view_display.media.hel_map.media_library'
-        - 'config:core.entity_view_display.media.helfi_chart.default'
-        - 'config:core.entity_view_display.media.helfi_chart.media_library'
-        - 'config:core.entity_view_display.media.image.content_card'
-        - 'config:core.entity_view_display.media.image.content_listing'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.hero'
-        - 'config:core.entity_view_display.media.image.image'
-        - 'config:core.entity_view_display.media.image.list_of_links'
-        - 'config:core.entity_view_display.media.image.main_image'
-        - 'config:core.entity_view_display.media.image.map_item'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.search_index'
-        - 'config:core.entity_view_display.media.kore_image.default'
-        - 'config:core.entity_view_display.media.kore_image.media_library'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
-        - 'config:core.entity_view_display.media.remote_video.search_index'
+      tags: {  }
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'

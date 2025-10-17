@@ -49,7 +49,7 @@
         "drupal/views_menu_children_filter": "^1.0@RC",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
-        "drush/drush": "^12",
+        "drush/drush": "^13",
         "geocoder-php/nominatim-provider": "^5.5",
         "jieter/leaflet.sync": "^0.2",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",

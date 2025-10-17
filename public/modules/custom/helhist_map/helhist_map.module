@@ -135,8 +135,6 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
  * @param string $select_field
  */
 function _get_active_terms($taxonomy_field, $select_field) {
-
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $term_list = [];
 
   // Find taxonomy terms that link to node type content with a geolocation.

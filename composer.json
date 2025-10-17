@@ -74,6 +74,9 @@
         "drupal/drupal": "*"
     },
     "config": {
+        "audit": {
+            "abandoned": "report"
+        },
         "optimize-autoloader": true,
         "sort-packages": true,
         "allow-plugins": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c105d8c5c1728e73b3d6224f375cc457",
+    "content-hash": "00e4b59e56365bfb0bbddc491f086633",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3218,7 +3218,7 @@
                     "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
-                    "name": "EclipseGc",
+                    "name": "eclipsegc",
                     "homepage": "https://www.drupal.org/user/61203"
                 },
                 {

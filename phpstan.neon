@@ -1,5 +1,14 @@
 parameters:
-  treatPhpDocTypesAsCertain: false
+  fileExtensions:
+      - php
+      - module
+      - install
+      - theme
+  paths:
+    - ./public/modules/custom/helhist_tokens
   excludePaths:
-      - *Test.php
-      - *TestBase.php
+    - vendor
+    - */node_modules/*
+  level: 3
+  checkMissingIterableValueType: false
+  treatPhpDocTypesAsCertain: false

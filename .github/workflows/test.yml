@@ -10,4 +10,4 @@ jobs:
       sonarcloud_token: ${{ secrets.SONAR_TOKEN }}
     with:
       check_config_language: true
-      check_config_language_ignore_files: "webforms.webform.*,views.view.*"
+      check_config_language_ignore_files: "webform.webform.*,views.view.*"

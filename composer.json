@@ -160,6 +160,9 @@
             ],
             "replace": false,
             "ignore-duplicates": true
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
         }
     },
     "autoload-dev": {

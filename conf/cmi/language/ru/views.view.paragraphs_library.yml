@@ -1,3 +1,4 @@
+label: 'Paragraphs library'
 display:
   default:
     display_title: Основной
@@ -23,7 +24,7 @@ display:
           label: Метка
           separator: ', '
         type:
-          label: Тип
+          label: Type
           separator: ', '
         paragraphs__target_id:
           label: Параграфы
@@ -50,11 +51,10 @@ display:
             label: Метка
         type:
           expose:
-            label: Тип
+            label: Type
       title: 'Paragraphs library'
       empty:
         area_text_custom:
           content: 'No library items available.'
   page_1:
     display_title: Страница
-label: 'Paragraphs library'

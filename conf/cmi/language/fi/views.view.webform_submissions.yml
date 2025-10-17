@@ -1,6 +1,7 @@
+label: Verkkolomakelähetykset
 display:
   default:
-    display_title: Isäntä
+    display_title: Oletus
     display_options:
       exposed_form:
         options:
@@ -12,10 +13,10 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
-            first: '« Ensimmäinen'
-            last: 'Viimeinen »'
+            previous: Edellinen
+            next: Seuraava
+            first: Ensimmäinen
+            last: Viimeinen
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
@@ -152,4 +153,3 @@ display:
         locked:
           expose:
             label: Lukittu
-label: Verkkolomakelähetykset

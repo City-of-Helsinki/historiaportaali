@@ -13,7 +13,7 @@ _core:
   default_config_hash: CliaTgzCQcvNF9ot3u_EbHnydymXh8bvNgNFlSffj9s
 id: survey_editor
 label: 'Survey editor'
-weight: -7
+weight: 8
 is_admin: null
 permissions:
   - 'create survey content'

@@ -13,6 +13,8 @@ dependencies:
   enforced:
     module:
       - linkit
+_core:
+  default_config_hash: gpIk2Gvwdo4l2nyLq5n_mobrJZYwUfweVy7MOidu7aM
 id: paragraph.list_of_links_item.default
 targetEntityType: paragraph
 bundle: list_of_links_item

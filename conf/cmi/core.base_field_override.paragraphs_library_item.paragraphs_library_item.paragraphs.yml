@@ -22,12 +22,12 @@ dependencies:
     module:
       - helfi_base_content
 _core:
-  default_config_hash: _Nbhr4JLQXcrcmDFzHXgntvTpv2ZLX_zza-h7gjrYws
+  default_config_hash: fuWt-DilpY06q_b2CMeUfYLEKRH1rVprThQB_IJ8Opk
 id: paragraphs_library_item.paragraphs_library_item.paragraphs
 field_name: paragraphs
 entity_type: paragraphs_library_item
 bundle: paragraphs_library_item
-label: Lohkot
+label: Paragraphs
 description: ''
 required: true
 translatable: true
@@ -39,6 +39,7 @@ settings:
     target_bundles:
       accordion: accordion
       banner: banner
+      chart: chart
       columns: columns
       contact_card_listing: contact_card_listing
       content_cards: content_cards
@@ -48,7 +49,6 @@ settings:
       map: map
       sidebar_text: sidebar_text
       text: text
-      chart: chart
     negate: 0
     target_bundles_drag_drop:
       accordion:

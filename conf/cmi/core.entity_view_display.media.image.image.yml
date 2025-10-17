@@ -25,6 +25,8 @@ dependencies:
     - responsive_image.styles.image_fixed
   module:
     - responsive_image
+_core:
+  default_config_hash: GWywnVFR6qXEI67rhg-mzn27BUF4oKJUWGI6hmwLMEg
 id: media.image.image
 targetEntityType: media
 bundle: image

@@ -12,14 +12,14 @@ dependencies:
     config:
       - paragraphs.paragraphs_type.accordion_item
 _core:
-  default_config_hash: Nx_3yq3vNPc667kG9nez6rTv_w54aS3h3rnbAmt7kZ4
+  default_config_hash: DIPN5IjxuWWEaszkXEKoeuRku0GzfznxoWUemxF-7EQ
 id: paragraph.accordion.field_accordion_items
 field_name: field_accordion_items
 entity_type: paragraph
 bundle: accordion
-label: Sisältö
+label: Items
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

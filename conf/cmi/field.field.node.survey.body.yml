@@ -9,7 +9,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: Xb4eSRbowaisX2qbRnKXbJKAH74H8t2-NtJaJ0Kz7hk
+  default_config_hash: b0mXl8TINgWLn5XgnqShu90a4YKPYoiv8cKuu6ybhAU
 id: node.survey.body
 field_name: body
 entity_type: node

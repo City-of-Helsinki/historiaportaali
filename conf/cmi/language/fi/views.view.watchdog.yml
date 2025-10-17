@@ -26,15 +26,15 @@ display:
       pager:
         options:
           tags:
-            next: ››
-            previous: ‹‹
+            next: Seuraava
+            previous: Edellinen
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
             offset_label: Offset
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Suodata
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
           sort_asc_label: Nousevasti

@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - media
+_core:
+  default_config_hash: TFCN5mPRa-KucnPSitp_Q9YBEVittmV1k3IB-cdhq6I
 id: media.field_helfi_chart_url
 field_name: field_helfi_chart_url
 entity_type: media

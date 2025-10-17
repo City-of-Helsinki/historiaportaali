@@ -8,6 +8,8 @@ dependencies:
     - media.type.remote_video
   module:
     - media
+_core:
+  default_config_hash: ywWEZZCy12l3zdRvU4FRTAPVuRpImwJVixaPwpHD3PY
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
@@ -15,33 +17,20 @@ mode: default
 content:
   field_media_oembed_video:
     type: oembed
-    label: hidden
+    label: visually_hidden
     settings:
       max_width: 1264
       max_height: 714
       loading:
         attribute: eager
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_video_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  name:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   created: true
+  field_video_description: true
   langcode: true
+  name: true
   search_api_excerpt: true
   thumbnail: true
   uid: true

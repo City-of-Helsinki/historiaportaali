@@ -9,11 +9,13 @@ dependencies:
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: lv2H_hUMORbgdrszFQQrmuJdA5CnPUP4n5DlPakGTvA
 id: paragraph.columns.field_columns_left_column
 field_name: field_columns_left_column
 entity_type: paragraph
 bundle: columns
-label: 'Vasen palsta'
+label: 'Left column'
 description: ''
 required: true
 translatable: false
@@ -23,8 +25,8 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      image: image
       text: text
+      image: image
     negate: 0
     target_bundles_drag_drop:
       image:

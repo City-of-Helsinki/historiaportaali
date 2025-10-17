@@ -34,12 +34,12 @@ display:
         is_custom:
           expose:
             label: 'Käyttäjän luoma'
-        status:
+        enabled:
           expose:
-            label: Julkaistu
+            label: Käytössä
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Suodata
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
           sort_asc_label: Nousevasti
@@ -66,14 +66,14 @@ display:
         is_custom:
           label: 'Käyttäjän luoma'
           separator: ', '
-        status:
-          label: Julkaistu
+        enabled:
+          label: Käytössä
           separator: ', '
       empty:
         area_text_custom:
           content: 'Ei ole vielä uudelleenohjaksia.'
       title: Uudelleenohjaukset
-    display_title: Isäntä
+    display_title: Oletus
   page_1:
     display_title: Sivu
     display_options:

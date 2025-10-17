@@ -106,9 +106,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/colorbox": {
-                "Add support for remote video media (https://www.drupal.org/project/colorbox/issues/3021913#comment-14190141)": "https://www.drupal.org/files/issues/2021-08-13/add-document-ready-to-behavior.3021913-28.patch"
-            },
             "drupal/core": {
                 "Wrong language field labels after drupal_rebuild()" : "https://www.drupal.org/files/issues/2021-12-01/3221375-27-workaround.patch"
             },
@@ -162,8 +159,7 @@
             "include": [
                 "public/modules/custom/*/composer.json",
                 "public/profiles/custom/*/composer.json",
-                "public/themes/custom/*/composer.json",
-                "public/modules/contrib/colorbox/composer.json"
+                "public/themes/custom/*/composer.json"
             ],
             "replace": false,
             "ignore-duplicates": true
@@ -206,18 +202,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "jackmoore/colorbox",
-                "version": "1.6.4",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
-                    "type": "zip"
-                }
-            }
         },
         {
             "type": "package",

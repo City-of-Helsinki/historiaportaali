@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_map;
 
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\node\Entity\Node;
+use Drupal\Core\Language\LanguageManagerInterface;
 
 /**
  * Provides a service for map functionalities.
@@ -19,13 +20,37 @@ class MapService {
   protected $entityTypeManager;
 
   /**
+   * The language manager.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $languageManager;
+
+  /**
+   * The entity repository.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
+
+  /**
    * Constructs a new MapService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(
+    EntityTypeManagerInterface $entity_type_manager,
+    LanguageManagerInterface $language_manager,
+    EntityRepositoryInterface $entity_repository
+  ) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->languageManager = $language_manager;
+    $this->entityRepository = $entity_repository;
   }
 
   /**
@@ -45,10 +70,10 @@ class MapService {
       return $layers;
     }
 
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $language = $this->languageManager->getCurrentLanguage()->getId();
 
     foreach ($map_layer_nodes as $node) {
-      $node = \Drupal::service('entity.repository')->getTranslationFromContext($node, $language);
+      $node = $this->entityRepository->getTranslationFromContext($node, $language);
       $layer_title = $node->get('field_layer_title')->getString();
       $map_layer_api_endpoints_field = $node->get('field_map_api_endpoints');
 
@@ -107,7 +132,9 @@ class MapService {
       return [];
     }
 
-    $map_layer_nodes = Node::loadMultiple($map_layer_nids);
+    $map_layer_nodes = $this->entityTypeManager
+      ->getStorage('node')
+      ->loadMultiple($map_layer_nids);
 
     return $map_layer_nodes;
   }

@@ -6,11 +6,11 @@ namespace Drupal\helhist_media_usage\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\DependencyInjection\ClassResolverInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\node\Entity\Node;
 use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -54,6 +54,13 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
   protected $pathAliasManager;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a new ControllerBlock object.
    *
    * @param array $configuration
@@ -70,6 +77,8 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
    *   The language manager service.
    * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
    *   The path alias manager service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
   public function __construct(
     array $configuration,
@@ -78,13 +87,15 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
     ClassResolverInterface $class_resolver,
     RouteMatchInterface $route_match,
     LanguageManagerInterface $language_manager,
-    AliasManagerInterface $path_alias_manager
+    AliasManagerInterface $path_alias_manager,
+    EntityTypeManagerInterface $entity_type_manager
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->classResolver = $class_resolver;
     $this->routeMatch = $route_match;
     $this->languageManager = $language_manager;
     $this->pathAliasManager = $path_alias_manager;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -98,7 +109,8 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $container->get('class_resolver'),
       $container->get('current_route_match'),
       $container->get('language_manager'),
-      $container->get('path_alias.manager')
+      $container->get('path_alias.manager'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -127,7 +139,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $url_path = $this->pathAliasManager->getPathByAlias($url, $language);
         // If alias exists, we can extract node ID from path.
         if (preg_match('/node\/(\d+)/', $url_path, $matches)) {
-          $node = Node::load($matches[1]);
+          $node = $this->entityTypeManager->getStorage('node')->load($matches[1]);
         }
         if (isset($node)) {
           // Filter duplicates (old revisions, same media in liftup and

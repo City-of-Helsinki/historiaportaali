@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Header Search block.
@@ -15,13 +18,54 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("HelHist")
  * )
  */
-class HeaderSearchBlock extends BlockBase {
+class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The language manager service.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $languageManager;
+
+  /**
+   * Constructs a new HeaderSearchBlock object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager service.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    LanguageManagerInterface $language_manager
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->languageManager = $language_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('language_manager')
+    );
+  }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $langcode = $this->languageManager->getCurrentLanguage()->getId();
 
     switch ($langcode) {
       case "fi":

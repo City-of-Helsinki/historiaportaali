@@ -32,7 +32,7 @@ class ListingImageUrl extends ProcessorPluginBase {
    *
    * @var string
    */
-  protected $processor_id = 'listing_image_url';
+  protected $processorId = 'listing_image_url';
 
   /**
    * {@inheritdoc}
@@ -47,7 +47,7 @@ class ListingImageUrl extends ProcessorPluginBase {
         'type' => 'string',
         'processor_id' => $this->getPluginId(),
       ];
-      $properties[$this->processor_id] = new ProcessorProperty($definition);
+      $properties[$this->processorId] = new ProcessorProperty($definition);
     }
 
     return $properties;
@@ -84,7 +84,7 @@ class ListingImageUrl extends ProcessorPluginBase {
         $destination_url = $image_style->buildUrl($file->uri->value);
 
         $fields = $this->getFieldsHelper()
-          ->filterForPropertyPath($item->getFields(), NULL, $this->processor_id);
+          ->filterForPropertyPath($item->getFields(), NULL, $this->processorId);
         foreach ($fields as $field) {
           $field->addValue($destination_url);
         }

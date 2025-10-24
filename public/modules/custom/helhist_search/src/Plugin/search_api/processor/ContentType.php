@@ -30,7 +30,7 @@ class ContentType extends ProcessorPluginBase {
    *
    * @var string
    */
-  protected $processor_id = 'content_type';
+  protected $processorId = 'content_type';
 
   /**
    * {@inheritdoc}
@@ -45,7 +45,7 @@ class ContentType extends ProcessorPluginBase {
         'type' => 'string',
         'processor_id' => $this->getPluginId(),
       ];
-      $properties[$this->processor_id] = new ProcessorProperty($definition);
+      $properties[$this->processorId] = new ProcessorProperty($definition);
     }
 
     return $properties;
@@ -69,7 +69,7 @@ class ContentType extends ProcessorPluginBase {
     }
 
     $fields = $this->getFieldsHelper()
-      ->filterForPropertyPath($item->getFields(), NULL, $this->processor_id);
+      ->filterForPropertyPath($item->getFields(), NULL, $this->processorId);
     foreach ($fields as $field) {
       $field->addValue($content_type);
     }

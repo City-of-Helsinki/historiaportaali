@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\media\Entity\Media;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -31,6 +31,13 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
   protected $logger;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a plugin.
    *
    * @param array $configuration
@@ -41,10 +48,19 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
    *   The plugin definition.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger
    *   The logger service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerChannelFactoryInterface $logger) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    LoggerChannelFactoryInterface $logger,
+    EntityTypeManagerInterface $entity_type_manager
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->logger = $logger->get('kore_schools');
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -55,7 +71,8 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('logger.factory')
+      $container->get('logger.factory'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -120,11 +137,11 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
 
     if (!empty($image_media)) {
       foreach ($image_media as $mid) {
-        $image_media = Media::load($mid);
+        $image_media = $this->entityTypeManager->getStorage('media')->load($mid);
       }
     }
     else {
-      $image_media = Media::create([
+      $image_media = $this->entityTypeManager->getStorage('media')->create([
         'name' => $item['id'],
         'bundle' => 'kore_image',
         'uid' => 1,

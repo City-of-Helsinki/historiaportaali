@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_node_resave\Form;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;

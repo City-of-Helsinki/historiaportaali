@@ -1,20 +1,17 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\helhist_map\Plugin\Block\MapLiftBlock.
- */
+declare(strict_types=1);
 
 namespace Drupal\helhist_map\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Url;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Map Controls block
+ * Provides a Map Controls block.
  *
  * @Block(
  *   id = "helhist_map_map_lift_block",
@@ -31,13 +28,16 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected $languageManager;
 
   /**
+   * Constructs a MapLiftBlock instance.
+   *
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
    *   The language manager service.
-   * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
-   *   The path alias manager service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -45,10 +45,16 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
   }
 
   /**
+   * Creates an instance of the plugin.
+   *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The container to pull out services used in the plugin.
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    *
    * @return static
    */
@@ -66,15 +72,20 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
    */
   public function build() {
     $language = $this->languageManager->getCurrentLanguage();
-    
+
     $map_nid = 54;
-    $map_node_url = Url::fromRoute('entity.node.canonical', ['node' => $map_nid], ['language' => $language, 'absolute' => TRUE])->toString();
+    $map_node_url = Url::fromRoute(
+      'entity.node.canonical',
+      ['node' => $map_nid],
+      ['language' => $language, 'absolute' => TRUE]
+    )->toString();
 
     $build = [
       '#theme' => 'map_lift_block',
-      '#map_node_url' => $map_node_url
+      '#map_node_url' => $map_node_url,
     ];
 
     return $build;
   }
+
 }

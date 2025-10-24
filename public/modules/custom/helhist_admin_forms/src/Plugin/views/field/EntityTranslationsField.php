@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\helhist_admin_forms\Plugin\views\field\EntityTranslationsField
- *
- */
+declare(strict_types=1);
 
 namespace Drupal\helhist_admin_forms\Plugin\views\field;
 
@@ -12,6 +8,8 @@ use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 
 /**
+ * Views field handler for entity translations.
+ *
  * @ingroup views_field_handlers
  *
  * @ViewsField("entity_translations_field")
@@ -55,7 +53,7 @@ class EntityTranslationsField extends FieldPluginBase {
     ];
     foreach ($langcodes as $langcode) {
       if ($entity->hasTranslation($langcode)) {
-        $translations['#items'][] = ['#markup' => $langcode,];
+        $translations['#items'][] = ['#markup' => $langcode];
       }
     }
 

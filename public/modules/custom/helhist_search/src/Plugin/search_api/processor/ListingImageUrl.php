@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_search\Plugin\search_api\processor;
 
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
 use Drupal\search_api\Processor\ProcessorProperty;
-use Drupal\image\Entity\ImageStyle;
-use Drupal\file\Entity\File;
 
 /**
  * Adds a custom type filter to the indexed data.
@@ -26,7 +28,8 @@ use Drupal\file\Entity\File;
 class ListingImageUrl extends ProcessorPluginBase {
 
   /**
-   * machine name of the processor.
+   * Machine name of the processor.
+   *
    * @var string
    */
   protected $processor_id = 'listing_image_url';
@@ -35,15 +38,15 @@ class ListingImageUrl extends ProcessorPluginBase {
    * {@inheritdoc}
    */
   public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
-    $properties = array();
+    $properties = [];
 
     if (!$datasource) {
-      $definition = array(
+      $definition = [
         'label' => $this->t('Listing Image URL'),
         'description' => $this->t('listing image url'),
         'type' => 'string',
         'processor_id' => $this->getPluginId(),
-      );
+      ];
       $properties[$this->processor_id] = new ProcessorProperty($definition);
     }
 
@@ -88,4 +91,5 @@ class ListingImageUrl extends ProcessorPluginBase {
       }
     }
   }
+
 }

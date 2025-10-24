@@ -5,9 +5,11 @@
  * Contains helhist_admin_forms.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+declare(strict_types=1);
+
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
@@ -33,7 +35,7 @@ function helhist_admin_forms_form_node_form_alter(&$form, &$form_state, $form_id
     'node_article_edit_form',
     'node_article_form',
     'node_listing_page_edit_form',
-    'node_listing_page_form'
+    'node_listing_page_form',
   ])) {
     // Control Hero paragraph visibility via checkbox states.
     $form['field_hero']['#states'] = [
@@ -42,10 +44,10 @@ function helhist_admin_forms_form_node_form_alter(&$form, &$form_state, $form_id
       ],
     ];
   }
-  
+
   if (in_array($form_id, [
     'node_listing_page_edit_form',
-    'node_listing_page_form'
+    'node_listing_page_form',
   ])) {
     // Control Phenomena field visibility via Listing type selection.
     $form['field_phenomena']['#states'] = [
@@ -92,7 +94,7 @@ function helhist_admin_forms_form_alter(&$form, &$form_state, $form_id) {
           'event' => 'change',
         ],
         // Default to checked if saved year is negative.
-        '#default_value' => ($form['field_start_year']['widget'][0]['value']['#default_value'] < 0) ? TRUE : FALSE
+        '#default_value' => ($form['field_start_year']['widget'][0]['value']['#default_value'] < 0) ? TRUE : FALSE,
       ];
 
       $form['field_start_year']['widget'][0]['value']['#ajax'] = [
@@ -104,7 +106,7 @@ function helhist_admin_forms_form_alter(&$form, &$form_state, $form_id) {
         '#type' => 'checkbox',
         '#title' => t('Period'),
         // Default to checked if years are different.
-        '#default_value' => ($form['field_start_year']['widget'][0]['value']['#default_value'] != $form['field_end_year']['widget'][0]['value']['#default_value']) ? TRUE : FALSE
+        '#default_value' => ($form['field_start_year']['widget'][0]['value']['#default_value'] != $form['field_end_year']['widget'][0]['value']['#default_value']) ? TRUE : FALSE,
       ];
 
       $form['field_end_year']['#states'] = [
@@ -121,7 +123,7 @@ function helhist_admin_forms_form_alter(&$form, &$form_state, $form_id) {
           'event' => 'change',
         ],
         // Default to checked if saved year is negative.
-        '#default_value' => ($form['field_end_year']['widget'][0]['value']['#default_value'] < 0) ? TRUE : FALSE
+        '#default_value' => ($form['field_end_year']['widget'][0]['value']['#default_value'] < 0) ? TRUE : FALSE,
       ];
 
       $form['#attached']['library'][] = 'helhist_admin_forms/finna_import';
@@ -164,8 +166,8 @@ function helhist_admin_forms_form_webform_ui_element_type_select_form_alter(&$fo
 }
 
 /**
-* Implements Ajax custom callback function().
-*/
+ * Implements Ajax custom callback function().
+ */
 function helhist_admin_forms_ajax_end_year_default($form, $form_state) {
   if (!$form['field_start_year']['time_period']['#checked']) {
     $response = new AjaxResponse();
@@ -181,8 +183,8 @@ function helhist_admin_forms_ajax_end_year_default($form, $form_state) {
 }
 
 /**
-* Implements Ajax custom callback function().
-*/
+ * Implements Ajax custom callback function().
+ */
 function helhist_admin_forms_ajax_start_year_bce($form, $form_state) {
   $response = new AjaxResponse();
   $start_year = $form['field_start_year']['widget'][0]['value']['#value'];
@@ -196,8 +198,8 @@ function helhist_admin_forms_ajax_start_year_bce($form, $form_state) {
 }
 
 /**
-* Implements Ajax custom callback function().
-*/
+ * Implements Ajax custom callback function().
+ */
 function helhist_admin_forms_ajax_end_year_bce($form, $form_state) {
   $response = new AjaxResponse();
   $end_year = $form['field_end_year']['widget'][0]['value']['#value'];

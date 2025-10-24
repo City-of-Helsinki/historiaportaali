@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_node_resave\Batch;
 
 use Drupal\node\Entity\Node;
@@ -30,7 +32,8 @@ class NodeResaveBatch {
 
       if ($node->isPublished()) {
         $node->set('moderation_state', 'published');
-      } else {
+      }
+      else {
         $node->set('moderation_state', 'draft');
       }
 

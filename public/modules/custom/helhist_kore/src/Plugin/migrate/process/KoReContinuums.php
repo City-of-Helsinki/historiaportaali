@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
@@ -12,6 +14,8 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Processes KoRe continuum data for migration.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_continuums",
  *   handle_multiples = TRUE
@@ -63,7 +67,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
     $paragraphs = [];
 
     $value = array_merge($value[0], $value[1]);
-   
+
     if (isset($value)) {
       uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
@@ -90,6 +94,15 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
     return ($ac > $bc) ? -1 : 1;
   }
 
+  /**
+   * Creates a paragraph item for continuum data.
+   *
+   * @param array $item
+   *   The item data array.
+   *
+   * @return array
+   *   The paragraph reference array.
+   */
   protected function createParagraphsItem(array $item): array {
 
     if ($item['year']) {
@@ -110,22 +123,18 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
     ]);
 
     if (is_array($item['target_school'])) {
-      foreach ($item['target_school']['names'] as $name) {
-        $school_node = \Drupal::entityQuery('node')
+      $school_node = \Drupal::entityQuery('node')
         ->accessCheck(FALSE)
         ->condition('type', 'kore_school')
         ->condition('field_kore_id', $item['target_school']['id'])
         ->execute();
-      }
     }
-    else if (is_array($item['active_school'])) {
-      foreach ($item['active_school']['names'] as $name) {
-        $school_node = \Drupal::entityQuery('node')
+    elseif (is_array($item['active_school'])) {
+      $school_node = \Drupal::entityQuery('node')
         ->accessCheck(FALSE)
         ->condition('type', 'kore_school')
         ->condition('field_kore_id', $item['active_school']['id'])
         ->execute();
-      }
     }
 
     if (isset($school_node)) {

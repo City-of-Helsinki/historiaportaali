@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_media_usage\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\DependencyInjection\ClassResolverInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
 use Drupal\path_alias\AliasManagerInterface;
-use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Media Usage block.
@@ -105,7 +108,6 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build() {
     $media = $this->routeMatch->getParameter('media');
 
-    // listUsagePage is a public function that returns ListUsageController output.
     $controller = $this->classResolver->getInstanceFromDefinition('\Drupal\entity_usage\Controller\ListUsageController');
     $data = $controller->listUsagePage('media', $media->id());
 
@@ -116,7 +118,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
     foreach ($rows as $row) {
       // Get link from entity usage table column.
       $link = $row[0];
-      if ($link instanceof \Drupal\Core\Link) {
+      if ($link instanceof Link) {
         // Get node from link url.
         $url = $link->getUrl()->toString();
         // Strip langcode.
@@ -124,11 +126,12 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $language = $this->languageManager->getCurrentLanguage()->getId();
         $url_path = $this->pathAliasManager->getPathByAlias($url, $language);
         // If alias exists, we can extract node ID from path.
-        if(preg_match('/node\/(\d+)/', $url_path, $matches)) {
-          $node = \Drupal\node\Entity\Node::load($matches[1]);
+        if (preg_match('/node\/(\d+)/', $url_path, $matches)) {
+          $node = Node::load($matches[1]);
         }
         if (isset($node)) {
-          // Filter duplicates (old revisions, same media in liftup and content) and non-articles.
+          // Filter duplicates (old revisions, same media in liftup and
+          // content) and non-articles.
           if (!in_array($node->id(), $content) && $node->getType() == 'article') {
             $content[] = $node->id();
           }
@@ -141,7 +144,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#content' => $content,
       '#cache' => [
         'max-age' => 0,
-      ]
+      ],
     ];
   }
 

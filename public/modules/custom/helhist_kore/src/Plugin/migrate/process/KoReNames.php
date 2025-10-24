@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -12,6 +13,8 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Processes KoRe name data for migration.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_names",
  *   handle_multiples = TRUE
@@ -88,6 +91,15 @@ class KoReNames extends ProcessPluginBase implements ContainerFactoryPluginInter
     return ($ac > $bc) ? -1 : 1;
   }
 
+  /**
+   * Creates a paragraph item for name data.
+   *
+   * @param array $item
+   *   The item data array.
+   *
+   * @return array
+   *   The paragraph reference array.
+   */
   protected function createParagraphsItem(array $item): array {
 
     $paragraph = Paragraph::create([

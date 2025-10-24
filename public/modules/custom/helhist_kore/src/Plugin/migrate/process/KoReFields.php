@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -12,6 +13,8 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Processes KoRe field data for migration.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_fields",
  *   handle_multiples = TRUE
@@ -88,6 +91,15 @@ class KoReFields extends ProcessPluginBase implements ContainerFactoryPluginInte
     return ($ac > $bc) ? -1 : 1;
   }
 
+  /**
+   * Creates a paragraph item for field data.
+   *
+   * @param array $item
+   *   The item data array.
+   *
+   * @return array
+   *   The paragraph reference array.
+   */
   protected function createParagraphsItem(array $item): array {
 
     $item['field']['name'] = str_replace(['-', ' '], '_', $item['field']['name']);

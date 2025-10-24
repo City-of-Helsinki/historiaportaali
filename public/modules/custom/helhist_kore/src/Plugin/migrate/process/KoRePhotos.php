@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\File\FileSystemInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\media\Entity\Media;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Provides a plugin for migrating KoRe photos.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_photos",
  *   handle_multiples = TRUE
@@ -82,19 +84,22 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
     return TRUE;
   }
 
+  /**
+   * Creates a media item.
+   */
   protected function createMediaItem(array $item): array {
 
     if (!$image_data = file_get_contents($item['url'])) {
       return [];
     }
 
-    // Get Finna metadata
-    if(str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
+    // Get Finna metadata.
+    if (str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
       $finna_url = str_replace('https://hkm.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
       $finna_json = json_decode($finna_json);
     }
-    elseif(str_starts_with($item['url'], 'https://www.finna.fi/Cover/Show?id=')) {
+    elseif (str_starts_with($item['url'], 'https://www.finna.fi/Cover/Show?id=')) {
       $finna_url = str_replace('https://www.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
       $finna_json = json_decode($finna_json);
@@ -108,13 +113,13 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
     $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileSystemInterface::EXISTS_REPLACE);
 
     $image_media = \Drupal::entityQuery('media')
-                   ->accessCheck(FALSE)
-                   ->condition('bundle', 'kore_image')
-                   ->condition('name', $item['id'])
-                   ->execute();
+      ->accessCheck(FALSE)
+      ->condition('bundle', 'kore_image')
+      ->condition('name', $item['id'])
+      ->execute();
 
     if (!empty($image_media)) {
-      foreach($image_media as $mid) {
+      foreach ($image_media as $mid) {
         $image_media = Media::load($mid);
       }
     }

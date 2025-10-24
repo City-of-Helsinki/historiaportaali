@@ -5,6 +5,9 @@
  * Functions to support theming in the HDBT Subtheme.
  */
 
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
 /**
@@ -49,7 +52,7 @@ function hdbt_subtheme_preprocess(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ * Implements hook_theme_suggestions_block_alter().
  */
 function hdbt_subtheme_theme_suggestions_block_alter(&$suggestions) {
   // Load theme suggestions for blocks from parent theme.
@@ -119,7 +122,8 @@ function hdbt_subtheme_preprocess_field(&$variables, $hook) {
       if ($format_term->hasTranslation('en')) {
         $english_term = $format_term->getTranslation('en');
         $term_name = $english_term->getName();
-      } else {
+      }
+      else {
         $term_name = $format_term->getName();
       }
 
@@ -135,12 +139,12 @@ function hdbt_subtheme_preprocess_field(&$variables, $hook) {
  */
 function hdbt_subtheme_theme_suggestions_field_alter(&$suggestions, $variables) {
   $taxonomy_fields = [
-    // Historiaportaali metadata fields
+    // Historiaportaali metadata fields.
     'field__field_keywords',
     'field__field_phenomena',
     'field__field_neighbourhoods',
     'field__field_turning_points',
-    // Finna metadata fields
+    // Finna metadata fields.
     'field__field_formats',
     'field__field_authors',
     'field__field_copyrights',
@@ -205,9 +209,9 @@ function hdbt_subtheme_theme_suggestions_paragraph_alter(array &$suggestions, ar
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function hdbt_subtheme_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-search-page') {
-    // Hide year interval filter and add '/map' link on frontpage search block
+    // Hide year interval filter and add '/map' link on frontpage search block.
     if (\Drupal::service('path.matcher')->isFrontPage()) {
       unset($form['year_interval']);
       unset($form['search_filters_title']);
@@ -217,7 +221,7 @@ function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\Fo
       $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/54', $langcode);
 
       $form['views_exposed_form']['#markup'] = '
-        <a class="link" href="/' . $langcode . $alias .'">
+        <a class="link" href="/' . $langcode . $alias . '">
           <span aria-hidden="true" class="hds-icon hds-icon--location"></span>
           <span class="link__label">' . $label . '</span>
         </a>';
@@ -228,7 +232,7 @@ function hdbt_subtheme_form_views_exposed_form_alter(&$form, Drupal\Core\Form\Fo
 /**
  * Implements hook_preprocess_block().
  *
- * Add a heading to fix semantics of the listing blocks
+ * Add a heading to fix semantics of the listing blocks.
  */
 function hdbt_subtheme_preprocess_block__views_block(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -244,7 +248,8 @@ function hdbt_subtheme_preprocess_block__views_block(&$variables) {
 /**
  * Implements hook_preprocess_block().
  *
- * Remove fallback content from message block so it doesn't get rendered when empty.
+ * Remove fallback content from message block so it doesn't get rendered when
+ * empty.
  */
 function hdbt_subtheme_preprocess_block__hdbt_messages(&$variables) {
   $variables['content']['#include_fallback'] = FALSE;
@@ -267,11 +272,20 @@ function hdbt_subtheme_preprocess_block__page_title_block(&$variables) {
   }
 }
 
+/**
+ * Helper function to get the top level menu parent title by node ID.
+ *
+ * @param int $node_id
+ *   The node ID.
+ *
+ * @return string
+ *   The top level menu parent title.
+ */
 function _get_top_level_menu_parent_title_by_nid($node_id) {
   $parent_title = '';
 
   $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-  $menu_link = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $node_id));
+  $menu_link = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node_id]);
 
   if (is_array($menu_link) && count($menu_link)) {
     $menu_link = reset($menu_link);
@@ -364,7 +378,8 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
         if ((intval($start) < intval($year)) && (intval($end) > intval($year))) {
           $variables['node_title'] = $name->get('field_kore_name')->value;
           $variables['node_id'] = $node[0]->id();
-        } else {
+        }
+        else {
           // Event took place on name change year.
           if (intval($start) == intval($year)) {
             $variables['node_title'] = $name->get('field_kore_name')->value;

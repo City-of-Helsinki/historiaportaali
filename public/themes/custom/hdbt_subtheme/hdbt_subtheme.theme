@@ -34,11 +34,6 @@ function hdbt_subtheme_get_icons_path() {
   if (!isset($icon_path)) {
     $theme_handler = \Drupal::service('theme_handler');
     $icon_path = '/' . $theme_handler->getTheme('hdbt_subtheme')->getPath() . '/dist/icons/sprite.svg';
-
-    // Add icons path as a global variable.
-    if (!empty($icon_path)) {
-      return $icon_path;
-    }
   }
   return $icon_path;
 }
@@ -335,23 +330,29 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
 
     $slide_thumbnails = [];
     $slide_thumbnails_alternative_texts = [];
-    foreach ($slides as $slide) {
-      $slide_media = $slide
-        ->get('field_gallery_slide_media')
-        ->first()
-        ->get('entity')
-        ->getTarget()
-        ->getValue();
-      $image = $slide_media
-        ->get('field_media_image')
-        ->first()
-        ->get('entity')
-        ->getTarget()
-        ->getValue();
 
+    foreach ($slides as $slide) {
+      /** @var \Drupal\paragraphs\ParagraphInterface $slide */
+
+      // Get the media entity from the slide paragraph.
+      /** @var \Drupal\media\MediaInterface|null $slide_media */
+      $slide_media = $slide->get('field_gallery_slide_media')->entity;
+      if (!$slide_media) {
+        continue;
+      }
+
+      // Get the actual image file entity from the media entity.
+      $image_field = $slide_media->get('field_media_image');
+      /** @var \Drupal\file\FileInterface|null $image */
+      $image = $image_field->entity;
+      if (!$image) {
+        continue;
+      }
+
+      // Collect caption and alt text for accessibility.
       $alternative_text = [
-        'caption' => $slide->field_gallery_slide_caption->value,
-        'alt' => $slide_media->field_media_image->first()->alt,
+        'caption' => $slide->get('field_gallery_slide_caption')->value ?? '',
+        'alt' => $image_field->first()->alt ?? '',
       ];
 
       $slide_thumbnails_alternative_texts[] = $alternative_text;

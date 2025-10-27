@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @ingroup views_field_handlers
  *
  * @ViewsField("entity_translations_field")
- * 
+ *
  * @phpstan-consistent-constructor
  */
 class EntityTranslationsField extends FieldPluginBase {
@@ -80,8 +80,7 @@ class EntityTranslationsField extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  // @phpstan-ignore-next-line
-  public function render(ResultRow $values): array {
+  public function render(ResultRow $values) {
     $entity = $values->_entity;
     $langcodes = array_keys($this->languageManager->getLanguages());
     $translations = [
@@ -98,6 +97,9 @@ class EntityTranslationsField extends FieldPluginBase {
       }
     }
 
+    // Views handles render arrays internally, even though the interface
+    // signature specifies MarkupInterface|string.
+    // @phpstan-ignore-next-line
     return $translations;
   }
 

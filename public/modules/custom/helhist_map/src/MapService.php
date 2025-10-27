@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_map;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
@@ -66,7 +67,7 @@ class MapService {
     $layers = [];
     $map_layer_nodes = $this->getMapLayerNodes($type);
 
-    if (!$map_layer_nodes || empty($map_layer_nodes)) {
+    if (empty($map_layer_nodes)) {
       return $layers;
     }
 
@@ -74,12 +75,13 @@ class MapService {
 
     foreach ($map_layer_nodes as $node) {
       $node = $this->entityRepository->getTranslationFromContext($node, $language);
+      assert($node instanceof ContentEntityInterface);
       $layer_title = $node->get('field_layer_title')->getString();
       $map_layer_api_endpoints_field = $node->get('field_map_api_endpoints');
 
       $layer_api_endpoints = [];
       foreach ($map_layer_api_endpoints_field as $endpoint) {
-        $endpoint_paragraph = $endpoint->entity;
+        $endpoint_paragraph = $endpoint->get('entity')->getValue();
 
         $layer_api_endpoints[] = [
           'map_api' => $endpoint_paragraph->get('field_map_api')->getString(),

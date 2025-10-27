@@ -5,10 +5,11 @@ parameters:
       - install
       - theme
   paths:
-    - ./public/modules/custom/helhist_tokens
+    - ./public/modules/custom/
   excludePaths:
     - vendor
     - */node_modules/*
+    - ./public/modules/custom/graphql_search_api
   level: 3
   checkMissingIterableValueType: false
   treatPhpDocTypesAsCertain: false

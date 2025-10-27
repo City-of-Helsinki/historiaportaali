@@ -19,13 +19,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "kore_principals",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoRePrincipals extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
 

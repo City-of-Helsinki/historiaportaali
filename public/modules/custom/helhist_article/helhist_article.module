@@ -42,6 +42,7 @@ function helhist_article_pathauto_alias_alter(&$alias, array &$context) {
       $term_label = $term->label();
 
       $vocabulary_config = \Drupal::config('taxonomy.vocabulary.' . $term->bundle());
+      // @phpstan-ignore-next-line
       $vocabulary_translated_config = \Drupal::languageManager()->getLanguageConfigOverride($language, 'taxonomy.vocabulary.' . $term->bundle());
       // Use translation if possible.
       $vocabulary_label = $vocabulary_translated_config->get('name') == '' ? $vocabulary_config->get('name') : $vocabulary_translated_config->get('name');

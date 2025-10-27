@@ -20,13 +20,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "kore_continuums",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
 
@@ -68,7 +70,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
 
     $value = array_merge($value[0], $value[1]);
 
-    if (isset($value)) {
+    if (!empty($value)) {
       uasort($value, [$this, 'compare']);
       foreach ($value as $item) {
         $paragraphs[] = $this->createParagraphsItem($item);
@@ -123,6 +125,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
     ]);
 
     if (is_array($item['target_school'])) {
+      // @phpstan-ignore-next-line
       $school_node = \Drupal::entityQuery('node')
         ->accessCheck(FALSE)
         ->condition('type', 'kore_school')
@@ -130,6 +133,7 @@ class KoReContinuums extends ProcessPluginBase implements ContainerFactoryPlugin
         ->execute();
     }
     elseif (is_array($item['active_school'])) {
+      // @phpstan-ignore-next-line
       $school_node = \Drupal::entityQuery('node')
         ->accessCheck(FALSE)
         ->condition('type', 'kore_school')

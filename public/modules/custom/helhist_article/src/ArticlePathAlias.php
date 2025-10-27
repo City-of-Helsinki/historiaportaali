@@ -43,6 +43,7 @@ class ArticlePathAlias {
     if ($context['bundle'] === 'article' && ($context['op'] == 'insert' || $context['op'] == 'update')) {
       return $this->assembleAlias($context['data']['node']);
     }
+    return null;
   }
 
   /**
@@ -66,6 +67,7 @@ class ArticlePathAlias {
     if (!empty($parameters['%term%'])) {
       return str_replace(array_keys($parameters), array_values($parameters), $this->pattern);
     }
+    return null;
   }
 
   /**
@@ -89,6 +91,7 @@ class ArticlePathAlias {
         }
       }
     }
+    return null;
   }
 
 }

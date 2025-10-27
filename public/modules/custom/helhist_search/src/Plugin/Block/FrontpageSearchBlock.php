@@ -17,6 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("HelHist Frontpage Search"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 

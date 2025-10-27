@@ -17,6 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("HelHist Comparison Map Controls"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class ComparisonMapControlsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 

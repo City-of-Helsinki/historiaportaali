@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\File\FileExists;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
@@ -20,13 +20,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "kore_photos",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
 
@@ -126,9 +128,11 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       return [];
     }
 
+    // @phpstan-ignore-next-line
     $file_repository = \Drupal::service('file.repository');
-    $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileSystemInterface::EXISTS_REPLACE);
+    $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileExists::Replace);
 
+    // @phpstan-ignore-next-line
     $image_media = \Drupal::entityQuery('media')
       ->accessCheck(FALSE)
       ->condition('bundle', 'kore_image')

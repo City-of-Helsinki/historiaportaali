@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Kore Settings Form.
+ *
+ * @phpstan-consistent-constructor
  */
 class KoreSettingsForm extends ConfigFormBase {
 

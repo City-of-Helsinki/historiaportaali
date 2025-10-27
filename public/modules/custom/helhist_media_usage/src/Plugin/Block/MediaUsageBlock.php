@@ -22,6 +22,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("HelHist Media Usage"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterface {
 

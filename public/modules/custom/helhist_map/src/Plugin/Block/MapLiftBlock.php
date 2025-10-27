@@ -18,6 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("HelHist Map Lift"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**

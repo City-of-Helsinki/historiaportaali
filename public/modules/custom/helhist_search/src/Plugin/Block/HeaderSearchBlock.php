@@ -17,6 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("HelHist Header Search"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 

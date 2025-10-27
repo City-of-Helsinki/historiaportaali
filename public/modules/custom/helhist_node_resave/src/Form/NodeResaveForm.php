@@ -14,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Node Resave form.
  *
  * @package Drupal\helhist_node_resave\Form
+ *
+ * @phpstan-consistent-constructor
  */
 class NodeResaveForm extends FormBase {
 

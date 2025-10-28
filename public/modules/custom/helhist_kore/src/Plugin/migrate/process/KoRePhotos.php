@@ -1,32 +1,43 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\File\FileSystemInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\File\FileExists;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
-use Drupal\media\Entity\Media;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Provides a plugin for migrating KoRe photos.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_photos",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
 
   /**
    * Constructs a plugin.
@@ -39,10 +50,19 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
    *   The plugin definition.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger
    *   The logger service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerChannelFactoryInterface $logger) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    LoggerChannelFactoryInterface $logger,
+    EntityTypeManagerInterface $entity_type_manager
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->logger = $logger->get('kore_schools');
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -53,7 +73,8 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('logger.factory')
+      $container->get('logger.factory'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -82,19 +103,22 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
     return TRUE;
   }
 
+  /**
+   * Creates a media item.
+   */
   protected function createMediaItem(array $item): array {
 
     if (!$image_data = file_get_contents($item['url'])) {
       return [];
     }
 
-    // Get Finna metadata
-    if(str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
+    // Get Finna metadata.
+    if (str_starts_with($item['url'], 'https://hkm.finna.fi/Cover/Show?id=')) {
       $finna_url = str_replace('https://hkm.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
       $finna_json = json_decode($finna_json);
     }
-    elseif(str_starts_with($item['url'], 'https://www.finna.fi/Cover/Show?id=')) {
+    elseif (str_starts_with($item['url'], 'https://www.finna.fi/Cover/Show?id=')) {
       $finna_url = str_replace('https://www.finna.fi/Cover/Show?id=', 'https://api.finna.fi/v1/record?id=', $item['url']);
       $finna_json = file_get_contents($finna_url);
       $finna_json = json_decode($finna_json);
@@ -104,22 +128,24 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
       return [];
     }
 
+    // @phpstan-ignore-next-line
     $file_repository = \Drupal::service('file.repository');
-    $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileSystemInterface::EXISTS_REPLACE);
+    $image = $file_repository->writeData($image_data, 'public://' . $item['id'] . '.jpg', FileExists::Replace);
 
+    // @phpstan-ignore-next-line
     $image_media = \Drupal::entityQuery('media')
-                   ->accessCheck(FALSE)
-                   ->condition('bundle', 'kore_image')
-                   ->condition('name', $item['id'])
-                   ->execute();
+      ->accessCheck(FALSE)
+      ->condition('bundle', 'kore_image')
+      ->condition('name', $item['id'])
+      ->execute();
 
     if (!empty($image_media)) {
-      foreach($image_media as $mid) {
-        $image_media = Media::load($mid);
+      foreach ($image_media as $mid) {
+        $image_media = $this->entityTypeManager->getStorage('media')->load($mid);
       }
     }
     else {
-      $image_media = Media::create([
+      $image_media = $this->entityTypeManager->getStorage('media')->create([
         'name' => $item['id'],
         'bundle' => 'kore_image',
         'uid' => 1,

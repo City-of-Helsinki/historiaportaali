@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_media_usage\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\DependencyInjection\ClassResolverInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\path_alias\AliasManagerInterface;
-use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Media Usage block.
@@ -19,6 +22,8 @@ use Drupal\Core\Url;
  *   admin_label = @Translation("HelHist Media Usage"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
@@ -51,6 +56,13 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
   protected $pathAliasManager;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a new ControllerBlock object.
    *
    * @param array $configuration
@@ -67,6 +79,8 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
    *   The language manager service.
    * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
    *   The path alias manager service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
   public function __construct(
     array $configuration,
@@ -75,13 +89,15 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
     ClassResolverInterface $class_resolver,
     RouteMatchInterface $route_match,
     LanguageManagerInterface $language_manager,
-    AliasManagerInterface $path_alias_manager
+    AliasManagerInterface $path_alias_manager,
+    EntityTypeManagerInterface $entity_type_manager
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->classResolver = $class_resolver;
     $this->routeMatch = $route_match;
     $this->languageManager = $language_manager;
     $this->pathAliasManager = $path_alias_manager;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -95,7 +111,8 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $container->get('class_resolver'),
       $container->get('current_route_match'),
       $container->get('language_manager'),
-      $container->get('path_alias.manager')
+      $container->get('path_alias.manager'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -105,7 +122,6 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build() {
     $media = $this->routeMatch->getParameter('media');
 
-    // listUsagePage is a public function that returns ListUsageController output.
     $controller = $this->classResolver->getInstanceFromDefinition('\Drupal\entity_usage\Controller\ListUsageController');
     $data = $controller->listUsagePage('media', $media->id());
 
@@ -116,7 +132,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
     foreach ($rows as $row) {
       // Get link from entity usage table column.
       $link = $row[0];
-      if ($link instanceof \Drupal\Core\Link) {
+      if ($link instanceof Link) {
         // Get node from link url.
         $url = $link->getUrl()->toString();
         // Strip langcode.
@@ -124,11 +140,12 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $language = $this->languageManager->getCurrentLanguage()->getId();
         $url_path = $this->pathAliasManager->getPathByAlias($url, $language);
         // If alias exists, we can extract node ID from path.
-        if(preg_match('/node\/(\d+)/', $url_path, $matches)) {
-          $node = \Drupal\node\Entity\Node::load($matches[1]);
+        if (preg_match('/node\/(\d+)/', $url_path, $matches)) {
+          $node = $this->entityTypeManager->getStorage('node')->load($matches[1]);
         }
         if (isset($node)) {
-          // Filter duplicates (old revisions, same media in liftup and content) and non-articles.
+          // Filter duplicates (old revisions, same media in liftup and
+          // content) and non-articles.
           if (!in_array($node->id(), $content) && $node->getType() == 'article') {
             $content[] = $node->id();
           }
@@ -141,7 +158,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#content' => $content,
       '#cache' => [
         'max-age' => 0,
-      ]
+      ],
     ];
   }
 

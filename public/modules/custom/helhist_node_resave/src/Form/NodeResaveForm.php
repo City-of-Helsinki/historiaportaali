@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_node_resave\Form;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -12,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Node Resave form.
  *
  * @package Drupal\helhist_node_resave\Form
+ *
+ * @phpstan-consistent-constructor
  */
 class NodeResaveForm extends FormBase {
 

@@ -1,37 +1,44 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\helhist_map\Plugin\Block\MapControlsBlock.
- */
+declare(strict_types=1);
 
 namespace Drupal\helhist_map\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\helhist_map\MapService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Map Controls block
+ * Provides a Map Controls block.
  *
  * @Block(
  *   id = "helhist_map_map_controls_block",
  *   admin_label = @Translation("HelHist Map Controls"),
  *   category = @Translation("HelHist")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class MapControlsBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
-   * @var \Drupal\helhist_map\MapService $map_service
+   * The map service.
+   *
+   * @var \Drupal\helhist_map\MapService
    */
   protected $mapService;
 
   /**
+   * Constructs a new MapControlsBlock instance.
+   *
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\helhist_map\MapService $map_service
+   *   The map service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, MapService $map_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -39,10 +46,16 @@ class MapControlsBlock extends BlockBase implements ContainerFactoryPluginInterf
   }
 
   /**
+   * {@inheritdoc}
+   *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The container to pull out services used in the plugin.
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    *
    * @return static
    */
@@ -62,9 +75,10 @@ class MapControlsBlock extends BlockBase implements ContainerFactoryPluginInterf
     $build = [
       '#theme' => 'map_controls',
       '#map_layers' => $this->mapService->getMapLayers('map'),
-      '#photo_layers' => $this->mapService->getMapLayers('photo')
+      '#photo_layers' => $this->mapService->getMapLayers('photo'),
     ];
 
     return $build;
   }
+
 }

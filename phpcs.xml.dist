@@ -4,14 +4,11 @@
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
   <exclude-pattern>*/node_modules/*</exclude-pattern>
-  <exclude-pattern>*/helhist_map/src/MapService.php</exclude-pattern>
-  <exclude-pattern>*/modules/custom/helhist_search/*</exclude-pattern>
-  <exclude-pattern>*/helhist_kore/*</exclude-pattern>
 
-  <!-- rule ref="Drupal" /-->
-  <rule ref="DrupalPractice">
-    <exclude name="DrupalPractice.General.OptionsT.TforValue" />
-    <exclude name="DrupalPractice.Objects.UnusedPrivateMethod.UnusedMethod" />
-  </rule>
-  <!-- rule ref="Generic.PHP.RequireStrictTypes" /-->
+  <!-- Ignore graphql_search_api, it will be removed via HIS-330 -->
+  <exclude-pattern>*/graphql_search_api/*</exclude-pattern>
+
+  <rule ref="Drupal" />
+  <rule ref="DrupalPractice" />
+  <rule ref="Generic.PHP.RequireStrictTypes" />
 </ruleset>

@@ -1,44 +1,53 @@
 <?php
 
-/** 
+/**
+ * @file
+ * Provides search functionality and custom search forms.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
  * Implements hook_theme().
  */
 function helhist_search_theme($existing, $type, $theme, $path) {
   return [
     'year_interval_toggle' => [
-      'variables' => []
+      'variables' => [],
     ],
     'year_interval_field_divider' => [
-      'variables' => []
+      'variables' => [],
     ],
     'header_search' => [
       'variables' => [
-        'search_page_path' => ''
-      ]
+        'search_page_path' => '',
+      ],
     ],
     'frontpage_search' => [
       'variables' => [
-        'search_page_path' => ''
-      ]
+        'search_page_path' => '',
+      ],
     ],
     'search_frontend' => [
-      'variables' => []
-    ]
+      'variables' => [],
+    ],
   ];
 }
 
 /**
  * Implements hook_form_views_exposed_form_alter().
  */
-function helhist_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function helhist_search_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $view_ids = [
     'search',
-    'combined_map'
+    'combined_map',
   ];
 
   if ($form_id == 'views_exposed_form' && in_array($form_state->get('view')->id(), $view_ids)) {
     if ($form_state->get('view')->id() == 'search') {
-      // Move form action buttons below the Keyword-field
+      // Move form action buttons below the Keyword-field.
       $form['s']['#weight'] = -3;
       $form['actions']['#weight'] = -2;
 
@@ -47,14 +56,14 @@ function helhist_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\
         '#tag' => 'h4',
         '#value' => t('Filter search results', [], ['context' => 'Search']),
         '#attributes' => [
-          'class' => ['search-filters-title']
+          'class' => ['search-filters-title'],
         ],
-        '#weight' => -1
+        '#weight' => -1,
       ];
     }
 
     if (array_key_exists('start_year', $form) && array_key_exists('end_year', $form)) {
-      $form['year_interval'] = _get_year_interval_render_array($form);
+      $form['year_interval'] = helhist_search__get_year_interval_render_array($form);
 
       unset($form['start_year']);
       unset($form['end_year']);
@@ -64,41 +73,44 @@ function helhist_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\
   }
 }
 
-function _get_year_interval_render_array($form) {
+/**
+ * Helper function to get the year interval render array.
+ */
+function helhist_search__get_year_interval_render_array($form) {
   return [
     '#type' => 'container',
     '#attributes' => [
       'class' => [
         'year-interval',
-        'form-item'
-      ]
+        'form-item',
+      ],
     ],
     'toggle' => [
-      '#theme' => 'year_interval_toggle'
+      '#theme' => 'year_interval_toggle',
     ],
     'form_container' => [
       '#type' => 'container',
       '#attributes' => [
         'class' => [
           'year-interval__form',
-          'hidden'
-        ]
+          'hidden',
+        ],
       ],
       'items_container' => [
         '#type' => 'container',
         '#attributes' => [
           'class' => [
             'year-interval__form-items',
-            'hidden'
-          ]
+            'hidden',
+          ],
         ],
         'start_year' => $form['start_year'],
         'divider' => [
-          '#theme' => 'year_interval_field_divider'
+          '#theme' => 'year_interval_field_divider',
         ],
-        'end_year' => $form['end_year']
-      ]
-    ]
+        'end_year' => $form['end_year'],
+      ],
+    ],
   ];
 }
 

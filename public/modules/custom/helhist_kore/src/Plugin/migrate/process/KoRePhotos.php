@@ -58,7 +58,7 @@ class KoRePhotos extends ProcessPluginBase implements ContainerFactoryPluginInte
     $plugin_id,
     $plugin_definition,
     LoggerChannelFactoryInterface $logger,
-    EntityTypeManagerInterface $entity_type_manager
+    EntityTypeManagerInterface $entity_type_manager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->logger = $logger->get('kore_schools');

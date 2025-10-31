@@ -45,7 +45,7 @@ class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginIn
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    LanguageManagerInterface $language_manager
+    LanguageManagerInterface $language_manager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->languageManager = $language_manager;

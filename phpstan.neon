@@ -13,5 +13,4 @@ parameters:
     - ./public/modules/custom/graphql_search_api
     - ./public/themes/custom/hdbt_subtheme/dist
   level: 3
-  checkMissingIterableValueType: false
   treatPhpDocTypesAsCertain: false

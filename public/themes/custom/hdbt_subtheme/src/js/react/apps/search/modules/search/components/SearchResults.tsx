@@ -2,6 +2,7 @@ import React from 'react';
 import { ContentItem, SearchFilters } from '../../../common/types/Content';
 import { GhostList } from '../../../common/components/GhostList';
 import ResultsError from '../../../common/components/ResultsError';
+import { t } from '../../../common/utils/translate';
 
 interface SearchResultsProps {
   results: ContentItem[];
@@ -38,7 +39,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   if (results.length === 0 && hasActiveSearch) {
     return (
       <div className="historia-search__no-results">
-        <p>{window.Drupal?.t("No search results. Try different keywords or modify filters.", {}, {context: "Search"})}</p>
+        <p>{t("No search results. Try different keywords or modify filters.", {}, {context: "Search"})}</p>
       </div>
     );
   }
@@ -53,7 +54,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   return (
     <div className="historia-search__results">
       <div className="results-summary">
-        <p>{window.Drupal?.t("Found @count results", {"@count": totalCount}, {context: "Search"})}</p>
+        <p>{t("Found @count results", {"@count": totalCount}, {context: "Search"})}</p>
       </div>
 
       <div className="results-list">
@@ -80,19 +81,19 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
                 
                 {item.formats && item.formats.length > 0 && (
                   <div className="result-formats">
-                    <strong>{window.Drupal?.t("Format:", {}, {context: "Search"})}</strong> {item.formats.join(', ')}
+                    <strong>{t("Format:", {}, {context: "Search"})}</strong> {item.formats.join(', ')}
                   </div>
                 )}
                 
                 {item.phenomena && item.phenomena.length > 0 && (
                   <div className="result-phenomena">
-                    <strong>{window.Drupal?.t("Phenomena:", {}, {context: "Search"})}:</strong> {item.phenomena.join(', ')}
+                    <strong>{t("Phenomena:", {}, {context: "Search"})}:</strong> {item.phenomena.join(', ')}
                   </div>
                 )}
                 
                 {item.neighbourhoods && item.neighbourhoods.length > 0 && (
                   <div className="result-neighbourhoods">
-                    <strong>{window.Drupal?.t("Districts", {}, {context: "Search"})}:</strong> {item.neighbourhoods.join(', ')}
+                    <strong>{t("Districts", {}, {context: "Search"})}:</strong> {item.neighbourhoods.join(', ')}
                   </div>
                 )}
               </div>
@@ -108,13 +109,11 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
             disabled={currentPage === 0}
             className="pagination-button"
           >
-            {window.Drupal?.t("Previous", {}, {context: "Search"})}
+            {t("Previous", {}, {context: "Search"})}
           </button>
           
           <span className="pagination-info">
-            {window.Drupal?.t("Page @current / @total", {"@current": currentPage + 1, "@total": totalPages}, {context: "Search"}) 
-              || `Page ${currentPage + 1} / ${totalPages}`
-            }
+            {t("Page @current / @total", {"@current": currentPage + 1, "@total": totalPages}, {context: "Search"})}
           </span>
           
           <button 
@@ -122,7 +121,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
             disabled={currentPage >= totalPages - 1}
             className="pagination-button"
           >
-            {window.Drupal?.t("Next", {}, {context: "Search"})}
+            {t("Next", {}, {context: "Search"})}
           </button>
         </div>
       )}

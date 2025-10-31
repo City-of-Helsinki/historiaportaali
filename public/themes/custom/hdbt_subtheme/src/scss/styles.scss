@@ -6,15 +6,14 @@
 @use "sass:math";
 
 // Breakpoint helpers
-@import '~breakpoint-sass';
+@import 'breakpoint-sass/stylesheets/breakpoint';
 
 // Historia.hel.fi specific
-@import 'library/**/*.*';
-@import 'layout/*.*';
-@import 'state/*.*';
-@import 'base/*.*';
-@import 'components/**/*.*';
+@import 'library/index';
+@import 'layout/index';
+@import 'state/index';
+@import 'base/index';
+@import 'components/index';
 
 // HDBT fixes and overrides
-@import '03_generic/*.*';
-@import '06_components/paragraphs/*.*';
+@import '03_generic/index';

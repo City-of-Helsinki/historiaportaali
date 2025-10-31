@@ -72,9 +72,9 @@ gallery:
     - hdbt_subtheme/tiny-slider
 
 react-search-app:
-  version: 1.x
+  version: 1.0.0
   js:
-    dist/js/react-search.min.js: {}
+    dist/js/search-app.min.js: {}
   css:
     theme:
       dist/css/styles.min.css: {}

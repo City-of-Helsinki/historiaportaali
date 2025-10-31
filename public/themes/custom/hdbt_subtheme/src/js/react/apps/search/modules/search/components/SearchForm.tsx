@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SearchFilters, Facet } from '../../../common/types/Content';
+import { t } from '../../../common/utils/translate';
 
 interface SearchFormProps {
   filters: SearchFilters;
@@ -68,7 +69,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             type="text"
             value={localKeywords}
             onChange={(e) => setLocalKeywords(e.target.value)}
-            placeholder={window.Drupal?.t("Location, person, topic, event...", {}, {context: "Search"})}
+            placeholder={t("Location, person, topic, event...", {}, {context: "Search"})}
             className="search-input"
             disabled={loading}
           />
@@ -77,24 +78,24 @@ export const SearchForm: React.FC<SearchFormProps> = ({
         <div className="search-filters">
           <div className="year-filters">
             <label>
-              {window.Drupal?.t("Start year", {}, {context: "Search"})}: 
+              {t("Start year", {}, {context: "Search"})}: 
               <input
                 type="number"
                 value={localStartYear}
                 onChange={(e) => setLocalStartYear(e.target.value)}
-                placeholder={window.Drupal?.t("e.g. 1900", {}, {context: "Search"})}
+                placeholder={t("e.g. 1900", {}, {context: "Search"})}
                 min="1400"
                 max={new Date().getFullYear()}
                 disabled={loading}
               />
             </label>
             <label>
-              {window.Drupal?.t("End year", {}, {context: "Search"})}:
+              {t("End year", {}, {context: "Search"})}:
               <input
                 type="number"
                 value={localEndYear}
                 onChange={(e) => setLocalEndYear(e.target.value)}
-                placeholder={window.Drupal?.t("e.g. 2000", {}, {context: "Search"})}
+                placeholder={t("e.g. 2000", {}, {context: "Search"})}
                 min="1400"
                 max={new Date().getFullYear()}
                 disabled={loading}
@@ -106,12 +107,12 @@ export const SearchForm: React.FC<SearchFormProps> = ({
           <div className="form-actions">
             <button type="submit" disabled={loading} className="search-button">
               {loading 
-                ? window.Drupal?.t("Searching...", {}, {context: "Search"}) 
-                : window.Drupal?.t("Search", {}, {context: "Search"})
+                ? t("Searching...", {}, {context: "Search"}) 
+                : t("Search", {}, {context: "Search"})
               }
             </button>
             <button type="button" onClick={handleReset} className="reset-button">
-              {window.Drupal?.t("Clear filters", {}, {context: "Search"})}
+              {t("Clear filters", {}, {context: "Search"})}
             </button>
           </div>
         </div>

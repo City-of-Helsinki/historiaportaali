@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ErrorBoundary } from '@sentry/react';
+import { ErrorBoundary } from './common/components/ErrorBoundary';
 import { SearchContainer } from './modules/search/SearchContainer';
 import ResultsError from './common/components/ResultsError';
 import { GhostList } from './common/components/GhostList';

@@ -1,10 +1,11 @@
 import React from 'react';
+import { t } from '../utils/translate';
 
 const ResultsError: React.FC = () => {
   return (
     <div className="search-error">
-      <h3>{window.Drupal?.t("Search is not working at the moment", {}, {context: "Search"}) || "Search is not working at the moment"}</h3>
-      <p>{window.Drupal?.t("Try again later or contact support.", {}, {context: "Search"}) || "Try again later or contact support."}</p>
+      <h3>{t("Search is not working at the moment", {}, {context: "Search"})}</h3>
+      <p>{t("Try again later or contact support.", {}, {context: "Search"})}</p>
     </div>
   );
 };

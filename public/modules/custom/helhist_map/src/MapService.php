@@ -47,7 +47,7 @@ class MapService {
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
     LanguageManagerInterface $language_manager,
-    EntityRepositoryInterface $entity_repository
+    EntityRepositoryInterface $entity_repository,
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->languageManager = $language_manager;

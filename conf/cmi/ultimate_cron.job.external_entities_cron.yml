@@ -1,0 +1,17 @@
+uuid: 1034561c-4ce0-4fc1-ab00-cdd454504451
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+title: 'Default cron handler'
+id: external_entities_cron
+weight: 0
+module: external_entities
+callback: 'external_entities#cron'
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

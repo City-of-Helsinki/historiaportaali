@@ -90,7 +90,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
     RouteMatchInterface $route_match,
     LanguageManagerInterface $language_manager,
     AliasManagerInterface $path_alias_manager,
-    EntityTypeManagerInterface $entity_type_manager
+    EntityTypeManagerInterface $entity_type_manager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->classResolver = $class_resolver;

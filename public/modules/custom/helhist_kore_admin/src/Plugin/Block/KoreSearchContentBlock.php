@@ -18,6 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("KORE Search Content"),
  *   category = @Translation("KORE")
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoreSearchContentBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
@@ -54,7 +56,7 @@ class KoreSearchContentBlock extends BlockBase implements ContainerFactoryPlugin
     $plugin_id,
     $plugin_definition,
     ConfigFactoryInterface $config_factory,
-    LanguageManagerInterface $language_manager
+    LanguageManagerInterface $language_manager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->configFactory = $config_factory;

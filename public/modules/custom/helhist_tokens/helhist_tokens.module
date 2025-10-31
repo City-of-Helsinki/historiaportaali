@@ -1,16 +1,24 @@
-<?php 
+<?php
+
+/**
+ * @file
+ * Provides Helhist custom tokens.
+ */
+
+declare(strict_types=1);
 
 use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\Markup;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_token_info().
  */
 function helhist_tokens_token_info() {
-  $info['tokens']['view']['search_result_info'] = array(
+  $info['tokens']['view']['search_result_info'] = [
     'name' => t('Search result info'),
     'description' => t('Display information about currently executed search.'),
-  );
+  ];
 
   return $info;
 }
@@ -26,17 +34,17 @@ function helhist_tokens_tokens($type, $tokens, array $data, array $options, Bubb
       case 'search_result_info':
         $replacements[$original] = '';
 
-        if (!isset($data['view']) || !$data['view'] instanceof \Drupal\views\ViewExecutable) {
+        if (!isset($data['view']) || !$data['view'] instanceof ViewExecutable) {
           break;
         }
 
         $view = $data['view'];
 
         $num_of_results = $view->total_rows;
-        $search_query = isset($view->exposed_raw_input['s']) ? $view->exposed_raw_input['s'] : '';
+        $search_query = $view->exposed_raw_input['s'] ?? '';
 
         $token_content = t(
-          '@num_of_results results', 
+          '@num_of_results results',
           ['@num_of_results' => $num_of_results],
           ['context' => 'Search']
         );

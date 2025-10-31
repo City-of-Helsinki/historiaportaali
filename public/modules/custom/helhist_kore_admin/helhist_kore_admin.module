@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * @file
+ * Provides Helhist Kore search related modifications.
+ */
 
-use \Drupal\Core\Form\FormStateInterface;
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * @file
  * Primary module hooks for helhist_kore_admin module.

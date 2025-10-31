@@ -1,28 +1,33 @@
 <?php
 
-use Drupal\Core\Language\LanguageInterface;
-use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
-use Drupal\taxonomy\Entity\Vocabulary;
+/**
+ * @file
+ * Custom functionality for helhist_article module.
+ */
+
+declare(strict_types=1);
 
 /**
  * Implements hook_pathauto_alias_alter().
  */
 function helhist_article_pathauto_alias_alter(&$alias, array &$context) {
-   // Check if the content is node and the bundle is an article
-   if ($context['module'] === 'node' && $context['bundle'] === 'article') {
+  // Check if the content is node and the bundle is an article.
+  if ($context['module'] === 'node' && $context['bundle'] === 'article') {
 
     $node = $context['data']['node'];
     $language = $context['language'];
 
     $clean_string_service = \Drupal::service('pathauto.alias_cleaner');
 
-    // Phenomena field takes precedence, then neighbourhoods, then turning points
+    // Phenomena field takes precedence, then neighbourhoods, then turning
+    // points.
     if ($node->get('field_phenomena')->target_id != NULL) {
       $termreference = $node->get('field_phenomena')->target_id;
-    } else if ($node->get('field_neighbourhoods')->target_id != NULL) {
+    }
+    elseif ($node->get('field_neighbourhoods')->target_id != NULL) {
       $termreference = $node->get('field_neighbourhoods')->target_id;
-    } else if ($node->get('field_turning_points')->target_id != NULL) {
+    }
+    elseif ($node->get('field_turning_points')->target_id != NULL) {
       $termreference = $node->get('field_turning_points')->target_id;
     }
 
@@ -30,15 +35,16 @@ function helhist_article_pathauto_alias_alter(&$alias, array &$context) {
       $node_label = $node->label();
 
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($termreference);
-      // Get translation if possible
+      // Get translation if possible.
       if ($term->hasTranslation($language)) {
         $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
       }
       $term_label = $term->label();
 
       $vocabulary_config = \Drupal::config('taxonomy.vocabulary.' . $term->bundle());
+      // @phpstan-ignore-next-line
       $vocabulary_translated_config = \Drupal::languageManager()->getLanguageConfigOverride($language, 'taxonomy.vocabulary.' . $term->bundle());
-      // Use translation if possible
+      // Use translation if possible.
       $vocabulary_label = $vocabulary_translated_config->get('name') == '' ? $vocabulary_config->get('name') : $vocabulary_translated_config->get('name');
 
       $vocabulary_label = '/' . $clean_string_service->cleanString($vocabulary_label);
@@ -53,8 +59,9 @@ function helhist_article_pathauto_alias_alter(&$alias, array &$context) {
 /**
  * Implements hook_entity_type_alter().
  *
- * Attempting to fix error "Non-translatable fields can only be changed when updating the original language."
- * with Paragraphs + Content Moderation + Translations: https://www.drupal.org/project/drupal/issues/3025039
+ * Attempting to fix error "Non-translatable fields can only be changed when
+ * updating the original language." with Paragraphs + Content Moderation +
+ * Translations: https://www.drupal.org/project/drupal/issues/3025039
  */
 function helhist_article_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {

@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * @file
+ * Pprovides custom media usage functionalities.
+ */
+
+declare(strict_types=1);
+
+/**
  * Implements hook_theme().
  */
 function helhist_media_usage_theme() {

@@ -1,4 +1,4 @@
 services:
   helhist_map.mapservice:
     class: Drupal\helhist_map\MapService
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager', '@language_manager', '@entity.repository']

@@ -108,8 +108,8 @@
   .result-wrapper {
     background: $color-white;
     flex: 1 1 100%;
-    margin-bottom: $spacing-double;
     hyphens: auto;
+    margin-bottom: $spacing-double;
     overflow: hidden;
 
     @include breakpoint($breakpoint-s) {

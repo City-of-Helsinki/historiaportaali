@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 (($, Drupal, drupalSettings, once) => {
   let map;
+  let mapContainer;
 
   Drupal.behaviors.map = {
     attach: function(context, settings) {
@@ -10,12 +11,16 @@
         $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
           if (mapid.startsWith('leaflet-map-view-combined-map-block')) {
             map = lMap;
+            mapContainer = $('#' + mapid);
             const idFromUrl = self.getUrlParameter('id');
   
             self.bindPopupPositioning();
   
             if (idFromUrl) {
-              self.openPopupByNid(idFromUrl);
+              // Small delay to ensure markers are loaded
+              setTimeout(function() {
+                self.openPopupByNid(idFromUrl);
+              }, 300);
             }
           }
         });
@@ -41,64 +46,67 @@
     },
 
     openPopupByNid: function(id) {
-      let selectedMarker = null;
-      let layerInsideGroup = false;
-      
-      map.eachLayer(layer => {
-        if (layer.options?.entity_id == id) {
-          if (layer._popup?._content.includes('ajax-entity="media')) {
-            selectedMarker = layer;
-            layerInsideGroup = true; // Debug random zoom/spiderfy behaviour
-          }
-        }
+      if (!map || !mapContainer || !id) {
+        return;
+      }
 
-        // Try to find the layer from marker groups
-        if (layer._group && !selectedMarker) {
-          const childMarkers = layer.getAllChildMarkers();
-          childMarkers.forEach(childMarker => {
-            if (childMarker.options?.entity_id == id) {
-              if (childMarker._popup?._content.includes('ajax-entity="media')) {
-                selectedMarker = childMarker;
-                layerInsideGroup = true;
-              }
-            }
-          });
+      const leafletInstance = mapContainer.data('leaflet');
+      if (!leafletInstance?.markers) {
+        return;
+      }
+
+      const entityId = String(id);
+      let selectedMarker = leafletInstance.markers[entityId];
+      
+      // Fallback: check with suffix (e.g., "655-0")
+      if (!selectedMarker) {
+        const key = Object.keys(leafletInstance.markers).find(k => k.startsWith(entityId + '-'));
+        if (key) {
+          selectedMarker = leafletInstance.markers[key];
+        }
+      }
+
+      if (!selectedMarker) {
+        console.warn('Map: No marker found ID', entityId);
+        console.log('Available marker IDs:', Object.keys(leafletInstance.markers).map(k => k.replace('-0', '')));
+        return;
+      }
+
+      // Check if marker is in a cluster group
+      let layerInsideGroup = false;
+      map.eachLayer(layer => {
+        if (layer._group && typeof layer.getAllChildMarkers === 'function') {
+          if (layer.getAllChildMarkers().includes(selectedMarker)) {
+            layerInsideGroup = true;
+          }
         }
       });
 
-      if (selectedMarker) {
-        Drupal.behaviors.map.zoomToLayer(selectedMarker, layerInsideGroup);
-      }
+      this.zoomToLayer(selectedMarker, layerInsideGroup);
     },
 
     zoomToLayer: function(selectedMarker, layerInsideGroup = false) {
-      if (!selectedMarker) {
+      if (!selectedMarker || !map) {
         return false;
       }
 
-      // Use Leaflet Markercluster's 'zoomToShowLayer'-method to reveal
-      // grouped marker
-      if (layerInsideGroup) {
+      // Use Leaflet Markercluster's zoomToShowLayer for grouped markers
+      if (layerInsideGroup && selectedMarker.__parent?._group) {
         selectedMarker.__parent._group.zoomToShowLayer(selectedMarker, () => {
           selectedMarker.openPopup();
         });
+        return true;
       }
 
-      if (!layerInsideGroup) {
-        // Attach event handler to open popup after map centering
-        map.on('moveend', function() {
-          selectedMarker.openPopup();
-        });
+      // For standalone markers, center map and open popup
+      const openPopupHandler = () => {
+        selectedMarker.openPopup();
+        map.off('moveend', openPopupHandler);
+      };
 
-        // Remove event handler attached above after popup is opened
-        map.on('popupopen', function() {
-          map.off('moveend');
-        });
-
-        // Center map to the selected marker
-        const zoomAmount = 15;
-        map.setView(selectedMarker._latlng, zoomAmount);
-      }
+      map.on('moveend', openPopupHandler);
+      map.setView(selectedMarker._latlng, 15);
+      return true;
     },
 
     bindPopupPositioning: function() {

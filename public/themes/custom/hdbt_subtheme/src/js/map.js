@@ -110,6 +110,8 @@
     },
 
     bindPopupPositioning: function() {
+      const self = this;
+      
       map.on('popupopen', function(e) {
         // Find the pixel location on the map where the popup anchor is
         var px = map.project(e.target._popup._latlng);
@@ -117,7 +119,45 @@
         px.y -= e.target._popup._container.clientHeight;
         // Pan to new center
         map.panTo(map.unproject(px),{animate: true});
+        
+        // Update URL with entity ID
+        self.updateUrlWithEntityId(e.target._popup._source);
       });
+
+      map.on('popupclose', function(e) {
+        // Remove ID from URL when popup is closed
+        self.clearUrlEntityId();
+      });
+    },
+
+    updateUrlWithEntityId: function(marker) {
+      if (!marker || !mapContainer) {
+        return;
+      }
+
+      const leafletInstance = mapContainer.data('leaflet');
+      if (!leafletInstance?.markers) {
+        return;
+      }
+
+      // Find the entity ID by reverse lookup in the markers object
+      const entityId = Object.keys(leafletInstance.markers).find(
+        key => leafletInstance.markers[key] === marker
+      );
+
+      if (entityId) {
+        // Remove the "-0" suffix if present
+        const cleanId = entityId.replace('-0', '');
+        const url = new URL(window.location);
+        url.searchParams.set('id', cleanId);
+        window.history.replaceState({}, '', url);
+      }
+    },
+
+    clearUrlEntityId: function() {
+      const url = new URL(window.location);
+      url.searchParams.delete('id');
+      window.history.replaceState({}, '', url);
     },
 
     getUrlParameter: function(sParam) {

@@ -1,16 +1,13 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\helhist_search\Plugin\Block\ReactSearchBlock.
- */
+declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a React Search block
+ * Provides a React Search block.
  *
  * @Block(
  *   id = "helhist_search_react_search_block",
@@ -19,6 +16,7 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class ReactSearchBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -27,11 +25,12 @@ class ReactSearchBlock extends BlockBase {
       '#theme' => 'react_search',
       '#attached' => [
         'library' => [
-          'hdbt_subtheme/react-search-app'
-        ]
-      ]
+          'hdbt_subtheme/react-search-app',
+        ],
+      ],
     ];
 
     return $build;
   }
+
 }

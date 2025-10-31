@@ -1,65 +1,52 @@
-import React, { useState } from 'react';
-import { SearchFilters, Facet } from '../../../common/types/Content';
+import React from 'react';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { Facet } from '../../../common/types/Content';
 import { t } from '../../../common/utils/translate';
+import { 
+  keywordsAtom, 
+  setKeywordsAtom, 
+  startYearAtom, 
+  setStartYearAtom, 
+  endYearAtom, 
+  setEndYearAtom,
+  stagedFiltersAtom,
+  urlUpdateAtom,
+  resetFormAtom
+} from '../store';
 
 interface SearchFormProps {
-  filters: SearchFilters;
-  onFiltersChange: (filters: SearchFilters) => void;
   facets?: Facet[];
   loading: boolean;
 }
 
 export const SearchForm: React.FC<SearchFormProps> = ({ 
-  filters, 
-  onFiltersChange, 
   facets, 
   loading 
 }) => {
-  const [localKeywords, setLocalKeywords] = useState(filters.keywords);
-  const [localStartYear, setLocalStartYear] = useState(filters.startYear?.toString() || '');
-  const [localEndYear, setLocalEndYear] = useState(filters.endYear?.toString() || '');
+  const keywords = useAtomValue(keywordsAtom);
+  const setKeywords = useSetAtom(setKeywordsAtom);
+  const startYear = useAtomValue(startYearAtom);
+  const setStartYear = useSetAtom(setStartYearAtom);
+  const endYear = useAtomValue(endYearAtom);
+  const setEndYear = useSetAtom(setEndYearAtom);
+  const stagedFilters = useAtomValue(stagedFiltersAtom);
+  const setUrlParams = useSetAtom(urlUpdateAtom);
+  const resetForm = useSetAtom(resetFormAtom);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    onFiltersChange({
-      ...filters,
-      keywords: localKeywords,
-      startYear: localStartYear ? parseInt(localStartYear) : undefined,
-      endYear: localEndYear ? parseInt(localEndYear) : undefined
-    });
-  };
-
-  const handleFacetChange = (facetName: string, value: string, checked: boolean) => {
-    const currentValues = filters[facetName as keyof SearchFilters] as string[] || [];
-    
-    let newValues: string[];
-    if (checked) {
-      newValues = [...currentValues, value];
-    } else {
-      newValues = currentValues.filter(v => v !== value);
-    }
-
-    onFiltersChange({
-      ...filters,
-      [facetName]: newValues
-    });
+    // Update URL with staged filters, reset page to 1 for new search
+    const { page, ...filtersWithoutPage } = stagedFilters;
+    setUrlParams(filtersWithoutPage);
   };
 
   const handleReset = () => {
-    setLocalKeywords('');
-    setLocalStartYear('');
-    setLocalEndYear('');
-    onFiltersChange({
-      keywords: '',
-      startYear: undefined,
-      endYear: undefined,
-      formats: [],
-      phenomena: [],
-      neighbourhoods: []
-    });
+    setKeywords('');
+    setStartYear('');
+    setEndYear('');
+    resetForm();
   };
-
 
   return (
     <div className="historia-search__form">
@@ -67,8 +54,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({
         <div className="search-input-group">
           <input
             type="text"
-            value={localKeywords}
-            onChange={(e) => setLocalKeywords(e.target.value)}
+            value={keywords}
+            onChange={(e) => setKeywords(e.target.value)}
             placeholder={t("Location, person, topic, event...", {}, {context: "Search"})}
             className="search-input"
             disabled={loading}
@@ -81,8 +68,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               {t("Start year", {}, {context: "Search"})}: 
               <input
                 type="number"
-                value={localStartYear}
-                onChange={(e) => setLocalStartYear(e.target.value)}
+                value={startYear}
+                onChange={(e) => setStartYear(e.target.value)}
                 placeholder={t("e.g. 1900", {}, {context: "Search"})}
                 min="1400"
                 max={new Date().getFullYear()}
@@ -93,8 +80,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               {t("End year", {}, {context: "Search"})}:
               <input
                 type="number"
-                value={localEndYear}
-                onChange={(e) => setLocalEndYear(e.target.value)}
+                value={endYear}
+                onChange={(e) => setEndYear(e.target.value)}
                 placeholder={t("e.g. 2000", {}, {context: "Search"})}
                 min="1400"
                 max={new Date().getFullYear()}
@@ -102,7 +89,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               />
             </label>
           </div>
-
 
           <div className="form-actions">
             <button type="submit" disabled={loading} className="search-button">

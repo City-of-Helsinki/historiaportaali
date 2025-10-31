@@ -1,47 +1,49 @@
-import React, { useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
+import { useAtomValue, useSetAtom } from 'jotai';
 import { SearchForm } from './components/SearchForm';
 import { SearchResults } from './components/SearchResults';
 import { useSearch } from './hooks/useSearch';
-import { SearchFilters } from '../../common/types/Content';
+import { searchFiltersAtom, pageAtom, setPageAtom } from './store';
 
 interface SearchContainerProps {
   elasticsearchUrl: string;
 }
 
 export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchUrl }) => {
-  const [filters, setFilters] = useState<SearchFilters>({
-    keywords: '',
-    startYear: undefined,
-    endYear: undefined,
-    formats: [],
-    phenomena: [],
-    neighbourhoods: []
-  });
-
-  const [currentPage, setCurrentPage] = useState(0);
+  const filters = useAtomValue(searchFiltersAtom);
+  const currentPage = useAtomValue(pageAtom);
+  const setPage = useSetAtom(setPageAtom);
   const itemsPerPage = 20;
+
+  // Convert 1-based page to 0-based offset
+  const offset = (currentPage - 1) * itemsPerPage;
 
   const { data, loading, error } = useSearch({
     filters,
-    offset: currentPage * itemsPerPage,
+    offset,
     limit: itemsPerPage,
     elasticsearchUrl
   });
 
-  const handleFiltersChange = useCallback((newFilters: SearchFilters) => {
-    setFilters(newFilters);
-    setCurrentPage(0); // Reset to first page when filters change
-  }, []);
+  const handlePageChange = (page: number) => {
+    setPage(page);
+    // Scroll to top of results
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-  const handlePageChange = useCallback((page: number) => {
-    setCurrentPage(page);
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      window.location.reload();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   return (
     <div className="historia-search">
       <SearchForm 
-        filters={filters}
-        onFiltersChange={handleFiltersChange}
         facets={data?.facets}
         loading={loading}
       />
@@ -53,7 +55,6 @@ export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchU
         onPageChange={handlePageChange}
         loading={loading}
         error={error}
-        filters={filters}
       />
     </div>
   );

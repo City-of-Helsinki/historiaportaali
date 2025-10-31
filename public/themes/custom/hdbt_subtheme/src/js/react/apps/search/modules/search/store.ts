@@ -1,0 +1,125 @@
+import { atom } from 'jotai';
+import type URLParams from './types/URLParams';
+import { SearchFilters } from '../../common/types/Content';
+
+// Parse URL parameters into an object that handles arrays
+const getParams = (searchParams: URLSearchParams) => {
+  const params: { [k: string]: any } = {};
+  const entries = searchParams.entries();
+  let result = entries.next();
+
+  while (!result.done) {
+    const [key, value] = result.value;
+
+    if (!value) {
+      result = entries.next();
+    } else {
+      const existing = params[key];
+      if (existing) {
+        const updatedValue = Array.isArray(existing) ? [...existing, value] : [existing, value];
+        params[key] = updatedValue;
+      } else {
+        // Check if this is an array parameter (formats, phenomena, neighbourhoods)
+        if (['formats', 'phenomena', 'neighbourhoods'].includes(key)) {
+          params[key] = [value];
+        } else {
+          params[key] = value;
+        }
+      }
+
+      result = entries.next();
+    }
+  }
+
+  return params;
+};
+
+// Initialize from URL parameters
+export const urlAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
+
+// Atom to update URL and sync state
+export const urlUpdateAtom = atom(null, (get, set, values: URLParams) => {
+  // set atom value
+  values.page = values.page || '1';
+  set(urlAtom, values);
+  set(stagedFiltersAtom, values);
+
+  // Set new params to window.location
+  const newUrl = new URL(window.location.toString());
+  const newParams = new URLSearchParams();
+
+  // eslint-disable-next-line
+  for (const key in values) {
+    const value = values[key as keyof URLParams];
+
+    // Skip page parameter if it's 1 (default page)
+    if (key === 'page' && value === '1') {
+      continue;
+    }
+
+    if (Array.isArray(value)) {
+      value.forEach((option: string) => newParams.append(key, option));
+    } else if (value) {
+      newParams.set(key, value.toString());
+    } else {
+      newParams.delete(key);
+    }
+  }
+
+  newUrl.search = newParams.toString();
+  window.history.pushState({}, '', newUrl);
+});
+
+// Page atom
+export const pageAtom = atom((get) => Number(get(urlAtom)?.page) || 1);
+
+export const setPageAtom = atom(null, (get, set, page: number) => {
+  const url = get(urlAtom);
+  set(urlUpdateAtom, { ...url, page: page.toString() });
+});
+
+// Staged filters atom for form input (not yet submitted)
+export const stagedFiltersAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
+
+// Keywords atom for the search input
+export const keywordsAtom = atom((get) => get(stagedFiltersAtom)?.q || '');
+
+export const setKeywordsAtom = atom(null, (get, set, value: string) => {
+  const staged = get(stagedFiltersAtom);
+  set(stagedFiltersAtom, { ...staged, q: value });
+});
+
+// Year range atoms
+export const startYearAtom = atom((get) => get(stagedFiltersAtom)?.startYear || '');
+
+export const setStartYearAtom = atom(null, (get, set, value: string) => {
+  const staged = get(stagedFiltersAtom);
+  set(stagedFiltersAtom, { ...staged, startYear: value });
+});
+
+export const endYearAtom = atom((get) => get(stagedFiltersAtom)?.endYear || '');
+
+export const setEndYearAtom = atom(null, (get, set, value: string) => {
+  const staged = get(stagedFiltersAtom);
+  set(stagedFiltersAtom, { ...staged, endYear: value });
+});
+
+// Helper to convert URLParams to SearchFilters
+export const searchFiltersAtom = atom<SearchFilters>((get) => {
+  const params = get(urlAtom);
+  return {
+    keywords: params.q || '',
+    startYear: params.startYear ? parseInt(params.startYear) : undefined,
+    endYear: params.endYear ? parseInt(params.endYear) : undefined,
+    formats: Array.isArray(params.formats) ? params.formats : params.formats ? [params.formats] : [],
+    phenomena: Array.isArray(params.phenomena) ? params.phenomena : params.phenomena ? [params.phenomena] : [],
+    neighbourhoods: Array.isArray(params.neighbourhoods) ? params.neighbourhoods : params.neighbourhoods ? [params.neighbourhoods] : [],
+  };
+});
+
+// Reset form atom
+export const resetFormAtom = atom(null, (get, set) => {
+  set(stagedFiltersAtom, {});
+  set(urlUpdateAtom, {});
+});
+

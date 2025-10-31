@@ -31,7 +31,6 @@ const mapElasticsearchResult = (hit: any): ContentItem => {
   };
 };
 
-// Build Elasticsearch query
 const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: number) => {
   const query: any = {
     from: offset,
@@ -39,7 +38,14 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
     query: {
       bool: {
         must: [],
-        filter: []
+        filter: [
+          {
+            term:
+            {
+              search_api_language: drupalSettings.path.currentLanguage || 'fi'
+            }
+          }
+        ]
       }
     },
     aggs: {
@@ -193,8 +199,6 @@ export const useSearch = ({ filters, offset, limit, elasticsearchUrl }: UseSearc
 
       try {
         const esQuery = buildElasticsearchQuery(filters, offset, limit);
-        
-        // Use the content_and_media index based on the existing configuration
         const response = await fetch(`${elasticsearchUrl}/content_and_media/_search`, {
           method: 'POST',
           headers: {

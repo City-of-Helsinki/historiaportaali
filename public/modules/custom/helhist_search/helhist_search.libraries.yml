@@ -1,7 +1,0 @@
-search-frontend-app:
-  version: 1.x
-  js:
-    frontend/build/static/js/main.js: {}
-  dependencies:
-    - core/drupal
-    - locale/translations

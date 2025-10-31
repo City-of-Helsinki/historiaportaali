@@ -1,5 +1,7 @@
 # HelHist Search
 
+@TODO update documentation
+
 Custom GraphQL/React search component.
 
 Ensure documents are indexed

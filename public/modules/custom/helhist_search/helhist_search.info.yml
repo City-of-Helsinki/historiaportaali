@@ -1,5 +1,5 @@
 name: 'HelHist Search'
 type: module
-description: 'Provides search related customizations.'
+description: 'Provides react search related customizations.'
 core_version_requirement: ^9 || ^10
 package: 'Custom'

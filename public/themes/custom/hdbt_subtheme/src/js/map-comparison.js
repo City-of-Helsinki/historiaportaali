@@ -1,7 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 (($, Drupal, drupalSettings, once) => {
   let mainMap;
   let comparisonMap;
+  const COMPARISON_MAP_ID = 'comparison-map-container';
+  const VIEW_CONTAINER_SELECTOR = '.views--combined-map';
 
   Drupal.behaviors.mapComparison = {
     attach: function(context, settings) {
@@ -15,7 +16,7 @@
 
     bindCompareButton: function(context) {
       let self = this;
-      let $viewContainer = $('.views--combined-map', context);
+      let $viewContainer = $(VIEW_CONTAINER_SELECTOR, context);
       let $button = $(once('comparison-button', '.map-controls__control #map-comparison-btn', context));
 
       $button.on('click', function() {
@@ -30,22 +31,32 @@
     enableMapComparison: function() {
       let self = this;
 
-      let $viewContainer = $('.views--combined-map');
+      // Init comparison map first
+      const $comparisonMapContainer = $(`#${COMPARISON_MAP_ID}`);
+      const comparisonMapInitialized = self.initMap(COMPARISON_MAP_ID);
+
+      if (!comparisonMapInitialized) {
+        console.error('Failed to initialize comparison map');
+        return;
+      }
+
+      let $viewContainer = $(VIEW_CONTAINER_SELECTOR);
       $viewContainer.addClass('comparison-enabled');
 
-      $('#comparison-map-container').fadeIn(150);
+      $comparisonMapContainer.fadeIn(150);
 
       // Re-position map after resize
       mainMap.invalidateSize();
 
-      // Init comparison map
-      const comparisonMapId = 'comparison-map-container';
-      const comparisonMapInitialized = self.initMap(comparisonMapId);
+      self.attachPopupListeners(COMPARISON_MAP_ID);
 
-      if (comparisonMapInitialized) {
-        self.attachPopupListeners(comparisonMapId);
-        self.syncMaps();
-      }
+      // Small delay to ensure map is fully rendered before syncing
+      setTimeout(() => {
+        const synced = self.syncMaps();
+        if (!synced) {
+          console.error('Failed to sync maps');
+        }
+      }, 100);
     },
 
     initMap: function(mapId) {
@@ -101,34 +112,60 @@
 
     disableMapComparison: function() {
       let self = this;
-      let $viewContainer = $('.views--combined-map');
+      const $comparisonMapContainer = $(`#${COMPARISON_MAP_ID}`);
+      let $viewContainer = $(VIEW_CONTAINER_SELECTOR);
 
       $viewContainer.removeClass('comparison-enabled');
-      $('#comparison-map-container').fadeOut(150);
+      $comparisonMapContainer.fadeOut(150);
 
       self.unSyncMaps();
       mainMap.invalidateSize();
     },
 
     syncMaps: function() {
-      if (!mainMap.isSynced(comparisonMap)) {
-        mainMap.sync(comparisonMap);
+      // Bidirectional sync: moving either map syncs the other
+      if (!mainMap || !comparisonMap) {
+        console.warn('Cannot sync maps: one or both maps not initialized');
+        return false;
       }
-      
-      if (!comparisonMap.isSynced(mainMap)) {
+
+      // Check if sync plugin is available
+      if (typeof mainMap.sync !== 'function' || typeof comparisonMap.sync !== 'function') {
+        console.error('Leaflet.Sync plugin not loaded');
+        return false;
+      }
+
+      try {
+        mainMap.sync(comparisonMap);
         comparisonMap.sync(mainMap);
+        return true;
+      } catch (error) {
+        console.error('Error syncing maps:', error);
+        return false;
       }
     },
 
     unSyncMaps: function() {
-      if (mainMap.isSynced(comparisonMap)) {
-        mainMap.unsync(comparisonMap);
+      // Unsync both maps
+      if (!mainMap || !comparisonMap) {
+        console.warn('Cannot unsync maps: one or both maps not initialized');
+        return false;
       }
-      
-      if (comparisonMap.isSynced(mainMap)) {
+
+      // Check if unsync method exists
+      if (typeof mainMap.unsync !== 'function' || typeof comparisonMap.unsync !== 'function') {
+        console.warn('Leaflet.Sync plugin not loaded or maps not synced');
+        return false;
+      }
+
+      try {
+        mainMap.unsync(comparisonMap);
         comparisonMap.unsync(mainMap);
+        return true;
+      } catch (error) {
+        console.error('Error unsyncing maps:', error);
+        return false;
       }
     }
   };
-  // eslint-disable-next-line no-undef
 })(jQuery, Drupal, drupalSettings, once);

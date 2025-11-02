@@ -2,17 +2,15 @@ import path from 'path';
 import { globSync } from 'glob';
 import { buildAll, watchAndBuild } from '@hdbt/theme-builder/builder';
 import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirnameCustom = path.dirname(__filename);
 const require = createRequire(import.meta.url);
+// Use parent theme's esbuild dependency
 const esbuild = require('../../contrib/hdbt/node_modules/esbuild');
-
 const __dirname = path.resolve();
 const isDev = process.argv.includes('--dev');
 const isWatch = process.argv.includes('--watch');
-const watchPaths = ['src/js', 'src/scss'];
+// Watch SCSS and vanilla JS only (React has its own watcher via esbuild)
+const watchPaths = ['src/scss', 'src/js/*.js'];
 const outDir = path.resolve(__dirname, 'dist');
 
 // React apps.
@@ -45,43 +43,67 @@ const staticFiles = [
   ['node_modules/tiny-slider/dist/tiny-slider.css', `${outDir}/css/tiny-slider/tiny-slider.css`],
 ];
 
-// Custom React build function to handle React 18 properly
-async function buildReactApp() {
-  console.warn('🔨 Building React app with custom config...');
-  try {
-    await esbuild.build({
-      entryPoints: ['./src/js/react/apps/search/index.tsx'],
-      bundle: true,
-      minify: !isDev,
-      format: 'iife',
-      platform: 'browser',
-      target: 'es2020',
-      outfile: `${outDir}/js/search-app.min.js`,
-      tsconfig: './tsconfig.json',
-      define: {
-        'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
-      },
-      charset: 'utf8',
-      legalComments: 'none',
-      sourcemap: isDev,
-      plugins: [{
-        name: 'dedupe-react-full',
-        setup(build) {
-          build.onResolve({ filter: /^react(-dom)?(\/client)?$/ }, args => ({
-            path: require.resolve(args.path),
-          }));
+/**
+ * Custom React build function with React 18 support.
+ * 
+ * The hdbt/theme-builder (currently using React 17.0.2) doesn't support 
+ * React 18's /client imports (e.g., react-dom/client), so we use a custom 
+ * esbuild configuration. This follows the same pattern as the parent theme's 
+ * buildReactApps() but with an extended plugin to handle React 18.
+ * 
+ * @todo Remove this custom build function once hdbt/theme-builder upgrades to React 18+
+ */
+async function buildReactAppsWithReact18Support(config = {}) {
+  const { reactApps, outDir, isDev = false, watchMode = false } = config;
+
+  await Promise.all(
+    Object.entries(reactApps).map(async ([name, entry]) => {
+      const outfile = `${outDir}/js/${name}.min.js`;
+
+      const buildConfig = {
+        entryPoints: [entry],
+        bundle: true,
+        minify: !isDev,
+        format: 'iife',
+        platform: 'browser',
+        target: 'es2020',
+        outfile,
+        tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+        define: {
+          'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
+        },
+        charset: 'utf8',
+        keepNames: true,
+        legalComments: 'none',
+        sourcemap: isDev,
+        logLevel: 'silent',
+        plugins: [{
+          name: 'dedupe-react-with-client',
+          setup(build) {
+            // Extended from parent theme to support React 18's /client imports
+            build.onResolve({ filter: /^react(-dom)?(\/client)?$/ }, args => ({
+              path: require.resolve(args.path),
+            }));
+          }
+        }]
+      };
+
+      try {
+        if (watchMode) {
+          const ctx = await esbuild.context(buildConfig);
+          await ctx.watch();
+        } else {
+          await esbuild.build(buildConfig);
         }
-      }]
-    });
-    console.warn('✅ React app built successfully');
-  } catch (error) {
-    console.error('❌ React build failed:', error);
-    throw error;
-  }
+      } catch (error) {
+        console.error(`❌ Error building React app ${name}:`, error.message);
+        throw error;
+      }
+    })
+  );
 }
 
 // Builder configurations.
-const reactConfig = { reactApps: {}, isDev, outDir }; // Empty because we build it manually
 const jsConfig = { jsFiles, isDev, outDir };
 const cssConfig = { styles, isDev, outDir };
 const iconsConfig = {
@@ -93,20 +115,57 @@ const iconsConfig = {
   jsonOut: 'icons.json',
   iconClass: 'hel',
 };
-const buildArguments = { outDir, iconsConfig, staticFiles, jsConfig, reactConfig, cssConfig };
 
+// Config for our custom React 18 build function
+const reactConfig = { reactApps, isDev, outDir };
+
+// Pass empty reactApps to builder to prevent double-building
+const buildArguments = { 
+  outDir, 
+  iconsConfig, 
+  staticFiles, 
+  jsConfig, 
+  reactConfig: { reactApps: {}, isDev, outDir }, // Empty - we build React separately
+  cssConfig 
+};
+
+// Build and watch orchestration.
+// Unlike parent theme, we can't use the builder's built-in React support
+// because it doesn't handle React 18. So we build React apps separately.
+//
+// NOTE: Initial build runs twice in watch mode - this is intentional:
+// 1. First buildAll() ensures everything is clean and built
+// 2. Then React apps are built and start watching
+// 3. watchAndBuild() does another buildAll() for consistency before watching
+// This only happens once at startup and is fast (~400ms for second build).
 if (isWatch) {
-  // Build everything first, then React app
-  buildAll(buildArguments).then(() => buildReactApp()).then(() => {
-    watchAndBuild({
-      buildArguments,
-      watchPaths,
-    });
-  });
-} else {
-  // Build everything else first, then React app (so it doesn't get cleaned)
   buildAll(buildArguments)
-    .then(() => buildReactApp())
+    .then(() => {
+      console.warn('🔨 Building React apps with custom config...');
+      return buildReactAppsWithReact18Support({ ...reactConfig, watchMode: true });
+    })
+    .then(() => {
+      console.warn('✅ React apps watching for changes...');
+      // watchAndBuild calls buildAll internally (causing the second build you see)
+      // but this ensures everything stays in sync
+      watchAndBuild({
+        buildArguments,
+        watchPaths,
+      });
+    })
+    .catch((e) => {
+      console.error('❌ Build failed:', e);
+      process.exit(1);
+    });
+} else {
+  buildAll(buildArguments)
+    .then(() => {
+      console.warn('🔨 Building React apps with custom config...');
+      return buildReactAppsWithReact18Support(reactConfig);
+    })
+    .then(() => {
+      console.warn('✅ React apps built successfully');
+    })
     .catch((e) => {
       console.error('❌ Build failed:', e);
       process.exit(1);

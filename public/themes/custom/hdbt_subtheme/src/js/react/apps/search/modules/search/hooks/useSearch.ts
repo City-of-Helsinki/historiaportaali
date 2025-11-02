@@ -51,19 +51,19 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
     aggs: {
       formats: {
         terms: {
-          field: "aggregated_formats_title.keyword",
+          field: "aggregated_formats_title",
           size: 50
         }
       },
       phenomena: {
         terms: {
-          field: "aggregated_phenomena_title.keyword", 
+          field: "aggregated_phenomena_title",
           size: 50
         }
       },
       neighbourhoods: {
         terms: {
-          field: "aggregated_neighbourhoods_title.keyword",
+          field: "aggregated_neighbourhoods_title",
           size: 50
         }
       }
@@ -119,7 +119,7 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
   if (filters.formats && filters.formats.length > 0) {
     query.query.bool.filter.push({
       terms: {
-        "aggregated_formats_title.keyword": filters.formats
+        "aggregated_formats_title": filters.formats
       }
     });
   }
@@ -128,7 +128,7 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
   if (filters.phenomena && filters.phenomena.length > 0) {
     query.query.bool.filter.push({
       terms: {
-        "aggregated_phenomena_title.keyword": filters.phenomena
+        "aggregated_phenomena_title": filters.phenomena
       }
     });
   }
@@ -137,7 +137,7 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
   if (filters.neighbourhoods && filters.neighbourhoods.length > 0) {
     query.query.bool.filter.push({
       terms: {
-        "aggregated_neighbourhoods_title.keyword": filters.neighbourhoods
+        "aggregated_neighbourhoods_title": filters.neighbourhoods
       }
     });
   }
@@ -147,39 +147,21 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
 
 // Map Elasticsearch aggregations to facets
 const mapAggregationsToFacets = (aggregations: any): Facet[] => {
-  const facets: Facet[] = [];
-  
-  if (aggregations.formats) {
-    facets.push({
-      name: 'aggregated_formats_title',
-      values: aggregations.formats.buckets.map((bucket: any) => ({
+  const facetMapping = [
+    { key: 'formats', name: 'aggregated_formats_title' },
+    { key: 'phenomena', name: 'aggregated_phenomena_title' },
+    { key: 'neighbourhoods', name: 'aggregated_neighbourhoods_title' }
+  ];
+
+  return facetMapping
+    .filter(({ key }) => aggregations[key])
+    .map(({ key, name }) => ({
+      name,
+      values: aggregations[key].buckets.map((bucket: any) => ({
         filter: bucket.key,
         count: bucket.doc_count
       }))
-    });
-  }
-
-  if (aggregations.phenomena) {
-    facets.push({
-      name: 'aggregated_phenomena_title',
-      values: aggregations.phenomena.buckets.map((bucket: any) => ({
-        filter: bucket.key,
-        count: bucket.doc_count
-      }))
-    });
-  }
-
-  if (aggregations.neighbourhoods) {
-    facets.push({
-      name: 'aggregated_neighbourhoods_title',
-      values: aggregations.neighbourhoods.buckets.map((bucket: any) => ({
-        filter: bucket.key,
-        count: bucket.doc_count
-      }))
-    });
-  }
-
-  return facets;
+    }));
 };
 
 export const useSearch = ({ filters, offset, limit, elasticsearchUrl }: UseSearchParams): UseSearchReturn => {
@@ -189,11 +171,6 @@ export const useSearch = ({ filters, offset, limit, elasticsearchUrl }: UseSearc
 
   useEffect(() => {
     const performSearch = async () => {
-      if (!filters.keywords.trim() && !filters.formats?.length && !filters.phenomena?.length && !filters.neighbourhoods?.length && !filters.startYear && !filters.endYear) {
-        setData(null);
-        return;
-      }
-
       setLoading(true);
       setError(null);
 
@@ -221,7 +198,7 @@ export const useSearch = ({ filters, offset, limit, elasticsearchUrl }: UseSearc
         const facets = mapAggregationsToFacets(result.aggregations || {});
 
         setData({
-          result_count: result.hits.total.value || result.hits.total,
+          result_count: result.hits.total.value !== undefined ? result.hits.total.value : result.hits.total,
           documents,
           facets
         });

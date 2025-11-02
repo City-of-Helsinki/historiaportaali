@@ -9,6 +9,12 @@ import {
   setStartYearAtom, 
   endYearAtom, 
   setEndYearAtom,
+  phenomenaAtom,
+  setPhenomenaAtom,
+  formatsAtom,
+  setFormatsAtom,
+  neighbourhoodsAtom,
+  setNeighbourhoodsAtom,
   stagedFiltersAtom,
   urlUpdateAtom,
   resetFormAtom
@@ -29,24 +35,33 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   const setStartYear = useSetAtom(setStartYearAtom);
   const endYear = useAtomValue(endYearAtom);
   const setEndYear = useSetAtom(setEndYearAtom);
+  const phenomena = useAtomValue(phenomenaAtom);
+  const setPhenomena = useSetAtom(setPhenomenaAtom);
+  const formats = useAtomValue(formatsAtom);
+  const setFormats = useSetAtom(setFormatsAtom);
+  const neighbourhoods = useAtomValue(neighbourhoodsAtom);
+  const setNeighbourhoods = useSetAtom(setNeighbourhoodsAtom);
   const stagedFilters = useAtomValue(stagedFiltersAtom);
   const setUrlParams = useSetAtom(urlUpdateAtom);
   const resetForm = useSetAtom(resetFormAtom);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Update URL with staged filters, reset page to 1 for new search
     const { page, ...filtersWithoutPage } = stagedFilters;
     setUrlParams(filtersWithoutPage);
   };
 
-  const handleReset = () => {
-    setKeywords('');
-    setStartYear('');
-    setEndYear('');
-    resetForm();
+  // Generic handler for toggling array filter values
+  const toggleArrayFilter = (currentValues: string[], value: string, setter: (values: string[]) => void) => {
+    const newValues = currentValues.includes(value)
+      ? currentValues.filter(v => v !== value)
+      : [...currentValues, value];
+    setter(newValues);
   };
+
+  const phenomenaFacet = facets?.find(f => f.name === 'aggregated_phenomena_title');
+  const formatsFacet = facets?.find(f => f.name === 'aggregated_formats_title');
+  const neighbourhoodsFacet = facets?.find(f => f.name === 'aggregated_neighbourhoods_title');
 
   return (
     <div className="historia-search__form">
@@ -89,6 +104,68 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               />
             </label>
           </div>
+          {formatsFacet && formatsFacet.values.length > 0 && (
+            <div className="formats-filters">
+              <fieldset disabled={loading}>
+                <legend>{t("Formats", {}, {context: "Search"})}</legend>
+                <div className="checkbox-group">
+                  {formatsFacet.values.map((facetValue) => (
+                    <label key={facetValue.filter} className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={formats.includes(facetValue.filter)}
+                        onChange={() => toggleArrayFilter(formats, facetValue.filter, setFormats)}
+                        disabled={loading}
+                      />
+                      <span>{facetValue.filter} ({facetValue.count})</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+          )}
+
+          {phenomenaFacet && phenomenaFacet.values.length > 0 && (
+            <div className="phenomena-filters">
+              <fieldset disabled={loading}>
+                <legend>{t("Phenomena", {}, {context: "Search"})}</legend>
+                <div className="checkbox-group">
+                  {phenomenaFacet.values.map((facetValue) => (
+                    <label key={facetValue.filter} className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={phenomena.includes(facetValue.filter)}
+                        onChange={() => toggleArrayFilter(phenomena, facetValue.filter, setPhenomena)}
+                        disabled={loading}
+                      />
+                      <span>{facetValue.filter} ({facetValue.count})</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+          )}
+
+          {neighbourhoodsFacet && neighbourhoodsFacet.values.length > 0 && (
+            <div className="neighbourhoods-filters">
+              <fieldset disabled={loading}>
+                <legend>{t("Region", {}, {context: "Search"})}</legend>
+                <div className="checkbox-group">
+                  {neighbourhoodsFacet.values.map((facetValue) => (
+                    <label key={facetValue.filter} className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={neighbourhoods.includes(facetValue.filter)}
+                        onChange={() => toggleArrayFilter(neighbourhoods, facetValue.filter, setNeighbourhoods)}
+                        disabled={loading}
+                      />
+                      <span>{facetValue.filter} ({facetValue.count})</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+          )}
 
           <div className="form-actions">
             <button type="submit" disabled={loading} className="search-button">
@@ -97,7 +174,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                 : t("Search", {}, {context: "Search"})
               }
             </button>
-            <button type="button" onClick={handleReset} className="reset-button">
+            <button type="button" onClick={resetForm} className="reset-button">
               {t("Clear filters", {}, {context: "Search"})}
             </button>
           </div>

@@ -35,28 +35,12 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
     return <GhostList count={itemsPerPage} />;
   }
 
-  // Check if there are any active filters or search terms
-  const hasActiveSearch = filters.keywords.trim() || filters.startYear || filters.endYear;
-
-  if (results.length === 0 && hasActiveSearch) {
-    return (
-      <div className="historia-search__no-results">
-        <p>{t("No search results. Try different keywords or modify filters.", {}, {context: "Search"})}</p>
-      </div>
-    );
-  }
-
-  // If no results and no active search, show nothing (empty state)
-  if (results.length === 0) {
-    return null;
-  }
-
   const totalPages = Math.ceil(totalCount / itemsPerPage);
 
   return (
     <div className="historia-search__results">
       <div className="results-summary">
-        <p>{t("Found @count results", {"@count": totalCount}, {context: "Search"})}</p>
+        <p>{t("Found @count results", {"@count": String(totalCount)}, {context: "Search"})}</p>
       </div>
 
       <div className="results-list">
@@ -90,13 +74,13 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
                 
                 {item.phenomena && item.phenomena.length > 0 && (
                   <div className="result-phenomena">
-                    <strong>{t("Phenomena:", {}, {context: "Search"})}:</strong> {item.phenomena.join(', ')}
+                    <strong>{t("Phenomena", {}, {context: "Search"})}:</strong> {item.phenomena.join(', ')}
                   </div>
                 )}
                 
                 {item.neighbourhoods && item.neighbourhoods.length > 0 && (
                   <div className="result-neighbourhoods">
-                    <strong>{t("Districts", {}, {context: "Search"})}:</strong> {item.neighbourhoods.join(', ')}
+                    <strong>{t("Region", {}, {context: "Search"})}:</strong> {item.neighbourhoods.join(', ')}
                   </div>
                 )}
               </div>
@@ -116,7 +100,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
           </button>
           
           <span className="pagination-info">
-            {t("Page @current / @total", {"@current": currentPage, "@total": totalPages}, {context: "Search"})}
+            {t("Page @current / @total", {"@current": String(currentPage), "@total": String(totalPages)}, {context: "Search"})}
           </span>
           
           <button 

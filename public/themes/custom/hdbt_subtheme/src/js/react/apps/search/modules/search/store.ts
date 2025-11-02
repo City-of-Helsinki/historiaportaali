@@ -81,28 +81,55 @@ export const setPageAtom = atom(null, (get, set, page: number) => {
 // Staged filters atom for form input (not yet submitted)
 export const stagedFiltersAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
 
-// Keywords atom for the search input
-export const keywordsAtom = atom((get) => get(stagedFiltersAtom)?.q || '');
+// Helper to create string field atoms
+const createStringFieldAtom = (field: keyof URLParams) => {
+  const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || '');
+  const setAtom = atom(null, (get, set, value: string) => {
+    set(stagedFiltersAtom, { ...get(stagedFiltersAtom), [field]: value });
+  });
+  return { getAtom, setAtom };
+};
 
-export const setKeywordsAtom = atom(null, (get, set, value: string) => {
-  const staged = get(stagedFiltersAtom);
-  set(stagedFiltersAtom, { ...staged, q: value });
-});
+// Helper to normalize array fields
+const normalizeArray = (value: string | string[] | undefined): string[] => {
+  return Array.isArray(value) ? value : value ? [value] : [];
+};
+
+// Helper to create array field atoms
+const createArrayFieldAtom = (field: keyof URLParams) => {
+  const getAtom = atom((get) => normalizeArray(get(stagedFiltersAtom)?.[field] as string | string[] | undefined));
+  const setAtom = atom(null, (get, set, value: string[]) => {
+    set(stagedFiltersAtom, { ...get(stagedFiltersAtom), [field]: value });
+  });
+  return { getAtom, setAtom };
+};
+
+// Keywords atoms
+const keywords = createStringFieldAtom('q');
+export const keywordsAtom = keywords.getAtom;
+export const setKeywordsAtom = keywords.setAtom;
 
 // Year range atoms
-export const startYearAtom = atom((get) => get(stagedFiltersAtom)?.startYear || '');
+const startYear = createStringFieldAtom('startYear');
+export const startYearAtom = startYear.getAtom;
+export const setStartYearAtom = startYear.setAtom;
 
-export const setStartYearAtom = atom(null, (get, set, value: string) => {
-  const staged = get(stagedFiltersAtom);
-  set(stagedFiltersAtom, { ...staged, startYear: value });
-});
+const endYear = createStringFieldAtom('endYear');
+export const endYearAtom = endYear.getAtom;
+export const setEndYearAtom = endYear.setAtom;
 
-export const endYearAtom = atom((get) => get(stagedFiltersAtom)?.endYear || '');
+// Array filter atoms
+const phenomena = createArrayFieldAtom('phenomena');
+export const phenomenaAtom = phenomena.getAtom;
+export const setPhenomenaAtom = phenomena.setAtom;
 
-export const setEndYearAtom = atom(null, (get, set, value: string) => {
-  const staged = get(stagedFiltersAtom);
-  set(stagedFiltersAtom, { ...staged, endYear: value });
-});
+const formats = createArrayFieldAtom('formats');
+export const formatsAtom = formats.getAtom;
+export const setFormatsAtom = formats.setAtom;
+
+const neighbourhoods = createArrayFieldAtom('neighbourhoods');
+export const neighbourhoodsAtom = neighbourhoods.getAtom;
+export const setNeighbourhoodsAtom = neighbourhoods.setAtom;
 
 // Helper to convert URLParams to SearchFilters
 export const searchFiltersAtom = atom<SearchFilters>((get) => {
@@ -111,9 +138,9 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
     keywords: params.q || '',
     startYear: params.startYear ? parseInt(params.startYear) : undefined,
     endYear: params.endYear ? parseInt(params.endYear) : undefined,
-    formats: Array.isArray(params.formats) ? params.formats : params.formats ? [params.formats] : [],
-    phenomena: Array.isArray(params.phenomena) ? params.phenomena : params.phenomena ? [params.phenomena] : [],
-    neighbourhoods: Array.isArray(params.neighbourhoods) ? params.neighbourhoods : params.neighbourhoods ? [params.neighbourhoods] : [],
+    formats: normalizeArray(params.formats),
+    phenomena: normalizeArray(params.phenomena),
+    neighbourhoods: normalizeArray(params.neighbourhoods),
   };
 });
 

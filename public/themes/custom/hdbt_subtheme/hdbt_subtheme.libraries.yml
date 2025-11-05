@@ -31,18 +31,22 @@ leaflet-sync:
   version: 0.2.4
   js:
     ../../../libraries/leaflet.sync/L.Map.Sync.js: {}
+  dependencies:
+    - leaflet/leaflet
 
 map-view:
   version: 1.x
   js:
-    dist/js/map.min.js: { weight: -10 }
-    dist/js/map-controls.min.js: { weight: -10 }
-    dist/js/map-comparison.min.js: { weight: -10 }
+    dist/js/map.min.js: { weight: -5 }
+    dist/js/map-controls.min.js: { weight: -5 }
+    dist/js/map-comparison.min.js: { weight: -5 }
   dependencies:
     - core/jquery
     - core/once
     - core/drupal
+    - leaflet/leaflet
     - hdbt_subtheme/leaflet-sync
+    - hdbt_admin/select2.min
 
 reading-time:
   version: 1.x

@@ -1,5 +1,16 @@
 parameters:
-  treatPhpDocTypesAsCertain: false
+  fileExtensions:
+      - php
+      - module
+      - install
+      - theme
+  paths:
+    - ./public/modules/custom/
+    - ./public/themes/custom/
   excludePaths:
-      - *Test.php
-      - *TestBase.php
+    - vendor
+    - */node_modules/*
+    - ./public/modules/custom/graphql_search_api
+    - ./public/themes/custom/hdbt_subtheme/dist
+  level: 3
+  treatPhpDocTypesAsCertain: false

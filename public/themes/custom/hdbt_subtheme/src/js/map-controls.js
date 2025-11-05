@@ -4,6 +4,11 @@
     attach: function(context, settings) {
       let self = this;
 
+      // Ensure Leaflet is loaded before adding init hooks
+      if (typeof L === 'undefined' || !L.Map) {
+        return;
+      }
+
       L.Map.addInitHook(function () {
         const map = this;
 

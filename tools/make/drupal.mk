@@ -84,7 +84,7 @@ drush-unblock: ## Get login link
 PHONY += drush-locale-update
 drush-locale-update: drupal-create-folders ## Update translations.
 	$(call step,Update translations...)
-	$(call drush,state:set locale.translation_last_checked 0)
+	$(call drush,locale:clear-status)
 	$(call drush,locale:check)
 	$(call drush,locale:update)
 	$(call drush,cr)
@@ -108,7 +108,7 @@ PHONY += drush-import-dump
 drush-import-dump: dump.sql
 	$(call drush,sql-drop --quiet -y)
 	$(call step,Import local SQL dump...)
-	$(call drush,sql-query --file=/app/dump.sql && echo 'SQL dump imported')
+	$(call drush,sql-query --file=/app/dump.sql --extra=--skip-ssl && echo 'SQL dump imported')
 
 PHONY += drush-sanitize-database
 drush-sanitize-database:

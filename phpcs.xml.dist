@@ -3,10 +3,12 @@
   <arg name="extensions" value="php,module,install,theme,inc"/>
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+
+  <!-- Ignore graphql_search_api, it will be removed via HIS-330 -->
+  <exclude-pattern>*/graphql_search_api/*</exclude-pattern>
+
   <rule ref="Drupal" />
-  <rule ref="DrupalPractice">
-    <exclude name="DrupalPractice.General.OptionsT.TforValue" />
-    <exclude name="DrupalPractice.Objects.UnusedPrivateMethod.UnusedMethod" />
-  </rule>
+  <rule ref="DrupalPractice" />
   <rule ref="Generic.PHP.RequireStrictTypes" />
 </ruleset>

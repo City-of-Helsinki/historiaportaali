@@ -1,16 +1,13 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\helhist_search\Plugin\Block\SearchFrontendBlock.
- */
+declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a Search Frontend block
+ * Provides a Search Frontend block.
  *
  * @Block(
  *   id = "helhist_search_search_frontend_block",
@@ -19,6 +16,7 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class SearchFrontendBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -27,11 +25,12 @@ class SearchFrontendBlock extends BlockBase {
       '#theme' => 'search_frontend',
       '#attached' => [
         'library' => [
-          'helhist_search/search-frontend-app'
-        ]
-      ]
+          'helhist_search/search-frontend-app',
+        ],
+      ],
     ];
 
     return $build;
   }
+
 }

@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -12,17 +13,21 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Processes KoRe archive data for migration.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_archives",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
 
@@ -88,6 +93,15 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
     return ($ac > $bc) ? -1 : 1;
   }
 
+  /**
+   * Creates a paragraph item for archive data.
+   *
+   * @param array $item
+   *   The item data array.
+   *
+   * @return array
+   *   The paragraph reference array.
+   */
   protected function createParagraphsItem(array $item): array {
 
     $paragraph = Paragraph::create([
@@ -107,7 +121,7 @@ class KoReArchives extends ProcessPluginBase implements ContainerFactoryPluginIn
       'field_kore_url' => [
         'uri' => str_replace('https://yksa3.darchive.fi/YKSA3/id/', 'https://yksa.disec.fi/Yksa4/id/', $item['url']),
         'title' => $item['arkiston_nimi'],
-      ]
+      ],
     ]);
 
     $paragraph->save();

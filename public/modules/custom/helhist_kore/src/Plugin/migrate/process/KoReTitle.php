@@ -1,28 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\helhist_kore\Plugin\migrate\process;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
+ * Processes KoRe title data for migration.
+ *
  * @MigrateProcessPlugin(
  *   id = "kore_title",
  *   handle_multiples = TRUE
  * )
+ *
+ * @phpstan-consistent-constructor
  */
 class KoReTitle extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * Logger service.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
 
@@ -67,7 +71,7 @@ class KoReTitle extends ProcessPluginBase implements ContainerFactoryPluginInter
       if (is_array($latest) && !empty($latest['official_name'])) {
         return $latest['official_name'];
       }
-      else if (is_array($latest['other_names']) && !empty($latest['other_names'][0]['value'])) {
+      elseif (is_array($latest['other_names']) && !empty($latest['other_names'][0]['value'])) {
         return $latest['other_names'][0]['value'];
       }
     }

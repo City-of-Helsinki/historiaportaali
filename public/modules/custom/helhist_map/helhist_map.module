@@ -1,34 +1,42 @@
 <?php
 
+/**
+ * @file
+ * Provides custom Helhist map functionalities.
+ */
+
+declare(strict_types=1);
+
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
 
 /**
-* Implements hook_theme().
-*/
+ * Implements hook_theme().
+ */
 function helhist_map_theme($existing, $type, $theme, $path) {
   return [
     'map_controls' => [
       'template' => 'map-controls',
       'variables' => [
         'map_layers' => [],
-        'photo_layers' => []
-      ]
+        'photo_layers' => [],
       ],
+    ],
     'comparison_map_controls' => [
       'template' => 'comparison-map-controls',
       'variables' => [
         'map_layers' => [],
-        'photo_layers' => []
-      ]
+        'photo_layers' => [],
       ],
-      'map_lift_block' => [
-        'template' => 'map-lift-block',
-        'variables' => [
-          'map_node_url' => ''
-        ]
-      ]
+    ],
+    'map_lift_block' => [
+      'template' => 'map-lift-block',
+      'variables' => [
+        'map_node_url' => '',
+      ],
+    ],
   ];
 }
 
@@ -36,8 +44,8 @@ function helhist_map_theme($existing, $type, $theme, $path) {
  * Implements hook_views_post_execute().
  */
 function helhist_map_views_post_execute(ViewExecutable $view) {
-  if ($view->id() == 'combined_map' && in_array($view->current_display, _getMapDisplays())) {
-    // Apply exposed filters to media_map view result
+  if ($view->id() == 'combined_map' && in_array($view->current_display, helhist_map_get_map_displays())) {
+    // Apply exposed filters to media_map view result.
     $exposed_filters = $view->getExposedInput();
     $media_view = Views::getView('media_map');
     $media_view->setDisplay('block');
@@ -45,27 +53,27 @@ function helhist_map_views_post_execute(ViewExecutable $view) {
     $media_view->execute();
     $media_view_result = $media_view->result;
 
-    // Make media result indexes to follow article result indexes
+    // Make media result indexes to follow article result indexes.
     $new_media_index = count($view->result);
     foreach ($media_view_result as $key => $m_result) {
       $media_view_result[$key]->index = $new_media_index;
       $new_media_index++;
     }
 
-    // Merge media view results to article view results
+    // Merge media view results to article view results.
     $view->result = array_merge($view->result, $media_view_result);
     $view->total_rows = count($view->result);
-    
+
     $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() == 'map_page') {
-      // Get the map center from field
+    if ($node instanceof NodeInterface && $node->bundle() == 'map_page') {
+      // Get the map center from field.
       if ($node->hasField('field_default_map_center') && !$node->get('field_default_map_center')->isEmpty()) {
         $default_map_center = $node->get('field_default_map_center')->first()->getValue();
         $view->style_plugin->options['map_position']['center']['lat'] = $default_map_center['lat'];
         $view->style_plugin->options['map_position']['center']['lon'] = $default_map_center['lon'];
       }
 
-      // Get the map zoom level from field
+      // Get the map zoom level from field.
       if ($node->hasField('field_default_map_zoom_level') && !$node->get('field_default_map_zoom_level')->isEmpty()) {
         $default_map_zoom_level = $node->get('field_default_map_zoom_level')->getString();
         $view->style_plugin->options['map_position']['zoom'] = $default_map_zoom_level;
@@ -78,7 +86,7 @@ function helhist_map_views_post_execute(ViewExecutable $view) {
  * Implements hook_views_pre_render().
  */
 function helhist_map_views_pre_render(ViewExecutable $view) {
-  if ($view->storage->id() == 'combined_map' && in_array($view->current_display, _getMapDisplays())) {
+  if ($view->storage->id() == 'combined_map' && in_array($view->current_display, helhist_map_get_map_displays())) {
     $view->element['#attached']['library'][] = 'hdbt_subtheme/map-view';
   }
 }
@@ -93,9 +101,15 @@ function helhist_map_leaflet_map_info_alter(array &$map_info) {
   }
 }
 
-function _getMapDisplays() {
+/**
+ * Get the list of map display IDs.
+ *
+ * @return array
+ *   An array of display IDs.
+ */
+function helhist_map_get_map_displays() {
   return [
-    'block'
+    'block',
   ];
 }
 
@@ -111,7 +125,7 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
   $taxonomy_field = 'field_keywords';
 
   if ($form['#id'] == $form_id) {
-    $active_terms = _get_active_terms($taxonomy_field, $select_field);
+    $active_terms = helhist_map_get_active_terms($taxonomy_field, $select_field);
     if (isset($active_terms)) {
       unset($form[$select_field]['#options']);
       $form[$select_field]['#options'] = ['All' => t('Select keyword')];
@@ -130,23 +144,26 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
 
 /**
  * Find taxonomy terms that return node results for a given field.
- * 
+ *
  * @param string $taxonomy_field
+ *   The taxonomy field name.
  * @param string $select_field
+ *   The select field name.
+ *
+ * @return array
+ *   An array of active terms.
  */
-function _get_active_terms($taxonomy_field, $select_field) {
-
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+function helhist_map_get_active_terms($taxonomy_field, $select_field) {
   $term_list = [];
 
   // Find taxonomy terms that link to node type content with a geolocation.
   $connection = \Drupal::database();
-  $query = $connection->select('node__'.$taxonomy_field, 'node_field_data');
+  $query = $connection->select('node__' . $taxonomy_field, 'node_field_data');
   $query->join('node__field_geolocation', 'geolocation', 'geolocation.entity_id = node_field_data.entity_id');
   $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = node_field_data.' . $select_field);
   // Let's restore this condition once we have translated terms.
-  // TODO: also add condition that node must have translation.
-  // $query->condition('tname.langcode', $language);
+  // @todo also add condition that node must have translation.
+  // $query->condition('tname.langcode', $language);.
   $query->fields('node_field_data', [$select_field]);
   $query->fields('tname', ['name']);
   $result = $query->distinct()->execute();
@@ -156,12 +173,12 @@ function _get_active_terms($taxonomy_field, $select_field) {
 
   // Find taxonomy terms that link to media type content with a geolocation.
   $connection = \Drupal::database();
-  $query = $connection->select('media__'.$taxonomy_field, 'media_field_data');
+  $query = $connection->select('media__' . $taxonomy_field, 'media_field_data');
   $query->join('media__field_geolocation', 'geolocation', 'geolocation.entity_id = media_field_data.entity_id');
   $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = media_field_data.' . $select_field);
   // Let's restore this filter once we have translated terms.
-  // TODO: also add condition that media entity must have translation.
-  // $query->condition('tname.langcode', $language);
+  // @todo also add condition that media entity must have translation.
+  // $query->condition('tname.langcode', $language);.
   $query->fields('media_field_data', [$select_field]);
   $query->fields('tname', ['name']);
   $result = $query->distinct()->execute();
@@ -170,7 +187,7 @@ function _get_active_terms($taxonomy_field, $select_field) {
   }
 
   // Sort final options array.
-  usort($term_list, "_select_sort");
+  usort($term_list, "helhist_map_select_sort");
   return $term_list;
 }
 
@@ -178,8 +195,13 @@ function _get_active_terms($taxonomy_field, $select_field) {
  * Sort term list array by taxonomy name column.
  *
  * @param array $a
+ *   First array element to compare.
  * @param array $b
+ *   Second array element to compare.
+ *
+ * @return int
+ *   Comparison result.
  */
-function _select_sort ($a, $b) {
+function helhist_map_select_sort($a, $b) {
   return strcmp($a[1], $b[1]);
 }

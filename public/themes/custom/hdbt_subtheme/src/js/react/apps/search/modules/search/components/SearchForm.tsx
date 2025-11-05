@@ -104,7 +104,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               />
             </label>
           </div>
-          {formatsFacet && formatsFacet.values.length > 0 && (
+          {formatsFacet && (
             <div className="formats-filters">
               <fieldset disabled={loading}>
                 <legend>{t("Formats", {}, {context: "Search"})}</legend>
@@ -125,7 +125,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             </div>
           )}
 
-          {phenomenaFacet && phenomenaFacet.values.length > 0 && (
+          {phenomenaFacet && (
             <div className="phenomena-filters">
               <fieldset disabled={loading}>
                 <legend>{t("Phenomena", {}, {context: "Search"})}</legend>
@@ -146,7 +146,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             </div>
           )}
 
-          {neighbourhoodsFacet && neighbourhoodsFacet.values.length > 0 && (
+          {neighbourhoodsFacet && (
             <div className="neighbourhoods-filters">
               <fieldset disabled={loading}>
                 <legend>{t("Region", {}, {context: "Search"})}</legend>

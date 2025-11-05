@@ -49,22 +49,56 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
       }
     },
     aggs: {
-      formats: {
+      // Global aggregations: show all available options (ignoring current filters)
+      all_facets: {
+        global: {},
+        aggs: {
+          language_filter: {
+            filter: {
+              term: {
+                search_api_language: drupalSettings.path.currentLanguage || 'fi'
+              }
+            },
+            aggs: {
+              formats: {
+                terms: {
+                  field: "aggregated_formats_title",
+                  size: 100
+                }
+              },
+              phenomena: {
+                terms: {
+                  field: "aggregated_phenomena_title",
+                  size: 100
+                }
+              },
+              neighbourhoods: {
+                terms: {
+                  field: "aggregated_neighbourhoods_title",
+                  size: 100
+                }
+              }
+            }
+          }
+        }
+      },
+      // Filtered aggregations: show counts based on current search
+      filtered_formats: {
         terms: {
           field: "aggregated_formats_title",
-          size: 50
+          size: 100
         }
       },
-      phenomena: {
+      filtered_phenomena: {
         terms: {
           field: "aggregated_phenomena_title",
-          size: 50
+          size: 100
         }
       },
-      neighbourhoods: {
+      filtered_neighbourhoods: {
         terms: {
           field: "aggregated_neighbourhoods_title",
-          size: 50
+          size: 100
         }
       }
     }
@@ -147,21 +181,32 @@ const buildElasticsearchQuery = (filters: SearchFilters, offset: number, limit: 
 
 // Map Elasticsearch aggregations to facets
 const mapAggregationsToFacets = (aggregations: any): Facet[] => {
+  // Get all available options from global aggregations
+  const allFacets = aggregations?.all_facets?.language_filter || {};
+  
   const facetMapping = [
-    { key: 'formats', name: 'aggregated_formats_title' },
-    { key: 'phenomena', name: 'aggregated_phenomena_title' },
-    { key: 'neighbourhoods', name: 'aggregated_neighbourhoods_title' }
+    { key: 'formats', name: 'aggregated_formats_title', filteredKey: 'filtered_formats' },
+    { key: 'phenomena', name: 'aggregated_phenomena_title', filteredKey: 'filtered_phenomena' },
+    { key: 'neighbourhoods', name: 'aggregated_neighbourhoods_title', filteredKey: 'filtered_neighbourhoods' }
   ];
 
   return facetMapping
-    .filter(({ key }) => aggregations[key])
-    .map(({ key, name }) => ({
-      name,
-      values: aggregations[key].buckets.map((bucket: any) => ({
-        filter: bucket.key,
-        count: bucket.doc_count
-      }))
-    }));
+    .filter(({ key }) => allFacets[key])
+    .map(({ key, name, filteredKey }) => {
+      // Create a map of filtered counts for quick lookup
+      const filteredCounts = new Map(
+        (aggregations?.[filteredKey]?.buckets || []).map((bucket: any) => [bucket.key, bucket.doc_count])
+      );
+
+      // Use all available options from global, but with counts from filtered
+      return {
+        name,
+        values: allFacets[key].buckets.map((bucket: any) => ({
+          filter: bucket.key,
+          count: filteredCounts.get(bucket.key) || 0 // Use filtered count, or 0 if not in results
+        }))
+      };
+    });
 };
 
 export const useSearch = ({ filters, offset, limit, elasticsearchUrl }: UseSearchParams): UseSearchReturn => {

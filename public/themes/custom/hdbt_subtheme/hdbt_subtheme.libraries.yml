@@ -11,6 +11,7 @@ global-scripting:
   dependencies:
     - core/jquery
     - core/drupal
+    - leaflet/leaflet
 
 timeline:
   version: 1.x

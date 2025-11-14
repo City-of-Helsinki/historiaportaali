@@ -82,40 +82,45 @@
     },
 
     addKoreMarkers: function(context) {
+      // Note: We search globally (not within context) because for logged-in users,
+      // the context parameter is often limited to admin toolbar/contextual links
+      // and doesn't include the main content area where these elements exist.
+      const BUILDING_SELECTOR = 'div.paragraph--type--kore-building';
+      const BUTTON_SELECTOR = 'button.kore-address';
+
       $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
+        const $buildings = $(BUILDING_SELECTOR);
 
-        $buildings = $('div.paragraph--type--kore-building', context);
         $buildings.each(function() {
-          /* Remove buttons with identical geolocation.
-          let addresses = $(this).find('div.paragraph--type--kore-address');
-          addresses.each(function() {
-            let buttons = $(this).find('button.kore-address');
-            buttons.each(function() {
-              $('[data-lat="'+$(this).attr('data-lat')+'"][data-lon="'+$(this).attr('data-lon')+'"]:not(:last)').remove();
-            });
-          });
-          */
-         $(this).find('button.kore-address').not(':last').remove();
+          const $building = $(this);
+          const $buttons = $building.find(BUTTON_SELECTOR);
 
-          // Add markers to map.
-          let lat = $(this).find('button.kore-address').attr('data-lat');
-          let lon = $(this).find('button.kore-address').attr('data-lon');
-          if (lat != lon) {
-            let latlon = new L.LatLng(lat, lon);
-            let markerIcon = L.icon({
+          // Remove duplicate buttons, keep only the last one per building
+          // @todo do this rather on the backend?
+          $buttons.not(':last').remove();
+
+          // Add marker to map for this building
+          const $button = $building.find(BUTTON_SELECTOR);
+          const lat = $button.attr('data-lat');
+          const lon = $button.attr('data-lon');
+
+          if (lat && lon && lat !== lon) {
+            const latlon = new L.LatLng(lat, lon);
+            const markerIcon = L.icon({
               iconSize: ['36', '36'],
               iconUrl: '/themes/custom/hdbt_subtheme/src/icons/map_marker.svg'
             });
-    
+
             L.marker(latlon, { icon: markerIcon }).addTo(lMap);
           }
         });
 
-        $buttons = $('button.kore-address', context);
-        $buttons.on('click', function() {
-          let lat = $(this).attr('data-lat');
-          let lon = $(this).attr('data-lon');
-          let latlon = new L.LatLng(lat, lon);
+        // Attach click handlers to all remaining buttons
+        const $allButtons = $(BUTTON_SELECTOR);
+        $allButtons.off('click').on('click', function() {
+          const lat = $(this).attr('data-lat');
+          const lon = $(this).attr('data-lon');
+          const latlon = new L.LatLng(lat, lon);
 
           lMap.flyTo(latlon, 16);
 
@@ -123,7 +128,6 @@
             behavior: 'smooth',
           });
         });
-
       });
     }
   };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAtomValue } from 'jotai';
 import { ContentItem } from '../../../common/types/Content';
-import { GhostList } from '../../../common/components/GhostList';
+import { LoadingState } from '../../../common/components/LoadingState';
 import ResultsError from '../../../common/components/ResultsError';
 import { t } from '../../../common/utils/translate';
 import { searchFiltersAtom } from '../store';
@@ -32,7 +32,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   }
 
   if (loading) {
-    return <GhostList count={itemsPerPage} />;
+    return <LoadingState />;
   }
 
   const totalPages = Math.ceil(totalCount / itemsPerPage);

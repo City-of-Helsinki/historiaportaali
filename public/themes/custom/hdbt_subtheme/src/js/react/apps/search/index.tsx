@@ -1,9 +1,8 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { ErrorBoundary } from './common/components/ErrorBoundary';
 import { SearchContainer } from './modules/search/SearchContainer';
 import ResultsError from './common/components/ResultsError';
-import { GhostList } from './common/components/GhostList';
 
 const ROOT_ID = 'historia_search';
 
@@ -21,9 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <React.StrictMode>
       <ErrorBoundary fallback={<ResultsError />}>
-        <Suspense fallback={<GhostList count={10} />}>
-          <SearchContainer elasticsearchUrl={elasticsearchUrl} />
-        </Suspense>
+        <SearchContainer elasticsearchUrl={elasticsearchUrl} />
       </ErrorBoundary>
     </React.StrictMode>,
     rootElement

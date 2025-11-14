@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { ErrorBoundary } from './common/components/ErrorBoundary';
 import { SearchContainer } from './modules/search/SearchContainer';
 import ResultsError from './common/components/ResultsError';
@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get Elasticsearch URL from data attribute or use default
   const elasticsearchUrl = rootElement.dataset.elasticsearchUrl || 'https://elastic-historiaportaali.docker.so';
   
-  const root = createRoot(rootElement);
-  root.render(    
+  ReactDOM.render(
     <React.StrictMode>
       <ErrorBoundary fallback={<ResultsError />}>
         <Suspense fallback={<GhostList count={10} />}>
           <SearchContainer elasticsearchUrl={elasticsearchUrl} />
         </Suspense>
       </ErrorBoundary>
-    </React.StrictMode>
+    </React.StrictMode>,
+    rootElement
   );
 });

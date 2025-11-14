@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
+import { SearchInput, Button, ButtonVariant, DateInput } from 'hds-react';
 import { Facet } from '../../../common/types/Content';
 import { t } from '../../../common/utils/translate';
 import { 
@@ -51,6 +52,11 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     setUrlParams(filtersWithoutPage);
   };
 
+  const handleSearchSubmit = () => {
+    const { page, ...filtersWithoutPage } = stagedFilters;
+    setUrlParams(filtersWithoutPage);
+  };
+
   // Generic handler for toggling array filter values
   const toggleArrayFilter = (currentValues: string[], value: string, setter: (values: string[]) => void) => {
     const newValues = currentValues.includes(value)
@@ -67,42 +73,40 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     <div className="historia-search__form">
       <form onSubmit={handleSubmit}>
         <div className="search-input-group">
-          <input
-            type="text"
-            value={keywords}
-            onChange={(e) => setKeywords(e.target.value)}
+          <SearchInput
+            label={t("Search", {}, {context: "Search"})}
+            value={Array.isArray(keywords) ? keywords.join(' ') : keywords}
+            onChange={(value) => setKeywords(value)}
+            onSubmit={handleSearchSubmit}
             placeholder={t("Location, person, topic, event...", {}, {context: "Search"})}
             className="search-input"
-            disabled={loading}
+            searchButtonAriaLabel={t("Search", {}, {context: "Search"})}
+            clearButtonAriaLabel={t("Clear search", {}, {context: "Search"})}
           />
         </div>
 
         <div className="search-filters">
           <div className="year-filters">
-            <label>
-              {t("Start year", {}, {context: "Search"})}: 
-              <input
-                type="number"
-                value={startYear}
-                onChange={(e) => setStartYear(e.target.value)}
-                placeholder={t("e.g. 1900", {}, {context: "Search"})}
-                min="1400"
-                max={new Date().getFullYear()}
-                disabled={loading}
-              />
-            </label>
-            <label>
-              {t("End year", {}, {context: "Search"})}:
-              <input
-                type="number"
-                value={endYear}
-                onChange={(e) => setEndYear(e.target.value)}
-                placeholder={t("e.g. 2000", {}, {context: "Search"})}
-                min="1400"
-                max={new Date().getFullYear()}
-                disabled={loading}
-              />
-            </label>
+            <DateInput
+              id="search-start-year"
+              label={t("Start year", {}, {context: "Search"})}
+              value={Array.isArray(startYear) ? startYear[0] : startYear}
+              onChange={(value) => setStartYear(value)}
+              clearButton
+              disableDatePicker
+              dateFormat="yyyy"
+              placeholder={t("e.g. 1900", {}, {context: "Search"})}
+            />
+            <DateInput
+              id="search-end-year"
+              label={t("End year", {}, {context: "Search"})}
+              value={Array.isArray(endYear) ? endYear[0] : endYear}
+              onChange={(value) => setEndYear(value)}
+              clearButton
+              disableDatePicker
+              dateFormat="yyyy"
+              placeholder={t("e.g. 2000", {}, {context: "Search"})}
+            />
           </div>
           {formatsFacet && (
             <div className="formats-filters">
@@ -168,15 +172,15 @@ export const SearchForm: React.FC<SearchFormProps> = ({
           )}
 
           <div className="form-actions">
-            <button type="submit" disabled={loading} className="search-button">
+            <Button type="submit" disabled={loading} className="search-button">
               {loading 
                 ? t("Searching...", {}, {context: "Search"}) 
                 : t("Search", {}, {context: "Search"})
               }
-            </button>
-            <button type="button" onClick={resetForm} className="reset-button">
+            </Button>
+            <Button type="button" onClick={resetForm} variant={ButtonVariant.Secondary} className="reset-button">
               {t("Clear filters", {}, {context: "Search"})}
-            </button>
+            </Button>
           </div>
         </div>
       </form>

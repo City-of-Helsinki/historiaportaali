@@ -93,11 +93,6 @@
 
         $buildings.each(function() {
           const $building = $(this);
-          const $buttons = $building.find(BUTTON_SELECTOR);
-
-          // Remove duplicate buttons, keep only the last one per building
-          // @todo do this rather on the backend?
-          $buttons.not(':last').remove();
 
           // Add marker to map for this building
           const $button = $building.find(BUTTON_SELECTOR);

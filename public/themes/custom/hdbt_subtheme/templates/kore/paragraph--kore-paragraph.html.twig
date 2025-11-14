@@ -63,16 +63,25 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+    {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
     <span class="kore--content">
       {% block content %}
-        {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
-        {{ content|without('field_kore_start_year', 'field_kore_end_year') }}
+        {{ content|without('field_kore_start_year', 'field_kore_end_year', 'field_kore_addresses') }}
+        {% for address in paragraph.field_kore_addresses %}
+          <span class="kore--address">{{ address.entity.field_kore_address.value }}</span>{% if not loop.last %} → {% endif %}
+        {% endfor %}
       {% endblock %}
     </span>
     <span class="kore--date">
       {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }}
       {% if content.field_kore_end_year is defined %}
-       ⟶ {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
+       → {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
+      {% endif %}
+    </span>
+    <span class="kore--show-on-map">
+      {% if paragraph.field_kore_addresses|length > 0 %}
+        {% set last_address = paragraph.field_kore_addresses|last %}
+        {{ last_address.entity.field_kore_geofield|view('default') }}
       {% endif %}
     </span>
   </div>

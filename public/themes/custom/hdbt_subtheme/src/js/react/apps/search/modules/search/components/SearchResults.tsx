@@ -1,10 +1,8 @@
 import React from 'react';
-import { useAtomValue } from 'jotai';
 import { ContentItem } from '../../../common/types/Content';
 import { LoadingState } from '../../../common/components/LoadingState';
 import ResultsError from '../../../common/components/ResultsError';
 import { t } from '../../../common/utils/translate';
-import { searchFiltersAtom } from '../store';
 
 interface SearchResultsProps {
   results: ContentItem[];
@@ -25,8 +23,6 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   loading,
   error
 }) => {
-  const filters = useAtomValue(searchFiltersAtom);
-
   if (error) {
     return <ResultsError />;
   }

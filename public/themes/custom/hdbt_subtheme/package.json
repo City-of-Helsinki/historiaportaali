@@ -6,8 +6,9 @@
   "license": "MIT",
   "repository": "github:City-of-Helsinki/drupal-hel-platform",
   "scripts": {
-    "dev": "node theme-builder.mjs --watch --dev",
-    "build": "node theme-builder.mjs",
+    "typecheck": "tsc --noEmit",
+    "dev": "npm run typecheck && node theme-builder.mjs --watch --dev",
+    "build": "npm run typecheck && node theme-builder.mjs",
     "preinstall": "npx update-browserslist-db@latest",
     "lint:scss": "npx postcss \"src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
     "lint:js": "eslint --fix src/js/ --no-error-on-unmatched-pattern",
@@ -98,6 +99,7 @@
     "read-time-estimate": "^0.0.3",
     "sass-loader": "^13.3.2",
     "svg-spritemap-webpack-plugin": "^4.7.0",
-    "terser-webpack-plugin": "^5.3.14"
+    "terser-webpack-plugin": "^5.3.14",
+    "typescript": "^5.9.3"
   }
 }

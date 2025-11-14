@@ -38,7 +38,7 @@ const getParams = (searchParams: URLSearchParams) => {
 export const urlAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
 
 // Atom to update URL and sync state
-export const urlUpdateAtom = atom(null, (get, set, values: URLParams) => {
+export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   // set atom value
   values.page = values.page || '1';
   set(urlAtom, values);
@@ -145,7 +145,7 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
 });
 
 // Reset form atom
-export const resetFormAtom = atom(null, (get, set) => {
+export const resetFormAtom = atom(null, (_get, set) => {
   set(stagedFiltersAtom, {});
   set(urlUpdateAtom, {});
 });

@@ -40,7 +40,7 @@
         border-bottom: 1px solid $color-black-40;
 
         .paragraph--type--kore {
-          align-items: center;
+          align-items: flex-start;
           border: 1px solid $color-black-40;
           border-bottom: none;
           display: flex;
@@ -48,6 +48,10 @@
           font-size: 1.25rem;
           gap: $spacing;
           padding: $spacing;
+
+          @include breakpoint($breakpoint-m) {
+            align-items: center;
+          }
 
           .hel-icon {
             flex-shrink: 0;
@@ -66,54 +70,44 @@
             }
           }
 
+          .kore--actions {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing;
+
+            @include breakpoint($breakpoint-m) {
+              flex-direction: row;
+            }
+          }
+
           .kore--date,
           .kore--show-on-map {
             flex-shrink: 0;
+            width: 100%;
+
+            @include breakpoint($breakpoint-m) {
+              width: auto;
+            }
           }
 
           .kore--date {
             border: 1px solid $color-black-60;
             color: $color-black-80;
             font-size: 1rem;
-            min-width: 100px;
             padding: $spacing-half;
             text-align: center;
+          }
+
+          .kore--show-on-map {
+            a,
+            button {
+              width: 100%;
+            }
           }
 
           &.paragraph--type--kore-archive {
             a {
               margin-left: 0.25rem;
-            }
-          }
-
-          &.paragraph--type--kore-building {
-            .kore--content {
-              flex-wrap: wrap;
-
-              .paragraph--type--kore-address {
-                &:not(:last-of-type)::after {
-                  content: '=';
-                  margin-right: 0.25rem;
-                }
-                &:last-of-type,
-                &:only-of-type {
-                  display: flex;
-                  flex-flow: column;
-
-                  @include breakpoint($breakpoint-m) {
-                    flex-flow: row;
-                  }
-                }
-
-                .hds-button {
-                  margin: 0 3rem 1rem 0;
-                  width: max-content;
-
-                  @include breakpoint($breakpoint-m) {
-                    margin: 0 0 0 1rem;
-                  }
-                }
-              }
             }
           }
 

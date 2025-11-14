@@ -72,17 +72,20 @@
         {% endfor %}
       {% endblock %}
     </span>
-    <span class="kore--date">
-      {{ (content.field_kore_start_year != '9999' ) ? content.field_kore_start_year : '' }}
-      {% if content.field_kore_end_year is defined %}
-       → {{ (content.field_kore_end_year != '9999' ) ? content.field_kore_end_year : '' }}
+    <div class="kore--actions">
+      {% set start = paragraph.field_kore_start_year.value %}
+      {% set end = paragraph.field_kore_end_year.value %}
+      {% if start or end %}
+        <span class="kore--date">
+          {{ start }}{% if start and end %} → {% endif %}{{ end }}
+        </span>
       {% endif %}
-    </span>
-    <span class="kore--show-on-map">
       {% if paragraph.field_kore_addresses|length > 0 %}
-        {% set last_address = paragraph.field_kore_addresses|last %}
-        {{ last_address.entity.field_kore_geofield|view('default') }}
+        <span class="kore--show-on-map">
+            {% set last_address = paragraph.field_kore_addresses|last %}
+            {{ last_address.entity.field_kore_geofield|view('default') }}
+        </span>
       {% endif %}
-    </span>
+    </div>
   </div>
 {% endblock paragraph %}

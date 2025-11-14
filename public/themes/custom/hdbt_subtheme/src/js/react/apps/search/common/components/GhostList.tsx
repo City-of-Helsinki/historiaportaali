@@ -1,22 +1,12 @@
 import React from 'react';
+import { LoadingSpinner } from 'hds-react';
 
-interface GhostListProps {
-  count: number;
-}
-
-export const GhostList: React.FC<GhostListProps> = ({ count }) => {
+export const GhostList: React.FC = () => {
   return (
-    <div className="search-loading">
-      {Array.from({ length: count }).map((_, index) => (
-        <div key={index} className="search-loading__item">
-          <div className="search-loading__image"></div>
-          <div className="search-loading__content">
-            <div className="search-loading__title"></div>
-            <div className="search-loading__text"></div>
-            <div className="search-loading__text"></div>
-          </div>
-        </div>
-      ))}
+    <div className="hdbt__loading-overlay">
+      <LoadingSpinner
+        multicolor={true}
+      />
     </div>
   );
 };

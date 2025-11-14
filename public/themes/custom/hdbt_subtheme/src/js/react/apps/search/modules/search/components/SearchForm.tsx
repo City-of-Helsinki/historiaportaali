@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { SearchInput, Button, ButtonVariant, DateInput } from 'hds-react';
+import { SearchInput, Button, ButtonVariant, DateInput, Select, IconCross } from 'hds-react';
 import { Facet } from '../../../common/types/Content';
 import { t } from '../../../common/utils/translate';
 import { 
@@ -58,17 +58,18 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     setUrlParams(filtersWithoutPage);
   };
 
-  // Generic handler for toggling array filter values
-  const toggleArrayFilter = (currentValues: string[], value: string, setter: (values: string[]) => void) => {
-    const newValues = currentValues.includes(value)
-      ? currentValues.filter(v => v !== value)
-      : [...currentValues, value];
-    setter(newValues);
-  };
-
   const phenomenaFacet = facets?.find(f => f.name === 'aggregated_phenomena_title');
   const formatsFacet = facets?.find(f => f.name === 'aggregated_formats_title');
   const neighbourhoodsFacet = facets?.find(f => f.name === 'aggregated_neighbourhoods_title');
+
+  const hasActiveFilters = !!(
+    (keywords && keywords.length > 0) ||
+    startYear ||
+    endYear ||
+    (phenomena && phenomena.length > 0) ||
+    (formats && formats.length > 0) ||
+    (neighbourhoods && neighbourhoods.length > 0)
+  );
 
   return (
     <div className="historia-search__form">
@@ -86,8 +87,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({
           />
         </div>
 
-        <div className="search-filters">
-          <div className="year-filters">
+        <div className="searchFilters">
+          <div className="yearFilters">
             <DateInput
               id="search-start-year"
               label={t("Start year", {}, {context: "Search"})}
@@ -96,7 +97,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               clearButton
               disableDatePicker
               dateFormat="yyyy"
-              placeholder={t("e.g. 1900", {}, {context: "Search"})}
+              placeholder={t("e.g.") + " 1900" }
               language={language}
             />
             <DateInput
@@ -107,83 +108,124 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               clearButton
               disableDatePicker
               dateFormat="yyyy"
-              placeholder={t("e.g. 2000", {}, {context: "Search"})}
+              placeholder={t("e.g.") + " 2000"}
               language={language}
             />
           </div>
           {formatsFacet && (
-            <div className="formats-filters">
-              <fieldset disabled={loading}>
-                <legend>{t("Formats", {}, {context: "Search"})}</legend>
-                <div className="checkbox-group">
-                  {formatsFacet.values.map((facetValue) => (
-                    <label key={facetValue.filter} className="checkbox-label">
-                      <input
-                        type="checkbox"
-                        checked={formats.includes(facetValue.filter)}
-                        onChange={() => toggleArrayFilter(formats, facetValue.filter, setFormats)}
-                        disabled={loading}
-                      />
-                      <span>{facetValue.filter} ({facetValue.count})</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
+            <div className="formatsFilters">
+              <Select
+                id="formats-select"
+                multiSelect
+                options={formatsFacet.values.map(facetValue => ({
+                  label: `${facetValue.filter} (${facetValue.count})`,
+                  value: facetValue.filter
+                }))}
+                value={formats}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(opt => opt.value);
+                  setFormats(selectedValues);
+                }}
+                {...(formatsFacet.values.length >= 10 && {
+                  filter: (option, filterStr) => {
+                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
+                  }
+                })}
+                texts={{
+                  language: language,
+                  placeholder: t("Select format", {}, {context: "Search"}),
+                  ...(formatsFacet.values.length >= 10 && {
+                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                  }),
+                }}
+                disabled={loading}
+              />
             </div>
           )}
 
           {phenomenaFacet && (
-            <div className="phenomena-filters">
-              <fieldset disabled={loading}>
-                <legend>{t("Phenomena", {}, {context: "Search"})}</legend>
-                <div className="checkbox-group">
-                  {phenomenaFacet.values.map((facetValue) => (
-                    <label key={facetValue.filter} className="checkbox-label">
-                      <input
-                        type="checkbox"
-                        checked={phenomena.includes(facetValue.filter)}
-                        onChange={() => toggleArrayFilter(phenomena, facetValue.filter, setPhenomena)}
-                        disabled={loading}
-                      />
-                      <span>{facetValue.filter} ({facetValue.count})</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
+            <div className="phenomenaFilters">
+              <Select
+                id="phenomena-select"
+                multiSelect
+                options={phenomenaFacet.values.map(facetValue => ({
+                  label: `${facetValue.filter} (${facetValue.count})`,
+                  value: facetValue.filter
+                }))}
+                value={phenomena}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(opt => opt.value);
+                  setPhenomena(selectedValues);
+                }}
+                {...(phenomenaFacet.values.length >= 10 && {
+                  filter: (option, filterStr) => {
+                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
+                  }
+                })}
+                texts={{
+                  language: language,
+                  placeholder: t("Select phenomenon", {}, {context: "Search"}),
+                  ...(phenomenaFacet.values.length >= 10 && {
+                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                  }),
+                }}
+                disabled={loading}
+              />
             </div>
           )}
 
           {neighbourhoodsFacet && (
-            <div className="neighbourhoods-filters">
-              <fieldset disabled={loading}>
-                <legend>{t("Region", {}, {context: "Search"})}</legend>
-                <div className="checkbox-group">
-                  {neighbourhoodsFacet.values.map((facetValue) => (
-                    <label key={facetValue.filter} className="checkbox-label">
-                      <input
-                        type="checkbox"
-                        checked={neighbourhoods.includes(facetValue.filter)}
-                        onChange={() => toggleArrayFilter(neighbourhoods, facetValue.filter, setNeighbourhoods)}
-                        disabled={loading}
-                      />
-                      <span>{facetValue.filter} ({facetValue.count})</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
+            <div className="neighbourhoodsFilters">
+              <Select
+                id="neighbourhoods-select"
+                multiSelect
+                options={neighbourhoodsFacet.values.map(facetValue => ({
+                  label: `${facetValue.filter} (${facetValue.count})`,
+                  value: facetValue.filter
+                }))}
+                value={neighbourhoods}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(opt => opt.value);
+                  setNeighbourhoods(selectedValues);
+                }}
+                {...(neighbourhoodsFacet.values.length >= 10 && {
+                  filter: (option, filterStr) => {
+                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
+                  }
+                })}
+                texts={{
+                  language: language,
+                  placeholder: t("Select region", {}, {context: "Search"}),
+                  ...(neighbourhoodsFacet.values.length >= 10 && {
+                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                  }),
+                }}
+                  disabled={loading}
+                />
             </div>
           )}
 
-          <div className="form-actions">
-            <Button type="submit" disabled={loading} className="search-button">
+          <div className="form-ctions">
+            <Button
+              type="submit"
+              disabled={loading}
+              className="search-button">
               {loading 
                 ? t("Searching...", {}, {context: "Search"}) 
                 : t("Search", {}, {context: "Search"})
               }
             </Button>
-            <Button type="button" onClick={resetForm} variant={ButtonVariant.Secondary} className="reset-button">
-              {t("Clear filters", {}, {context: "Search"})}
-            </Button>
+            {hasActiveFilters && (
+              <Button
+                type="button"
+                onClick={resetForm}
+                variant={ButtonVariant.Supplementary}
+                className="reset-button"
+                iconStart={<IconCross />}
+              >
+                {t("Clear", {}, {context: "Search"})}
+              </Button>
+            )}
           </div>
         </div>
       </form>

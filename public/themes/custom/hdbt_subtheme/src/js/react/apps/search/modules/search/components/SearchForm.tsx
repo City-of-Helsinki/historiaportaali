@@ -30,6 +30,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   facets, 
   loading 
 }) => {
+  const language = drupalSettings?.path?.currentLanguage || 'en';
   const keywords = useAtomValue(keywordsAtom);
   const setKeywords = useSetAtom(setKeywordsAtom);
   const startYear = useAtomValue(startYearAtom);
@@ -96,6 +97,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               disableDatePicker
               dateFormat="yyyy"
               placeholder={t("e.g. 1900", {}, {context: "Search"})}
+              language={language}
             />
             <DateInput
               id="search-end-year"
@@ -106,6 +108,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               disableDatePicker
               dateFormat="yyyy"
               placeholder={t("e.g. 2000", {}, {context: "Search"})}
+              language={language}
             />
           </div>
           {formatsFacet && (

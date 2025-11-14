@@ -4,7 +4,60 @@
   padding: 0 20px;
   width: 100%;
 
-  .search-filters {
-    background-color: transparent;
+  &__form {
+    .search-input-group {
+      margin-bottom: var(--spacing-m);
+    }
+
+    .searchFilters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .filterGroup {
+        min-width: 0;
+
+        &.dateFilters {
+          max-width: fit-content;
+
+          .dateFilters-inputs {
+            display: flex;
+            gap: var(--spacing-s);
+
+            > * {
+              flex: 0 1 150px;
+            }
+
+            @media (max-width: 576px) {
+              flex-direction: column;
+            }
+          }
+
+          @media (max-width: 768px) {
+            max-width: 100%;
+
+            .dateFilters-inputs > * {
+              flex: 1 1 auto;
+            }
+          }
+        }
+
+        &.neighbourhoodsFilters {
+          @media (min-width: 769px) {
+            margin-top: var(--spacing-m);
+          }
+        }
+      }
+
+      .form-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: var(--spacing-s);
+        margin-top: var(--spacing-s);
+      }
+    }
   }
 }

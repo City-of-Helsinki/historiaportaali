@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { SearchInput, Button, ButtonVariant, DateInput, Select, IconCross } from 'hds-react';
+import { SearchInput, Button, ButtonVariant, DateInput, Select, IconCross, Fieldset } from 'hds-react';
 import { Facet } from '../../../common/types/Content';
 import { t } from '../../../common/utils/translate';
 import { 
@@ -88,94 +88,40 @@ export const SearchForm: React.FC<SearchFormProps> = ({
         </div>
 
         <div className="searchFilters">
-          <div className="yearFilters">
-            <DateInput
-              id="search-start-year"
-              label={t("Start year", {}, {context: "Search"})}
-              value={Array.isArray(startYear) ? startYear[0] : startYear}
-              onChange={(value) => setStartYear(value)}
-              clearButton
-              disableDatePicker
-              dateFormat="yyyy"
-              placeholder={t("e.g.") + " 1900" }
-              language={language}
-            />
-            <DateInput
-              id="search-end-year"
-              label={t("End year", {}, {context: "Search"})}
-              value={Array.isArray(endYear) ? endYear[0] : endYear}
-              onChange={(value) => setEndYear(value)}
-              clearButton
-              disableDatePicker
-              dateFormat="yyyy"
-              placeholder={t("e.g.") + " 2000"}
-              language={language}
-            />
-          </div>
-          {formatsFacet && (
-            <div className="formatsFilters">
-              <Select
-                id="formats-select"
-                multiSelect
-                options={formatsFacet.values.map(facetValue => ({
-                  label: `${facetValue.filter} (${facetValue.count})`,
-                  value: facetValue.filter
-                }))}
-                value={formats}
-                onChange={(selectedOptions) => {
-                  const selectedValues = selectedOptions.map(opt => opt.value);
-                  setFormats(selectedValues);
-                }}
-                {...(formatsFacet.values.length >= 10 && {
-                  filter: (option, filterStr) => {
-                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
-                  }
-                })}
-                texts={{
-                  language: language,
-                  placeholder: t("Select format", {}, {context: "Search"}),
-                  ...(formatsFacet.values.length >= 10 && {
-                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
-                  }),
-                }}
-                disabled={loading}
+          <Fieldset 
+            heading={t("Select era", {}, {context: "Search"})}
+            className="filterGroup dateFilters"
+          >
+            <div className="dateFilters-inputs">
+              <DateInput
+                id="search-start-year"
+                label={t("Start year", {}, {context: "Search"})}
+                value={Array.isArray(startYear) ? startYear[0] : startYear}
+                onChange={(value) => setStartYear(value)}
+                clearButton
+                disableDatePicker
+                dateFormat="yyyy"
+                placeholder={t("e.g.") + " 1900" }
+                language={language}
+                helperText={t("Enter a year", {}, {context: "Search"})}
+              />
+              <DateInput
+                id="search-end-year"
+                label={t("End year", {}, {context: "Search"})}
+                value={Array.isArray(endYear) ? endYear[0] : endYear}
+                onChange={(value) => setEndYear(value)}
+                clearButton
+                disableDatePicker
+                dateFormat="yyyy"
+                placeholder={t("e.g.") + " 2000"}
+                language={language}
+                helperText={t("Enter a year", {}, {context: "Search"})}
               />
             </div>
-          )}
-
-          {phenomenaFacet && (
-            <div className="phenomenaFilters">
-              <Select
-                id="phenomena-select"
-                multiSelect
-                options={phenomenaFacet.values.map(facetValue => ({
-                  label: `${facetValue.filter} (${facetValue.count})`,
-                  value: facetValue.filter
-                }))}
-                value={phenomena}
-                onChange={(selectedOptions) => {
-                  const selectedValues = selectedOptions.map(opt => opt.value);
-                  setPhenomena(selectedValues);
-                }}
-                {...(phenomenaFacet.values.length >= 10 && {
-                  filter: (option, filterStr) => {
-                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
-                  }
-                })}
-                texts={{
-                  language: language,
-                  placeholder: t("Select phenomenon", {}, {context: "Search"}),
-                  ...(phenomenaFacet.values.length >= 10 && {
-                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
-                  }),
-                }}
-                disabled={loading}
-              />
-            </div>
-          )}
+          </Fieldset>
 
           {neighbourhoodsFacet && (
-            <div className="neighbourhoodsFilters">
+            <div className="filterGroup neighbourhoodsFilters">
               <Select
                 id="neighbourhoods-select"
                 multiSelect
@@ -194,18 +140,84 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                   }
                 })}
                 texts={{
+                  label: t("Region", {}, {context: "Search"}),
                   language: language,
                   placeholder: t("Select region", {}, {context: "Search"}),
                   ...(neighbourhoodsFacet.values.length >= 10 && {
                     filterPlaceholder: t("Filter", {}, {context: "Search"}),
                   }),
                 }}
-                  disabled={loading}
-                />
+                disabled={loading}
+              />
             </div>
           )}
 
-          <div className="form-ctions">
+          {formatsFacet && (
+            <div className="filterGroup formatsFilters">
+              <Select
+                id="formats-select"
+                multiSelect
+                options={formatsFacet.values.map(facetValue => ({
+                  label: `${facetValue.filter} (${facetValue.count})`,
+                  value: facetValue.filter
+                }))}
+                value={formats}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(opt => opt.value);
+                  setFormats(selectedValues);
+                }}
+                {...(formatsFacet.values.length >= 10 && {
+                  filter: (option, filterStr) => {
+                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
+                  }
+                })}
+                texts={{
+                  label: t("Format", {}, {context: "Search"}),
+                  language: language,
+                  placeholder: t("Select format", {}, {context: "Search"}),
+                  ...(formatsFacet.values.length >= 10 && {
+                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                  }),
+                }}
+                disabled={loading}
+              />
+            </div>
+          )}
+
+          {phenomenaFacet && (
+            <div className="filterGroup phenomenaFilters">
+              <Select
+                id="phenomena-select"
+                multiSelect
+                options={phenomenaFacet.values.map(facetValue => ({
+                  label: `${facetValue.filter} (${facetValue.count})`,
+                  value: facetValue.filter
+                }))}
+                value={phenomena}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(opt => opt.value);
+                  setPhenomena(selectedValues);
+                }}
+                {...(phenomenaFacet.values.length >= 10 && {
+                  filter: (option, filterStr) => {
+                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
+                  }
+                })}
+                texts={{
+                  label: t("Phenomenon", {}, {context: "Search"}),
+                  language: language,
+                  placeholder: t("Select phenomenon", {}, {context: "Search"}),
+                  ...(phenomenaFacet.values.length >= 10 && {
+                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                  }),
+                }}
+                disabled={loading}
+              />
+            </div>
+          )}
+
+
+          <div className="form-actions">
             <Button
               type="submit"
               disabled={loading}

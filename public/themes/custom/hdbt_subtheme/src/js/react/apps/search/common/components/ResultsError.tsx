@@ -1,11 +1,21 @@
 import React from 'react';
+import { Notification } from 'hds-react';
 import { t } from '../utils/translate';
 
-const ResultsError: React.FC = () => {
+interface ResultsErrorProps {
+  error?: Error | string;
+  className?: string;
+}
+
+const ResultsError: React.FC<ResultsErrorProps> = ({ className }) => {
   return (
-    <div className="search-error">
-      <h3>{t("Search is not working at the moment", {}, {context: "Search"})}</h3>
-      <p>{t("Try again later or contact support.", {}, {context: "Search"})}</p>
+    <div className={className || "search-error"}>
+      <Notification
+        label={t("An error occurred while loading the content", {}, { context: "Search" })}
+        type='error'
+      >
+        {t("Please reload the page or try again later.", {}, {context: "Search"})}
+      </Notification>
     </div>
   );
 };

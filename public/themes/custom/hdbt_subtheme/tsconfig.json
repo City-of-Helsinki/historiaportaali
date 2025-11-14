@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/react/common/*": ["src/js/react/common/*"],
-      "@/types/*": ["src/js/types/*"]
+      "@/react/common/*": ["../../contrib/hdbt/src/js/react/common/*"],
+      "@/types/*": ["../../contrib/hdbt/src/js/types/*"]
     },
     "target": "es6",
     "lib": [
@@ -20,17 +20,18 @@
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "typeRoots": ["./node_modules/@types", "./src/js/types"]
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }
 

@@ -6,8 +6,8 @@ export const t = (
   args?: Record<string, any>, 
   options?: { context?: string }
 ): string => {
-  if (typeof window !== 'undefined' && window.Drupal && typeof window.Drupal.t === 'function') {
-    return window.Drupal.t(text, args, options);
+  if (typeof Drupal !== 'undefined' && typeof Drupal.t === 'function') {
+    return Drupal.t(text, args, options);
   }
   
   // Return the original text as fallback

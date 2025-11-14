@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 import type URLParams from './types/URLParams';
-import { SearchFilters } from '../../common/types/Content';
+import { SearchFilters, Facet } from '../../common/types/Content';
 
 // Parse URL parameters into an object that handles arrays
 const getParams = (searchParams: URLSearchParams) => {
@@ -70,12 +70,23 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   window.history.pushState({}, '', newUrl);
 });
 
-// Page atom
-export const pageAtom = atom((get) => Number(get(urlAtom)?.page) || 1);
+// Page atoms - using 0-based indexing internally (matching HDS)
+// URL uses 1-based (?page=1) but we convert to 0-based internally
+export const pageAtom = atom((get) => {
+  const urlPage = Number(get(urlAtom)?.page) || 1;
+  return urlPage - 1; // Convert 1-based URL to 0-based internal
+});
 
-export const setPageAtom = atom(null, (get, set, page: number) => {
+// Read-only atom for getting current page (0-based)
+export const getPageAtom = atom((get) => {
+  const urlPage = Number(get(urlAtom)?.page) || 1;
+  return urlPage - 1; // Convert 1-based URL to 0-based internal
+});
+
+export const setPageAtom = atom(null, (get, set, pageIndex: number) => {
   const url = get(urlAtom);
-  set(urlUpdateAtom, { ...url, page: page.toString() });
+  const urlPage = pageIndex + 1; // Convert 0-based to 1-based for URL
+  set(urlUpdateAtom, { ...url, page: urlPage.toString() });
 });
 
 // Staged filters atom for form input (not yet submitted)
@@ -149,4 +160,11 @@ export const resetFormAtom = atom(null, (_get, set) => {
   set(stagedFiltersAtom, {});
   set(urlUpdateAtom, {});
 });
+
+// Initialization tracking atom (for scroll behavior)
+export const initializedAtom = atom(false);
+
+// Facets atom (shared between ResultsContainer and SearchForm)
+export const facetsAtom = atom<Facet[]>([]);
+export const isLoadingFacetsAtom = atom(false);
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { SearchInput, Button, ButtonVariant, DateInput, Select, IconCross, Fieldset } from 'hds-react';
-import { Facet } from '../../../common/types/Content';
 import { t } from '../../../common/utils/translate';
 import { 
   keywordsAtom, 
@@ -18,18 +17,14 @@ import {
   setNeighbourhoodsAtom,
   stagedFiltersAtom,
   urlUpdateAtom,
-  resetFormAtom
+  resetFormAtom,
+  facetsAtom,
+  isLoadingFacetsAtom
 } from '../store';
 
-interface SearchFormProps {
-  facets?: Facet[];
-  loading: boolean;
-}
-
-export const SearchForm: React.FC<SearchFormProps> = ({ 
-  facets, 
-  loading 
-}) => {
+export const SearchForm: React.FC = () => {
+  const facets = useAtomValue(facetsAtom);
+  const loading = useAtomValue(isLoadingFacetsAtom);
   const language = drupalSettings?.path?.currentLanguage || 'en';
   const keywords = useAtomValue(keywordsAtom);
   const setKeywords = useSetAtom(setKeywordsAtom);

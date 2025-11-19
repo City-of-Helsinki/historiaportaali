@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da70fd00f3a312a3058671df4098d63e",
+    "content-hash": "1b8244dbecd1343b1af60a12b37d0c16",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3447,23 +3447,24 @@
         },
         {
             "name": "drupal/dynamic_entity_reference",
-            "version": "3.0.0-beta1",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/dynamic_entity_reference.git",
-                "reference": "3.0.0-beta1"
+                "reference": "3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-3.0.0-beta1.zip",
-                "reference": "3.0.0-beta1",
-                "shasum": "602c65515d60ac87ac88b4e8900f1ddb861cde49"
+                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-3.2.1.zip",
+                "reference": "3.2.1",
+                "shasum": "051c565f6580f512cbc7ddc3f49fdd6ba8d406af"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
-                "php": ">=8.0"
+                "drupal/core": "^10 || ^11",
+                "php": ">=8.1"
             },
             "require-dev": {
+                "drupal/diff": "*",
                 "mglaman/phpstan-drupal": "^1.1",
                 "phpstan/phpstan": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0"
@@ -3471,11 +3472,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0-beta1",
-                    "datestamp": "1663511602",
+                    "version": "3.2.1",
+                    "datestamp": "1740521060",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -6348,33 +6349,33 @@
         },
         {
             "name": "drupal/linkchecker",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkchecker.git",
-                "reference": "2.0.0-alpha1"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkchecker-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "ee0a058ca14a776284fdc3f784f5edac01a5ded3"
+                "url": "https://ftp.drupal.org/files/projects/linkchecker-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "5e7b21ec9b2cdac95604b724ef22a539a79f8117"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10.0",
-                "drupal/dynamic_entity_reference": "^3.0 || ^4.0"
+                "drupal/core": "^10.2 || ^11.0"
             },
             "require-dev": {
+                "drupal/paragraphs": "*",
                 "drupal/redirect": "^1.8"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1674444668",
+                    "version": "2.0.2",
+                    "datestamp": "1751291857",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "drush": {
@@ -6401,7 +6402,11 @@
                     "homepage": "https://www.drupal.org/user/85918"
                 },
                 {
-                    "name": "VladimirAus",
+                    "name": "quadrexdev",
+                    "homepage": "https://www.drupal.org/user/3683807"
+                },
+                {
+                    "name": "vladimiraus",
                     "homepage": "https://www.drupal.org/user/673120"
                 }
             ],

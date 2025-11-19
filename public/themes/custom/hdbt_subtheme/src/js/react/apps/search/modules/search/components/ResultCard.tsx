@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContentItem } from '../../../common/types/Content';
-import CardItem from '@/react/common/Card';
+import CardItem, { Metarow } from '@/react/common/Card';
+import { t } from '../../../common/utils/translate';
 
 interface ResultCardProps extends ContentItem {}
 
@@ -14,28 +15,6 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   end_year,
   url,
 }) => {
-  // Build metadata display for description
-  const metadataParts: string[] = [];
-  
-  if (start_year && end_year) {
-    const yearDisplay = start_year === end_year 
-      ? `${start_year}`
-      : `${start_year} - ${end_year}`;
-    metadataParts.push(yearDisplay);
-  }
-  
-  if (formats && formats.length > 0) {
-    metadataParts.push(formats.join(', '));
-  }
-  
-  if (phenomena && phenomena.length > 0) {
-    metadataParts.push(phenomena.join(', '));
-  }
-  
-  if (neighbourhoods && neighbourhoods.length > 0) {
-    metadataParts.push(neighbourhoods.join(', '));
-  }
-
   const cardImage = image_url ? (
     <img 
       src={image_url} 
@@ -44,13 +23,68 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     />
   ) : undefined;
 
+  // Build custom metadata rows with icons
+  const customMetaRows: JSX.Element[] = [];
+
+  // Format/Bundle type
+  if (formats && formats.length > 0) {
+    customMetaRows.push(
+      <Metarow
+        key="format"
+        icon="photo"
+        label={t('Format', {}, { context: 'Seearch' })}
+        content={formats.join(', ')}
+      />
+    );
+  }
+
+  // Year
+  if (start_year && end_year) {
+    const yearDisplay = start_year === end_year 
+      ? `${start_year}`
+      : `${start_year} - ${end_year}`;
+    customMetaRows.push(
+      <Metarow
+        key="year"
+        icon="clock"
+        label={t('Year')}
+        content={yearDisplay}
+      />
+    );
+  }
+
+  // Phenomena
+  if (phenomena && phenomena.length > 0) {
+    customMetaRows.push(
+      <Metarow
+        key="phenomena"
+        icon="layers"
+        label={t('Phenomena', {}, { context: 'Search' })}
+        content={phenomena.join(', ')}
+      />
+    );
+  }
+
+  // Neighbourhoods
+  if (neighbourhoods && neighbourhoods.length > 0) {
+    customMetaRows.push(
+      <Metarow
+        key="neighbourhoods"
+        icon="location"
+        label={t('Region', {}, { context: 'Search' })}
+        content={neighbourhoods.join(', ')}
+      />
+    );
+  }
+
   return (
     <CardItem
       cardTitle={title}
       cardUrl={url}
       cardImage={cardImage}
-      cardDescription={metadataParts.join(' • ')}
       cardTitleLevel={3}
+      cardModifierClass="card--border"
+      customMetaRows={{ top: customMetaRows }}
     />
   );
 };

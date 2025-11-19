@@ -17,6 +17,9 @@
   .hds-button--search-toggle[aria-expanded="true"] {
     background-color: var(--color-black-5);
     outline: var(--outline-width) solid var(--focus-outline-color);
+    &:hover {
+      color: var(--color-black);
+    }
   }
 
   .header-search__form-wrapper {

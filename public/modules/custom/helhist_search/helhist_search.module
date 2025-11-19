@@ -18,13 +18,13 @@ function helhist_search_theme() {
     ],
     'frontpage_search' => [
       'variables' => [
-        'search_page_path' => NULL,
+        'form' => NULL,
       ],
       'template' => 'frontpage-search',
     ],
     'header_search' => [
       'variables' => [
-        'search_page_path' => NULL,
+        'form' => NULL,
       ],
       'template' => 'header-search',
     ],

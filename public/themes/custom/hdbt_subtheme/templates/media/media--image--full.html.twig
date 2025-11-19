@@ -132,7 +132,7 @@
                 <div class="hdbt_taxonomy__wrapper">
                   <h3 class="label" id="field_photographer">{{ content.field_photographer['#title'] }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_photographer">
-                    <a href="{{ site_search_page_url }}?s={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
+                    <a href="{{ site_search_page_url }}?q={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
                   </div>
                 </div>
               </div>
@@ -163,7 +163,8 @@
               <div class="hdbt_taxonomy__wrapper">
                 <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_group_year">
-                    <a href="{{ site_search_page_url }}?s={{ period }}"><span>{{ period }}</span></a>
+                  {# TODO: if period one of main search filters, pass as a filter query to the search page #}
+                    <a href="{{ site_search_page_url }}?q={{ period }}"><span>{{ period }}</span></a>
                   </div>
                 </div>
               </div>

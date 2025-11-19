@@ -18,8 +18,8 @@ use Drupal\node\Entity\Node;
  * @return string
  *   The search page URL.
  */
-function hdbt_subtheme_get_search_page_url($nid = 114) {
-  return \Drupal::service('url_generator')->generateFromRoute('entity.node.canonical', ['node' => $nid]);
+function hdbt_subtheme_get_search_page_url() {
+  return \Drupal::service('helhist_search.search_path_resolver')->getSearchPagePath();
 }
 
 /**

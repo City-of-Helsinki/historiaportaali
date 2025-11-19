@@ -1,5 +1,4 @@
 services:
   helhist_search.search_path_resolver:
     class: Drupal\helhist_search\SearchPathResolver
-    arguments: ['@language_manager']
 

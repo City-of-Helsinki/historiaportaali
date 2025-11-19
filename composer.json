@@ -15,6 +15,7 @@
         "drupal/context_entity_field": "dev-8.x-1.x",
         "drupal/core": "^10.1",
         "drupal/core-composer-scaffold": "^10.1",
+        "drupal/dynamic_entity_reference": "^3.0",
         "drupal/facets": "^2.0.x-dev@dev",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",

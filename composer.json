@@ -163,6 +163,9 @@
             "drupal/core": "-p2"
         }
     },
+    "autoload": {
+        "exclude-from-classmap": ["**/textalk/**"]
+    },
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\dtt\\": "tests/dtt/src"

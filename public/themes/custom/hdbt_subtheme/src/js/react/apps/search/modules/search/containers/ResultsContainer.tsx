@@ -119,13 +119,10 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
           query: filters.keywords,
           fields: [
             "aggregated_title^3",
-            "title^3",
-            "body",
-            "aggregated_phenomena_title^2",
-            "aggregated_formats_title^2",
-            "aggregated_neighbourhoods_title^2"
+            "aggregated_keywords",
           ],
           type: "best_fields",
+          operator: "and",
           fuzziness: "AUTO"
         }
       });

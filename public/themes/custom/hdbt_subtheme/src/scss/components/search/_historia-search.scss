@@ -77,4 +77,28 @@
   &__results--title {
     margin: 0;
   }
+
+  &__pagination {
+    // Reset any inherited list styles that interfere with HDS Pagination
+    nav[class*="pagination"] {
+      ul,
+      li {
+        padding: 0;
+        margin: 0;
+      }
+
+      // Ensure pagination items are perfect circles
+      a[class*="item-link"],
+      span[class*="item-link"] {
+        height: 40px;
+        width: 40px;
+      }
+
+      // Align buttons vertically with page numbers
+      button[class*="button"] {
+        height: 40px;
+        min-height: 40px;
+      }
+    }
+  }
 }

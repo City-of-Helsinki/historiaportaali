@@ -1,8 +1,16 @@
-<div class="header-search dropdown dropdown--search">
-  <button type="button" class="hds-button hds-button--secondary hds-button--search-toggle" aria-expanded="false" data-dropdown-trigger="">
-    <span aria-hidden="true" class="hel-icon hel-icon--search hds-icon--size-m"></span>
-    <span class="hds-button__label">{{ 'Search'|t }}</span>
-  </button>
+<div class="header-search">
+  <div class="nav-toggle nav-toggle--search">
+    <button class="nav-toggle__button js-search-button" aria-expanded="false" aria-controls="search-dropdown">
+      <span class="nav-toggle__label nav-toggle__label--open">
+        <span aria-hidden="true" class="hel-icon hel-icon--search hds-icon--size-s"></span>
+        <span>{{ 'Search'|t({}, {'context': 'Header search'}) }}</span>
+      </span>
+      <span class="nav-toggle__label nav-toggle__label--close">
+        <span aria-hidden="true" class="hel-icon hel-icon--cross hds-icon--size-s search-toggle__icon--close"></span>
+        <span>{{ 'Close'|t }}</span>
+      </span>
+    </button>
+  </div>
 
   <div class="header-search__form-wrapper">
     {{ form }}

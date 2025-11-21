@@ -67,7 +67,7 @@ class HeaderSearchForm extends FormBase {
     $form['search_wrapper']['label'] = [
       '#type' => 'html_tag',
       '#tag' => 'label',
-      '#value' => $this->t('Search from content', [], ['context' => 'Search']),
+      '#value' => $this->t('Search from site', [], ['context' => 'Search']),
       '#attributes' => [
         'for' => 'edit-q-header',
         'class' => ['hds-text-input__label', 'hiddenFromScreen'],
@@ -84,6 +84,7 @@ class HeaderSearchForm extends FormBase {
     $form['search_wrapper']['input_wrapper']['q'] = [
       '#type' => 'textfield',
       '#placeholder' => $this->t('Location, person, topic, event...', [], ['context' => 'Search']),
+      '#size' => '80',
       '#attributes' => [
         'autocomplete' => 'off',
         'id' => 'edit-q-header',
@@ -98,7 +99,7 @@ class HeaderSearchForm extends FormBase {
       '#attributes' => [
         'type' => 'submit',
         'class' => ['hds-button', 'hds-button--theme-black'],
-        'aria-label' => $this->t('Search'),
+        'aria-label' => $this->t('Search', [], ['context' => 'Header search']),
       ],
     ];
 

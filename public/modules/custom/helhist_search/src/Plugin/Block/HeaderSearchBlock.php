@@ -7,7 +7,10 @@ namespace Drupal\helhist_search\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\helhist_search\Form\HeaderSearchForm;
+use Drupal\helhist_search\SearchPathResolver;
+use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -31,6 +34,20 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
   protected $formBuilder;
 
   /**
+   * The route match.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
+   * The search path resolver service.
+   *
+   * @var \Drupal\helhist_search\SearchPathResolver
+   */
+  protected $searchPathResolver;
+
+  /**
    * Constructs a new HeaderSearchBlock object.
    *
    * @param array $configuration
@@ -41,15 +58,23 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
    *   The plugin implementation definition.
    * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
    *   The form builder service.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+   *   The route match.
+   * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
+   *   The search path resolver service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
     FormBuilderInterface $form_builder,
+    RouteMatchInterface $route_match,
+    SearchPathResolver $search_path_resolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->formBuilder = $form_builder;
+    $this->routeMatch = $route_match;
+    $this->searchPathResolver = $search_path_resolver;
   }
 
   /**
@@ -60,7 +85,9 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('form_builder')
+      $container->get('form_builder'),
+      $container->get('current_route_match'),
+      $container->get('helhist_search.search_path_resolver')
     );
   }
 
@@ -68,10 +95,20 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
    * {@inheritdoc}
    */
   public function build() {
-    return [
-      '#theme' => 'header_search',
-      '#form' => $this->formBuilder->getForm(HeaderSearchForm::class),
-    ];
+
+    // Omit the form from search page.
+    if (
+      ($this->routeMatch->getParameter('node') instanceof NodeInterface) && (int) $this->routeMatch->getParameter('node')->id() ===
+      (int) $this->searchPathResolver::SEARCH_PAGE_NODE_ID
+      ) {
+      return [];
+    }
+    else {
+      return [
+        '#theme' => 'header_search',
+        '#form' => $this->formBuilder->getForm(HeaderSearchForm::class),
+      ];
+    }
   }
 
 }

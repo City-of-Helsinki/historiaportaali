@@ -10,3 +10,11 @@ msgstr "Öppna i finna.fi söktjänst"
 msgctxt "Button"
 msgid "Open in Finna"
 msgstr "Öppna i Finna"
+
+msgctxt "Header search"
+msgid "Search"
+msgstr "Sök"
+
+msgctxt "Search"
+msgid "Search from site"
+msgstr "Sök på webbplatsen"

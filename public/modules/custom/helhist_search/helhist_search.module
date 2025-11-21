@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -33,4 +35,16 @@ function helhist_search_theme() {
       'template' => 'react-search',
     ],
   ];
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Clean up URL parameters on the search forms GET requests.
+ */
+function helhist_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['helhist_search_header_form', 'helhist_search_frontpage_form'])) {
+    $form['form_build_id']['#access'] = FALSE;
+    $form['form_id']['#access'] = FALSE;
+  }
 }

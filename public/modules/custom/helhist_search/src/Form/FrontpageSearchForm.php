@@ -67,7 +67,7 @@ class FrontpageSearchForm extends FormBase {
     $form['search_wrapper']['label'] = [
       '#type' => 'html_tag',
       '#tag' => 'label',
-      '#value' => $this->t('Search from content', [], ['context' => 'Search']),
+      '#value' => $this->t('Search from site content', [], ['context' => 'Search']),
       '#attributes' => [
         'for' => 'edit-q-frontpage',
         'class' => ['hds-text-input__label'],

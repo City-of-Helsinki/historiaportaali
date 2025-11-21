@@ -20,6 +20,34 @@ msgid "Search from site"
 msgstr "Sök på webbplatsen"
 
 msgctxt "Search"
+msgid "From year"
+msgstr "Från år"
+
+msgctxt "Search"
+msgid "Until year"
+msgstr "Till år"
+
+msgctxt "Search"
+msgid "Clear from year"
+msgstr "Rensa från år"
+
+msgctxt "Search"
+msgid "Clear until year"
+msgstr "Rensa till år"
+
+msgctxt "Search"
+msgid "Help"
+msgstr "Hjälp"
+
+msgctxt "Search"
+msgid "Year format help"
+msgstr "Hjälp med årformat"
+
+msgctxt "Search"
+msgid "Use negative numbers for BC/BCE (e.g. -2050)"
+msgstr "Använd negativa tal för eaa (t.ex. -2050)"
+
+msgctxt "Search"
 msgid "Sort search results"
 msgstr "Ordna sökresultaten"
 

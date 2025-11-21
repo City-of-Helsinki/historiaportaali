@@ -15,18 +15,26 @@
     .react-search-filters {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: $spacing-double $spacing;
 
       @include breakpoint(0 $breakpoint-m) {
         grid-template-columns: 1fr;
       }
 
-      .filterGroup {
+      .filter-group {
         min-width: 0;
 
-        &.dateFilters {
+        // Add consistent spacing between filters
+        @include breakpoint($breakpoint-m) {
+          &:not(:first-child) {
+            margin-top: 0; // Reset any specific margins
+          }
+        }
+
+        &--dates {
           max-width: fit-content;
 
-          .dateFilters-inputs {
+          .date-filter-inputs {
             display: flex;
             gap: $spacing;
 
@@ -42,15 +50,9 @@
           @include breakpoint(0 $breakpoint-m) {
             max-width: 100%;
 
-            .dateFilters-inputs > * {
+            .date-filter-inputs > * {
               flex: 1 1 auto;
             }
-          }
-        }
-
-        &.neighbourhoodsFilters {
-          @include breakpoint($breakpoint-m) {
-            margin-top: $spacing-double;
           }
         }
       }

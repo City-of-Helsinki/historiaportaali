@@ -133,10 +133,10 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
     }
 
     // Add year range filters
-    if (filters.startYear || filters.endYear) {
+    if (filters.startYear !== undefined || filters.endYear !== undefined) {
       const yearRange: any = {};
-      if (filters.startYear) yearRange.gte = filters.startYear;
-      if (filters.endYear) yearRange.lte = filters.endYear;
+      if (filters.startYear !== undefined) yearRange.gte = filters.startYear;
+      if (filters.endYear !== undefined) yearRange.lte = filters.endYear;
 
       query.query.bool.filter.push({
         bool: {

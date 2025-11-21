@@ -152,8 +152,8 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
   const params = get(urlAtom);
   return {
     keywords: params.q || '',
-    startYear: params.startYear ? parseInt(params.startYear) : undefined,
-    endYear: params.endYear ? parseInt(params.endYear) : undefined,
+    startYear: params.startYear !== undefined && params.startYear !== '' ? parseInt(params.startYear) : undefined,
+    endYear: params.endYear !== undefined && params.endYear !== '' ? parseInt(params.endYear) : undefined,
     formats: normalizeArray(params.formats),
     phenomena: normalizeArray(params.phenomena),
     neighbourhoods: normalizeArray(params.neighbourhoods),

@@ -20,6 +20,34 @@ msgid "Search from site"
 msgstr "Hae sivustolta"
 
 msgctxt "Search"
+msgid "From year"
+msgstr "Vuodesta"
+
+msgctxt "Search"
+msgid "Until year"
+msgstr "Vuoteen"
+
+msgctxt "Search"
+msgid "Clear from year"
+msgstr "Tyhjennä alkuvuosi"
+
+msgctxt "Search"
+msgid "Clear until year"
+msgstr "Tyhjennä loppuvuosi"
+
+msgctxt "Search"
+msgid "Help"
+msgstr "Ohje"
+
+msgctxt "Search"
+msgid "Year format help"
+msgstr "Vuosimuodon ohje"
+
+msgctxt "Search"
+msgid "Use negative numbers for BC/BCE (e.g. -2050)"
+msgstr "Käytä negatiivisia numeroita eaa-vuosille (esim. -2050)"
+
+msgctxt "Search"
 msgid "Sort search results"
 msgstr "Järjestä hakutulokset"
 

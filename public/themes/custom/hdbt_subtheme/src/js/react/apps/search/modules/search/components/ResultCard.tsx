@@ -18,7 +18,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   const cardImage = image_url ? (
     <img 
       src={image_url} 
-      alt={title} 
+      alt=""
       loading="lazy"
     />
   ) : undefined;

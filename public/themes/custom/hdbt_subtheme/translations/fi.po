@@ -18,3 +18,19 @@ msgstr "Haku"
 msgctxt "Search"
 msgid "Search from site"
 msgstr "Hae sivustolta"
+
+msgctxt "Search"
+msgid "Sort search results"
+msgstr "Järjestä hakutulokset"
+
+msgctxt "Search"
+msgid "Relevance"
+msgstr "Osuvuus"
+
+msgctxt "Search"
+msgid "Newest first"
+msgstr "Uusimmat ensin"
+
+msgctxt "Search"
+msgid "Oldest first"
+msgstr "Vanhimmat ensin"

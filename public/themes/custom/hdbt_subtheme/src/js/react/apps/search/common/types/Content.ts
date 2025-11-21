@@ -34,4 +34,5 @@ export type SearchFilters = {
   formats?: string[];
   phenomena?: string[];
   neighbourhoods?: string[];
+  sort?: string;
 };

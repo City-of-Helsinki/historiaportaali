@@ -25,7 +25,7 @@ import {
 export const SearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
   const loading = useAtomValue(isLoadingFacetsAtom);
-  const language = drupalSettings?.path?.currentLanguage || 'en';
+  const language = drupalSettings?.path?.currentLanguage || 'fi';
   const keywords = useAtomValue(keywordsAtom);
   const setKeywords = useSetAtom(setKeywordsAtom);
   const startYear = useAtomValue(startYearAtom);

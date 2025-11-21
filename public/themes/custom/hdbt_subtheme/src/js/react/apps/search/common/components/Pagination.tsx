@@ -8,7 +8,7 @@ type PaginationProps = {
   totalPages: number;
 };
 
-const language = drupalSettings?.path?.currentLanguage || 'en';
+const language = drupalSettings?.path?.currentLanguage || 'fi';
 
 export const Pagination = ({ updatePage, currentPage, totalPages }: PaginationProps) => {
   const handlePageChange = (event: React.MouseEvent<HTMLElement>, pageIndex: number) => {

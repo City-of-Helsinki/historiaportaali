@@ -18,3 +18,19 @@ msgstr "Sök"
 msgctxt "Search"
 msgid "Search from site"
 msgstr "Sök på webbplatsen"
+
+msgctxt "Search"
+msgid "Sort search results"
+msgstr "Ordna sökresultaten"
+
+msgctxt "Search"
+msgid "Relevance"
+msgstr "Bästa träffar först"
+
+msgctxt "Search"
+msgid "Newest first"
+msgstr "Nyaste först"
+
+msgctxt "Search"
+msgid "Oldest first"
+msgstr "Äldsta först"

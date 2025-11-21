@@ -6,6 +6,7 @@ type URLParams = {
   phenomena?: string[];
   neighbourhoods?: string[];
   page?: string;
+  sort?: string;
 };
 
 export default URLParams;

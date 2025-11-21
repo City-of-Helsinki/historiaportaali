@@ -142,6 +142,11 @@ const neighbourhoods = createArrayFieldAtom('neighbourhoods');
 export const neighbourhoodsAtom = neighbourhoods.getAtom;
 export const setNeighbourhoodsAtom = neighbourhoods.setAtom;
 
+// Sort atoms
+const sort = createStringFieldAtom('sort');
+export const sortAtom = sort.getAtom;
+export const setSortAtom = sort.setAtom;
+
 // Helper to convert URLParams to SearchFilters
 export const searchFiltersAtom = atom<SearchFilters>((get) => {
   const params = get(urlAtom);
@@ -152,6 +157,7 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
     formats: normalizeArray(params.formats),
     phenomena: normalizeArray(params.phenomena),
     neighbourhoods: normalizeArray(params.neighbourhoods),
+    sort: params.sort || 'relevance',
   };
 });
 

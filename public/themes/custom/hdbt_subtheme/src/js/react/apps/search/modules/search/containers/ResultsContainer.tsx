@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import useSWR from 'swr';
 import { ResultsWrapper } from '../../../common/components/ResultsWrapper';
 import { ResultCard } from '../components/ResultCard';
+import { SortDropdown } from '../components/SortDropdown';
 import { getPageAtom, initializedAtom, searchFiltersAtom, setPageAtom, facetsAtom, isLoadingFacetsAtom } from '../store';
 import type { ContentItem, Facet } from '../../../common/types/Content';
 
@@ -109,7 +110,8 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
         filtered_neighbourhoods: {
           terms: { field: "aggregated_neighbourhoods_title", size: 100 }
         }
-      }
+      },
+      sort: []
     };
 
     // Add text search if keywords provided
@@ -164,6 +166,21 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
       query.query.bool.filter.push({
         terms: { "aggregated_neighbourhoods_title": filters.neighbourhoods }
       });
+    }
+
+    // Add sorting
+    const sortValue = filters.sort || 'relevance';
+    if (sortValue === 'newest') {
+      query.sort = [{ "aggregated_created": { "order": "desc" } }];
+    } else if (sortValue === 'oldest') {
+      query.sort = [{ "aggregated_created": { "order": "asc" } }];
+    } else {
+      // relevance - use _score when there are keywords, otherwise don't add sort (use default ES ordering)
+      if (filters.keywords.trim()) {
+        query.sort = [{ "_score": { "order": "desc" } }];
+      } else {
+        delete query.sort;
+      }
     }
 
     return JSON.stringify(query);
@@ -269,6 +286,7 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
       }}
       isLoading={loading}
       shouldScroll={readInitialized()}
+      sortElement={<SortDropdown />}
     />
   );
 };

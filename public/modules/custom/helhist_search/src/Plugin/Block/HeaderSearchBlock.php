@@ -97,9 +97,10 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
   public function build() {
 
     // Omit the form from search page.
+    $current_node = $this->routeMatch->getParameter('node');
     if (
-      ($this->routeMatch->getParameter('node') instanceof NodeInterface) && (int) $this->routeMatch->getParameter('node')->id() ===
-      (int) $this->searchPathResolver::SEARCH_PAGE_NODE_ID
+      ($current_node instanceof NodeInterface) &&
+      (int) $current_node->id() === $this->searchPathResolver->getSearchPageNodeId()
       ) {
       return [];
     }

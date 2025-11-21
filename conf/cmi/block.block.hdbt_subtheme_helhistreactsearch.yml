@@ -18,8 +18,4 @@ settings:
   label: 'HelHist React Search'
   label_display: '0'
   provider: helhist_search
-visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: /node/114
+visibility: {  }

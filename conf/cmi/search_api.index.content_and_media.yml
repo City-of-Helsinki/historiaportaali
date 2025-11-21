@@ -151,14 +151,6 @@ field_settings:
     dependencies:
       module:
         - node
-  status:
-    label: status
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    dependencies:
-      module:
-        - node
   url:
     label: URI
     property_path: search_api_url
@@ -213,20 +205,6 @@ processor_settings:
       h3: 2.0
       strong: 2.0
       u: 1.5
-  ignorecase:
-    weights:
-      preprocess_index: -50
-      preprocess_query: -47
-    all_fields: true
-    fields:
-      - aggregated_formats_title
-      - aggregated_keywords
-      - aggregated_neighbourhoods_title
-      - aggregated_phenomena_title
-      - aggregated_title
-      - content_type
-      - listing_image_url
-      - url
   language_with_fallback: {  }
   listing_image_url: {  }
   project_execution_schedule: {  }

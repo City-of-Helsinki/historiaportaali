@@ -12,11 +12,8 @@ use Drupal\node\Entity\Node;
 /**
  * Get the site's global search page URL.
  *
- * Search page is implemented as node/114. This helper function is used to get
- * the URL for the search page to not duplicate the node id template files.
- *
  * @return string
- *   The search page URL.
+ *   The search page URL alias.
  */
 function hdbt_subtheme_get_search_page_url() {
   return \Drupal::service('helhist_search.search_path_resolver')->getSearchPagePath();

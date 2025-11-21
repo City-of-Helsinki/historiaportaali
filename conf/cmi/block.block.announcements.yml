@@ -9,7 +9,7 @@ dependencies:
 id: announcements
 theme: hdbt_subtheme
 region: before_content
-weight: -15
+weight: -17
 provider: helfi_node_announcement
 plugin: announcements
 settings:

@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\helhist_search\Form\FrontpageSearchForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -23,11 +24,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The language manager service.
+   * The form builder service.
    *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
+   * @var \Drupal\Core\Form\FormBuilderInterface
    */
-  protected $languageManager;
+  protected $formBuilder;
 
   /**
    * Constructs a new FrontpageSearchBlock object.
@@ -38,17 +39,17 @@ class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginIn
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
-   *   The language manager service.
+   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+   *   The form builder service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    LanguageManagerInterface $language_manager,
+    FormBuilderInterface $form_builder,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->languageManager = $language_manager;
+    $this->formBuilder = $form_builder;
   }
 
   /**
@@ -59,7 +60,7 @@ class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginIn
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('language_manager')
+      $container->get('form_builder')
     );
   }
 
@@ -67,31 +68,10 @@ class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function build() {
-    $langcode = $this->languageManager->getCurrentLanguage()->getId();
-
-    switch ($langcode) {
-      case "fi":
-        $search_page_path = "/fi/haku";
-        break;
-
-      case "sv":
-        $search_page_path = "/sv/sok";
-        break;
-
-      case "en":
-        $search_page_path = "/en/search";
-        break;
-
-      default:
-        $search_page_path = "/fi/haku";
-    }
-
-    $build = [
+    return [
       '#theme' => 'frontpage_search',
-      '#search_page_path' => $search_page_path,
+      '#form' => $this->formBuilder->getForm(FrontpageSearchForm::class),
     ];
-
-    return $build;
   }
 
 }

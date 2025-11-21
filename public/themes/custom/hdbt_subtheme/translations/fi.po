@@ -10,3 +10,55 @@ msgstr "Avaa finna.fi hakupalvelussa"
 msgctxt "Button"
 msgid "Open in Finna"
 msgstr "Avaa Finnassa"
+
+msgctxt "Header search"
+msgid "Search"
+msgstr "Haku"
+
+msgctxt "Search"
+msgid "Search from site"
+msgstr "Hae sivustolta"
+
+msgctxt "Search"
+msgid "From year"
+msgstr "Vuodesta"
+
+msgctxt "Search"
+msgid "Until year"
+msgstr "Vuoteen"
+
+msgctxt "Search"
+msgid "Clear from year"
+msgstr "Tyhjennä alkuvuosi"
+
+msgctxt "Search"
+msgid "Clear until year"
+msgstr "Tyhjennä loppuvuosi"
+
+msgctxt "Search"
+msgid "Help"
+msgstr "Ohje"
+
+msgctxt "Search"
+msgid "Year format help"
+msgstr "Vuosimuodon ohje"
+
+msgctxt "Search"
+msgid "Use negative numbers for BC/BCE (e.g. -2050)"
+msgstr "Käytä negatiivisia numeroita eaa-vuosille (esim. -2050)"
+
+msgctxt "Search"
+msgid "Sort search results"
+msgstr "Järjestä hakutulokset"
+
+msgctxt "Search"
+msgid "Relevance"
+msgstr "Osuvuus"
+
+msgctxt "Search"
+msgid "Newest first"
+msgstr "Uusimmat ensin"
+
+msgctxt "Search"
+msgid "Oldest first"
+msgstr "Vanhimmat ensin"

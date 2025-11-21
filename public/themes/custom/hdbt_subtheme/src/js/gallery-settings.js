@@ -1,4 +1,5 @@
 import { tns } from 'tiny-slider';
+import Splide from '@splidejs/splide';
 
 document.addEventListener('DOMContentLoaded', () => {
   const galleries = document.getElementsByClassName('gallery');

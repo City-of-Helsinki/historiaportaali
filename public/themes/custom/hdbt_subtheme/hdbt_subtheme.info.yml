@@ -8,7 +8,9 @@ screenshot: hdbt_subtheme.png
 'interface translation project': hdbt_subtheme
 'interface translation server pattern': themes/custom/hdbt_subtheme/translations/%language.po
 
-# Regions
+dependencies:
+  - helhist_search
+
 regions:
   header_top: Header - Top
   header_branding: Header - Branding
@@ -28,7 +30,6 @@ regions:
   footer_bottom: Footer - Bottom
   attachments: Attachments
 
-# Libraries
 libraries:
   - hdbt_subtheme/global-styling
   - hdbt_subtheme/global-scripting

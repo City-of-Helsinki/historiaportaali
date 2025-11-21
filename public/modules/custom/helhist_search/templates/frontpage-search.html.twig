@@ -1,17 +1,7 @@
 <div class="frontpage-search">
   <div class="container">
     <div class="frontpage-search__form-wrapper">
-      <form role="search" action={{ search_page_path }} method="GET">
-        <div class="hds-text-input hds-text-input--search">
-          <label for="edit-s" class="hds-text-input__label">{{ 'Search from content'|t({}, {context: 'Search'}) }}</label>
-          <div class="hds-text-input__input-wrapper">
-            <input placeholder="{{ 'Location, person, topic, event...'|t({}, {context: 'Search'}) }}" data-drupal-selector="edit-s" class="form-text hds-text-input__input" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
-          </div>
-          <button type="submit" class="hds-button hds-button--primary">
-            <span class="hds-button__label">{{ 'Search'|t }}</span>
-          </button>
-        </div>
-      </form>
+      {{ form }}
     </div>
   </div>
 </div>

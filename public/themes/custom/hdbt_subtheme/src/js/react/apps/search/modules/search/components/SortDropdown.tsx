@@ -3,6 +3,7 @@ import { Select } from 'hds-react';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { urlAtom, urlUpdateAtom } from '../store';
 import { t } from '../../../common/utils/translate';
+import { defaultSelectTheme } from '@/react/common/constants/selectTheme';
 
 export const SortDropdown: React.FC = () => {
   const urlParams = useAtomValue(urlAtom);
@@ -32,6 +33,7 @@ export const SortDropdown: React.FC = () => {
       options={sortOptions}
       value={currentValue}
       onChange={handleSortChange}
+      theme={defaultSelectTheme}
       texts={{
         label: t('Sort search results', {}, { context: 'Search' }),
         language: language,

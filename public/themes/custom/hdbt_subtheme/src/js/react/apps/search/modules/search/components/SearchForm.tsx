@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { SearchInput, Button, ButtonVariant, DateInput, Select, IconCross, Fieldset } from 'hds-react';
+import { SearchInput, Button, ButtonVariant, ButtonPresetTheme, DateInput, Select, IconCross, Fieldset } from 'hds-react';
 import { t } from '../../../common/utils/translate';
+import { defaultMultiSelectTheme } from '@/react/common/constants/selectTheme';
 import { 
   keywordsAtom, 
   setKeywordsAtom, 
@@ -69,7 +70,7 @@ export const SearchForm: React.FC = () => {
   return (
     <div className="historia-search__form">
       <form onSubmit={handleSubmit}>
-        <div className="search-input-group">
+        <div className="react-search-keyword">
           <SearchInput
             label={t("Search", {}, {context: "Search"})}
             value={Array.isArray(keywords) ? keywords.join(' ') : keywords}
@@ -82,7 +83,9 @@ export const SearchForm: React.FC = () => {
           />
         </div>
 
-        <div className="searchFilters">
+        <h2 className="visually-hidden">{t("Filter results", {}, {context: "Search"})}</h2>
+
+        <div className="react-search-filters">
           <Fieldset 
             heading={t("Select era", {}, {context: "Search"})}
             className="filterGroup dateFilters"
@@ -142,6 +145,7 @@ export const SearchForm: React.FC = () => {
                     filterPlaceholder: t("Filter", {}, {context: "Search"}),
                   }),
                 }}
+                theme={defaultMultiSelectTheme}
                 disabled={loading}
               />
             </div>
@@ -174,6 +178,7 @@ export const SearchForm: React.FC = () => {
                     filterPlaceholder: t("Filter", {}, {context: "Search"}),
                   }),
                 }}
+                theme={defaultMultiSelectTheme}
                 disabled={loading}
               />
             </div>
@@ -206,6 +211,7 @@ export const SearchForm: React.FC = () => {
                     filterPlaceholder: t("Filter", {}, {context: "Search"}),
                   }),
                 }}
+                theme={defaultMultiSelectTheme}
                 disabled={loading}
               />
             </div>
@@ -216,7 +222,7 @@ export const SearchForm: React.FC = () => {
             <Button
               type="submit"
               disabled={loading}
-              className="search-button">
+              theme={ButtonPresetTheme.Black}>
               {loading 
                 ? t("Searching...", {}, {context: "Search"}) 
                 : t("Search", {}, {context: "Search"})
@@ -227,7 +233,7 @@ export const SearchForm: React.FC = () => {
                 type="button"
                 onClick={resetForm}
                 variant={ButtonVariant.Supplementary}
-                className="reset-button"
+                theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}
               >
                 {t("Clear", {}, {context: "Search"})}

@@ -5,11 +5,14 @@
   width: 100%;
 
   &__form {
-    .search-input-group {
-      margin-bottom: var(--spacing-m);
+    margin-top: $spacing-triple;
+    max-width: $content-width-max;
+
+    .react-search-keyword {
+      margin-bottom: $spacing-double;
     }
 
-    .searchFilters {
+    .react-search-filters {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
@@ -25,7 +28,7 @@
 
           .dateFilters-inputs {
             display: flex;
-            gap: var(--spacing-s);
+            gap: $spacing;
 
             > * {
               flex: 0 1 150px;
@@ -47,7 +50,7 @@
 
         &.neighbourhoodsFilters {
           @include breakpoint($breakpoint-m) {
-            margin-top: var(--spacing-m);
+            margin-top: $spacing-double;
           }
         }
       }
@@ -55,8 +58,8 @@
       .form-actions {
         grid-column: 1 / -1;
         display: flex;
-        gap: var(--spacing-s);
-        margin-top: var(--spacing-s);
+        gap: $spacing;
+        margin-top: $spacing;
       }
     }
   }
@@ -64,8 +67,8 @@
   &__result-top-area {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-s);
-    margin: var(--spacing-m) 0;
+    gap: $spacing;
+    margin: $spacing-and-half 0;
 
     @include breakpoint($breakpoint-m) {
       flex-direction: row;

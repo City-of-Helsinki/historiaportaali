@@ -16,7 +16,7 @@ plugin: helhist_search_react_search_block
 settings:
   id: helhist_search_react_search_block
   label: 'HelHist React Search'
-  label_display: visible
+  label_display: '0'
   provider: helhist_search
 visibility:
   request_path:

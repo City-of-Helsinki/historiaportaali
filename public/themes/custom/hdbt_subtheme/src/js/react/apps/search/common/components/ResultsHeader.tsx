@@ -9,7 +9,7 @@ type ResultsHeaderProps = {
 
 const ResultsHeader = forwardRef(({ resultText, optionalResultsText, actions, actionsClass }: ResultsHeaderProps, ref: ForwardedRef<HTMLHeadingElement>) => (
   <div className='historia-search__result-top-area'>
-    <h3 className='historia-search__results--title' ref={ref}>
+    <h3 className='historia-search__results-title' ref={ref}>
       {resultText} {optionalResultsText && (<>({optionalResultsText})</> )}
     </h3>
     {actions && (
@@ -23,4 +23,3 @@ const ResultsHeader = forwardRef(({ resultText, optionalResultsText, actions, ac
 ResultsHeader.displayName = 'ResultsHeader';
 
 export default ResultsHeader;
-

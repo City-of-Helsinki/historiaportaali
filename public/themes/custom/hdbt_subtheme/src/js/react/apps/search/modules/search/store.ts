@@ -158,6 +158,7 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
     phenomena: normalizeArray(params.phenomena),
     neighbourhoods: normalizeArray(params.neighbourhoods),
     sort: params.sort || 'relevance',
+    sort_order: params.sort_order || 'DESC',
   };
 });
 

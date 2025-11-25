@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import useSWR from 'swr';
 import { ResultsWrapper } from '../../../common/components/ResultsWrapper';
 import { ResultCard } from '../components/ResultCard';
-import { SortDropdown } from '../components/SortDropdown';
+import { SortOptions } from '../components/SortOptions';
 import { getPageAtom, initializedAtom, searchFiltersAtom, setPageAtom, facetsAtom, isLoadingFacetsAtom } from '../store';
 import type { ContentItem, Facet } from '../../../common/types/Content';
 
@@ -135,8 +135,8 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
     // Add year range filters
     if (filters.startYear !== undefined || filters.endYear !== undefined) {
       const yearRange: any = {};
-      if (filters.startYear !== undefined) yearRange.gte = filters.startYear;
       if (filters.endYear !== undefined) yearRange.lte = filters.endYear;
+      if (filters.startYear !== undefined) yearRange.gte = filters.startYear;
 
       query.query.bool.filter.push({
         bool: {
@@ -170,11 +170,13 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
 
     // Add sorting
     const sortValue = filters.sort || 'relevance';
-    if (sortValue === 'newest') {
-      query.sort = [{ "aggregated_created": { "order": "desc" } }];
-    } else if (sortValue === 'oldest') {
-      query.sort = [{ "aggregated_created": { "order": "asc" } }];
-    } else {
+    const sortOrder = (filters.sort_order || 'DESC').toLowerCase();
+
+    if (sortValue === 'created') {
+      query.sort = [{ "aggregated_created": { "order": sortOrder } }];
+    } else if (sortValue === 'year') {
+      query.sort = [{ "aggregated_start_year": { "order": sortOrder } }];
+    } else if (sortValue === 'relevance') {
       // relevance - use _score when there are keywords, otherwise don't add sort (use default ES ordering)
       if (filters.keywords.trim()) {
         query.sort = [{ "_score": { "order": "desc" } }];
@@ -286,7 +288,7 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
       }}
       isLoading={loading}
       shouldScroll={readInitialized()}
-      sortElement={<SortDropdown />}
+      sortElement={<SortOptions />}
     />
   );
 };

@@ -35,4 +35,5 @@ export type SearchFilters = {
   phenomena?: string[];
   neighbourhoods?: string[];
   sort?: string;
+  sort_order?: string;
 };

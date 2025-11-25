@@ -7,6 +7,7 @@ type URLParams = {
   neighbourhoods?: string[];
   page?: string;
   sort?: string;
+  sort_order?: string;
 };
 
 export default URLParams;

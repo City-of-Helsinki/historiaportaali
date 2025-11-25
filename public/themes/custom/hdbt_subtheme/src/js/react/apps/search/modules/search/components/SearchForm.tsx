@@ -84,6 +84,9 @@ export const SearchForm: React.FC = () => {
       <Tooltip
         tooltipLabel={t("Year format help", {}, {context: "Search"})}
         buttonLabel={t("Help", {}, {context: "Search"})}
+        small
+        boxShadow
+        placement="bottom-start"
       >
         {t("Use negative numbers for BC/BCE (e.g. -2050)", {}, {context: "Search"})}
       </Tooltip>
@@ -155,6 +158,8 @@ export const SearchForm: React.FC = () => {
                   value: facetValue.filter
                 }))}
                 value={neighbourhoods}
+                noTags
+                clearable
                 onChange={(selectedOptions) => {
                   const selectedValues = selectedOptions.map(opt => opt.value);
                   setNeighbourhoods(selectedValues);
@@ -188,6 +193,8 @@ export const SearchForm: React.FC = () => {
                   value: facetValue.filter
                 }))}
                 value={formats}
+                noTags
+                clearable
                 onChange={(selectedOptions) => {
                   const selectedValues = selectedOptions.map(opt => opt.value);
                   setFormats(selectedValues);
@@ -222,6 +229,8 @@ export const SearchForm: React.FC = () => {
                   value: facetValue.filter
                 }))}
                 value={phenomena}
+                noTags
+                clearable
                 onChange={(selectedOptions) => {
                   const selectedValues = selectedOptions.map(opt => opt.value);
                   setPhenomena(selectedValues);

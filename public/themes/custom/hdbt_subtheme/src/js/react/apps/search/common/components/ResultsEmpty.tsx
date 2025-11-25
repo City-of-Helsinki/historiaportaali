@@ -1,5 +1,4 @@
 import React from 'react';
-import { t } from '../utils/translate';
 
 interface ResultsEmptyProps {
   title?: string;
@@ -14,8 +13,8 @@ export const ResultsEmpty: React.FC<ResultsEmptyProps> = ({
 }) => {
   return (
     <div className={wrapperClass}>
-      <h3>{title || t("No results", {}, {context: "Search"})}</h3>
-      <p>{content || t("No results were found for the criteria you entered. Try changing your search criteria.", {}, { context: "Search" })}</p>
+      <h3>{title || Drupal.t("No results", {}, {context: "Search"})}</h3>
+      <p>{content || Drupal.t("No results were found for the criteria you entered. Try changing your search criteria.", {}, { context: "Search" })}</p>
     </div>
   );
 };

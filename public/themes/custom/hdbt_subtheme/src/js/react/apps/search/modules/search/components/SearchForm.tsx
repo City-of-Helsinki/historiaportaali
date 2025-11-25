@@ -12,7 +12,6 @@ import {
   IconLayers,
   Tooltip
 } from 'hds-react';
-import { t } from '../../../common/utils/translate';
 import { defaultMultiSelectTheme } from '@/react/common/constants/selectTheme';
 import { 
   keywordsAtom, 
@@ -82,13 +81,13 @@ export const SearchForm: React.FC = () => {
     clearButton: true,
     tooltip: (
       <Tooltip
-        tooltipLabel={t("Year format help", {}, {context: "Search"})}
-        buttonLabel={t("Help", {}, {context: "Search"})}
+        tooltipLabel={Drupal.t("Year format help", {}, {context: "Search"})}
+        buttonLabel={Drupal.t("Help", {}, {context: "Search"})}
         small
         boxShadow
         placement="bottom-start"
       >
-        {t("Use negative numbers for BC/BCE (e.g. -2050)", {}, {context: "Search"})}
+        {Drupal.t("Use negative numbers for BC/BCE (e.g. -2050)", {}, {context: "Search"})}
       </Tooltip>
     )
   };
@@ -111,18 +110,18 @@ export const SearchForm: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <div className="react-search-keyword">
           <SearchInput
-            label={t("Search", {}, {context: "Search"})}
+            label={Drupal.t("Search", {}, {context: "Search"})}
             value={Array.isArray(keywords) ? keywords.join(' ') : keywords}
             onChange={(value) => setKeywords(value)}
             onSubmit={handleSearchSubmit}
-            placeholder={t("Location, person, topic, event...", {}, {context: "Search"})}
+            placeholder={Drupal.t("Location, person, topic, event...", {}, {context: "Search"})}
             className="search-input"
-            searchButtonAriaLabel={t("Search", {}, {context: "Search"})}
-            clearButtonAriaLabel={t("Clear search", {}, {context: "Search"})}
+            searchButtonAriaLabel={Drupal.t("Search", {}, {context: "Search"})}
+            clearButtonAriaLabel={Drupal.t("Clear search", {}, {context: "Search"})}
           />
         </div>
 
-        <h2 className="visually-hidden">{t("Filter results", {}, {context: "Search"})}</h2>
+        <h2 className="visually-hidden">{Drupal.t("Filter results", {}, {context: "Search"})}</h2>
 
         <div className="react-search-filters">
           <div className="filter-group filter-group--dates">
@@ -130,20 +129,20 @@ export const SearchForm: React.FC = () => {
               <TextInput
                 {...commonYearInputProps}
                 id="search-start-year"
-                label={t("From year", {}, {context: "Search"})}
+                label={Drupal.t("From year", {}, {context: "Search"})}
                 value={asString(startYear)}
                 onChange={(e) => handleYearChange(e.target.value, setStartYear)}
-                placeholder={t("e.g.") + " 1900"}
-                clearButtonAriaLabel={t("Clear from year", {}, {context: "Search"})}
+                placeholder={Drupal.t("e.g.") + " 1900"}
+                clearButtonAriaLabel={Drupal.t("Clear from year", {}, {context: "Search"})}
               />
               <TextInput
                 {...commonYearInputProps}
                 id="search-end-year"
-                label={t("Until year", {}, {context: "Search"})}
+                label={Drupal.t("Until year", {}, {context: "Search"})}
                 value={asString(endYear)}
                 onChange={(e) => handleYearChange(e.target.value, setEndYear)}
-                placeholder={t("e.g.") + " 2000"}
-                clearButtonAriaLabel={t("Clear until year", {}, {context: "Search"})}
+                placeholder={Drupal.t("e.g.") + " 2000"}
+                clearButtonAriaLabel={Drupal.t("Clear until year", {}, {context: "Search"})}
               />
             </div>
           </div>
@@ -170,11 +169,11 @@ export const SearchForm: React.FC = () => {
                   }
                 })}
                 texts={{
-                  label: t("Region", {}, {context: "Search"}),
+                  label: Drupal.t("Region", {}, {context: "Search"}),
                   language: language,
-                  placeholder: t("Select region", {}, {context: "Search"}),
+                  placeholder: Drupal.t("Select region", {}, {context: "Search"}),
                   ...(neighbourhoodsFacet.values.length >= 10 && {
-                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
                   }),
                 }}
                 theme={defaultMultiSelectTheme}
@@ -206,11 +205,11 @@ export const SearchForm: React.FC = () => {
                 })}
                 icon={<IconPhoto />}
                 texts={{
-                  label: t("Format", {}, {context: "Search"}),
+                  label: Drupal.t("Format", {}, {context: "Search"}),
                   language: language,
-                  placeholder: t("Select format", {}, {context: "Search"}),
+                  placeholder: Drupal.t("Select format", {}, {context: "Search"}),
                   ...(formatsFacet.values.length >= 10 && {
-                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
                   }),
                 }}
                 theme={defaultMultiSelectTheme}
@@ -242,11 +241,11 @@ export const SearchForm: React.FC = () => {
                 })}
                 icon={<IconLayers />}
                 texts={{
-                  label: t("Phenomenon", {}, {context: "Search"}),
+                  label: Drupal.t("Phenomenon", {}, {context: "Search"}),
                   language: language,
-                  placeholder: t("Select phenomenon", {}, {context: "Search"}),
+                  placeholder: Drupal.t("Select phenomenon", {}, {context: "Search"}),
                   ...(phenomenaFacet.values.length >= 10 && {
-                    filterPlaceholder: t("Filter", {}, {context: "Search"}),
+                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
                   }),
                 }}
                 theme={defaultMultiSelectTheme}
@@ -262,8 +261,8 @@ export const SearchForm: React.FC = () => {
               disabled={loading}
               theme={ButtonPresetTheme.Black}>
               {loading 
-                ? t("Searching...", {}, {context: "Search"}) 
-                : t("Search", {}, {context: "Search"})
+                ? Drupal.t("Searching...", {}, {context: "Search"}) 
+                : Drupal.t("Search", {}, {context: "Search"})
               }
             </Button>
             {hasActiveFilters && (
@@ -274,7 +273,7 @@ export const SearchForm: React.FC = () => {
                 theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}
               >
-                {t("Clear", {}, {context: "Search"})}
+                {Drupal.t("Clear", {}, {context: "Search"})}
               </Button>
             )}
           </div>

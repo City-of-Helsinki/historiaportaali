@@ -2,7 +2,6 @@ import React from 'react';
 import { IconArrowUp, IconArrowDown, IconCheck, Button, ButtonVariant, ButtonPresetTheme, ButtonSize } from 'hds-react';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { urlAtom, urlUpdateAtom } from '../store';
-import { t } from '../../../common/utils/translate';
 
 export const SortOptions: React.FC = () => {
   const urlParams = useAtomValue(urlAtom);
@@ -46,40 +45,40 @@ export const SortOptions: React.FC = () => {
   // Help screen readers to announce the sort options.
   const getAriaLabel = (sortType: 'relevance' | 'created' | 'year') => {
     const fieldName = sortType === 'year' 
-      ? t('Year', {}, { context: 'Search' })
-      : t('Created', {}, { context: 'Search' });
+      ? Drupal.t('Year', {}, { context: 'Search' })
+      : Drupal.t('Created', {}, { context: 'Search' });
     
     if (currentSort !== sortType) {
       // Inactive state: explain what clicking will do
-      return `${t('Sort by', {}, { context: 'Search' })} ${fieldName}`;
+      return `${Drupal.t('Sort by', {}, { context: 'Search' })} ${fieldName}`;
     }
     
     // Active state: show current order and explain toggle action
     const currentOrder = currentSortOrder === 'ASC' 
-      ? t('oldest first', {}, { context: 'Search' })
-      : t('newest first', {}, { context: 'Search' });
+      ? Drupal.t('oldest first', {}, { context: 'Search' })
+      : Drupal.t('newest first', {}, { context: 'Search' });
     const nextOrder = currentSortOrder === 'ASC'
-      ? t('newest first', {}, { context: 'Search' })
-      : t('oldest first', {}, { context: 'Search' });
+      ? Drupal.t('newest first', {}, { context: 'Search' })
+      : Drupal.t('oldest first', {}, { context: 'Search' });
     
     // Use string concatenation to avoid HTML in aria-label
-    return `${t('Sorted by', {}, { context: 'Search' })} ${fieldName}, ${currentOrder}. ${t('Click to show', {}, { context: 'Search' })} ${nextOrder}`;
+    return `${Drupal.t('Sorted by', {}, { context: 'Search' })} ${fieldName}, ${currentOrder}. ${Drupal.t('Click to show', {}, { context: 'Search' })} ${nextOrder}`;
   };
 
   return (
     <>
-      <span className="historia-search__results-actions-label">{t('Sort search results', {}, { context: 'Search' })}:</span>
+      <span className="historia-search__results-actions-label">{Drupal.t('Sort search results', {}, { context: 'Search' })}</span>
       <Button
         {...commonButtonProps}
         onClick={() => handleSort('relevance')}
         iconStart={getIcon('relevance')}
         className={getActiveClass('relevance')}
         aria-label={currentSort === 'relevance' 
-          ? `${t('Sorted by', {}, { context: 'Search' })} ${t('relevance', {}, { context: 'Search' })}`
-          : `${t('Sort by', {}, { context: 'Search' })} ${t('relevance', {}, { context: 'Search' })}`
+          ? `${Drupal.t('Sorted by', {}, { context: 'Search' })} ${Drupal.t('relevance', {}, { context: 'Search' })}`
+          : `${Drupal.t('Sort by', {}, { context: 'Search' })} ${Drupal.t('relevance', {}, { context: 'Search' })}`
         }
       >
-        {t('Relevance', {}, { context: 'Search' })}
+        {Drupal.t('Relevance', {}, { context: 'Search' })}
       </Button>
       <Button
         {...commonButtonProps}
@@ -88,7 +87,7 @@ export const SortOptions: React.FC = () => {
         className={getActiveClass('year')}
         aria-label={getAriaLabel('year')}
       >
-        {t('Year', {}, { context: 'Search' })}
+        {Drupal.t('Year', {}, { context: 'Search' })}
       </Button>
       <Button
         {...commonButtonProps}
@@ -97,7 +96,7 @@ export const SortOptions: React.FC = () => {
         className={getActiveClass('created')}
         aria-label={getAriaLabel('created')}
       >
-        {t('Created', {}, { context: 'Search' })}
+        {Drupal.t('Created', {}, { context: 'Search' })}
       </Button>
     </>
   );

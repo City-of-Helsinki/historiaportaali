@@ -1,7 +1,6 @@
 import React from 'react';
 import { ContentItem } from '../../../common/types/Content';
 import CardItem, { Metarow } from '@/react/common/Card';
-import { t } from '../../../common/utils/translate';
 
 interface ResultCardProps extends ContentItem {}
 
@@ -32,7 +31,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="format"
         icon="photo"
-        label={t('Format', {}, { context: 'Seearch' })}
+        label={Drupal.t('Formats', {}, { context: 'Search' })}
         content={formats.join(', ')}
       />
     );
@@ -47,7 +46,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="year"
         icon="clock"
-        label={t('Year')}
+        label={Drupal.t('Year')}
         content={yearDisplay}
       />
     );
@@ -59,7 +58,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="phenomena"
         icon="layers"
-        label={t('Phenomena', {}, { context: 'Search' })}
+        label={Drupal.t('Phenomena', {}, { context: 'Search' })}
         content={phenomena.join(', ')}
       />
     );
@@ -71,7 +70,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="neighbourhoods"
         icon="location"
-        label={t('Region', {}, { context: 'Search' })}
+        label={Drupal.t('Region', {}, { context: 'Search' })}
         content={neighbourhoods.join(', ')}
       />
     );

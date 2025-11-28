@@ -66,6 +66,16 @@ class ContentType extends ProcessorPluginBase {
 
     if ($entity_type == 'node') {
       $content_type = 'article';
+
+      // Add translated "Article" to aggregated_formats_title field so
+      // it appears as a format filter option.
+      // @todo if other content types will be indexed consider loading the content type label from the entity (slows down indexing)
+      $format_fields = $item->getFields(FALSE);
+      if (isset($format_fields['aggregated_formats_title'])) {
+        $langcode = $entity->language()->getId();
+        $label = $this->t('Article', [], ['langcode' => $langcode]);
+        $format_fields['aggregated_formats_title']->addValue($label);
+      }
     }
 
     $fields = $this->getFieldsHelper()

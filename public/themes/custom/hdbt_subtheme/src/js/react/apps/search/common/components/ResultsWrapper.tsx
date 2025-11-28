@@ -119,11 +119,9 @@ export const ResultsWrapper = forwardRef(<T,>({
         </div>
       )}
 
-      {!isLoading && (
-        <div className="results-list">
-          {results.map((item) => resultItemCallBack(item))}
-        </div>
-      )}
+      <div className="results-list" style={{ opacity: isLoading ? 0.5 : 1 }}>
+        {results.map((item) => resultItemCallBack(item))}
+      </div>
 
       {totalPages > 1 && (
         <Pagination

@@ -45,7 +45,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     customMetaRows.push(
       <Metarow
         key="year"
-        icon="clock"
+        icon="calendar"
         label={Drupal.t('Year')}
         content={yearDisplay}
       />

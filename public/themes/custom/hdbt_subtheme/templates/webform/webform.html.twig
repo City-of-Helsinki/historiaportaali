@@ -29,7 +29,6 @@
 
     {% embed "@hdbt/misc/container.twig" with { container_element: 'webform_header' } %}
       {% block container_content %}
-        {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
         {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}

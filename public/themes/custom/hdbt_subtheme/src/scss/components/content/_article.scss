@@ -1,15 +1,5 @@
 .page-type--article {
   .before-content {
-    .back-to-search-results__container {
-      padding-top: 0;
-    }
-
-    .back-to-search-results {
-      @include breakpoint($breakpoint-m) {
-        padding-left: $spacing-triple * 2;
-      }
-    }
-
     .node--type-article {
       &.node--view-mode-before-content {
         .article-header__container {

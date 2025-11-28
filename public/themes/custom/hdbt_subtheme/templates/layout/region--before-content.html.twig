@@ -17,13 +17,6 @@
     {% if has_hero and not is_frontpage %}
       {{ drupal_block('hero_block') }}
     {% else %}
-      {% if not is_frontpage %}
-        {% embed "@hdbt_subtheme/misc/container.twig" with {container_element: 'back-to-search-results', container_style: 'display: none;'} %}
-          {% block container_content %}
-            {% include "@hdbt_subtheme/misc/back-to-search-results.html.twig" %}
-          {% endblock container_content %}
-        {% endembed %}
-      {% endif %}
       {{ content }}
     {% endif %}
   </div>

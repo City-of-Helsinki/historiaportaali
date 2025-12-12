@@ -7,7 +7,7 @@
 
 $databases['default']['default']['pdo'] = [
   \PDO::MYSQL_ATTR_SSL_CA => getenv('AZURE_SQL_SSL_CA_PATH'),
-  \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => FALSE,
+  \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => TRUE,
 ];
 // Azure specific filesystem fixes.
 $settings['php_storage']['twig']['directory'] = '/tmp';
@@ -20,9 +20,6 @@ $config['filelog.settings']['location'] = '/tmp';
 
 // Keep old assets for three months (default is one month).
 $config['system.performance']['stale_file_threshold'] = 7776000;
-
-// Increase http timeout.
-$settings['http_client_config']['timeout'] = 60;
 
 $settings['is_azure'] = TRUE;
 

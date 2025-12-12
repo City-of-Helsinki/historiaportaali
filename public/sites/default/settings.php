@@ -3,7 +3,7 @@
 use Symfony\Component\HttpFoundation\Request;
 
 if (PHP_SAPI === 'cli') {
-  ini_set('memory_limit', '1024M');
+  ini_set('memory_limit', '512M');
 }
 else {
   // New relic triggers garbage collector which adds extra time on the request.
@@ -63,8 +63,6 @@ $databases['default']['default'] = [
 
 $settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: '000';
 
-$config['key.key.tfa']['key_provider_settings']['key_value'] = getenv('TFA_ENCRYPTION_KEY');
-
 // Only in Wodby environment.
 // @see https://wodby.com/docs/stacks/drupal/#overriding-settings-from-wodbysettingsphp
 if (isset($_SERVER['WODBY_APP_NAME'])) {
@@ -112,13 +110,16 @@ foreach ($routes as $route) {
 
 $settings['config_sync_directory'] = '../conf/cmi';
 $settings['file_public_path'] = getenv('DRUPAL_FILES_PUBLIC') ?: 'sites/default/files';
-$settings['file_private_path'] = getenv('DRUPAL_FILES_PRIVATE');
+$settings['file_private_path'] = getenv('DRUPAL_FILES_PRIVATE') ?: '/private_files';
 $settings['file_temp_path'] = getenv('DRUPAL_TMP_PATH') ?: '/tmp';
 
 if ($reverse_proxy_address = getenv('DRUPAL_REVERSE_PROXY_ADDRESS')) {
   $reverse_proxy_address = explode(',', $reverse_proxy_address);
 
   if (isset($_SERVER['REMOTE_ADDR'])) {
+    // The application sits behind multiple proxies in the OpenShift
+    // environment. The nginx configuration uses ngx_http_realip_module to
+    // set the correct headers for Drupal.
     $reverse_proxy_address[] = $_SERVER['REMOTE_ADDR'];
   }
   $settings['reverse_proxy'] = TRUE;
@@ -152,10 +153,6 @@ if ($blob_storage_name = getenv('AZURE_BLOB_STORAGE_NAME')) {
   $settings['flysystem'] = $schemes;
 }
 
-if ($navigation_authentication_key = getenv('DRUPAL_NAVIGATION_API_KEY')) {
-  $config['helfi_navigation.api']['key'] = $navigation_authentication_key;
-}
-
 // Make sure project name and app env are defined in GitHub actions too.
 if ($github_repository = getenv('GITHUB_REPOSITORY')) {
   if (!getenv('APP_ENV')) {
@@ -170,60 +167,90 @@ $config['helfi_api_base.environment_resolver.settings']['environment_name'] = ge
 $config['helfi_api_base.environment_resolver.settings']['project_name'] = getenv('PROJECT_NAME');
 
 if ($varnish_host = getenv('DRUPAL_VARNISH_HOST')) {
-  $config['varnish_purger.settings.default']['hostname'] = $varnish_host;
-  $config['varnish_purger.settings.varnish_purge_all']['hostname'] = $varnish_host;
-}
+  // Cache everything for 1 year by default.
+  $config['system.performance']['cache']['page']['max_age'] = 31536000;
 
-if ($varnish_port = getenv('DRUPAL_VARNISH_PORT')) {
-  $config['varnish_purger.settings.default']['port'] = $varnish_port;
-  $config['varnish_purger.settings.varnish_purge_all']['port'] = $varnish_port;
-}
+  $varnish_backend = parse_url($drush_options_uri, PHP_URL_HOST);
 
-// Configuration doesn't know about existing config yet, so we can't
-// just append new headers to an already existing headers array here.
-// If you have configured any extra headers in your purge settings,
-// you must add them here as well.
-$config['varnish_purger.settings.default']['headers'] = [
-  [
-    'field' => 'Cache-Tags',
-    'value' => '[invalidation:expression]',
-  ],
-];
-$config['varnish_purger.settings.varnish_purge_all']['headers'] = [
-  [
-    'field' => 'X-VC-Purge-Method',
-    'value' => 'regex',
-  ],
-];
+  if (getenv('APP_ENV') === 'local') {
+    // Varnish backend is something like varnish-helfi-kymp.docker.so on
+    // local env.
+    $varnish_backend = 'varnish-' . $varnish_backend;
+  }
 
-if ($varnish_purge_key = getenv('VARNISH_PURGE_KEY')) {
-  $config['varnish_purger.settings.default']['headers'][] = [
-    'field' => 'X-VC-Purge-Key',
-    'value' => $varnish_purge_key,
+  // settings.php doesn't know about existing configuration yet so we can't
+  // just append new headers to an already existing headers array here.
+  // If you have configured any extra headers in your purge settings
+  // you must add them in your all.settings.php as well.
+  // @todo Replace this with config override service?
+  $varnishConfiguration = [
+    'default' => [
+      [
+        'field' => 'Cache-Tags',
+        'value' => '[invalidation:expression]',
+      ],
+    ],
+    'assets' => [
+      [
+        'field' => 'X-VC-Purge-Method',
+        'value' => 'regex',
+      ],
+      [
+        'field' => 'Host',
+        'value' => $varnish_backend,
+      ],
+    ],
+    'varnish_purge_all' => [
+      [
+        'field' => 'X-VC-Purge-Method',
+        'value' => 'regex',
+      ],
+    ],
   ];
-  $config['varnish_purger.settings.varnish_purge_all']['headers'][] = [
-    'field' => 'X-VC-Purge-Key',
-    'value' => $varnish_purge_key,
-  ];
-}
 
-if ($stage_file_proxy_origin = getenv('STAGE_FILE_PROXY_ORIGIN')) {
-  $config['stage_file_proxy.settings']['origin'] = $stage_file_proxy_origin;
-  $config['stage_file_proxy.settings']['origin_dir'] = getenv('STAGE_FILE_PROXY_ORIGIN_DIR') ?: 'test';
+  foreach ($varnishConfiguration as $name => $headers) {
+    $config['varnish_purger.settings.' . $name]['hostname'] = $varnish_host;
+
+    if ($varnish_port = getenv('DRUPAL_VARNISH_PORT')) {
+      $config['varnish_purger.settings.' . $name]['port'] = $varnish_port;
+    }
+
+    foreach ($headers as $header) {
+      $config['varnish_purger.settings.' . $name]['headers'][] = $header;
+    }
+
+    if ($varnish_purge_key = getenv('VARNISH_PURGE_KEY')) {
+      $config['varnish_purger.settings.' . $name]['headers'][] = [
+        'field' => 'X-VC-Purge-Key',
+        'value' => $varnish_purge_key,
+      ];
+    }
+  }
+}
+$stage_file_proxy_origin = getenv('STAGE_FILE_PROXY_ORIGIN');
+$stage_file_proxy_dir = getenv('STAGE_FILE_PROXY_ORIGIN_DIR');
+
+if ($stage_file_proxy_origin || $stage_file_proxy_dir) {
+  $config['stage_file_proxy.settings']['origin'] = $stage_file_proxy_origin ?: 'https://stplattaprod.blob.core.windows.net';
+  $config['stage_file_proxy.settings']['origin_dir'] = $stage_file_proxy_dir;
   $config['stage_file_proxy.settings']['hotlink'] = FALSE;
   $config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
 }
 
-// Map API accounts. The value should be a base64 encoded JSON string.
-// @see https://github.com/City-of-Helsinki/drupal-module-helfi-api-base/blob/main/documentation/api-accounts.md.
-if ($api_accounts = getenv('DRUPAL_API_ACCOUNTS')) {
-  $config['helfi_api_base.api_accounts']['accounts'] = json_decode(base64_decode($api_accounts), TRUE);
+if ($drupal_pubsub_vault = getenv('DRUPAL_PUBSUB_VAULT')) {
+  $config['helfi_api_base.api_accounts']['vault'][] = [
+    'id' => 'pubsub',
+    'plugin' => 'json',
+    'data' => trim($drupal_pubsub_vault),
+  ];
 }
 
-// Map vault accounts. The value should be a base64 encoded JSON string.
-// @see https://github.com/City-of-Helsinki/drupal-module-helfi-api-base/blob/main/documentation/api-accounts.md.
-if ($vault_accounts = getenv('DRUPAL_VAULT_ACCOUNTS')) {
-  $config['helfi_api_base.api_accounts']['vault'] = json_decode(base64_decode($vault_accounts), TRUE);
+if ($drupal_navigation_vault = getenv('DRUPAL_NAVIGATION_VAULT')) {
+  $config['helfi_api_base.api_accounts']['vault'][] = [
+    'id' => 'helfi_navigation',
+    'plugin' => 'authorization_token',
+    'data' => trim($drupal_navigation_vault),
+  ];
 }
 
 // Override session suffix when present.
@@ -231,24 +258,18 @@ if ($session_suffix = getenv('DRUPAL_SESSION_SUFFIX')) {
   $config['helfi_proxy.settings']['session_suffix'] = $session_suffix;
 }
 
-if ($robots_header_enabled = getenv('DRUPAL_X_ROBOTS_TAG_HEADER')) {
-  $config['helfi_proxy.settings']['robots_header_enabled'] = (bool) $robots_header_enabled;
-}
-
-$artemis_destination = drupal_get_env([
-  'ARTEMIS_DESTINATION',
+$amq_destination = drupal_get_env([
   'PROJECT_NAME',
 ]);
+$amq_brokers = getenv('AMQ_BROKERS');
 
-$artemis_brokers = getenv('ARTEMIS_BROKERS');
-
-if ($artemis_brokers && $artemis_destination) {
+if ($amq_brokers && $amq_destination) {
   $settings['stomp']['default'] = [
-    'clientId' => getenv('ARTEMIS_CLIENT_ID') ?: 'artemis',
-    'login' => getenv('ARTEMIS_LOGIN') ?: NULL,
-    'passcode' => getenv('ARTEMIS_PASSCODE') ?: NULL,
-    'destination' => sprintf('/queue/%s', $artemis_destination),
-    'brokers' => $artemis_brokers,
+    'clientId' => getenv('AMQ_CLIENT_ID') ?: 'client_ ' . $amq_destination,
+    'login' => getenv('AMQ_USER') ?: NULL,
+    'passcode' => getenv('AMQ_PASSWORD') ?: NULL,
+    'destination' => sprintf('/queue/%s', $amq_destination),
+    'brokers' => $amq_brokers,
     'timeout' => ['read' => 12000],
     'heartbeat' => [
       'send' => 20000,
@@ -260,7 +281,17 @@ if ($artemis_brokers && $artemis_destination) {
       ],
     ],
   ];
-  $settings['queue_default'] = 'queue.stomp.default';
+
+  $queues = [
+    'helfi_navigation_menu_queue',
+    'helfi_api_base_revision',
+  ];
+  foreach ($queues as $queue) {
+    // $settings['queue_service_' . $queue] = 'queue.stomp.default';
+  }
+  // You must configure project specific queues manually in 'all.settings.php'
+  // file.
+  // @see https://github.com/City-of-Helsinki/drupal-helfi-platform/blob/main/documentation/queue.md
 }
 
 $config['filelog.settings']['rotation']['schedule'] = 'never';
@@ -304,6 +335,73 @@ if (
 }
 
 $settings['is_azure'] = FALSE;
+
+if ($tfa_key = getenv('TFA_ENCRYPTION_KEY')) {
+  $config['key.key.tfa']['key_provider_settings']['key_value'] = $tfa_key;
+  $config['key.key.tfa']['key_provider_settings']['base64_encoded'] = TRUE;
+}
+
+/**
+ * Deployment preflight checks.
+ *
+ * @see docker/openshift/preflight/preflight.php for more information.
+ */
+$preflight_checks = [
+  'environmentVariables' => [
+    'DRUPAL_ROUTES',
+    'DRUPAL_DB_NAME',
+    'DRUPAL_DB_PASS',
+    'DRUPAL_DB_HOST',
+    'TFA_ENCRYPTION_KEY',
+  ],
+  'additionalFiles' => [],
+];
+
+// Elasticsearch server config.
+if (getenv('ELASTICSEARCH_URL')) {
+  $config['search_api.server.default']['backend_config']['connector_config']['url'] = getenv('ELASTICSEARCH_URL');
+
+  if (getenv('ELASTIC_USER') && getenv('ELASTIC_PASSWORD')) {
+    $config['search_api.server.default']['backend_config']['connector'] = 'helfi_connector';
+    $config['search_api.server.default']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
+    $config['search_api.server.default']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
+  }
+}
+
+// Elasticsearch suggestions server config. Etusivu elasticsearch instance is
+// shared between all core sites for indexing suggestions data.
+if (getenv('ELASTICSEARCH_ETUSIVU_URL')) {
+  $config['search_api.server.etusivu']['backend_config']['connector_config']['url'] = getenv('ELASTICSEARCH_ETUSIVU_URL');
+
+  if (getenv('ELASTICSEARCH_ETUSIVU_WRITER_USER') && getenv('ELASTICSEARCH_ETUSIVU_WRITER_PASSWORD')) {
+    $config['search_api.server.etusivu']['backend_config']['connector'] = 'helfi_connector';
+    $config['search_api.server.etusivu']['backend_config']['connector_config']['username'] = getenv('ELASTICSEARCH_ETUSIVU_WRITER_USER');
+    $config['search_api.server.etusivu']['backend_config']['connector_config']['password'] = getenv('ELASTICSEARCH_ETUSIVU_WRITER_PASSWORD');
+  }
+}
+
+// Supported values: https://github.com/Seldaek/monolog/blob/main/doc/01-usage.md#log-levels.
+$default_log_level = getenv('APP_ENV') === 'production' ? 'info' : 'debug';
+$settings['helfi_api_base.log_level'] = getenv('LOG_LEVEL') ?: $default_log_level;
+
+// Turn sentry JS error tracking on if SENTRY_DSN_PUBLIC is defined.
+if (getenv('SENTRY_DSN_PUBLIC')) {
+  $config['raven.settings']['javascript_error_handler'] = TRUE;
+}
+
+// Turn sentry drupal cron monitor on if SENTRY_CRON_MONITOR_ID is defined.
+if (getenv('SENTRY_CRON_MONITOR_ID')) {
+  // Preferably the id should be {site-name}-{env-name}-cron-monitor
+  $config['raven.settings']['cron_monitor_id'] = getenv('SENTRY_CRON_MONITOR_ID');
+}
+
+// OpenAI api keys:
+// See: https://helsinkisolutionoffice.atlassian.net/browse/UHF-12237.
+if (getenv('OPENAI_KEY')) {
+  $config['helfi_search.settings']['openai_api_key'] = getenv('OPENAI_KEY');
+  $config['helfi_search.settings']['openai_base_url'] = getenv('OPENAI_BASE_URL');
+  $config['helfi_search.settings']['openai_model'] = getenv('OPENAI_MODEL');
+}
 
 // Environment specific overrides.
 if (file_exists(__DIR__ . '/all.settings.php')) {

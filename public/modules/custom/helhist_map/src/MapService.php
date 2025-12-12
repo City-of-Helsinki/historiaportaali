@@ -126,7 +126,7 @@ class MapService {
     $query->condition('type', 'map_layer');
     $query->condition($field_condition);
     $query->condition('status', 1);
-    $query->sort('field_layer_title', 'DESC');
+    $query->sort('field_layer_title', 'ASC');
 
     $map_layer_nids = $query->accessCheck(TRUE)->execute();
 

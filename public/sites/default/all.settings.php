@@ -5,6 +5,11 @@
  * Contains site specific overrides.
  */
 
+ // Allow more memory due to indexing might be memory intensive.
+if (PHP_SAPI === 'cli') {
+  ini_set('memory_limit', '1024M');
+}
+
 // Elasticsearch settings.
 if ($env = getenv('ELASTICSEARCH_URL')) {
   $config['search_api.server.elasticsearch']['backend_config']['connector'] = 'helfi_connector';

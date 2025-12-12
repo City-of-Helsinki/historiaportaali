@@ -112,7 +112,7 @@ drush-import-dump: dump.sql
 
 PHONY += drush-sanitize-database
 drush-sanitize-database:
-	$(call drush,sql-query \"UPDATE file_managed SET uri = REPLACE(uri, 'azure://', 'public://');\",Fixed Azure URIs)
+	$(call drush,sql-query --extra=--skip-ssl \"UPDATE file_managed SET uri = REPLACE(uri, 'azure://', 'public://');\",Fixed Azure URIs)
 
 PHONY += drush-create-dump
 drush-create-dump: ## Create database dump to dump.sql

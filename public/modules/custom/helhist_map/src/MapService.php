@@ -89,11 +89,21 @@ class MapService {
         ];
       }
 
+      // Extract year from title for sorting.
+      $year = 0;
+      if (preg_match('/(\d{4})/', $layer_title, $matches)) {
+        $year = (int) $matches[1];
+      }
+
       $layers[$layer_title] = [
         'layer_title' => $layer_title,
         'map_api_endpoints' => json_encode($layer_api_endpoints),
+        'year' => $year,
       ];
     }
+
+    // Sort layers by year.
+    uasort($layers, fn($a, $b) => $a['year'] <=> $b['year']);
 
     return $layers;
   }
@@ -126,7 +136,6 @@ class MapService {
     $query->condition('type', 'map_layer');
     $query->condition($field_condition);
     $query->condition('status', 1);
-    $query->sort('field_layer_title', 'ASC');
 
     $map_layer_nids = $query->accessCheck(TRUE)->execute();
 

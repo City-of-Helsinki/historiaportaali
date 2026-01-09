@@ -19,6 +19,24 @@ This decouples the search implementation from hardcoded node IDs, making it
 environment-agnostic and allowing flexible URL management and use of Hero and
 other instructional content management to the search page.
 
+## Twig Functions
+
+### search_url(field_name, value)
+
+Generates search URL with filter or keyword parameter based on field type.
+
+```twig
+{{ search_url('field_phenomena', 'Term Name') }} → /SEARCH_PAGE?phenomena=Term%20Name
+{{ search_url('field_keywords', 'Term Name') }} → /SEARCH_PAGE?q=Term%20Name
+```
+
+**Filter fields** (use filter parameters):
+- `field_phenomena` → `?phenomena=`
+- `field_neighbourhoods` → `?neighbourhoods=`
+- `field_formats` → `?formats=`
+
+Other fields default to keyword search (`?q=`).
+
 ## Blocks
 
 - **HelHist Header Search** (`helhist_search_header_search_block`)

@@ -12,7 +12,8 @@ use Twig\TwigFunction;
  * Twig extension for generating search links and formatting periods.
  *
  * Usage:
- *   {{ search_url('field_phenomena', 'Term Name') }}
+ *   {{ search_url('field_phenomena', 'Term Name') }} -> "/search?phenomena=Term%20Name"
+ *   {{ search_url('field_keywords', 'Term Name') }} -> null (text-only field)
  *   {{ search_year_url(1992) }}
  *   {{ search_year_url(1992, 1999) }}
  *   {{ format_period(1992) }}

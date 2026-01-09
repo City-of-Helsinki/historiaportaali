@@ -24,6 +24,15 @@ class SearchLinkGenerator {
   ];
 
   /**
+   * Fields that should display as text only (no search link).
+   */
+  protected const TEXT_ONLY_FIELDS = [
+    'field_keywords',
+    'field_copyrights',
+    'field_buildings',
+  ];
+
+  /**
    * The search path resolver.
    */
   protected SearchPathResolver $searchPathResolver;
@@ -44,16 +53,22 @@ class SearchLinkGenerator {
    *
    * Filter fields use filter parameter (?phenomena=X).
    * Other fields use keyword search (?q=X).
+   * Text-only fields (keywords, copyrights, buildings) return NULL.
    *
    * @param string $field_name
    *   The Drupal field name.
    * @param string $value
    *   The term value to search for.
    *
-   * @return string
-   *   The search URL with appropriate query parameters.
+   * @return string|null
+   *   The search URL with appropriate query parameters, or NULL for text-only fields.
    */
-  public function generateSearchUrl(string $field_name, string $value): string {
+  public function generateSearchUrl(string $field_name, string $value): ?string {
+    // Text-only fields should not be linked.
+    if (in_array($field_name, self::TEXT_ONLY_FIELDS, TRUE)) {
+      return NULL;
+    }
+
     $base_path = $this->searchPathResolver->getSearchPagePath();
     $filter_key = self::FILTER_FIELD_MAPPING[$field_name] ?? NULL;
 

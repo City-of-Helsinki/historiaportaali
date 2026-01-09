@@ -1,18 +1,10 @@
 {#
 /**
  * @file
- * Theme override for taxonomy field displayed as search links.
+ * Theme override for taxonomy field displayed as search links or text.
  *
- * Taxonomy terms are rendered as clickable links that lead to the search page.
- * For filter fields (field_phenomena, field_neighbourhoods, field_formats),
- * links use filter parameters (e.g., ?phenomena=Term). For other fields,
- * links use keyword search (e.g., ?q=Term).
- *
- * Custom Twig functions from helhist_search module:
- * - search_url(field_name, value): Generates appropriate search URL
- *
- * @see template_preprocess_field()
- * @see \Drupal\helhist_search\Twig\SearchLinkExtension
+ * @see \Drupal\helhist_search\SearchLinkGenerator::FILTER_FIELD_MAPPING
+ * @see \Drupal\helhist_search\SearchLinkGenerator::TEXT_ONLY_FIELDS
  */
 #}
 {%
@@ -31,7 +23,12 @@
     <h3{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
     <div class="hdbt_taxonomy" aria-labelledby={{ field_name }}>
       {% for item in items %}
-        <a href="{{ search_url(field_name, item.content|render|striptags|trim) }}"><span>{{ item.content }}</span></a>
+        {% set url = search_url(field_name, item.content|render|striptags|trim) %}
+        {% if url %}
+          <a href="{{ url }}"><span>{{ item.content }}</span></a>
+        {% else %}
+          <span>{{ item.content }}</span>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

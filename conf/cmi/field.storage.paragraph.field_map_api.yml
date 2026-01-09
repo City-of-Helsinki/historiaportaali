@@ -14,9 +14,6 @@ settings:
     -
       value: kartta_hel_fi
       label: kartta.hel.fi
-    -
-      value: geoserver_hel_fi
-      label: geoserver.hel.fi
   allowed_values_function: ''
 module: options
 locked: false

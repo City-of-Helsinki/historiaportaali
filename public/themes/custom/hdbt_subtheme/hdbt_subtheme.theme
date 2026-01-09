@@ -63,6 +63,11 @@ function hdbt_subtheme_preprocess_html(&$variables) {
   if ($path_alias && in_array($path_alias, $search_page_aliases)) {
     $variables['attributes']['class'][] = 'search-page';
   }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof Node) {
+    $variables['attributes']['class'][] = 'node-type--' . $node->bundle();
+  }
 }
 
 /**

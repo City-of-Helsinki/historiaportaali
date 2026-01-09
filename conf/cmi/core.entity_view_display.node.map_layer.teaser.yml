@@ -6,10 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.map_layer.field_layer_title
     - field.field.node.map_layer.field_layer_type
-    - field.field.node.map_layer.field_map_api
     - field.field.node.map_layer.field_map_api_endpoints
-    - field.field.node.map_layer.field_map_era
-    - field.field.node.map_layer.field_map_wms_title
     - node.type.map_layer
   module:
     - user
@@ -26,10 +23,7 @@ content:
 hidden:
   field_layer_title: true
   field_layer_type: true
-  field_map_api: true
   field_map_api_endpoints: true
-  field_map_era: true
-  field_map_wms_title: true
   langcode: true
   published_at: true
   search_api_excerpt: true

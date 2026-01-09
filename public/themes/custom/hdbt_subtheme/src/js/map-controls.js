@@ -387,9 +387,6 @@
         case 'kartta_hel_fi':
           return 'https://kartta.hel.fi/ws/geoserver/avoindata/wms';
 
-        case 'geoserver_hel_fi':
-          return 'https://geoserver.hel.fi/geoserver/ows';
-
         default:
           return '';
       }

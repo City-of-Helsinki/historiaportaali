@@ -100,8 +100,7 @@
   }
 
   .select2-container {
-    max-width: 15rem;
-    width: 15rem !important;
+    width: 17rem !important;
 
     .select2-selection--single {
       background: $color-black-80;
@@ -118,11 +117,10 @@
 
       .select2-selection__clear {
         background: $color-white;
-        // TODO: Replace with responsive units.
         height: 26px;
         mask-image:url(../icons/cross-circle.svg);
-        right: 30px;
-        top: 15px;
+        margin-right: 46px;
+        margin-top: 15px;
         width: 26px;
         -webkit-mask-image:url(../icons/cross-circle.svg);
 
@@ -134,7 +132,6 @@
 
       .select2-selection__arrow {
         background: $color-white;
-        // TODO: Replace with responsive units.
         height: 26px;
          mask-image:url(../icons/angle-down.svg);
         top: 15px;
@@ -214,25 +211,41 @@
   }
 }
 
-// TODO: Replace with less hacky.
-.node--type-map-page {
+
+.node-type--map_page {
+  .select2-container--default .select2-results > .select2-results__options {
+    border: 1px solid $color-black-50;
+    max-height: 600px;
+  }
+
   .select2-results {
     background: #FBD;
     filter: grayscale(1) invert(1);
-  }
 
-  // Add indent to mobile dropdown options.
-  .select2-results__option {
-    padding-left: 12px;
+    &__option {
+      padding-left: 12px;
 
-    &[aria-disabled=true] {
-      color: $color-black-60;
-      font-weight: bold;
-      padding-left: 6px;
-    }
+      // Group headers (disabled options)
+      &[aria-disabled=true] {
+        color: $color-black; // Inverted by parent filter
+        font-weight: bold;
+        padding-left: 6px;
+      }
 
-    @include breakpoint($breakpoint-m) {
-      padding-left: 6px;
+      // Selected state
+      &--selected {
+        background: black url(../icons/check.svg) no-repeat 8px center / 14px !important;
+        color: white;
+        font-weight: bold;
+        padding-left: 28px;
+      }
+
+      // Hover/keyboard highlight state
+      &--highlighted.select2-results__option--selectable {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+      }
     }
   }
 }

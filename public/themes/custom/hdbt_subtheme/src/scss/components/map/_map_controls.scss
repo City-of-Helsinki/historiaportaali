@@ -215,7 +215,8 @@
 
 .node-type--map_page {
   .select2-container--default .select2-results > .select2-results__options {
-    max-height: 500px;
+    border: 1px solid $color-black-50;
+    max-height: 600px;
   }
 
   .select2-results {

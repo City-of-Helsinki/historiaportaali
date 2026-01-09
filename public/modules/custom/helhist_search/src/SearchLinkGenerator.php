@@ -61,13 +61,17 @@ class SearchLinkGenerator {
    *   The term value to search for.
    *
    * @return string|null
-   *   The search URL with appropriate query parameters, or NULL for text-only fields.
+   *   Search URL with query parameters, or NULL for text-only fields.
    */
   public function generateSearchUrl(string $field_name, string $value): ?string {
     // Text-only fields should not be linked.
     if (in_array($field_name, self::TEXT_ONLY_FIELDS, TRUE)) {
       return NULL;
     }
+
+    // Decode HTML entities before URL encoding so they appear correct in
+    // the search query field.
+    $value = html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
     $base_path = $this->searchPathResolver->getSearchPagePath();
     $filter_key = self::FILTER_FIELD_MAPPING[$field_name] ?? NULL;

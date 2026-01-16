@@ -2,7 +2,6 @@ import React from 'react';
 import { Notification } from 'hds-react';
 
 interface ResultsErrorProps {
-  error?: Error | string;
   className?: string;
 }
 

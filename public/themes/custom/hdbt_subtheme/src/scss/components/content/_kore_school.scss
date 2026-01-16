@@ -26,9 +26,9 @@
       }
 
       .kore--field {
+        border-bottom: 1px solid $color-black-40;
         display: grid;
         grid-template-columns: 1fr;
-        border-bottom: 1px solid $color-black-40;
 
         .paragraph--type--kore {
           align-items: flex-start;
@@ -56,8 +56,8 @@
             min-width: 0;
 
             .kore--address {
-              white-space: nowrap;
               margin: 0 0.5rem;
+              white-space: nowrap;
             }
           }
 

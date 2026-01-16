@@ -14,8 +14,8 @@
 
     .react-search-filters {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: $spacing-double $spacing;
+      grid-template-columns: 1fr 1fr;
 
       @include breakpoint(0 $breakpoint-m) {
         grid-template-columns: 1fr;
@@ -58,25 +58,25 @@
       }
 
       .form-actions {
-        grid-column: 1 / -1;
         display: flex;
         gap: $spacing;
+        grid-column: 1 / -1;
         margin: $spacing 0;
       }
     }
   }
 
   &__result-top-area {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: $spacing;
     margin: $spacing-and-half 0;
 
     @include breakpoint($breakpoint-m) {
+      align-items: center;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
     }
   }
 
@@ -85,9 +85,9 @@
   }
 
   &__results-actions {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     gap: $spacing-half;
 
     button {
@@ -112,8 +112,8 @@
     nav[class*="pagination"] {
       ul,
       li {
-        padding: 0;
         margin: 0;
+        padding: 0;
       }
 
       // Ensure pagination items are perfect circles

@@ -60,7 +60,7 @@ export const ResultsWrapper = forwardRef(<T,>({
   if (isLoading && !data) {
     return (
       <div className="historia-search__results" ref={resultsRef}>
-        <GhostList count={3} />
+        <GhostList />
       </div>
     );
   }
@@ -69,10 +69,7 @@ export const ResultsWrapper = forwardRef(<T,>({
   if (error) {
     return (
       <div className="historia-search__results" ref={resultsRef}>
-        <ResultsError 
-          error={error} 
-          className="historia-search__error"
-        />
+        <ResultsError className="historia-search__error" />
       </div>
     );
   }
@@ -120,7 +117,7 @@ export const ResultsWrapper = forwardRef(<T,>({
       {/* Loading overlay during pagination */}
       {isLoading && (
         <div className="hdbt__loading-overlay">
-          <GhostList count={3} />
+          <GhostList />
         </div>
       )}
 
@@ -132,7 +129,6 @@ export const ResultsWrapper = forwardRef(<T,>({
         <Pagination
           updatePage={handlePageChange}
           currentPage={currentPageIndex} // Pass 0-based index
-          pages={5} // Number of page numbers to show
           totalPages={totalPages}
         />
       )}

@@ -202,22 +202,20 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
     revalidateOnFocus: false,
   });
 
-  const loading = isLoading;
-
   // Update facets when data changes
   useEffect(() => {
-    setIsLoadingFacets(loading);
+    setIsLoadingFacets(isLoading);
     if (data?.aggregations) {
       const mappedFacets = mapAggregationsToFacets(data.aggregations);
       setFacets(mappedFacets);
     }
-  }, [data, loading, setFacets, setIsLoadingFacets]);
+  }, [data, isLoading, setFacets, setIsLoadingFacets]);
 
   useEffect(() => {
-    if (!readInitialized() && !loading && !isValidating) {
+    if (!readInitialized() && !isLoading && !isValidating) {
       setInitialized(true);
     }
-  }, [loading, isValidating, readInitialized, setInitialized]);
+  }, [isLoading, isValidating, readInitialized, setInitialized]);
 
   // Map Elasticsearch result to ContentItem
   const mapElasticsearchResult = (hit: estypes.SearchHit<any>): ContentItem => {
@@ -256,7 +254,7 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
         setPageIndex,
         itemsPerPage,
       }}
-      isLoading={loading}
+      isLoading={isLoading}
       shouldScroll={readInitialized()}
       sortElement={<SortOptions />}
     />

@@ -70,13 +70,6 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   window.history.pushState({}, '', newUrl);
 });
 
-// Page atoms - using 0-based indexing internally (matching HDS)
-// URL uses 1-based (?page=1) but we convert to 0-based internally
-export const pageAtom = atom((get) => {
-  const urlPage = Number(get(urlAtom)?.page) || 1;
-  return urlPage - 1; // Convert 1-based URL to 0-based internal
-});
-
 // Read-only atom for getting current page (0-based)
 export const getPageAtom = atom((get) => {
   const urlPage = Number(get(urlAtom)?.page) || 1;

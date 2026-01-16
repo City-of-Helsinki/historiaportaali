@@ -1,0 +1,6 @@
+helhist_search.settings:
+  title: 'Site search settings'
+  description: 'Configure search page node'
+  parent: hdbt_admin_tools.overview
+  route_name: helhist_search.settings
+  weight: 51

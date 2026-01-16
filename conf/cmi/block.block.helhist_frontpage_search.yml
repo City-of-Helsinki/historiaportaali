@@ -10,7 +10,7 @@ dependencies:
 id: helhist_frontpage_search
 theme: hdbt_subtheme
 region: before_content
-weight: 5
+weight: -11
 provider: null
 plugin: helhist_search_frontpage_block
 settings:

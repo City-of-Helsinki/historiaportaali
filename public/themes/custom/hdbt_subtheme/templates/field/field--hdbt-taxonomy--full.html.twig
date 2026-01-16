@@ -52,7 +52,8 @@
     <h3{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
     <div class="hdbt_taxonomy" aria-labelledby={{ field_name }}>
       {% for item in items %}
-        <a href="{{ site_search_page_url }}?s={{ item.content }}"><span>{{ item.content }}</span></a>
+      {# TODO: if term one of main search filters, pass as a filter query to the search page #}
+        <a href="{{ site_search_page_url }}?q={{ item.content }}"><span>{{ item.content }}</span></a>
       {% endfor %}
     </div>
   </div>

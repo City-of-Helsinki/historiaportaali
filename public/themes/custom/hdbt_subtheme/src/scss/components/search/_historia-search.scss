@@ -1,0 +1,133 @@
+.historia-search {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  width: 100%;
+
+  &__form {
+    margin-top: $spacing-triple;
+    max-width: $content-width-max;
+
+    .react-search-keyword {
+      margin-bottom: $spacing-double;
+    }
+
+    .react-search-filters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-double $spacing;
+
+      @include breakpoint(0 $breakpoint-m) {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-group {
+        min-width: 0;
+
+        // Add consistent spacing between filters
+        @include breakpoint($breakpoint-m) {
+          &:not(:first-child) {
+            margin-top: 0; // Reset any specific margins
+          }
+        }
+
+        &--dates {
+          max-width: fit-content;
+
+          .date-filter-inputs {
+            display: flex;
+            gap: $spacing;
+
+            > * {
+              flex: 0 1 150px;
+            }
+
+            @include breakpoint(0 $breakpoint-s) {
+              flex-direction: column;
+            }
+          }
+
+          @include breakpoint(0 $breakpoint-m) {
+            max-width: 100%;
+
+            .date-filter-inputs > * {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+
+      .form-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: $spacing;
+        margin: $spacing 0;
+      }
+    }
+  }
+
+  &__result-top-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing;
+    margin: $spacing-and-half 0;
+
+    @include breakpoint($breakpoint-m) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__results-title {
+    margin: 0;
+  }
+
+  &__results-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-half;
+
+    button {
+      font-weight: $font-weight-regular;
+
+      &.active {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &__results-actions-label {
+    flex-basis: 100%;
+
+    @include breakpoint($breakpoint-s) {
+      flex-basis: auto;
+    }
+  }
+
+  &__pagination {
+    // Reset any inherited list styles that interfere with HDS Pagination
+    nav[class*="pagination"] {
+      ul,
+      li {
+        padding: 0;
+        margin: 0;
+      }
+
+      // Ensure pagination items are perfect circles
+      a[class*="item-link"],
+      span[class*="item-link"] {
+        height: 40px;
+        width: 40px;
+      }
+
+      // Align buttons vertically with page numbers
+      button[class*="button"] {
+        height: 40px;
+        min-height: 40px;
+      }
+    }
+  }
+}

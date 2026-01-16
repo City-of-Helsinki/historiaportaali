@@ -1,0 +1,21 @@
+uuid: 756dfe49-2697-4b34-84a0-9d1d49141f6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - helhist_search
+    - system
+  theme:
+    - hdbt_subtheme
+id: hdbt_subtheme_helhistreactsearch
+theme: hdbt_subtheme
+region: content
+weight: -16
+provider: null
+plugin: helhist_search_react_search_block
+settings:
+  id: helhist_search_react_search_block
+  label: 'HelHist React Search'
+  label_display: '0'
+  provider: helhist_search
+visibility: {  }

@@ -1,5 +1,7 @@
 msgid ""
 msgstr ""
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Go to interactive map"
 msgstr "Siirry interaktiiviselle kartalle"
@@ -10,3 +12,157 @@ msgstr "Avaa finna.fi hakupalvelussa"
 msgctxt "Button"
 msgid "Open in Finna"
 msgstr "Avaa Finnassa"
+
+msgctxt "Header search"
+msgid "Search"
+msgstr "Haku"
+
+msgctxt "Search"
+msgid "Search"
+msgstr "Haku"
+
+msgctxt "Search"
+msgid "Search from site"
+msgstr "Hae sivustolta"
+
+msgctxt "Search"
+msgid "Location, person, topic, event..."
+msgstr "Paikka, henkilö, aihe, tapahtuma..."
+
+msgctxt "Search"
+msgid "Clear search"
+msgstr "Tyhjennä haku"
+
+msgctxt "Search"
+msgid "Filter results"
+msgstr "Rajaa tuloksia"
+
+msgctxt "Search"
+msgid "From year"
+msgstr "Vuodesta"
+
+msgctxt "Search"
+msgid "Until year"
+msgstr "Vuoteen"
+
+msgctxt "Search"
+msgid "e.g."
+msgstr "esim."
+
+msgctxt "Search"
+msgid "Clear from year"
+msgstr "Tyhjennä alkuvuosi"
+
+msgctxt "Search"
+msgid "Clear until year"
+msgstr "Tyhjennä loppuvuosi"
+
+msgctxt "Search"
+msgid "Help"
+msgstr "Ohje"
+
+msgctxt "Search"
+msgid "Year format help"
+msgstr "Vuosimuodon ohje"
+
+msgctxt "Search"
+msgid "Use negative numbers for BC/BCE (e.g. -2050)"
+msgstr "Käytä negatiivisia numeroita eaa-vuosille (esim. -2050)"
+
+msgctxt "Search"
+msgid "Region"
+msgstr "Alue"
+
+msgctxt "Search"
+msgid "Select region"
+msgstr "Valitse alue"
+
+msgctxt "Search"
+msgid "Formats"
+msgstr "Aineistolaji"
+
+msgctxt "Search"
+msgid "Select format"
+msgstr "Valitse Aineistolaji"
+
+msgctxt "Search"
+msgid "Phenomena"
+msgstr "Ilmiöt"
+
+msgctxt "Search"
+msgid "Select phenomenon"
+msgstr "Valitse ilmiö"
+
+msgctxt "Search"
+msgid "Filter"
+msgstr "Suodata"
+
+msgctxt "Search"
+msgid "Searching..."
+msgstr "Haetaan..."
+
+msgctxt "Search"
+msgid "Clear"
+msgstr "Tyhjennä"
+
+msgctxt "Search"
+msgid "Sort search results"
+msgstr "Järjestä hakutulokset"
+
+msgctxt "Search"
+msgid "Relevance"
+msgstr "Osuvuus"
+
+msgctxt "Search"
+msgid "relevance"
+msgstr "osuvuus"
+
+msgctxt "Search"
+msgid "Year"
+msgstr "Vuosi"
+
+msgctxt "Search"
+msgid "Created"
+msgstr "Julkaisuajankohta"
+
+msgctxt "Search"
+msgid "Sort by"
+msgstr "Järjestä"
+
+msgctxt "Search"
+msgid "Sorted by"
+msgstr "Järjestetty"
+
+msgctxt "Search"
+msgid "oldest first"
+msgstr "vanhimmat ensin"
+
+msgctxt "Search"
+msgid "newest first"
+msgstr "uusimmat ensin"
+
+msgctxt "Search"
+msgid "Click to show"
+msgstr "Näytä"
+
+msgctxt "Search"
+msgid "An error occurred while loading the content"
+msgstr "Tulosten lataamisessa tapahtui virhe"
+
+msgctxt "Search"
+msgid "Please reload the page or try again later."
+msgstr "Päivitä sivu tai yritä myöhemmin uudelleen."
+
+msgctxt "Search"
+msgid "No results"
+msgstr "Ei tuloksia"
+
+msgctxt "Search"
+msgid "No results were found for the criteria you entered. Try changing your search criteria."
+msgstr "Antamillasi hakuehdoilla ei löytynyt tuloksia. Kokeile muuttaa hakuehtojasi."
+
+msgctxt "Search"
+msgid "1 result"
+msgid_plural "@count results"
+msgstr[0] "1 tulos"
+msgstr[1] "@count tulosta"

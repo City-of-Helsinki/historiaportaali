@@ -1,64 +1,49 @@
 // eslint-disable-next-line no-unused-vars
-(($, Drupal, drupalSettings) => {
+(($, Drupal, drupalSettings, once) => {
   Drupal.behaviors.themeCommon = {
     attach: function (context, settings) {
 
-      // Show 'Back'-link if the user
-      // is coming from another page
-      let previousUrl = document.referrer;
-      if (previousUrl) {
-        // Default to the generic back link
-        let $backLinkEl = $('.generic-back-link', context);
-
-        // Use 'Back to search results'-link if the user
-        // is coming from the search page
-        if (previousUrl.includes('/haku') ||
-            previousUrl.includes('/search')) {
-          $backLinkEl = $('.back-to-search-results', context);
-        }
-
-        // If browser history exists, use it
-        if (history.length > 1) {
-          previousUrl = 'javascript:history.go(-1)';
-        }
-
-        const $container = $backLinkEl.closest('.container');
-
-        if ($backLinkEl.length) {
-          $('a', $backLinkEl).attr('href', previousUrl);
-
-          if (!$container.is(':visible')) {
-            $container.show();
-          }
-
-          $backLinkEl.show();
-        }
-      }
-
       // Header search form
-      const $searchToggleBtn = $('.header-search .hds-button--search-toggle');
-      if ($searchToggleBtn.length) {
-        $searchToggleBtn.on('click', function(e) {
-          $(this).attr('aria-expanded', function (i, attr) {
-            return attr == 'true' ? 'false' : 'true'
-          });
+      const $searchToggleBtn = $('.header-search .nav-toggle__button', context);
+      const $searchFormWrapper = $('.header-search__form-wrapper', context);
+
+      const openSearchForm = function() {
+        $searchToggleBtn.attr('aria-expanded', 'true');
+        $searchFormWrapper.stop(true, false).slideDown(300, function() {
+          $('#edit-q-header').focus();
         });
-      }
+      };
+
+      const closeSearchForm = function() {
+        $searchToggleBtn.attr('aria-expanded', 'false');
+        $searchFormWrapper.stop(true, false).slideUp(300);
+      };
+
+      once('header-search-toggle', '.header-search .nav-toggle__button', context).forEach(element => {
+        $(element).on('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isExpanded = $(this).attr('aria-expanded') === 'true';
+          isExpanded ? closeSearchForm() : openSearchForm();
+        });
+      });
 
       // Hide header search form if clicked outside the search element
       $(document).on('click', function(event) {
         if (!$(event.target).closest('.header-search').length) {
-          $searchToggleBtn.attr('aria-expanded', false);
+          if ($searchToggleBtn.attr('aria-expanded') === 'true') {
+            closeSearchForm();
+          }
         }
       });
-
-      // Hide header search form on escape key press
+      
+      // Hide header search form on escape key press.
       $(document).keyup(function(e) {
-        if (e.key === "Escape") {
-          $searchToggleBtn.attr('aria-expanded', false);
+        if (e.key === "Escape" && $searchToggleBtn.attr('aria-expanded') === 'true') {
+          closeSearchForm();
         }
       });
-
 
       // Add even / odd classes to Image and Video -paragraphs
       Drupal.behaviors.themeCommon.addEvenOddClasses(context);
@@ -127,4 +112,4 @@
     }
   };
   // eslint-disable-next-line no-undef
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, drupalSettings, once);

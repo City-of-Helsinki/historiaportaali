@@ -1,0 +1,9 @@
+helhist_search.settings:
+  path: '/admin/tools/helhist-search'
+  defaults:
+    _form: '\Drupal\helhist_search\Form\SearchConfigForm'
+    _title: 'Site search settings'
+  requirements:
+    _permission: 'administer site configuration'
+    _admin_route: TRUE
+

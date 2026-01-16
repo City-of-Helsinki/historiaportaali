@@ -5,8 +5,12 @@ declare(strict_types=1);
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\helhist_search\Form\HeaderSearchForm;
+use Drupal\helhist_search\SearchPathResolver;
+use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -23,11 +27,25 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The language manager service.
+   * The form builder service.
    *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
+   * @var \Drupal\Core\Form\FormBuilderInterface
    */
-  protected $languageManager;
+  protected $formBuilder;
+
+  /**
+   * The route match.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
+   * The search path resolver service.
+   *
+   * @var \Drupal\helhist_search\SearchPathResolver
+   */
+  protected $searchPathResolver;
 
   /**
    * Constructs a new HeaderSearchBlock object.
@@ -38,17 +56,25 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
-   *   The language manager service.
+   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+   *   The form builder service.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+   *   The route match.
+   * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
+   *   The search path resolver service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    LanguageManagerInterface $language_manager,
+    FormBuilderInterface $form_builder,
+    RouteMatchInterface $route_match,
+    SearchPathResolver $search_path_resolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->languageManager = $language_manager;
+    $this->formBuilder = $form_builder;
+    $this->routeMatch = $route_match;
+    $this->searchPathResolver = $search_path_resolver;
   }
 
   /**
@@ -59,7 +85,9 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('language_manager')
+      $container->get('form_builder'),
+      $container->get('current_route_match'),
+      $container->get('helhist_search.search_path_resolver')
     );
   }
 
@@ -67,31 +95,21 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
    * {@inheritdoc}
    */
   public function build() {
-    $langcode = $this->languageManager->getCurrentLanguage()->getId();
 
-    switch ($langcode) {
-      case "fi":
-        $search_page_path = "/fi/haku";
-        break;
-
-      case "sv":
-        $search_page_path = "/sv/sok";
-        break;
-
-      case "en":
-        $search_page_path = "/en/search";
-        break;
-
-      default:
-        $search_page_path = "/fi/haku";
+    // Omit the form from search page.
+    $current_node = $this->routeMatch->getParameter('node');
+    if (
+      ($current_node instanceof NodeInterface) &&
+      (int) $current_node->id() === $this->searchPathResolver->getSearchPageNodeId()
+      ) {
+      return [];
     }
-
-    $build = [
-      '#theme' => 'header_search',
-      '#search_page_path' => $search_page_path,
-    ];
-
-    return $build;
+    else {
+      return [
+        '#theme' => 'header_search',
+        '#form' => $this->formBuilder->getForm(HeaderSearchForm::class),
+      ];
+    }
   }
 
 }

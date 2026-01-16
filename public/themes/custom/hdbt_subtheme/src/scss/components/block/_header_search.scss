@@ -1,11 +1,11 @@
 .block--header-search {
   align-items: center;
   display: flex;
+  font-size: 0.875rem;
   grid-area: search;
   margin-left: $spacing-triple;
   position: static;
   z-index: 100;
-  font-size: 0.875rem;
 
   @include breakpoint($breakpoint-m) {
     margin: 0 $spacing 0 auto;
@@ -19,8 +19,8 @@
     }
 
     .nav-toggle__label {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
       gap: 2px;
 
       &--open {

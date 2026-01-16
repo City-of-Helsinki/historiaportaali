@@ -8,11 +8,13 @@ import {
   TextInput,
   Select,
   IconCross,
+  IconLocation,
   IconPhoto,
   IconLayers,
   Tooltip
 } from 'hds-react';
 import { defaultMultiSelectTheme } from '@/react/common/constants/selectTheme';
+import type { Facet } from '../../../common/types/Content';
 import { 
   keywordsAtom, 
   setKeywordsAtom, 
@@ -103,6 +105,65 @@ export const SearchForm: React.FC = () => {
     (neighbourhoods && neighbourhoods.length > 0)
   );
 
+  const renderFacetSelect = ({
+    facet,
+    wrapperClass,
+    id,
+    label,
+    placeholder,
+    icon,
+    value,
+    onChange,
+  }: {
+    facet?: Facet;
+    wrapperClass: string;
+    id: string;
+    label: string;
+    placeholder: string;
+    icon?: React.ReactElement;
+    value: string[];
+    onChange: (values: string[]) => void;
+  }) => {
+    if (!facet) return null;
+    // Show filterable input only when there number of options exceed this.
+    const showFilter = facet.values.length >= 10;
+    return (
+      <div className={wrapperClass}>
+        <Select
+          id={id}
+          multiSelect
+          options={facet.values.map((facetValue) => ({
+            label: `${facetValue.filter} (${facetValue.count})`,
+            value: facetValue.filter
+          }))}
+          value={value}
+          noTags
+          clearable
+          onChange={(selectedOptions) => {
+            const selectedValues = selectedOptions.map((opt) => opt.value);
+            onChange(selectedValues);
+          }}
+          {...(showFilter && {
+            filter: (option, filterStr) => {
+              return option.label.toLowerCase().includes(filterStr.toLowerCase());
+            }
+          })}
+          icon={icon}
+          texts={{
+            label,
+            language: language,
+            placeholder,
+            ...(showFilter && {
+              filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
+            }),
+          }}
+          theme={defaultMultiSelectTheme}
+          disabled={loading}
+        />
+      </div>
+    );
+  };
+
   return (
     <div className="historia-search__form">
       <form onSubmit={handleSubmit}>
@@ -145,112 +206,38 @@ export const SearchForm: React.FC = () => {
             </div>
           </div>
 
-          {neighbourhoodsFacet && (
-            <div className="filter-group filter-group--neighbourhoods">
-              <Select
-                id="neighbourhoods-select"
-                multiSelect
-                options={neighbourhoodsFacet.values.map(facetValue => ({
-                  label: `${facetValue.filter} (${facetValue.count})`,
-                  value: facetValue.filter
-                }))}
-                value={neighbourhoods}
-                noTags
-                clearable
-                onChange={(selectedOptions) => {
-                  const selectedValues = selectedOptions.map(opt => opt.value);
-                  setNeighbourhoods(selectedValues);
-                }}
-                {...(neighbourhoodsFacet.values.length >= 10 && {
-                  filter: (option, filterStr) => {
-                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
-                  }
-                })}
-                texts={{
-                  label: Drupal.t("Region", {}, {context: "Search"}),
-                  language: language,
-                  placeholder: Drupal.t("Select region", {}, {context: "Search"}),
-                  ...(neighbourhoodsFacet.values.length >= 10 && {
-                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
-                  }),
-                }}
-                theme={defaultMultiSelectTheme}
-                disabled={loading}
-              />
-            </div>
-          )}
+          {renderFacetSelect({
+            facet: neighbourhoodsFacet,
+            wrapperClass: "filter-group filter-group--neighbourhoods",
+            id: "neighbourhoods-select",
+            label: Drupal.t("Region", {}, {context: "Search"}),
+            placeholder: Drupal.t("Select region", {}, {context: "Search"}),
+            icon: <IconLocation />,
+            value: neighbourhoods,
+            onChange: setNeighbourhoods,
+          })}
 
-          {formatsFacet && (
-            <div className="filter-group filter-group--formats">
-              <Select
-                id="formats-select"
-                multiSelect
-                options={formatsFacet.values.map(facetValue => ({
-                  label: `${facetValue.filter} (${facetValue.count})`,
-                  value: facetValue.filter
-                }))}
-                value={formats}
-                noTags
-                clearable
-                onChange={(selectedOptions) => {
-                  const selectedValues = selectedOptions.map(opt => opt.value);
-                  setFormats(selectedValues);
-                }}
-                {...(formatsFacet.values.length >= 10 && {
-                  filter: (option, filterStr) => {
-                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
-                  }
-                })}
-                icon={<IconPhoto />}
-                texts={{
-                  label: Drupal.t("Format", {}, {context: "Search"}),
-                  language: language,
-                  placeholder: Drupal.t("Select format", {}, {context: "Search"}),
-                  ...(formatsFacet.values.length >= 10 && {
-                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
-                  }),
-                }}
-                theme={defaultMultiSelectTheme}
-                disabled={loading}
-              />
-            </div>
-          )}
+          {renderFacetSelect({
+            facet: formatsFacet,
+            wrapperClass: "filter-group filter-group--formats",
+            id: "formats-select",
+            label: Drupal.t("Format", {}, {context: "Search"}),
+            placeholder: Drupal.t("Select format", {}, {context: "Search"}),
+            icon: <IconPhoto />,
+            value: formats,
+            onChange: setFormats,
+          })}
 
-          {phenomenaFacet && (
-            <div className="filter-group filter-group--phenomena">
-              <Select
-                id="phenomena-select"
-                multiSelect
-                options={phenomenaFacet.values.map(facetValue => ({
-                  label: `${facetValue.filter} (${facetValue.count})`,
-                  value: facetValue.filter
-                }))}
-                value={phenomena}
-                noTags
-                clearable
-                onChange={(selectedOptions) => {
-                  const selectedValues = selectedOptions.map(opt => opt.value);
-                  setPhenomena(selectedValues);
-                }}
-                {...(phenomenaFacet.values.length >= 10 && {
-                  filter: (option, filterStr) => {
-                    return option.label.toLowerCase().includes(filterStr.toLowerCase());
-                  }
-                })}
-                icon={<IconLayers />}
-                texts={{
-                  label: Drupal.t("Phenomenon", {}, {context: "Search"}),
-                  language: language,
-                  placeholder: Drupal.t("Select phenomenon", {}, {context: "Search"}),
-                  ...(phenomenaFacet.values.length >= 10 && {
-                    filterPlaceholder: Drupal.t("Filter", {}, {context: "Search"}),
-                  }),
-                }}
-                theme={defaultMultiSelectTheme}
-                disabled={loading}
-              />
-            </div>
-          )}
+          {renderFacetSelect({
+            facet: phenomenaFacet,
+            wrapperClass: "filter-group filter-group--phenomena",
+            id: "phenomena-select",
+            label: Drupal.t("Phenomenon", {}, {context: "Search"}),
+            placeholder: Drupal.t("Select phenomenon", {}, {context: "Search"}),
+            icon: <IconLayers />,
+            value: phenomena,
+            onChange: setPhenomena,
+          })}
 
 
           <div className="form-actions">

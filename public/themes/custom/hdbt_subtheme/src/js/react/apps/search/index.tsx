@@ -14,8 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Get Elasticsearch URL from data attribute or use default
-  const elasticsearchUrl = rootElement.dataset.elasticsearchUrl || 'https://elastic-historiaportaali.docker.so';
+  console.log('rootElement', rootElement);
+
+  // Get Elasticsearch URL from data attribute
+  const elasticsearchUrl = rootElement.dataset.elasticsearchUrl;
+
+  if (!elasticsearchUrl) {
+    console.error('Elasticsearch URL missing from data-elasticsearch-url');
+    return;
+  }
   
   ReactDOM.render(
     <React.StrictMode>

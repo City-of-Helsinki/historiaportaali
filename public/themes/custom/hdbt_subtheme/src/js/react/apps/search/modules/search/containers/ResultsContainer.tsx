@@ -246,42 +246,12 @@ export const ResultsContainer = ({ url, itemsPerPage = 20 }: ResultsContainerPro
     );
   };
 
-  const getCustomTotal = () => {
-    if (!data?.hits?.total) {
-      return 0;
-    }
-    const total = typeof data.hits.total === 'number' 
-      ? data.hits.total 
-      : data.hits.total.value;
-    return total > 9999 ? 10000 : total;
-  };
-
-  const customTotal = getCustomTotal();
-
-  const getHeaderText = () => {
-    if (!customTotal) {
-      return '';
-    }
-
-    return customTotal > 9999
-      ? Drupal.t('Over 10 000 results', {}, { context: 'Historia search' })
-      : Drupal.formatPlural(
-          customTotal,
-          '1 result',
-          '@count results',
-          {},
-          { context: 'Historia search' },
-        );
-  };
-
   return (
     <ResultsWrapper
       {...{
         currentPageIndex,
-        customTotal,
         data,
         error,
-        getHeaderText,
         resultItemCallBack,
         setPageIndex,
         itemsPerPage,

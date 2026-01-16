@@ -1,14 +1,13 @@
 msgid ""
 msgstr ""
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Go to interactive map"
 msgstr "Siirry interaktiiviselle kartalle"
 
 msgid "Open in finna.fi search service"
 msgstr "Avaa finna.fi hakupalvelussa"
-
-msgid "Year"
-msgstr "Vuosi"
 
 msgctxt "Button"
 msgid "Open in Finna"
@@ -143,24 +142,16 @@ msgid "newest first"
 msgstr "uusimmat ensin"
 
 msgctxt "Search"
-msgid "Newest first"
-msgstr "Uusimmat ensin"
-
-msgctxt "Search"
-msgid "Oldest first"
-msgstr "Vanhimmat ensin"
-
-msgctxt "Search"
 msgid "Click to show"
 msgstr "Näytä"
 
 msgctxt "Search"
 msgid "An error occurred while loading the content"
-msgstr "Sisällön latauksessa tapahtui virhe"
+msgstr "Tulosten lataamisessa tapahtui virhe"
 
 msgctxt "Search"
 msgid "Please reload the page or try again later."
-msgstr "Lataa sivu uudelleen tai yritä myöhemmin uudelleen."
+msgstr "Päivitä sivu tai yritä myöhemmin uudelleen."
 
 msgctxt "Search"
 msgid "No results"
@@ -170,6 +161,8 @@ msgctxt "Search"
 msgid "No results were found for the criteria you entered. Try changing your search criteria."
 msgstr "Antamillasi hakuehdoilla ei löytynyt tuloksia. Kokeile muuttaa hakuehtojasi."
 
-msgctxt "Historia search"
-msgid "Over 10 000 results"
-msgstr "Yli 10 000 tulosta"
+msgctxt "Search"
+msgid "1 result"
+msgid_plural "@count results"
+msgstr[0] "1 tulos"
+msgstr[1] "@count tulosta"

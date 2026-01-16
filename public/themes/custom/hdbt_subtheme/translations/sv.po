@@ -1,5 +1,7 @@
 msgid ""
 msgstr ""
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Go to interactive map"
 msgstr "Gå till den interaktiva kartan"
@@ -16,8 +18,24 @@ msgid "Search"
 msgstr "Sök"
 
 msgctxt "Search"
+msgid "Search"
+msgstr "Sök"
+
+msgctxt "Search"
 msgid "Search from site"
-msgstr "Sök på webbplatsen"
+msgstr "Sök i innehållet"
+
+msgctxt "Search"
+msgid "Location, person, topic, event..."
+msgstr "Plats, person, ämne, händelse..."
+
+msgctxt "Search"
+msgid "Clear search"
+msgstr "Rensa sökning"
+
+msgctxt "Search"
+msgid "Filter results"
+msgstr "Begränsa sökresultaten"
 
 msgctxt "Search"
 msgid "From year"
@@ -26,6 +44,10 @@ msgstr "Från år"
 msgctxt "Search"
 msgid "Until year"
 msgstr "Till år"
+
+msgctxt "Search"
+msgid "e.g."
+msgstr "t.ex."
 
 msgctxt "Search"
 msgid "Clear from year"
@@ -48,17 +70,99 @@ msgid "Use negative numbers for BC/BCE (e.g. -2050)"
 msgstr "Använd negativa tal för eaa (t.ex. -2050)"
 
 msgctxt "Search"
+msgid "Region"
+msgstr "Områden"
+
+msgctxt "Search"
+msgid "Select region"
+msgstr "Välj området"
+
+msgctxt "Search"
+msgid "Formats"
+msgstr "Materialtyp"
+
+msgctxt "Search"
+msgid "Select format"
+msgstr "Välj materialtyp"
+
+msgctxt "Search"
+msgid "Phenomena"
+msgstr "Helheter"
+
+msgctxt "Search"
+msgid "Select phenomenon"
+msgstr "Välj helheten"
+
+msgctxt "Search"
+msgid "Filter"
+msgstr "Filtrera"
+
+msgctxt "Search"
+msgid "Searching..."
+msgstr "Söker..."
+
+msgctxt "Search"
+msgid "Clear"
+msgstr "Rensa"
+
+msgctxt "Search"
 msgid "Sort search results"
-msgstr "Ordna sökresultaten"
+msgstr "Sortera"
 
 msgctxt "Search"
 msgid "Relevance"
-msgstr "Bästa träffar först"
+msgstr "Relevans"
 
 msgctxt "Search"
-msgid "Newest first"
-msgstr "Nyaste först"
+msgid "relevance"
+msgstr "relevans"
 
 msgctxt "Search"
-msgid "Oldest first"
-msgstr "Äldsta först"
+msgid "Year"
+msgstr "År"
+
+msgctxt "Search"
+msgid "Created"
+msgstr "Laddat"
+
+msgctxt "Search"
+msgid "Sort by"
+msgstr "Sortera"
+
+msgctxt "Search"
+msgid "Sorted by"
+msgstr "Sortera"
+
+msgctxt "Search"
+msgid "oldest first"
+msgstr "äldsta först"
+
+msgctxt "Search"
+msgid "newest first"
+msgstr "nyaste först"
+
+msgctxt "Search"
+msgid "Click to show"
+msgstr "Klicka för att visa"
+
+msgctxt "Search"
+msgid "An error occurred while loading the content"
+msgstr "Ett fel inträffade när innehållet laddades"
+
+msgctxt "Search"
+msgid "Please reload the page or try again later."
+msgstr "Ladda om sidan eller försök igen senare."
+
+msgctxt "Search"
+msgid "No results"
+msgstr "Inga resultat"
+
+msgctxt "Search"
+msgid "No results were found for the criteria you entered. Try changing your search criteria."
+msgstr "Inga resultat hittades för de kriterier du angav. Försök ändra dina sökkriterier."
+
+msgctxt "Search"
+msgid "1 result"
+msgid_plural "@count results"
+msgstr[0] "1 resultat"
+msgstr[1] "@count resultat"

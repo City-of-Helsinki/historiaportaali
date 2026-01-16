@@ -8,10 +8,8 @@ import { GhostList } from './GhostList';
 
 type ResultsWrapperProps<T = any> = {
   currentPageIndex: number; // 0-based index
-  customTotal?: number;
   data?: estypes.SearchResponse<T>;
   error?: Error | string | null;
-  getHeaderText?: () => string | JSX.Element;
   isLoading: boolean;
   resultItemCallBack: (item: estypes.SearchHit<T>) => JSX.Element | null;
   setPageIndex: (pageIndex: number) => void; // 0-based index
@@ -22,10 +20,8 @@ type ResultsWrapperProps<T = any> = {
 
 export const ResultsWrapper = forwardRef(<T,>({
   currentPageIndex,
-  customTotal,
   data,
   error,
-  getHeaderText,
   isLoading,
   resultItemCallBack,
   setPageIndex,
@@ -87,7 +83,8 @@ export const ResultsWrapper = forwardRef(<T,>({
   }
 
   const results = data.hits.hits;
-  const totalCount = customTotal !== undefined ? customTotal : (data.hits.total as estypes.SearchTotalHits).value;
+  const total = data.hits.total;
+  const totalCount = typeof total === 'number' ? total : total?.value ?? 0;
 
   // Show empty state
   if (totalCount === 0 && !isLoading) {
@@ -101,12 +98,20 @@ export const ResultsWrapper = forwardRef(<T,>({
   }
 
   const totalPages = Math.ceil(totalCount / itemsPerPage);
-  const headerText = getHeaderText ? getHeaderText() : `${totalCount}`;
-
   return (
     <div className="historia-search__results" ref={resultsRef}>
       <ResultsHeader
-        resultText={<>{headerText}</>}
+        resultText={
+          <>
+            {Drupal.formatPlural(
+              totalCount,
+              '1 result',
+              '@count results',
+              {},
+              { context: 'Search' },
+            )}
+          </>
+        }
         actions={sortElement}
         actionsClass="historia-search__results-actions"
         ref={ref}

@@ -53,15 +53,13 @@ export const SearchForm: React.FC = () => {
   const setUrlParams = useSetAtom(urlUpdateAtom);
   const resetForm = useSetAtom(resetFormAtom);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const submitFilters = () => {
     const { page, ...filtersWithoutPage } = stagedFilters;
     setUrlParams(filtersWithoutPage);
   };
-
-  const handleSearchSubmit = () => {
-    const { page, ...filtersWithoutPage } = stagedFilters;
-    setUrlParams(filtersWithoutPage);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    submitFilters();
   };
 
   // Helper to ensure year is a string (TypeScript workaround for generic atom types)
@@ -113,7 +111,7 @@ export const SearchForm: React.FC = () => {
             label={Drupal.t("Search", {}, {context: "Search"})}
             value={Array.isArray(keywords) ? keywords.join(' ') : keywords}
             onChange={(value) => setKeywords(value)}
-            onSubmit={handleSearchSubmit}
+            onSubmit={submitFilters}
             placeholder={Drupal.t("Location, person, topic, event...", {}, {context: "Search"})}
             className="search-input"
             searchButtonAriaLabel={Drupal.t("Search", {}, {context: "Search"})}

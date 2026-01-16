@@ -1,11 +1,7 @@
 import React from 'react';
 import { LoadingSpinner } from 'hds-react';
 
-type GhostListProps = {
-  count?: number;
-};
-
-export const GhostList: React.FC<GhostListProps> = () => {
+export const GhostList: React.FC = () => {
   return (
     <div className="hdbt__loading-overlay">
       <LoadingSpinner multicolor />

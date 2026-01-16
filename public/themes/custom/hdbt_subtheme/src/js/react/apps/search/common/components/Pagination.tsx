@@ -4,7 +4,6 @@ import { Pagination as HDSPagination } from 'hds-react';
 type PaginationProps = {
   updatePage: (e: React.MouseEvent, pageIndex: number) => void; // 0-based index
   currentPage: number; // 0-based index
-  pages: number;
   totalPages: number;
 };
 

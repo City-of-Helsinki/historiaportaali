@@ -8,6 +8,9 @@ declare global {
     path: {
       currentLanguage: 'fi' | 'en' | 'sv';
     };
+    search?: {
+      mappingMode?: 'both' | 'text' | 'keyword';
+    };
   };
 }
 

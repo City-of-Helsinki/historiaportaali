@@ -73,6 +73,17 @@ class SearchConfigForm extends ConfigFormBase {
       '#default_value' => $config->get('search_page_node') ? $this->entityTypeManager->getStorage('node')->load($config->get('search_page_node')) : NULL,
       '#required' => TRUE,
     ];
+    $form['mapping_mode'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Search mapping mode'),
+      '#description' => $this->t('Choose whether the React search uses keyword fields, text fields, or detects both.'),
+      '#options' => [
+        'both' => $this->t('Auto-detect (support both)'),
+        'text' => $this->t('Text fields only'),
+        'keyword' => $this->t('Keyword fields only'),
+      ],
+      '#default_value' => $config->get('mapping_mode') ?: 'both',
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -83,6 +94,7 @@ class SearchConfigForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $this->config('helhist_search.settings')
       ->set('search_page_node', $form_state->getValue('search_page_node'))
+      ->set('mapping_mode', $form_state->getValue('mapping_mode'))
       ->save();
 
     parent::submitForm($form, $form_state);

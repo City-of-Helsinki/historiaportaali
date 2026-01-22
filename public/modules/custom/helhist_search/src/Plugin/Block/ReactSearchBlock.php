@@ -6,6 +6,7 @@ namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -34,6 +35,13 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
   protected $routeMatch;
 
   /**
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * The search path resolver service.
    *
    * @var \Drupal\helhist_search\SearchPathResolver
@@ -51,6 +59,8 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
    *   The plugin implementation definition.
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
    *   The route match.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
    * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
    *   The search path resolver service.
    */
@@ -59,10 +69,12 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
     $plugin_id,
     $plugin_definition,
     RouteMatchInterface $route_match,
+    ConfigFactoryInterface $config_factory,
     SearchPathResolver $search_path_resolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->routeMatch = $route_match;
+    $this->configFactory = $config_factory;
     $this->searchPathResolver = $search_path_resolver;
   }
 
@@ -75,6 +87,7 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_id,
       $plugin_definition,
       $container->get('current_route_match'),
+      $container->get('config.factory'),
       $container->get('helhist_search.search_path_resolver')
     );
   }
@@ -101,11 +114,20 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritdoc}
    */
   public function build() {
+    $mapping_mode = $this->configFactory
+      ->get('helhist_search.settings')
+      ->get('mapping_mode') ?: 'both';
+
     $build = [
       '#theme' => 'react_search',
       '#attached' => [
         'library' => [
           'hdbt_subtheme/react-search-app',
+        ],
+        'drupalSettings' => [
+          'search' => [
+            'mappingMode' => $mapping_mode,
+          ],
         ],
       ],
     ];

@@ -6,9 +6,10 @@ interface SearchContainerProps {
   elasticsearchUrl: string;
 }
 
-export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchUrl }) => {
-  const itemsPerPage = 20;
+const INDEX_NAME = 'content_and_media';
+const ITEMS_PER_PAGE = 20;
 
+export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchUrl }) => {
   // Handle browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
@@ -24,7 +25,8 @@ export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchU
       <SearchForm />
       <ResultsContainer 
         url={elasticsearchUrl}
-        itemsPerPage={itemsPerPage}
+        indexName={INDEX_NAME}
+        itemsPerPage={ITEMS_PER_PAGE}
       />
     </div>
   );

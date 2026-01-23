@@ -56,7 +56,7 @@
     margin-bottom: $spacing;
   }
 
-  button {
+  .map-lift__link {
     width: 100%;
 
     @include breakpoint($breakpoint-s) {

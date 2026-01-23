@@ -166,3 +166,15 @@ msgid "1 result"
 msgid_plural "@count results"
 msgstr[0] "1 resultat"
 msgstr[1] "@count resultat"
+
+msgctxt "Search"
+msgid "Loading results"
+msgstr "Laddar resultat"
+
+msgctxt "Search"
+msgid "Results could not be loaded"
+msgstr "Resultaten kunde inte laddas"
+
+msgctxt "Search"
+msgid "Page @current of @total"
+msgstr "Sida @current av @total"

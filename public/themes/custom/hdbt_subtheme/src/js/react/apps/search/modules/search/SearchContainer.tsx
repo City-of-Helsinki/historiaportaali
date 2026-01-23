@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { SearchForm } from './components/SearchForm';
 import { ResultsContainer } from './containers/ResultsContainer';
+import { INDEX_NAME, ITEMS_PER_PAGE } from './constants';
 
 interface SearchContainerProps {
   elasticsearchUrl: string;
 }
 
 export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchUrl }) => {
-  const itemsPerPage = 20;
-
   // Handle browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
@@ -24,7 +23,8 @@ export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchU
       <SearchForm />
       <ResultsContainer 
         url={elasticsearchUrl}
-        itemsPerPage={itemsPerPage}
+        indexName={INDEX_NAME}
+        itemsPerPage={ITEMS_PER_PAGE}
       />
     </div>
   );

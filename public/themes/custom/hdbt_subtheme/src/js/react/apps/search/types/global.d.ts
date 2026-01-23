@@ -9,7 +9,7 @@ declare global {
       currentLanguage: 'fi' | 'en' | 'sv';
     };
     search?: {
-      mappingMode?: 'both' | 'text' | 'keyword';
+      mappingMode?: 'text' | 'keyword';
     };
   };
 }

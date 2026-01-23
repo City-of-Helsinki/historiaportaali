@@ -116,7 +116,7 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
     $mapping_mode = $this->configFactory
       ->get('helhist_search.settings')
-      ->get('mapping_mode') ?: 'both';
+      ->get('mapping_mode') ?: 'text';
 
     $build = [
       '#theme' => 'react_search',

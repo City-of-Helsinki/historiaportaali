@@ -27,9 +27,9 @@ const sortFieldMap = {
   created: 'aggregated_created',
   year: 'aggregated_start_year',
 } as const;
-const getMappingMode = (): 'both' | 'text' | 'keyword' => {
+const getMappingMode = (): 'text' | 'keyword' => {
   const mode = drupalSettings.search?.mappingMode;
-  return mode === 'text' || mode === 'keyword' || mode === 'both' ? mode : 'both';
+  return mode === 'keyword' ? 'keyword' : 'text';
 };
 
 const buildQueryString = ({
@@ -195,36 +195,13 @@ export const ResultsContainer = ({ url, itemsPerPage = 20, indexName = 'content_
   const offset = currentPageIndex * itemsPerPage;
 
   const mappingMode = getMappingMode();
-  const fieldCapsUrl =
-    mappingMode === 'both'
-      ? `${url}/${indexName}/_field_caps?fields=${facetFields.join(',')}`
-      : null;
-  const jsonFetcher = useCallback(
-    (key: string) =>
-      fetch(key).then((res) => {
-        if (!res.ok) {
-          throw new Error(`Field caps request failed: ${res.status}`);
-        }
-        return res.json();
-      }),
-    [],
-  );
-  const { data: fieldCaps } = useSWR(fieldCapsUrl, jsonFetcher, {
-    revalidateOnFocus: false,
-  });
-  const useKeywordSubfields = useMemo(() => {
-    if (mappingMode === 'text') return false;
-    if (mappingMode === 'keyword') return true;
-    if (!fieldCaps?.fields) return null;
-    return facetFields.some((field) => Boolean(fieldCaps.fields[field]?.text));
-  }, [facetFields, fieldCaps, mappingMode]);
+  const useKeywordSubfields = mappingMode === 'keyword';
 
   const languageField = 'search_api_language';
   const languageValue = drupalSettings.path.currentLanguage || 'fi';
 
   // Build Elasticsearch query - useMemo to prevent infinite loops
   const queryString = useMemo(() => {
-    if (useKeywordSubfields === null) return null;
     return buildQueryString({
       filters,
       offset,

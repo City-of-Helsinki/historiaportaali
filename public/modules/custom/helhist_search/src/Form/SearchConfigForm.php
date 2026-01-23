@@ -76,13 +76,12 @@ class SearchConfigForm extends ConfigFormBase {
     $form['mapping_mode'] = [
       '#type' => 'select',
       '#title' => $this->t('Search mapping mode'),
-      '#description' => $this->t('Choose whether the React search uses keyword fields, text fields, or detects both.'),
+      '#description' => $this->t('Choose whether the React search uses keyword fields or text fields.'),
       '#options' => [
-        'both' => $this->t('Auto-detect (support both)'),
-        'text' => $this->t('Text fields only'),
-        'keyword' => $this->t('Keyword fields only'),
+        'text' => $this->t('Text mapping'),
+        'keyword' => $this->t('Keyword mapping'),
       ],
-      '#default_value' => $config->get('mapping_mode') ?: 'both',
+      '#default_value' => $config->get('mapping_mode') ?: 'text',
     ];
 
     return parent::buildForm($form, $form_state);

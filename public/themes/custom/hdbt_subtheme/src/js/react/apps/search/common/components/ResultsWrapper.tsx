@@ -56,10 +56,15 @@ export const ResultsWrapper = forwardRef(<T,>({
     setPageIndex(pageIndex); // Pass 0-based index directly
   };
 
+  const loadingAnnouncement = Drupal.t('Loading results', {}, { context: 'Search' });
+
   // Show loading on initial load
   if (isLoading && !data) {
     return (
       <div className="historia-search__results" ref={resultsRef}>
+        <div className="visually-hidden" aria-live="polite" aria-atomic="true">
+          {loadingAnnouncement}
+        </div>
         <GhostList />
       </div>
     );
@@ -69,6 +74,9 @@ export const ResultsWrapper = forwardRef(<T,>({
   if (error) {
     return (
       <div className="historia-search__results" ref={resultsRef}>
+        <div className="visually-hidden" aria-live="polite" aria-atomic="true">
+          {Drupal.t('Results could not be loaded', {}, { context: 'Search' })}
+        </div>
         <ResultsError className="historia-search__error" />
       </div>
     );
@@ -87,6 +95,15 @@ export const ResultsWrapper = forwardRef(<T,>({
   if (totalCount === 0 && !isLoading) {
     return (
       <div className="historia-search__results" ref={resultsRef}>
+        <div className="visually-hidden" aria-live="polite" aria-atomic="true">
+          {Drupal.formatPlural(
+            totalCount,
+            '1 result',
+            '@count results',
+            {},
+            { context: 'Search' },
+          )}
+        </div>
         <ResultsEmpty 
           wrapperClass="historia-search__results"
         />
@@ -95,18 +112,33 @@ export const ResultsWrapper = forwardRef(<T,>({
   }
 
   const totalPages = Math.ceil(totalCount / itemsPerPage);
+  const resultsLabel = Drupal.formatPlural(
+    totalCount,
+    '1 result',
+    '@count results',
+    {},
+    { context: 'Search' },
+  );
+  const pageLabel = totalPages > 1
+    ? Drupal.t('Page @current of @total', {
+      '@current': currentPageIndex + 1,
+      '@total': totalPages,
+    }, { context: 'Search' })
+    : '';
+  const liveAnnouncement = isLoading
+    ? loadingAnnouncement
+    : pageLabel
+      ? `${resultsLabel}. ${pageLabel}.`
+      : `${resultsLabel}.`;
   return (
     <div className="historia-search__results" ref={resultsRef}>
+      <div className="visually-hidden" aria-live="polite" aria-atomic="true">
+        {liveAnnouncement}
+      </div>
       <ResultsHeader
         resultText={
           <>
-            {Drupal.formatPlural(
-              totalCount,
-              '1 result',
-              '@count results',
-              {},
-              { context: 'Search' },
-            )}
+            {resultsLabel}
           </>
         }
         actions={sortElement}

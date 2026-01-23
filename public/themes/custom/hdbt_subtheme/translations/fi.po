@@ -166,3 +166,15 @@ msgid "1 result"
 msgid_plural "@count results"
 msgstr[0] "1 tulos"
 msgstr[1] "@count tulosta"
+
+msgctxt "Search"
+msgid "Loading results"
+msgstr "Haetaan tuloksia"
+
+msgctxt "Search"
+msgid "Results could not be loaded"
+msgstr "Tuloksia ei voitu ladata"
+
+msgctxt "Search"
+msgid "Page @current of @total"
+msgstr "Sivu @current / @total"

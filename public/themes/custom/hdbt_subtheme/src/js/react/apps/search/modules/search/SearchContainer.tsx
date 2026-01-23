@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { SearchForm } from './components/SearchForm';
 import { ResultsContainer } from './containers/ResultsContainer';
+import { INDEX_NAME, ITEMS_PER_PAGE } from './constants';
 
 interface SearchContainerProps {
   elasticsearchUrl: string;
 }
-
-const INDEX_NAME = 'content_and_media';
-const ITEMS_PER_PAGE = 20;
 
 export const SearchContainer: React.FC<SearchContainerProps> = ({ elasticsearchUrl }) => {
   // Handle browser back/forward buttons

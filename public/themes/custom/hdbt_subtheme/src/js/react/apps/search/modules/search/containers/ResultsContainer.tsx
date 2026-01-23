@@ -8,6 +8,15 @@ import { ResultCard } from '../components/ResultCard';
 import { SortOptions } from '../components/SortOptions';
 import { getPageAtom, initializedAtom, searchFiltersAtom, setPageAtom, facetsAtom, isLoadingFacetsAtom } from '../store';
 import type { ContentItem, Facet } from '../../../common/types/Content';
+import {
+  FACET_AGG_SIZE,
+  FACET_CONFIG,
+  INDEX_NAME,
+  ITEMS_PER_PAGE,
+  KEYWORD_SEARCH_FIELDS,
+  SORT_FIELD_MAP,
+  YEAR_RANGE_FIELDS,
+} from '../constants';
 
 interface ResultsContainerProps {
   url: string;
@@ -15,18 +24,6 @@ interface ResultsContainerProps {
   indexName?: string;
 }
 
-const facetConfig = [
-  { key: 'formats', field: 'aggregated_formats_title', filteredKey: 'filtered_formats' },
-  { key: 'phenomena', field: 'aggregated_phenomena_title', filteredKey: 'filtered_phenomena' },
-  { key: 'neighbourhoods', field: 'aggregated_neighbourhoods_title', filteredKey: 'filtered_neighbourhoods' },
-] as const;
-const facetFields = facetConfig.map((facet) => facet.field);
-const keywordSearchFields = ['aggregated_title^3', 'aggregated_keywords'] as const;
-const yearRangeFields = ['aggregated_start_year', 'aggregated_end_year'] as const;
-const sortFieldMap = {
-  created: 'aggregated_created',
-  year: 'aggregated_start_year',
-} as const;
 const getMappingMode = (): 'text' | 'keyword' => {
   const mode = drupalSettings.search?.mappingMode;
   return mode === 'keyword' ? 'keyword' : 'text';
@@ -48,11 +45,11 @@ const buildQueryString = ({
   languageValue: string;
 }) => {
   const trimmedKeywords = filters.keywords.trim();
-  const resolveField = (field: (typeof facetFields)[number]) =>
+  const resolveField = (field: (typeof FACET_CONFIG)[number]['field']) =>
     useKeywordSubfields ? `${field}.keyword` : field;
   const resolvedFacetFields = Object.fromEntries(
-    facetConfig.map((facet) => [facet.key, resolveField(facet.field)]),
-  ) as Record<(typeof facetConfig)[number]['key'], string>;
+    FACET_CONFIG.map((facet) => [facet.key, resolveField(facet.field)]),
+  ) as Record<(typeof FACET_CONFIG)[number]['key'], string>;
   const query: any = {
     from: offset,
     size: itemsPerPage,
@@ -79,18 +76,18 @@ const buildQueryString = ({
               }
             },
             aggs: Object.fromEntries(
-              facetConfig.map((facet) => [
+              FACET_CONFIG.map((facet) => [
                 facet.key,
-                { terms: { field: resolvedFacetFields[facet.key], size: 100 } },
+                { terms: { field: resolvedFacetFields[facet.key], size: FACET_AGG_SIZE } },
               ]),
             )
           }
         }
       },
       ...Object.fromEntries(
-        facetConfig.map((facet) => [
+        FACET_CONFIG.map((facet) => [
           facet.filteredKey,
-          { terms: { field: resolvedFacetFields[facet.key], size: 100 } },
+          { terms: { field: resolvedFacetFields[facet.key], size: FACET_AGG_SIZE } },
         ]),
       )
     },
@@ -102,7 +99,7 @@ const buildQueryString = ({
     query.query.bool.must.push({
       multi_match: {
         query: trimmedKeywords,
-        fields: keywordSearchFields,
+        fields: KEYWORD_SEARCH_FIELDS,
         type: "best_fields",
         operator: "and",
         fuzziness: "AUTO"
@@ -120,14 +117,14 @@ const buildQueryString = ({
 
     query.query.bool.filter.push({
       bool: {
-        should: yearRangeFields.map((field) => ({ range: { [field]: yearRange } })),
+        should: YEAR_RANGE_FIELDS.map((field) => ({ range: { [field]: yearRange } })),
         minimum_should_match: 1
       }
     });
   }
 
   // Add filter arrays
-  facetConfig.forEach((facet) => {
+  FACET_CONFIG.forEach((facet) => {
     const activeFilters = filters[facet.key as keyof typeof filters];
     if (Array.isArray(activeFilters) && activeFilters.length > 0) {
       query.query.bool.filter.push({
@@ -140,8 +137,8 @@ const buildQueryString = ({
   const sortValue = filters.sort || 'relevance';
   const sortOrder = (filters.sort_order || 'DESC').toLowerCase();
 
-  if (sortValue in sortFieldMap) {
-    query.sort = [{ [sortFieldMap[sortValue as keyof typeof sortFieldMap]]: { order: sortOrder } }];
+  if (sortValue in SORT_FIELD_MAP) {
+    query.sort = [{ [SORT_FIELD_MAP[sortValue as keyof typeof SORT_FIELD_MAP]]: { order: sortOrder } }];
   } else if (sortValue === 'relevance') {
     // relevance - use _score when there are keywords, otherwise don't add sort (use default ES ordering)
     if (trimmedKeywords) {
@@ -161,9 +158,10 @@ const mapAggregationsToFacets = (aggregations: any): Facet[] => {
   // Get all available options from global aggregations
   const allFacets = aggregations?.all_facets?.language_filter || {};
 
-  return facetConfig
-    .filter(({ key }) => allFacets[key])
-    .map(({ key, field, filteredKey }) => {
+  return FACET_CONFIG
+    .filter((facet) => allFacets[facet.key])
+    .map((facet) => {
+      const { key, field, filteredKey } = facet;
       // Create a map of filtered counts for quick lookup
       const filteredCounts = new Map(
         (aggregations?.[filteredKey]?.buckets || []).map((bucket: any) => [bucket.key, bucket.doc_count]),
@@ -180,7 +178,7 @@ const mapAggregationsToFacets = (aggregations: any): Facet[] => {
     });
 };
 
-export const ResultsContainer = ({ url, itemsPerPage = 20, indexName = 'content_and_media' }: ResultsContainerProps) => {
+export const ResultsContainer = ({ url, itemsPerPage = ITEMS_PER_PAGE, indexName = INDEX_NAME }: ResultsContainerProps) => {
   const filters = useAtomValue(searchFiltersAtom);
   const currentPageIndex = useAtomValue(getPageAtom); // 0-based index
   const setPageIndex = useSetAtom(setPageAtom);

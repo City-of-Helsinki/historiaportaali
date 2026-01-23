@@ -8,9 +8,7 @@ As the HDBT Subtheme is only distributed via the [HELfi Platform](https://github
 
 ## Requirements
 
-HDBT Subtheme requires HDBT theme as a base theme and it should be installed in `/themes/contrib/hdbt`.
-
-**Important:** Following City of Helsinki standard practice, you must run `npm install` in **both** the parent theme and the subtheme.
+HDBT Subtheme requires HDBT theme as a base theme and it should be installed in `themes/contrib/hdbt`.
 
 Requirements for developing:
 - [NodeJS ( ^ 22.x )](https://nodejs.org/en/)
@@ -70,32 +68,17 @@ hdbt_subtheme
 │   theme-builder.mjs          # Build configuration
 │   tsconfig.json              # TypeScript configuration
 └───templates                  # Twig templates
-│   └───block
-│   └───content
-│   └───...
 └───src                        # Source files
+│   └───images                 # Theme images
 │   └───scss                   # Styles
-│   │   │   styles.scss
-│   │   └───base
-│   │   └───components
-│   │   └───...
 │   └───js                     # JavaScript & React
-│   │   │   common.js          # Vanilla JS files
-│   │   │   gallery-settings.js
 │   │   └───react/             # React applications
 │   │       └───apps/
 │   │           └───search/    # Site search
+│   │   └───types/
 │   └───icons                  # SVG icons
 │       |   some-icon.svg
-└───dist                       # Built files (generated)
-    └───css
-        |   styles.min.css
-        |   hdbt-icons.css
-    └───js
-        |   common.min.js
-        |   search-app.min.js  # React apps bundled
-    └───icons
-        |   sprite-xxxxx.svg   # Generated sprite with hash
+└───dist                       # Generated build files
 ```
 
 ## Architecture

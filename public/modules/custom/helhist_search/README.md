@@ -4,21 +4,19 @@ Site search functionality, with Search API and React frontend based on HDS.
 
 ## Configuration
 
+The configurations should be on ignore to allow different setting per environment.
+
 ### Search page node
 
-Configure the node that hosts the search functionality at:
-
-**Admin Path:** `/admin/tools/helhist-search`
-
-Or navigate via the admin menu: **Tools** → **Site search settings**
-
-Select the node that will serve as the main search page. The URL alias of this
-node can be managed by content managers in the usual way (e.g., `/search`, `/haku`, `/sok`).
+Configure node that show the search block **Tools** → **Site search settings**: `/admin/tools/helhist-search`.
 
 This decouples the search implementation from hardcoded node IDs, making it
 environment-agnostic and allowing flexible URL management and use of Hero and
 other instructional content management to the search page.
 
+### Search mapping
+
+The search mapping can be changed, in case search errors try out the Keyword/text mapping.
 ## Blocks
 
 - **HelHist Header Search** (`helhist_search_header_search_block`)
@@ -41,7 +39,6 @@ Custom processors that add fields to the search index:
 
 Ensure documents are indexed
 ```
-make shell
 search-api:rebuild-tracker
 drush search-api:clear content_and_media
 drush search-api:index content_and_media
@@ -50,3 +47,5 @@ drush search-api:index content_and_media
 ### Frontend development
 
 React part located at the `hdbt_subtheme` directory.
+
+Connect to platta ES proxy by changing `ELASTIC_PROXY_URL` env var.

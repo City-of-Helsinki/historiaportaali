@@ -3,3 +3,13 @@ services:
     class: Drupal\helhist_search\SearchPathResolver
     arguments: ['@config.factory']
 
+  helhist_search.search_link_generator:
+    class: Drupal\helhist_search\SearchLinkGenerator
+    arguments: ['@helhist_search.search_path_resolver', '@string_translation']
+
+  helhist_search.twig_extension:
+    class: Drupal\helhist_search\Twig\SearchLinkExtension
+    arguments: ['@helhist_search.search_link_generator']
+    tags:
+      - { name: twig.extension }
+

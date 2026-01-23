@@ -91,10 +91,29 @@
     gap: $spacing-half;
 
     button {
+      font-size: $fontsize-body-s;
       font-weight: $font-weight-regular;
+      column-gap: 4px;
+      padding: 6px $spacing-quarter;
+
+      .hds-button__icon,
+      .hds-icon {
+        margin-inline: 0;
+      }
 
       &.active {
         font-weight: $font-weight-bold;
+      }
+
+      @include breakpoint($breakpoint-s) {
+        font-size: $fontsize-body-m;
+        column-gap: revert;
+        padding: $spacing-half $spacing;
+
+        .hds-button__icon,
+        .hds-icon {
+          margin-inline: revert;
+        }
       }
     }
   }

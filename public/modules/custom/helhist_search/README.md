@@ -17,6 +17,7 @@ other instructional content management to the search page.
 ### Search mapping
 
 The search mapping can be changed, in case search errors try out the Keyword/text mapping.
+
 ## Blocks
 
 - **HelHist Header Search** (`helhist_search_header_search_block`)
@@ -34,6 +35,24 @@ Custom processors that add fields to the search index:
   - Generates styled image URL from node liftup images and media entities for search result cards
 - **Content Type** (`content_type`)
   - Adds content type classification (article/media) to enable filtering by entity type
+
+## Twig Functions
+
+### search_url(field_name, value)
+
+Generates search URL with filter or keyword parameter based on field type.
+
+```twig
+{{ search_url('field_phenomena', 'Term Name') }} → /SEARCH_PAGE?phenomena=Term%20Name
+{{ search_url('field_keywords', 'Term Name') }} → /SEARCH_PAGE?q=Term%20Name
+```
+
+**Filter fields** (use filter parameters):
+- `field_phenomena` → `?phenomena=`
+- `field_neighbourhoods` → `?neighbourhoods=`
+- `field_formats` → `?formats=`
+
+Other fields default to keyword search (`?q=`).
 
 ## Development 
 

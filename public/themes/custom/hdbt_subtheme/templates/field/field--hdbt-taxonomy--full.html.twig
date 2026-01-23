@@ -1,39 +1,10 @@
 {#
 /**
  * @file
- * Theme override for a field.
+ * Theme override for taxonomy field displayed as search links or text.
  *
- * To override output, copy the "field.html.twig" from the templates directory
- * to your theme's directory and customize it, just like customizing other
- * Drupal templates such as page.html.twig or node.html.twig.
- *
- * Instead of overriding the theming for all fields, you can also just override
- * theming for a subset of fields using
- * @link themeable Theme hook suggestions. @endlink For example,
- * here are some theme hook suggestions that can be used for a field_foo field
- * on an article node type:
- * - field--node--field-foo--article.html.twig
- * - field--node--field-foo.html.twig
- * - field--node--article.html.twig
- * - field--field-foo.html.twig
- * - field--text-with-summary.html.twig
- * - field.html.twig
- *
- * Available variables:
- * - attributes: HTML attributes for the containing element.
- * - label_hidden: Whether to show the field label or not.
- * - title_attributes: HTML attributes for the title.
- * - label: The label for the field.
- * - multiple: TRUE if a field can contain multiple items.
- * - items: List of all the field items. Each item contains:
- *   - attributes: List of HTML attributes for each item.
- *   - content: The field item's content.
- * - entity_type: The entity type to which the field belongs.
- * - field_name: The name of the field.
- * - field_type: The type of the field.
- * - label_display: The display settings for the label.
- *
- * @see template_preprocess_field()
+ * @see \Drupal\helhist_search\SearchLinkGenerator::FILTER_FIELD_MAPPING
+ * @see \Drupal\helhist_search\SearchLinkGenerator::TEXT_ONLY_FIELDS
  */
 #}
 {%
@@ -52,8 +23,12 @@
     <h3{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
     <div class="hdbt_taxonomy" aria-labelledby={{ field_name }}>
       {% for item in items %}
-      {# TODO: if term one of main search filters, pass as a filter query to the search page #}
-        <a href="{{ site_search_page_url }}?q={{ item.content }}"><span>{{ item.content }}</span></a>
+        {% set url = search_url(field_name, item.content|render|striptags|trim) %}
+        {% if url %}
+          <a href="{{ url }}"><span>{{ item.content }}</span></a>
+        {% else %}
+          <span>{{ item.content }}</span>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

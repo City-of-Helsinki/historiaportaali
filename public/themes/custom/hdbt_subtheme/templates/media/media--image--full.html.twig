@@ -146,18 +146,14 @@
             {% endfor %}
 
             {% if content.field_start_year|render %}
+              {% set start_year = content.field_start_year[0]['#markup'] %}
+              {% set end_year = content.field_end_year[0]['#markup'] ?? null %}
+
               <div class="{{ media.bundle()|clean_class }}__group_year">
-                {% set start_year = (content.field_start_year[0]['#markup'] > 0) ? content.field_start_year[0]['#markup'] : content.field_start_year[0]['#markup']|abs ~ ' ' ~ 'BCE'|t %}
-                {% if content.field_end_year.0 %}
-                  {% set end_year = (content.field_end_year[0]['#markup'] > 0) ? content.field_end_year[0]['#markup'] : content.field_end_year[0]['#markup']|abs ~ ' ' ~ 'BCE'|t %}
-                  {% set years = start_year != end_year ? start_year ~ ' – ' ~ end_year : start_year %}
-                {% endif %}
-                {% set period = years ? years : start_year %}
-              <div class="hdbt_taxonomy__wrapper">
-                <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
+                <div class="hdbt_taxonomy__wrapper">
+                  <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_group_year">
-                  {# TODO: if period one of main search filters, pass as a filter query to the search page #}
-                    <a href="{{ site_search_page_url }}?q={{ period }}"><span>{{ period }}</span></a>
+                    <a href="{{ search_year_url(start_year, end_year) }}"><span>{{ format_period(start_year, end_year) }}</span></a>
                   </div>
                 </div>
               </div>
@@ -180,8 +176,8 @@
             {# The field names to print as tag-like search links #}
             {% set fields_set_2 = [
               'field_formats',
-              'field_keywords',
               'field_authors',
+              'field_keywords',
               'field_copyrights',
               'field_languages',
               'field_buildings',

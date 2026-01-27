@@ -75,7 +75,7 @@ msgstr "Områden"
 
 msgctxt "Search"
 msgid "Select region"
-msgstr "Välj området"
+msgstr "Välj område"
 
 msgctxt "Search"
 msgid "Formats"
@@ -91,7 +91,7 @@ msgstr "Helheter"
 
 msgctxt "Search"
 msgid "Select phenomenon"
-msgstr "Välj helheten"
+msgstr "Välj helhet"
 
 msgctxt "Search"
 msgid "Filter"

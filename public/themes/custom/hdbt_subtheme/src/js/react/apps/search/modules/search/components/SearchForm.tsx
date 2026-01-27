@@ -191,7 +191,7 @@ export const SearchForm: React.FC = () => {
                 label={Drupal.t("From year", {}, {context: "Search"})}
                 value={asString(startYear)}
                 onChange={(e) => handleYearChange(e.target.value, setStartYear)}
-                placeholder={Drupal.t("e.g.") + " 1900"}
+                placeholder={Drupal.t("e.g.", {}, {context: "Search"}) + " 1900"}
                 clearButtonAriaLabel={Drupal.t("Clear from year", {}, {context: "Search"})}
               />
               <TextInput
@@ -200,7 +200,7 @@ export const SearchForm: React.FC = () => {
                 label={Drupal.t("Until year", {}, {context: "Search"})}
                 value={asString(endYear)}
                 onChange={(e) => handleYearChange(e.target.value, setEndYear)}
-                placeholder={Drupal.t("e.g.") + " 2000"}
+                placeholder={Drupal.t("e.g.", {}, {context: "Search"}) + " 2000"}
                 clearButtonAriaLabel={Drupal.t("Clear until year", {}, {context: "Search"})}
               />
             </div>

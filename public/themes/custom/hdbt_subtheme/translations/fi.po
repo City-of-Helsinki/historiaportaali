@@ -83,7 +83,7 @@ msgstr "Aineistolaji"
 
 msgctxt "Search"
 msgid "Select format"
-msgstr "Valitse Aineistolaji"
+msgstr "Valitse aineistolaji"
 
 msgctxt "Search"
 msgid "Phenomena"

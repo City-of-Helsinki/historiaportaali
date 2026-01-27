@@ -39,7 +39,7 @@
             gap: $spacing;
 
             > * {
-              flex: 0 1 150px;
+              flex: 0 1 170px;
             }
 
             @include breakpoint(0 $breakpoint-s) {

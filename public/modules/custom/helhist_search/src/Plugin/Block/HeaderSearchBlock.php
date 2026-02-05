@@ -112,4 +112,18 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return array_merge(parent::getCacheContexts(), ['url.path']);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    return array_merge(parent::getCacheTags(), ['config:helhist_search.settings']);
+  }
+
 }

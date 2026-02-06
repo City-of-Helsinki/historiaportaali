@@ -12,14 +12,14 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: PZYH0XJHai5BanrU841HBb6psP_104W5Abd-D8q4dIU
+  default_config_hash: Nl36h6e4iM1QBTKUNmi0LdZahkfvoaz8JZGFtouJzYs
 id: paragraph.accordion_item.field_accordion_item_content
 field_name: field_accordion_item_content
 entity_type: paragraph
 bundle: accordion_item
-label: Sisältö
+label: Content
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

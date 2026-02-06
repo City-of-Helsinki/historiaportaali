@@ -25,6 +25,8 @@ dependencies:
     - responsive_image.styles.list_of_links
   module:
     - responsive_image
+_core:
+  default_config_hash: 0ua0sJ9TczDG97Cu-YiLD6k0ey467PYpoz1pS1Ta7Vs
 id: media.image.list_of_links
 targetEntityType: media
 bundle: image

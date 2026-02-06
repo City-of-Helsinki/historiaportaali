@@ -3,3 +3,6 @@ type: module
 description: 'Provides react search related customizations.'
 core_version_requirement: ^9 || ^10
 package: 'Custom'
+dependencies:
+  - csp:csp
+  - helfi_platform_config:helfi_platform_config

@@ -13,3 +13,13 @@ services:
     tags:
       - { name: twig.extension }
 
+  helhist_search.csp_elastic_proxy_subscriber:
+    class: Drupal\helhist_search\EventSubscriber\CspElasticProxySubscriber
+    arguments:
+      - '@config.factory'
+      - '@module_handler'
+      - '@helfi_api_base.environment_resolver'
+      - '@csp.policy_helper'
+    tags:
+      - { name: event_subscriber }
+

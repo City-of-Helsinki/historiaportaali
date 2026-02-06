@@ -8,10 +8,7 @@ dependencies:
     - image.style.1.5_1726w_1152h_LQ
     - image.style.1.5_560w_373h
     - image.style.1.5_735w_490h
-    - image.style.1.5_756w_504h_LQ
     - image.style.1.5_863w_576h
-    - image.style.2.3_991w_431h
-    - image.style.2.4_1920w_800h
   module:
     - helfi_image_styles
 _core:
@@ -21,22 +18,7 @@ label: 'Main Image'
 image_style_mappings:
   -
     image_mapping_type: image_style
-    image_mapping: 2.4_1920w_800h
-    breakpoint_id: helfi_image_styles.xl
-    multiplier: 2x
-  -
-    image_mapping_type: image_style
-    image_mapping: 2.3_991w_431h
-    breakpoint_id: helfi_image_styles.l
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: 2.3_991w_431h
-    breakpoint_id: helfi_image_styles.l
-    multiplier: 2x
-  -
-    image_mapping_type: image_style
-    image_mapping: 1.5_756w_504h_LQ
+    image_mapping: 1.5_863w_576h
     breakpoint_id: helfi_image_styles.m
     multiplier: 1x
   -

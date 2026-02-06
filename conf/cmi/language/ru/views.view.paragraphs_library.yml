@@ -23,7 +23,7 @@ display:
           label: Метка
           separator: ', '
         type:
-          label: Тип
+          label: Type
           separator: ', '
         paragraphs__target_id:
           label: Параграфы
@@ -50,7 +50,7 @@ display:
             label: Метка
         type:
           expose:
-            label: Тип
+            label: Type
       title: 'Paragraphs library'
       empty:
         area_text_custom:

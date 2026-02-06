@@ -15,7 +15,7 @@ display:
           label: 'Название медиа'
           separator: ', '
         bundle:
-          label: Тип
+          label: Type
           separator: ', '
         uid:
           label: Автор
@@ -58,7 +58,7 @@ display:
             label: 'Название медиа'
         bundle:
           expose:
-            label: Тип
+            label: Type
         status:
           expose:
             label: Истина

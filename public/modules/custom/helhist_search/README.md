@@ -1,39 +1,70 @@
 # HelHist Search
 
-Custom GraphQL/React search component.
+Site search functionality, with Search API and React frontend based on HDS.
+
+## Configuration
+
+The configurations should be on ignore to allow different setting per environment.
+
+### Search page node
+
+Configure node that show the search block **Tools** → **Site search settings**: `/admin/tools/helhist-search`.
+
+This decouples the search implementation from hardcoded node IDs, making it
+environment-agnostic and allowing flexible URL management and use of Hero and
+other instructional content management to the search page.
+
+### Search mapping
+
+The search mapping can be changed, in case search errors try out the Keyword/text mapping.
+
+## Blocks
+
+- **HelHist Header Search** (`helhist_search_header_search_block`)
+  - Header search form that appears on all pages except the configured search page
+- **HelHist Frontpage Search** (`helhist_search_frontpage_block`)
+  - Search form block designed for the front page
+- **HelHist React Search** (`helhist_search_react_search_block`)
+  - Main React-based search interface shown only on the configured search page
+
+## Search API Processors
+
+Custom processors that add fields to the search index:
+
+- **Listing Image URL** (`listing_image_url`)
+  - Generates styled image URL from node liftup images and media entities for search result cards
+- **Content Type** (`content_type`)
+  - Adds content type classification (article/media) to enable filtering by entity type
+
+## Twig Functions
+
+### search_url(field_name, value)
+
+Generates search URL with filter or keyword parameter based on field type.
+
+```twig
+{{ search_url('field_phenomena', 'Term Name') }} → /SEARCH_PAGE?phenomena=Term%20Name
+{{ search_url('field_keywords', 'Term Name') }} → /SEARCH_PAGE?q=Term%20Name
+```
+
+**Filter fields** (use filter parameters):
+- `field_phenomena` → `?phenomena=`
+- `field_neighbourhoods` → `?neighbourhoods=`
+- `field_formats` → `?formats=`
+
+Other fields default to keyword search (`?q=`).
+
+## Development 
 
 Ensure documents are indexed
 ```
-make shell 
 search-api:rebuild-tracker
 drush search-api:clear content_and_media
 drush search-api:index content_and_media
 ```
 
-CORS - add to your local development.services.yml
-```
-parameters:
-  cors.config:
-    enabled: true
-    allowedHeaders: ['*']
-    allowedMethods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE']
-    allowedOrigins: ['*']
-    allowedOriginsPatterns: []
-    exposedHeaders: false
-    maxAge: false
-    supportsCredentials: false
-```
+### Frontend development
 
-Copy `.env` file, check `REACT_APP_DRUPAL_URL´ is correct
-```
-cp .env.example .env
-````
+React part located at the `hdbt_subtheme` directory.
 
-Install, start and build
-```
-nvm install
-nvm use
-npm install
-npm run start
-npm run build
-```
+Connect to platta ES proxy by changing `ELASTIC_PROXY_URL` env var.

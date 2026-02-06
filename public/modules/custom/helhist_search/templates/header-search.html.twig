@@ -1,20 +1,18 @@
-<div class="header-search dropdown dropdown--search">
-  <button type="button" class="hds-button hds-button--secondary hds-button--search-toggle" aria-expanded="false" data-dropdown-trigger="">
-    <span aria-hidden="true" class="hel-icon hel-icon--search hds-icon--size-m"></span>
-    <span class="hds-button__label">{{ 'Search'|t }}</span>
-  </button>
+<div class="header-search">
+  <div class="nav-toggle nav-toggle--search">
+    <button class="nav-toggle__button" aria-expanded="false" aria-controls="search-dropdown">
+      <span class="nav-toggle__label nav-toggle__label--open">
+        <span aria-hidden="true" class="hel-icon hel-icon--search hds-icon--size-s"></span>
+        <span>{{ 'Search'|t({}, {'context': 'Header search'}) }}</span>
+      </span>
+      <span class="nav-toggle__label nav-toggle__label--close">
+        <span aria-hidden="true" class="hel-icon hel-icon--cross hds-icon--size-s search-toggle__icon--close"></span>
+        <span>{{ 'Close'|t }}</span>
+      </span>
+    </button>
+  </div>
 
   <div class="header-search__form-wrapper">
-    <form role="search" action={{ search_page_path }} method="GET">
-      <div class="hds-text-input hds-text-input--search ">
-        <label for="edit-s" class="hds-text-input__label hiddenFromScreen"></label>
-        <div class="hds-text-input__input-wrapper">
-          <input placeholder="{{ 'Location, person, topic, event...'|t }}" data-bef-auto-submit-exclude="" data-drupal-selector="edit-s" data-search-api-autocomplete-search="search" class="form-autocomplete form-text hds-text-input__input ui-autocomplete-input" data-autocomplete-path="/fi/search_api_autocomplete/search?display=page&amp;&amp;filter=s" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
-          <button type="submit" class="hds-button hds-button--theme-black" aria-label="Hae">
-            <span aria-hidden="true" class="hel-icon hel-icon--search hds-icon--size-m    "></span>
-          </button>
-        </div>
-      </div>
-    </form>
+    {{ form }}
   </div>
 </div>

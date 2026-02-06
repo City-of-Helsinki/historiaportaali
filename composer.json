@@ -107,9 +107,6 @@
             "drupal/core": {
                 "Wrong language field labels after drupal_rebuild()" : "https://www.drupal.org/files/issues/2021-12-01/3221375-27-workaround.patch"
             },
-            "drupal/graphql": {
-                "Empty entity type error": "custom-patches/graphql_fix_empty_entity_type.patch"
-            },
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "custom-patches/HIS-303-matomo-digia-tracker-url.patch"
             },
@@ -166,6 +163,9 @@
             "drupal/core": "-p2"
         }
     },
+    "autoload": {
+        "exclude-from-classmap": ["**/textalk/**"]
+    },
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\dtt\\": "tests/dtt/src"
@@ -179,18 +179,6 @@
         {
             "type": "vcs",
             "url": "https://git.drupalcode.org/issue/views_cm_current_state-3290445.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupal/graphql_search_api",
-                "version": "1.4",
-                "type": "drupal-module",
-                "dist": {
-                    "url": "https://github.com/crowdcg/graphql-search-api/archive/8.x-1.4.zip",
-                    "type": "zip"
-                }
-            }
         },
         {
             "type": "composer",

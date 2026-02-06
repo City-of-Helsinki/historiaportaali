@@ -15,37 +15,6 @@ name: 'Content and media'
 description: ''
 read_only: false
 field_settings:
-  aggregated_autocomplete:
-    label: 'Aggregated autocomplete'
-    property_path: aggregated_field
-    type: text
-    configuration:
-      type: union
-      fields:
-        - 'entity:media/field_authors'
-        - 'entity:media/field_buildings'
-        - 'entity:media/field_end_year'
-        - 'entity:media/field_formats'
-        - 'entity:media/field_image_caption'
-        - 'entity:media/field_keywords'
-        - 'entity:media/field_neighbourhoods'
-        - 'entity:media/field_phenomena'
-        - 'entity:media/field_photographer'
-        - 'entity:media/field_start_year'
-        - 'entity:media/field_transcript'
-        - 'entity:media/field_video_description'
-        - 'entity:media/name'
-        - 'entity:node/field_authors'
-        - 'entity:node/field_buildings'
-        - 'entity:node/field_content'
-        - 'entity:node/field_end_year'
-        - 'entity:node/field_formats'
-        - 'entity:node/field_keywords'
-        - 'entity:node/field_lead'
-        - 'entity:node/field_phenomena'
-        - 'entity:node/field_start_year'
-        - 'entity:node/field_turning_points'
-        - 'entity:node/title'
   aggregated_created:
     label: 'Aggregated created'
     property_path: aggregated_field
@@ -89,32 +58,27 @@ field_settings:
     configuration:
       type: union
       fields:
-        - 'entity:media/field_formats'
+        - 'entity:media/field_copyrights:entity:name'
         - 'entity:media/field_formats:entity:name'
         - 'entity:media/field_image_caption'
-        - 'entity:media/field_keywords'
         - 'entity:media/field_keywords:entity:name'
-        - 'entity:media/field_neighbourhoods'
         - 'entity:media/field_neighbourhoods:entity:name'
-        - 'entity:media/field_phenomena'
         - 'entity:media/field_phenomena:entity:name'
         - 'entity:media/field_photographer'
+        - 'entity:node/field_buildings_info'
         - 'entity:node/field_content:entity:field_columns_title'
         - 'entity:node/field_content:entity:field_content_cards_title'
         - 'entity:node/field_content:entity:field_hero_title'
         - 'entity:node/field_content:entity:field_liftup_with_image_title'
         - 'entity:node/field_content:entity:field_text:processed'
-        - 'entity:node/field_formats'
         - 'entity:node/field_formats:entity:name'
-        - 'entity:node/field_keywords'
         - 'entity:node/field_keywords:entity:name'
         - 'entity:node/field_lead'
-        - 'entity:node/field_neighbourhoods'
+        - 'entity:node/field_metatags'
         - 'entity:node/field_neighbourhoods:entity:name'
-        - 'entity:node/field_phenomena'
         - 'entity:node/field_phenomena:entity:name'
-        - 'entity:node/field_turning_points'
         - 'entity:node/field_turning_points:entity:name'
+        - 'entity:node/title'
   aggregated_neighbourhoods_title:
     label: 'Aggregated neighbourhoods title'
     property_path: aggregated_field
@@ -176,14 +140,6 @@ field_settings:
     dependencies:
       module:
         - node
-  status:
-    label: status
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    dependencies:
-      module:
-        - node
   url:
     label: URI
     property_path: search_api_url
@@ -214,14 +170,30 @@ processor_settings:
   district_image_absolute_url: {  }
   entity_status: {  }
   entity_type: {  }
-  ignorecase:
+  html_filter:
     weights:
-      preprocess_index: -50
-      preprocess_query: -47
-    all_fields: false
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: true
     fields:
-      - aggregated_autocomplete
+      - aggregated_formats_title
       - aggregated_keywords
+      - aggregated_neighbourhoods_title
+      - aggregated_phenomena_title
+      - aggregated_title
+      - content_type
+      - listing_image_url
+      - url
+    title: false
+    alt: false
+    tags:
+      b: 2.0
+      em: 1.5
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
+      u: 1.5
   language_with_fallback: {  }
   listing_image_url: {  }
   project_execution_schedule: {  }
@@ -233,8 +205,7 @@ processor_settings:
       preprocess_index: -48
       preprocess_query: -45
     all_fields: false
-    fields:
-      - aggregated_autocomplete
+    fields: {  }
     spaces: ''
     ignored: ._-
     overlap_cjk: 1
@@ -249,7 +220,6 @@ processor_settings:
           file: 0.0
           image: 0.0
           remote_video: 0.0
-          soundcloud: 0.0
       'entity:node':
         datasource_boost: 0.0
         bundle_boosts:

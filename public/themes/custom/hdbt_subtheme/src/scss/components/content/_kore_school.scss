@@ -5,15 +5,6 @@
         padding-left: $spacing-double * 4;
       }
     }
-    .back-to-search-results__container {
-      padding-top: 0;
-    }
-
-    .back-to-search-results {
-      @include breakpoint($breakpoint-m) {
-        padding-left: $spacing-triple * 2;
-      }
-    }
   }
 
   .main-content {
@@ -35,9 +26,9 @@
       }
 
       .kore--field {
+        border-bottom: 1px solid $color-black-40;
         display: grid;
         grid-template-columns: 1fr;
-        border-bottom: 1px solid $color-black-40;
 
         .paragraph--type--kore {
           align-items: flex-start;
@@ -65,8 +56,8 @@
             min-width: 0;
 
             .kore--address {
-              white-space: nowrap;
               margin: 0 0.5rem;
+              white-space: nowrap;
             }
           }
 

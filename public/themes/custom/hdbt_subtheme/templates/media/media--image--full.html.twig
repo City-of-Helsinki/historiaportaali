@@ -46,15 +46,8 @@
       {{ drupal_block('page_title_block', wrapper=false) }}
     </div>
 
-    {% embed "@hdbt_subtheme/misc/container.twig" with { container_element: 'back-to-search-results', container_style: 'display: none;'} %}
-      {% block container_content %}
-        {% include "@hdbt_subtheme/misc/back-to-search-results.html.twig" %}
-      {% endblock container_content %}
-    {% endembed %}
-
     {% embed "@hdbt/misc/container.twig" with { container_element: media.bundle()|clean_class ~ '_header', container_style: 'display: none;'} %}
       {% block container_content %}
-        {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
         {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}
@@ -132,7 +125,7 @@
                 <div class="hdbt_taxonomy__wrapper">
                   <h3 class="label" id="field_photographer">{{ content.field_photographer['#title'] }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_photographer">
-                    <a href="{{ site_search_page_url }}?s={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
+                    <a href="{{ site_search_page_url }}?q={{ content.field_photographer.0 }}"><span>{{ content.field_photographer.0 }}</span></a>
                   </div>
                 </div>
               </div>
@@ -153,17 +146,14 @@
             {% endfor %}
 
             {% if content.field_start_year|render %}
+              {% set start_year = content.field_start_year[0]['#markup'] %}
+              {% set end_year = content.field_end_year[0]['#markup'] ?? null %}
+
               <div class="{{ media.bundle()|clean_class }}__group_year">
-                {% set start_year = (content.field_start_year[0]['#markup'] > 0) ? content.field_start_year[0]['#markup'] : content.field_start_year[0]['#markup']|abs ~ ' ' ~ 'BCE'|t %}
-                {% if content.field_end_year.0 %}
-                  {% set end_year = (content.field_end_year[0]['#markup'] > 0) ? content.field_end_year[0]['#markup'] : content.field_end_year[0]['#markup']|abs ~ ' ' ~ 'BCE'|t %}
-                  {% set years = start_year != end_year ? start_year ~ ' – ' ~ end_year : start_year %}
-                {% endif %}
-                {% set period = years ? years : start_year %}
-              <div class="hdbt_taxonomy__wrapper">
-                <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
+                <div class="hdbt_taxonomy__wrapper">
+                  <h3 class="label" id="field_group_year">{{ 'Period'|t({}, {'context': 'Content'}) }}</h3>
                   <div class="hdbt_taxonomy" aria-labelledby="field_group_year">
-                    <a href="{{ site_search_page_url }}?s={{ period }}"><span>{{ period }}</span></a>
+                    <a href="{{ search_year_url(start_year, end_year) }}"><span>{{ format_period(start_year, end_year) }}</span></a>
                   </div>
                 </div>
               </div>
@@ -186,8 +176,8 @@
             {# The field names to print as tag-like search links #}
             {% set fields_set_2 = [
               'field_formats',
-              'field_keywords',
               'field_authors',
+              'field_keywords',
               'field_copyrights',
               'field_languages',
               'field_buildings',

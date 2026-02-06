@@ -2,108 +2,128 @@
 
 ## Introduction
 
-HDBT Subtheme is a so called "starterkit" which you can start using by enabling it in `/admin/appearance`.
-
-Or if you don't accept the theme name, you can rename every `hdbt_subtheme` file with `your_theme_name` and renaming every `hdbt_subtheme_*` variable/reference with `your_theme_name_*`. And then enable it in `/admin/appearance`. 
-
-Of course you have a choice to not use it at all by just deleting the whole folder.
-
-HDBT Subtheme uses webpack module bundler to compile the JS and SCSS files. Also the SVG icons are combined in to a sprite.svg via webpack.
+HDBT Subtheme uses the **@hdbt/theme-builder** (built on esbuild) to compile JS/React and SCSS files. The SVG icons are combined into a sprite.svg via svg-sprite.
 
 As the HDBT Subtheme is only distributed via the [HELfi Platform](https://github.com/City-of-Helsinki/drupal-helfi-platform), it doesn't have an upgrade path per se. In case there is a demand for upgradeability for existing projects then of course we will consider changing the theme to an upgradeable model. 
 
 ## Requirements
 
-HDBT Subtheme requires HDBT theme as a base theme and it should be installed in `/themes/custom/hdbt`.
+HDBT Subtheme requires HDBT theme as a base theme and it should be installed in `themes/contrib/hdbt`.
 
 Requirements for developing:
-- [NodeJS ( ^ 14.17.1 )](https://nodejs.org/en/)
+- [NodeJS ( ^ 22.x )](https://nodejs.org/en/)
 - [NPM](https://npmjs.com/)
 - optional [NVM](https://github.com/nvm-sh/nvm)
 
 ## Commands
 
-| Command       | Description                                                                       |
-| ------------- | --------------------------------------------------------------------------------- |
-| npm i         | Install dependencies and link local packages.                                     |
-| npm ci        | Install a project with a clean slate. Use especially in travis like environments. |
-| npm run dev   | Compile styles for development environment and watch file changes.                |
-| npm run build | Build packages for production. Minify CSS/JS. Create icon sprite.                 |
+| Command           | Description                                                                       |
+| ----------------- | --------------------------------------------------------------------------------- |
+| npm i             | Install dependencies and link local packages.                                     |
+| npm ci            | Install a project with a clean slate. Use especially in CI environments.          |
+| npm run dev       | Compile styles for development environment and watch file changes.                |
+| npm run build     | Build packages for production. Minify CSS/JS. Create icon sprite.                |
+| npm run typecheck | Run TypeScript type checking (strict - fails on errors).                          |
+| npm run lint      | Run linting for SCSS and JavaScript files.                                        |
 
-Setup the developing environment by running
+## Setup
 
-    nvm use
-    npm i
+### Initial Setup (One-time)
 
-Explanations for commands.
-- `nvm use` : Install and use the correct version of Node.
-- `npm i` : As stated above; Install dependencies and link local packages.
+Setup the developing environment by running:
 
-Start SCSS/JS watcher by running
+```bash
+# 1. Install parent theme dependencies (required!)
+cd public/themes/contrib/hdbt
+nvm use
+npm install
 
-    npm run dev
+# 2. Install subtheme dependencies
+cd ../custom/hdbt_subtheme
+nvm use
+npm install
+```
 
-Build the minified versions of CSS/JS into dist with
+**Why install parent theme?** The subtheme uses `@hdbt/theme-builder` and imports React components from the parent theme.
 
-    npm run build
+### Development Workflow
+
+Start development mode with file watching:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
 
 ## Structure for files and folders
 
 ```
 hdbt_subtheme
 │   README.md
-└───templates
-│   └───block
-│   └───content
-│   └───...
-└───src
-│   └───scss
-│   │   │   styles.scss
-│   │   └───base
-│   │   └───components
-│   │   └───...
-│   └───js
-│   │   │   common.js
-│   └───icons
+│   theme-builder.mjs          # Build configuration
+│   tsconfig.json              # TypeScript configuration
+└───templates                  # Twig templates
+└───src                        # Source files
+│   └───images                 # Theme images
+│   └───scss                   # Styles
+│   └───js                     # JavaScript & React
+│   │   └───react/             # React applications
+│   │       └───apps/
+│   │           └───search/    # Site search
+│   │   └───types/
+│   └───icons                  # SVG icons
 │       |   some-icon.svg
-└───dist
-    └───css
-        |   styles.min.css
-    └───js
-        |   bundle.min.js
-    └───icons
-        |   sprite.svg
+└───dist                       # Generated build files
 ```
 
-## Component library
+## Architecture
 
-Ready to use components can be explored from component library.
-Component library is not installed by default, but it can be installed in same fashion as any other module.
-Once installed it can be accessed in `/admin/appearance/hdbt/component-library`.
+The subtheme uses **@hdbt/theme-builder** from the parent theme (esbuild for JS/React, Sass for CSS, svg-sprite for icons).
+
+React components can be imported from the parent theme using path aliases configured in `tsconfig.json`:
+```typescript
+import CardItem from '@/react/common/Card';
+```
 
 ## How tos
 
-### How can I add a new SVG icon and then use it on my site.
+### TypeScript show warnings from the parent theme
 
-You can add your custom icons to `./src/icons/`. F.e. `my-awesome-icon.svg`. 
-Running `nvm use && npm i && npm run build` will collect the icon to the sprite.svg and it should then be available for use on your site by calling `my-awesome-icon`. Just remember to clear caches.
-The icons can be used in twig like so:
+This is expected behavior. The parent theme may have TypeScript errors that don't affect the build. The subtheme uses `typecheck:warn` which shows warnings but continues building successfully.
 
-    {# HDBT Subtheme specific icons #}
-    {% include "@hdbt_subtheme/misc/icon.twig" with {icon: 'my-awesome-icon'} %}
-    
-    {# HDBT specific icons #}
-    {% include "@hdbt/misc/icon.twig" with {icon: 'google-view'} %}
+### How can I add a new SVG icon and then use it on my site?
 
-To use the icon in SCSS, you can call it like so:
+1. Add your custom icon to `./src/icons/`, e.g., `my-awesome-icon.svg`
+2. Run `npm run build` to generate the sprite
+3. Clear Drupal caches
 
-    background-image: url('../icons/my-awesome-icon.svg');
+The icons can be used in Twig:
 
-### My javascript has unexpected errors when loading a page in Drupal.
+```twig
+{# HDBT Subtheme specific icons #}
+{% include "@hdbt_subtheme/misc/icon.twig" with {icon: 'my-awesome-icon'} %}
 
-If you have compiled the code with dev-flag (`nmp run dev`), then the sourcemaps expects the JS files to be found in correct places.
-This means that JS preprocessing (minifying) should be turned off. Just add the following lines to local.settings.php.
+{# HDBT specific icons #}
+{% include "@hdbt/misc/icon.twig" with {icon: 'google-view'} %}
 ```
+
+To use the icon in SCSS:
+
+```scss
+background-image: url('../icons/my-awesome-icon.svg');
+```
+
+### My JavaScript has unexpected errors when loading a page in Drupal
+
+If you have compiled the code with dev-flag (`npm run dev`), then the sourcemaps expect the JS files to be found in correct places.
+This means that JS preprocessing (minifying) should be turned off. Add the following lines to `local.settings.php`:
+
+```php
 $config['system.performance']['css']['preprocess'] = 0;
 $config['system.performance']['js']['preprocess'] = 0;
 ```
@@ -143,9 +163,3 @@ $config['system.performance']['css']['preprocess'] = 0;
 $config['system.performance']['js']['preprocess'] = 0;
 $config['system.logging']['error_level'] = 'some';
 ```
-
-### I get some mysterious 404 errors on console after building my theme using the 'npm run dev'
-The issue here is actually in the combination of source maps and theme js aggregation. The system cannot find the files
-associated with source maps because the aggregation names the files differently. What you need to do is disable js
-aggregation from Drupal. Go to /admin/config/development/performance and uncheck 'Aggregate JavaScript files'. Clear
-site caches and you should be able to continue with your work.

@@ -41,15 +41,8 @@
       {{ drupal_block('page_title_block', wrapper=false) }}
     </div>
 
-    {% embed "@hdbt_subtheme/misc/container.twig" with { container_element: 'back-to-search-results', container_style: 'display: none;'} %}
-      {% block container_content %}
-        {% include "@hdbt_subtheme/misc/back-to-search-results.html.twig" %}
-      {% endblock container_content %}
-    {% endembed %}
-
     {% embed "@hdbt/misc/container.twig" with { container_element: media.bundle()|clean_class ~ '_header', container_style: 'display: none;'} %}
       {% block container_content %}
-        {% include "@hdbt_subtheme/misc/generic-back-link.html.twig" %}
         {{ drupal_block('helfi_platform_config_social_sharing_block') }}
       {% endblock container_content %}
     {% endembed %}

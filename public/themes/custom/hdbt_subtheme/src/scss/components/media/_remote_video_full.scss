@@ -1,8 +1,7 @@
 .media--type-remote-video {
   &.media--view-mode-full {
     .before-content {
-      .remote-video-header__container,
-      .back-to-search-results__container {
+      .remote-video-header__container {
         > div {
           max-width: $content-width-max;
   

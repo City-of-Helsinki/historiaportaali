@@ -10,13 +10,17 @@
           <span class="visually-hidden">{{ 'Go to interactive map'|t }}</span>
         </a>
       </div>
-      {% include '@hdbt/navigation/link-button.html.twig' with {
-        type: primary,
-        label: 'Explore interactive map'|t,
-        url: map_node_url,
-        icon: true,
-        icon_type: map,
+      {% set map_link_attributes = {
+        'class': [
+          'hds-button',
+          'hds-button--primary',
+          'map-lift__link',
+        ]
       } %}
+      {% set map_link_title %}
+        <span class="hds-button__label">{{ 'Explore interactive map'|t }}</span>
+      {% endset %}
+      {{ link(map_link_title, map_node_url, map_link_attributes) }}
     {% endblock %}
   {% endembed %}
 </div>

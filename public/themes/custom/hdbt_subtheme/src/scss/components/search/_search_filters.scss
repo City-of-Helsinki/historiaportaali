@@ -108,34 +108,7 @@
     }
   }
 
-  .search-filters__era-selector {
-    padding-left: $spacing;
-
-    div[role="button"] {
-      color: var(--placeholder-color);
-      font-weight: 400;
-    }
-
-    div[role="region"] {
-      border-top: 1px solid $color-black-10;
-      padding-top: $spacing-three-quarters;
-    }
-
-    label {
-      color: $color-black-80;
-    }
-
-    .year-input-container {
-      align-items: center;
-      display: flex;
-
-      .item-divider {
-        margin-top: $spacing-double;
-        padding: 0 $spacing-quarter;
-      }
-    }
-  }
-
+  // Map search filters.
   .year-interval {
     .year-interval__toggle {
       align-items: center;

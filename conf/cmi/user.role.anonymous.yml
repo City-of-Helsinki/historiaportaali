@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - external_entities
-    - graphql
     - helfi_api_base
     - media
     - raven
@@ -18,7 +17,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access debug api'
-  - 'execute graphql requests'
   - 'send javascript errors to sentry'
   - 'view helfi_announcements external entity'
   - 'view helfi_surveys external entity'

@@ -10,7 +10,7 @@ dependencies:
 id: hdbt_page_title
 theme: hdbt_subtheme
 region: before_content
-weight: 0
+weight: -15
 provider: helfi_base_content
 plugin: page_title_block
 settings:

@@ -308,6 +308,12 @@
 
         function escapeHandler(e) {
           if (e.key !== 'Escape') return;
+          const $overlay = $('#geolocation-denied-overlay');
+          if ($overlay.length && $overlay.is(':visible')) {
+            e.preventDefault();
+            self.hideGeolocationDeniedBox();
+            return;
+          }
           if (document.querySelector('.leaflet-popup')) {
             e.preventDefault();
             map.closePopup();
@@ -501,38 +507,50 @@
     },
 
     showGeolocationDeniedBox: function() {
-      let self = this;
-      let title = Drupal.t('Location data blocked', {}, {context: 'Map controls'});
-      let description = Drupal.t('Unfortunately, we are unable to show places on the map based on your location until you agree to use your location.', {}, {context: 'Map controls'});
-      let closeBtnText = Drupal.t('Close', {}, {context: 'Map controls'});
+      const self = this;
+      const title = Drupal.t('Location data blocked', {}, { context: 'Map controls' });
+      const description = Drupal.t('You must allow your broser to use your location to see places near you.', {}, { context: 'Map controls' });
+      const closeBtnText = Drupal.t('Close');
 
-      $('.leaflet-container').prepend(`
-        <div id="geolocation-denied-overlay" style="display:none;">
-          <div class="info-box">
-            <div class="info-header">
-              <span class="info-icon"></span>
-              <h3>${title}</h3>
-              <div class="close-btn" role="button">${closeBtnText}</div>
-            </div>
-            <p>${description}</p>
-          </div>
-        </div>
-      `);
+      if (!$('#geolocation-denied-overlay').length) {
+        $('.leaflet-container').prepend(
+          '<div id="geolocation-denied-overlay" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="geolocation-denied-title" aria-describedby="geolocation-denied-desc">' +
+            '<div class="info-box"><div class="info-header">' +
+            '<span class="icon" aria-hidden="true"></span>' +
+            '<h3 id="geolocation-denied-title"></h3>' +
+            '<button type="button" class="close-btn"></button>' +
+            '</div><p id="geolocation-denied-desc"></p></div></div>'
+        );
+      }
+      const $box = $('#geolocation-denied-overlay');
+      $box.find('#geolocation-denied-title').text(title);
+      $box.find('#geolocation-denied-desc').text(description);
+      $box.find('.close-btn').text(closeBtnText);
 
-      $('#geolocation-denied-overlay').fadeIn(150);
+      $box.off('click keydown').on('click', '.close-btn', function() { self.hideGeolocationDeniedBox(); })
+        .on('keydown', '.close-btn', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.hideGeolocationDeniedBox(); }
+        });
 
-      $('#geolocation-denied-overlay .close-btn').on('click', function() {
-        self.hideGeoloactionDeniedBox();
+      $(document).off('keydown.geolocationDenied').on('keydown.geolocationDenied', function(e) {
+        if (e.key !== 'Tab' || !$box.is(':visible')) return;
+        const box = $box[0];
+        const focusables = Array.from(box.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')).filter(function(el) { return el.offsetParent; });
+        if (!focusables.length) return;
+        const inside = $.contains(box, e.target);
+        const cur = focusables.indexOf(document.activeElement);
+        const last = focusables.length - 1;
+        if (!inside || cur === -1 || (e.shiftKey ? cur <= 0 : cur >= last)) {
+          e.preventDefault();
+          focusables[e.shiftKey ? last : 0].focus();
+        }
       });
 
-      // Hide with escape key
-      $(document).keyup(function(e) {
-        if (e.keyCode === 27)
-          self.hideGeoloactionDeniedBox();
-      });
+      $box.fadeIn(150, function() { $box.find('.close-btn')[0].focus(); });
     },
 
-    hideGeoloactionDeniedBox: function() {
+    hideGeolocationDeniedBox: function() {
+      $(document).off('keydown.geolocationDenied');
       $('#geolocation-denied-overlay').fadeOut(150);
     }
   };

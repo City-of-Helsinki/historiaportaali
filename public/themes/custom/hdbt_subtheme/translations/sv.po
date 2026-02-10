@@ -226,3 +226,11 @@ msgstr "Visa min plats"
 msgctxt "Map controls"
 msgid "Cluster of @count markers"
 msgstr "Grupp: @count platser"
+
+msgctxt "Map controls"
+msgid "Location data blocked"
+msgstr "Platsåtkomst blockerad"
+
+msgctxt "Map controls"
+msgid "You must allow your broser to use your location to see places near you."
+msgstr "Tillåt platsåtkomst för att se platser i närheten."

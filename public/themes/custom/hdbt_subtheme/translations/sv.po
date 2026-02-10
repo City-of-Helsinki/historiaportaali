@@ -222,3 +222,7 @@ msgstr "Zooma ut"
 msgctxt "Map controls"
 msgid "Locate me"
 msgstr "Visa min plats"
+
+msgctxt "Map controls"
+msgid "Cluster of @count markers"
+msgstr "Kluster: @count markörer"

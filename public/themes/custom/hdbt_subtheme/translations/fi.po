@@ -222,3 +222,7 @@ msgstr "Loitonna"
 msgctxt "Map controls"
 msgid "Locate me"
 msgstr "Näytä sijaintini"
+
+msgctxt "Map controls"
+msgid "Cluster of @count markers"
+msgstr "Klusteri: @count merkkiä"

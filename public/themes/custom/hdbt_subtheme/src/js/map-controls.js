@@ -110,7 +110,7 @@
 
         // Make markers keyboard focusable and handle navigation
         map.on('layeradd', function(e) {
-          if (e.layer instanceof L.Marker) {
+          if (e.layer instanceof L.Marker && !(e.layer instanceof L.MarkerCluster)) {
             const markerElement = e.layer.getElement();
             if (markerElement) {
               markerElement.setAttribute('tabindex', '0');
@@ -159,30 +159,33 @@
             const clusterGroup = e.layer;
 
             // Set up mutation observer to watch for cluster elements (tabindex + aria-label)
-            const observer = new MutationObserver(function(mutations) {
-              mutations.forEach(function(mutation) {
-                if (mutation.addedNodes) {
-                  mutation.addedNodes.forEach(function(node) {
-                    if (node.classList && node.classList.contains('marker-cluster')) {
-                      node.setAttribute('tabindex', '0');
+            function setClusterAccessibility(clusterNode) {
+              if (!clusterNode || !clusterNode.isConnected) return;
+              clusterNode.setAttribute('tabindex', '0');
+              clusterNode.setAttribute('role', 'button');
+              const count = clusterNode.querySelector('span')?.textContent?.trim() || '0';
+              clusterNode.setAttribute('aria-label', Drupal.t('Cluster of @count markers', { '@count': count }, { context: 'Map controls' }));
+            }
 
-                      // Get the cluster count
-                      const count = node.querySelector('.marker-cluster-count')?.textContent || '0';
-                      node.setAttribute('aria-label', 'Cluster of ' + count + ' markers');
-                    }
-                  });
-                }
-              });
+            const mapContainer = map.getContainer();
+
+            function ensureClusterAriaLabels() {
+              mapContainer.querySelectorAll('.marker-cluster:not([aria-label])').forEach(setClusterAccessibility);
+            }
+
+            const observer = new MutationObserver(function() {
+              ensureClusterAriaLabels();
             });
 
-            // Start observing the map container for changes
-            observer.observe(map.getContainer(), {
+            observer.observe(mapContainer, {
               childList: true,
               subtree: true
             });
 
+            ensureClusterAriaLabels();
+            setTimeout(ensureClusterAriaLabels, 100);
+
             // Single keydown handler on map container (delegation): works when focus is on cluster or any child
-            const mapContainer = map.getContainer();
             const clusterKeydown = function(event) {
               if (event.key !== 'Enter' && event.key !== ' ') return;
               const clusterNode = (event.target && event.target.closest && event.target.closest('.marker-cluster')) || null;

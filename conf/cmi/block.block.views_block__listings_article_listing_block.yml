@@ -12,8 +12,8 @@ dependencies:
     - hdbt_subtheme
 id: views_block__listings_article_listing_block
 theme: hdbt_subtheme
-region: content
-weight: -14
+region: after_content
+weight: -15
 provider: null
 plugin: 'views_block:listings-article_listing_block'
 settings:

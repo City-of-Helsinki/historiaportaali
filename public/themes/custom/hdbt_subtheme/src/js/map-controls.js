@@ -155,7 +155,7 @@
           if (e.layer instanceof L.MarkerClusterGroup) {
             const clusterGroup = e.layer;
 
-            // Set up mutation observer to watch for cluster elements
+            // Set up mutation observer to watch for cluster elements (tabindex + aria-label)
             const observer = new MutationObserver(function(mutations) {
               mutations.forEach(function(mutation) {
                 if (mutation.addedNodes) {
@@ -166,61 +166,6 @@
                       // Get the cluster count
                       const count = node.querySelector('.marker-cluster-count')?.textContent || '0';
                       node.setAttribute('aria-label', 'Cluster of ' + count + ' markers');
-
-                      // Add keyboard event handler for expanding cluster
-                      node.addEventListener('keydown', function(event) {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-
-                          // Get the cluster's position from the DOM element
-                          const rect = node.getBoundingClientRect();
-                          const mapRect = map.getContainer().getBoundingClientRect();
-                          const point = map.containerPointToLatLng([
-                            rect.left - mapRect.left + rect.width / 2,
-                            rect.top - mapRect.top + rect.height / 2
-                          ]);
-
-                          // Find the closest cluster
-                          const clusters = clusterGroup.getLayers();
-                          let closestCluster = null;
-                          let minDistance = Infinity;
-
-                          clusters.forEach(layer => {
-                            if (layer instanceof L.MarkerCluster) {
-                              const layerPoint = map.latLngToContainerPoint(layer.getLatLng());
-                              const nodePoint = map.latLngToContainerPoint(point);
-                              const distance = Math.sqrt(
-                                Math.pow(layerPoint.x - nodePoint.x, 2) +
-                                Math.pow(layerPoint.y - nodePoint.y, 2)
-                              );
-
-                              if (distance < minDistance) {
-                                minDistance = distance;
-                                closestCluster = layer;
-                              }
-                            }
-                          });
-
-                          if (closestCluster && minDistance < 100) {
-                            const markers = closestCluster.getAllChildMarkers();
-                            if (markers.length > 0) {
-                              const markerBounds = L.latLngBounds(markers.map(m => m.getLatLng()));
-                              map.fitBounds(markerBounds, {
-                                padding: [50, 50],
-                                animate: true,
-                                duration: 0.5
-                              });
-
-                              setTimeout(() => {
-                                const firstMarker = markers[0].getElement();
-                                if (firstMarker) {
-                                  firstMarker.focus();
-                                }
-                              }, 600);
-                            }
-                          }
-                        }
-                      });
                     }
                   });
                 }
@@ -232,8 +177,86 @@
               childList: true,
               subtree: true
             });
+
+            // Single keydown handler on map container (delegation): works when focus is on cluster or any child
+            const mapContainer = map.getContainer();
+            const clusterKeydown = function(event) {
+              if (event.key !== 'Enter' && event.key !== ' ') return;
+              const clusterNode = (event.target && event.target.closest && event.target.closest('.marker-cluster')) || null;
+              if (!clusterNode) return;
+              event.preventDefault();
+
+              const rect = clusterNode.getBoundingClientRect();
+              const mapRect = mapContainer.getBoundingClientRect();
+              const clusterPoint = [
+                rect.left - mapRect.left + rect.width / 2,
+                rect.top - mapRect.top + rect.height / 2
+              ];
+
+              // Try programmatic spiderfy first (reliable for keyboard); fallback to mouse events
+              const clusterLayer = findClusterByIcon(clusterGroup, clusterNode);
+              if (clusterLayer && typeof clusterLayer.spiderfy === 'function') {
+                clusterLayer.spiderfy();
+              } else {
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                ['mousedown', 'mouseup', 'click'].forEach(function(type) {
+                  const ev = new MouseEvent(type, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window,
+                    clientX: centerX,
+                    clientY: centerY
+                  });
+                  clusterNode.dispatchEvent(ev);
+                });
+              }
+
+              setTimeout(function() {
+                const focusable = Array.from(mapContainer.querySelectorAll('.leaflet-marker-pane [tabindex="0"]'))
+                  .filter(function(el) { return !el.classList.contains('marker-cluster'); });
+                const withDist = focusable.map(function(el) {
+                  const r = el.getBoundingClientRect();
+                  const cx = r.left - mapRect.left + r.width / 2;
+                  const cy = r.top - mapRect.top + r.height / 2;
+                  const d = (r.width === 0 && r.height === 0) ? Infinity : Math.pow(cx - clusterPoint[0], 2) + Math.pow(cy - clusterPoint[1], 2);
+                  return { el: el, d: d };
+                }).filter(function(x) { return x.d < Infinity; });
+                withDist.sort(function(a, b) { return a.d - b.d; });
+                const ordered = withDist.map(function(x) { return x.el; });
+                if (ordered.length) {
+                  ordered[0].focus();
+                  map._spiderfiedMarkerElements = ordered;
+                }
+              }, 450);
+            };
+            mapContainer.addEventListener('keydown', clusterKeydown, true);
+
+            mapContainer.addEventListener('focusout', function(ev) {
+              if (!mapContainer.contains(ev.relatedTarget)) {
+                map._spiderfiedMarkerElements = null;
+              }
+            });
           }
         });
+
+        // Find L.MarkerCluster whose _icon is the given DOM node (walk cluster group tree)
+        function findClusterByIcon(group, node) {
+          if (!group || !node || typeof group.getVisibleParent !== 'function') return null;
+          const top = group._topClusterLevel;
+          if (!top) return null;
+          function walk(c) {
+            if (c._icon === node) return c;
+            if (c._childClusters) {
+              for (let i = 0; i < c._childClusters.length; i++) {
+                const found = walk(c._childClusters[i]);
+                if (found) return found;
+              }
+            }
+            return null;
+          }
+          return walk(top);
+        }
 
         // Handle popup opening
         map.on('popupopen', function(e) {
@@ -282,15 +305,34 @@
           }
         });
 
-        // Handle keyboard navigation between markers
+        // Handle keyboard navigation between markers (and within spiderfied cluster)
         map.on('keydown', function(e) {
           if (e.key === 'Tab') {
+            const active = document.activeElement;
+            const spiderfied = map._spiderfiedMarkerElements;
+
+            if (spiderfied && spiderfied.length && spiderfied.indexOf(active) !== -1) {
+              const idx = spiderfied.indexOf(active);
+              if (!e.shiftKey && idx < spiderfied.length - 1) {
+                e.preventDefault();
+                spiderfied[idx + 1].focus();
+                return;
+              }
+              if (e.shiftKey && idx > 0) {
+                e.preventDefault();
+                spiderfied[idx - 1].focus();
+                return;
+              }
+              map._spiderfiedMarkerElements = null;
+              return;
+            }
+
             const markers = Array.from(map.getLayers())
               .filter(layer => layer instanceof L.Marker)
               .map(layer => layer.getElement())
               .filter(el => el);
 
-            const currentIndex = markers.indexOf(document.activeElement);
+            const currentIndex = markers.indexOf(active);
 
             if (currentIndex > -1) {
               e.preventDefault();

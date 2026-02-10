@@ -119,30 +119,7 @@
               markerElement.removeAttribute('title');
               markerElement.setAttribute('aria-label', label);
 
-              // Add focus event to center map on marker
-              markerElement.addEventListener('focus', function() {
-                const marker = e.layer;
-                if (marker) {
-                  // Check if marker is near the edge of the map
-                  const markerPoint = map.latLngToContainerPoint(marker.getLatLng());
-                  const mapSize = map.getSize();
-                  const edgeBuffer = 100; // pixels from edge
-
-                  if (markerPoint.x < edgeBuffer ||
-                      markerPoint.x > mapSize.x - edgeBuffer ||
-                      markerPoint.y < edgeBuffer ||
-                      markerPoint.y > mapSize.y - edgeBuffer) {
-                    // Center map on marker with padding
-                    map.setView(marker.getLatLng(), map.getZoom(), {
-                      animate: true,
-                      duration: 0.5,
-                      padding: [50, 50]
-                    });
-                  }
-                }
-              });
-
-              // Add keyboard event handler for opening popup
+              // Pan on focus is handled by Leaflet's default autoPanOnFocus. We add keydown for Enter+Space (Leaflet only handles Enter via keypress).
               markerElement.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter' || event.key === ' ') {
                   event.preventDefault();
@@ -219,20 +196,21 @@
               }
 
               setTimeout(function() {
-                const focusable = Array.from(mapContainer.querySelectorAll('.leaflet-marker-pane [tabindex="0"]'))
+                const markers = Array.from(mapContainer.querySelectorAll('.leaflet-marker-pane [tabindex="0"]'))
                   .filter(function(el) { return !el.classList.contains('marker-cluster'); });
-                const withDist = focusable.map(function(el) {
-                  const r = el.getBoundingClientRect();
-                  const cx = r.left - mapRect.left + r.width / 2;
-                  const cy = r.top - mapRect.top + r.height / 2;
-                  const d = (r.width === 0 && r.height === 0) ? Infinity : Math.pow(cx - clusterPoint[0], 2) + Math.pow(cy - clusterPoint[1], 2);
-                  return { el: el, d: d };
-                }).filter(function(x) { return x.d < Infinity; });
-                withDist.sort(function(a, b) { return a.d - b.d; });
-                const ordered = withDist.map(function(x) { return x.el; });
-                if (ordered.length) {
-                  ordered[0].focus();
-                  map._spiderfiedMarkerElements = ordered;
+                const byDistance = markers
+                  .map(function(el) {
+                    const r = el.getBoundingClientRect();
+                    const cx = r.left - mapRect.left + r.width / 2;
+                    const cy = r.top - mapRect.top + r.height / 2;
+                    const d = (r.width && r.height) ? (cx - clusterPoint[0]) ** 2 + (cy - clusterPoint[1]) ** 2 : Infinity;
+                    return { el: el, d: d };
+                  })
+                  .filter(function(x) { return x.d < Infinity; })
+                  .sort(function(a, b) { return a.d - b.d; });
+                if (byDistance.length) {
+                  byDistance[0].el.focus();
+                  map._spiderfiedMarkerElements = byDistance.map(function(x) { return x.el; });
                 }
               }, 450);
             };
@@ -282,21 +260,7 @@
               popupContent.focus();
             }
 
-            // Center map on popup if it's near the edge
-            const popupPoint = map.latLngToContainerPoint(e.popup.getLatLng());
-            const mapSize = map.getSize();
-            const edgeBuffer = 100;
-
-            if (popupPoint.x < edgeBuffer ||
-                popupPoint.x > mapSize.x - edgeBuffer ||
-                popupPoint.y < edgeBuffer ||
-                popupPoint.y > mapSize.y - edgeBuffer) {
-              map.setView(e.popup.getLatLng(), map.getZoom(), {
-                animate: true,
-                duration: 0.5,
-                padding: [50, 50]
-              });
-            }
+            map.panInside(e.popup.getLatLng(), { padding: [50, 50] });
           }
         });
 
@@ -311,71 +275,53 @@
           }
         });
 
-        // Handle keyboard navigation between markers (and within spiderfied cluster)
+        // Handle Tab between markers and within spiderfied cluster
         map.on('keydown', function(e) {
-          if (e.key === 'Tab') {
-            const active = document.activeElement;
-            const spiderfied = map._spiderfiedMarkerElements;
+          if (e.key !== 'Tab') return;
+          const active = document.activeElement;
+          const spiderfied = map._spiderfiedMarkerElements;
+          const idx = spiderfied && spiderfied.indexOf(active);
 
-            if (spiderfied && spiderfied.length && spiderfied.indexOf(active) !== -1) {
-              const idx = spiderfied.indexOf(active);
-              if (!e.shiftKey && idx < spiderfied.length - 1) {
-                e.preventDefault();
-                spiderfied[idx + 1].focus();
-                return;
-              }
-              if (e.shiftKey && idx > 0) {
-                e.preventDefault();
-                spiderfied[idx - 1].focus();
-                return;
-              }
-              map._spiderfiedMarkerElements = null;
-              return;
-            }
-
-            const markers = Array.from(map.getLayers())
-              .filter(layer => layer instanceof L.Marker)
-              .map(layer => layer.getElement())
-              .filter(el => el);
-
-            const currentIndex = markers.indexOf(active);
-
-            if (currentIndex > -1) {
+          if (idx >= 0) {
+            if (!e.shiftKey && idx < spiderfied.length - 1) {
               e.preventDefault();
-              const nextIndex = e.shiftKey ? currentIndex - 1 : currentIndex + 1;
-              const nextMarker = markers[nextIndex >= markers.length ? 0 : nextIndex < 0 ? markers.length - 1 : nextIndex];
-              nextMarker.focus();
+              spiderfied[idx + 1].focus();
+            } else if (e.shiftKey && idx > 0) {
+              e.preventDefault();
+              spiderfied[idx - 1].focus();
+            } else {
+              map._spiderfiedMarkerElements = null;
             }
+            return;
           }
+
+          const markers = Array.from(map.getLayers())
+            .filter(function(layer) { return layer instanceof L.Marker && !(layer instanceof L.MarkerCluster); })
+            .map(function(layer) { return layer.getElement(); })
+            .filter(Boolean);
+          const cur = markers.indexOf(active);
+          if (cur === -1) return;
+          e.preventDefault();
+          const next = e.shiftKey ? (cur - 1 + markers.length) % markers.length : (cur + 1) % markers.length;
+          markers[next].focus();
         });
 
-        const escapeHandler = function(e) {
-          if (e.key === 'Escape') {
-            // Check if there's an open popup first
-            const openPopup = document.querySelector('.leaflet-popup');
-
-            if (openPopup) {
-              e.preventDefault();
-              map.closePopup();
-            } else {
-              // Check if we're on a map element and exit the map
-              const mapContainer = map.getContainer();
-              const isOnMapElement = mapContainer.contains(document.activeElement);
-
-              if (isOnMapElement) {
-                e.preventDefault();
-                // Focus on next paragraph-content
-                const paragraphContent = document.querySelector('.paragraph-content');
-                if (paragraphContent) {
-                  if (paragraphContent.tabIndex === -1) {
-                    paragraphContent.tabIndex = 0;
-                  }
-                  paragraphContent.focus();
-                }
-              }
+        function escapeHandler(e) {
+          if (e.key !== 'Escape') return;
+          if (document.querySelector('.leaflet-popup')) {
+            e.preventDefault();
+            map.closePopup();
+            return;
+          }
+          if (map.getContainer().contains(document.activeElement)) {
+            e.preventDefault();
+            const paragraphContent = document.querySelector('.paragraph-content');
+            if (paragraphContent) {
+              if (paragraphContent.tabIndex === -1) paragraphContent.tabIndex = 0;
+              paragraphContent.focus();
             }
           }
-        };
+        }
 
         document.addEventListener('keydown', escapeHandler);
 
@@ -391,8 +337,9 @@
       let $controls = $(`.map-controls__map-layer.${mapName}`);
 
       $controls.change(function(e) {
-        let selectedLayerTitle = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-layer-title')
-            mapApiEndpoints = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
+        const $target = $(e.target);
+        const selectedLayerTitle = $target.find(':selected').not("[map-layer-title='default']").data('map-layer-title');
+        const mapApiEndpoints = $target.find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
         self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
         lMap._mapControlsResettingOthers = true;
         $controls.not(e.target).each(function() {

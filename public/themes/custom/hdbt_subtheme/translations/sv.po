@@ -225,4 +225,4 @@ msgstr "Visa min plats"
 
 msgctxt "Map controls"
 msgid "Cluster of @count markers"
-msgstr "Kluster: @count markörer"
+msgstr "Grupp: @count platser"

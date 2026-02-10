@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
@@ -89,6 +90,20 @@ function helhist_map_views_pre_render(ViewExecutable $view) {
   if ($view->storage->id() == 'combined_map' && in_array($view->current_display, helhist_map_get_map_displays())) {
     $view->element['#attached']['library'][] = 'hdbt_subtheme/map-view';
   }
+}
+
+/**
+ * Implements hook_leaflet_views_feature_alter().
+ *
+ * Ensures each marker has a title from the entity (node/media) for tooltip
+ * and accessibility (aria-label). Uses entity label when the view style
+ * does not set a name field.
+ */
+function helhist_map_leaflet_views_feature_alter(array &$feature, $result, $row_plugin) {
+  if (!empty($feature['title']) || !isset($result->_entity) || !($result->_entity instanceof EntityInterface)) {
+    return;
+  }
+  $feature['title'] = trim(strip_tags((string) $result->_entity->label()));
 }
 
 /**

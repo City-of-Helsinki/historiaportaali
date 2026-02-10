@@ -114,7 +114,10 @@
             const markerElement = e.layer.getElement();
             if (markerElement) {
               markerElement.setAttribute('tabindex', '0');
-              markerElement.setAttribute('aria-label', e.layer.getPopup()?.getContent() || 'Map marker');
+              const label = (e.layer.options?.title && String(e.layer.options.title).trim()) ||
+                Drupal.t('Map marker', {}, { context: 'Map controls' });
+              markerElement.removeAttribute('title');
+              markerElement.setAttribute('aria-label', label);
 
               // Add focus event to center map on marker
               markerElement.addEventListener('focus', function() {

@@ -33,6 +33,21 @@
             allowClear: true
           });
 
+          // Select2 has no option to prevent opening when clear is clicked (4.x behavior).
+          $select.on('select2:unselecting', function() {
+            $select.data('map-controls-unselecting', true);
+          });
+          $select.on('select2:opening', function(e) {
+            if ($select.data('map-controls-unselecting')) {
+              $select.removeData('map-controls-unselecting');
+              e.preventDefault();
+              setTimeout(function() {
+                $select.select2('close');
+                $select.next('.select2-container').find('.select2-selection').trigger('blur');
+              }, 0);
+            }
+          });
+
           // Target the specific selection container
           const $selectionContainer = $select.next('.select2-container').find('.select2-selection__rendered');
           $selectionContainer.attr({
@@ -42,21 +57,48 @@
             'aria-expanded': 'false'
           });
 
-          // Update ARIA attributes on open/close
           $select.on('select2:open', function() {
             $selectionContainer.attr('aria-expanded', 'true');
           }).on('select2:close', function() {
             $selectionContainer.attr('aria-expanded', 'false');
           });
-
-          // Update ARIA attributes on selection
           $select.on('select2:select', function(e) {
-            const selectedText = e.params.data.text;
-            $selectionContainer.attr('aria-label', `${ariaLabel}: ${selectedText}`);
+            $selectionContainer.attr('aria-label', `${ariaLabel}: ${e.params.data.text}`);
+            $(document).find('.map-controls__clear-btn[data-clear-for="' + $select.attr('id') + '"]').prop('hidden', false).attr('aria-hidden', 'false');
+          });
+          $select.on('select2:clear', function() {
+            $selectionContainer.attr('aria-label', ariaLabel);
+            $(document).find('.map-controls__clear-btn[data-clear-for="' + $select.attr('id') + '"]').prop('hidden', true).attr('aria-hidden', 'true');
           });
         });
 
         $('.map-controls__map-layer').val('default').trigger('change.select2');
+
+        $('.map-controls__map-layer').each(function() {
+          const $select = $(this);
+          const $btn = $(document).find('.map-controls__clear-btn[data-clear-for="' + $select.attr('id') + '"]');
+          if ($select.val()) {
+            $btn.prop('hidden', false).attr('aria-hidden', 'false');
+          } else {
+            $btn.prop('hidden', true).attr('aria-hidden', 'true');
+          }
+        });
+
+        $(document).on('mousedown.mapcontrols click.mapcontrols', '.map-controls__clear-btn', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (e.type === 'mousedown') return;
+          const $btn = $(this);
+          const selectId = $btn.data('clear-for');
+          const $select = $('#' + selectId);
+          if (!$select.length || !$select.hasClass('map-controls__map-layer')) return;
+          $btn.prop('hidden', true).attr('aria-hidden', 'true');
+          requestAnimationFrame(function() {
+            $select.data('map-controls-unselecting', true);
+            $select.val(null).trigger('change');
+            self.removeOtherMapLayers(map, null);
+          });
+        });
 
         this.on('unload', function() {
           if (this.options?.mapName == 'comparison-map') {
@@ -304,11 +346,16 @@
         let selectedLayerTitle = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-layer-title')
             mapApiEndpoints = $(e.target).find(':selected').not("[map-layer-title='default']").data('map-api-endpoints');
         self.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
-        // Clear other select2s.
-        $controls.not(e.target).val('default').trigger('change.select2');
+        lMap._mapControlsResettingOthers = true;
+        $controls.not(e.target).each(function() {
+          $(document).find('.map-controls__clear-btn[data-clear-for="' + $(this).attr('id') + '"]').prop('hidden', true).attr('aria-hidden', 'true');
+        });
+        $controls.not(e.target).val(null).trigger('change.select2');
+        setTimeout(function() { lMap._mapControlsResettingOthers = false; }, 0);
       });
 
-      $controls.on('select2:clear', function (e) {
+      $controls.on('select2:clear', function () {
+        if (lMap._mapControlsResettingOthers) return;
         self.removeOtherMapLayers(lMap, null);
       });
     },
@@ -460,9 +507,9 @@
 
     showGeolocationDeniedBox: function() {
       let self = this;
-      let title = Drupal.t('Location data blocked', {}, {context: 'Map selectors'});
-      let description = Drupal.t('Unfortunately, we are unable to show places on the map based on your location until you agree to use your location.', {}, {context: 'Map selectors'});
-      let closeBtnText = Drupal.t('Close', {}, {context: 'Map selectors'});
+      let title = Drupal.t('Location data blocked', {}, {context: 'Map controls'});
+      let description = Drupal.t('Unfortunately, we are unable to show places on the map based on your location until you agree to use your location.', {}, {context: 'Map controls'});
+      let closeBtnText = Drupal.t('Close', {}, {context: 'Map controls'});
 
       $('.leaflet-container').prepend(`
         <div id="geolocation-denied-overlay" style="display:none;">

@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ErrorBoundary } from './common/components/ErrorBoundary';
-import { SearchContainer } from './modules/search/SearchContainer';
-import ResultsError from './common/components/ResultsError';
+import React from "react";
+import ReactDOM from "react-dom";
+import { ErrorBoundary } from "./common/components/ErrorBoundary";
+import { SearchContainer } from "./modules/search/SearchContainer";
+import ResultsError from "./common/components/ResultsError";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const rootElementId = 'historia_search';
+document.addEventListener("DOMContentLoaded", () => {
+  const rootElementId = "historia_search";
   const rootElement = document.getElementById(rootElementId);
 
   if (!rootElement) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!elasticsearchUrl) {
     console.error(
-      `Elasticsearch URL missing from data-elasticsearch-url on #${rootElementId}`
+      `Elasticsearch URL missing from data-elasticsearch-url on #${rootElementId}`,
     );
     return;
   }
@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <SearchContainer elasticsearchUrl={elasticsearchUrl} />
       </ErrorBoundary>
     </React.StrictMode>,
-    rootElement
+    rootElement,
   );
 });

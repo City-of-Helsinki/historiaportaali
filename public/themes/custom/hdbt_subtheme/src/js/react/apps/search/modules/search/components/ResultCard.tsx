@@ -1,6 +1,6 @@
-import React from 'react';
-import { ContentItem } from '../../../common/types/Content';
-import CardItem, { Metarow } from '@/react/common/Card';
+import type React from "react";
+import type { ContentItem } from "../../../common/types/Content";
+import CardItem, { Metarow } from "@/react/common/Card";
 
 interface ResultCardProps extends ContentItem {}
 
@@ -15,11 +15,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   url,
 }) => {
   const cardImage = image_url ? (
-    <img 
-      src={image_url} 
-      alt=""
-      loading="lazy"
-    />
+    <img src={image_url} alt="" loading="lazy" />
   ) : undefined;
 
   // Build custom metadata rows with icons
@@ -31,24 +27,23 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="format"
         icon="photo"
-        label={Drupal.t('Formats', {}, { context: 'Search' })}
-        content={formats.join(', ')}
-      />
+        label={Drupal.t("Formats", {}, { context: "Search" })}
+        content={formats.join(", ")}
+      />,
     );
   }
 
   // Year
   if (start_year && end_year) {
-    const yearDisplay = start_year === end_year 
-      ? `${start_year}`
-      : `${start_year} - ${end_year}`;
+    const yearDisplay =
+      start_year === end_year ? `${start_year}` : `${start_year} - ${end_year}`;
     customMetaRows.push(
       <Metarow
         key="year"
         icon="calendar"
-        label={Drupal.t('Year')}
+        label={Drupal.t("Year")}
         content={yearDisplay}
-      />
+      />,
     );
   }
 
@@ -58,9 +53,9 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="phenomena"
         icon="layers"
-        label={Drupal.t('Phenomena', {}, { context: 'Search' })}
-        content={phenomena.join(', ')}
-      />
+        label={Drupal.t("Phenomena", {}, { context: "Search" })}
+        content={phenomena.join(", ")}
+      />,
     );
   }
 
@@ -70,9 +65,9 @@ export const ResultCard: React.FC<ResultCardProps> = ({
       <Metarow
         key="neighbourhoods"
         icon="location"
-        label={Drupal.t('Region', {}, { context: 'Search' })}
-        content={neighbourhoods.join(', ')}
-      />
+        label={Drupal.t("Region", {}, { context: "Search" })}
+        content={neighbourhoods.join(", ")}
+      />,
     );
   }
 
@@ -89,4 +84,3 @@ export const ResultCard: React.FC<ResultCardProps> = ({
 };
 
 export default ResultCard;
-

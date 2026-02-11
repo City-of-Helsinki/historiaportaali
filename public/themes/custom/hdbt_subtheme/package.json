@@ -9,12 +9,14 @@
     "typecheck": "tsc --noEmit",
     "typecheck:warn": "tsc --noEmit || echo 'Warning: TypeScript errors found'",
     "dev": "npm run typecheck:warn && node theme-builder.mjs --watch --dev",
-    "build": "npm run typecheck:warn && node theme-builder.mjs && npm run postbuild",
+    "build": "npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run postbuild",
     "postbuild": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && sed -i '' '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css || true",
     "preinstall": "npx update-browserslist-db@latest",
     "lint:scss": "npx postcss \"src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
-    "lint:js": "eslint --fix src/js/ --no-error-on-unmatched-pattern",
-    "lint": "npm run lint:scss && npm run lint:js"
+    "lint:js": "biome lint src/js/",
+    "format:js": "biome format --write src/js/",
+    "lint": "npm run lint:scss && npm run lint:js",
+    "lint:fix": "npm run lint:scss && npm run format:js"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.11.0",
@@ -25,12 +27,6 @@
     "@types/react-dom": "^17.0.11",
     "breakpoint-sass": "^3.0.0",
     "css-declaration-sorter": "^7.0.3",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsdoc": "^46.4.3",
-    "eslint-plugin-prettier": "^5.0.0",
     "glob": "^10.0.0",
     "hds-design-tokens": "^2.0.0",
     "hds-react": "^4.8.1",
@@ -39,9 +35,9 @@
     "postcss": "^8.4.27",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.0",
-    "prettier": "^3.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "read-time-estimate": "^0.0.3",
     "sass": "^1.69.5",
     "stylelint": "^16.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
@@ -57,8 +53,8 @@
     "not dead"
   ],
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "hyphenopoly": "^6.0.0",
-    "read-time-estimate": "^0.0.3",
     "typescript": "^5.9.3"
   }
 }

@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - helhist_search
-    - system
   theme:
     - hdbt_subtheme
 id: hdbt_subtheme_helhistreactsearch

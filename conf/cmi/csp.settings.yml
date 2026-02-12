@@ -1,65 +1,34 @@
 _core:
   default_config_hash: 68A3PDsSIoX2q7iFOa2lMdnYkgKgem4uh1_RBxcRVWU
 report-only:
-  enable: true
-  directives:
-    object-src:
-      base: none
-    script-src:
-      base: self
-      flags:
-        - report-sample
-    style-src:
-      base: self
-      flags:
-        - report-sample
-        - unsafe-inline
-    webrtc: block
-    worker-src:
-      base: self
-    base-uri:
-      base: self
-    form-action:
-      base: self
-    frame-ancestors:
-      base: self
-    script-src-elem:
-      base: self
-      flags:
-        - unsafe-inline
-      sources:
-        - 'https://webanalytics.digiaiiris.com'
+  enable: false
+  directives: {  }
   reporting:
     plugin: none
 enforce:
-  enable: false
+  enable: true
   directives:
-    object-src:
-      base: none
+    default-src:
+      base: self
+    img-src:
+      base: self
+      sources:
+        - 'https://server.arcgisonline.com'
+        - 'https://kartta.hel.fi'
     script-src:
-      base: any
+      base: self
       flags:
         - report-sample
         - unsafe-inline
+        - wasm-unsafe-eval
     style-src:
-      base: any
+      base: self
       flags:
         - report-sample
         - unsafe-inline
-    webrtc: block
-    worker-src:
-      base: self
     base-uri:
-      base: self
-    form-action:
-      base: self
+      base: none
     frame-ancestors:
       base: self
-    script-src-elem:
-      base: self
-      flags:
-        - unsafe-inline
-      sources:
-        - 'https://webanalytics.digiaiiris.com'
   reporting:
     plugin: none

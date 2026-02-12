@@ -1,6 +1,6 @@
 uuid: 878a105a-4aea-4a4d-a21b-e4908ed4f7c8
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - helfi_etusivu_entities

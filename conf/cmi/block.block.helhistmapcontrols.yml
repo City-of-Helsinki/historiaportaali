@@ -10,7 +10,7 @@ dependencies:
 id: helhistmapcontrols
 theme: hdbt_subtheme
 region: content
-weight: -12
+weight: -15
 provider: null
 plugin: helhist_map_map_controls_block
 settings:

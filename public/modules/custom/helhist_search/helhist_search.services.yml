@@ -12,4 +12,3 @@ services:
     arguments: ['@helhist_search.search_link_generator']
     tags:
       - { name: twig.extension }
-

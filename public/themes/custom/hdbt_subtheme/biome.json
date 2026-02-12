@@ -1,7 +1,11 @@
 {
-  "extends": ["@hdbt/theme-builder/biome"],
   "files": {
-    "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.tsx", "theme-builder/**/*.mjs", "backstop/**/*.js"]
+    "include": [
+      "src/**/*.js",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.scss"
+    ]
   },
   "linter": {
     "rules": {

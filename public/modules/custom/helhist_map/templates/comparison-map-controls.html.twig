@@ -1,40 +1,107 @@
-<div class="map-controls__top-container comparison-map">
-  <div class="hds-text-input map-controls__mid-container">
-    <select class="map-controls__map-layer comparison-map hds-text-input__input" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}">
-      {% for layer in map_layers %}
-        <option class="map-controls__map-layer-item comparison-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
-          {{ layer.layer_title }}
-        </option>
-      {% endfor %}
-    </select>
+{# Single option element for a map/photo layer. Shared by both select macros below. #}
+{% macro layer_option(layer, era) %}
+  <option class="map-controls__map-layer-item comparison-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
+    {{ layer.layer_title }}
+  </option>
+{% endmacro %}
+
+{#
+  Desktop: one dropdown per category (maps OR aerial photos).
+  Takes a single layers array and renders its options.
+#}
+{% macro layer_select_block(select_id, label_text, placeholder_text, clear_label_text, layers, map_type, era, extra_select_class = '') %}
+  <div class="hds-text-input map-controls__mid-container {{ map_type == 'mobile' ? 'mobile' : '' }}">
+    <label for="{{ select_id }}" class="visually-hidden">{{ label_text }}</label>
+    <div class="map-controls__select-row">
+      <select
+        id="{{ select_id }}"
+        class="map-controls__map-layer comparison-map{{ extra_select_class ? ' ' ~ extra_select_class : '' }}"
+        aria-label="{{ label_text }}"
+        data-placeholder="{{ placeholder_text }}"
+      >
+        {% for layer in layers %}
+          {{ _self.layer_option(layer, era) }}
+        {% endfor %}
+      </select>
+      <button
+        type="button"
+        class="map-controls__clear-btn comparison-map"
+        data-clear-for="{{ select_id }}"
+        aria-label="{{ clear_label_text }}"
+        title="{{ clear_label_text }}"
+        hidden
+      >
+        {% include '@hdbt/misc/icon.twig' with { icon: 'cross', label: clear_label_text } %}
+      </button>
+    </div>
   </div>
-  <div class="hds-text-input map-controls__mid-container">
-    <select class="map-controls__map-layer comparison-map" aria-label="{{ 'Photo layer selector'|t({}, {'context' : 'Map selectors'}) }}"  data-placeholder="{{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}">
-      {% for layer in photo_layers %}
-        <option class="map-controls__map-layer-item comparison-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
-          {{ layer.layer_title }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
+{% endmacro %}
+
+{#
+  Mobile: one combined dropdown for both maps and aerial photos.
+  Takes map_layers and photo_layers separately, adds disabled separator options
+  ("Maps" / "Aerial photos") between the two groups.
+#}
+{% macro mobile_layer_select_block(select_id, label_text, placeholder_text, clear_label_text, map_layers, photo_layers, era) %}
   <div class="hds-text-input map-controls__mid-container mobile">
-    <select class="map-controls__map-layer comparison-map" aria-label="{{ 'Map layer selector'|t({}, {'context' : 'Map selectors'}) }}" data-placeholder="{{ 'Map layers'|t({}, {'context' : 'Map selectors'}) }}">
-      <option disabled>
-        {{ 'Maps'|t({}, {'context' : 'Map selectors'}) }}
-      </option>
-      {% for layer in map_layers %}
-        <option class="map-controls__map-layer-item comparison-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
-          {{ layer.layer_title }}
-        </option>
-      {% endfor %}
-      <option disabled>
-        {{ 'Aerial photos'|t({}, {'context' : 'Map selectors'}) }}
-      </option>
-      {% for layer in photo_layers %}
-        <option class="map-controls__map-layer-item comparison-map" data-map-layer-title="{{ layer.layer_title }}" data-map-api-endpoints="{{ layer.map_api_endpoints }}" data-map-api="{{ era.map_api }}" data-map-wms-title="{{ era.map_wms_title }}">
-          {{ layer.layer_title }}
-        </option>
-      {% endfor %}
-    </select>
+    <label for="{{ select_id }}" class="visually-hidden">{{ label_text }}</label>
+    <div class="map-controls__select-row">
+      <select
+        id="{{ select_id }}"
+        class="map-controls__map-layer comparison-map"
+        aria-label="{{ label_text }}"
+        data-placeholder="{{ placeholder_text }}"
+      >
+        <option disabled>{{ 'Maps'|t({}, {'context': 'Map controls'}) }}</option>
+        {% for layer in map_layers %}
+          {{ _self.layer_option(layer, era) }}
+        {% endfor %}
+        <option disabled>{{ 'Aerial photos'|t({}, {'context': 'Map controls'}) }}</option>
+        {% for layer in photo_layers %}
+          {{ _self.layer_option(layer, era) }}
+        {% endfor %}
+      </select>
+      <button
+        type="button"
+        class="map-controls__clear-btn comparison-map"
+        data-clear-for="{{ select_id }}"
+        aria-label="{{ clear_label_text }}"
+        title="{{ clear_label_text }}"
+        hidden
+      >
+        {% include '@hdbt/misc/icon.twig' with { icon: 'cross', label: clear_label_text } %}
+      </button>
+    </div>
   </div>
+{% endmacro %}
+
+<div class="map-controls__top-container comparison-map">
+  {{ _self.layer_select_block(
+    'comparison-map-layer-select',
+    'Map layer selector'|t({}, {'context': 'Map controls'}),
+    'Maps'|t({}, {'context': 'Map controls'}),
+    'Clear map layer selection'|t({}, {'context': 'Map controls'}),
+    map_layers,
+    'desktop',
+    era,
+    'hds-text-input__input'
+  ) }}
+  {{ _self.layer_select_block(
+    'comparison-photo-layer-select',
+    'Photo layer selector'|t({}, {'context': 'Map controls'}),
+    'Aerial photos'|t({}, {'context': 'Map controls'}),
+    'Clear photo layer selection'|t({}, {'context': 'Map controls'}),
+    photo_layers,
+    'desktop',
+    era
+  ) }}
+  {{ _self.mobile_layer_select_block(
+    'comparison-mobile-layer-select',
+    'Map layer selector'|t({}, {'context': 'Map controls'}),
+    'Map layers'|t({}, {'context': 'Map controls'}),
+    'Clear map layer selection'|t({}, {'context': 'Map controls'}),
+    map_layers,
+    photo_layers,
+    era
+  ) }}
 </div>

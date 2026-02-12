@@ -1,10 +1,10 @@
-import { atom } from 'jotai';
-import type URLParams from './types/URLParams';
-import { SearchFilters, Facet } from '../../common/types/Content';
+import { atom } from "jotai";
+import type URLParams from "./types/URLParams";
+import type { SearchFilters, Facet } from "../../common/types/Content";
 
 // Parse URL parameters into an object that handles arrays
 const getParams = (searchParams: URLSearchParams) => {
-  const params: { [k: string]: any } = {};
+  const params: Record<string, string | string[]> = {};
   const entries = searchParams.entries();
   let result = entries.next();
 
@@ -16,11 +16,13 @@ const getParams = (searchParams: URLSearchParams) => {
     } else {
       const existing = params[key];
       if (existing) {
-        const updatedValue = Array.isArray(existing) ? [...existing, value] : [existing, value];
+        const updatedValue = Array.isArray(existing)
+          ? [...existing, value]
+          : [existing, value];
         params[key] = updatedValue;
       } else {
         // Check if this is an array parameter (formats, phenomena, neighbourhoods)
-        if (['formats', 'phenomena', 'neighbourhoods'].includes(key)) {
+        if (["formats", "phenomena", "neighbourhoods"].includes(key)) {
           params[key] = [value];
         } else {
           params[key] = value;
@@ -35,12 +37,14 @@ const getParams = (searchParams: URLSearchParams) => {
 };
 
 // Initialize from URL parameters
-export const urlAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
+export const urlAtom = atom<URLParams>(
+  getParams(new URLSearchParams(window.location.search)),
+);
 
 // Atom to update URL and sync state
 export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   // set atom value
-  values.page = values.page || '1';
+  values.page = values.page || "1";
   set(urlAtom, values);
   set(stagedFiltersAtom, values);
 
@@ -48,17 +52,18 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   const newUrl = new URL(window.location.toString());
   const newParams = new URLSearchParams();
 
-  // eslint-disable-next-line
   for (const key in values) {
     const value = values[key as keyof URLParams];
 
     // Skip page parameter if it's 1 (default page)
-    if (key === 'page' && value === '1') {
+    if (key === "page" && value === "1") {
       continue;
     }
 
     if (Array.isArray(value)) {
-      value.forEach((option: string) => newParams.append(key, option));
+      for (const option of value) {
+        newParams.append(key, option);
+      }
     } else if (value) {
       newParams.set(key, value.toString());
     } else {
@@ -67,7 +72,7 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   }
 
   newUrl.search = newParams.toString();
-  window.history.pushState({}, '', newUrl);
+  window.history.pushState({}, "", newUrl);
 });
 
 // Read-only atom for getting current page (0-based)
@@ -83,11 +88,13 @@ export const setPageAtom = atom(null, (get, set, pageIndex: number) => {
 });
 
 // Staged filters atom for form input (not yet submitted)
-export const stagedFiltersAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
+export const stagedFiltersAtom = atom<URLParams>(
+  getParams(new URLSearchParams(window.location.search)),
+);
 
 // Helper to create string field atoms
 const createStringFieldAtom = (field: keyof URLParams) => {
-  const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || '');
+  const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || "");
   const setAtom = atom(null, (get, set, value: string) => {
     set(stagedFiltersAtom, { ...get(stagedFiltersAtom), [field]: value });
   });
@@ -101,7 +108,11 @@ const normalizeArray = (value: string | string[] | undefined): string[] => {
 
 // Helper to create array field atoms
 const createArrayFieldAtom = (field: keyof URLParams) => {
-  const getAtom = atom((get) => normalizeArray(get(stagedFiltersAtom)?.[field] as string | string[] | undefined));
+  const getAtom = atom((get) =>
+    normalizeArray(
+      get(stagedFiltersAtom)?.[field] as string | string[] | undefined,
+    ),
+  );
   const setAtom = atom(null, (get, set, value: string[]) => {
     set(stagedFiltersAtom, { ...get(stagedFiltersAtom), [field]: value });
   });
@@ -109,34 +120,34 @@ const createArrayFieldAtom = (field: keyof URLParams) => {
 };
 
 // Keywords atoms
-const keywords = createStringFieldAtom('q');
+const keywords = createStringFieldAtom("q");
 export const keywordsAtom = keywords.getAtom;
 export const setKeywordsAtom = keywords.setAtom;
 
 // Year range atoms
-const startYear = createStringFieldAtom('startYear');
+const startYear = createStringFieldAtom("startYear");
 export const startYearAtom = startYear.getAtom;
 export const setStartYearAtom = startYear.setAtom;
 
-const endYear = createStringFieldAtom('endYear');
+const endYear = createStringFieldAtom("endYear");
 export const endYearAtom = endYear.getAtom;
 export const setEndYearAtom = endYear.setAtom;
 
 // Array filter atoms
-const phenomena = createArrayFieldAtom('phenomena');
+const phenomena = createArrayFieldAtom("phenomena");
 export const phenomenaAtom = phenomena.getAtom;
 export const setPhenomenaAtom = phenomena.setAtom;
 
-const formats = createArrayFieldAtom('formats');
+const formats = createArrayFieldAtom("formats");
 export const formatsAtom = formats.getAtom;
 export const setFormatsAtom = formats.setAtom;
 
-const neighbourhoods = createArrayFieldAtom('neighbourhoods');
+const neighbourhoods = createArrayFieldAtom("neighbourhoods");
 export const neighbourhoodsAtom = neighbourhoods.getAtom;
 export const setNeighbourhoodsAtom = neighbourhoods.setAtom;
 
 // Sort atoms
-const sort = createStringFieldAtom('sort');
+const sort = createStringFieldAtom("sort");
 export const sortAtom = sort.getAtom;
 export const setSortAtom = sort.setAtom;
 
@@ -144,14 +155,20 @@ export const setSortAtom = sort.setAtom;
 export const searchFiltersAtom = atom<SearchFilters>((get) => {
   const params = get(urlAtom);
   return {
-    keywords: params.q || '',
-    startYear: params.startYear !== undefined && params.startYear !== '' ? parseInt(params.startYear) : undefined,
-    endYear: params.endYear !== undefined && params.endYear !== '' ? parseInt(params.endYear) : undefined,
+    keywords: params.q || "",
+    startYear:
+      params.startYear !== undefined && params.startYear !== ""
+        ? Number.parseInt(params.startYear)
+        : undefined,
+    endYear:
+      params.endYear !== undefined && params.endYear !== ""
+        ? Number.parseInt(params.endYear)
+        : undefined,
     formats: normalizeArray(params.formats),
     phenomena: normalizeArray(params.phenomena),
     neighbourhoods: normalizeArray(params.neighbourhoods),
-    sort: params.sort || 'relevance',
-    sort_order: params.sort_order || 'DESC',
+    sort: params.sort || "relevance",
+    sort_order: params.sort_order || "DESC",
   };
 });
 
@@ -167,4 +184,3 @@ export const initializedAtom = atom(false);
 // Facets atom (shared between ResultsContainer and SearchForm)
 export const facetsAtom = atom<Facet[]>([]);
 export const isLoadingFacetsAtom = atom(false);
-

@@ -1,94 +1,120 @@
-// eslint-disable-next-line no-unused-vars
-(($, Drupal, drupalSettings, once) => {
-  Drupal.behaviors.themeCommon = {
-    attach: function (context, settings) {
+/* global jQuery, Drupal, once, L, document */
 
+((jQuery, Drupal, once) => {
+  const { behaviors } = Drupal;
+
+  behaviors.themeCommon = {
+    attach(context) {
       // Header search form
-      const $searchToggleBtn = $('.header-search .nav-toggle__button', context);
-      const $searchFormWrapper = $('.header-search__form-wrapper', context);
+      const $searchToggleBtn = jQuery(
+        ".header-search .nav-toggle__button",
+        context,
+      );
+      const $searchFormWrapper = jQuery(
+        ".header-search__form-wrapper",
+        context,
+      );
 
-      const openSearchForm = function() {
-        $searchToggleBtn.attr('aria-expanded', 'true');
-        $searchFormWrapper.stop(true, false).slideDown(300, function() {
-          $('#edit-q-header').focus();
+      const openSearchForm = () => {
+        $searchToggleBtn.attr("aria-expanded", "true");
+        $searchFormWrapper.stop(true, false).slideDown(300, () => {
+          jQuery("#edit-q-header").focus();
         });
       };
 
-      const closeSearchForm = function() {
-        $searchToggleBtn.attr('aria-expanded', 'false');
+      const closeSearchForm = () => {
+        $searchToggleBtn.attr("aria-expanded", "false");
         $searchFormWrapper.stop(true, false).slideUp(300);
       };
 
-      once('header-search-toggle', '.header-search .nav-toggle__button', context).forEach(element => {
-        $(element).on('click', function(e) {
+      for (const element of once(
+        "header-search-toggle",
+        ".header-search .nav-toggle__button",
+        context,
+      )) {
+        jQuery(element).on("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
 
-          const isExpanded = $(this).attr('aria-expanded') === 'true';
-          isExpanded ? closeSearchForm() : openSearchForm();
+          const isExpanded = jQuery(element).attr("aria-expanded") === "true";
+          if (isExpanded) {
+            closeSearchForm();
+          } else {
+            openSearchForm();
+          }
         });
-      });
+      }
 
       // Hide header search form if clicked outside the search element
-      $(document).on('click', function(event) {
-        if (!$(event.target).closest('.header-search').length) {
-          if ($searchToggleBtn.attr('aria-expanded') === 'true') {
+      jQuery(document).on("click", (event) => {
+        if (!jQuery(event.target).closest(".header-search").length) {
+          if ($searchToggleBtn.attr("aria-expanded") === "true") {
             closeSearchForm();
           }
         }
       });
-      
+
       // Hide header search form on escape key press.
-      $(document).keyup(function(e) {
-        if (e.key === "Escape" && $searchToggleBtn.attr('aria-expanded') === 'true') {
+      jQuery(document).keyup((e) => {
+        if (
+          e.key === "Escape" &&
+          $searchToggleBtn.attr("aria-expanded") === "true"
+        ) {
           closeSearchForm();
         }
       });
 
       // Add even / odd classes to Image and Video -paragraphs
-      Drupal.behaviors.themeCommon.addEvenOddClasses(context);
+      behaviors.themeCommon.addEvenOddClasses(context);
 
-      Drupal.behaviors.themeCommon.addKoreMarkers(context);
+      behaviors.themeCommon.addKoreMarkers(context);
     },
 
-    addEvenOddClasses: function(context) {
-      let $articleContentContainer = $('.node--type-article.node--view-mode-full .paragraph-content', context);
-      let $elements = $('.image, .remote-video', $articleContentContainer);
+    addEvenOddClasses(context) {
+      const $articleContentContainer = jQuery(
+        ".node--type-article.node--view-mode-full .paragraph-content",
+        context,
+      );
+      const $elements = jQuery(
+        ".image, .remote-video",
+        $articleContentContainer,
+      );
 
       if ($elements.length) {
-        $elements.each(function(index) {
-          if ((index % 2) == 0) {
-            $(this).addClass('odd');
+        $elements.each((index, element) => {
+          const $element = jQuery(element);
+          if (index % 2 === 0) {
+            $element.addClass("odd");
           } else {
-            $(this).addClass('even');
+            $element.addClass("even");
           }
         });
       }
     },
 
-    addKoreMarkers: function(context) {
+    addKoreMarkers() {
       // Note: We search globally (not within context) because for logged-in users,
       // the context parameter is often limited to admin toolbar/contextual links
       // and doesn't include the main content area where these elements exist.
-      const BUILDING_SELECTOR = 'div.paragraph--type--kore-building';
-      const BUTTON_SELECTOR = 'button.kore-address';
+      const BUILDING_SELECTOR = "div.paragraph--type--kore-building";
+      const BUTTON_SELECTOR = "button.kore-address";
 
-      $(document).on('leafletMapInit', function(e, settings, lMap, mapid) {
-        const $buildings = $(BUILDING_SELECTOR);
+      jQuery(document).on("leafletMapInit", (_e, _settings, lMap) => {
+        const $buildings = jQuery(BUILDING_SELECTOR);
 
-        $buildings.each(function() {
-          const $building = $(this);
+        $buildings.each((_index, building) => {
+          const $building = jQuery(building);
 
           // Add marker to map for this building
           const $button = $building.find(BUTTON_SELECTOR);
-          const lat = $button.attr('data-lat');
-          const lon = $button.attr('data-lon');
+          const lat = $button.attr("data-lat");
+          const lon = $button.attr("data-lon");
 
           if (lat && lon && lat !== lon) {
             const latlon = new L.LatLng(lat, lon);
             const markerIcon = L.icon({
-              iconSize: ['36', '36'],
-              iconUrl: '/themes/custom/hdbt_subtheme/src/icons/map_marker.svg'
+              iconSize: ["36", "36"],
+              iconUrl: "/themes/custom/hdbt_subtheme/src/icons/map_marker.svg",
             });
 
             L.marker(latlon, { icon: markerIcon }).addTo(lMap);
@@ -96,20 +122,20 @@
         });
 
         // Attach click handlers to all remaining buttons
-        const $allButtons = $(BUTTON_SELECTOR);
-        $allButtons.off('click').on('click', function() {
-          const lat = $(this).attr('data-lat');
-          const lon = $(this).attr('data-lon');
+        const $allButtons = jQuery(BUTTON_SELECTOR);
+        $allButtons.off("click").on("click", (event) => {
+          const $target = jQuery(event.currentTarget);
+          const lat = $target.attr("data-lat");
+          const lon = $target.attr("data-lon");
           const latlon = new L.LatLng(lat, lon);
 
           lMap.flyTo(latlon, 16);
 
-          $('article')[0].scrollIntoView({
-            behavior: 'smooth',
+          jQuery("article")[0].scrollIntoView({
+            behavior: "smooth",
           });
         });
       });
-    }
+    },
   };
-  // eslint-disable-next-line no-undef
-})(jQuery, Drupal, drupalSettings, once);
+})(jQuery, Drupal, once);

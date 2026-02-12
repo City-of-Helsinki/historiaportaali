@@ -13,7 +13,11 @@
       L.Map.addInitHook(function () {
         const map = this;
 
-        if (this.options?.mapName === "comparison-map") {
+        const mapName = this.options?.mapName === "comparison-map"
+          ? "comparison-map"
+          : "main-map";
+
+        if (mapName === "comparison-map") {
           self.bindLayerControls(this, "comparison-map");
         } else {
           self.bindLayerControls(this, "main-map");
@@ -22,9 +26,14 @@
           this.removeControl(this.zoomControl);
         }
 
-        $(".map-controls__map-layer").each(function () {
+        const $mapLayerSelects = $(`.map-controls__map-layer.${mapName}`);
+
+        $mapLayerSelects.each(function () {
           const $select = $(this);
           const ariaLabel = $select.attr("aria-label");
+          const selectId = $select.attr("id");
+
+          if (!selectId) return;
 
           $select.select2({
             minimumResultsForSearch: Number.POSITIVE_INFINITY,
@@ -34,7 +43,6 @@
             allowClear: true,
           });
 
-          // Select2 has no option to prevent opening when clear is clicked (4.x behavior).
           $select.on("select2:unselecting", () => {
             $select.data("map-controls-unselecting", true);
           });
@@ -52,7 +60,6 @@
             }
           });
 
-          // Target the specific selection container
           const $selectionContainer = $select
             .next(".select2-container")
             .find(".select2-selection__rendered");
@@ -62,6 +69,8 @@
             "aria-haspopup": "listbox",
             "aria-expanded": "false",
           });
+
+          const $clearBtn = $(`.map-controls__clear-btn[data-clear-for="${selectId}"]`);
 
           $select
             .on("select2:open", () => {
@@ -75,42 +84,19 @@
               "aria-label",
               `${ariaLabel}: ${e.params.data.text}`,
             );
-            $(document)
-              .find(
-                `.map-controls__clear-btn[data-clear-for="${$select.attr(
-                  "id",
-                )}"]`,
-              )
-              .prop("hidden", false)
-              .attr("aria-hidden", "false");
+            $clearBtn.prop("hidden", false).attr("aria-hidden", "false");
           });
           $select.on("select2:clear", () => {
             $selectionContainer.attr("aria-label", ariaLabel);
-            $(document)
-              .find(
-                `.map-controls__clear-btn[data-clear-for="${$select.attr(
-                  "id",
-                )}"]`,
-              )
-              .prop("hidden", true)
-              .attr("aria-hidden", "true");
+            $clearBtn.prop("hidden", true).attr("aria-hidden", "true");
           });
+          $clearBtn.prop("hidden", true).attr("aria-hidden", "true");
         });
 
-        $(".map-controls__map-layer").val("default").trigger("change.select2");
+        $mapLayerSelects.val("default").trigger("change.select2");
 
-        $(".map-controls__map-layer").each((_index, element) => {
-          const $select = $(element);
-          const $btn = $(document).find(
-            `.map-controls__clear-btn[data-clear-for="${$select.attr("id")}"]`,
-          );
-          if ($select.val()) {
-            $btn.prop("hidden", false).attr("aria-hidden", "false");
-          } else {
-            $btn.prop("hidden", true).attr("aria-hidden", "true");
-          }
-        });
-
+        if (!$(document).data("map-controls-clear-handler-attached")) {
+          $(document).data("map-controls-clear-handler-attached", true);
         $(document).on(
           "mousedown.mapcontrols click.mapcontrols",
           ".map-controls__clear-btn",
@@ -123,14 +109,21 @@
             const $select = $(`#${selectId}`);
             if (!$select.length || !$select.hasClass("map-controls__map-layer"))
               return;
+            const isComparison = $select.hasClass("comparison-map");
+            const $mapContainer = isComparison
+              ? $("#comparison-map-container")
+              : $("[id^='leaflet-map-view-combined-map-block']").first();
+            const lMap = $mapContainer.data("leaflet")?.lMap;
+            if (!lMap) return;
             $btn.prop("hidden", true).attr("aria-hidden", "true");
             requestAnimationFrame(() => {
               $select.data("map-controls-unselecting", true);
               $select.val(null).trigger("change");
-              self.removeOtherMapLayers(map, null);
+              self.removeOtherMapLayers(lMap, null);
             });
           },
         );
+        }
 
         this.on("unload", function () {
           if (this.options?.mapName === "comparison-map") {
@@ -424,12 +417,11 @@
         this.handleLayerSelection(lMap, selectedLayerTitle, mapApiEndpoints);
         lMap._mapControlsResettingOthers = true;
         $controls.not(e.target).each(function () {
-          $(document)
-            .find(
-              `.map-controls__clear-btn[data-clear-for="${$(this).attr(
-                "id",
-              )}"]`,
-            )
+          const selectId = $(this).attr("id");
+          if (!selectId) return;
+          $(this)
+            .closest(".map-controls__select-row")
+            .find(`.map-controls__clear-btn[data-clear-for="${selectId}"]`)
             .prop("hidden", true)
             .attr("aria-hidden", "true");
         });

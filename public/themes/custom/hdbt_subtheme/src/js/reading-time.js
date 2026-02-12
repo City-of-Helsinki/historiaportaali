@@ -1,4 +1,4 @@
-const readTimeEstimate = require("read-time-estimate");
+const readTimeEstimate = require("read-time-estimate").default;
 
 ((jQuery, Drupal) => {
   const { behaviors } = Drupal;

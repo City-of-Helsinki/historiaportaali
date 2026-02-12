@@ -1,5 +1,6 @@
 .csslintrc
 .eslintignore
+.eslintrc.json
 .ht.router.php
 .htaccess
 INSTALL.txt

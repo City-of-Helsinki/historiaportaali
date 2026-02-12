@@ -21,6 +21,8 @@ enforce:
         - report-sample
         - unsafe-inline
         - wasm-unsafe-eval
+      sources:
+        - 'https://e.infogram.com'
     style-src:
       base: self
       flags:
@@ -30,5 +32,9 @@ enforce:
       base: none
     frame-ancestors:
       base: self
+    frame-src:
+      base: self
+      sources:
+        - 'https://e.infogram.com'
   reporting:
     plugin: none

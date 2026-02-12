@@ -50,6 +50,9 @@
   {% endif %}
 
   <div class="map-container">
+    {# Map controls first in DOM so they are tabbed to before the map and markers #}
+    {{ drupal_block('helhist_map_map_controls_block') }}
+
     {{ attachment_before }}
     {{ rows }}
 
@@ -59,8 +62,6 @@
         {% include '@hdbt/misc/icon.twig' with {icon: 'cross'} %}
       </div>
     </div>
-
-    {{ drupal_block('helhist_map_map_controls_block') }}
 
     <div id="map-loading-overlay">
       <div id="spinner-container">

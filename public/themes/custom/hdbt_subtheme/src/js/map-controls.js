@@ -95,6 +95,25 @@
 
         $mapLayerSelects.val("default").trigger("change.select2");
 
+        // Track Tab vs mouse for marker focus: only pan on keyboard focus, not click
+        if (!document.body.hasAttribute("data-map-controls-keyboard-tracker")) {
+          document.body.setAttribute("data-map-controls-keyboard-tracker", "1");
+          document.addEventListener(
+            "keydown",
+            (e) => {
+              if (e.key === "Tab") window._mapControlsFocusFromKeyboard = true;
+            },
+            true,
+          );
+          document.addEventListener(
+            "mousedown",
+            () => {
+              window._mapControlsFocusFromKeyboard = false;
+            },
+            true,
+          );
+        }
+
         if (!$(document).data("map-controls-clear-handler-attached")) {
           $(document).data("map-controls-clear-handler-attached", true);
         $(document).on(
@@ -149,7 +168,15 @@
               markerElement.removeAttribute("title");
               markerElement.setAttribute("aria-label", label);
 
-              // Pan on focus is handled by Leaflet's default autoPanOnFocus. We add keydown for Enter+Space (Leaflet only handles Enter via keypress).
+              // Pan map to center marker on keyboard focus only (mouse click has its own popup+pan flow)
+              markerElement.addEventListener("focus", () => {
+                if (window._mapControlsFocusFromKeyboard) {
+                  window._mapControlsFocusFromKeyboard = false;
+                  map.panTo(e.layer.getLatLng(), { animate: true });
+                }
+              });
+
+              // Enter+Space open popup (Leaflet only handles Enter via keypress)
               markerElement.addEventListener("keydown", (event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();

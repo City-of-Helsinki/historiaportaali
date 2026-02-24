@@ -178,3 +178,59 @@ msgstr "Tuloksia ei voitu ladata"
 msgctxt "Search"
 msgid "Page @current of @total"
 msgstr "Sivu @current / @total"
+
+msgctxt "Map controls"
+msgid "Map layer selector"
+msgstr "Karttakerroksen valitsin"
+
+msgctxt "Map controls"
+msgid "Maps"
+msgstr "Kartat"
+
+msgctxt "Map controls"
+msgid "Clear map layer selection"
+msgstr "Tyhjennä karttakerroksen valinta"
+
+msgctxt "Map controls"
+msgid "Photo layer selector"
+msgstr "Kuvakerroksen valitsin"
+
+msgctxt "Map controls"
+msgid "Aerial photos"
+msgstr "Ilmakuvat"
+
+msgctxt "Map controls"
+msgid "Clear photo layer selection"
+msgstr "Tyhjennä kuvakerroksen valinta"
+
+msgctxt "Map controls"
+msgid "Map layers"
+msgstr "Karttakerrokset"
+
+msgctxt "Map controls"
+msgid "Compare maps"
+msgstr "Vertaile karttoja"
+
+msgctxt "Map controls"
+msgid "Zoom in"
+msgstr "Lähennä"
+
+msgctxt "Map controls"
+msgid "Zoom out"
+msgstr "Loitonna"
+
+msgctxt "Map controls"
+msgid "Locate me"
+msgstr "Näytä sijaintini"
+
+msgctxt "Map controls"
+msgid "Cluster of @count markers"
+msgstr "Ryhmä: @count paikkaa"
+
+msgctxt "Map controls"
+msgid "Location data blocked"
+msgstr "Paikannus ei sallittu"
+
+msgctxt "Map controls"
+msgid "You must allow your broser to use your location to see places near you."
+msgstr "Sinun tulee sallia selaimen sijainnin käyttö nähdäksesi lähellä olevat paikat."

@@ -1,49 +1,38 @@
 .social-media-sharing {
   display: flex;
-  line-height: 0;
-  margin: 0 0 $spacing-and-half; // By design the margin is 12px.
+  line-height: 1;
+  margin-bottom: $spacing;
+
   .social-media-sharing__title {
     align-items: center;
     display: flex;
-    margin-right: $spacing;
-
-    .hel-icon {
-      margin-right: $spacing-half;
-      --icon-size: #{$spacing-and-half};
-    }
-
-    svg {
-      vertical-align: middle;
-    }
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    margin-right: $spacing-half;
   }
 
   .share {
-    color: $color-black;
     list-style: none;
-    margin: 0 6px; // By design the margin is 12px.
     text-decoration: none;
 
     .hel-icon {
-    --icon-size: #{$spacing-and-half};
+      --icon-size: #{$spacing-double};
     }
 
     &:focus,
     &:active,
     &:hover {
-      &.email {
-        color: $color-black-70;
+      &.email,
+      &.twitter {
+        color: $color-black-80;
       }
 
       &.facebook-share {
-        color: #4169AF;
+        color: #1877f2;
       }
 
       &.linkedin {
-        color: #0079B2;
-      }
-
-      &.twitter {
-        color: #0DA4EE;
+        color: #0077b5;
       }
     }
   }

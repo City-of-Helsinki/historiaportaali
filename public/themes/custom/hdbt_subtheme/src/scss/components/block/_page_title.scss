@@ -19,7 +19,8 @@
     }
   }
 
-  h5 {
+  .page-title__subtitle {
+    font-weight: bold;
     margin: $spacing 0 0;
     max-width: $content-width-max;
     text-transform: uppercase;

@@ -8,4 +8,4 @@ id: user
 label: User
 tags:
   canonical_url: '[user:url]'
-  title: '[user:display-name] | [site:page-title-suffix]'
+  title: '[user:display-name] | [site:name] | [site:page-title-suffix]'

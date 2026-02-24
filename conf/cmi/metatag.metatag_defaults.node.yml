@@ -5,7 +5,7 @@ dependencies: {  }
 id: node
 label: Content
 tags:
-  title: '[node:title] | [site:page-title-suffix]'
+  title: '[node:title] | [site:name] | [site:page-title-suffix]'
   description: '[node:lead-in]'
   canonical_url: '[node:url]'
   article_modified_time: '[node:changed:html_datetime]'

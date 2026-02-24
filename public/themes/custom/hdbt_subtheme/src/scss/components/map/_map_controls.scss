@@ -79,6 +79,42 @@
     }
   }
 
+  .map-controls__select-row {
+    position: relative;
+  }
+
+  .map-controls__clear-btn {
+    background: $color-black-80;
+    border: 0;
+    color: $color-white;
+    cursor: pointer;
+    padding: $spacing-half;
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    &[hidden] {
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: $color-black-90;
+    }
+
+    &:not([hidden]) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hel-icon {
+      --icon-size: 1.25rem;
+    }
+  }
+
   .map-controls__mid-container {
     margin-right: $spacing;
 
@@ -106,6 +142,7 @@
       background: $color-black-80;
       color: $color-white;
       @include font-size(15px, 24px);
+      position: relative;
 
       &:hover {
         background: $color-black-90;
@@ -116,27 +153,18 @@
       }
 
       .select2-selection__clear {
-        background: $color-white;
-        height: 26px;
-        margin-right: 46px;
-        margin-top: 15px;
-        mask-image:url(../icons/cross-circle.svg);
-        width: 26px;
-        -webkit-mask-image:url(../icons/cross-circle.svg);
-
-        &:hover {
-          mask-image:url(../icons/cross-circle-fill.svg);
-          -webkit-mask-image:url(../icons/cross-circle-fill.svg);
-        }
+        display: none; /* Use .map-controls__clear-btn for keyboard (Tab) access */
       }
 
       .select2-selection__arrow {
         background: $color-white;
         height: 26px;
-         mask-image:url(../icons/angle-down.svg);
+        mask-image: url(../icons/angle-down.svg);
+        position: absolute;
+        right: $spacing-half;
         top: 15px;
         width: 26px;
-         -webkit-mask-image:url(../icons/angle-down.svg);
+        -webkit-mask-image: url(../icons/angle-down.svg);
 
         b {
           display: none;
@@ -337,7 +365,7 @@
       margin-bottom: $spacing;
     }
 
-    span.info-icon {
+    span.icon {
       background: url('../icons/info-circle.svg') no-repeat left center;
       background-size: 100%;
       height: 22px;

@@ -91,9 +91,9 @@
     gap: $spacing-half;
 
     button {
+      column-gap: 4px;
       font-size: $fontsize-body-s;
       font-weight: $font-weight-regular;
-      column-gap: 4px;
       padding: 6px $spacing-quarter;
 
       .hds-button__icon,
@@ -106,8 +106,8 @@
       }
 
       @include breakpoint($breakpoint-s) {
-        font-size: $fontsize-body-m;
         column-gap: revert;
+        font-size: $fontsize-body-m;
         padding: $spacing-half $spacing;
 
         .hds-button__icon,

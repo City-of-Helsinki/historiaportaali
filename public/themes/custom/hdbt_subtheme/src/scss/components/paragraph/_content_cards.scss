@@ -30,27 +30,6 @@ $card_spacing: $spacing-and-half;
   }
 }
 
-.content-card__link {
-  height: 100%;
-  padding-bottom: 0;
-
-  @include breakpoint($breakpoint-m) {
-    padding-bottom: $spacing;
-    width: auto;
-  }
-
-  &::after {
-    display: none !important;
-  }
-
-  &:hover,
-  &:focus {
-    .content-card__arrow {
-      padding-left: $spacing;
-    }
-  }
-}
-
 .content-card__image {
   img {
     object-fit: cover;

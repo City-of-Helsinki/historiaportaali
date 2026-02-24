@@ -86,40 +86,14 @@
             }
 
             .media__usage {
-              article.content-card--design-listing-item {
+              h2 {
+                margin-left: 0;
+              }
+              .content-card--design-listing-item {
                 height: 100%;
-                margin-top: 0;
+                margin: 0;
                 min-width: 100%;
                 padding: 0;
-            
-                .content-card__link {
-                  display: flex;
-                  height: 100%;
-                  width: 100%;
-            
-                  .content-card__image {
-                    width: 35%;
-                    
-                    div,
-                    img {
-                      height: 100%;
-                    }
-                  }
-            
-                  .content-card__content {
-                    width: 65%;
-                  }
-            
-                  .content-card__metadata {
-                    display: flex;
-                    margin-top: $spacing;
-
-                    .content-card__phenomena,
-                    .content-card__year {
-                      display: none;
-                    }
-                  }
-                }
               }
             }
           }

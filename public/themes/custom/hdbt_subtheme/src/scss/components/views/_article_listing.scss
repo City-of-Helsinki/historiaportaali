@@ -19,26 +19,21 @@
 
     .content-card__link {
       display: flex;
+      flex-direction: column;
       height: 100%;
       width: 100%;
 
-      .content-card__image {
-        width: 45%;
+      @include breakpoint($breakpoint-m) {
+        flex-direction: row;
+      }
 
-        div,
-        img {
-          height: 100%;
+      .content-card__image,
+      .content-card__content {
+        width: 100%;
+
+        @include breakpoint($breakpoint-m) {
+          width: 50%;
         }
-      }
-
-      .content-card__content {
-        width: 55%;
-      }
-
-      .content-card__article-count,
-      .content-card__metadata {
-        display: flex;
-        margin-top: $spacing;
       }
     }
   }

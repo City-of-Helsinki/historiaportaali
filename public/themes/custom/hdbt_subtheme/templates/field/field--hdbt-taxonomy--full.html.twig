@@ -20,7 +20,7 @@
   {% endfor %}
 {% else %}
   <div class="hdbt_taxonomy__wrapper">
-    <h3{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
+    <h2{{ title_attributes.addClass(title_classes) }} id={{ field_name }}>{{ label|t({}, {'context': 'Content'}) }}</h3>
     <div class="hdbt_taxonomy" aria-labelledby={{ field_name }}>
       {% for item in items %}
         {% set url = search_url(field_name, item.content|render|striptags|trim) %}

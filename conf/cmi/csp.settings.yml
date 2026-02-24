@@ -15,6 +15,9 @@ enforce:
       sources:
         - 'https://server.arcgisonline.com'
         - 'https://kartta.hel.fi'
+        - 'https://a.tile.openstreetmap.org'
+        - 'https://b.tile.openstreetmap.org'
+        - 'https://c.tile.openstreetmap.org'
     script-src:
       base: self
       flags:
@@ -23,6 +26,7 @@ enforce:
         - wasm-unsafe-eval
       sources:
         - 'https://e.infogram.com'
+        - 'https://webanalytics.digiaiiris.com'
     style-src:
       base: self
       flags:
@@ -36,5 +40,9 @@ enforce:
       base: self
       sources:
         - 'https://e.infogram.com'
+    connect-src:
+      base: self
+      sources:
+        - 'https://api.finna.fi'
   reporting:
     plugin: none

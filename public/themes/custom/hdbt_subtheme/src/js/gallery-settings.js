@@ -1,7 +1,7 @@
 import { tns } from "tiny-slider";
 import Splide from "@splidejs/splide";
 
-/* global document, window */
+/* global document, window, drupalSettings */
 
 document.addEventListener("DOMContentLoaded", () => {
   const galleries = document.getElementsByClassName("gallery");
@@ -9,11 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Screen width to start showing pagination.
   const breakpointWidth = 992;
 
+  const i18n =
+    typeof drupalSettings !== "undefined" &&
+    drupalSettings.hdbtGallery?.i18n
+      ? drupalSettings.hdbtGallery.i18n
+      : undefined;
+
   for (const gallery of galleries) {
     const splideElement = gallery.getElementsByClassName("splide")[0];
     const splide = new Splide(splideElement, {
       pagination: window.innerWidth >= breakpointWidth,
       a11y: true,
+      rewind: true,
+      i18n,
     });
 
     // Handle window resize to toggle pagination
@@ -67,14 +75,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const thumbnailSlider = tns({
       container: thumbnailList,
       mouseDrag: true,
-      items: 6,
       center: false,
       loop: false,
+      rewind: true,
       slideBy: 1,
       autoplay: false,
       gutter: 16,
       nav: false,
       edgePadding: 0,
+      controlsText: i18n
+        ? [i18n.prev, i18n.next]
+        : undefined,
       responsive: {
         0: { disable: true },
         [breakpointWidth]: { disable: false },

@@ -293,6 +293,20 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
   // and generate the thumbnails.
   if ($paragraph_type == 'gallery') {
     $variables['#attached']['library'][] = 'hdbt_subtheme/gallery';
+    $variables['#attached']['drupalSettings']['hdbtGallery'] = [
+      'i18n' => [
+        'prev' => t('Previous slide', [], ['context' => 'Gallery']),
+        'next' => t('Next slide', [], ['context' => 'Gallery']),
+        'first' => t('Go to first slide', [], ['context' => 'Gallery']),
+        'last' => t('Go to last slide', [], ['context' => 'Gallery']),
+        'carousel' => t('Carousel', [], ['context' => 'Gallery']),
+        'select' => t('Carousel pagination', [], ['context' => 'Gallery']),
+        'slide' => t('slide', [], ['context' => 'Gallery']),
+        'slideLabel' => t('%s of %s', [], ['context' => 'Gallery']),
+        'slideX' => t('Go to slide %s', [], ['context' => 'Gallery']),
+        'pageX' => t('Go to page %s', [], ['context' => 'Gallery']),
+      ],
+    ];
 
     $slide_paragraphs = $paragraph->get('field_gallery_slides')->getValue();
     $slide_ids = [];

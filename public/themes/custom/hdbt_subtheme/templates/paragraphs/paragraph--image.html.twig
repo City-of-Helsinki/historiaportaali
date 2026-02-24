@@ -116,14 +116,14 @@
                   <div class="media--image__content__meta">
                     {% if media.fields.field_geolocation is not empty %}
                       <div class="media--image__content__map_link">
-                        {% include '@hdbt/misc/icon.twig' with {icon: 'location', label: 'Location marker icon'|t } %}
+                        {% include '@hdbt/misc/icon.twig' with {icon: 'location' } %}
                         <a href="/{{ language }}/kartta?id={{ media.id() }}">{{ 'Show on map'|t({}, {'context': 'Content'}) }}</a>
                       </div>
                     {% endif %}
 
                     {% if media.fields.field_start_year.value is not empty %}
                       <div class="media--image__content__era">
-                        {% include '@hdbt/misc/icon.twig' with {icon: 'calendar', label: 'Calendar'|t } %}
+                        {% include '@hdbt/misc/icon.twig' with {icon: 'calendar' } %}
                         <span class="era__start">{{ media.fields.field_start_year.value }}</span>
                         {% if media.fields.field_end_year.value is not empty %}
                           <span class="era__divider"> - </span>

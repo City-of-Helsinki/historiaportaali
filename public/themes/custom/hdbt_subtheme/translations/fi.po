@@ -234,3 +234,43 @@ msgstr "Paikannus ei sallittu"
 msgctxt "Map controls"
 msgid "You must allow your broser to use your location to see places near you."
 msgstr "Sinun tulee sallia selaimen sijainnin käyttö nähdäksesi lähellä olevat paikat."
+
+msgctxt "Gallery"
+msgid "Previous slide"
+msgstr "Edellinen dia"
+
+msgctxt "Gallery"
+msgid "Next slide"
+msgstr "Seuraava dia"
+
+msgctxt "Gallery"
+msgid "Go to first slide"
+msgstr "Siirry ensimmäiseen diaan"
+
+msgctxt "Gallery"
+msgid "Go to last slide"
+msgstr "Siirry viimeiseen diaan"
+
+msgctxt "Gallery"
+msgid "Carousel"
+msgstr "Karuselli"
+
+msgctxt "Gallery"
+msgid "Carousel pagination"
+msgstr "Karusellin sivujen valinta"
+
+msgctxt "Gallery"
+msgid "slide"
+msgstr "dia"
+
+msgctxt "Gallery"
+msgid "%s of %s"
+msgstr "%s / %s"
+
+msgctxt "Gallery"
+msgid "Go to slide %s"
+msgstr "Siirry diaan %s"
+
+msgctxt "Gallery"
+msgid "Go to page %s"
+msgstr "Siirry sivulle %s"

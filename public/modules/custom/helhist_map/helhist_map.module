@@ -147,8 +147,15 @@ function helhist_map_form_views_exposed_form_alter(&$form, FormStateInterface $f
     foreach ($active_terms as $active_term) {
       $form[$select_field]['#options'][$active_term[0]] = $active_term[1];
     }
+    $form[$select_field]['#label_display'] = 'before';
   }
 
+  // Ensure proper label display for accessibility
+  foreach (['start_year', 'end_year'] as $field) {
+    if (isset($form[$field])) {
+      $form[$field]['#label_display'] = 'before';
+    }
+  }
 }
 
 /**

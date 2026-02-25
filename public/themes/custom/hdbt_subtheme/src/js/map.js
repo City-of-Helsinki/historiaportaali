@@ -185,18 +185,30 @@
 
     bindPopupPositioning() {
       map.on("popupopen", (e) => {
+        const popup = e.popup || e.target?._popup;
+        const marker = popup?._source;
+        if (marker?.getElement?.()) {
+          marker.getElement().classList.add("active");
+        }
+
         // Find the pixel location on the map where the popup anchor is
-        const px = map.project(e.target._popup._latlng);
+        const px = map.project(popup._latlng);
         // Find the height of the popup container and subtract from the Y axis of marker location
-        px.y -= e.target._popup._container.clientHeight;
+        px.y -= popup._container.clientHeight;
         // Pan to new center
         map.panTo(map.unproject(px), { animate: true });
 
         // Update URL with entity ID
-        this.updateUrlWithEntityId(e.target._popup._source);
+        this.updateUrlWithEntityId(marker);
       });
 
-      map.on("popupclose", () => {
+      map.on("popupclose", (e) => {
+        const popup = e.popup || e.target?._popup;
+        const marker = popup?._source;
+        if (marker?.getElement?.()) {
+          marker.getElement().classList.remove("active");
+        }
+
         // Remove ID from URL when popup is closed
         this.clearUrlEntityId();
       });

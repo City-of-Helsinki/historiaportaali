@@ -117,6 +117,8 @@
 }
 
 .views--combined-map {
+
+  $map-marker-red: #bd2f00;
   .map-container {
     position: relative;
     width: 100%;
@@ -179,17 +181,26 @@
     }
   }
 
+  .leaflet-marker-icon {
+    transition: filter 0.08s;
+
+    &.active,
+    &:hover {
+      filter: drop-shadow(0 0 6px rgba($map-marker-red, 0.6));
+    }
+  }
+
   .marker-cluster-small,
   .marker-cluster-medium {
-    background-color: rgba(209, 67, 20, 0.7);
+    background-color: rgba($map-marker-red, 0.7);
     transition: box-shadow 0.08s;
 
     &:hover {
-      box-shadow: 0px 0px 6px rgba(189, 47, 0, 0.6);
+      box-shadow: 0 0 6px rgba($map-marker-red, 0.6);
     }
 
     div {
-      background-color: rgba(189, 47, 0, 0.55);
+      background-color: rgba($map-marker-red, 0.55);
     }
 
     span {

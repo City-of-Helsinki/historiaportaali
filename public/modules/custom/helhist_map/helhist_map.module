@@ -143,22 +143,17 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
     $active_terms = helhist_map_get_active_terms($taxonomy_field, $select_field);
     if (isset($active_terms)) {
       unset($form[$select_field]['#options']);
-      $form[$select_field]['#options'] = ['All' => t('Select keyword')];
+      $form[$select_field]['#options'] = ['All' => t('- All -')];
 
       foreach ($active_terms as $active_term) {
         $form[$select_field]['#options'][$active_term[0]] = $active_term[1];
       }
     }
-    else {
-      // No active terms were found, so something weird must have happened.
-      unset($form[$select_field]['#options']);
-      $form[$select_field]['#options'] = ['All' => t('Select keyword')];
-    }
   }
 }
 
 /**
- * Find taxonomy terms that return node results for a given field.
+ * Find taxonomy terms that have map results (articles/media with geolocation).
  *
  * @param string $taxonomy_field
  *   The taxonomy field name.
@@ -166,57 +161,56 @@ function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id
  *   The select field name.
  *
  * @return array
- *   An array of active terms.
+ *   Array of [term_id, term_name] pairs, sorted by name.
  */
 function helhist_map_get_active_terms($taxonomy_field, $select_field) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $term_ids = [];
+
+  foreach ([
+    ['node', 'article', 'node__'],
+    ['media', 'image', 'media__'],
+  ] as [$entity_type, $bundle, $table_prefix]) {
+    $entity_ids = \Drupal::entityQuery($entity_type)
+      ->accessCheck(FALSE)
+      ->condition('status', 1)
+      ->condition($entity_type === 'node' ? 'type' : 'bundle', $bundle)
+      ->condition('langcode', $language)
+      ->exists('field_geolocation')
+      ->exists($taxonomy_field)
+      ->execute();
+
+    if ($entity_ids) {
+      $term_ids = array_merge(
+        $term_ids,
+        \Drupal::database()
+          ->select($table_prefix . $taxonomy_field, 't')
+          ->fields('t', [$select_field])
+          ->condition('t.entity_id', $entity_ids, 'IN')
+          ->distinct()
+          ->execute()
+          ->fetchCol()
+      );
+    }
+  }
+
+  $term_ids = array_unique(array_filter($term_ids));
+  if (empty($term_ids)) {
+    return [];
+  }
+
+  $terms = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadMultiple($term_ids);
+
   $term_list = [];
-
-  // Find taxonomy terms that link to node type content with a geolocation.
-  $connection = \Drupal::database();
-  $query = $connection->select('node__' . $taxonomy_field, 'node_field_data');
-  $query->join('node__field_geolocation', 'geolocation', 'geolocation.entity_id = node_field_data.entity_id');
-  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = node_field_data.' . $select_field);
-  // Let's restore this condition once we have translated terms.
-  // @todo also add condition that node must have translation.
-  // $query->condition('tname.langcode', $language);.
-  $query->fields('node_field_data', [$select_field]);
-  $query->fields('tname', ['name']);
-  $result = $query->distinct()->execute();
-  while ($row = $result->fetchAssoc()) {
-    array_push($term_list, [$row[$select_field], $row['name']]);
+  foreach ($terms as $term) {
+    /** @var \Drupal\taxonomy\Entity\Term $term */
+    if (!$term->hasTranslation($language)) {
+      continue;
+    }
+    $term_list[] = [$term->id(), $term->getTranslation($language)->label()];
   }
-
-  // Find taxonomy terms that link to media type content with a geolocation.
-  $connection = \Drupal::database();
-  $query = $connection->select('media__' . $taxonomy_field, 'media_field_data');
-  $query->join('media__field_geolocation', 'geolocation', 'geolocation.entity_id = media_field_data.entity_id');
-  $query->join('taxonomy_term_field_data', 'tname', 'tname.tid = media_field_data.' . $select_field);
-  // Let's restore this filter once we have translated terms.
-  // @todo also add condition that media entity must have translation.
-  // $query->condition('tname.langcode', $language);.
-  $query->fields('media_field_data', [$select_field]);
-  $query->fields('tname', ['name']);
-  $result = $query->distinct()->execute();
-  while ($row = $result->fetchAssoc()) {
-    array_push($term_list, [$row[$select_field], $row['name']]);
-  }
-
-  // Sort final options array.
-  usort($term_list, "helhist_map_select_sort");
+  usort($term_list, fn($a, $b) => strcmp($a[1], $b[1]));
   return $term_list;
-}
-
-/**
- * Sort term list array by taxonomy name column.
- *
- * @param array $a
- *   First array element to compare.
- * @param array $b
- *   Second array element to compare.
- *
- * @return int
- *   Comparison result.
- */
-function helhist_map_select_sort($a, $b) {
-  return strcmp($a[1], $b[1]);
 }

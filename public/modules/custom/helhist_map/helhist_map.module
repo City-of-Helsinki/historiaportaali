@@ -148,6 +148,20 @@ function helhist_map_form_views_exposed_form_alter(&$form, FormStateInterface $f
       $form[$select_field]['#options'][$active_term[0]] = $active_term[1];
     }
   }
+
+}
+
+/**
+ * Implements hook_preprocess_input().
+ *
+ * Change the year inputs to numeric fields.
+ */
+function helhist_map_preprocess_input(&$variables) {
+  $name = (string) ($variables['attributes']['name'] ?? '');
+  if (in_array($name, ['start_year', 'end_year'], TRUE)) {
+    $variables['attributes']['type'] = 'number';
+    $variables['attributes']['inputmode'] = 'numeric';
+  }
 }
 
 /**

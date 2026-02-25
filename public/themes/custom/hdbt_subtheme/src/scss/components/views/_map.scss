@@ -42,8 +42,8 @@
         margin: 0 0 $spacing-quarter;
       }
 
-      .hds-text-input .hds-text-input__input,
-      .form-select {
+      .form-select,
+      .hds-text-input {
         background-color: $color-white;
         border: 2px solid $color-black-20;
         min-height: 2.75rem;
@@ -51,6 +51,20 @@
         &:focus {
           box-shadow: 0 0 0 3px $color-metro-dark;
           outline: none;
+        }
+      }
+
+      // Get rid of the increase/decrease arrows on number inputs.
+      &.form-item-start-year,
+      &.form-item-end-year {
+        input[type="number"] {
+          -moz-appearance: textfield;
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
         }
       }
 

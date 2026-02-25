@@ -190,9 +190,9 @@
     }
   }
 
-  .marker-cluster-small,
-  .marker-cluster-medium {
+  .marker-cluster {
     background-color: rgba($map-marker-red, 0.7);
+    border-radius: 50%;
     transition: box-shadow 0.08s;
 
     &:hover {
@@ -201,12 +201,44 @@
 
     div {
       background-color: rgba($map-marker-red, 0.55);
+      border-radius: 50%;
     }
 
     span {
       color: white;
       font-family: $font-default;
+      font-size: 16px;
       font-weight: $font-weight-bold;
+    }
+
+    &.marker-cluster-medium {
+      height: 48px !important;
+      width: 48px !important;
+
+      div {
+        height: 36px !important;
+        line-height: 36px;
+        margin-left: 6px !important;
+        margin-top: 6px !important;
+        width: 36px !important;
+      }
+    }
+
+    &.marker-cluster-large {
+      height: 64px !important;
+      width: 64px !important;
+
+      div {
+        height: 48px !important;
+        line-height: 48px;
+        margin-left: 8px !important;
+        margin-top: 8px !important;
+        width: 48px !important;
+      }
+
+      span {
+        font-size: 16px;
+      }
     }
   }
 

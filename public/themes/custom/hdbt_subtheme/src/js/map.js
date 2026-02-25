@@ -26,6 +26,31 @@
       }
 
       this.bindFilterToggle(context);
+      this.bindFilterForm(context);
+    },
+
+    bindFilterForm(context) {
+      jQuery(document).on(
+        "submit",
+        ".node-type--map_page .views-exposed-form",
+        () => {
+          this.announceFilterStatus("searching");
+        },
+      );
+    },
+
+    announceFilterStatus(status, count) {
+      const $el = jQuery("#map-filter-status");
+      if (!$el.length) return;
+      if (status === "searching") {
+        $el.text(Drupal.t("Searching...", {}, { context: "Map" }));
+      } else if (status === "complete") {
+        $el.text(
+          count === 0
+            ? Drupal.t("Search complete. No items found.", {}, { context: "Map" })
+            : Drupal.t("Search complete. @count items found.", { "@count": count }, { context: "Map" }),
+        );
+      }
     },
 
     bindFilterToggle(context) {
@@ -139,6 +164,7 @@
         const latlngs = Object.values(leaflet.markers || {})
           .map((m) => m.getLatLng?.() || m._latlng)
           .filter(Boolean);
+        this.announceFilterStatus("complete", latlngs.length);
         if (latlngs.length === 0) return;
         latlngs.length === 1
           ? map.setView(latlngs[0], 15)

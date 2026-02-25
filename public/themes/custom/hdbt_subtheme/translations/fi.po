@@ -286,3 +286,15 @@ msgstr "Kartta"
 msgctxt "Map"
 msgid "Map comparison"
 msgstr "Karttojen vertailu"
+
+msgctxt "Map"
+msgid "Searching..."
+msgstr "Haetaan..."
+
+msgctxt "Map"
+msgid "Search complete. No items found."
+msgstr "Haku valmis. Ei tuloksia."
+
+msgctxt "Map"
+msgid "Search complete. @count items found."
+msgstr "Haku valmis. @count kohdetta löytyi."

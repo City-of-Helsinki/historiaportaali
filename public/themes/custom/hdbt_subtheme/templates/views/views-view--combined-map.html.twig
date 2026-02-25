@@ -53,6 +53,7 @@
     {% embed "@hdbt/misc/container.twig" with {container_element: 'map-content'} %}
     {% block container_content %}
       <h2 class="exposed-filters__title">{{ 'Filter items on map'|t({}, {'context': 'Map'}) }}</h2>
+      <div id="map-filter-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
       <div class="exposed-filters__row">
         {{ exposed }}
       </div>

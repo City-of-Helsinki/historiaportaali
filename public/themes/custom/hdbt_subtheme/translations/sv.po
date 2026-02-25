@@ -286,3 +286,15 @@ msgstr "Karta"
 msgctxt "Map"
 msgid "Map comparison"
 msgstr "Kartjämförelse"
+
+msgctxt "Map"
+msgid "Searching..."
+msgstr "Söker..."
+
+msgctxt "Map"
+msgid "Search complete. No items found."
+msgstr "Sökning klar. Inga objekt hittades."
+
+msgctxt "Map"
+msgid "Search complete. @count items found."
+msgstr "Sökning klar. @count objekt hittades."

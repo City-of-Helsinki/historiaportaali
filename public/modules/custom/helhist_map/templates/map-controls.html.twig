@@ -85,7 +85,7 @@
 
 <div class="map-controls__sidebar-container">
   <div class="map-controls__control">
-    <button class="map-controls__control-button" id="map-comparison-btn" aria-label="{{ 'Compare maps'|t({}, {'context': 'Map controls'}) }}">
+    <button class="map-controls__control-button" id="map-comparison-btn" type="button" aria-label="{{ 'Compare maps'|t({}, {'context': 'Map controls'}) }}" aria-pressed="false">
       {% include '@hdbt/misc/icon.twig' with {icon: 'map'} %}
       {{ 'Compare maps'|t({}, {'context': 'Map controls'}) }}
     </button>

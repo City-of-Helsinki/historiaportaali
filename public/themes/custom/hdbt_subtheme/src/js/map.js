@@ -1,4 +1,4 @@
-/* global jQuery, Drupal, once, document, window */
+/* global jQuery, Drupal, L, once, document, window */
 
 ((jQuery, Drupal, once) => {
   let map;
@@ -17,12 +17,10 @@
 
             this.bindPopupPositioning();
 
-            if (idFromUrl) {
-              // Small delay to ensure markers are loaded
-              setTimeout(() => {
-                this.openPopupByNid(idFromUrl);
-              }, 300);
-            }
+            setTimeout(() => {
+              if (idFromUrl) this.openPopupByNid(idFromUrl);
+              else this.applyZoomToView();
+            }, 300);
           }
         });
       }
@@ -129,6 +127,34 @@
       map.on("moveend", openPopupHandler);
       map.setView(selectedMarker._latlng, 15);
       return true;
+    },
+
+    // Zooming logic: zoom to fit all markers when filters are applied, otherwise zoom to the center of the map.
+    applyZoomToView() {
+      if (!map || !mapContainer) return;
+      const leaflet = mapContainer.data("leaflet");
+      if (!leaflet) return;
+
+      if (this.hasActiveFilters()) {
+        const latlngs = Object.values(leaflet.markers || {})
+          .map((m) => m.getLatLng?.() || m._latlng)
+          .filter(Boolean);
+        if (latlngs.length === 0) return;
+        latlngs.length === 1
+          ? map.setView(latlngs[0], 15)
+          : map.fitBounds(L.latLngBounds(latlngs), { padding: [20, 20], maxZoom: 18 });
+      } else if (leaflet.map_settings?.center) {
+        const c = leaflet.map_settings.center;
+        map.setView(L.latLng(c.lat, c.lon), leaflet.map_settings.zoom ?? 14);
+      }
+    },
+
+    hasActiveFilters() {
+      const $f = jQuery(".node-type--map_page .views-exposed-form");
+      const start = $f.find('input[name="start_year"]').val()?.trim();
+      const end = $f.find('input[name="end_year"]').val()?.trim();
+      const kw = $f.find('select[name="field_keywords_target_id"]').val();
+      return !!(start || end || (kw && kw !== "All"));
     },
 
     bindPopupPositioning() {

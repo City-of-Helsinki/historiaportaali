@@ -1,6 +1,104 @@
-.map-view-page {
-  .region-content {
-    position: relative;
+.node-type--map_page {
+  .exposed-filters {
+    background-color: $color-black-80;
+    margin-top: $spacing-double;
+    padding: $spacing;
+
+    @include breakpoint($breakpoint-m) {
+      padding: $spacing-double;
+    }
+
+    .exposed-filters__title {
+      color: $color-white;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0 0 $spacing;
+    }
+
+    .exposed-filters__row {
+      align-items: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing $spacing-double;
+
+      @include breakpoint(0 $breakpoint-m) {
+        gap: $spacing;
+      }
+    }
+
+    .views-exposed-form {
+      display: contents;
+    }
+
+    .form-item {
+      margin-bottom: 0;
+      min-width: 0;
+      width: 100%;
+
+      .form-label,
+      .hds-text-input__label {
+        color: $color-white;
+        font-size: 1rem;
+        margin: 0 0 $spacing-quarter;
+      }
+
+      .hds-text-input .hds-text-input__input,
+      .form-select {
+        background-color: $color-white;
+        border: 2px solid $color-black-20;
+        min-height: 2.75rem;
+
+        &:focus {
+          box-shadow: 0 0 0 3px $color-metro-dark;
+          outline: none;
+        }
+      }
+
+      @include breakpoint(0 $breakpoint-m) {
+        &.form-item-start-year,
+        &.form-item-end-year {
+          flex: 1 1 calc((100% - #{$spacing}) / 2);
+          max-width: calc((100% - #{$spacing}) / 2);
+        }
+      }
+
+      @include breakpoint($breakpoint-m) {
+        flex: 0 1 auto;
+        width: auto;
+
+        &.form-item-start-year,
+        &.form-item-end-year {
+          flex: 0 0 8rem;
+        }
+
+        &.form-item-field-keywords-target-id {
+          flex: 1 1 12rem;
+          max-width: 20rem;
+          min-width: 12rem;
+        }
+      }
+    }
+
+    .form-actions {
+      margin-bottom: 0;
+      width: 100%;
+
+      .hds-button,
+      input[type="submit"] {
+        min-height: 2.75rem;
+        width: 100%;
+      }
+
+      @include breakpoint($breakpoint-m) {
+        flex: 0 0 auto;
+        width: auto;
+
+        .hds-button,
+        input[type="submit"] {
+          width: auto;
+        }
+      }
+    }
   }
 }
 

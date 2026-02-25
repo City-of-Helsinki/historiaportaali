@@ -129,25 +129,23 @@ function helhist_map_get_map_displays() {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_views_exposed_form_alter().
  *
  * Hide taxonomy terms from exposed form filters that wouldn't return results.
  */
-function helhist_map_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function helhist_map_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
+  $view = $form_state->get('view');
+  if (!$view || $view->storage->id() !== 'combined_map' || $view->current_display !== 'block') {
+    return;
+  }
 
-  $form_id = 'views-exposed-form-combined-map-block--2';
   $select_field = 'field_keywords_target_id';
-  $taxonomy_field = 'field_keywords';
+  $active_terms = helhist_map_get_active_terms('field_keywords', $select_field);
 
-  if ($form['#id'] == $form_id) {
-    $active_terms = helhist_map_get_active_terms($taxonomy_field, $select_field);
-    if (isset($active_terms)) {
-      unset($form[$select_field]['#options']);
-      $form[$select_field]['#options'] = ['All' => t('- All -')];
-
-      foreach ($active_terms as $active_term) {
-        $form[$select_field]['#options'][$active_term[0]] = $active_term[1];
-      }
+  if (isset($form[$select_field])) {
+    $form[$select_field]['#options'] = ['All' => t('- All -')];
+    foreach ($active_terms as $active_term) {
+      $form[$select_field]['#options'][$active_term[0]] = $active_term[1];
     }
   }
 }

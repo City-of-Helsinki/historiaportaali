@@ -276,6 +276,10 @@ msgid "Go to page %s"
 msgstr "Siirry sivulle %s"
 
 msgctxt "Map"
+msgid "Filter items on map"
+msgstr "Suodata tuloksia kartalla"
+
+msgctxt "Map"
 msgid "Map"
 msgstr "Kartta"
 

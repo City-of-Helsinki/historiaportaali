@@ -274,3 +274,11 @@ msgstr "Siirry diaan %s"
 msgctxt "Gallery"
 msgid "Go to page %s"
 msgstr "Siirry sivulle %s"
+
+msgctxt "Map"
+msgid "Map"
+msgstr "Kartta"
+
+msgctxt "Map"
+msgid "Map comparison"
+msgstr "Karttojen vertailu"

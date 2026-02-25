@@ -56,7 +56,7 @@
     {{ attachment_before }}
     {{ rows }}
 
-    <div id="comparison-map-container">
+    <div id="comparison-map-container" role="region" aria-label="{{ 'Map comparison'|t({}, {'context': 'Map'}) }}">
       {{ drupal_block('helhist_map_comparison_map_controls_block') }}
       <div class="center-pointer" style="display:none;">
         {% include '@hdbt/misc/icon.twig' with {icon: 'cross'} %}

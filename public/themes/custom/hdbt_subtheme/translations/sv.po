@@ -274,3 +274,11 @@ msgstr "Gå till bild %s"
 msgctxt "Gallery"
 msgid "Go to page %s"
 msgstr "Gå till sida %s"
+
+msgctxt "Map"
+msgid "Map"
+msgstr "Karta"
+
+msgctxt "Map"
+msgid "Map comparison"
+msgstr "Kartjämförelse"

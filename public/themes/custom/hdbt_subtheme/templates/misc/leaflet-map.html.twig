@@ -17,7 +17,7 @@
  *
  */
 #}
-<div id="{{ map_id }}" class="main-map-container" style="min-width: 150px; {% if height is not empty %}height: {{ height }}{% endif %}">
+<div id="{{ map_id }}" class="main-map-container" role="region" aria-label="{{ 'Map'|t({}, {'context': 'Map'}) }}" style="min-width: 150px; {% if height is not empty %}height: {{ height }}{% endif %}">
   <div class="center-pointer" style="display:none;">
     {% include '@hdbt/misc/icon.twig' with {icon: 'cross'} %}
   </div>

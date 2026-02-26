@@ -234,3 +234,67 @@ msgstr "Platsåtkomst blockerad"
 msgctxt "Map controls"
 msgid "You must allow your broser to use your location to see places near you."
 msgstr "Tillåt platsåtkomst för att se platser i närheten."
+
+msgctxt "Gallery"
+msgid "Previous slide"
+msgstr "Föregående bild"
+
+msgctxt "Gallery"
+msgid "Next slide"
+msgstr "Nästa bild"
+
+msgctxt "Gallery"
+msgid "Go to first slide"
+msgstr "Gå till första bilden"
+
+msgctxt "Gallery"
+msgid "Go to last slide"
+msgstr "Gå till sista bilden"
+
+msgctxt "Gallery"
+msgid "Carousel"
+msgstr "Karusell"
+
+msgctxt "Gallery"
+msgid "Carousel pagination"
+msgstr "Karusellens sidval"
+
+msgctxt "Gallery"
+msgid "slide"
+msgstr "bild"
+
+msgctxt "Gallery"
+msgid "%s of %s"
+msgstr "%s av %s"
+
+msgctxt "Gallery"
+msgid "Go to slide %s"
+msgstr "Gå till bild %s"
+
+msgctxt "Gallery"
+msgid "Go to page %s"
+msgstr "Gå till sida %s"
+
+msgctxt "Map"
+msgid "Filter items on map"
+msgstr "Filtrera objekt på kartan"
+
+msgctxt "Map"
+msgid "Map"
+msgstr "Karta"
+
+msgctxt "Map"
+msgid "Map comparison"
+msgstr "Kartjämförelse"
+
+msgctxt "Map"
+msgid "Searching..."
+msgstr "Söker..."
+
+msgctxt "Map"
+msgid "Search complete. No items found."
+msgstr "Sökning klar. Inga objekt hittades."
+
+msgctxt "Map"
+msgid "Search complete. @count items found."
+msgstr "Sökning klar. @count objekt hittades."

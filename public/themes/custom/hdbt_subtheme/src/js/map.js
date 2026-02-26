@@ -1,33 +1,73 @@
-/* global jQuery, Drupal, once, document, window */
+/* global jQuery, Drupal, L, once, document, window */
 
 ((jQuery, Drupal, once) => {
   let map;
   let mapContainer;
+  let focusMapAfterSearch = false;
 
   const { behaviors } = Drupal;
 
   behaviors.map = {
     attach(context) {
       if (once("map", "body").length) {
-        jQuery(document).on("leafletMapInit", (_e, _mapSettings, lMap, mapid) => {
-          if (mapid.startsWith("leaflet-map-view-combined-map-block")) {
-            map = lMap;
-            mapContainer = jQuery(`#${mapid}`);
-            const idFromUrl = this.getUrlParameter("id");
+        jQuery(document).on(
+          "leafletMapInit",
+          (_e, _mapSettings, lMap, mapid) => {
+            if (mapid.startsWith("leaflet-map-view-combined-map-block")) {
+              map = lMap;
+              mapContainer = jQuery(`#${mapid}`);
+              const idFromUrl = this.getUrlParameter("id");
 
-            this.bindPopupPositioning();
+              this.bindPopupPositioning();
 
-            if (idFromUrl) {
-              // Small delay to ensure markers are loaded
               setTimeout(() => {
-                this.openPopupByNid(idFromUrl);
+                if (idFromUrl) this.openPopupByNid(idFromUrl);
+                else this.applyZoomToView();
+                if (focusMapAfterSearch) {
+                  focusMapAfterSearch = false;
+                  mapContainer[0]?.focus({ preventScroll: true });
+                }
               }, 300);
             }
-          }
-        });
+          },
+        );
       }
 
       this.bindFilterToggle(context);
+      this.bindFilterForm(context);
+    },
+
+    bindFilterForm(context) {
+      jQuery(document).on(
+        "submit",
+        ".node-type--map_page .views-exposed-form",
+        () => {
+          this.announceFilterStatus("searching");
+          focusMapAfterSearch = true;
+        },
+      );
+    },
+
+    announceFilterStatus(status, count) {
+      const $el = jQuery("#map-filter-status");
+      if (!$el.length) return;
+      if (status === "searching") {
+        $el.text(Drupal.t("Searching...", {}, { context: "Map" }));
+      } else if (status === "complete") {
+        $el.text(
+          count === 0
+            ? Drupal.t(
+                "Search complete. No items found.",
+                {},
+                { context: "Map" },
+              )
+            : Drupal.t(
+                "Search complete. @count items found.",
+                { "@count": count },
+                { context: "Map" },
+              ),
+        );
+      }
     },
 
     bindFilterToggle(context) {
@@ -131,23 +171,88 @@
       return true;
     },
 
+    // Zooming logic: zoom to fit all markers when filters are applied, otherwise zoom to the center of the map.
+    applyZoomToView() {
+      if (!map || !mapContainer) return;
+      const leaflet = mapContainer.data("leaflet");
+      if (!leaflet) return;
+
+      if (this.hasActiveFilters()) {
+        const latlngs = Object.values(leaflet.markers || {})
+          .map((m) => m.getLatLng?.() || m._latlng)
+          .filter(Boolean);
+        this.announceFilterStatus("complete", latlngs.length);
+        if (latlngs.length === 0) return;
+        latlngs.length === 1
+          ? map.setView(latlngs[0], 15)
+          : map.fitBounds(L.latLngBounds(latlngs), {
+              padding: [20, 20],
+              maxZoom: 18,
+            });
+      } else if (leaflet.map_settings?.center) {
+        const c = leaflet.map_settings.center;
+        map.setView(L.latLng(c.lat, c.lon), leaflet.map_settings.zoom ?? 14);
+      }
+    },
+
+    hasActiveFilters() {
+      const $f = jQuery(".node-type--map_page .views-exposed-form");
+      const start = $f.find('input[name="start_year"]').val()?.trim();
+      const end = $f.find('input[name="end_year"]').val()?.trim();
+      const kw = $f.find('select[name="field_keywords_target_id"]').val();
+      return !!(start || end || (kw && kw !== "All"));
+    },
+
     bindPopupPositioning() {
+      let scrollY = 0;
+
+      const getPopup = (e) => e.popup || e.target?._popup;
+      const getMarker = (e) => getPopup(e)?._source;
+
       map.on("popupopen", (e) => {
-        // Find the pixel location on the map where the popup anchor is
-        const px = map.project(e.target._popup._latlng);
-        // Find the height of the popup container and subtract from the Y axis of marker location
-        px.y -= e.target._popup._container.clientHeight;
-        // Pan to new center
+        const popup = getPopup(e);
+        const marker = getMarker(e);
+        const icon = marker?.getElement?.();
+
+        if (icon) icon.classList.add("active");
+
+        const px = map.project(popup._latlng);
+        px.y -= popup._container.clientHeight;
         map.panTo(map.unproject(px), { animate: true });
 
-        // Update URL with entity ID
-        this.updateUrlWithEntityId(e.target._popup._source);
+        this.updateUrlWithEntityId(marker);
+        scrollY = window.scrollY;
       });
 
-      map.on("popupclose", () => {
-        // Remove ID from URL when popup is closed
+      map.on("popupclose", (e) => {
+        const marker = getMarker(e);
+        const icon = marker?.getElement?.();
+        if (icon) {
+          icon.classList.remove("active");
+          icon.focus({ preventScroll: true });
+        }
         this.clearUrlEntityId();
       });
+
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Escape") return;
+        if (mapContainer[0]?.querySelector(".leaflet-popup") && map._popup) {
+          ev.preventDefault();
+          map.closePopup();
+        }
+      });
+
+      document.addEventListener(
+        "focusin",
+        (ev) => {
+          const popup = mapContainer[0]?.querySelector(".leaflet-popup");
+          const inMap = mapContainer[0]?.contains(ev.target);
+          if (popup?.contains(ev.target)) scrollY = window.scrollY;
+          else if (popup && !inMap)
+            requestAnimationFrame(() => window.scrollTo(0, scrollY));
+        },
+        true,
+      );
     },
 
     updateUrlWithEntityId(marker) {

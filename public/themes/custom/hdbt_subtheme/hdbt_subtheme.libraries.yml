@@ -73,6 +73,7 @@ gallery:
   js:
     dist/js/gallery-settings.min.js: {}
   dependencies:
+    - core/drupal
     - hdbt_subtheme/splide
     - hdbt_subtheme/tiny-slider
 

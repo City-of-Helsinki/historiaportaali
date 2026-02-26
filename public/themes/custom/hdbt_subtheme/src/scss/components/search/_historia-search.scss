@@ -23,11 +23,9 @@
 
       .filter-group {
         min-width: 0;
-
-        // Add consistent spacing between filters
         @include breakpoint($breakpoint-m) {
           &:not(:first-child) {
-            margin-top: 0; // Reset any specific margins
+            margin-top: 0;
           }
         }
 

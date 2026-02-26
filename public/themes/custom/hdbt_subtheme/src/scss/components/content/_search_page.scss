@@ -1,4 +1,15 @@
 body.search-page {
+  .hero-wrapper {
+    @include breakpoint($breakpoint-l) {
+      margin-bottom: -$spacing-double;
+    }
+  }
+
+  .hero {
+    .hero__arrow {
+      display: none;
+    }
+  }
   .main-content {
     margin-top: 0;
   }

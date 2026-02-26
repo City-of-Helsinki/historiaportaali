@@ -13,9 +13,10 @@
       L.Map.addInitHook(function () {
         const map = this;
 
-        const mapName = this.options?.mapName === "comparison-map"
-          ? "comparison-map"
-          : "main-map";
+        const mapName =
+          this.options?.mapName === "comparison-map"
+            ? "comparison-map"
+            : "main-map";
 
         if (mapName === "comparison-map") {
           self.bindLayerControls(this, "comparison-map");
@@ -76,7 +77,9 @@
             "aria-expanded": "false",
           });
 
-          const $clearBtn = $(`.map-controls__clear-btn[data-clear-for="${selectId}"]`);
+          const $clearBtn = $(
+            `.map-controls__clear-btn[data-clear-for="${selectId}"]`,
+          );
 
           $select
             .on("select2:open", () => {
@@ -122,32 +125,35 @@
 
         if (!$(document).data("map-controls-clear-handler-attached")) {
           $(document).data("map-controls-clear-handler-attached", true);
-        $(document).on(
-          "mousedown.mapcontrols click.mapcontrols",
-          ".map-controls__clear-btn",
-          (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (e.type === "mousedown") return;
-            const $btn = $(e.currentTarget);
-            const selectId = $btn.data("clear-for");
-            const $select = $(`#${selectId}`);
-            if (!$select.length || !$select.hasClass("map-controls__map-layer"))
-              return;
-            const isComparison = $select.hasClass("comparison-map");
-            const $mapContainer = isComparison
-              ? $("#comparison-map-container")
-              : $("[id^='leaflet-map-view-combined-map-block']").first();
-            const lMap = $mapContainer.data("leaflet")?.lMap;
-            if (!lMap) return;
-            $btn.prop("hidden", true).attr("aria-hidden", "true");
-            requestAnimationFrame(() => {
-              $select.data("map-controls-unselecting", true);
-              $select.val(null).trigger("change");
-              self.removeOtherMapLayers(lMap, null);
-            });
-          },
-        );
+          $(document).on(
+            "mousedown.mapcontrols click.mapcontrols",
+            ".map-controls__clear-btn",
+            (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              if (e.type === "mousedown") return;
+              const $btn = $(e.currentTarget);
+              const selectId = $btn.data("clear-for");
+              const $select = $(`#${selectId}`);
+              if (
+                !$select.length ||
+                !$select.hasClass("map-controls__map-layer")
+              )
+                return;
+              const isComparison = $select.hasClass("comparison-map");
+              const $mapContainer = isComparison
+                ? $("#comparison-map-container")
+                : $("[id^='leaflet-map-view-combined-map-block']").first();
+              const lMap = $mapContainer.data("leaflet")?.lMap;
+              if (!lMap) return;
+              $btn.prop("hidden", true).attr("aria-hidden", "true");
+              requestAnimationFrame(() => {
+                $select.data("map-controls-unselecting", true);
+                $select.val(null).trigger("change");
+                self.removeOtherMapLayers(lMap, null);
+              });
+            },
+          );
         }
 
         this.on("unload", function () {
@@ -277,7 +283,7 @@
                     const d =
                       r.width && r.height
                         ? (cx - clusterPoint[0]) ** 2 +
-                            (cy - clusterPoint[1]) ** 2
+                          (cy - clusterPoint[1]) ** 2
                         : Number.POSITIVE_INFINITY;
                     return { el, d };
                   })
@@ -292,46 +298,57 @@
             mapContainer.addEventListener("keydown", clusterKeydown, true);
 
             // Arrow key navigation between markers and clusters
-            const arrowKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
-            mapContainer.addEventListener("keydown", (ev) => {
-              if (!arrowKeys.includes(ev.key)) return;
-              const active = document.activeElement;
-              if (!mapContainer.contains(active)) return;
-              if (active.closest(".leaflet-popup")) return;
-              const inPane = active.closest(".leaflet-marker-pane");
-              if (!inPane || !active.matches?.("[tabindex='0']")) return;
+            const arrowKeys = [
+              "ArrowUp",
+              "ArrowDown",
+              "ArrowLeft",
+              "ArrowRight",
+            ];
+            mapContainer.addEventListener(
+              "keydown",
+              (ev) => {
+                if (!arrowKeys.includes(ev.key)) return;
+                const active = document.activeElement;
+                if (!mapContainer.contains(active)) return;
+                if (active.closest(".leaflet-popup")) return;
+                const inPane = active.closest(".leaflet-marker-pane");
+                if (!inPane || !active.matches?.("[tabindex='0']")) return;
 
-              const focusables = Array.from(
-                mapContainer.querySelectorAll(".leaflet-marker-pane [tabindex='0']"),
-              ).filter((el) => el !== active);
-              if (!focusables.length) return;
+                const focusables = Array.from(
+                  mapContainer.querySelectorAll(
+                    ".leaflet-marker-pane [tabindex='0']",
+                  ),
+                ).filter((el) => el !== active);
+                if (!focusables.length) return;
 
-              const rect = active.getBoundingClientRect();
-              const mapRect = mapContainer.getBoundingClientRect();
-              const cx = rect.left - mapRect.left + rect.width / 2;
-              const cy = rect.top - mapRect.top + rect.height / 2;
+                const rect = active.getBoundingClientRect();
+                const mapRect = mapContainer.getBoundingClientRect();
+                const cx = rect.left - mapRect.left + rect.width / 2;
+                const cy = rect.top - mapRect.top + rect.height / 2;
 
-              const inDirection = focusables
-                .map((el) => {
-                  const r = el.getBoundingClientRect();
-                  const x = r.left - mapRect.left + r.width / 2;
-                  const y = r.top - mapRect.top + r.height / 2;
-                  let ok = false;
-                  if (ev.key === "ArrowUp" && y < cy - 2) ok = true;
-                  if (ev.key === "ArrowDown" && y > cy + 2) ok = true;
-                  if (ev.key === "ArrowLeft" && x < cx - 2) ok = true;
-                  if (ev.key === "ArrowRight" && x > cx + 2) ok = true;
-                  const d = (x - cx) ** 2 + (y - cy) ** 2;
-                  return ok ? { el, d } : null;
-                })
-                .filter(Boolean)
-                .sort((a, b) => a.d - b.d);
-              if (inDirection.length) {
-                ev.preventDefault();
-                window._mapControlsFocusFromKeyboard = true;
-                focusNoScroll(inDirection[0].el);
-              }
-            }, true);
+                const inDirection = focusables
+                  .map((el) => {
+                    const r = el.getBoundingClientRect();
+                    const x = r.left - mapRect.left + r.width / 2;
+                    const y = r.top - mapRect.top + r.height / 2;
+                    let ok = false;
+                    if (ev.key === "ArrowUp" && y < cy - 2) ok = true;
+                    if (ev.key === "ArrowDown" && y > cy + 2) ok = true;
+                    if (ev.key === "ArrowLeft" && x < cx - 2) ok = true;
+                    if (ev.key === "ArrowRight" && x > cx + 2) ok = true;
+                    const d = (x - cx) ** 2 + (y - cy) ** 2;
+                    return ok ? { el, d } : null;
+                  })
+                  .filter(Boolean)
+                  .sort((a, b) => a.d - b.d);
+                if (inDirection.length) {
+                  ev.preventDefault();
+                  window._mapControlsFocusFromKeyboard = true;
+                  focusNoScroll(inDirection[0].el);
+                }
+              },
+              true,
+            );
 
             mapContainer.addEventListener("focusout", (ev) => {
               if (!mapContainer.contains(ev.relatedTarget)) {
@@ -342,23 +359,39 @@
             // Intercept Tab into map area: prevent scroll when focus would move into map
             const viewEl = mapContainer.closest(".views--combined-map");
             const mapArea = viewEl?.querySelector(".map-container");
-            if (viewEl && mapArea && !viewEl.hasAttribute("data-map-tab-intercept")) {
+            if (
+              viewEl &&
+              mapArea &&
+              !viewEl.hasAttribute("data-map-tab-intercept")
+            ) {
               viewEl.setAttribute("data-map-tab-intercept", "1");
-              viewEl.addEventListener("keydown", (ev) => {
-                if (ev.key !== "Tab" || ev.shiftKey) return;
-                const active = document.activeElement;
-                if (!viewEl.contains(active) || mapContainer.contains(active)) return;
-                const all = [...viewEl.querySelectorAll('a[href], button, input, select, textarea, [tabindex="0"]')].filter(
-                  (el) => el.tabIndex >= 0 && !el.disabled && el.offsetParent !== null,
-                );
-                const i = all.indexOf(active);
-                const next = i >= 0 && i < all.length - 1 ? all[i + 1] : null;
-                if (next && mapArea.contains(next)) {
-                  ev.preventDefault();
-                  window._mapControlsFocusFromKeyboard = true;
-                  focusNoScroll(next);
-                }
-              }, true);
+              viewEl.addEventListener(
+                "keydown",
+                (ev) => {
+                  if (ev.key !== "Tab" || ev.shiftKey) return;
+                  const active = document.activeElement;
+                  if (!viewEl.contains(active) || mapContainer.contains(active))
+                    return;
+                  const all = [
+                    ...viewEl.querySelectorAll(
+                      'a[href], button, input, select, textarea, [tabindex="0"]',
+                    ),
+                  ].filter(
+                    (el) =>
+                      el.tabIndex >= 0 &&
+                      !el.disabled &&
+                      el.offsetParent !== null,
+                  );
+                  const i = all.indexOf(active);
+                  const next = i >= 0 && i < all.length - 1 ? all[i + 1] : null;
+                  if (next && mapArea.contains(next)) {
+                    ev.preventDefault();
+                    window._mapControlsFocusFromKeyboard = true;
+                    focusNoScroll(next);
+                  }
+                },
+                true,
+              );
             }
           }
         });
@@ -419,7 +452,9 @@
           }
 
           const focusables = Array.from(
-            mapContainerEl.querySelectorAll(".leaflet-marker-pane [tabindex='0']"),
+            mapContainerEl.querySelectorAll(
+              ".leaflet-marker-pane [tabindex='0']",
+            ),
           );
           const cur = focusables.indexOf(active);
           if (cur === -1) return;

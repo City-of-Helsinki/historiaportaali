@@ -10,24 +10,27 @@
   behaviors.map = {
     attach(context) {
       if (once("map", "body").length) {
-        jQuery(document).on("leafletMapInit", (_e, _mapSettings, lMap, mapid) => {
-          if (mapid.startsWith("leaflet-map-view-combined-map-block")) {
-            map = lMap;
-            mapContainer = jQuery(`#${mapid}`);
-            const idFromUrl = this.getUrlParameter("id");
+        jQuery(document).on(
+          "leafletMapInit",
+          (_e, _mapSettings, lMap, mapid) => {
+            if (mapid.startsWith("leaflet-map-view-combined-map-block")) {
+              map = lMap;
+              mapContainer = jQuery(`#${mapid}`);
+              const idFromUrl = this.getUrlParameter("id");
 
-            this.bindPopupPositioning();
+              this.bindPopupPositioning();
 
-            setTimeout(() => {
-              if (idFromUrl) this.openPopupByNid(idFromUrl);
-              else this.applyZoomToView();
-              if (focusMapAfterSearch) {
-                focusMapAfterSearch = false;
-                mapContainer[0]?.focus({ preventScroll: true });
-              }
-            }, 300);
-          }
-        });
+              setTimeout(() => {
+                if (idFromUrl) this.openPopupByNid(idFromUrl);
+                else this.applyZoomToView();
+                if (focusMapAfterSearch) {
+                  focusMapAfterSearch = false;
+                  mapContainer[0]?.focus({ preventScroll: true });
+                }
+              }, 300);
+            }
+          },
+        );
       }
 
       this.bindFilterToggle(context);
@@ -53,8 +56,16 @@
       } else if (status === "complete") {
         $el.text(
           count === 0
-            ? Drupal.t("Search complete. No items found.", {}, { context: "Map" })
-            : Drupal.t("Search complete. @count items found.", { "@count": count }, { context: "Map" }),
+            ? Drupal.t(
+                "Search complete. No items found.",
+                {},
+                { context: "Map" },
+              )
+            : Drupal.t(
+                "Search complete. @count items found.",
+                { "@count": count },
+                { context: "Map" },
+              ),
         );
       }
     },
@@ -174,7 +185,10 @@
         if (latlngs.length === 0) return;
         latlngs.length === 1
           ? map.setView(latlngs[0], 15)
-          : map.fitBounds(L.latLngBounds(latlngs), { padding: [20, 20], maxZoom: 18 });
+          : map.fitBounds(L.latLngBounds(latlngs), {
+              padding: [20, 20],
+              maxZoom: 18,
+            });
       } else if (leaflet.map_settings?.center) {
         const c = leaflet.map_settings.center;
         map.setView(L.latLng(c.lat, c.lon), leaflet.map_settings.zoom ?? 14);
@@ -228,12 +242,17 @@
         }
       });
 
-      document.addEventListener("focusin", (ev) => {
-        const popup = mapContainer[0]?.querySelector(".leaflet-popup");
-        const inMap = mapContainer[0]?.contains(ev.target);
-        if (popup?.contains(ev.target)) scrollY = window.scrollY;
-        else if (popup && !inMap) requestAnimationFrame(() => window.scrollTo(0, scrollY));
-      }, true);
+      document.addEventListener(
+        "focusin",
+        (ev) => {
+          const popup = mapContainer[0]?.querySelector(".leaflet-popup");
+          const inMap = mapContainer[0]?.contains(ev.target);
+          if (popup?.contains(ev.target)) scrollY = window.scrollY;
+          else if (popup && !inMap)
+            requestAnimationFrame(() => window.scrollTo(0, scrollY));
+        },
+        true,
+      );
     },
 
     updateUrlWithEntityId(marker) {

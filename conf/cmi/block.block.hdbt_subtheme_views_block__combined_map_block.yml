@@ -1,4 +1,4 @@
-uuid: 0ff40d3c-10a0-449d-b476-9ed944f83345
+uuid: 16e707f2-9167-4ba5-ae4b-88b67248bd79
 langcode: en
 status: true
 dependencies:
@@ -9,18 +9,19 @@ dependencies:
     - views
   theme:
     - hdbt_subtheme
-id: exposedformcombinedmapblock
+id: hdbt_subtheme_views_block__combined_map_block
 theme: hdbt_subtheme
-region: search_filters
-weight: 0
+region: after_content
+weight: -16
 provider: null
-plugin: 'views_exposed_filter_block:combined_map-block'
+plugin: 'views_block:combined_map-block'
 settings:
-  id: 'views_exposed_filter_block:combined_map-block'
+  id: 'views_block:combined_map-block'
   label: ''
   label_display: '0'
   provider: views
   views_label: ''
+  items_per_page: none
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'

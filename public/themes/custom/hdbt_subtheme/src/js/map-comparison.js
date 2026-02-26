@@ -27,8 +27,10 @@
       $button.on("click", () => {
         if (!$viewContainer.is(".comparison-enabled")) {
           this.enableMapComparison();
+          $button.attr("aria-pressed", "true");
         } else {
           this.disableMapComparison();
+          $button.attr("aria-pressed", "false");
         }
       });
     },

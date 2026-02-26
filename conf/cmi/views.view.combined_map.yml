@@ -100,7 +100,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -242,7 +242,7 @@ display:
           exposed: true
           expose:
             operator_id: field_start_year_value_op
-            label: Starts
+            label: 'From year'
             description: ''
             use_operator: false
             operator: field_start_year_value_op
@@ -255,12 +255,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              admin: '0'
-              content_producer: '0'
               read_only: '0'
+              survey_editor: '0'
+              content_producer: '0'
+              editor: '0'
+              admin: '0'
+              super_administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
-            placeholder: '1820'
+            placeholder: 'e.g. 1820'
           is_grouped: false
           group_info:
             label: ''
@@ -290,7 +293,7 @@ display:
           exposed: true
           expose:
             operator_id: field_end_year_value_op
-            label: Ends
+            label: 'Until year'
             description: ''
             use_operator: false
             operator: field_end_year_value_op
@@ -303,12 +306,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              admin: '0'
-              content_producer: '0'
               read_only: '0'
+              survey_editor: '0'
+              content_producer: '0'
+              editor: '0'
+              admin: '0'
+              super_administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
-            placeholder: '1900'
+            placeholder: 'e.g. 1917'
           is_grouped: false
           group_info:
             label: ''
@@ -335,7 +341,7 @@ display:
           exposed: true
           expose:
             operator_id: field_keywords_target_id_op
-            label: ''
+            label: 'Filter by keyword'
             description: ''
             use_operator: false
             operator: field_keywords_target_id_op
@@ -348,9 +354,12 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              admin: '0'
-              content_producer: '0'
               read_only: '0'
+              survey_editor: '0'
+              content_producer: '0'
+              editor: '0'
+              admin: '0'
+              super_administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -387,8 +396,8 @@ display:
             options: '{"permanent":false,"direction":"center"}'
           leaflet_popup:
             value: '#rendered_entity_ajax'
-            options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
             view_mode: map_item
+            options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
           leaflet_map: esri-world_topo_map
           height: '70'
           height_unit: vh
@@ -442,16 +451,19 @@ display:
             circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: true
-            include_path: false
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false}'
             excluded: '0'
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false}'
+            include_path: false
           fullscreen:
             control: false
             options: '{"position":"topleft","pseudoFullscreen":false}'
           path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+          feature_properties:
+            values: ''
           geocoder:
             control: false
             settings:
+              popup: false
               autocomplete:
                 placeholder: 'Search Address'
                 title: 'Search an Address on the Map'
@@ -464,12 +476,9 @@ display:
               min_terms: 4
               delay: 800
               zoom: 16
-              popup: false
               options: ''
           map_lazy_load:
             lazy_load: false
-          feature_properties:
-            values: ''
       row:
         type: 'entity:node'
         options:
@@ -504,7 +513,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
-      exposed_block: true
+      exposed_block: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }

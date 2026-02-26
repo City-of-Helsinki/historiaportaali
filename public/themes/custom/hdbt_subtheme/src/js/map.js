@@ -3,6 +3,7 @@
 ((jQuery, Drupal, once) => {
   let map;
   let mapContainer;
+  let focusMapAfterSearch = false;
 
   const { behaviors } = Drupal;
 
@@ -20,6 +21,10 @@
             setTimeout(() => {
               if (idFromUrl) this.openPopupByNid(idFromUrl);
               else this.applyZoomToView();
+              if (focusMapAfterSearch) {
+                focusMapAfterSearch = false;
+                mapContainer[0]?.focus({ preventScroll: true });
+              }
             }, 300);
           }
         });
@@ -35,6 +40,7 @@
         ".node-type--map_page .views-exposed-form",
         () => {
           this.announceFilterStatus("searching");
+          focusMapAfterSearch = true;
         },
       );
     },
@@ -184,34 +190,59 @@
     },
 
     bindPopupPositioning() {
-      map.on("popupopen", (e) => {
-        const popup = e.popup || e.target?._popup;
-        const marker = popup?._source;
-        if (marker?.getElement?.()) {
-          marker.getElement().classList.add("active");
-        }
+      let scrollY = 0;
 
-        // Find the pixel location on the map where the popup anchor is
+      const getPopup = (e) => e.popup || e.target?._popup;
+      const getMarker = (e) => getPopup(e)?._source;
+
+      map.on("popupopen", (e) => {
+        const popup = getPopup(e);
+        const marker = getMarker(e);
+        const icon = marker?.getElement?.();
+
+        if (icon) icon.classList.add("active");
+
         const px = map.project(popup._latlng);
-        // Find the height of the popup container and subtract from the Y axis of marker location
         px.y -= popup._container.clientHeight;
-        // Pan to new center
         map.panTo(map.unproject(px), { animate: true });
 
-        // Update URL with entity ID
         this.updateUrlWithEntityId(marker);
+        scrollY = window.scrollY;
+
+        requestAnimationFrame(() => {
+          const content = popup._container?.querySelector(".leaflet-popup-content");
+          if (!content) return;
+          const link = content.querySelector('.content-card__link, a[href]');
+          const toFocus = link || content;
+          if (toFocus === content) toFocus.setAttribute("tabindex", "-1");
+          toFocus.focus({ preventScroll: true });
+        });
       });
 
       map.on("popupclose", (e) => {
-        const popup = e.popup || e.target?._popup;
-        const marker = popup?._source;
-        if (marker?.getElement?.()) {
-          marker.getElement().classList.remove("active");
+        const marker = getMarker(e);
+        const icon = marker?.getElement?.();
+        if (icon) {
+          icon.classList.remove("active");
+          icon.focus({ preventScroll: true });
         }
-
-        // Remove ID from URL when popup is closed
         this.clearUrlEntityId();
       });
+
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Escape") return;
+        if (mapContainer[0]?.querySelector(".leaflet-popup") && map._popup) {
+          ev.preventDefault();
+          map.closePopup();
+        }
+      });
+
+      document.addEventListener("focusin", (ev) => {
+        const popup = mapContainer[0]?.querySelector(".leaflet-popup");
+        const inMap = mapContainer[0]?.contains(ev.target);
+        if (popup?.contains(ev.target)) scrollY = window.scrollY;
+        else if (popup && !inMap) requestAnimationFrame(() => window.scrollTo(0, scrollY));
+      }, true);
     },
 
     updateUrlWithEntityId(marker) {

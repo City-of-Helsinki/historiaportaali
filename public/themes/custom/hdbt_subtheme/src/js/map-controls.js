@@ -190,8 +190,6 @@
         // Handle marker cluster keyboard interaction
         map.on("layeradd", (e) => {
           if (e.layer instanceof L.MarkerClusterGroup) {
-            const clusterGroup = e.layer;
-
             // Set up mutation observer to watch for cluster elements (tabindex + aria-label)
             const setClusterAccessibility = (clusterNode) => {
               if (!clusterNode || !clusterNode.isConnected) return;
@@ -229,29 +227,6 @@
             ensureClusterAriaLabels();
             setTimeout(ensureClusterAriaLabels, 100);
 
-            // Find L.MarkerCluster whose _icon is the given DOM node (walk cluster group tree)
-            const findClusterByIcon = (group, node) => {
-              if (
-                !group ||
-                !node ||
-                typeof group.getVisibleParent !== "function"
-              )
-                return null;
-              const top = group._topClusterLevel;
-              if (!top) return null;
-              const walk = (c) => {
-                if (c._icon === node) return c;
-                if (c._childClusters) {
-                  for (let i = 0; i < c._childClusters.length; i += 1) {
-                    const found = walk(c._childClusters[i]);
-                    if (found) return found;
-                  }
-                }
-                return null;
-              };
-              return walk(top);
-            };
-
             // Single keydown handler on map container (delegation): works when focus is on cluster or any child
             const clusterKeydown = (event) => {
               if (event.key !== "Enter" && event.key !== " ") return;
@@ -266,33 +241,29 @@
                 rect.left - mapRect.left + rect.width / 2,
                 rect.top - mapRect.top + rect.height / 2,
               ];
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
 
-              // Try programmatic spiderfy first (reliable for keyboard); fallback to mouse events
-              const clusterLayer = findClusterByIcon(clusterGroup, clusterNode);
-              if (clusterLayer && typeof clusterLayer.spiderfy === "function") {
-                clusterLayer.spiderfy();
-              } else {
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-                for (const type of ["mousedown", "mouseup", "click"]) {
-                  const ev = new MouseEvent(type, {
+              // Simulate mouse click so keyboard and mouse behave identically (zoom or spiderfy)
+              for (const type of ["mousedown", "mouseup", "click"]) {
+                clusterNode.dispatchEvent(
+                  new MouseEvent(type, {
                     bubbles: true,
                     cancelable: true,
                     view: window,
                     clientX: centerX,
                     clientY: centerY,
-                  });
-                  clusterNode.dispatchEvent(ev);
-                }
+                  }),
+                );
               }
 
               setTimeout(() => {
-                const markers = Array.from(
+                const focusables = Array.from(
                   mapContainer.querySelectorAll(
                     '.leaflet-marker-pane [tabindex="0"]',
                   ),
-                ).filter((el) => !el.classList.contains("marker-cluster"));
-                const byDistance = markers
+                );
+                const byDistance = focusables
                   .map((el) => {
                     const r = el.getBoundingClientRect();
                     const cx = r.left - mapRect.left + r.width / 2;

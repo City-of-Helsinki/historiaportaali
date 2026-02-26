@@ -7,26 +7,26 @@ import { ResultsWrapper } from "../../../common/components/ResultsWrapper";
 import { ResultCard } from "../components/ResultCard";
 import { SortOptions } from "../components/SortOptions";
 import {
-	getPageAtom,
-	initializedAtom,
-	searchFiltersAtom,
-	setPageAtom,
-	facetsAtom,
-	isLoadingFacetsAtom,
+  getPageAtom,
+  initializedAtom,
+  searchFiltersAtom,
+  setPageAtom,
+  facetsAtom,
+  isLoadingFacetsAtom,
 } from "../store";
 import type {
-	ContentItem,
-	Facet,
-	SearchFilters,
+  ContentItem,
+  Facet,
+  SearchFilters,
 } from "../../../common/types/Content";
 import {
-	FACET_AGG_SIZE,
-	FACET_CONFIG,
-	INDEX_NAME,
-	ITEMS_PER_PAGE,
-	KEYWORD_SEARCH_FIELDS,
-	SORT_FIELD_MAP,
-	YEAR_RANGE_FIELDS,
+  FACET_AGG_SIZE,
+  FACET_CONFIG,
+  INDEX_NAME,
+  ITEMS_PER_PAGE,
+  KEYWORD_SEARCH_FIELDS,
+  SORT_FIELD_MAP,
+  YEAR_RANGE_FIELDS,
 } from "../constants";
 
 interface ResultsContainerProps {

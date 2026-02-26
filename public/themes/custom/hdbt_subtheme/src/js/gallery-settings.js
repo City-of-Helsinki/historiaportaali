@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const breakpointWidth = 992;
 
   const i18n =
-    typeof drupalSettings !== "undefined" &&
-    drupalSettings.hdbtGallery?.i18n
+    typeof drupalSettings !== "undefined" && drupalSettings.hdbtGallery?.i18n
       ? drupalSettings.hdbtGallery.i18n
       : undefined;
 
@@ -83,9 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gutter: 16,
       nav: false,
       edgePadding: 0,
-      controlsText: i18n
-        ? [i18n.prev, i18n.next]
-        : undefined,
+      controlsText: i18n ? [i18n.prev, i18n.next] : undefined,
       responsive: {
         0: { disable: true },
         [breakpointWidth]: { disable: false },

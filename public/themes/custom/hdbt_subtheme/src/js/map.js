@@ -208,15 +208,6 @@
 
         this.updateUrlWithEntityId(marker);
         scrollY = window.scrollY;
-
-        requestAnimationFrame(() => {
-          const content = popup._container?.querySelector(".leaflet-popup-content");
-          if (!content) return;
-          const link = content.querySelector('.content-card__link, a[href]');
-          const toFocus = link || content;
-          if (toFocus === content) toFocus.setAttribute("tabindex", "-1");
-          toFocus.focus({ preventScroll: true });
-        });
       });
 
       map.on("popupclose", (e) => {

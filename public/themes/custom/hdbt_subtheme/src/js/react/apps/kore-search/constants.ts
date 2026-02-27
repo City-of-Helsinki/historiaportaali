@@ -7,7 +7,10 @@ export const FACET_CONFIG = [
   { key: "kore_language", field: "kore_language" },
 ] as const;
 
-export const KEYWORD_SEARCH_FIELDS = ["kore_names^3", "title^2"] as const;
+export const KEYWORD_SEARCH_FIELDS = [
+  "kore_name_entries^3",
+  "title^2",
+] as const;
 
 export const YEAR_RANGE_FIELDS = {
   kore_start_year: "kore_start_year",

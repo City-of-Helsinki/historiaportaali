@@ -9,6 +9,7 @@ dependencies:
     - node.type.kore_school
   module:
     - entity_reference_revisions
+    - helhist_kore_search
     - node
 id: kore_school
 name: 'Kore school'
@@ -17,14 +18,10 @@ read_only: false
 field_settings:
   kore_end_year:
     label: 'Kore end year'
-    datasource_id: 'entity:node'
-    property_path: 'field_kore_names:entity:field_kore_end_year'
+    property_path: kore_end_year
     type: integer
     indexed_locked: false
     type_locked: false
-    dependencies:
-      module:
-        - entity_reference_revisions
   kore_language:
     label: 'Kore language'
     datasource_id: 'entity:node'
@@ -35,27 +32,19 @@ field_settings:
     dependencies:
       module:
         - entity_reference_revisions
-  kore_names:
-    label: 'Kore names'
-    datasource_id: 'entity:node'
-    property_path: 'field_kore_names:entity:field_kore_name'
+  kore_name_entries:
+    label: 'Kore name entries'
+    property_path: kore_name_entries
     type: text
     boost: 3.0
     indexed_locked: false
     type_locked: false
-    dependencies:
-      module:
-        - entity_reference_revisions
   kore_start_year:
     label: 'Kore start year'
-    datasource_id: 'entity:node'
-    property_path: 'field_kore_names:entity:field_kore_start_year'
+    property_path: kore_start_year
     type: integer
     indexed_locked: false
     type_locked: false
-    dependencies:
-      module:
-        - entity_reference_revisions
   kore_type:
     label: 'Kore type'
     datasource_id: 'entity:node'
@@ -102,6 +91,7 @@ processor_settings:
   add_url: {  }
   content_type: {  }
   entity_status: {  }
+  kore_names_years: {  }
   entity_type: {  }
   html_filter:
     weights:
@@ -109,7 +99,7 @@ processor_settings:
       preprocess_query: -15
     all_fields: true
     fields:
-      - kore_names
+      - kore_name_entries
       - title
       - url
     title: false

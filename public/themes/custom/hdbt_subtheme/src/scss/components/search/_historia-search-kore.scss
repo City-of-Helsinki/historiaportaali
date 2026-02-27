@@ -1,20 +1,54 @@
 // Kore search: school type + language on same row, year filters on next line
 .historia-search {
-  .react-search-filters {
-    &.kore-search__filters {
+  .kore-search__filters {
       grid-template-columns: 1fr 1fr;
-  
+
       .kore-search__filters-row {
         display: contents;
-  
+
         .filter-group {
           min-width: 0;
         }
       }
-  
+
       .kore-search__dates-row {
         grid-column: 1 / -1;
       }
+  }
+
+  .kore-result-card {
+
+    &__title-years {
+      color: $color-black-60;
+    }
+
+    &__names {
+      font-size: $fontsize-body-s;
+      margin-top: $spacing-half;
+    }
+
+    &__names-title {
+      font-size: $fontsize-body-m;
+      font-weight: $font-weight-medium;
+      margin: $spacing-half 0;
+    }
+
+    &__name-entry {
+      margin-bottom: $spacing-quarter;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__name {
+      font-weight: $font-weight-medium;
+    }
+
+    &__years {
+      color: $color-black-60;
+      font-size: $fontsize-body-s;
     }
   }
+
 }

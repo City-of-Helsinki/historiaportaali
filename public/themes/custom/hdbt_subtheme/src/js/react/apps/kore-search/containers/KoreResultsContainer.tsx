@@ -13,7 +13,12 @@ import {
   facetsAtom,
   isLoadingFacetsAtom,
 } from "../store";
-import type { KoreItem, SearchFilters, Facet } from "../types/Content";
+import type {
+  KoreItem,
+  KoreNameEntry,
+  SearchFilters,
+  Facet,
+} from "../types/Content";
 import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
@@ -58,7 +63,7 @@ type Aggregations = {
 type SearchSource = {
   nid?: string[];
   title?: string[];
-  kore_names?: string[];
+  kore_name_entries?: string[];
   kore_type?: string[];
   kore_language?: string[];
   kore_start_year?: number[];
@@ -158,14 +163,39 @@ const buildQueryString = ({
   return JSON.stringify(query);
 };
 
+const parseKoreNameEntries = (raw: string[] | undefined): KoreNameEntry[] => {
+  if (!raw?.length) return [];
+  const entries: KoreNameEntry[] = [];
+  for (const str of raw) {
+    try {
+      const parsed = JSON.parse(str) as {
+        name?: string;
+        start_year?: number | null;
+        end_year?: number | null;
+      };
+      if (parsed?.name) {
+        entries.push({
+          name: parsed.name,
+          start_year: parsed.start_year ?? null,
+          end_year: parsed.end_year ?? null,
+        });
+      }
+    } catch {
+      // Skip invalid JSON
+    }
+  }
+  return entries;
+};
+
 const toKoreItem = (hit: estypes.SearchHit<SearchSource>): KoreItem => {
   const s = hit._source ?? {};
   const starts = s.kore_start_year?.filter(Boolean) ?? [];
   const ends = s.kore_end_year?.filter(Boolean) ?? [];
+  const kore_name_entries = parseKoreNameEntries(s.kore_name_entries);
   return {
     nid: s.nid?.[0],
     title: s.title?.[0] || "Untitled",
-    kore_names: s.kore_names,
+    kore_name_entries: kore_name_entries.length ? kore_name_entries : undefined,
     kore_type: s.kore_type,
     kore_language: s.kore_language,
     start_year: starts.length ? Math.min(...starts) : undefined,

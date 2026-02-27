@@ -1,0 +1,20 @@
+// Kore search: school type + language on same row, year filters on next line
+.historia-search {
+  .react-search-filters {
+    &.kore-search__filters {
+      grid-template-columns: 1fr 1fr;
+  
+      .kore-search__filters-row {
+        display: contents;
+  
+        .filter-group {
+          min-width: 0;
+        }
+      }
+  
+      .kore-search__dates-row {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

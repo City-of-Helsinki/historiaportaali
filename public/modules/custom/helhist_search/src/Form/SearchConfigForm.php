@@ -6,6 +6,7 @@ namespace Drupal\helhist_search\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -23,16 +24,26 @@ class SearchConfigForm extends ConfigFormBase {
   protected $entityTypeManager;
 
   /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
    * Constructs a SearchConfigForm object.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The factory for configuration objects.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler) {
     parent::__construct($config_factory);
     $this->entityTypeManager = $entity_type_manager;
+    $this->moduleHandler = $module_handler;
   }
 
   /**
@@ -41,7 +52,8 @@ class SearchConfigForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new self(
       $container->get('config.factory'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('module_handler')
     );
   }
 
@@ -65,11 +77,22 @@ class SearchConfigForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state): array {
     $config = $this->config('helhist_search.settings');
 
+    if ($this->moduleHandler->moduleExists('helhist_kore_search')) {
+      $form['kore_search_page_node'] = [
+        '#type' => 'entity_autocomplete',
+        '#target_type' => 'node',
+        '#title' => $this->t('School register search page'),
+        '#description' => $this->t('The node that host the koulurekisteri search.'),
+        '#default_value' => $config->get('kore_search_page_node') ? $this->entityTypeManager->getStorage('node')->load($config->get('kore_search_page_node')) : NULL,
+        '#required' => FALSE,
+      ];
+    }
+
     $form['search_page_node'] = [
       '#type' => 'entity_autocomplete',
       '#target_type' => 'node',
-      '#title' => $this->t('Search page node'),
-      '#description' => $this->t('The node that host main search functionality. The title, hero etc. can be set and translated as usual on that node. The node url alias is recommended to be <em>/haku</em>, <em>/sok</em> or <em>/search</em> respective to translation.'),
+      '#title' => $this->t('Main search page'),
+      '#description' => $this->t('The node that host site main search.'),
       '#default_value' => $config->get('search_page_node') ? $this->entityTypeManager->getStorage('node')->load($config->get('search_page_node')) : NULL,
       '#required' => TRUE,
     ];
@@ -91,11 +114,15 @@ class SearchConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
-    $this->config('helhist_search.settings')
+    $config = $this->config('helhist_search.settings')
       ->set('search_page_node', $form_state->getValue('search_page_node'))
-      ->set('mapping_mode', $form_state->getValue('mapping_mode'))
-      ->save();
+      ->set('mapping_mode', $form_state->getValue('mapping_mode'));
 
+    if ($this->moduleHandler->moduleExists('helhist_kore_search')) {
+      $config->set('kore_search_page_node', $form_state->getValue('kore_search_page_node'));
+    }
+
+    $config->save();
     parent::submitForm($form, $form_state);
   }
 

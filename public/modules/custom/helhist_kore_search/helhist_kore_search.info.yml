@@ -1,0 +1,7 @@
+name: 'HelHist Kore Search'
+type: module
+description: 'Koulurekisteri React search template and theme.'
+core_version_requirement: ^10 || ^11
+package: 'Custom'
+dependencies:
+  - helhist_search:helhist_search

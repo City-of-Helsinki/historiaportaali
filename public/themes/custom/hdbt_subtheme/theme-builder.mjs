@@ -11,6 +11,7 @@ const outDir = path.resolve(__dirname, 'dist');
 // React apps.
 const reactApps = {
   'search-app': './src/js/react/apps/search/index.tsx',
+  'kore-search-app': './src/js/react/apps/kore-search/index.tsx',
 };
 
 // Vanilla JS files.

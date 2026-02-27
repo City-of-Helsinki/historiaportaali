@@ -238,9 +238,12 @@ function hdbt_subtheme_preprocess_block__page_title_block(&$variables) {
       $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
     }
     if ($node->bundle() == 'kore_school') {
-      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-      $kore_title = \Drupal::config('helhist_kore_admin.settings')->get('kore_search_title');
-      $variables['subtitle'] = $kore_title[$langcode] ?? $kore_title['fi'] ?? '';
+      $kore_node_id = \Drupal::service('helhist_search.search_path_resolver')->getKoreSearchPageNodeId();
+      /** @var \Drupal\node\NodeInterface|null $kore_node */
+      $kore_node = $kore_node_id ? \Drupal::entityTypeManager()->getStorage('node')->load($kore_node_id) : NULL;
+      if ($kore_node) {
+        $variables['subtitle'] = $kore_node->getTitle() ?? '';
+      }
     }
   }
 }

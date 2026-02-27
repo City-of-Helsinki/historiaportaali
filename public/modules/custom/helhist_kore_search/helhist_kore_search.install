@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the HelHist KoRe Search module.
+ */
+
+/**
+ * Removes KoRe search page node config when the module is uninstalled.
+ */
+function helhist_kore_search_uninstall(): void {
+  \Drupal::configFactory()
+    ->getEditable('helhist_search.settings')
+    ->clear('kore_search_page_node')
+    ->save();
+}

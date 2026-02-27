@@ -1,0 +1,4 @@
+services:
+  helhist_kore_search.kore_search_options:
+    class: Drupal\helhist_kore_search\KoreSearchOptionsProvider
+    arguments: ['@config.factory']

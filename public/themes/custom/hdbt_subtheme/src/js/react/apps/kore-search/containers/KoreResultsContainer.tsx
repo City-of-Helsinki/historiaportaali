@@ -93,7 +93,7 @@ const yearFilters = (filters: SearchFilters): unknown[] => {
   if (filters.endYear !== undefined) {
     arr.push({
       range: {
-        [YEAR_RANGE_FIELDS.kore_start_year]: { lte: filters.endYear },
+        [YEAR_RANGE_FIELDS.kore_end_year]: { lte: filters.endYear },
       },
     });
   }

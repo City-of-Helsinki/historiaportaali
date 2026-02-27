@@ -1,19 +1,101 @@
 // Kore search: school type + language on same row, year filters on next line
 .historia-search {
   .kore-search__filters {
-      grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-double;
 
-      .kore-search__filters-row {
-        display: contents;
+    .kore-search__filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing $spacing-double;
 
-        .filter-group {
-          min-width: 0;
+      .filter-group {
+        flex: 1 1 200px;
+        min-width: 0;
+      }
+    }
+
+    .kore-search__dates-row {
+      flex: 1 1 100%;
+    }
+  }
+
+  .year-range-input {
+    // Show HDS clear button when value is set (from slider or typing)
+    &[data-hds-textinput-filled] [class*="button-clear"] {
+      display: flex;
+    }
+
+    &__label {
+      display: block;
+      font-size: $fontsize-body-m;
+      font-weight: $font-weight-medium;
+    }
+
+    &__slider-wrapper {
+      margin-top: $spacing-quarter;
+    }
+
+    &__slider {
+      height: 6px;
+      margin: 0;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      background: $color-black-20;
+      border-radius: 3px;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        background: $color-black-90;
+        border: 2px solid $color-white;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+
+        &:hover {
+          background: $color-black;
         }
       }
 
-      .kore-search__dates-row {
-        grid-column: 1 / -1;
+      &::-moz-range-thumb {
+        background: $color-black-90;
+        border: 2px solid $color-white;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+
+        &:hover {
+          background: $color-black;
+        }
       }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        &::-webkit-slider-thumb {
+          cursor: not-allowed;
+        }
+
+        &::-moz-range-thumb {
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    &__range-labels {
+      color: $color-black-60;
+      display: flex;
+      font-size: $fontsize-body-s;
+      justify-content: space-between;
+    }
   }
 
   .kore-result-card {

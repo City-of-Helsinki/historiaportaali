@@ -6,10 +6,10 @@ import {
   Button,
   ButtonVariant,
   ButtonPresetTheme,
-  TextInput,
   Select,
   IconCross,
 } from "hds-react";
+import { YearRangeInput } from "./YearRangeInput";
 import type { Facet } from "../types/Content";
 import {
   keywordsAtom,
@@ -28,6 +28,10 @@ import {
   facetsAtom,
   isLoadingFacetsAtom,
 } from "../store";
+
+// TODO: read the possible minimum year from index, though 1550 is anyways the year Helsinki was established so this might be fine.
+const YEAR_MIN = 1550;
+const YEAR_MAX = new Date().getFullYear();
 
 export const KoreSearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
@@ -71,11 +75,6 @@ export const KoreSearchForm: React.FC = () => {
   const asString = (value: string | string[] | undefined): string =>
     Array.isArray(value) ? value[0] || "" : value || "";
 
-  const handleYearChange = (value: string, setter: (v: string) => void) => {
-    const match = value.match(/^-?\d{0,4}$/);
-    if (match) setter(value);
-  };
-
   const searchingAnnouncement = Drupal.t(
     "Searching...",
     {},
@@ -96,22 +95,15 @@ export const KoreSearchForm: React.FC = () => {
     }
   };
 
-  const commonYearInputProps = {
-    type: "text" as const,
-    inputMode: "numeric" as const,
-    clearButton: true,
-    max: new Date().getFullYear().toString(),
-  };
-
   const koreTypeFacet = facets?.find((f) => f.name === "kore_type");
   const koreLanguageFacet = facets?.find((f) => f.name === "kore_language");
 
   const hasActiveFilters = !!(
-    (keywords && keywords.length > 0) ||
-    (startYear !== undefined && startYear !== null && startYear !== "") ||
-    (endYear !== undefined && endYear !== null && endYear !== "") ||
-    (typeFilter && typeFilter.length > 0) ||
-    (languageFilter && languageFilter.length > 0)
+    keywords ||
+    startYear ||
+    endYear ||
+    typeFilter ||
+    languageFilter
   );
 
   const handleFacetSubmit = (
@@ -249,44 +241,45 @@ export const KoreSearchForm: React.FC = () => {
 
           <div className="filter-group filter-group--dates kore-search__dates-row">
             <div className="date-filter-inputs">
-              <TextInput
-                {...commonYearInputProps}
+              <YearRangeInput
                 id="kore-start-year"
                 label={Drupal.t("Beginning at", {}, { context: "Kore search" })}
                 value={asString(startYear)}
-                onChange={(e) =>
-                  handleInputChange(
-                    e.target.value,
-                    (v) => handleYearChange(v, setStartYear),
-                    "startYear",
-                  )
+                onChange={(v) =>
+                  handleInputChange(v, setStartYear, "startYear")
                 }
-                min={1550}
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} 1550`}
+                onSliderRelease={() => {
+                  submitFilters();
+                  setFilterAnnouncement(searchingAnnouncement);
+                }}
+                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} ${YEAR_MIN}`}
                 clearButtonAriaLabel={Drupal.t(
                   "Clear beginning at",
                   {},
                   { context: "Kore search" },
                 )}
+                minYear={YEAR_MIN}
+                maxYear={YEAR_MAX}
+                disabled={loading}
               />
-              <TextInput
-                {...commonYearInputProps}
+              <YearRangeInput
                 id="kore-end-year"
                 label={Drupal.t("Ending at", {}, { context: "Kore search" })}
                 value={asString(endYear)}
-                onChange={(e) =>
-                  handleInputChange(
-                    e.target.value,
-                    (v) => handleYearChange(v, setEndYear),
-                    "endYear",
-                  )
-                }
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} ${new Date().getFullYear()}`}
+                onChange={(v) => handleInputChange(v, setEndYear, "endYear")}
+                onSliderRelease={() => {
+                  submitFilters();
+                  setFilterAnnouncement(searchingAnnouncement);
+                }}
+                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} ${YEAR_MAX}`}
                 clearButtonAriaLabel={Drupal.t(
                   "Clear ending at",
                   {},
                   { context: "Kore search" },
                 )}
+                minYear={YEAR_MIN}
+                maxYear={YEAR_MAX}
+                disabled={loading}
               />
             </div>
           </div>

@@ -71,6 +71,32 @@ function hdbt_subtheme_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_page().
+ *
+ * Ensure React search blocks always appear after node content in the content
+ * region, regardless of block weights or layout changes.
+ */
+function hdbt_subtheme_preprocess_page(&$variables) {
+  $search_block_ids = [
+    'hdbt_subtheme_helhistreactsearch',
+    'hdbt_subtheme_helhistkorereactsearch',
+  ];
+
+  if (isset($variables['page']['content']) && is_array($variables['page']['content'])) {
+    $search_blocks = [];
+    foreach ($search_block_ids as $block_id) {
+      if (isset($variables['page']['content'][$block_id])) {
+        $search_blocks[$block_id] = $variables['page']['content'][$block_id];
+        unset($variables['page']['content'][$block_id]);
+      }
+    }
+    if (!empty($search_blocks)) {
+      $variables['page']['content'] = $variables['page']['content'] + $search_blocks;
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_region().
  */
 function hdbt_subtheme_preprocess_region(&$variables) {

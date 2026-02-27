@@ -27,7 +27,9 @@ class KoreSearchOptionsProvider {
    * Extract values with labels from a list_string field storage config.
    *
    * @param string $config_name
-   *   The configuration ID
+   *   The configuration ID.
+   * @param bool $alphabetical_sort
+   *   Whether to sort the options alphabetically.
    *
    * @return array<int, array{value: string, label: string}>
    *   Array of {value, label} in requested order.
@@ -51,7 +53,7 @@ class KoreSearchOptionsProvider {
     if ($alphabetical_sort) {
       usort($options, fn(array $a, array $b) => strcasecmp($a['label'], $b['label']));
     }
-    
+
     return $options;
   }
 

@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * @file
  * Install, update and uninstall functions for the HelHist KoRe Search module.
  */
+
+declare(strict_types=1);
 
 /**
  * Removes KoRe search page node config when the module is uninstalled.

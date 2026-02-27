@@ -8,13 +8,13 @@ dependencies:
     - hdbt_subtheme
 id: hdbt_subtheme_helhistkorereactsearch
 theme: hdbt_subtheme
-region: after_content
+region: content
 weight: 0
 provider: null
 plugin: helhist_kore_search_block
 settings:
   id: helhist_kore_search_block
-  label: 'KoRe React Search'
+  label: 'HelHist KoRe React Search'
   label_display: '0'
   provider: helhist_kore_search
 visibility: {  }

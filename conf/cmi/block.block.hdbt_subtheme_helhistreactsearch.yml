@@ -8,8 +8,8 @@ dependencies:
     - hdbt_subtheme
 id: hdbt_subtheme_helhistreactsearch
 theme: hdbt_subtheme
-region: after_content
-weight: -15
+region: content
+weight: 0
 provider: null
 plugin: helhist_search_react_search_block
 settings:

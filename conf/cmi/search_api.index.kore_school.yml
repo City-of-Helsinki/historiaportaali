@@ -91,7 +91,6 @@ processor_settings:
   add_url: {  }
   content_type: {  }
   entity_status: {  }
-  kore_names_years: {  }
   entity_type: {  }
   html_filter:
     weights:
@@ -112,6 +111,7 @@ processor_settings:
       h3: 2.0
       strong: 2.0
       u: 1.5
+  kore_names_years: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   tokenizer:

@@ -1,0 +1,20 @@
+uuid: b7df205d-38f7-49c7-a4ca-ca6a70370202
+langcode: en
+status: true
+dependencies:
+  module:
+    - helhist_kore_search
+  theme:
+    - hdbt_subtheme
+id: hdbt_subtheme_helhistkorereactsearch
+theme: hdbt_subtheme
+region: content
+weight: 0
+provider: null
+plugin: helhist_kore_search_block
+settings:
+  id: helhist_kore_search_block
+  label: 'HelHist KoRe React Search'
+  label_display: '0'
+  provider: helhist_kore_search
+visibility: {  }

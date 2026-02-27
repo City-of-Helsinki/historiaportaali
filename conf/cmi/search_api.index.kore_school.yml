@@ -1,0 +1,135 @@
+uuid: b8c2d4e6-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kore_names
+    - field.storage.node.field_kore_types
+    - field.storage.node.field_kore_languages
+    - node.type.kore_school
+  module:
+    - entity_reference_revisions
+    - helhist_kore_search
+    - node
+id: kore_school
+name: 'Kore school'
+description: 'Search index for koulurekisteri (KoRe school register)'
+read_only: false
+field_settings:
+  kore_end_year:
+    label: 'Kore end year'
+    property_path: kore_end_year
+    type: integer
+    indexed_locked: false
+    type_locked: false
+  kore_language:
+    label: 'Kore language'
+    datasource_id: 'entity:node'
+    property_path: 'field_kore_languages:entity:field_kore_language'
+    type: string
+    indexed_locked: false
+    type_locked: false
+    dependencies:
+      module:
+        - entity_reference_revisions
+  kore_name_entries:
+    label: 'Kore name entries'
+    property_path: kore_name_entries
+    type: text
+    boost: 3.0
+    indexed_locked: false
+    type_locked: false
+  kore_start_year:
+    label: 'Kore start year'
+    property_path: kore_start_year
+    type: integer
+    indexed_locked: false
+    type_locked: false
+  kore_type:
+    label: 'Kore type'
+    datasource_id: 'entity:node'
+    property_path: 'field_kore_types:entity:field_kore_type'
+    type: string
+    indexed_locked: false
+    type_locked: false
+    dependencies:
+      module:
+        - entity_reference_revisions
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: 2.0
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: false
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - kore_school
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  content_type: {  }
+  entity_status: {  }
+  entity_type: {  }
+  html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: true
+    fields:
+      - kore_name_entries
+      - title
+      - url
+    title: false
+    alt: false
+    tags:
+      b: 2.0
+      em: 1.5
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
+      u: 1.5
+  kore_names_years: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  tokenizer:
+    weights:
+      preprocess_index: -48
+      preprocess_query: -45
+    all_fields: false
+    fields: {  }
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: elasticsearch

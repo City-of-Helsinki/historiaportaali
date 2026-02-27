@@ -103,6 +103,7 @@ module:
   helhist_article: 0
   helhist_kore: 0
   helhist_kore_admin: 0
+  helhist_kore_search: 0
   helhist_map: 0
   helhist_media_usage: 0
   helhist_node_resave: 0

@@ -5,6 +5,9 @@ helhist_search.settings:
     search_page_node:
       type: string
       label: 'Search page node'
+    kore_search_page_node:
+      type: string
+      label: 'KoRe search page node'
     mapping_mode:
       type: string
       label: 'Search mapping mode'

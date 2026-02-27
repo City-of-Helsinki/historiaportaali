@@ -721,7 +721,7 @@ display:
           category_fallback: ''
           category_facets: {  }
           category_facets_concat_separator: ', '
-      path: koulurekisteri
+      path: koulurekisteri-old
     cache_metadata:
       max-age: -1
       contexts:

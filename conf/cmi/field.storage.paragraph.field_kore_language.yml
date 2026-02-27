@@ -13,25 +13,25 @@ settings:
   allowed_values:
     -
       value: suomi
-      label: suomi
+      label: Suomi
     -
       value: ruotsi
-      label: ruotsi
+      label: Ruotsi
     -
       value: englanti
-      label: englanti
+      label: Englanti
     -
       value: ranska
-      label: ranska
+      label: Ranska
     -
       value: saksa
-      label: saksa
+      label: Saksa
     -
       value: venaja
-      label: venäjä
+      label: Venäjä
     -
       value: saamen_kielet
-      label: 'saamen kielet'
+      label: 'Saamen kielet'
   allowed_values_function: ''
 module: options
 locked: false

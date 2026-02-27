@@ -86,3 +86,13 @@ react-search-app:
       dist/css/styles.min.css: {}
   dependencies:
     - core/drupal
+
+kore-search-app:
+  version: 1.0.0
+  js:
+    dist/js/kore-search-app.min.js: { preprocess: false }
+  css:
+    theme:
+      dist/css/styles.min.css: {}
+  dependencies:
+    - core/drupal

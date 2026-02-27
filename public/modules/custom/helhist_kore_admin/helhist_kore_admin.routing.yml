@@ -1,8 +1,0 @@
-helhist_kore_admin.settings:
-  path: '/admin/tools/kore'
-  defaults:
-    _form: '\Drupal\helhist_kore_admin\Form\KoreSettingsForm'
-    _title: 'Kore Settings'
-  requirements:
-    _permission: 'administer site configuration'
-    _admin_route: TRUE

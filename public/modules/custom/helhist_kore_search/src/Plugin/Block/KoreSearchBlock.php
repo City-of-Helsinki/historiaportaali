@@ -7,6 +7,7 @@ namespace Drupal\helhist_kore_search\Plugin\Block;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -39,6 +40,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
     protected RouteMatchInterface $routeMatch,
     protected SearchPathResolver $searchPathResolver,
     protected KoreSearchOptionsProvider $koreSearchOptions,
+    protected ConfigFactoryInterface $configFactory,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -53,7 +55,8 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $plugin_definition,
       $container->get('current_route_match'),
       $container->get('helhist_search.search_path_resolver'),
-      $container->get('helhist_kore_search.kore_search_options')
+      $container->get('helhist_kore_search.kore_search_options'),
+      $container->get('config.factory')
     );
   }
 
@@ -81,6 +84,9 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build() {
     $type_options = $this->koreSearchOptions->getAllowedValuesWithLabels('field.storage.paragraph.field_kore_type', TRUE);
     $language_options = $this->koreSearchOptions->getAllowedValuesWithLabels('field.storage.paragraph.field_kore_language');
+    $mapping_mode = $this->configFactory
+      ->get('helhist_search.settings')
+      ->get('mapping_mode') ?: 'text';
 
     return [
       '#theme' => 'kore_react_search',
@@ -93,6 +99,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
           'koreSearch' => [
             'typeOptions' => $type_options,
             'languageOptions' => $language_options,
+            'mappingMode' => $mapping_mode,
             'sortLabels' => [
               'name' => $this->t('School name', [], ['context' => 'Kore search']),
             ],
@@ -103,6 +110,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
         'tags' => [
           'config:field.storage.paragraph.field_kore_type',
           'config:field.storage.paragraph.field_kore_language',
+          'config:helhist_search.settings',
         ],
       ],
     ];

@@ -75,6 +75,11 @@ type SearchSource = {
   url?: string[];
 };
 
+const getMappingMode = (): "text" | "keyword" => {
+  const mode = drupalSettings?.koreSearch?.mappingMode;
+  return mode === "keyword" ? "keyword" : "text";
+};
+
 const keywordMatch = (query: string) => ({
   multi_match: {
     query,
@@ -108,18 +113,25 @@ const buildQueryString = ({
   filters,
   offset,
   itemsPerPage,
+  useKeywordSubfields,
   languageField,
   languageValue,
 }: {
   filters: SearchFilters;
   offset: number;
   itemsPerPage: number;
+  useKeywordSubfields: boolean;
   languageField: string;
   languageValue: string;
 }) => {
   const keywords = filters.keywords.trim();
   const langFilter = { term: { [languageField]: languageValue } };
   const yearFilterList = yearFilters(filters);
+  const resolveField = (field: (typeof FACET_CONFIG)[number]["field"]) =>
+    useKeywordSubfields ? `${field}.keyword` : field;
+  const resolvedFacetFields = Object.fromEntries(
+    FACET_CONFIG.map((f) => [f.key, resolveField(f.field)]),
+  ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
 
   // Facet aggs: keyword + year only (type/language excluded so counts are independent)
   const facetBaseFilter: unknown[] = [
@@ -132,7 +144,9 @@ const buildQueryString = ({
   for (const facet of FACET_CONFIG) {
     const value = filters[facet.key as keyof typeof filters];
     if (value) {
-      facetTermFilters.push({ term: { [facet.field]: value } });
+      facetTermFilters.push({
+        term: { [resolvedFacetFields[facet.key]]: value },
+      });
     }
   }
 
@@ -151,7 +165,12 @@ const buildQueryString = ({
         aggs: Object.fromEntries(
           FACET_CONFIG.map((f) => [
             f.key,
-            { terms: { field: f.field, size: FACET_AGG_SIZE } },
+            {
+              terms: {
+                field: resolvedFacetFields[f.key],
+                size: FACET_AGG_SIZE,
+              },
+            },
           ]),
         ),
       },
@@ -245,6 +264,7 @@ export const KoreResultsContainer = ({
   const offset = currentPageIndex * itemsPerPage;
   const languageField = "search_api_language";
   const languageValue = drupalSettings?.path?.currentLanguage || "fi";
+  const useKeywordSubfields = getMappingMode() === "keyword";
 
   const queryString = useMemo(
     () =>
@@ -252,10 +272,11 @@ export const KoreResultsContainer = ({
         filters,
         offset,
         itemsPerPage,
+        useKeywordSubfields,
         languageField,
         languageValue,
       }),
-    [filters, languageValue, offset, itemsPerPage],
+    [filters, languageValue, offset, itemsPerPage, useKeywordSubfields],
   );
 
   const fetcher = useCallback(

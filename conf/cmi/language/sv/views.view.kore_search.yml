@@ -1,7 +1,0 @@
-display:
-  default:
-    display_options:
-      title: Skolregister
-      empty:
-        area_text_custom:
-          content: 'Inga resultat med valda filter'

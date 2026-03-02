@@ -6,6 +6,7 @@ namespace Drupal\helhist_admin_forms\Plugin\views\field;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\views\Attribute\ViewsField;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -15,10 +16,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @ingroup views_field_handlers
  *
- * @ViewsField("entity_translations_field")
- *
  * @phpstan-consistent-constructor
  */
+#[ViewsField('entity_translations_field')]
 class EntityTranslationsField extends FieldPluginBase {
 
   /**

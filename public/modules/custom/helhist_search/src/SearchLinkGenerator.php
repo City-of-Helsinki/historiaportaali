@@ -33,18 +33,12 @@ class SearchLinkGenerator {
   ];
 
   /**
-   * The search path resolver.
-   */
-  protected SearchPathResolver $searchPathResolver;
-
-  /**
    * Constructs a SearchLinkGenerator object.
    */
   public function __construct(
-    SearchPathResolver $search_path_resolver,
+    protected SearchPathResolver $searchPathResolver,
     TranslationInterface $string_translation,
   ) {
-    $this->searchPathResolver = $search_path_resolver;
     $this->stringTranslation = $string_translation;
   }
 

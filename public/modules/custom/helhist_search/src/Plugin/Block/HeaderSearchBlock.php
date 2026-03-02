@@ -28,54 +28,17 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The form builder service.
-   *
-   * @var \Drupal\Core\Form\FormBuilderInterface
-   */
-  protected $formBuilder;
-
-  /**
-   * The route match.
-   *
-   * @var \Drupal\Core\Routing\RouteMatchInterface
-   */
-  protected $routeMatch;
-
-  /**
-   * The search path resolver service.
-   *
-   * @var \Drupal\helhist_search\SearchPathResolver
-   */
-  protected $searchPathResolver;
-
-  /**
    * Constructs a new HeaderSearchBlock object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
-   *   The form builder service.
-   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
-   *   The route match.
-   * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
-   *   The search path resolver service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    FormBuilderInterface $form_builder,
-    RouteMatchInterface $route_match,
-    SearchPathResolver $search_path_resolver,
+    protected FormBuilderInterface $formBuilder,
+    protected RouteMatchInterface $routeMatch,
+    protected SearchPathResolver $searchPathResolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->formBuilder = $form_builder;
-    $this->routeMatch = $route_match;
-    $this->searchPathResolver = $search_path_resolver;
   }
 
   /**

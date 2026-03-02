@@ -24,27 +24,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ComparisonMapControlsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The map service.
-   *
-   * @var \Drupal\helhist_map\MapService
-   */
-  protected $mapService;
-
-  /**
    * Constructs a ComparisonMapControlsBlock object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\helhist_map\MapService $map_service
-   *   The map service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MapService $map_service) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    protected MapService $mapService,
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->mapService = $map_service;
   }
 
   /**

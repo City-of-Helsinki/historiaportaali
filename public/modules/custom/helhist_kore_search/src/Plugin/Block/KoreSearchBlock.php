@@ -30,35 +30,17 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The route match.
-   */
-  protected RouteMatchInterface $routeMatch;
-
-  /**
-   * The search path resolver service.
-   */
-  protected SearchPathResolver $searchPathResolver;
-
-  /**
-   * The KoRe search options provider.
-   */
-  protected KoreSearchOptionsProvider $koreSearchOptions;
-
-  /**
    * Constructs a new KoreSearchBlock object.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    RouteMatchInterface $route_match,
-    SearchPathResolver $search_path_resolver,
-    KoreSearchOptionsProvider $kore_search_options,
+    protected RouteMatchInterface $routeMatch,
+    protected SearchPathResolver $searchPathResolver,
+    protected KoreSearchOptionsProvider $koreSearchOptions,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->routeMatch = $route_match;
-    $this->searchPathResolver = $search_path_resolver;
-    $this->koreSearchOptions = $kore_search_options;
   }
 
   /**

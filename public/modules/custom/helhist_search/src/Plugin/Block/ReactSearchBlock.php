@@ -29,54 +29,17 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The route match.
-   *
-   * @var \Drupal\Core\Routing\RouteMatchInterface
-   */
-  protected $routeMatch;
-
-  /**
-   * The config factory.
-   *
-   * @var \Drupal\Core\Config\ConfigFactoryInterface
-   */
-  protected $configFactory;
-
-  /**
-   * The search path resolver service.
-   *
-   * @var \Drupal\helhist_search\SearchPathResolver
-   */
-  protected $searchPathResolver;
-
-  /**
    * Constructs a new ReactSearchBlock object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
-   *   The route match.
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The config factory.
-   * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
-   *   The search path resolver service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    RouteMatchInterface $route_match,
-    ConfigFactoryInterface $config_factory,
-    SearchPathResolver $search_path_resolver,
+    protected RouteMatchInterface $routeMatch,
+    protected ConfigFactoryInterface $configFactory,
+    protected SearchPathResolver $searchPathResolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->routeMatch = $route_match;
-    $this->configFactory = $config_factory;
-    $this->searchPathResolver = $search_path_resolver;
   }
 
   /**

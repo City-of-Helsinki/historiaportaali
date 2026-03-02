@@ -13,19 +13,11 @@ use Drupal\Core\Url;
 class SearchPathResolver {
 
   /**
-   * The config factory.
-   */
-  protected ConfigFactoryInterface $configFactory;
-
-  /**
    * Constructs a SearchPathResolver object.
-   *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The config factory.
    */
-  public function __construct(ConfigFactoryInterface $config_factory) {
-    $this->configFactory = $config_factory;
-  }
+  public function __construct(
+    protected ConfigFactoryInterface $configFactory,
+  ) {}
 
   /**
    * Get the search page node ID.

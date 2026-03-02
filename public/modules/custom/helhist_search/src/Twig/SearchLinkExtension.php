@@ -25,16 +25,11 @@ use Twig\TwigFunction;
 class SearchLinkExtension extends AbstractExtension {
 
   /**
-   * The search link generator.
-   */
-  protected SearchLinkGenerator $searchLinkGenerator;
-
-  /**
    * Constructs a SearchLinkExtension object.
    */
-  public function __construct(SearchLinkGenerator $search_link_generator) {
-    $this->searchLinkGenerator = $search_link_generator;
-  }
+  public function __construct(
+    protected SearchLinkGenerator $searchLinkGenerator,
+  ) {}
 
   /**
    * {@inheritdoc}

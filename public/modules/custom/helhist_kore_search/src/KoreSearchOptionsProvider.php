@@ -12,16 +12,11 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 class KoreSearchOptionsProvider {
 
   /**
-   * The config factory.
-   */
-  protected ConfigFactoryInterface $configFactory;
-
-  /**
    * Constructs a KoreSearchOptionsProvider object.
    */
-  public function __construct(ConfigFactoryInterface $config_factory) {
-    $this->configFactory = $config_factory;
-  }
+  public function __construct(
+    protected ConfigFactoryInterface $configFactory,
+  ) {}
 
   /**
    * Extract values with labels from a list_string field storage config.

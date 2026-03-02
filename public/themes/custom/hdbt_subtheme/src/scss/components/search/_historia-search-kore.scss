@@ -99,27 +99,38 @@
   }
 
   .kore-result-card {
-
-    &__title-years {
+    &__years-inline {
       color: $color-black-60;
     }
 
+    &__types {
+      margin-top: $spacing-quarter;
+    }
+
     &__names {
+      display: flex;
+      flex-direction: column;
       font-size: $fontsize-body-s;
+      gap: $spacing-quarter;
       margin-top: $spacing-half;
     }
 
     &__names-title {
       font-size: $fontsize-body-m;
       font-weight: $font-weight-medium;
-      margin: $spacing-half 0;
+      margin: $spacing-half 0 0;
     }
 
-    &__name-entry {
-      margin-bottom: $spacing-quarter;
+    &__names-list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-quarter;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-      &:last-child {
-        margin-bottom: 0;
+      li {
+        margin: $spacing-quarter 0 0;
       }
     }
 
@@ -129,7 +140,6 @@
 
     &__years {
       color: $color-black-60;
-      font-size: $fontsize-body-s;
     }
   }
 

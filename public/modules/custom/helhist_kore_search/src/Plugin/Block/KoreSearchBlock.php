@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Drupal\helhist_kore_search\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_kore_search\KoreSearchOptionsProvider;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
@@ -18,14 +20,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a KoRe (koulurekisteri) React Search block.
  *
- * @Block(
- *   id = "helhist_kore_search_block",
- *   admin_label = @Translation("HelHist KoRe React Search"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_kore_search_block',
+  admin_label: new TranslatableMarkup('HelHist KoRe React Search'),
+  category: new TranslatableMarkup('HelHist'),
+)]
 class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

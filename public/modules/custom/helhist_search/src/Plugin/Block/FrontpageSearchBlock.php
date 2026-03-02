@@ -4,23 +4,24 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\Form\FrontpageSearchForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Frontpage Search block.
  *
- * @Block(
- *   id = "helhist_search_frontpage_block",
- *   admin_label = @Translation("HelHist Frontpage Search"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_search_frontpage_block',
+  admin_label: new TranslatableMarkup('HelHist Frontpage Search'),
+  category: new TranslatableMarkup('HelHist'),
+)]
 class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

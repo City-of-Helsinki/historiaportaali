@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Drupal\helhist_search\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -17,14 +19,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a React Search block.
  *
- * @Block(
- *   id = "helhist_search_react_search_block",
- *   admin_label = @Translation("HelHist React Search"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_search_react_search_block',
+  admin_label: new TranslatableMarkup('HelHist React Search'),
+  category: new TranslatableMarkup('HelHist'),
+)]
 class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

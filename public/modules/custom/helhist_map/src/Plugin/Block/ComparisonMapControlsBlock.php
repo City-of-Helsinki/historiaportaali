@@ -4,22 +4,23 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_map\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_map\MapService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Map Controls block.
  *
- * @Block(
- *   id = "helhist_map_comparison_map_controls_block",
- *   admin_label = @Translation("HelHist Comparison Map Controls"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_map_comparison_map_controls_block',
+  admin_label: new TranslatableMarkup('HelHist Comparison Map Controls'),
+  category: new TranslatableMarkup('HelHist'),
+)]
 class ComparisonMapControlsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_kore_search\Plugin\search_api\processor;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\search_api\Attribute\SearchApiProcessor;
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
@@ -11,18 +13,17 @@ use Drupal\search_api\Processor\ProcessorProperty;
 
 /**
  * Computes KoRe school names with years for indexing.
- *
- * @SearchApiProcessor(
- *   id = "kore_names_years",
- *   label = @Translation("KoRe names with years"),
- *   description = @Translation("Computes kore_start_year, kore_end_year and kore_names with year ranges for display"),
- *   stages = {
- *     "add_properties" = 0,
- *   },
- *   locked = true,
- *   hidden = false,
- * )
  */
+#[SearchApiProcessor(
+  id: 'kore_names_years',
+  label: new TranslatableMarkup('KoRe names with years'),
+  description: new TranslatableMarkup('Computes kore_start_year, kore_end_year and kore_names with year ranges for display'),
+  stages: [
+    'add_properties' => 0,
+  ],
+  locked: TRUE,
+  hidden: FALSE,
+)]
 class KoreNamesYears extends ProcessorPluginBase {
 
   /**

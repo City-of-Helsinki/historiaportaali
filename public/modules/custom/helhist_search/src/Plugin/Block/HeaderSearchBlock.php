@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\Form\HeaderSearchForm;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
@@ -16,14 +18,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a Header Search block.
  *
- * @Block(
- *   id = "helhist_search_header_search_block",
- *   admin_label = @Translation("HelHist Header Search"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_search_header_search_block',
+  admin_label: new TranslatableMarkup('HelHist Header Search'),
+  category: new TranslatableMarkup('HelHist'),
+)]
 class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

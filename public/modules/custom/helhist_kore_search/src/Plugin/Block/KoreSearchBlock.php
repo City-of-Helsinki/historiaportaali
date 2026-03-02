@@ -110,6 +110,9 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
           'koreSearch' => [
             'typeOptions' => $type_options,
             'languageOptions' => $language_options,
+            'sortLabels' => [
+              'name' => $this->t('School name', [], ['context' => 'Kore search']),
+            ],
           ],
         ],
       ],

@@ -4,6 +4,7 @@ import { useAtomCallback } from "jotai/utils";
 import { useCallback, useEffect, useMemo } from "react";
 import useSWR from "swr";
 import { ResultsWrapper } from "../../search/common/components/ResultsWrapper";
+import { SortOptions } from "../../search/common/components/SortOptions";
 import { KoreResultCard } from "../components/KoreResultCard";
 import {
   getPageAtom,
@@ -12,6 +13,8 @@ import {
   setPageAtom,
   facetsAtom,
   isLoadingFacetsAtom,
+  urlAtom,
+  urlUpdateAtom,
 } from "../store";
 import type {
   KoreItem,
@@ -25,6 +28,7 @@ import {
   INDEX_NAME,
   ITEMS_PER_PAGE,
   KEYWORD_SEARCH_FIELDS,
+  SORT_FIELD_MAP,
   YEAR_RANGE_FIELDS,
 } from "../constants";
 
@@ -152,12 +156,16 @@ const buildQueryString = ({
         ),
       },
     },
-    sort:
-      filters.sort === "title"
-        ? [{ title: { order: (filters.sort_order || "ASC").toLowerCase() } }]
-        : keywords
-          ? [{ _score: { order: "desc" } }]
-          : [],
+    sort: (() => {
+      const order = (filters.sort_order || "ASC").toLowerCase();
+      if (filters.sort === "year") {
+        return [{ [SORT_FIELD_MAP.year]: { order } }];
+      }
+      if (filters.sort === "name") {
+        return [{ [SORT_FIELD_MAP.name]: { order } }];
+      }
+      return [{ [SORT_FIELD_MAP.name]: { order: "asc" } }];
+    })(),
   };
 
   return JSON.stringify(query);
@@ -295,6 +303,14 @@ export const KoreResultsContainer = ({
       itemsPerPage={itemsPerPage}
       isLoading={isLoading}
       shouldScroll={readInitialized()}
+      sortElement={
+        <SortOptions
+          urlAtom={urlAtom}
+          urlUpdateAtom={urlUpdateAtom}
+          options={["name", "year"]}
+          context="Search"
+        />
+      }
     />
   );
 };

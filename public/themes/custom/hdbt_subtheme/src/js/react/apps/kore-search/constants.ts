@@ -18,5 +18,6 @@ export const YEAR_RANGE_FIELDS = {
 } as const;
 
 export const SORT_FIELD_MAP = {
-  title: "title",
+  name: "title.keyword",
+  year: "kore_start_year",
 } as const;

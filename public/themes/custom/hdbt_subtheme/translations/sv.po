@@ -122,6 +122,14 @@ msgid "Year"
 msgstr "År"
 
 msgctxt "Search"
+msgid "Title"
+msgstr "Namn"
+
+msgctxt "Search"
+msgid "Name"
+msgstr "Namn"
+
+msgctxt "Search"
 msgid "Created"
 msgstr "Laddat"
 
@@ -298,3 +306,72 @@ msgstr "Sökning klar. Inga objekt hittades."
 msgctxt "Map"
 msgid "Search complete. @count items found."
 msgstr "Sökning klar. @count objekt hittades."
+
+msgctxt "Kore search"
+msgid "Search"
+msgstr "Sök"
+
+msgctxt "Kore search"
+msgid "School name..."
+msgstr "Skolnamn..."
+
+msgctxt "Kore search"
+msgid "Clear search"
+msgstr "Rensa sökning"
+
+msgctxt "Kore search"
+msgid "Filter results"
+msgstr "Begränsa sökresultaten"
+
+msgctxt "Search"
+msgid "School name"
+msgstr "Skolnamn"
+
+msgctxt "Kore search"
+msgid "School type"
+msgstr "Skoltyp"
+
+msgctxt "Kore search"
+msgid "Select school type"
+msgstr "Välj skoltyp"
+
+msgctxt "Kore search"
+msgid "Language"
+msgstr "Språk"
+
+msgctxt "Kore search"
+msgid "Select language"
+msgstr "Välj språk"
+
+msgctxt "Kore search"
+msgid "Beginning at"
+msgstr "Från år"
+
+msgctxt "Kore search"
+msgid "Ending at"
+msgstr "Till år"
+
+msgctxt "Kore search"
+msgid "Clear beginning at"
+msgstr "Rensa från år"
+
+msgctxt "Kore search"
+msgid "Clear ending at"
+msgstr "Rensa till år"
+
+msgctxt "Kore search"
+msgid "Searching..."
+msgstr "Söker..."
+
+msgctxt "Kore search"
+msgid "Clear"
+msgstr "Rensa"
+
+msgid "Previous names"
+msgstr "Tidigare namn"
+
+msgid "range @min to @max"
+msgstr "årintervall @min – @max"
+
+msgid "@min — @max"
+msgstr "@min – @max"

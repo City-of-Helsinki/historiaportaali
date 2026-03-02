@@ -122,6 +122,10 @@ msgid "Year"
 msgstr "Vuosi"
 
 msgctxt "Search"
+msgid "School name"
+msgstr "Koulun nimi"
+
+msgctxt "Search"
 msgid "Created"
 msgstr "Julkaisuajankohta"
 
@@ -298,3 +302,68 @@ msgstr "Haku valmis. Ei tuloksia."
 msgctxt "Map"
 msgid "Search complete. @count items found."
 msgstr "Haku valmis. @count kohdetta löytyi."
+
+msgctxt "Kore search"
+msgid "Search"
+msgstr "Hae"
+
+msgctxt "Kore search"
+msgid "School name..."
+msgstr "Etsi koulun nimellä"
+
+msgctxt "Kore search"
+msgid "Clear search"
+msgstr "Tyhjennä haku"
+
+msgctxt "Kore search"
+msgid "Filter results"
+msgstr "Rajaa tuloksia"
+
+msgctxt "Kore search"
+msgid "School type"
+msgstr "Koulutyyppi"
+
+msgctxt "Kore search"
+msgid "Select school type"
+msgstr "Valitse koulutyyppi"
+
+msgctxt "Kore search"
+msgid "Language"
+msgstr "Opetuskieli"
+
+msgctxt "Kore search"
+msgid "Select language"
+msgstr "Valitse kieli"
+
+msgctxt "Kore search"
+msgid "Beginning at"
+msgstr "Alkaen vuodesta"
+
+msgctxt "Kore search"
+msgid "Ending at"
+msgstr "Päättyen vuoteen"
+
+msgctxt "Kore search"
+msgid "Clear beginning at"
+msgstr "Tyhjennä alkuvuosi"
+
+msgctxt "Kore search"
+msgid "Clear ending at"
+msgstr "Tyhjennä loppuvuosi"
+
+msgctxt "Kore search"
+msgid "Searching..."
+msgstr "Haetaan..."
+
+msgctxt "Kore search"
+msgid "Clear"
+msgstr "Tyhjennä"
+
+msgid "Previous names"
+msgstr "Aiemmat nimet"
+
+msgid "range @min to @max"
+msgstr "vuosiväli @min – @max"
+
+msgid "@min — @max"
+msgstr "@min – @max"

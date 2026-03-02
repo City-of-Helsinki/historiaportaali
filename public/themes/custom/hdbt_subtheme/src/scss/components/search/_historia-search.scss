@@ -125,6 +125,7 @@
   }
 
   &__pagination {
+    margin-top: $spacing-double;
     // Reset any inherited list styles that interfere with HDS Pagination
     nav[class*="pagination"] {
       ul,

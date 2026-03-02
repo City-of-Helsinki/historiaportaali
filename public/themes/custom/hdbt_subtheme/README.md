@@ -21,10 +21,11 @@ Requirements for developing:
 | ----------------- | --------------------------------------------------------------------------------- |
 | npm i             | Install dependencies and link local packages.                                     |
 | npm ci            | Install a project with a clean slate. Use especially in CI environments.          |
-| npm run dev       | Compile styles for development environment and watch file changes.                |
+| npm run dev       | Compile styles and JS for development and watch for changes.                      |
 | npm run build     | Build packages for production. Minify CSS/JS. Create icon sprite.                |
 | npm run typecheck | Run TypeScript type checking (strict - fails on errors).                          |
-| npm run lint      | Run linting for SCSS and JavaScript files.                                        |
+| npm run lint      | Run linting for SCSS and JavaScript (Biome for JS).                              |
+| npm run format:js | Format JavaScript/TypeScript files (Biome).                                       |
 
 ## Setup
 
@@ -72,9 +73,8 @@ hdbt_subtheme
 │   └───images                 # Theme images
 │   └───scss                   # Styles
 │   └───js                     # JavaScript & React
-│   │   └───react/             # React applications
-│   │       └───apps/
-│   │           └───search/    # Site search
+│   │   └───react/
+│   │       └───apps/          # React apps (search, kore-search)
 │   │   └───types/
 │   └───icons                  # SVG icons
 │       |   some-icon.svg
@@ -85,10 +85,7 @@ hdbt_subtheme
 
 The subtheme uses **@hdbt/theme-builder** from the parent theme (esbuild for JS/React, Sass for CSS, svg-sprite for icons).
 
-React components can be imported from the parent theme using path aliases configured in `tsconfig.json`:
-```typescript
-import CardItem from '@/react/common/Card';
-```
+For details on the search apps and importing from the parent theme, see [src/js/react/apps/README.md](src/js/react/apps/README.md).
 
 ## How tos
 

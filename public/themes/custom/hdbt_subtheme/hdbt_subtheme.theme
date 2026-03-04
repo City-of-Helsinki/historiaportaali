@@ -123,6 +123,9 @@ function hdbt_subtheme_preprocess_node(&$variables) {
   if ($node->bundle() == 'article') {
     $variables['#attached']['library'][] = 'hdbt_subtheme/reading-time';
   }
+  if ($node->bundle() == 'kore_school') {
+    $variables['#attached']['drupalSettings']['koreSchoolTitle'] = $node->getTitle();
+  }
 }
 
 /**

@@ -9,6 +9,10 @@ msgstr "Gå till den interaktiva kartan"
 msgid "Open in finna.fi search service"
 msgstr "Öppna i finna.fi söktjänst"
 
+msgctxt "Content"
+msgid "Show on map"
+msgstr "Visa på kartan"
+
 msgctxt "Button"
 msgid "Open in Finna"
 msgstr "Öppna i Finna"
@@ -323,7 +327,6 @@ msgctxt "Kore search"
 msgid "Filter results"
 msgstr "Begränsa sökresultaten"
 
-msgctxt "Search"
 msgid "School name"
 msgstr "Skolnamn"
 

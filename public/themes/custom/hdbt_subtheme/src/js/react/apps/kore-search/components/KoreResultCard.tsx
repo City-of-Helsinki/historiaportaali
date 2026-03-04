@@ -67,7 +67,7 @@ export const KoreResultCard: React.FC<KoreResultCardProps> = ({
           id={nid ? `kore-names-${nid}` : undefined}
           className="kore-result-card__names-title"
         >
-          {Drupal.t("Previous names", {}, { context: "Kore search" })}
+          {Drupal.t("Previous names")}
         </h4>
         <ul className="kore-result-card__names-list">
           {entries.slice(1).map(({ name, years }) => (

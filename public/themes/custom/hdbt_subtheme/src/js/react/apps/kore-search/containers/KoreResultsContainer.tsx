@@ -23,6 +23,10 @@ import type {
   Facet,
 } from "../types/Content";
 import {
+  getMappingMode,
+  resolveEsFieldForAggregation,
+} from "../../search/common/utils/esMapping";
+import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
   INDEX_NAME,
@@ -75,11 +79,6 @@ type SearchSource = {
   url?: string[];
 };
 
-const getMappingMode = (): "text" | "keyword" => {
-  const mode = drupalSettings?.koreSearch?.mappingMode;
-  return mode === "keyword" ? "keyword" : "text";
-};
-
 const keywordMatch = (query: string) => ({
   multi_match: {
     query,
@@ -127,10 +126,11 @@ const buildQueryString = ({
   const keywords = filters.keywords.trim();
   const langFilter = { term: { [languageField]: languageValue } };
   const yearFilterList = yearFilters(filters);
-  const resolveField = (field: (typeof FACET_CONFIG)[number]["field"]) =>
-    useKeywordSubfields ? `${field}.keyword` : field;
   const resolvedFacetFields = Object.fromEntries(
-    FACET_CONFIG.map((f) => [f.key, resolveField(f.field)]),
+    FACET_CONFIG.map((f) => [
+      f.key,
+      resolveEsFieldForAggregation(f.field, useKeywordSubfields),
+    ]),
   ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
 
   // Facet aggs: keyword + year only (type/language excluded so counts are independent)
@@ -264,7 +264,8 @@ export const KoreResultsContainer = ({
   const offset = currentPageIndex * itemsPerPage;
   const languageField = "search_api_language";
   const languageValue = drupalSettings?.path?.currentLanguage || "fi";
-  const useKeywordSubfields = getMappingMode() === "keyword";
+  const useKeywordSubfields =
+    getMappingMode(drupalSettings?.koreSearch?.mappingMode) === "keyword";
 
   const queryString = useMemo(
     () =>

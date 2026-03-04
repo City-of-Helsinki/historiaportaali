@@ -101,7 +101,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
             'languageOptions' => $language_options,
             'mappingMode' => $mapping_mode,
             'sortLabels' => [
-              'name' => $this->t('School name', [], ['context' => 'Kore search']),
+              'name' => $this->t('School name'),
             ],
           ],
         ],

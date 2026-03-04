@@ -76,21 +76,17 @@ export const SortOptions: React.FC<SortOptionsProps> = ({
   };
 
   const getLabelForSortType = (sortType: SortOption): string => {
-    const koreLabel =
-      sortType === "name" && drupalSettings?.koreSearch?.sortLabels?.name;
-    if (koreLabel) return koreLabel;
-    switch (sortType) {
-      case "year":
-        return Drupal.t("Year", {}, { context });
-      case "title":
-        return Drupal.t("Title", {}, { context });
-      case "name":
-        return Drupal.t("School name", {}, { context });
-      case "created":
-        return Drupal.t("Created", {}, { context });
-      default:
-        return String(sortType);
-    }
+    const customLabel = drupalSettings?.koreSearch?.sortLabels?.[sortType];
+    if (customLabel) return customLabel;
+
+    const defaults: Record<SortOption, string> = {
+      year: "Year",
+      title: "Title",
+      name: "Name",
+      created: "Created",
+      relevance: "Relevance",
+    };
+    return Drupal.t(defaults[sortType] ?? sortType, {}, { context });
   };
 
   const getAriaLabel = (sortType: SortOption) => {

@@ -42,11 +42,11 @@
     {% set field_icon = field_icons[field_name] ?? 'info-circle' %}
     <div class="kore--field-header">
       {% if field_icon %}
-        {% include "@hdbt/misc/icon.twig" with { icon: field_icon } %}
+        {% include "@hdbt/misc/icon.twig" with { icon: field_icon, label: false } %}
       {% else %}
         <span class="kore--field-header__spacer" aria-hidden="true"></span>
       {% endif %}
-      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
+      <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}: </h2>
     </div>
     <ul class="{{ list_classes|join(' ') }}" role="list">
       {% for item in items %}

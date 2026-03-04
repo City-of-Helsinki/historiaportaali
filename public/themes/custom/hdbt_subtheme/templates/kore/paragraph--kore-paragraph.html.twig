@@ -33,8 +33,9 @@
         <span class="kore--address">{{ address.entity.field_kore_address.value }}</span>{% if not loop.last %} → {% endif %}
       {% endfor %}
       {% if paragraph.field_kore_addresses|length > 0 %}
-        <span class="kore--show-on-map">
-          {% set last_address = paragraph.field_kore_addresses|last %}
+        {% set last_address = paragraph.field_kore_addresses|last %}
+        {% set address_label = last_address.entity.field_kore_address.value %}
+        <span class="kore--show-on-map" data-address="{{ address_label }}">
           {{ last_address.entity.field_kore_geofield|view('default') }}
         </span>
       {% endif %}

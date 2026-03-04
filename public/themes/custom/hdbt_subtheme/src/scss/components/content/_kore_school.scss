@@ -5,10 +5,6 @@
     }
   }
 
-  .main-content {
-    margin-top: $spacing;
-  }
-
   .node--type-kore-school.node--view-mode-full {
     margin: 0 $spacing-double;
     max-width: $content-width-max;
@@ -24,23 +20,25 @@
       align-items: baseline;
       display: flex;
       gap: $spacing-half;
-      margin-top: $spacing-double;
 
       .hel-icon,
       .kore--field-header__spacer {
         display: none;
+        @include breakpoint($breakpoint-m) {
+          display: block;
+          flex-shrink: 0;
+          width: $kore-icon-width;
+        }
+      }
+
+      .hel-icon {
+        @include breakpoint($breakpoint-m) {
+          transform: translateY(.2em);
+        }
       }
 
       @include breakpoint($breakpoint-m) {
         padding-right: $kore-indent;
-
-        .hel-icon,
-        .kore--field-header__spacer {
-          display: block;
-          flex-shrink: 0;
-          margin-top: -0.15em;
-          width: $kore-icon-width;
-        }
       }
 
       .label {
@@ -72,11 +70,9 @@
 
         &::after {
           border-bottom: 1px solid $color-black-10;
-          bottom: 0;
           content: '';
-          left: 0;
+          inset: auto 0 0;
           position: absolute;
-          right: 0;
         }
 
         .kore--content {
@@ -117,15 +113,13 @@
           flex-basis: 100%;
           margin-top: $spacing-quarter;
         }
-
       }
     }
 
     .kore--field-field-kore-photos {
-      column-gap: $spacing;
       display: grid;
+      gap: $spacing-double $spacing;
       grid-template-columns: 1fr;
-      row-gap: $spacing-double;
 
       @include breakpoint($breakpoint-m) {
         grid-template-columns: 1fr 1fr;

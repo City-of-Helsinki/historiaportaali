@@ -1,45 +1,20 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Theme implementation for KoRe paragraph types displayed as list items.
  *
- * Available variables:
- * - paragraph: Full paragraph entity.
- *   Only method names starting with "get", "has", or "is" and a few common
- *   methods such as "id", "label", and "bundle" are available. For example:
- *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
- *   - paragraph.id(): The paragraph ID.
- *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
- *   - paragraph.getOwnerId(): The user ID of the paragraph author.
- *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
- *   and methods for the paragraph object.
- * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
- *   {{ content|without('field_example') }} to temporarily suppress the printing
- *   of a given child element.
- * - attributes: HTML attributes for the containing element.
- *   The attributes.class element may contain one or more of the following
- *   classes:
- *   - paragraphs: The current template type (also known as a "theming hook").
- *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
- *     "Image" it would result in "paragraphs--type--image". Note that the machine
- *     name will often be in a short form of the human readable label.
- *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
- *     preview would result in: "paragraphs--view-mode--preview", and
- *     default: "paragraphs--view-mode--default".
- * - view_mode: View mode; for example, "preview" or "full".
- * - logged_in: Flag for authenticated user status. Will be true when the
- *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
- *   is an administrator.
+ * Used for: kore_archive, kore_building, kore_field, kore_gender, kore_language,
+ * kore_name, kore_principal, kore_type.
+ *
+ * Renders as <li> for semantic list structure within field--node--kore-school.
  *
  * @see template_preprocess_paragraph()
- *
- * @ingroup themeable
+ * @see field--node--kore-school.html.twig
  */
 #}
 {%
   set classes = [
+    'kore--field-item',
     'paragraph',
     'paragraph--type--kore',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -47,45 +22,29 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{%
-  set icons = {
-    'kore_archive': 'document',
-    'kore_building': 'company',
-    'kore_continuum': 'link',
-    'kore_field': 'occupation',
-    'kore_gender': 'group',
-    'kore_language': 'globe',
-    'kore_lineage': 'link',
-    'kore_name': 'paperclip',
-    'kore_principal': 'entrepreneur',
-    'kore_type': 'layers'
-  }
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% include "@hdbt/misc/icon.twig" with { icon: icons[paragraph.bundle] } %}
-    <span class="kore--content">
-      {% block content %}
-        {{ content|without('field_kore_start_year', 'field_kore_end_year', 'field_kore_addresses') }}
-        {% for address in paragraph.field_kore_addresses %}
-          <span class="kore--address">{{ address.entity.field_kore_address.value }}</span>{% if not loop.last %} → {% endif %}
-        {% endfor %}
-      {% endblock %}
-    </span>
-    <div class="kore--actions">
-      {% set start = paragraph.field_kore_start_year.value %}
-      {% set end = paragraph.field_kore_end_year.value %}
-      {% if start or end %}
-        <span class="kore--date">
-          {{ start }}{% if start and end %} → {% endif %}{{ end }}
-        </span>
-      {% endif %}
+<li{{ attributes.addClass(classes) }}>
+  <span class="kore--content">
+    {% if paragraph.bundle == 'kore_archive' %}
+      {{ content.field_kore_archive }}
+      <div class="kore--archive-link"> {{ content.field_kore_url }}</div>
+    {% else %}
+      {{ content|without('field_kore_start_year', 'field_kore_end_year', 'field_kore_addresses') }}
+      {% for address in paragraph.field_kore_addresses %}
+        <span class="kore--address">{{ address.entity.field_kore_address.value }}</span>{% if not loop.last %} → {% endif %}
+      {% endfor %}
       {% if paragraph.field_kore_addresses|length > 0 %}
         <span class="kore--show-on-map">
-            {% set last_address = paragraph.field_kore_addresses|last %}
-            {{ last_address.entity.field_kore_geofield|view('default') }}
+          {% set last_address = paragraph.field_kore_addresses|last %}
+          {{ last_address.entity.field_kore_geofield|view('default') }}
         </span>
       {% endif %}
-    </div>
-  </div>
-{% endblock paragraph %}
+    {% endif %}
+  </span>
+  {% set start = paragraph.field_kore_start_year.value %}
+  {% set end = paragraph.field_kore_end_year.value %}
+  {% if start or end %}
+    <span class="kore--date">
+      {{ start }}{% if start and end %} → {% endif %}{{ end }}
+    </span>
+  {% endif %}
+</li>

@@ -1,41 +1,28 @@
 {#
 /**
  * @file
- * Theme override for a field.
+ * Theme override for KoRe paragraph fields on kore_school nodes.
  *
- * To override output, copy the "field.html.twig" from the templates directory
- * to your theme's directory and customize it, just like customizing other
- * Drupal templates such as page.html.twig or node.html.twig.
- *
- * Instead of overriding the theming for all fields, you can also just override
- * theming for a subset of fields using
- * @link themeable Theme hook suggestions. @endlink For example,
- * here are some theme hook suggestions that can be used for a field_foo field
- * on an article node type:
- * - field--node--field-foo--article.html.twig
- * - field--node--field-foo.html.twig
- * - field--node--article.html.twig
- * - field--field-foo.html.twig
- * - field--text-with-summary.html.twig
- * - field.html.twig
- *
- * Available variables:
- * - attributes: HTML attributes for the containing element.
- * - label_hidden: Whether to show the field label or not.
- * - title_attributes: HTML attributes for the title.
- * - label: The label for the field.
- * - multiple: TRUE if a field can contain multiple items.
- * - items: List of all the field items. Each item contains:
- *   - attributes: List of HTML attributes for each item.
- *   - content: The field item's content.
- * - entity_type: The entity type to which the field belongs.
- * - field_name: The name of the field.
- * - field_type: The type of the field.
- * - label_display: The display settings for the label.
+ * Renders field values as semantic list items (ul/li). The geolocation field
+ * uses field--node--field-geolocation--kore-school.html.twig instead.
  *
  * @see template_preprocess_field()
+ * @see paragraph--kore-paragraph.html.twig
+ * @see paragraph--kore-paragraph-single.html.twig
  */
 #}
+{%
+  set field_icons = {
+    'field_kore_lineages': 'link',
+    'field_kore_buildings': 'company',
+    'field_kore_types': 'layers',
+    'field_kore_genders': 'group',
+    'field_kore_languages': 'globe',
+    'field_kore_principals': 'entrepreneur',
+    'field_kore_archives': 'document',
+    'field_kore_photos': 'photo',
+  }
+%}
 {%
   set title_classes = [
     'label',
@@ -44,16 +31,24 @@
 %}
 
 {% if label_hidden %}
-  <div class="kore--field">
+  <ul class="kore--field kore--field-list" role="list">
     {% for item in items %}
       {{ item.content }}
     {% endfor %}
-  </div>
+  </ul>
 {% else %}
-  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
-  <div class="kore--field">
+  {% set field_icon = field_icons[field_name] ?? 'info-circle' %}
+  <div class="kore--field-header">
+    {% if field_icon %}
+      {% include "@hdbt/misc/icon.twig" with { icon: field_icon } %}
+    {% else %}
+      <span class="kore--field-header__spacer" aria-hidden="true"></span>
+    {% endif %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
+  </div>
+  <ul class="kore--field kore--field-list" role="list">
     {% for item in items %}
       {{ item.content }}
     {% endfor %}
-  </div>
+  </ul>
 {% endif %}

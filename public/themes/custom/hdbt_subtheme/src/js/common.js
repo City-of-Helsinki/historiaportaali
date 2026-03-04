@@ -96,7 +96,7 @@
       // Note: We search globally (not within context) because for logged-in users,
       // the context parameter is often limited to admin toolbar/contextual links
       // and doesn't include the main content area where these elements exist.
-      const BUILDING_SELECTOR = "div.paragraph--type--kore-building";
+      const BUILDING_SELECTOR = ".paragraph--type--kore-building";
       const BUTTON_SELECTOR = "button.kore-address";
 
       jQuery(document).on("leafletMapInit", (_e, _settings, lMap) => {

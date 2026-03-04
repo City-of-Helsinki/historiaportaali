@@ -20,6 +20,10 @@ import type {
   SearchFilters,
 } from "../../../common/types/Content";
 import {
+  getMappingMode,
+  resolveEsFieldForAggregation,
+} from "../../../common/utils/esMapping";
+import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
   INDEX_NAME,
@@ -77,11 +81,6 @@ type SearchSource = {
   url?: string[];
 };
 
-const getMappingMode = (): "text" | "keyword" => {
-  const mode = drupalSettings.search?.mappingMode;
-  return mode === "keyword" ? "keyword" : "text";
-};
-
 const buildQueryString = ({
   filters,
   offset,
@@ -98,10 +97,11 @@ const buildQueryString = ({
   languageValue: string;
 }) => {
   const trimmedKeywords = filters.keywords.trim();
-  const resolveField = (field: (typeof FACET_CONFIG)[number]["field"]) =>
-    useKeywordSubfields ? `${field}.keyword` : field;
   const resolvedFacetFields = Object.fromEntries(
-    FACET_CONFIG.map((facet) => [facet.key, resolveField(facet.field)]),
+    FACET_CONFIG.map((facet) => [
+      facet.key,
+      resolveEsFieldForAggregation(facet.field, useKeywordSubfields),
+    ]),
   ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
   const query: ElasticQuery = {
     from: offset,
@@ -269,7 +269,7 @@ export const ResultsContainer = ({
   // Calculate offset from 0-based page index
   const offset = currentPageIndex * itemsPerPage;
 
-  const mappingMode = getMappingMode();
+  const mappingMode = getMappingMode(drupalSettings.search?.mappingMode);
   const useKeywordSubfields = mappingMode === "keyword";
 
   const languageField = "search_api_language";

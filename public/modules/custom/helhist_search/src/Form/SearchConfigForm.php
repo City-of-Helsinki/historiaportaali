@@ -80,7 +80,7 @@ class SearchConfigForm extends ConfigFormBase {
     $form['mapping_mode'] = [
       '#type' => 'select',
       '#title' => $this->t('Search mapping mode'),
-      '#description' => $this->t('Choose whether the React search uses keyword fields or text fields.'),
+      '#description' => $this->t('Match your Elasticsearch index: Text mapping for keyword-type fields, Keyword mapping for text-type fields with .keyword subfields. Wrong mode causes "Fielddata is disabled" or empty facets.'),
       '#options' => [
         'text' => $this->t('Text mapping'),
         'keyword' => $this->t('Keyword mapping'),

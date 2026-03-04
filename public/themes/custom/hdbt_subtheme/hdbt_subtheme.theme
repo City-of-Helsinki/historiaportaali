@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
 /**
@@ -422,6 +424,13 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
 
     if (isset($start_name) && isset($end_name)) {
       $variables['node_title'] = $start_name . " / " . $end_name;
+    }
+
+    if (isset($variables['node_id'])) {
+      $variables['school_link'] = Link::fromTextAndUrl(
+        $variables['node_title'],
+        Url::fromRoute('entity.node.canonical', ['node' => $variables['node_id']])
+      )->toRenderable();
     }
   }
 }

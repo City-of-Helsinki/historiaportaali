@@ -327,7 +327,6 @@ msgctxt "Kore search"
 msgid "Filter results"
 msgstr "Begränsa sökresultaten"
 
-msgctxt "Search"
 msgid "School name"
 msgstr "Skolnamn"
 

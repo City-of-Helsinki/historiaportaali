@@ -125,7 +125,6 @@ msgctxt "Search"
 msgid "Year"
 msgstr "Vuosi"
 
-msgctxt "Search"
 msgid "School name"
 msgstr "Koulun nimi"
 

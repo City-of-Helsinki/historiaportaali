@@ -24,7 +24,7 @@
 %}
 <li{{ attributes.addClass(classes) }}>
   <span class="kore--content">
-    {{ content|without('field_kore_school', 'field_kore_start_year', 'field_kore_end_year') }}{% if node_id %} <a href="{{ path('entity.node.canonical', {'node': node_id}) }}">{{ node_title }}</a>{% else %} {{ content.field_kore_school }}{% endif %}
+    {{ content|without('field_kore_school', 'field_kore_start_year', 'field_kore_end_year') }}{% if node_id %}{{ '&nbsp;'|raw }}<a href="{{ path('entity.node.canonical', {'node': node_id}) }}">{{ node_title }}</a>{% else %} {{ content.field_kore_school }}{% endif %}
   </span>
   <span class="kore--date">
     {{ (content.field_kore_start_year != '9999') ? content.field_kore_start_year : '' }}

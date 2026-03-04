@@ -121,10 +121,11 @@
       }
     }
 
-    .kore--photos {
+    .kore--field-field-kore-photos {
       column-gap: $spacing;
       display: grid;
       grid-template-columns: 1fr;
+      row-gap: $spacing-double;
 
       @include breakpoint($breakpoint-m) {
         grid-template-columns: 1fr 1fr;
@@ -135,11 +136,21 @@
       }
 
       .kore--photo {
-        margin-bottom: $spacing-double;
+        picture,
+        img {
+          display: block;
+          max-width: 100%;
+        }
 
         img {
+          border-radius: 4px;
           height: auto;
           width: 100%;
+        }
+
+        p,
+        a {
+          margin: $spacing-half 0 0;
         }
       }
     }

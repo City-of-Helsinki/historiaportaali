@@ -30,25 +30,28 @@
   ]
 %}
 
-{% if label_hidden %}
-  <ul class="kore--field kore--field-list" role="list">
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
-  </ul>
-{% else %}
-  {% set field_icon = field_icons[field_name] ?? 'info-circle' %}
-  <div class="kore--field-header">
-    {% if field_icon %}
-      {% include "@hdbt/misc/icon.twig" with { icon: field_icon } %}
-    {% else %}
-      <span class="kore--field-header__spacer" aria-hidden="true"></span>
-    {% endif %}
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
-  </div>
-  <ul class="kore--field kore--field-list" role="list">
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
-  </ul>
-{% endif %}
+<div class="kore--field-wrapper">
+  {% set list_classes = ['kore--field', 'kore--field-list', 'kore--field-' ~ field_name|replace({'_': '-'})] %}
+  {% if label_hidden %}
+    <ul class="{{ list_classes|join(' ') }}" role="list">
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
+    </ul>
+  {% else %}
+    {% set field_icon = field_icons[field_name] ?? 'info-circle' %}
+    <div class="kore--field-header">
+      {% if field_icon %}
+        {% include "@hdbt/misc/icon.twig" with { icon: field_icon } %}
+      {% else %}
+        <span class="kore--field-header__spacer" aria-hidden="true"></span>
+      {% endif %}
+      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
+    </div>
+    <ul class="{{ list_classes|join(' ') }}" role="list">
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

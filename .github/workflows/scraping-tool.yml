@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * 0'
-name: Build Scarping tool artifact
+name: Build scraping tool artifact
 jobs:
   build:
     uses: city-of-helsinki/drupal-gh-actions/.github/workflows/scraping-tool.yml@UHF-12546

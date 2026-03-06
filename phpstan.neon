@@ -10,7 +10,6 @@ parameters:
   excludePaths:
     - vendor
     - */node_modules/*
-    - ./public/modules/custom/graphql_search_api
     - ./public/themes/custom/hdbt_subtheme/dist
   level: 3
   treatPhpDocTypesAsCertain: false

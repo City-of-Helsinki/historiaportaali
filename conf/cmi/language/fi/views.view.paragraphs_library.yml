@@ -1,10 +1,10 @@
 display:
   default:
-    display_title: Isäntä
+    display_title: Oletus
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Suodata
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
           sort_asc_label: Nousevasti
@@ -12,8 +12,8 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
+            previous: Edellinen
+            next: Seuraava
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'

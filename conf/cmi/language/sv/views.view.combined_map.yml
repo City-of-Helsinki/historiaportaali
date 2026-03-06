@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sök
+          reset_button_label: Tömma
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      filters:
+        field_start_year_value:
+          expose:
+            label: 'Från år'
+            placeholder: 't.ex. 1820'
+        field_end_year_value:
+          expose:
+            label: 'Till år'
+            placeholder: 't.ex. 1917'
+        field_keywords_target_id:
+          expose:
+            label: 'Filtrera efter ämne'
+      title: Kartan

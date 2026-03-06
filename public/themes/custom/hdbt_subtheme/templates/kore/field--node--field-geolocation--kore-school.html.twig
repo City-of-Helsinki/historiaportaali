@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for the geolocation field on kore_school nodes.
+ *
+ * Renders the Leaflet map without list markup (unlike other kore fields).
+ *
+ * @see field--node--kore-school.html.twig
+ */
+#}
+{%
+  set title_classes = [
+    'label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+  <div class="kore--field kore--field-map">
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="kore--field-header">
+    {% include "@hdbt/misc/icon.twig" with { icon: 'location' } %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
+  </div>
+  <div class="kore--field kore--field-map">
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  </div>
+{% endif %}

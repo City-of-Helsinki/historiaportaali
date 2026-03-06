@@ -5,10 +5,19 @@ display:
         options:
           submit_button: Hae
           reset_button_label: Tyhjennä
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
       filters:
         field_start_year_value:
           expose:
-            label: Alkaa
+            label: Vuodesta
+            placeholder: 'esim. 1820'
         field_end_year_value:
           expose:
-            label: Päättyy
+            label: Vuoteen
+            placeholder: 'esim. 1917'
+        field_keywords_target_id:
+          expose:
+            label: 'Suodata asiasanalla'
+      title: Kartta

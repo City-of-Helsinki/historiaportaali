@@ -13,46 +13,15 @@ use Drupal\Core\Language\LanguageManagerInterface;
  * Provides a service for map functionalities.
  */
 class MapService {
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * The language manager.
-   *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
-   */
-  protected $languageManager;
-
-  /**
-   * The entity repository.
-   *
-   * @var \Drupal\Core\Entity\EntityRepositoryInterface
-   */
-  protected $entityRepository;
 
   /**
    * Constructs a new MapService object.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
-   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
-   *   The language manager.
-   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
-   *   The entity repository.
    */
   public function __construct(
-    EntityTypeManagerInterface $entity_type_manager,
-    LanguageManagerInterface $language_manager,
-    EntityRepositoryInterface $entity_repository,
-  ) {
-    $this->entityTypeManager = $entity_type_manager;
-    $this->languageManager = $language_manager;
-    $this->entityRepository = $entity_repository;
-  }
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected LanguageManagerInterface $languageManager,
+    protected EntityRepositoryInterface $entityRepository,
+  ) {}
 
   /**
    * Gets the map layers for a given type.

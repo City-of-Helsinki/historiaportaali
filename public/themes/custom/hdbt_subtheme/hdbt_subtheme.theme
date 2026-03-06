@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
 /**
@@ -71,6 +73,32 @@ function hdbt_subtheme_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_page().
+ *
+ * Ensure React search blocks always appear after node content in the content
+ * region, regardless of block weights or layout changes.
+ */
+function hdbt_subtheme_preprocess_page(&$variables) {
+  $search_block_ids = [
+    'hdbt_subtheme_helhistreactsearch',
+    'hdbt_subtheme_helhistkorereactsearch',
+  ];
+
+  if (isset($variables['page']['content']) && is_array($variables['page']['content'])) {
+    $search_blocks = [];
+    foreach ($search_block_ids as $block_id) {
+      if (isset($variables['page']['content'][$block_id])) {
+        $search_blocks[$block_id] = $variables['page']['content'][$block_id];
+        unset($variables['page']['content'][$block_id]);
+      }
+    }
+    if (!empty($search_blocks)) {
+      $variables['page']['content'] = $variables['page']['content'] + $search_blocks;
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_region().
  */
 function hdbt_subtheme_preprocess_region(&$variables) {
@@ -96,6 +124,9 @@ function hdbt_subtheme_preprocess_node(&$variables) {
   $node = $variables['node'];
   if ($node->bundle() == 'article') {
     $variables['#attached']['library'][] = 'hdbt_subtheme/reading-time';
+  }
+  if ($node->bundle() == 'kore_school') {
+    $variables['#attached']['drupalSettings']['koreSchoolTitle'] = $node->getTitle();
   }
 }
 
@@ -238,9 +269,12 @@ function hdbt_subtheme_preprocess_block__page_title_block(&$variables) {
       $variables['subtitle'] = _get_top_level_menu_parent_title_by_nid($node->id());
     }
     if ($node->bundle() == 'kore_school') {
-      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-      $kore_title = \Drupal::config('helhist_kore_admin.settings')->get('kore_search_title');
-      $variables['subtitle'] = $kore_title[$langcode] ?? $kore_title['fi'] ?? '';
+      $kore_node_id = \Drupal::service('helhist_search.search_path_resolver')->getKoreSearchPageNodeId();
+      /** @var \Drupal\node\NodeInterface|null $kore_node */
+      $kore_node = $kore_node_id ? \Drupal::entityTypeManager()->getStorage('node')->load($kore_node_id) : NULL;
+      if ($kore_node) {
+        $variables['subtitle'] = $kore_node->getTitle() ?? '';
+      }
     }
   }
 }
@@ -293,6 +327,20 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
   // and generate the thumbnails.
   if ($paragraph_type == 'gallery') {
     $variables['#attached']['library'][] = 'hdbt_subtheme/gallery';
+    $variables['#attached']['drupalSettings']['hdbtGallery'] = [
+      'i18n' => [
+        'prev' => t('Previous slide', [], ['context' => 'Gallery']),
+        'next' => t('Next slide', [], ['context' => 'Gallery']),
+        'first' => t('Go to first slide', [], ['context' => 'Gallery']),
+        'last' => t('Go to last slide', [], ['context' => 'Gallery']),
+        'carousel' => t('Carousel', [], ['context' => 'Gallery']),
+        'select' => t('Carousel pagination', [], ['context' => 'Gallery']),
+        'slide' => t('slide', [], ['context' => 'Gallery']),
+        'slideLabel' => t('%s of %s', [], ['context' => 'Gallery']),
+        'slideX' => t('Go to slide %s', [], ['context' => 'Gallery']),
+        'pageX' => t('Go to page %s', [], ['context' => 'Gallery']),
+      ],
+    ];
 
     $slide_paragraphs = $paragraph->get('field_gallery_slides')->getValue();
     $slide_ids = [];
@@ -376,6 +424,13 @@ function hdbt_subtheme_preprocess_paragraph(&$variables) {
 
     if (isset($start_name) && isset($end_name)) {
       $variables['node_title'] = $start_name . " / " . $end_name;
+    }
+
+    if (isset($variables['node_id'])) {
+      $variables['school_link'] = Link::fromTextAndUrl(
+        $variables['node_title'],
+        Url::fromRoute('entity.node.canonical', ['node' => $variables['node_id']])
+      )->toRenderable();
     }
   }
 }

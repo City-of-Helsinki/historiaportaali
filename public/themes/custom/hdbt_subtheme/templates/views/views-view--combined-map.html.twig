@@ -49,6 +49,18 @@
     </header>
   {% endif %}
 
+  <div class="exposed-filters">
+    {% embed "@hdbt/misc/container.twig" with {container_element: 'map-content'} %}
+    {% block container_content %}
+      <h2 class="exposed-filters__title">{{ 'Filter items on map'|t({}, {'context': 'Map'}) }}</h2>
+      <div id="map-filter-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+      <div class="exposed-filters__row">
+        {{ exposed }}
+      </div>
+    {% endblock %}
+  {% endembed %}
+  </div>
+
   <div class="map-container">
     {# Map controls first in DOM so they are tabbed to before the map and markers #}
     {{ drupal_block('helhist_map_map_controls_block') }}
@@ -56,7 +68,7 @@
     {{ attachment_before }}
     {{ rows }}
 
-    <div id="comparison-map-container">
+    <div id="comparison-map-container" role="region" aria-label="{{ 'Map comparison'|t({}, {'context': 'Map'}) }}">
       {{ drupal_block('helhist_map_comparison_map_controls_block') }}
       <div class="center-pointer" style="display:none;">
         {% include '@hdbt/misc/icon.twig' with {icon: 'cross'} %}

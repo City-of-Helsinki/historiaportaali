@@ -13,19 +13,11 @@ use Drupal\Core\Url;
 class SearchPathResolver {
 
   /**
-   * The config factory.
-   */
-  protected ConfigFactoryInterface $configFactory;
-
-  /**
    * Constructs a SearchPathResolver object.
-   *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The config factory.
    */
-  public function __construct(ConfigFactoryInterface $config_factory) {
-    $this->configFactory = $config_factory;
-  }
+  public function __construct(
+    protected ConfigFactoryInterface $configFactory,
+  ) {}
 
   /**
    * Get the search page node ID.
@@ -46,6 +38,34 @@ class SearchPathResolver {
    */
   public function getSearchPagePath(): string {
     $node_id = $this->getSearchPageNodeId();
+
+    if (!$node_id) {
+      return '/';
+    }
+
+    $url = Url::fromRoute('entity.node.canonical', ['node' => $node_id]);
+    return $url->toString();
+  }
+
+  /**
+   * Get the KoRe search page node ID.
+   *
+   * @return int|null
+   *   The KoRe search page node ID or NULL if not configured.
+   */
+  public function getKoreSearchPageNodeId(): ?int {
+    $node_id = $this->configFactory->get('helhist_search.settings')->get('kore_search_page_node');
+    return $node_id ? (int) $node_id : NULL;
+  }
+
+  /**
+   * Get the KoRe search page path.
+   *
+   * @return string
+   *   The KoRe search page path or '/' if not configured.
+   */
+  public function getKoreSearchPagePath(): string {
+    $node_id = $this->getKoreSearchPageNodeId();
 
     if (!$node_id) {
       return '/';

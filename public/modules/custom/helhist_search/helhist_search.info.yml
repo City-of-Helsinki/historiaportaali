@@ -1,7 +1,7 @@
 name: 'HelHist Search'
 type: module
-description: 'Provides react search related customizations.'
-core_version_requirement: ^9 || ^10
+description: 'Main react search customizations.'
+core_version_requirement: ^10 || ^11
 package: 'Custom'
 dependencies:
   - csp:csp

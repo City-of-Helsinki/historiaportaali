@@ -13,11 +13,9 @@
 // Content
 @import 'content/article';
 @import 'content/blockquote';
-@import 'content/front';
 @import 'content/highlighted';
 @import 'content/kore_school';
 @import 'content/listing_page';
-@import 'content/map_page';
 @import 'content/quoted';
 @import 'content/search_page';
 @import 'content/webform';
@@ -53,14 +51,13 @@
 
 // Search
 @import 'search/historia-search';
-@import 'search/search_filters';
+@import 'search/historia-search-kore';
 
 // Taxonomy
 @import 'taxonomy/hdbt_taxonomy';
 
 // Views
 @import 'views/article_listing';
-@import 'views/kore_search';
 @import 'views/map';
 @import 'views/pager';
 

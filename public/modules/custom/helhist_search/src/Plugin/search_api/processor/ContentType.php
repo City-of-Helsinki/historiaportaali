@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\search_api\processor;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\search_api\Attribute\SearchApiProcessor;
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
@@ -11,18 +13,17 @@ use Drupal\search_api\Processor\ProcessorProperty;
 
 /**
  * Adds a custom type filter to the indexed data.
- *
- * @SearchApiProcessor(
- *   id = "content_type",
- *   label = @Translation("Content Type"),
- *   description = @Translation("Add a content type to search index (article / media)"),
- *   stages = {
- *     "add_properties" = 0,
- *   },
- *   locked = true,
- *   hidden = false,
- * )
  */
+#[SearchApiProcessor(
+  id: 'content_type',
+  label: new TranslatableMarkup('Content Type'),
+  description: new TranslatableMarkup('Add a content type to search index (article / media)'),
+  stages: [
+    'add_properties' => 0,
+  ],
+  locked: TRUE,
+  hidden: FALSE,
+)]
 class ContentType extends ProcessorPluginBase {
 
   /**

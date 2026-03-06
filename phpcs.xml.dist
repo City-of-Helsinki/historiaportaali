@@ -4,9 +4,6 @@
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
 
-  <!-- Ignore graphql_search_api, it will be removed via HIS-330 -->
-  <exclude-pattern>*/graphql_search_api/*</exclude-pattern>
-
   <rule ref="Drupal" />
   <rule ref="DrupalPractice">
     <exclude name="DrupalPractice.General.OptionsT.TforValue" />

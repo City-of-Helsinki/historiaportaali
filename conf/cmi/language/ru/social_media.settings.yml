@@ -1,23 +1,9 @@
 social_media:
   facebook_share:
-    text: Facebook
-    attributes: "target|_blank\r\nclass|facebook-share"
-  twitter:
-    text: Twitter
-    api_url: 'https://twitter.com/intent/tweet?url=[current-page:url]&status=[current-page:title]+[current-page:url]'
-    attributes: "target|_blank\r\nclass|twitter"
-  pinterest:
-    text: Pinterest
-    attributes: "target|_blank\r\nclass|pinterest\r\nrel|noopener noreferrer"
-  email:
-    text: Email
-  print:
-    text: Печать
+    text: 'Поделиться на Facebook'
   linkedin:
-    text: Linkedin
-    api_url: 'https://www.linkedin.com/sharing/share-offsite/?url=[current-page:url]'
-    attributes: "target|_blank\r\nclass|linkedin"
-  facebook_msg:
-    attributes: "target|_blank\r\nclass|facebook-msg\r\nrel|noopener noreferrer"
-  whatsapp:
-    attributes: "class|whatsapp show-for-small-only\r\ndata-action|share/whatsapp/share"
+    text: 'Поделиться на LinkedIn'
+  twitter:
+    text: 'Поделиться в X'
+  email:
+    text: 'Отправить страницу по электронной почте'

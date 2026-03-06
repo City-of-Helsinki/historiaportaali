@@ -26,7 +26,7 @@ dependencies:
   module:
     - responsive_image
 _core:
-  default_config_hash: in_XCvnpxCs_Bfi1xBUEGLq1TwGghNZOnnJsyyeWqQE
+  default_config_hash: CHl_9MKvItxh4V15Eicc8ggoUEYEefOeYjaD0Tb0t84
 id: media.image.main_image
 targetEntityType: media
 bundle: image

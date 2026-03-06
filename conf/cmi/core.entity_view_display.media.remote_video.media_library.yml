@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_video_description
     - image.style.medium
     - media.type.remote_video
   module:
     - image
+_core:
+  default_config_hash: EJiV7oe8qtC1lgLmRWpjmZXXoDo_0oqTZwr59PZz41Q
 id: media.remote_video.media_library
 targetEntityType: media
 bundle: remote_video

@@ -20,254 +20,48 @@ dependencies:
     - field.field.media.image.field_photographer
     - field.field.media.image.field_start_year
     - field.field.media.image.field_transcript
+    - image.style.large
     - media.type.image
-    - responsive_image.styles.image_orig
   module:
-    - leaflet
-    - responsive_image
-    - text
+    - image
+_core:
+  default_config_hash: kulvP9W6UoyWZentTLzL-694nA3lxAJbFFXk8UD4Ujc
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_authors:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_buildings:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
-  field_buildings_info:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 17
-    region: content
-  field_copyrights:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  field_end_year:
-    type: number_integer
-    label: hidden
-    settings:
-      thousand_separator: ''
-      prefix_suffix: false
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_finna_id:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_formats:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_geolocation:
-    type: leaflet_formatter_default
-    label: hidden
-    settings:
-      multiple_map: false
-      leaflet_map: esri-world_topo_map
-      height: 400
-      height_unit: px
-      hide_empty_map: true
-      disable_wheel: false
-      gesture_handling: false
-      fitbounds_options: '{"padding":[0,0]}'
-      reset_map:
-        control: false
-        position: topright
-      map_scale:
-        control: false
-        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
-      locate:
-        control: false
-        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
-        automatic: false
-      leaflet_tooltip:
-        value: ''
-        options: '{"permanent":false,"direction":"center"}'
-      popup: false
-      popup_content: ''
-      leaflet_popup:
-        control: ''
-        content: ''
-        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
-        value: ''
-        view_mode: full
-      map_position:
-        force: false
-        center:
-          lat: 0.0
-          lon: 0.0
-        zoom: 15
-        minZoom: 1
-        maxZoom: 18
-        zoomFiner: 0
-      weight: ''
-      icon:
-        iconType: marker
-        iconUrl: ''
-        shadowUrl: ''
-        className: ''
-        iconSize:
-          x: ''
-          'y': ''
-        iconAnchor:
-          x: ''
-          'y': ''
-        shadowSize:
-          x: ''
-          'y': ''
-        shadowAnchor:
-          x: ''
-          'y': ''
-        popupAnchor:
-          x: ''
-          'y': ''
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
-      leaflet_markercluster:
-        control: false
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-        include_path: false
-      fullscreen:
-        control: false
-        options: '{"position":"topleft","pseudoFullscreen":false}'
-      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
-      feature_properties:
-        values: ''
-      geocoder:
-        control: false
-        settings:
-          popup: false
-          position: topright
-          input_size: 25
-          providers:
-            openstreetmap:
-              weight: 0
-              checked: false
-          min_terms: 4
-          delay: 800
-          zoom: 16
-          options: ''
-      map_lazy_load:
-        lazy_load: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_image_caption:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_keywords:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_languages:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 15
-    region: content
   field_media_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: image_orig
       image_link: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
-  field_neighbourhoods:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_phenomena:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_photographer:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_start_year:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_transcript:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  name:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   created: true
+  field_authors: true
+  field_buildings: true
+  field_buildings_info: true
+  field_copyrights: true
+  field_end_year: true
+  field_finna_id: true
+  field_formats: true
+  field_geolocation: true
+  field_image_caption: true
+  field_keywords: true
+  field_languages: true
+  field_neighbourhoods: true
+  field_phenomena: true
+  field_photographer: true
+  field_start_year: true
+  field_transcript: true
   langcode: true
+  name: true
   search_api_excerpt: true
   thumbnail: true
   uid: true

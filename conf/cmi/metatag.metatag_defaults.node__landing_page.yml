@@ -6,5 +6,4 @@ _core:
   default_config_hash: J8jShGQTBJ698TwyiPjWS6y-zmzSHLi4YX2zF4RQNLw
 id: node__landing_page
 label: 'Content: Landing page'
-tags:
-  title: '[node:title] | [site:name] | [site:page-title-suffix]'
+tags: {  }

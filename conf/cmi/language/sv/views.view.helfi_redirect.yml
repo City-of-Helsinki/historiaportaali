@@ -34,9 +34,9 @@ display:
         is_custom:
           expose:
             label: Användarskapad
-        status:
+        enabled:
           expose:
-            label: Publicerad
+            label: Aktiverad
       exposed_form:
         options:
           submit_button: Filtrera
@@ -60,24 +60,15 @@ display:
           action_title: 'Med valda'
         redirect_source__path:
           label: Från
-          separator: ', '
         created:
           label: Skapad
         is_custom:
           label: Användarskapad
-          separator: ', '
-        status:
-          label: Publicerad
-          separator: ', '
+        enabled:
+          label: Aktiverad
       empty:
         area_text_custom:
           content: 'Det finns inga omdirigeringar ännu.'
-      title: Redirect
     display_title: Förvald
   page_1:
     display_title: Sida
-    display_options:
-      menu:
-        title: Redirect
-label: Redirect
-description: 'List of redirects'

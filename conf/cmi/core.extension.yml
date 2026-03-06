@@ -107,7 +107,6 @@ module:
   helhist_media_usage: 0
   helhist_node_resave: 0
   helhist_search: 0
-  helhist_tokens: 0
   help: 0
   image: 0
   image_style_quality: 0

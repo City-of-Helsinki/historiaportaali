@@ -1,7 +1,0 @@
-helhist_node_resave.form:
-  path: '/admin/config/development/resave-all-nodes'
-  defaults:
-    _form: '\Drupal\helhist_node_resave\Form\NodeResaveForm'
-    _title: 'Resave All Nodes'
-  requirements:
-    _permission: 'resave all nodes'

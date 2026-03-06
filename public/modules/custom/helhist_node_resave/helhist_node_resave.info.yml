@@ -1,9 +1,0 @@
-type: module
-name: HelHist Node Resave
-description: Deprecated, can be removed once uninstalled from production.
-package: 'Custom'
-core_version_requirement: ^9 || ^10
-configure: helhist_node_resave.form
-
-dependencies:
-  - drupal:node

@@ -1,3 +1,0 @@
-resave all nodes:
-  title: 'Use the Resave All Nodes form'
-  restrict access: TRUE

@@ -1,5 +1,0 @@
-name: 'HelHist Tokens'
-type: module
-description: 'Provides custom tokens, can be removed once uninstalled from production.'
-core_version_requirement: ^9 || ^10
-package: 'Custom'

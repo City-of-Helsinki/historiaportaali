@@ -1,7 +1,7 @@
 label: 'Lukitut sisällöt'
 display:
   default:
-    display_title: Isäntä
+    display_title: Oletus
     display_options:
       title: 'Lukitut sisällöt'
       exposed_form:
@@ -14,10 +14,10 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
-            first: '« Ensimmäinen'
-            last: 'Viimeinen »'
+            previous: Edellinen
+            next: Seuraava
+            first: Ensimmäinen
+            last: Viimeinen
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'

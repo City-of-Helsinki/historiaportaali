@@ -1,10 +1,11 @@
-// eslint-disable-next-line no-unused-vars
-(($, Drupal, drupalSettings) => {
+(($, Drupal, once) => {
   Drupal.behaviors.finnaImport = {
-    attach: function attach() {
-      // Create input button
-      $('#edit-field-finna-id-wrapper').after('<input id="finna" class="button" value="Finna.fi import"></input>');
-      $('#finna').button().click(function() {
+    attach: function attach(context) {
+      const wrappers = once('finna-import', '#edit-field-finna-id-wrapper', context);
+      wrappers.forEach((wrapper) => {
+        const $wrapper = $(wrapper);
+        $wrapper.after('<input id="finna" class="button" value="Finna.fi import"></input>');
+        $('#finna').button().click(function() {
 
         $langcode = $('html').attr('lang');
         $finna_id = $('#edit-field-finna-id-0-value').val();
@@ -51,8 +52,7 @@
               json_key: 'translated'
             }
           ];
-
-          $fields = [$formats_field[0], $authors_field[0], $copyrights_field[0], $buildings_field[0]];
+          $fields = [$formats_field[0], $authors_field[0], $copyrights_field[0], $buildings_field[0]];
 
           $.each($fields, (index, field) => {
             var field_data = data['records'][0][field.json_wrapper];
@@ -77,8 +77,8 @@
           });
         // Main loop ends
         });
-      });    
+      });
+      });
     },
   };
-  // eslint-disable-next-line no-undef
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, once);

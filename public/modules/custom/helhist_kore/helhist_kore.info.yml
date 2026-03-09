@@ -1,5 +1,0 @@
-name: HelHist KoRe
-type: module
-description: 'This module provided migration plugins for Koulurekisteri API https://api.hel.fi/kore/v1/. Module is unused, to be removed once uninstalled from production.'
-core_version_requirement: ^9 || ^10
-package: 'Custom'

@@ -20,14 +20,6 @@ timeline:
   dependencies:
     - hdbt/handorgel
 
-search-form:
-  version: 1.x
-  js:
-    dist/js/search-form.min.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-
 leaflet-sync:
   version: 0.2.4
   js:

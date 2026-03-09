@@ -1,5 +1,0 @@
-helhist_node_resave.toolbar_menu:
-  parent: system.admin_config_development
-  title: 'Resave All Nodes'
-  description: 'Resave all nodes of selected types.'
-  route_name: helhist_node_resave.form

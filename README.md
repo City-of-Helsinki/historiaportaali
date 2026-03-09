@@ -55,6 +55,12 @@ $ make fresh
 $ make shell
 ```
 
+## Configuration
+
+### Search mapping mode
+
+At `/admin/tools/helhist-search`: **Text mapping** for local, **Keyword mapping** for server. See [helhist_search README](public/modules/custom/helhist_search/README.md#search-mapping-mode) for details.
+
 ## Misc
 
 - Web root is `/public`

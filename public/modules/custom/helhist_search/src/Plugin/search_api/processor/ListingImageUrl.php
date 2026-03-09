@@ -4,27 +4,28 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_search\Plugin\search_api\processor;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\search_api\Attribute\SearchApiProcessor;
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
 use Drupal\search_api\Processor\ProcessorProperty;
 
 /**
- * Adds a custom type filter to the indexed data.
- *
- * @SearchApiProcessor(
- *   id = "listing_image_url",
- *   label = @Translation("Listing Image URL"),
- *   description = @Translation("Add a listing image url to search index"),
- *   stages = {
- *     "add_properties" = 0,
- *   },
- *   locked = true,
- *   hidden = false,
- * )
+ * Adds a listing image URL to the indexed data.
  */
+#[SearchApiProcessor(
+  id: 'listing_image_url',
+  label: new TranslatableMarkup('Listing Image URL'),
+  description: new TranslatableMarkup('Add a listing image url to search index'),
+  stages: [
+    'add_properties' => 0,
+  ],
+  locked: TRUE,
+  hidden: FALSE,
+)]
 class ListingImageUrl extends ProcessorPluginBase {
 
   /**

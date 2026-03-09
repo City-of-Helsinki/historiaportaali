@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: tyttokoulu
-      label: tyttökoulu
+      label: Tyttökoulu
     -
       value: poikakoulu
-      label: poikakoulu
+      label: Poikakoulu
     -
       value: tytto__ja_poikakoulu
-      label: 'tyttö- ja poikakoulu'
+      label: 'Tyttö- ja poikakoulu'
   allowed_values_function: ''
 module: options
 locked: false

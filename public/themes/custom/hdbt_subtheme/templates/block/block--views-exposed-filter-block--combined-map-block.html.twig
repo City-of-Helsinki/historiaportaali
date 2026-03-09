@@ -26,14 +26,9 @@
  */
 #}
 <div{{ attributes.addClass('exposed-filters exposed-filters__map') }}>
-  <div class="exposed-filters__accordion component--accordion accordion accordion--grey">
-    {% embed "@hdbt/misc/container.twig" with {container_element: 'accordion'} %}
-      {% block container_content %}
-        {% include '@hdbt/component/accordion.twig' with {
-          heading: 'Filter map items'|t({}, {'context': 'Map'}),
-          content: content,
-        } %}
-      {% endblock %}
-    {% endembed %}
+  <div class="exposed-filters__row">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
   </div>
 </div>

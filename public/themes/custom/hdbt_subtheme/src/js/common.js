@@ -67,7 +67,24 @@
       // Add even / odd classes to Image and Video -paragraphs
       behaviors.themeCommon.addEvenOddClasses(context);
 
+      behaviors.themeCommon.addKoreButtonAriaLabels(context);
       behaviors.themeCommon.addKoreMarkers(context);
+    },
+
+    addKoreButtonAriaLabels(context) {
+      const showOnMapLabel = Drupal.t(
+        "Show on map",
+        {},
+        { context: "Content" },
+      );
+      jQuery("button.kore-address--link", context).each(function () {
+        const $btn = jQuery(this);
+        const $wrapper = $btn.closest(".kore--show-on-map");
+        const address = $wrapper.data("address");
+        if (address) {
+          $btn.attr("aria-label", `${showOnMapLabel}: ${address}`);
+        }
+      });
     },
 
     addEvenOddClasses(context) {
@@ -96,10 +113,23 @@
       // Note: We search globally (not within context) because for logged-in users,
       // the context parameter is often limited to admin toolbar/contextual links
       // and doesn't include the main content area where these elements exist.
-      const BUILDING_SELECTOR = "div.paragraph--type--kore-building";
+      const BUILDING_SELECTOR = ".paragraph--type--kore-building";
       const BUTTON_SELECTOR = "button.kore-address";
 
       jQuery(document).on("leafletMapInit", (_e, _settings, lMap) => {
+        const defaultLabel =
+          drupalSettings.koreSchoolTitle ||
+          Drupal.t("Map marker", {}, { context: "Map controls" });
+
+        // Ensure all markers have descriptive alt (including any from Leaflet).
+        const ensureMarkerLabels = () => {
+          lMap.eachLayer((layer) => {
+            if (layer._icon && !layer._icon.getAttribute("alt")) {
+              layer._icon.setAttribute("alt", defaultLabel);
+            }
+          });
+        };
+
         const $buildings = jQuery(BUILDING_SELECTOR);
 
         $buildings.each((_index, building) => {
@@ -109,6 +139,8 @@
           const $button = $building.find(BUTTON_SELECTOR);
           const lat = $button.attr("data-lat");
           const lon = $button.attr("data-lon");
+          const address =
+            $button.closest(".kore--show-on-map").data("address") || "";
 
           if (lat && lon && lat !== lon) {
             const latlon = new L.LatLng(lat, lon);
@@ -117,9 +149,14 @@
               iconUrl: "/themes/custom/hdbt_subtheme/src/icons/map_marker.svg",
             });
 
-            L.marker(latlon, { icon: markerIcon }).addTo(lMap);
+            const marker = L.marker(latlon, { icon: markerIcon }).addTo(lMap);
+            if (address && marker._icon) {
+              marker._icon.setAttribute("alt", address);
+            }
           }
         });
+
+        ensureMarkerLabels();
 
         // Attach click handlers to all remaining buttons
         const $allButtons = jQuery(BUTTON_SELECTOR);

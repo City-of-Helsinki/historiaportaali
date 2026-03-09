@@ -18,18 +18,18 @@
 
 .map-controls__top-container {
   display: flex;
-  left: 20px;
+  left: $spacing-double;
   max-width: 90%;
   position: absolute;
-  top: 20px;
+  top: $spacing;
   z-index: 401;
   &.comparison-map {
-    bottom: 20px;
+    bottom: $spacing;
     top: auto;
 
     @include breakpoint($breakpoint-m) {
       bottom: auto;
-      top: 20px;
+      top: $spacing;
     }
 
     @include breakpoint($breakpoint-l) {
@@ -38,17 +38,12 @@
   }
 
   @include breakpoint($breakpoint-l) {
-    left: 50px;
-    top: 30px;
-  }
-
-  @include breakpoint($breakpoint-xl) {
-    left: 80px;
+    top: $spacing;
   }
 
   .comparison-enabled & {
     @include breakpoint($breakpoint-m) {
-      left: 20px;
+      left: $spacing;
 
       &.main-map {
         max-width: 45%;
@@ -336,6 +331,7 @@
 
     .comparison-enabled & {
       background-color: $color-metro-dark;
+      color: $color-white;
     }
   }
 }

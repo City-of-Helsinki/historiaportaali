@@ -13,91 +13,91 @@ settings:
   allowed_values:
     -
       value: reaalikoulu
-      label: reaalikoulu
+      label: Reaalikoulu
     -
       value: kansalaiskoulu
-      label: kansalaiskoulu
+      label: Kansalaiskoulu
     -
       value: korkeakoulu
-      label: korkeakoulu
+      label: Korkeakoulu
     -
       value: oppikoulu
-      label: oppikoulu
+      label: Oppikoulu
     -
       value: valmistava_koulu
-      label: 'valmistava koulu'
+      label: 'Valmistava koulu'
     -
       value: apukoulu
-      label: apukoulu
+      label: Apukoulu
     -
       value: alkeiskoulu
-      label: alkeiskoulu
+      label: Alkeiskoulu
     -
       value: lukio
-      label: lukio
+      label: Lukio
     -
       value: keskikoulu
-      label: keskikoulu
+      label: Keskikoulu
     -
       value: sairaalakoulu
-      label: sairaalakoulu
+      label: Sairaalakoulu
     -
       value: iltalukio
-      label: iltalukio
+      label: Iltalukio
     -
       value: ylaaste
-      label: yläaste
+      label: Yläaste
     -
       value: jatkokoulu
-      label: jatkokoulu
+      label: Jatkokoulu
     -
       value: alakansakoulu
-      label: alakansakoulu
+      label: Alakansakoulu
     -
       value: ala_aste
-      label: ala-aste
+      label: Ala-aste
     -
       value: kansakoulu
-      label: kansakoulu
+      label: Kansakoulu
     -
       value: ammattikoulu
-      label: ammattikoulu
+      label: Ammattikoulu
     -
       value: ylakansakoulu
-      label: yläkansakoulu
+      label: Yläkansakoulu
     -
       value: erityiskoulu
-      label: erityiskoulu
+      label: Erityiskoulu
     -
       value: iltakoulu
-      label: iltakoulu
+      label: Iltakoulu
     -
       value: lyseo
-      label: lyseo
+      label: Lyseo
     -
       value: maatalouslyseo
-      label: maatalouslyseo
+      label: Maatalouslyseo
     -
       value: peruskoulu
-      label: peruskoulu
+      label: Peruskoulu
     -
       value: peruskoulu_ja_lukio
-      label: 'peruskoulu ja lukio'
+      label: 'Peruskoulu ja lukio'
     -
       value: reaalilyseo
-      label: reaalilyseo
+      label: Reaalilyseo
     -
       value: realilyseo
-      label: realilyseo
+      label: Realilyseo
     -
       value: ylaaste_ja_lukio
-      label: 'yläaste ja lukio'
+      label: 'Yläaste ja lukio'
     -
       value: ammattikorkeakoulu
-      label: ammattikorkeakoulu
+      label: Ammattikorkeakoulu
     -
       value: sivukoulu
-      label: sivukoulu
+      label: Sivukoulu
   allowed_values_function: ''
 module: options
 locked: false

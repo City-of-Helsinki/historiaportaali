@@ -15,21 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class FrontpageSearchForm extends FormBase {
 
   /**
-   * The search path resolver service.
-   *
-   * @var \Drupal\helhist_search\SearchPathResolver
-   */
-  protected $searchPathResolver;
-
-  /**
    * Constructs a new FrontpageSearchForm object.
-   *
-   * @param \Drupal\helhist_search\SearchPathResolver $search_path_resolver
-   *   The search path resolver service.
    */
-  public function __construct(SearchPathResolver $search_path_resolver) {
-    $this->searchPathResolver = $search_path_resolver;
-  }
+  public function __construct(
+    protected SearchPathResolver $searchPathResolver,
+  ) {}
 
   /**
    * {@inheritdoc}

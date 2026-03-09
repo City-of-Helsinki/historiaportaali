@@ -1,10 +1,124 @@
-.map-view-page {
-  .region-content {
-    position: relative;
+.node-type--map_page {
+  .exposed-filters {
+    background-color: $color-black-80;
+    margin-top: $spacing-double;
+    padding: $spacing;
+
+    @include breakpoint($breakpoint-m) {
+      padding: $spacing-double;
+    }
+
+    .exposed-filters__title {
+      color: $color-white;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0 0 $spacing;
+    }
+
+    .exposed-filters__row {
+      align-items: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing $spacing-double;
+
+      @include breakpoint(0 $breakpoint-m) {
+        gap: $spacing;
+      }
+    }
+
+    .views-exposed-form {
+      display: contents;
+    }
+
+    .form-item {
+      margin-bottom: 0;
+      min-width: 0;
+      width: 100%;
+
+      .form-label,
+      .hds-text-input__label {
+        color: $color-white;
+        font-size: 1rem;
+        margin: 0 0 $spacing-quarter;
+      }
+
+      .form-select,
+      .hds-text-input {
+        background-color: $color-white;
+        border: 2px solid $color-black-20;
+        min-height: 2.75rem;
+
+        &:focus {
+          box-shadow: 0 0 0 3px $color-metro-dark;
+          outline: none;
+        }
+      }
+
+      // Get rid of the increase/decrease arrows on number inputs.
+      &.form-item-start-year,
+      &.form-item-end-year {
+        input[type="number"] {
+          -moz-appearance: textfield;
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+
+      @include breakpoint(0 $breakpoint-m) {
+        &.form-item-start-year,
+        &.form-item-end-year {
+          flex: 1 1 calc((100% - #{$spacing}) / 2);
+          max-width: calc((100% - #{$spacing}) / 2);
+        }
+      }
+
+      @include breakpoint($breakpoint-m) {
+        flex: 0 1 auto;
+        width: auto;
+
+        &.form-item-start-year,
+        &.form-item-end-year {
+          flex: 0 0 8rem;
+        }
+
+        &.form-item-field-keywords-target-id {
+          flex: 1 1 12rem;
+          max-width: 20rem;
+          min-width: 12rem;
+        }
+      }
+    }
+
+    .form-actions {
+      margin-bottom: 0;
+      width: 100%;
+
+      .hds-button,
+      input[type="submit"] {
+        min-height: 2.75rem;
+        width: 100%;
+      }
+
+      @include breakpoint($breakpoint-m) {
+        flex: 0 0 auto;
+        width: auto;
+
+        .hds-button,
+        input[type="submit"] {
+          width: auto;
+        }
+      }
+    }
   }
 }
 
 .views--combined-map {
+
+  $map-marker-red: #bd2f00;
   .map-container {
     position: relative;
     width: 100%;
@@ -67,23 +181,64 @@
     }
   }
 
-  .marker-cluster-small,
-  .marker-cluster-medium {
-    background-color: rgba(209, 67, 20, 0.7);
+  .leaflet-marker-icon {
+    transition: filter 0.08s;
+
+    &.active,
+    &:hover {
+      filter: drop-shadow(0 0 6px rgba($map-marker-red, 0.6));
+    }
+  }
+
+  .marker-cluster {
+    background-color: rgba($map-marker-red, 0.7);
+    border-radius: 50%;
     transition: box-shadow 0.08s;
 
     &:hover {
-      box-shadow: 0px 0px 6px rgba(189, 47, 0, 0.6);
+      box-shadow: 0 0 6px rgba($map-marker-red, 0.6);
     }
 
     div {
-      background-color: rgba(189, 47, 0, 0.55);
+      background-color: rgba($map-marker-red, 0.55);
+      border-radius: 50%;
     }
 
     span {
       color: white;
       font-family: $font-default;
+      font-size: 16px;
       font-weight: $font-weight-bold;
+    }
+
+    &.marker-cluster-medium {
+      height: 48px !important;
+      width: 48px !important;
+
+      div {
+        height: 36px !important;
+        line-height: 36px;
+        margin-left: 6px !important;
+        margin-top: 6px !important;
+        width: 36px !important;
+      }
+    }
+
+    &.marker-cluster-large {
+      height: 64px !important;
+      width: 64px !important;
+
+      div {
+        height: 48px !important;
+        line-height: 48px;
+        margin-left: 8px !important;
+        margin-top: 8px !important;
+        width: 48px !important;
+      }
+
+      span {
+        font-size: 16px;
+      }
     }
   }
 

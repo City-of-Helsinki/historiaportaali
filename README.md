@@ -68,7 +68,9 @@ The customized/non-standard helfi content types.
 - **map_layer**: Map layers for the map page, WMS of kartta.hel.fi
   - Rabbit hole module prevent direct view of the entity
 - **kore_school** (`kore_school`): Koulurekisteri (school register) archive entries.
-  - This content was migrated from old chool register (removed in https://github.com/City-of-Helsinki/historiaportaali/pull/452/changes/1268c82421aa7577dae30b6792522e3c2cf9e245)
+  - Content was migrated from old chool register in 2024
+    - The migration code was removed in [1268c82](https://github.com/City-of-Helsinki/historiaportaali/pull/452/changes/1268c82421aa7577dae30b6792522e3c2cf9e245))
+    - Drupal is now master data for this content, background at https://kaupunginarkisto.hel.fi/koulurekisteri
 
 ### Media types
 

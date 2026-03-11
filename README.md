@@ -55,14 +55,50 @@ $ make fresh
 $ make shell
 ```
 
-## Configuration
 
-### Search mapping mode
+## Instance specific features
 
-At `/admin/tools/helhist-search`: **Text mapping** for local, **Keyword mapping** for server. See [helhist_search README](public/modules/custom/helhist_search/README.md#search-mapping-mode) for details.
+### Content types
 
-## Misc
+The customized/non-standard helfi content types.
 
-- Web root is `/public`
-- Configuration is in `/conf/cmi`
-- Run `make help` to list all available commands
+- **article** (`article`): Main historical content of the website. Customization like with year range, phenomena, turning points, buildings, neighbourhoods, Finna import, geolocation.
+- **listing_page**: Lists articles and content, specific to this site.
+- **map_page**: Solely for https://historia.hel.fi/fi/kartta page
+- **map_layer**: Map layers for the map page, WMS of kartta.hel.fi
+  - Rabbit hole module prevent direct view of the entity
+- **kore_school** (`kore_school`): Koulurekisteri (school register) archive entries.
+  - This content was migrated from old chool register (removed in https://github.com/City-of-Helsinki/historiaportaali/pull/452/changes/1268c82421aa7577dae30b6792522e3c2cf9e245)
+
+### Media types
+
+The customized/non-standard helfi media types.
+ 
+- **image** (helfi, extended): Finna ID, year range, phenomena, buildings, neighbourhoods, keywords, authors, copyrights, formats, languages, geolocation, transcript, photographer. Used in galleries, maps, search.
+- **kore_image** (custom): KoRe school archive images (Finna ID, photographer).
+- **hel_map** No entities in production.
+- **helfi_chart** (helfi, extended): Charts. Extended with Infogram ID field -> infogram graph embeds.
+
+### Search
+
+Two React search apps (HDS-based):
+* **main search** (articles + media, `content_and_media` index)
+* **KoRe search** (Koulurekisteri schools, `kore_school` index). Both use Elasticsearch and share blocks, config, and mapping mode.
+
+- Backend:
+  - [helhist_search](public/modules/custom/helhist_search/README.md) (blocks, config, Search API processors),
+  - [helhist_kore_search](public/modules/custom/helhist_kore_search) (KoRe block)
+- Frontend:
+  - [React apps](public/themes/custom/hdbt_subtheme/src/js/react/apps/README.md) (search, kore-search)
+
+Search configs: **Text mapping** for local, **Keyword mapping** for server. Configure at `/admin/tools/helhist-search`. See [helhist_search README](public/modules/custom/helhist_search/README.md#search-mapping-mode). Defines also the parent node that host the search apps.
+
+### Integrations
+
+- **Map (Leaflet)**: WMS layers from `map_layer` nodes.
+  - Module: [helhist_map](public/modules/custom/helhist_map)
+  - Theme js: [map-controls.js](public/themes/custom/hdbt_subtheme/src/js/map-controls.js)
+  - Theme js: [map.js](public/themes/custom/hdbt_subtheme/src/js/map.js)
+  - Theme js: [map-comparison.js](public/themes/custom/hdbt_subtheme/src/js/map-comparison.js).
+- **Finna.fi import**: Content managers import metadata by Finna ID into articles/images.
+  - Custom module: [finna_import.js](public/modules/custom/helhist_admin_forms/js/finna_import.js).

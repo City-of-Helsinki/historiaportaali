@@ -27,6 +27,7 @@ enforce:
       sources:
         - 'https://e.infogram.com'
         - 'https://webanalytics.digiaiiris.com'
+        - 'https://maps.googleapis.com'
     style-src:
       base: self
       flags:

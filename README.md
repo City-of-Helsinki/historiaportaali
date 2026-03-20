@@ -104,3 +104,12 @@ Search configs: **Text mapping** for local, **Keyword mapping** for server. Conf
   - Theme js: [map-comparison.js](public/themes/custom/hdbt_subtheme/src/js/map-comparison.js).
 - **Finna.fi import**: Content managers import metadata by Finna ID into articles/images.
   - Custom module: [finna_import.js](public/modules/custom/helhist_admin_forms/js/finna_import.js).
+
+### JSON:API
+
+Structured content is exposed to external clients at `/jsonapi`.
+
+External company uses this API to pull media and images into a "**Kävelykierrokset**"
+app (walking tours). The app is planned to go live and connect with this site in 2026
+when it is production-ready. The API is not called API continuously; app content is
+refreshed manually from time to time.

@@ -43,7 +43,6 @@
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "dmore/chrome-mink-driver": "^2.8",
         "donatj/mock-webserver": "^2.4",
         "drupal/core-dev": "^10",
         "jangregor/phpstan-prophecy": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b470630075a6728251185db2c747bc09",
+    "content-hash": "4fd2b05ce6be98d59d848807536838fe",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2690,23 +2690,60 @@
         },
         {
             "name": "drupal/context_entity_field",
-            "version": "dev-8.x-1.x",
+            "version": "2.0.0-alpha4",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/issue/context_entity_field-3349931.git",
-                "reference": "a632b9dcc6ef940eaa14f5c0f9cedd98f9259be3"
+                "url": "https://git.drupalcode.org/project/context_entity_field.git",
+                "reference": "2.0.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/context_entity_field-2.0.0-alpha4.zip",
+                "reference": "2.0.0-alpha4",
+                "shasum": "258d361b11814bcb664a600861ec854eedf15998"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/context": "*",
+                "drupal/core": "^9.3 || ^10 || ^11"
             },
-            "default-branch": true,
             "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha4",
+                    "datestamp": "1755556105",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0+"
             ],
+            "authors": [
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "daniel korte",
+                    "homepage": "https://www.drupal.org/user/453668"
+                },
+                {
+                    "name": "mavimo",
+                    "homepage": "https://www.drupal.org/user/106454"
+                },
+                {
+                    "name": "sokrplare",
+                    "homepage": "https://www.drupal.org/user/60308"
+                }
+            ],
             "description": "Set context conditions and configure reactions based on entity field values.",
             "homepage": "http://drupal.org/project/context_entity_field",
-            "time": "2023-10-18T14:02:13+00:00"
+            "support": {
+                "source": "https://git.drupalcode.org/project/context_entity_field"
+            }
         },
         {
             "name": "drupal/core",
@@ -23110,7 +23147,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/context": 5,
-        "drupal/context_entity_field": 20,
         "drupal/helfi_drupal_tools": 20,
         "drupal/rabbit_hole": 10,
         "drupal/search_api_location": 15,

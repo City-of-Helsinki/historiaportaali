@@ -10,7 +10,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.6.7",
         "drupal/context": "^5.0@RC",
-        "drupal/context_entity_field": "dev-8.x-1.x",
+        "drupal/context_entity_field": "^2",
         "drupal/dynamic_entity_reference": "^3.0",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
@@ -158,10 +158,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/context_entity_field-3349931.git"
-        },
         {
             "type": "vcs",
             "url": "https://git.drupalcode.org/issue/views_cm_current_state-3290445.git"

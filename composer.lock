@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "653325f4239f23416c3220ab5357eed4",
+    "content-hash": "15b4dc26cfb13cfa838c7244a5902d07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4883,12 +4883,12 @@
             "version": "3.4.13",
             "source": {
                 "type": "git",
-                "url": "https://github.com/City-of-Helsinki/drupal-hdbt-admin.git",
+                "url": "git@github.com:city-of-helsinki/drupal-hdbt-admin.git",
                 "reference": "5bd31dda4c12cd453d3797de14cfef3121d11665"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/5bd31dda4c12cd453d3797de14cfef3121d11665",
+                "url": "https://api.github.com/repos/city-of-helsinki/drupal-hdbt-admin/zipball/5bd31dda4c12cd453d3797de14cfef3121d11665",
                 "reference": "5bd31dda4c12cd453d3797de14cfef3121d11665",
                 "shasum": ""
             },
@@ -9020,25 +9020,25 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.2.2",
+            "version": "6.2.10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.2.2"
+                "reference": "6.2.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.2.2.zip",
-                "reference": "6.2.2",
-                "shasum": "cfd766802232dfdf39edd5a1acf7c738d14dc6eb"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.2.10.zip",
+                "reference": "6.2.10",
+                "shasum": "82594fde5a3041867903a93f69f447b29bf3115f"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10",
+                "drupal/core": "^10.2",
                 "php": ">=8.1"
             },
             "require-dev": {
                 "drupal/address": "1.x-dev",
-                "drupal/bootstrap": "3.x-dev",
+                "drupal/bootstrap": "^3.0",
                 "drupal/captcha": "^1 || ^2",
                 "drupal/chosen": "3.0.x-dev",
                 "drupal/ckeditor": "1.0.x-dev",
@@ -9050,6 +9050,7 @@
                 "drupal/group": "1.x-dev",
                 "drupal/hal": "1 - 2",
                 "drupal/jquery_ui": "1.x-dev",
+                "drupal/jquery_ui_button": "2.x-dev",
                 "drupal/jquery_ui_checkboxradio": "2.x-dev",
                 "drupal/jquery_ui_datepicker": "2.x-dev",
                 "drupal/mailsystem": "4.x-dev",
@@ -9073,14 +9074,14 @@
                 "drupal/webform_ui": "*"
             },
             "suggest": {
-                "drupal/jquery_ui_checkboxradio": "Provides jQuery UI Checkboxradio library. Required by the Webform jQueryUI Buttons module. The Webform jQueryUI Buttons module is deprecated because jQueryUI is no longer maintained.",
+                "drupal/jquery_ui_buttons": "Provides jQuery UI Checkboxradio library. Required by the Webform jQueryUI Buttons module. The Webform jQueryUI Buttons module is deprecated because jQueryUI is no longer maintained.",
                 "drupal/jquery_ui_datepicker": "Provides jQuery UI Datepicker library. Required to support datepickers. The Webform jQueryUI Datepicker module is deprecated because jQueryUI is no longer maintained."
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.2.2",
-                    "datestamp": "1701948363",
+                    "version": "6.2.10",
+                    "datestamp": "1773926566",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9108,16 +9109,16 @@
                     "role": "Contributor"
                 },
                 {
-                    "name": "Liam Morland",
+                    "name": "liam morland",
                     "homepage": "https://www.drupal.org/user/493050"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
                 },
                 {
                     "name": "quicksketch",
                     "homepage": "https://www.drupal.org/user/35821"
-                },
-                {
-                    "name": "torotil",
-                    "homepage": "https://www.drupal.org/user/865256"
                 }
             ],
             "description": "Enables the creation of webforms and questionnaires.",
@@ -9131,26 +9132,28 @@
         },
         {
             "name": "drupal/webform_quiz_elements",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform_quiz_elements.git",
-                "reference": "1.0.3"
+                "reference": "1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_quiz_elements-1.0.3.zip",
-                "reference": "1.0.3",
-                "shasum": "b35f33221d10f5a53c20fdd582fd7e5c7c2c40e1"
+                "url": "https://ftp.drupal.org/files/projects/webform_quiz_elements-1.0.4.zip",
+                "reference": "1.0.4",
+                "shasum": "276aebfe4e4f84b3267acef7adda3520ba1e2768"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^10.2||^11",
+                "drupal/webform": "^6",
+                "php": ">=8.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.3",
-                    "datestamp": "1698250691",
+                    "version": "1.0.4",
+                    "datestamp": "1737951668",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9167,7 +9170,7 @@
                     "homepage": "https://www.drupal.org/user/3085703"
                 },
                 {
-                    "name": "VladimirAus",
+                    "name": "vladimiraus",
                     "homepage": "https://www.drupal.org/user/673120"
                 }
             ],

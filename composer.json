@@ -97,9 +97,6 @@
             },
              "drupal/helfi_platform_config": {
                  "Fix external entities query signature v4 issue (Drupal 10 support for external entities)": "custom-patches/helfi_platform_config-external_entities-query-signature.patch"
-            },
-            "drupal/webform_quiz_elements": {
-                "Translate feedback messages": "custom-patches/webform_quiz_elements_translate_feedback.patch"
             }
         },
         "installer-types": ["bower-asset", "npm-asset"],

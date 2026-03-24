@@ -47,7 +47,6 @@
         "dmore/chrome-mink-driver": "^2.8",
         "donatj/mock-webserver": "^2.4",
         "drupal/core-dev": "^10",
-        "drupal/devel": "^5.3",
         "jangregor/phpstan-prophecy": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "weitzman/drupal-test-traits": "^2.0"

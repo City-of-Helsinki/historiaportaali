@@ -32,7 +32,7 @@
         "drupal/term_merge": "^2.0",
         "drupal/views_block_filter_block": "^2.0",
         "drupal/views_cm_current_state": "^2",
-        "drupal/views_menu_children_filter": "^1.0@RC",
+        "drupal/views_menu_children_filter": "^4.0",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
         "drush/drush": "^13",

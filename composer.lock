@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36476adc750c6568433851036bbfd673",
+    "content-hash": "653325f4239f23416c3220ab5357eed4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8956,29 +8956,29 @@
         },
         {
             "name": "drupal/views_menu_children_filter",
-            "version": "1.0.0-rc2",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_menu_children_filter.git",
-                "reference": "8.x-1.0-rc2"
+                "reference": "4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_menu_children_filter-8.x-1.0-rc2.zip",
-                "reference": "8.x-1.0-rc2",
-                "shasum": "525829f61785936e1d6356653aca94603da9b160"
+                "url": "https://ftp.drupal.org/files/projects/views_menu_children_filter-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "4ba32f29d26d2317d022e5503bb0257d7bcf7f0e"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^10.5 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc2",
-                    "datestamp": "1664628070",
+                    "version": "4.0.2",
+                    "datestamp": "1767616854",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -8988,19 +8988,15 @@
             ],
             "authors": [
                 {
-                    "name": "Anybody",
+                    "name": "anybody",
                     "homepage": "https://www.drupal.org/user/291091"
-                },
-                {
-                    "name": "bmcclure",
-                    "homepage": "https://www.drupal.org/user/278485"
                 },
                 {
                     "name": "cravecode",
                     "homepage": "https://www.drupal.org/user/1693456"
                 },
                 {
-                    "name": "DanielVeza",
+                    "name": "danielveza",
                     "homepage": "https://www.drupal.org/user/3362504"
                 },
                 {
@@ -9008,8 +9004,12 @@
                     "homepage": "https://www.drupal.org/user/1536006"
                 },
                 {
-                    "name": "Grevil",
+                    "name": "grevil",
                     "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "replicaobscura",
+                    "homepage": "https://www.drupal.org/user/278485"
                 }
             ],
             "description": "Views Menu Children Filter",
@@ -23198,8 +23198,7 @@
     "stability-flags": {
         "drupal/context": 5,
         "drupal/helfi_drupal_tools": 20,
-        "drupal/search_api_location": 15,
-        "drupal/views_menu_children_filter": 5
+        "drupal/search_api_location": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

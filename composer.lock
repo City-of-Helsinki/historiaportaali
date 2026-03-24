@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d8ae70cab23fe299d46bb12c926dce6",
+    "content-hash": "3af28f36dd84203863c2db732ccf0fe8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6927,36 +6927,36 @@
         },
         {
             "name": "drupal/rabbit_hole",
-            "version": "1.0.0-beta11",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/rabbit_hole.git",
-                "reference": "8.x-1.0-beta11"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/rabbit_hole-8.x-1.0-beta11.zip",
-                "reference": "8.x-1.0-beta11",
-                "shasum": "a5c3bd5d1a190e25bb4d339525dd71918015fea2"
+                "url": "https://ftp.drupal.org/files/projects/rabbit_hole-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "9fee0b55182c09fa2e3a14da965dbde323e4eb9a"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^9.5 || ^10 || ^11"
             },
             "require-dev": {
-                "drupal/commerce": "*",
+                "drupal/commerce": "^2.39",
                 "drupal/commerce_product": "*",
                 "drupal/file_entity": "*",
-                "drupal/group": "*",
+                "drupal/group": "^1.6|^2.3",
                 "drupal/paragraphs-paragraphs_library": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta11",
-                    "datestamp": "1670668459",
+                    "version": "8.x-1.2",
+                    "datestamp": "1773704444",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -6974,11 +6974,15 @@
                     "homepage": "https://www.drupal.org/user/289861"
                 },
                 {
-                    "name": "Dylan Donkersgoed",
+                    "name": "dylan donkersgoed",
                     "homepage": "https://www.drupal.org/user/2803351"
                 },
                 {
-                    "name": "Matroskeen",
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "matroskeen",
                     "homepage": "https://www.drupal.org/user/3426249"
                 },
                 {
@@ -23192,7 +23196,6 @@
     "stability-flags": {
         "drupal/context": 5,
         "drupal/helfi_drupal_tools": 20,
-        "drupal/rabbit_hole": 10,
         "drupal/search_api_location": 15,
         "drupal/term_merge": 10,
         "drupal/views_menu_children_filter": 5

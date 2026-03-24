@@ -30,7 +30,6 @@
         "drupal/redis": "^1.9",
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/term_merge": "^2.0",
-        "drupal/twig_tweak": "^3.1",
         "drupal/views_block_filter_block": "^2.0",
         "drupal/views_cm_current_state": "^2",
         "drupal/views_menu_children_filter": "^1.0@RC",

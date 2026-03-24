@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd79826dfdd46826b103edc630a942cd",
+    "content-hash": "b470630075a6728251185db2c747bc09",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6140,59 +6140,6 @@
             "homepage": "https://www.drupal.org/project/matomo",
             "support": {
                 "source": "https://git.drupalcode.org/project/matomo"
-            }
-        },
-        {
-            "name": "drupal/matomo_reports",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/matomo_reports.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/matomo_reports-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "398fb97084046c86b13298a5ab10a272c18e9006"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1686945800",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Shelane French (shelane)",
-                    "homepage": "https://www.drupal.org/u/shelane",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "xlyz",
-                    "homepage": "https://www.drupal.org/user/310584"
-                }
-            ],
-            "description": "Display analytics reports from Matomo server.",
-            "homepage": "https://www.drupal.org/project/matomo_reports",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/matomo_reports",
-                "issues": "https://www.drupal.org/project/issues/matomo_reports"
             }
         },
         {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3af28f36dd84203863c2db732ccf0fe8",
+    "content-hash": "de99c87eb38497452214372e741c5328",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8113,17 +8113,17 @@
         },
         {
             "name": "drupal/term_merge",
-            "version": "2.0.0-beta6",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/term_merge.git",
-                "reference": "2.0.0-beta6"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/term_merge-2.0.0-beta6.zip",
-                "reference": "2.0.0-beta6",
-                "shasum": "ec81cd7281e409f3d512d9c5bf894f92ab996016"
+                "url": "https://ftp.drupal.org/files/projects/term_merge-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "44bb8665801826934ade2fca2e191fd5d581b2d1"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11",
@@ -8132,11 +8132,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta6",
-                    "datestamp": "1710869688",
+                    "version": "2.0.0",
+                    "datestamp": "1752105248",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -8162,7 +8162,7 @@
                     "homepage": "https://www.drupal.org/user/49774"
                 },
                 {
-                    "name": "G.I.Joe",
+                    "name": "g.i.joe",
                     "homepage": "https://www.drupal.org/user/111415"
                 },
                 {
@@ -23197,7 +23197,6 @@
         "drupal/context": 5,
         "drupal/helfi_drupal_tools": 20,
         "drupal/search_api_location": 15,
-        "drupal/term_merge": 10,
         "drupal/views_menu_children_filter": 5
     },
     "prefer-stable": true,

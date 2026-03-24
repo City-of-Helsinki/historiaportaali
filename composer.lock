@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2198d1f8786d54d39c36348cbe7b6e6b",
+    "content-hash": "5d8ae70cab23fe299d46bb12c926dce6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4615,27 +4615,27 @@
         },
         {
             "name": "drupal/geofield_map",
-            "version": "3.0.14",
+            "version": "11.1.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geofield_map.git",
-                "reference": "3.0.14"
+                "reference": "11.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield_map-3.0.14.zip",
-                "reference": "3.0.14",
-                "shasum": "8f87ab5587f113e415fc09091f62f2425843e123"
+                "url": "https://ftp.drupal.org/files/projects/geofield_map-11.1.7.zip",
+                "reference": "11.1.7",
+                "shasum": "7b69f6d725f95db9bd2751f68483c38a3325e544"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/geofield": "^1.31"
+                "drupal/core": "^10.3 || ^11",
+                "drupal/geofield": "^1.31 || ^10.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.14",
-                    "datestamp": "1696883247",
+                    "version": "11.1.7",
+                    "datestamp": "1773340085",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

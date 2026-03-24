@@ -7569,20 +7569,20 @@
         },
         {
             "name": "drupal/search_api_location",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_location.git",
-                "reference": "8.x-1.0-alpha3"
+                "reference": "8.x-1.0-alpha4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_location-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
-                "shasum": "feed01b73c60ba2f9512909861ed0a205e030563"
+                "url": "https://ftp.drupal.org/files/projects/search_api_location-8.x-1.0-alpha4.zip",
+                "reference": "8.x-1.0-alpha4",
+                "shasum": "782313b945328e0c7bab3e51f748cddbb82649a2"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10",
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11",
                 "drupal/search_api": "^1.28",
                 "itamair/geophp": "^1.2"
             },
@@ -7594,8 +7594,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha3",
-                    "datestamp": "1677057556",
+                    "version": "8.x-1.0-alpha4",
+                    "datestamp": "1726238587",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -7616,7 +7616,7 @@
                     "homepage": "https://www.drupal.org/user/205582"
                 },
                 {
-                    "name": "JeroenT",
+                    "name": "jeroent",
                     "homepage": "https://www.drupal.org/user/2228934"
                 },
                 {
@@ -7624,7 +7624,7 @@
                     "homepage": "https://www.drupal.org/user/785804"
                 },
                 {
-                    "name": "Nick_vh",
+                    "name": "nick_vh",
                     "homepage": "https://www.drupal.org/user/122682"
                 },
                 {

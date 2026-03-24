@@ -32,7 +32,7 @@
         "drupal/term_merge": "^2.0@beta",
         "drupal/twig_tweak": "^3.1",
         "drupal/views_block_filter_block": "^2.0",
-        "drupal/views_cm_current_state": "dev-3290445-automated-drupal-10",
+        "drupal/views_cm_current_state": "^2",
         "drupal/views_menu_children_filter": "^1.0@RC",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
@@ -99,10 +99,6 @@
              "drupal/helfi_platform_config": {
                  "Fix external entities query signature v4 issue (Drupal 10 support for external entities)": "custom-patches/helfi_platform_config-external_entities-query-signature.patch"
             },
-            "drupal/views_cm_current_state": {
-                "Filter by Moderation Current State (https://www.drupal.org/project/views_cm_current_state/issues/3158762#comment-14191350)": "https://www.drupal.org/files/issues/2021-08-16/add-current-moderation-filter_0.patch",
-                "Get translated revision": "custom-patches/views_cm_current_state_get_translated_revision.patch"
-            },
             "drupal/webform_quiz_elements": {
                 "Translate feedback messages": "custom-patches/webform_quiz_elements_translate_feedback.patch"
             }
@@ -158,10 +154,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/views_cm_current_state-3290445.git"
-        },
         {
             "type": "composer",
             "url": "https://repository.drupal.hel.ninja"

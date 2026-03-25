@@ -254,13 +254,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              read_only: '0'
-              survey_editor: '0'
-              content_producer: '0'
-              editor: '0'
-              admin: '0'
-              super_administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: 'e.g. 1820'
@@ -305,13 +298,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              read_only: '0'
-              survey_editor: '0'
-              content_producer: '0'
-              editor: '0'
-              admin: '0'
-              super_administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: 'e.g. 1917'
@@ -353,13 +339,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              read_only: '0'
-              survey_editor: '0'
-              content_producer: '0'
-              editor: '0'
-              admin: '0'
-              super_administrator: '0'
             reduce: false
           is_grouped: false
           group_info:

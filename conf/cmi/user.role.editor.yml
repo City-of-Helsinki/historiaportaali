@@ -158,6 +158,7 @@ permissions:
   - 'edit terms in phenomena'
   - 'edit terms in turning_points'
   - 'merge taxonomy terms'
+  - 'rebuild node access permissions'
   - 'revert announcement revisions'
   - 'revert article revisions'
   - 'revert landing_page revisions'

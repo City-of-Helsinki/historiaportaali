@@ -19,7 +19,7 @@
         "drupal/hdbt_admin": "^3.0",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/helfi_platform_config": "^4.0",
+        "drupal/helfi_platform_config": "^5.1",
         "drupal/helfi_proxy": "^3.0",
         "drupal/jquery_ui_touch_punch": "^1.1",
         "drupal/leaflet": "^10.1",
@@ -38,6 +38,7 @@
         "drush/drush": "^13",
         "geocoder-php/nominatim-provider": "^5.5",
         "jieter/leaflet.sync": "^0.2",
+        "mglaman/composer-drupal-lenient": "^2.0",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "^2.0"
@@ -62,6 +63,7 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
@@ -90,9 +92,6 @@
             },
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "custom-patches/HIS-303-matomo-digia-tracker-url.patch"
-            },
-             "drupal/helfi_platform_config": {
-                 "Fix external entities query signature v4 issue (Drupal 10 support for external entities)": "custom-patches/helfi_platform_config-external_entities-query-signature.patch"
             }
         },
         "installer-types": ["bower-asset", "npm-asset"],
@@ -135,6 +134,9 @@
         },
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/big_pipe_sessionless"]
         }
     },
     "autoload": {

@@ -139,6 +139,7 @@ permissions:
   - 'edit terms in neighbourhoods'
   - 'edit terms in phenomena'
   - 'edit terms in turning_points'
+  - 'rebuild node access permissions'
   - 'revert announcement revisions'
   - 'revert article revisions'
   - 'revert landing_page revisions'

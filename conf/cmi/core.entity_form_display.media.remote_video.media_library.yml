@@ -40,5 +40,8 @@ hidden:
   field_video_description: true
   langcode: true
   path: true
+  publish_on: true
+  scheduler_settings: true
   status: true
   uid: true
+  unpublish_on: true

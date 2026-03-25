@@ -1,30 +1,5 @@
-uuid: 4e8509b5-14ca-4fd0-bc64-a57a95d0b82c
-langcode: en
-status: true
 dependencies:
-  config:
-    - field.field.media.image.field_authors
-    - field.field.media.image.field_buildings
-    - field.field.media.image.field_buildings_info
-    - field.field.media.image.field_copyrights
-    - field.field.media.image.field_end_year
-    - field.field.media.image.field_finna_id
-    - field.field.media.image.field_formats
-    - field.field.media.image.field_geolocation
-    - field.field.media.image.field_image_caption
-    - field.field.media.image.field_keywords
-    - field.field.media.image.field_languages
-    - field.field.media.image.field_media_image
-    - field.field.media.image.field_neighbourhoods
-    - field.field.media.image.field_phenomena
-    - field.field.media.image.field_photographer
-    - field.field.media.image.field_start_year
-    - field.field.media.image.field_transcript
-    - image.style.media_library
-    - media.type.image
   module:
-    - focal_point
-    - path
     - field_group
     - geofield_map
     - select2
@@ -40,7 +15,7 @@ third_party_settings:
       label: 'Historia.helsinki metatietokentät'
       region: content
       parent_name: ''
-      weight: 10
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -59,7 +34,7 @@ third_party_settings:
       label: 'Finna.fi metatietokentät'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -74,7 +49,7 @@ third_party_settings:
       label: Säilytyspaikka
       region: content
       parent_name: group_finna_meta
-      weight: 24
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -88,7 +63,7 @@ third_party_settings:
       label: Aikakausi
       region: content
       parent_name: group_historiaportaali_meta
-      weight: 20
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -101,7 +76,7 @@ third_party_settings:
       label: 'Sijainti kartalla'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 6
       format_type: details
       format_settings:
         classes: ''
@@ -109,88 +84,10 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
-_core:
-  default_config_hash: MZDsaThzqkkKtCUzlkFmmuJ6mr8L4MjVgItwaLIYq3Q
-id: media.image.default
-targetEntityType: media
-bundle: image
-mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_media_image:
-    type: image_focal_point
-    weight: 1
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: media_library
-      preview_link: true
-      offsets: '50,50'
-    third_party_settings: {  }
-  field_photographer:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 3
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  replace_file:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 8
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  translation:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 4
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_authors:
     type: select2_entity_reference
-    weight: 21
+    weight: 2
     region: content
     settings:
       width: 100%
@@ -200,7 +97,7 @@ content:
     third_party_settings: {  }
   field_buildings:
     type: select2_entity_reference
-    weight: 12
+    weight: 0
     region: content
     settings:
       width: 100%
@@ -210,7 +107,7 @@ content:
     third_party_settings: {  }
   field_buildings_info:
     type: string_textfield
-    weight: 13
+    weight: 1
     region: content
     settings:
       size: 60
@@ -218,7 +115,7 @@ content:
     third_party_settings: {  }
   field_copyrights:
     type: select2_entity_reference
-    weight: 22
+    weight: 3
     region: content
     settings:
       width: 100%
@@ -228,14 +125,14 @@ content:
     third_party_settings: {  }
   field_end_year:
     type: number
-    weight: 28
+    weight: 1
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_finna_id:
     type: string_textfield
-    weight: 19
+    weight: 0
     region: content
     settings:
       size: 60
@@ -243,7 +140,7 @@ content:
     third_party_settings: {  }
   field_formats:
     type: select2_entity_reference
-    weight: 20
+    weight: 1
     region: content
     settings:
       width: 100%
@@ -253,7 +150,7 @@ content:
     third_party_settings: {  }
   field_geolocation:
     type: geofield_map
-    weight: 5
+    weight: 4
     region: content
     settings:
       html5_geolocation: false
@@ -297,7 +194,7 @@ content:
     third_party_settings: {  }
   field_image_caption:
     type: string_textarea
-    weight: 3
+    weight: 2
     region: content
     settings:
       rows: 5
@@ -305,7 +202,7 @@ content:
     third_party_settings: {  }
   field_keywords:
     type: select2_entity_reference
-    weight: 21
+    weight: 3
     region: content
     settings:
       width: 100%
@@ -315,7 +212,7 @@ content:
     third_party_settings: {  }
   field_languages:
     type: select2_entity_reference
-    weight: 23
+    weight: 4
     region: content
     settings:
       width: 100%
@@ -325,7 +222,7 @@ content:
     third_party_settings: {  }
   field_neighbourhoods:
     type: select2_entity_reference
-    weight: 19
+    weight: 1
     region: content
     settings:
       width: 100%
@@ -335,7 +232,7 @@ content:
     third_party_settings: {  }
   field_phenomena:
     type: select2_entity_reference
-    weight: 18
+    weight: 0
     region: content
     settings:
       width: 100%
@@ -345,34 +242,16 @@ content:
     third_party_settings: {  }
   field_start_year:
     type: number
-    weight: 27
+    weight: 0
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_transcript:
     type: text_textarea
-    weight: 4
+    weight: 3
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_authors: true
-  field_buildings: true
-  field_buildings_info: true
-  field_copyrights: true
-  field_end_year: true
-  field_finna_id: true
-  field_formats: true
-  field_geolocation: true
-  field_image_caption: true
-  field_keywords: true
-  field_languages: true
-  field_neighbourhoods: true
-  field_phenomena: true
-  field_start_year: true
-  field_transcript: true
-  publish_on: true
-  unpublish_on: true

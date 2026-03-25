@@ -1,15 +1,27 @@
 settings:
+  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
+  default_form_close_message: 'Извините... Эта форма закрыта для новых отправлений.'
+  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
   default_submit_button_label: Отправить
   default_reset_button_label: Сбросить
   default_delete_button_label: Удалить
-  default_form_close_message: 'Извините... Эта форма закрыта для новых отправлений.'
+  default_form_required_label: 'Указывает обязательное поле'
   default_wizard_prev_button_label: '< Предыдущая страница'
   default_wizard_start_label: Начало
   default_wizard_confirmation_label: Завершён
+  default_wizard_toggle_show_label: 'Показать все'
+  default_wizard_toggle_hide_label: 'Спрятать все'
   default_preview_next_button_label: Предпросмотр
   default_preview_prev_button_label: '< Предыдущая страница'
   default_preview_label: Предпросмотр
+  default_preview_title: '[webform:title]: Просмотр'
+  default_preview_message: 'Пожалуйста, просмотрите ваше отправление, оно не будет завершено, пока вы не нажмёте кнопку "Отправить"!'
   default_draft_button_label: 'Сохранить черновик'
+  default_confirmation_message: 'Заполнена новая форма [webform:title].'
+  default_confirmation_back_label: 'Вернуться к форме'
+  default_submission_label: '[webform_submission:submitted-to]: Отправление №[webform_submission:serial]'
+  default_limit_total_message: 'Больше никаких отправлений не разрешено.'
+  default_limit_user_message: 'Больше никаких отправлений не разрешено.'
   dialog_options:
     narrow:
       title: Узкий
@@ -17,19 +29,6 @@ settings:
       title: Нормальный
     wide:
       title: Широкий
-  default_form_required_label: 'Указывает обязательное поле'
-  default_wizard_toggle_show_label: 'Показать все'
-  default_wizard_toggle_hide_label: 'Спрятать все'
-  default_preview_title: '[webform:title]: Просмотр'
-  default_preview_message: 'Пожалуйста, просмотрите ваше отправление, оно не будет завершено, пока вы не нажмёте кнопку "Отправить"!'
-  default_confirmation_message: 'Заполнена новая форма [webform:title].'
-  default_confirmation_back_label: 'Вернуться к форме'
-  default_submission_label: '[webform_submission:submitted-to]: Отправление №[webform_submission:serial]'
-  default_submission_access_denied_message: 'Войдите, чтобы получить доступ к этому отправлению.'
-  default_limit_total_message: 'Больше никаких отправлений не разрешено.'
-  default_limit_user_message: 'Больше никаких отправлений не разрешено.'
-  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
-  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
 element:
   default_more_title: Ещё
   default_section_title_tag: h2

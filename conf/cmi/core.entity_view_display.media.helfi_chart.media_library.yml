@@ -8,54 +8,30 @@ dependencies:
     - field.field.media.helfi_chart.field_helfi_chart_title
     - field.field.media.helfi_chart.field_helfi_chart_transcript
     - field.field.media.helfi_chart.field_helfi_chart_url
-    - image.style.medium
     - media.type.helfi_chart
   module:
     - helfi_media_chart
-    - image
+_core:
+  default_config_hash: 28nwEZaRGXg0zD-nmyYusiqAx3gMir52iQG7f5pcyJM
 id: media.helfi_chart.media_library
 targetEntityType: media
 bundle: helfi_chart
 mode: media_library
 content:
-  field_helfi_chart_infogram_id:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_helfi_chart_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_helfi_chart_url:
     type: helfi_chart_media_library
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  thumbnail:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: medium
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   created: true
+  field_helfi_chart_infogram_id: true
+  field_helfi_chart_title: true
   field_helfi_chart_transcript: true
   langcode: true
   name: true
   search_api_excerpt: true
+  thumbnail: true
   uid: true

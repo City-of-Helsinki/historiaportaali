@@ -2,6 +2,8 @@ uuid: 5c599718-fef7-4332-98a0-b47ebe73688f
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 1SssfvmOYgyMpHLUsBS9oUQ0y9YlBXd-7dVdwvOHY5w
 id: image
 label: Image
 icon_uuid: null

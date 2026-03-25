@@ -1,0 +1,7 @@
+dependencies:
+  config:
+    - node.type.article
+settings:
+  handler_settings:
+    target_bundles:
+      article: article

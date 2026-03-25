@@ -95,6 +95,7 @@ module:
   helfi_toc: 0
   helfi_user_roles: 0
   helfi_users: 0
+  helhist: 0
   helhist_admin_forms: 0
   helhist_article: 0
   helhist_kore_search: 0

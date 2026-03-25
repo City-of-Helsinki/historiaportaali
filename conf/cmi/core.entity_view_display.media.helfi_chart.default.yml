@@ -45,6 +45,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_helfi_chart_infogram_id:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   created: true
   field_helfi_chart_infogram_id: true

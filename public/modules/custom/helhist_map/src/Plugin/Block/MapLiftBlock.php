@@ -10,7 +10,6 @@ use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Map Controls block.
@@ -37,32 +36,9 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
   }
 
   /**
-   * Creates an instance of the plugin.
-   *
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   The container to pull out services used in the plugin.
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   *
-   * @return static
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('language_manager')
-    );
-  }
-
-  /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build(): array {
     $language = $this->languageManager->getCurrentLanguage();
 
     $map_nid = 54;
@@ -72,12 +48,11 @@ class MapLiftBlock extends BlockBase implements ContainerFactoryPluginInterface 
       ['language' => $language, 'absolute' => TRUE]
     )->toString();
 
-    $build = [
+    // @fixme: should this have cache tags?
+    return [
       '#theme' => 'map_lift_block',
       '#map_node_url' => $map_node_url,
     ];
-
-    return $build;
   }
 
 }

@@ -26,6 +26,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_video_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   created: true
   field_video_description: true

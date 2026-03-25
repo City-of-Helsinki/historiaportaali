@@ -65,6 +65,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_video_description:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   field_video_description: true
   name: true

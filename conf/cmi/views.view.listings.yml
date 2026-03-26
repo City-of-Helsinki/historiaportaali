@@ -626,9 +626,9 @@ display:
             fail: 'not found'
           validate_options: {  }
           break_phrase: false
-          not: false
           target_menus:
             main: main
+          not: false
       filters:
         status:
           id: status

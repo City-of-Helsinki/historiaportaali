@@ -1,0 +1,24 @@
+uuid: ac4d9f20-9006-4df4-ac41-853e3aa49aa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_cards_desc
+    - paragraphs.paragraphs_type.content_cards
+  module:
+    - text
+_core:
+  default_config_hash: 5s-GDG2-UQZxG6djD1xEle_6rYA4G_T4Nn8_fsw5gLw
+id: paragraph.content_cards.field_content_cards_desc
+field_name: field_content_cards_desc
+entity_type: paragraph
+bundle: content_cards
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -8,15 +8,18 @@ public/modules/contrib
 public/themes/contrib
 public/sites/default/files
 vendor
-helfi-test-automation-python/
 public/sites/simpletest/
+public/sites/backstop/
 
-# Ignore the folders created by IDE
+# Ignore the folder created by PhpStorm
 .idea/*
-.vscode/
+
+# Ignore the folder created by VS Code
+.vscode/*
 
 # Ignore local settings
 public/sites/default/local.settings.php
+public/sites/default/local.services.yml
 
 *.sql
 *.env.local

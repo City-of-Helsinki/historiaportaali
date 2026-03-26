@@ -5,16 +5,19 @@ dependencies:
   config:
     - field.field.paragraph.contact_card.field_contact_description
     - field.field.paragraph.contact_card.field_contact_image_photographer
+    - field.field.paragraph.contact_card.field_contact_image_reference
     - field.field.paragraph.contact_card.field_contact_name
+    - field.field.paragraph.contact_card.field_contact_social_media_link
     - field.field.paragraph.contact_card.field_contact_title
     - field.field.paragraph.contact_card.field_email
     - field.field.paragraph.contact_card.field_phone_number
     - paragraphs.paragraphs_type.contact_card
   module:
+    - helfi_paragraphs_contact_card_listing
     - helfi_platform_config
     - telephone
 _core:
-  default_config_hash: X5x-5vSXj4FHXf2NNNyzzwVH7xlQUk6wGBYjejfb-iQ
+  default_config_hash: E9sy64OKJYCgwfUcTZp3_cLVjCJwJHAbHLBwr0zLTfQ
 id: paragraph.contact_card.default
 targetEntityType: paragraph
 bundle: contact_card
@@ -35,6 +38,15 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_contact_image_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: square_thumbnail
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_contact_name:
     type: string
     label: hidden
@@ -42,6 +54,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_contact_social_media_link:
+    type: helfi_social_media_link
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_contact_title:
     type: string

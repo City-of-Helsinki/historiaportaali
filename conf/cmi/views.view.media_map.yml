@@ -254,10 +254,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: '1820'
@@ -302,10 +298,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: '1900'
@@ -347,10 +339,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             reduce: false
           is_grouped: false
           group_info:

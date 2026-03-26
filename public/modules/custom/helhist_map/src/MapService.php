@@ -32,7 +32,7 @@ class MapService {
    * @return array
    *   An array of map layers.
    */
-  public function getMapLayers(string $type) {
+  public function getMapLayers(string $type): array {
     $layers = [];
     $map_layer_nodes = $this->getMapLayerNodes($type);
 
@@ -86,7 +86,7 @@ class MapService {
    * @return array
    *   An array of map layer nodes.
    */
-  private function getMapLayerNodes(string $type) {
+  private function getMapLayerNodes(string $type): array {
     $query = $this->entityTypeManager
       ->getListBuilder('node')
       ->getStorage()
@@ -112,11 +112,9 @@ class MapService {
       return [];
     }
 
-    $map_layer_nodes = $this->entityTypeManager
+    return $this->entityTypeManager
       ->getStorage('node')
       ->loadMultiple($map_layer_nids);
-
-    return $map_layer_nodes;
   }
 
 }

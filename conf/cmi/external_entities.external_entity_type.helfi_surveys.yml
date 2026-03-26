@@ -9,7 +9,9 @@ label: 'Helfi: Survey'
 label_plural: 'Helfi: Surveys'
 base_path: helfi_surveys
 description: ''
+content_class: Drupal\external_entities\Entity\ExternalEntity
 read_only: true
+debug_level: null
 field_mappers:
   body:
     id: generic
@@ -151,6 +153,8 @@ field_mappers:
               -
                 id: default
                 config: {  }
+field_save_order: null
+field_mapping_notes: ''
 data_aggregator:
   id: single
   config:
@@ -158,9 +162,11 @@ data_aggregator:
       -
         id: helfi_surveys
         config: {  }
+data_aggregator_notes: ''
+language_settings: {  }
 persistent_cache_max_age: -1
 annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null
 annotation_inherited_fields: {  }
-generate_aliases: null
+locks: {  }

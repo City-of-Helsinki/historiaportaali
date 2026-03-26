@@ -2,10 +2,12 @@ services:
   helhist_search.search_path_resolver:
     class: Drupal\helhist_search\SearchPathResolver
     arguments: ['@config.factory']
+  Drupal\helhist_search\SearchPathResolver: '@helhist_search.search_path_resolver'
 
   helhist_search.search_link_generator:
     class: Drupal\helhist_search\SearchLinkGenerator
     arguments: ['@helhist_search.search_path_resolver', '@string_translation']
+  Drupal\helhist_search\SearchLinkGenerator: '@helhist_search.search_link_generator'
 
   helhist_search.twig_extension:
     class: Drupal\helhist_search\Twig\SearchLinkExtension

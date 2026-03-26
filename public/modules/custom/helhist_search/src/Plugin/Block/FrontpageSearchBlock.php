@@ -10,7 +10,6 @@ use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\Form\FrontpageSearchForm;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Frontpage Search block.
@@ -39,19 +38,7 @@ class FrontpageSearchBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('form_builder')
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
+  public function build(): array {
     return [
       '#theme' => 'frontpage_search',
       '#form' => $this->formBuilder->getForm(FrontpageSearchForm::class),

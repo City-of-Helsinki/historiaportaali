@@ -55,7 +55,7 @@ class ContentType extends ProcessorPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function addFieldValues(ItemInterface $item) {
+  public function addFieldValues(ItemInterface $item): void {
     $content_type = '';
 
     $entity = $item->getOriginalObject()->getValue();

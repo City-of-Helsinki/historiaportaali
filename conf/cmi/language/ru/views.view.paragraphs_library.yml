@@ -1,3 +1,4 @@
+label: 'Paragraphs library'
 display:
   default:
     display_title: Основной
@@ -35,8 +36,8 @@ display:
           label: ID
           separator: ', '
         count:
-          format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50WzJdINC80LXRgdGC
           label: Used
+          format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50WzJdINC80LXRgdGC
         changed:
           label: Изменение
           separator: ', '
@@ -57,4 +58,3 @@ display:
           content: 'No library items available.'
   page_1:
     display_title: Страница
-label: 'Paragraphs library'

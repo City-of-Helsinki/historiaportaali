@@ -13,7 +13,6 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\Form\HeaderSearchForm;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Header Search block.
@@ -44,21 +43,7 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('form_builder'),
-      $container->get('current_route_match'),
-      $container->get('helhist_search.search_path_resolver')
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
+  public function build(): array {
 
     // Omit the form from search page.
     $current_node = $this->routeMatch->getParameter('node');
@@ -79,14 +64,14 @@ class HeaderSearchBlock extends BlockBase implements ContainerFactoryPluginInter
   /**
    * {@inheritdoc}
    */
-  public function getCacheContexts() {
+  public function getCacheContexts(): array {
     return array_merge(parent::getCacheContexts(), ['url.path']);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getCacheTags() {
+  public function getCacheTags(): array {
     return array_merge(parent::getCacheTags(), ['config:helhist_search.settings']);
   }
 

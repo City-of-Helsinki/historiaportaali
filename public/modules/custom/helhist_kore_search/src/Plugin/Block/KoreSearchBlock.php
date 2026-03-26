@@ -16,7 +16,6 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_kore_search\KoreSearchOptionsProvider;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a KoRe (koulurekisteri) React Search block.
@@ -43,21 +42,6 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
     protected ConfigFactoryInterface $configFactory,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('current_route_match'),
-      $container->get('helhist_search.search_path_resolver'),
-      $container->get('helhist_kore_search.kore_search_options'),
-      $container->get('config.factory')
-    );
   }
 
   /**

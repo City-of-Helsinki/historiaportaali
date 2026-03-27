@@ -4951,16 +4951,16 @@
         },
         {
             "name": "drupal/hdbt",
-            "version": "6.16.56",
+            "version": "6.16.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-hdbt.git",
-                "reference": "8e1976867836013e6a5aec72396152d257965cf0"
+                "reference": "6cd4feb3c77516d5d47d02072a3fab8d0a20b150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt/zipball/8e1976867836013e6a5aec72396152d257965cf0",
-                "reference": "8e1976867836013e6a5aec72396152d257965cf0",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt/zipball/6cd4feb3c77516d5d47d02072a3fab8d0a20b150",
+                "reference": "6cd4feb3c77516d5d47d02072a3fab8d0a20b150",
                 "shasum": ""
             },
             "require": {
@@ -4979,23 +4979,23 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-hdbt/tree/6.16.56",
+                "source": "https://github.com/City-of-Helsinki/drupal-hdbt/tree/6.16.57",
                 "issues": "https://github.com/City-of-Helsinki/drupal-hdbt/issues"
             },
-            "time": "2026-03-26T12:26:39+00:00"
+            "time": "2026-03-26T13:10:41+00:00"
         },
         {
             "name": "drupal/hdbt_admin",
-            "version": "3.4.14",
+            "version": "3.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-hdbt-admin.git",
-                "reference": "5ac32718eb61c471faed43074f9c77b72f65b4ea"
+                "reference": "63a9acf2b8a11a25733eaa9584a7deea36462bd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/5ac32718eb61c471faed43074f9c77b72f65b4ea",
-                "reference": "5ac32718eb61c471faed43074f9c77b72f65b4ea",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/63a9acf2b8a11a25733eaa9584a7deea36462bd0",
+                "reference": "63a9acf2b8a11a25733eaa9584a7deea36462bd0",
                 "shasum": ""
             },
             "require": {
@@ -5016,10 +5016,10 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/tree/3.4.14",
+                "source": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/tree/3.4.15",
                 "issues": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/issues"
             },
-            "time": "2026-03-16T12:12:46+00:00"
+            "time": "2026-03-26T14:52:32+00:00"
         },
         {
             "name": "drupal/health_check",
@@ -5073,16 +5073,16 @@
         },
         {
             "name": "drupal/helfi_api_base",
-            "version": "2.8.12",
+            "version": "2.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-module-helfi-api-base.git",
-                "reference": "f1f9a52edef5e52ea5b21380080ed0312631b15b"
+                "reference": "43fb5cd57cf5b1f65be79193b51b7064000b0c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-api-base/zipball/f1f9a52edef5e52ea5b21380080ed0312631b15b",
-                "reference": "f1f9a52edef5e52ea5b21380080ed0312631b15b",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-module-helfi-api-base/zipball/43fb5cd57cf5b1f65be79193b51b7064000b0c83",
+                "reference": "43fb5cd57cf5b1f65be79193b51b7064000b0c83",
                 "shasum": ""
             },
             "require": {
@@ -5124,10 +5124,10 @@
             ],
             "description": "Helfi - API Base",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-api-base/tree/2.8.12",
+                "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-api-base/tree/2.8.13",
                 "issues": "https://github.com/City-of-Helsinki/drupal-module-helfi-api-base/issues"
             },
-            "time": "2026-03-26T12:22:32+00:00"
+            "time": "2026-03-26T14:52:29+00:00"
         },
         {
             "name": "drupal/helfi_azure_fs",
@@ -19397,16 +19397,16 @@
         },
         {
             "name": "open-telemetry/gen-otlp-protobuf",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/gen-otlp-protobuf.git",
-                "reference": "673af5b06545b513466081884b47ef15a536edde"
+                "reference": "a229cf161d42001d64c8f21e8f678581fe1c66b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/gen-otlp-protobuf/zipball/673af5b06545b513466081884b47ef15a536edde",
-                "reference": "673af5b06545b513466081884b47ef15a536edde",
+                "url": "https://api.github.com/repos/opentelemetry-php/gen-otlp-protobuf/zipball/a229cf161d42001d64c8f21e8f678581fe1c66b9",
+                "reference": "a229cf161d42001d64c8f21e8f678581fe1c66b9",
                 "shasum": ""
             },
             "require": {
@@ -19452,30 +19452,30 @@
             ],
             "support": {
                 "chat": "https://app.slack.com/client/T08PSQ7BQ/C01NFPCV44V",
-                "docs": "https://opentelemetry.io/docs/php",
+                "docs": "https://opentelemetry.io/docs/languages/php",
                 "issues": "https://github.com/open-telemetry/opentelemetry-php/issues",
                 "source": "https://github.com/open-telemetry/opentelemetry-php"
             },
-            "time": "2025-09-17T23:10:12+00:00"
+            "time": "2025-10-19T06:44:33+00:00"
         },
         {
             "name": "open-telemetry/sdk",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/sdk.git",
-                "reference": "c76f91203bf7ef98ab3f4e0a82ca21699af185e1"
+                "reference": "6e3d0ce93e76555dd5e2f1d19443ff45b990e410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/c76f91203bf7ef98ab3f4e0a82ca21699af185e1",
-                "reference": "c76f91203bf7ef98ab3f4e0a82ca21699af185e1",
+                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/6e3d0ce93e76555dd5e2f1d19443ff45b990e410",
+                "reference": "6e3d0ce93e76555dd5e2f1d19443ff45b990e410",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "nyholm/psr7-server": "^1.1",
-                "open-telemetry/api": "^1.7",
+                "open-telemetry/api": "^1.8",
                 "open-telemetry/context": "^1.4",
                 "open-telemetry/sem-conv": "^1.0",
                 "php": "^8.1",
@@ -19553,7 +19553,7 @@
                 "issues": "https://github.com/open-telemetry/opentelemetry-php/issues",
                 "source": "https://github.com/open-telemetry/opentelemetry-php"
             },
-            "time": "2026-01-28T11:38:11+00:00"
+            "time": "2026-03-21T11:50:01+00:00"
         },
         {
             "name": "open-telemetry/sem-conv",

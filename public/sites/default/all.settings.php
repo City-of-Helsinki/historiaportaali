@@ -16,11 +16,15 @@ $config['openid_connect.client.tunnistamo']['settings']['ad_roles'] = [
     'roles' => ['admin'],
   ],
   [
-    'ad_role' => 'Drupal_Helfi_historiaportaali_sisallontuottajat_laaja',
+    'ad_role' => 'Drupal_Helfi_Historia_sisallontuottajat_suppea',
+    'roles' => ['admin'],
+  ],
+  [
+    'ad_role' => 'Drupal_Helfi_Historia_sisallontuottajat_laaja',
     'roles' => ['editor'],
   ],
   [
-    'ad_role' => 'Drupal_Helfi_historiaportaali_sisallontuottajat_suppea',
+    'ad_role' => 'Drupal_Helfi_Historia_paakayttajat',
     'roles' => ['content_producer'],
   ],
   [

@@ -10,47 +10,42 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.6.7",
         "drupal/context": "^5.0@RC",
-        "drupal/context_entity_field": "dev-8.x-1.x",
+        "drupal/context_entity_field": "^2",
         "drupal/dynamic_entity_reference": "^3.0",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
-        "drupal/geofield_map": "^3.0",
+        "drupal/geofield_map": "^11.1",
         "drupal/hdbt": "^6.0",
         "drupal/hdbt_admin": "^3.0",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/helfi_platform_config": "^4.0",
+        "drupal/helfi_platform_config": "^5.1",
         "drupal/helfi_proxy": "^3.0",
         "drupal/helfi_tunnistamo": "^3.1",
         "drupal/jquery_ui_touch_punch": "^1.1",
         "drupal/leaflet": "^10.1",
         "drupal/leaflet_more_maps": "^2.1",
         "drupal/matomo": "^1.11",
-        "drupal/matomo_reports": "^1.1",
         "drupal/optional_end_date": "^1.3",
-        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/rabbit_hole": "^1.2",
         "drupal/redis": "^1.9",
         "drupal/search_api_location": "^1.0@alpha",
-        "drupal/term_merge": "^2.0@beta",
-        "drupal/twig_tweak": "^3.1",
+        "drupal/term_merge": "^2.0",
         "drupal/views_block_filter_block": "^2.0",
-        "drupal/views_cm_current_state": "dev-3290445-automated-drupal-10",
-        "drupal/views_menu_children_filter": "^1.0@RC",
+        "drupal/views_cm_current_state": "^2",
+        "drupal/views_menu_children_filter": "^4.0",
         "drupal/webform": "^6.2",
         "drupal/webform_quiz_elements": "^1.0",
         "drush/drush": "^13",
         "geocoder-php/nominatim-provider": "^5.5",
         "jieter/leaflet.sync": "^0.2",
+        "mglaman/composer-drupal-lenient": "^2.0",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "dg/bypass-finals": "^1.5",
-        "dmore/chrome-mink-driver": "^2.8",
-        "donatj/mock-webserver": "^2.4",
-        "drupal/core-dev": "^10",
-        "drupal/devel": "^5.3",
+        "drupal/core-dev": "^10|^11",
         "jangregor/phpstan-prophecy": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "weitzman/drupal-test-traits": "^2.0"
@@ -69,6 +64,7 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
@@ -97,16 +93,6 @@
             },
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "custom-patches/HIS-303-matomo-digia-tracker-url.patch"
-            },
-             "drupal/helfi_platform_config": {
-                 "Fix external entities query signature v4 issue (Drupal 10 support for external entities)": "custom-patches/helfi_platform_config-external_entities-query-signature.patch"
-            },
-            "drupal/views_cm_current_state": {
-                "Filter by Moderation Current State (https://www.drupal.org/project/views_cm_current_state/issues/3158762#comment-14191350)": "https://www.drupal.org/files/issues/2021-08-16/add-current-moderation-filter_0.patch",
-                "Get translated revision": "custom-patches/views_cm_current_state_get_translated_revision.patch"
-            },
-            "drupal/webform_quiz_elements": {
-                "Translate feedback messages": "custom-patches/webform_quiz_elements_translate_feedback.patch"
             }
         },
         "installer-types": ["bower-asset", "npm-asset"],
@@ -149,6 +135,9 @@
         },
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/big_pipe_sessionless"]
         }
     },
     "autoload": {
@@ -160,14 +149,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/context_entity_field-3349931.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/views_cm_current_state-3290445.git"
-        },
         {
             "type": "composer",
             "url": "https://repository.drupal.hel.ninja"

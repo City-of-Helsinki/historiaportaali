@@ -1,3 +1,4 @@
+label: 'Отправленные формы'
 display:
   default:
     display_title: Основной
@@ -73,15 +74,15 @@ display:
         operations:
           label: Операции
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
   embed_manage:
     display_options:
       fields:
@@ -115,15 +116,15 @@ display:
           label: Операции
           text: изменить
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
   embed_review:
     display_options:
       fields:
@@ -152,13 +153,12 @@ display:
           label: Операции
           text: представление
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
-label: 'Отправленные формы'

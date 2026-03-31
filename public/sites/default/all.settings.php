@@ -33,14 +33,13 @@ if ($elastic_proxy_url = getenv('ELASTIC_PROXY_URL')) {
   $settings['elasticsearch_proxy_url'] = $elastic_proxy_url;
 }
 
-if ($env = getenv('ELASTICSEARCH_URL')) {
+if ($es_url = getenv('ELASTICSEARCH_URL')) {
   $config['search_api.server.elasticsearch']['backend_config']['connector'] = 'helfi_connector';
-  $config['search_api.server.elasticsearch']['backend_config']['connector_config']['url'] = getenv('ELASTICSEARCH_URL');
+  $config['search_api.server.elasticsearch']['backend_config']['connector_config']['url'] = $es_url;
   $config['search_api.server.elasticsearch']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
   $config['search_api.server.elasticsearch']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
 
-
-  $config['elasticsearch_connector.cluster.local']['url'] = getenv('ELASTICSEARCH_URL');
+  $config['elasticsearch_connector.cluster.local']['url'] = $es_url;
   $config['elasticsearch_connector.cluster.local']['options']['use_authentication'] = '1';
   $config['elasticsearch_connector.cluster.local']['options']['username'] = getenv('ELASTIC_USER');
   $config['elasticsearch_connector.cluster.local']['options']['password'] = getenv('ELASTIC_PASSWORD');

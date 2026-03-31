@@ -12,14 +12,14 @@
         $finna_lang = {
            fi: 'fi',
            sv: 'sv',
-           en: 'en-gb' 
+           en: 'en-gb'
         };
         // Main loop begins
         $.getJSON('https://api.finna.fi/api/v1/record?id=' + $finna_id + '&prettyPrint=false&lng=' + $finna_lang[$langcode], function(data) {
 
           $formats_field = [
             {
-              url: $.parseJSON($('#edit-field-formats').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
+              url: JSON.parse($('#edit-field-formats').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-formats'),
               json_wrapper: 'formats',
               json_key: 'translated'
@@ -28,7 +28,7 @@
 
           $authors_field = [
             {
-              url: $.parseJSON($('#edit-field-authors').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
+              url: JSON.parse($('#edit-field-authors').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-authors'),
               json_wrapper: 'nonPresenterAuthors',
               json_key: 'name'
@@ -37,7 +37,7 @@
 
           $copyrights_field = [
             {
-              url: $.parseJSON($('#edit-field-copyrights').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
+              url: JSON.parse($('#edit-field-copyrights').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-copyrights'),
               json_wrapper: 'imageRights',
               json_key: 'copyright'
@@ -46,7 +46,7 @@
 
           $buildings_field = [
             {
-              url: $.parseJSON($('#edit-field-buildings').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
+              url: JSON.parse($('#edit-field-buildings').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
               element: $('#edit-field-buildings'),
               json_wrapper: 'buildings',
               json_key: 'translated'

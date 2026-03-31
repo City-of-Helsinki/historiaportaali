@@ -11,6 +11,8 @@ dependencies:
     - media.type.helfi_chart
   module:
     - text
+_core:
+  default_config_hash: 7I7JgqwSLHKPVnnYpmVSQ0-RS8tUb0ayNGVynJiS_Jg
 id: media.helfi_chart.media_library
 targetEntityType: media
 bundle: helfi_chart
@@ -46,5 +48,7 @@ hidden:
   field_helfi_chart_url: true
   langcode: true
   path: true
+  publish_on: true
   status: true
   uid: true
+  unpublish_on: true

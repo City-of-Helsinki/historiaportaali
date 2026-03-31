@@ -7,7 +7,7 @@ dependencies:
   module:
     - ckeditor5
 _core:
-  default_config_hash: WYDoXZLu7eLz0Y6jGDcpUxYA-MQhHukm-1YYHB8mHgA
+  default_config_hash: i1fLaAzni2rKBDARlCWA1xa79zo_RYF-8oQ3x9wxgfM
 format: full_html
 editor: ckeditor5
 settings:
@@ -46,6 +46,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: false
       multiBlock: true
     ckeditor5_paste_filter_pasteFilter:
       enabled: true
@@ -145,6 +146,16 @@ settings:
           weight: 18
           search: '<a name="[^"]*">(.*?)<\/a>'
           replace: $1
+        -
+          enabled: true
+          weight: 19
+          search: '(<a\b[^>]*?)\s+target\s*=\s*("_blank"|_blank)'
+          replace: $1
+        -
+          enabled: true
+          weight: 20
+          search: '&nbsp;'
+          replace: ' '
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<figure tabindex>'

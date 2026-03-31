@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: Zv-7KNCky603k38t9PbBgreu9IPTSpVw-bLEa3ptVlE
+  default_config_hash: 5FhSIzJHA1zjPdyQfKMPZFvLZzYVBf96eGzMaGp9Z0o
 id: paragraph.remote_video.field_remote_video_video_desc
 field_name: field_remote_video_video_desc
 entity_type: paragraph

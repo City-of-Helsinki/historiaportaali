@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_media_usage\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\DependencyInjection\ClassResolverInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -11,109 +12,33 @@ use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\entity_usage\Controller\ListUsageController;
 use Drupal\path_alias\AliasManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Media Usage block.
  *
- * @Block(
- *   id = "helhist_media_usage_block",
- *   admin_label = @Translation("HelHist Media Usage"),
- *   category = @Translation("HelHist")
- * )
- *
  * @phpstan-consistent-constructor
  */
+#[Block(
+  id: 'helhist_media_usage_block',
+  admin_label: new TranslatableMarkup('HelHist Media Usage'),
+  category: new TranslatableMarkup('HelHist')
+)]
 class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-  /**
-   * Class Resolver service.
-   *
-   * @var \Drupal\Core\DependencyInjection\ClassResolverInterface
-   */
-  protected $classResolver;
-
-  /**
-   * The current route match.
-   *
-   * @var \Drupal\Core\Routing\RouteMatchInterface
-   */
-  protected $routeMatch;
-
-  /**
-   * The language manager service.
-   *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
-   */
-  protected $languageManager;
-
-  /**
-   * Path alias manager.
-   *
-   * @var \Drupal\path_alias\AliasManagerInterface
-   */
-  protected $pathAliasManager;
-
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * Constructs a new ControllerBlock object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param string $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\DependencyInjection\ClassResolverInterface $class_resolver
-   *   The class resolver service.
-   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
-   *   The route match service.
-   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
-   *   The language manager service.
-   * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
-   *   The path alias manager service.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
-   */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    ClassResolverInterface $class_resolver,
-    RouteMatchInterface $route_match,
-    LanguageManagerInterface $language_manager,
-    AliasManagerInterface $path_alias_manager,
-    EntityTypeManagerInterface $entity_type_manager,
+    protected ClassResolverInterface $classResolver,
+    protected RouteMatchInterface $routeMatch,
+    protected LanguageManagerInterface $languageManager,
+    protected AliasManagerInterface $pathAliasManager,
+    protected EntityTypeManagerInterface $entityTypeManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->classResolver = $class_resolver;
-    $this->routeMatch = $route_match;
-    $this->languageManager = $language_manager;
-    $this->pathAliasManager = $path_alias_manager;
-    $this->entityTypeManager = $entity_type_manager;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('class_resolver'),
-      $container->get('current_route_match'),
-      $container->get('language_manager'),
-      $container->get('path_alias.manager'),
-      $container->get('entity_type.manager')
-    );
   }
 
   /**
@@ -122,7 +47,7 @@ class MediaUsageBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build() {
     $media = $this->routeMatch->getParameter('media');
 
-    $controller = $this->classResolver->getInstanceFromDefinition('\Drupal\entity_usage\Controller\ListUsageController');
+    $controller = $this->classResolver->getInstanceFromDefinition(ListUsageController::class);
     $data = $controller->listUsagePage('media', $media->id());
 
     // Get entity usage table rows from output.

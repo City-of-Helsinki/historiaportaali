@@ -5,6 +5,8 @@ dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: 2P3nA-0eqBlCNHyUc1zoSjBb7HcG1mozgjgJN8rzwPc
 id: paragraph.field_content_cards_design
 field_name: field_content_cards_design
 entity_type: paragraph

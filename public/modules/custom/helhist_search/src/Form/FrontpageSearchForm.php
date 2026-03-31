@@ -4,55 +4,25 @@ declare(strict_types=1);
 
 namespace Drupal\helhist_search\Form;
 
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\helhist_search\SearchPathResolver;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a frontpage search form.
  */
-class FrontpageSearchForm extends FormBase {
-
-  /**
-   * Constructs a new FrontpageSearchForm object.
-   */
-  public function __construct(
-    protected SearchPathResolver $searchPathResolver,
-  ) {}
+class FrontpageSearchForm extends SearchFormBase {
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container) {
-    return new self(
-      $container->get('helhist_search.search_path_resolver')
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getFormId() {
+  public function getFormId(): string {
     return 'helhist_search_frontpage_form';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['#method'] = 'get';
-    $form['#action'] = $this->searchPathResolver->getSearchPagePath();
-    $form['#attributes'] = [
-      'role' => 'search',
-    ];
-
-    $form['search_wrapper'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => ['hds-text-input', 'hds-text-input--search'],
-      ],
-    ];
+  public function buildForm(array $form, FormStateInterface $form_state): array {
+    $form = parent::buildForm($form, $form_state);
 
     $form['search_wrapper']['label'] = [
       '#type' => 'html_tag',
@@ -85,13 +55,6 @@ class FrontpageSearchForm extends FormBase {
     ];
 
     return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Form submits via GET to the search page, no custom handling needed.
   }
 
 }

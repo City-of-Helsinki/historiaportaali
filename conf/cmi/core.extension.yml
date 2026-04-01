@@ -92,6 +92,7 @@ module:
   helfi_react_search: 0
   helfi_tfa: 0
   helfi_toc: 0
+  helfi_tunnistamo: 0
   helfi_user_roles: 0
   helfi_users: 0
   helhist: 0
@@ -137,6 +138,7 @@ module:
   mysql: 0
   node: 0
   oembed_providers: 0
+  openid_connect: 0
   optional_end_date: 0
   options: 0
   page_cache: 0
@@ -197,6 +199,7 @@ module:
   workflows: 0
   pathauto: 1
   content_translation: 10
+  externalauth: 10
   views: 10
   paragraphs: 11
   minimal: 1000

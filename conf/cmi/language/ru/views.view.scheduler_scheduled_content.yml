@@ -80,5 +80,5 @@ display:
       arguments:
         uid:
           exception:
-            title: Все
+            title: All
     display_title: 'User profile tab'

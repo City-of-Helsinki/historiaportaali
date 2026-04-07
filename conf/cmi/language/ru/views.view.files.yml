@@ -72,7 +72,7 @@ display:
           label: 'Регистрация модуля'
         count:
           label: 'Используемое количество'
-          format_plural_string: !!binary QGNvdW50A0Bjb3VudANAY291bnRbMl0=
+          format_plural_string: !!binary MQNAY291bnQ=
       pager:
         options:
           tags:
@@ -85,5 +85,5 @@ display:
       arguments:
         fid:
           exception:
-            title: Все
+            title: All
           title: 'Информация про использование файла для {{ arguments.fid }}'

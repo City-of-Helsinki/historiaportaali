@@ -3,14 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_kore_names
-    - field.storage.node.field_kore_types
     - field.storage.node.field_kore_languages
-    - node.type.kore_school
+    - field.storage.node.field_kore_types
+    - field.storage.paragraph.field_kore_language
+    - field.storage.paragraph.field_kore_type
+    - search_api.server.elasticsearch
   module:
-    - entity_reference_revisions
+    - helfi_react_search
     - helhist_kore_search
+    - helhist_search
     - node
+    - paragraphs
 id: kore_school
 name: 'Kore school'
 description: 'Search index for koulurekisteri (KoRe school register)'
@@ -20,41 +23,37 @@ field_settings:
     label: 'Kore end year'
     property_path: kore_end_year
     type: integer
-    indexed_locked: false
-    type_locked: false
   kore_language:
     label: 'Kore language'
     datasource_id: 'entity:node'
     property_path: 'field_kore_languages:entity:field_kore_language'
     type: string
-    indexed_locked: false
-    type_locked: false
     dependencies:
+      config:
+        - field.storage.node.field_kore_languages
+        - field.storage.paragraph.field_kore_language
       module:
-        - entity_reference_revisions
+        - paragraphs
   kore_name_entries:
     label: 'Kore name entries'
     property_path: kore_name_entries
     type: text
     boost: 3.0
-    indexed_locked: false
-    type_locked: false
   kore_start_year:
     label: 'Kore start year'
     property_path: kore_start_year
     type: integer
-    indexed_locked: false
-    type_locked: false
   kore_type:
     label: 'Kore type'
     datasource_id: 'entity:node'
     property_path: 'field_kore_types:entity:field_kore_type'
     type: string
-    indexed_locked: false
-    type_locked: false
     dependencies:
+      config:
+        - field.storage.node.field_kore_types
+        - field.storage.paragraph.field_kore_type
       module:
-        - entity_reference_revisions
+        - paragraphs
   nid:
     label: ID
     datasource_id: 'entity:node'
@@ -89,7 +88,9 @@ datasource_settings:
       selected: {  }
 processor_settings:
   add_url: {  }
+  aggregated_field: {  }
   content_type: {  }
+  custom_value: {  }
   entity_status: {  }
   entity_type: {  }
   html_filter:
@@ -98,7 +99,9 @@ processor_settings:
       preprocess_query: -15
     all_fields: true
     fields:
+      - kore_language
       - kore_name_entries
+      - kore_type
       - title
       - url
     title: false
@@ -113,6 +116,9 @@ processor_settings:
       u: 1.5
   kore_names_years: {  }
   language_with_fallback: {  }
+  listing_image_url: {  }
+  project_execution_schedule: {  }
+  project_plan_schedule: {  }
   rendered_item: {  }
   tokenizer:
     weights:

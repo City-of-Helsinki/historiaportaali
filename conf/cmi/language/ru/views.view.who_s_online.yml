@@ -7,7 +7,7 @@ display:
       title: 'Сейчас на сайте'
       exposed_form:
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button_label: Сбросить
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'

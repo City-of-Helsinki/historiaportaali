@@ -1,9 +1,15 @@
-label: 'Термин таксономии'
-description: 'Материалы, относящиеся к определённому термину таксономии.'
 display:
   default:
-    display_title: 'По умолчанию'
+    display_title: Основной
     display_options:
+      fields:
+        uid:
+          format_plural_string: !!binary MQNAY291bnQ=
+        name:
+          separator: ', '
+        delete_link:
+          label: delete
+          text: delete
       pager:
         options:
           tags:
@@ -21,11 +27,11 @@ display:
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
       arguments:
-        tid:
+        provider_field:
           exception:
             title: All
-          title: '{{ arguments.tid }}'
-  feed_1:
-    display_title: 'Поток данных'
-  page_1:
+  page:
     display_title: Страница
+    display_options:
+      menu:
+        title: External

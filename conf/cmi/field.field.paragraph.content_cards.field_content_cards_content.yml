@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_content_cards_content
-    - node.type.article
     - node.type.landing_page
     - node.type.page
     - paragraphs.paragraphs_type.content_cards
+    - node.type.article
+_core:
+  default_config_hash: cg8iefLkzlgDhZW5n5UHAUFlcPJFiAgENfy5UxpM9eU
 id: paragraph.content_cards.field_content_cards_content
 field_name: field_content_cards_content
 entity_type: paragraph
@@ -22,9 +24,9 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      article: article
       landing_page: landing_page
       page: page
+      article: article
     sort:
       field: title
       direction: ASC

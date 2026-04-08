@@ -14,7 +14,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a React Search block.
@@ -45,20 +44,6 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('current_route_match'),
-      $container->get('config.factory'),
-      $container->get('helhist_search.search_path_resolver')
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   protected function blockAccess(AccountInterface $account) {
     $current_node = $this->routeMatch->getParameter('node');
     $search_page_node_id = $this->searchPathResolver->getSearchPageNodeId();
@@ -77,12 +62,12 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build(): array {
     $mapping_mode = $this->configFactory
       ->get('helhist_search.settings')
       ->get('mapping_mode') ?: 'text';
 
-    $build = [
+    return [
       '#theme' => 'react_search',
       '#attached' => [
         'library' => [
@@ -95,8 +80,6 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
         ],
       ],
     ];
-
-    return $build;
   }
 
 }

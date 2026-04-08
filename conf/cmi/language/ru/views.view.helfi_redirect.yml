@@ -13,8 +13,8 @@ display:
         is_custom:
           label: Собственная
           separator: ', '
-        status:
-          label: Опубликовано
+        enabled:
+          label: Enabled
           separator: ', '
         created:
           label: Создано
@@ -72,9 +72,9 @@ display:
         is_custom:
           expose:
             label: Собственная
-        status:
+        enabled:
           expose:
-            label: Опубликовано
+            label: Enabled
   page_1:
     display_title: Страница
     display_options:

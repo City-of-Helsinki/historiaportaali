@@ -11,9 +11,10 @@ dependencies:
     - content_moderation
     - field_group
     - geofield_map
+    - hdbt_admin_tools
     - paragraphs
     - path
-    - scheduler
+    - publication_date
 third_party_settings:
   field_group:
     group_map_settings:
@@ -138,12 +139,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  publish_on:
-    type: datetime_timestamp_no_default
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   published_at:
     type: publication_date_timestamp
     weight: 10
@@ -192,12 +187,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 12
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
     weight: 13
     region: content
@@ -205,3 +194,5 @@ content:
     third_party_settings: {  }
 hidden:
   hide_sidebar_navigation: true
+  publish_on: true
+  unpublish_on: true

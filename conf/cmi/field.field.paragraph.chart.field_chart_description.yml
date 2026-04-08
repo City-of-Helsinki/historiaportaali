@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: 5FkgHc-lAStUaUrFbDo9stcgp7iBPrp_cEOB3hWwo9k
+  default_config_hash: 5LKLeWkwqNLJRVV3amAJfk-WQInwx9wtLczv6SNggns
 id: paragraph.chart.field_chart_description
 field_name: field_chart_description
 entity_type: paragraph

@@ -1,0 +1,1241 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_bce\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_bce\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_bce\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_default\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_default\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_end_year_default\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_start_year_bce\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_start_year_bce\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_ajax_start_year_bce\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_alter\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_node_form_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_node_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_node_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_node_form_alter\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_webform_ui_element_type_select_form_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_webform_ui_element_type_select_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_webform_ui_element_type_select_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_form_webform_ui_element_type_select_form_alter\\(\\) has parameter \\$form_state with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_help\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_help\\(\\) has parameter \\$route_name with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Function helhist_admin_forms_views_data\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/helhist_admin_forms.module
+
+		-
+			message: "#^Method Drupal\\\\helhist_admin_forms\\\\Plugin\\\\views\\\\field\\\\EntityTranslationsField\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/src/Plugin/views/field/EntityTranslationsField.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_admin_forms\\\\Plugin\\\\views\\\\field\\\\EntityTranslationsField\\:\\:defineOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_admin_forms/src/Plugin/views/field/EntityTranslationsField.php
+
+		-
+			message: "#^Function helhist_article_entity_type_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Function helhist_article_entity_type_alter\\(\\) has parameter \\$entity_types with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Function helhist_article_pathauto_alias_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Function helhist_article_pathauto_alias_alter\\(\\) has parameter \\$alias with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Function helhist_article_pathauto_alias_alter\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Parameter \\#1 \\$string of method Drupal\\\\pathauto\\\\AliasCleaner\\:\\:cleanString\\(\\) expects string, Drupal\\\\Core\\\\StringTranslation\\\\TranslatableMarkup\\|string\\|null given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/helhist_article.module
+
+		-
+			message: "#^Method Drupal\\\\mymodule\\\\ArticlePathAlias\\:\\:generate\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/src/ArticlePathAlias.php
+
+		-
+			message: "#^Property Drupal\\\\mymodule\\\\ArticlePathAlias\\:\\:\\$terms type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_article/src/ArticlePathAlias.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReArchives\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReArchives.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReBuildings\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReBuildings.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReContinuums\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Parameter \\#2 \\$timestamp of function date expects int\\|null, int\\|false given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReContinuums.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReFields\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReFields.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReGenders\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReGenders.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReLanguages\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReLanguages.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReNames\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReNames.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePhotos\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePhotos.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePhotos\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePhotos.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePhotos\\:\\:createMediaItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePhotos.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePhotos\\:\\:createMediaItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePhotos.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, string\\|false given\\.$#"
+			count: 2
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePhotos.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoRePrincipals\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoRePrincipals.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTitle\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTitle.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTitle\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTitle.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTitle\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTitle.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTitle\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTitle.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTitle\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTitle.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:compare\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:compare\\(\\) has parameter \\$a with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:compare\\(\\) has parameter \\$b with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:createParagraphsItem\\(\\) has parameter \\$item with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore\\\\Plugin\\\\migrate\\\\process\\\\KoReTypes\\:\\:createParagraphsItem\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore/src/Plugin/migrate/process/KoReTypes.php
+
+		-
+			message: "#^Function helhist_kore_search_preprocess_kore_react_search\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/helhist_kore_search.module
+
+		-
+			message: "#^Function helhist_kore_search_theme\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/helhist_kore_search.module
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore_search\\\\Plugin\\\\Block\\\\KoreSearchBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/src/Plugin/Block/KoreSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore_search\\\\Plugin\\\\Block\\\\KoreSearchBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/src/Plugin/Block/KoreSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore_search\\\\Plugin\\\\Block\\\\KoreSearchBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/src/Plugin/Block/KoreSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore_search\\\\Plugin\\\\search_api\\\\processor\\\\KoreNamesYears\\:\\:addFieldValues\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/src/Plugin/search_api/processor/KoreNamesYears.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_kore_search\\\\Plugin\\\\search_api\\\\processor\\\\KoreNamesYears\\:\\:addFieldValues\\(\\) has parameter \\$item with no value type specified in iterable type Drupal\\\\search_api\\\\Item\\\\ItemInterface\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_kore_search/src/Plugin/search_api/processor/KoreNamesYears.php
+
+		-
+			message: "#^Function helhist_map_form_views_exposed_form_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_form_views_exposed_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_get_active_terms\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_get_map_displays\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_map_info_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_map_info_alter\\(\\) has parameter \\$map_info with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_views_feature_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_views_feature_alter\\(\\) has parameter \\$feature with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_views_feature_alter\\(\\) has parameter \\$result with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_leaflet_views_feature_alter\\(\\) has parameter \\$row_plugin with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_preprocess_input\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_preprocess_input\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_theme\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_theme\\(\\) has parameter \\$existing with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_theme\\(\\) has parameter \\$path with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_theme\\(\\) has parameter \\$theme with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_theme\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_views_post_execute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Function helhist_map_views_pre_render\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Parameter \\#1 \\$string1 of function strcmp expects string, Drupal\\\\Core\\\\StringTranslation\\\\TranslatableMarkup\\|string\\|null given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Parameter \\#2 \\$string2 of function strcmp expects string, Drupal\\\\Core\\\\StringTranslation\\\\TranslatableMarkup\\|string\\|null given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/helhist_map.module
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\MapService\\:\\:getMapLayerNodes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/MapService.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\MapService\\:\\:getMapLayers\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/MapService.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\ComparisonMapControlsBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/ComparisonMapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\ComparisonMapControlsBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/ComparisonMapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\ComparisonMapControlsBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/ComparisonMapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapControlsBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapControlsBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapControlsBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapControlsBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapLiftBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapLiftBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapLiftBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapLiftBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_map\\\\Plugin\\\\Block\\\\MapLiftBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_map/src/Plugin/Block/MapLiftBlock.php
+
+		-
+			message: "#^Function helhist_media_usage_theme\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_media_usage/helhist_media_usage.module
+
+		-
+			message: "#^Method Drupal\\\\helhist_media_usage\\\\Plugin\\\\Block\\\\MediaUsageBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_media_usage/src/Plugin/Block/MediaUsageBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_media_usage\\\\Plugin\\\\Block\\\\MediaUsageBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_media_usage/src/Plugin/Block/MediaUsageBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_media_usage\\\\Plugin\\\\Block\\\\MediaUsageBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_media_usage/src/Plugin/Block/MediaUsageBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchFinished\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchFinished\\(\\) has parameter \\$operations with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchFinished\\(\\) has parameter \\$results with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchOperation\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchOperation\\(\\) has parameter \\$chunk with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Batch\\\\NodeResaveBatch\\:\\:batchOperation\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Batch/NodeResaveBatch.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:buildForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:buildForm\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:create\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:getNodeIds\\(\\) has parameter \\$node_types with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:getNodeIds\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:setBatch\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:setBatch\\(\\) has parameter \\$node_types with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:submitForm\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:submitForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:validateForm\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_node_resave\\\\Form\\\\NodeResaveForm\\:\\:validateForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_chunk expects array, array\\|int given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Parameter \\#2 \\$length of function array_chunk expects int\\<1, max\\>, int given\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_node_resave/src/Form/NodeResaveForm.php
+
+		-
+			message: "#^Function helhist_search_form_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Function helhist_search_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Function helhist_search_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Function helhist_search_preprocess_react_search\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Function helhist_search_preprocess_react_search\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Function helhist_search_theme\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/helhist_search.module
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\FrontpageSearchForm\\:\\:buildForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/FrontpageSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\FrontpageSearchForm\\:\\:buildForm\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/FrontpageSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\FrontpageSearchForm\\:\\:create\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/FrontpageSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\FrontpageSearchForm\\:\\:submitForm\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/FrontpageSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\FrontpageSearchForm\\:\\:submitForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/FrontpageSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\HeaderSearchForm\\:\\:buildForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/HeaderSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\HeaderSearchForm\\:\\:buildForm\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/HeaderSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\HeaderSearchForm\\:\\:create\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/HeaderSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\HeaderSearchForm\\:\\:submitForm\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/HeaderSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\HeaderSearchForm\\:\\:submitForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/HeaderSearchForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\SearchConfigForm\\:\\:buildForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/SearchConfigForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\SearchConfigForm\\:\\:buildForm\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/SearchConfigForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\SearchConfigForm\\:\\:create\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/SearchConfigForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\SearchConfigForm\\:\\:getEditableConfigNames\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/SearchConfigForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Form\\\\SearchConfigForm\\:\\:submitForm\\(\\) has parameter \\$form with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Form/SearchConfigForm.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\FrontpageSearchBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/FrontpageSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\FrontpageSearchBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/FrontpageSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\FrontpageSearchBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/FrontpageSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\HeaderSearchBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/HeaderSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\HeaderSearchBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/HeaderSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\HeaderSearchBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/HeaderSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\ReactSearchBlock\\:\\:__construct\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/ReactSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\ReactSearchBlock\\:\\:build\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/ReactSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\Block\\\\ReactSearchBlock\\:\\:create\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/Block/ReactSearchBlock.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\search_api\\\\processor\\\\ContentType\\:\\:addFieldValues\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/search_api/processor/ContentType.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\search_api\\\\processor\\\\ContentType\\:\\:addFieldValues\\(\\) has parameter \\$item with no value type specified in iterable type Drupal\\\\search_api\\\\Item\\\\ItemInterface\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/search_api/processor/ContentType.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\search_api\\\\processor\\\\ListingImageUrl\\:\\:addFieldValues\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/search_api/processor/ListingImageUrl.php
+
+		-
+			message: "#^Method Drupal\\\\helhist_search\\\\Plugin\\\\search_api\\\\processor\\\\ListingImageUrl\\:\\:addFieldValues\\(\\) has parameter \\$item with no value type specified in iterable type Drupal\\\\search_api\\\\Item\\\\ItemInterface\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_search/src/Plugin/search_api/processor/ListingImageUrl.php
+
+		-
+			message: "#^Function helhist_tokens_token_info\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function helhist_tokens_tokens\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function helhist_tokens_tokens\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function helhist_tokens_tokens\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function helhist_tokens_tokens\\(\\) has parameter \\$tokens with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function helhist_tokens_tokens\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: public/modules/custom/helhist_tokens/helhist_tokens.module
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__hdbt_messages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__hdbt_messages\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__page_title_block\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__page_title_block\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__views_block\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_block__views_block\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_field\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_field\\(\\) has parameter \\$hook with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_field\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_html\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_html\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_media\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_media\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_node\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_node\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_page\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_page\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_paragraph\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_paragraph\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_region\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_preprocess_region\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_block_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_block_alter\\(\\) has parameter \\$suggestions with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_field_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_field_alter\\(\\) has parameter \\$suggestions with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_field_alter\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_image_formatter_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_image_formatter_alter\\(\\) has parameter \\$suggestions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_image_formatter_alter\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_paragraph_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_paragraph_alter\\(\\) has parameter \\$suggestions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_paragraph_alter\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_region_alter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_region_alter\\(\\) has parameter \\$suggestions with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Function hdbt_subtheme_theme_suggestions_region_alter\\(\\) has parameter \\$variables with no type specified\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme
+
+		-
+			message: "#^Parameter \\#1 \\$node_id of function _get_top_level_menu_parent_title_by_nid expects int, int\\|string\\|null given\\.$#"
+			count: 1
+			path: public/themes/custom/hdbt_subtheme/hdbt_subtheme.theme

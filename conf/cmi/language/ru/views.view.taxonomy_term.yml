@@ -15,7 +15,7 @@ display:
             offset_label: Пропустить
       exposed_form:
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button_label: Сбросить
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
@@ -23,7 +23,7 @@ display:
       arguments:
         tid:
           exception:
-            title: Все
+            title: All
           title: '{{ arguments.tid }}'
   feed_1:
     display_title: 'Поток данных'

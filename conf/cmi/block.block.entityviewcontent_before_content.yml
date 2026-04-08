@@ -18,9 +18,9 @@ settings:
   label: 'Entity view (Content) - Before content'
   label_display: '0'
   provider: ctools
-  view_mode: before_content
   context_mapping:
     entity: '@node.node_route_context:node'
+  view_mode: before_content
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'

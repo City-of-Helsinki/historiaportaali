@@ -1,15 +1,38 @@
 settings:
+  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
+  default_form_close_message: 'Извините... Эта форма закрыта для новых отправлений.'
+  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
   default_submit_button_label: Отправить
   default_reset_button_label: Сбросить
   default_delete_button_label: Удалить
-  default_form_close_message: 'Извините... Эта форма закрыта для новых отправлений.'
+  default_form_access_denied_message: 'Please login to access this form.'
+  default_form_required_label: 'Указывает обязательное поле'
   default_wizard_prev_button_label: '< Предыдущая страница'
   default_wizard_start_label: Начало
   default_wizard_confirmation_label: Завершён
+  default_wizard_toggle_show_label: 'Показать все'
+  default_wizard_toggle_hide_label: 'Спрятать все'
   default_preview_next_button_label: Предпросмотр
   default_preview_prev_button_label: '< Предыдущая страница'
   default_preview_label: Предпросмотр
+  default_preview_title: '[webform:title]: Просмотр'
+  default_preview_message: 'Пожалуйста, просмотрите ваше отправление, оно не будет завершено, пока вы не нажмёте кнопку "Отправить"!'
   default_draft_button_label: 'Сохранить черновик'
+  default_draft_saved_message: '<p>Submission saved. You may return to this form later and it will restore the current values.</p>'
+  default_draft_loaded_message: '<p>A partially-completed form was found. Please complete the remaining portions.</p>'
+  default_draft_pending_single_message: '<p>You have a pending draft for this webform. <a href="#">Load your pending draft</a>.</p>'
+  default_draft_pending_multiple_message: '<p>You have pending drafts for this webform. <a href="#">View your pending drafts</a>.</p>'
+  default_confirmation_message: 'Заполнена новая форма [webform:title].'
+  default_confirmation_back_label: 'Вернуться к форме'
+  default_submission_label: '[webform_submission:submitted-to]: Отправление №[webform_submission:serial]'
+  default_submission_access_denied_message: '<p>Please login to access this submission.</p>'
+  default_submission_exception_message: '<p>Unable to process this submission. Please contact the site administrator.</p>'
+  default_submission_locked_message: '<p>This submission has been locked.</p>'
+  default_previous_submission_message: '<p>You have already submitted this webform. <a href="#">View your previous submission</a>.</p>'
+  default_previous_submissions_message: '<p>You have already submitted this webform. <a href="#">View your previous submissions</a>.</p>'
+  default_autofill_message: '<p>This submission has been autofilled with your previous submission.</p>'
+  default_limit_total_message: 'Больше никаких отправлений не разрешено.'
+  default_limit_user_message: 'Больше никаких отправлений не разрешено.'
   dialog_options:
     narrow:
       title: Узкий
@@ -17,22 +40,10 @@ settings:
       title: Нормальный
     wide:
       title: Широкий
-  default_form_required_label: 'Указывает обязательное поле'
-  default_wizard_toggle_show_label: 'Показать все'
-  default_wizard_toggle_hide_label: 'Спрятать все'
-  default_preview_title: '[webform:title]: Просмотр'
-  default_preview_message: 'Пожалуйста, просмотрите ваше отправление, оно не будет завершено, пока вы не нажмёте кнопку "Отправить"!'
-  default_confirmation_message: 'Заполнена новая форма [webform:title].'
-  default_confirmation_back_label: 'Вернуться к форме'
-  default_submission_label: '[webform_submission:submitted-to]: Отправление №[webform_submission:serial]'
-  default_submission_access_denied_message: 'Войдите, чтобы получить доступ к этому отправлению.'
-  default_limit_total_message: 'Больше никаких отправлений не разрешено.'
-  default_limit_user_message: 'Больше никаких отправлений не разрешено.'
-  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
-  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
 element:
   default_more_title: Ещё
-  default_section_title_tag: h2
+file:
+  file_private_redirect_message: 'Please login to access the uploaded file.'
 mail:
   default_subject: 'Отправка веб-формы от: [webform_submission:source-title]'
   default_body_text: "Отправлено [webform_submission:created]\r\nОтправитель: [webform_submission:user]\r\n\r\nОтправленная информация:\r\n[webform_submission:values]\n"

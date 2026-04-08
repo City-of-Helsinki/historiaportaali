@@ -254,10 +254,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: '1820'
@@ -302,10 +298,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: '1900'
@@ -347,10 +339,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              admin: '0'
-              content_producer: '0'
-              read_only: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -381,8 +369,6 @@ display:
           data_source: field_geolocation
           entity_source: __base_table
           name_field: ''
-          description_field: '#rendered_entity_ajax'
-          view_mode: map_item
           leaflet_map: esri-world_topo_map
           height: '70'
           height_unit: vh
@@ -433,6 +419,7 @@ display:
           geocoder:
             control: false
             settings:
+              popup: false
               position: topright
               input_size: 25
               providers:
@@ -442,8 +429,9 @@ display:
               min_terms: 4
               delay: 800
               zoom: 16
-              popup: false
               options: ''
+          description_field: '#rendered_entity_ajax'
+          view_mode: map_item
           fullscreen_control: false
       row:
         type: 'entity:media'

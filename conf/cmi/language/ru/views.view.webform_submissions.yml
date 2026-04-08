@@ -1,10 +1,11 @@
+label: 'Отправленные формы'
 display:
   default:
     display_title: Основной
     display_options:
       exposed_form:
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button_label: Сбросить
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
@@ -42,7 +43,7 @@ display:
       arguments:
         in_draft:
           exception:
-            title: Все
+            title: All
       title: 'Отправленные формы'
   embed_administer:
     display_options:
@@ -73,15 +74,15 @@ display:
         operations:
           label: Операции
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
   embed_manage:
     display_options:
       fields:
@@ -115,15 +116,15 @@ display:
           label: Операции
           text: изменить
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
   embed_review:
     display_options:
       fields:
@@ -152,13 +153,12 @@ display:
           label: Операции
           text: представление
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
         locked:
           expose:
             label: Заблокировано
-        in_draft:
-          expose:
-            label: Черновик
-label: 'Отправленные формы'

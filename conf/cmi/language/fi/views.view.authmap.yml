@@ -1,0 +1,35 @@
+display:
+  default:
+    display_title: Oletus
+    display_options:
+      fields:
+        name:
+          separator: ', '
+        delete_link:
+          label: delete
+          text: delete
+      pager:
+        options:
+          tags:
+            next: Seuraava
+            previous: Edellinen
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Nousevasti
+          sort_desc_label: Laskevasti
+      arguments:
+        provider_field:
+          exception:
+            title: Kaikki
+  page:
+    display_title: Sivu
+    display_options:
+      menu:
+        title: External

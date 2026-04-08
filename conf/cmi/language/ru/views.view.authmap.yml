@@ -1,0 +1,37 @@
+display:
+  default:
+    display_title: Основной
+    display_options:
+      fields:
+        uid:
+          format_plural_string: !!binary MQNAY291bnQ=
+        name:
+          separator: ', '
+        delete_link:
+          label: delete
+          text: delete
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      arguments:
+        provider_field:
+          exception:
+            title: All
+  page:
+    display_title: Страница
+    display_options:
+      menu:
+        title: External

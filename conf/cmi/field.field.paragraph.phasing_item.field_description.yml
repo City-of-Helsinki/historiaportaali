@@ -9,7 +9,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: R3xpZBQW6GkrWie9LRvO70PI9g5nYvm4VLVJ0ZFNmDY
+  default_config_hash: l-W8mRozfdteXoTv-eav_qiSzpHVu86Oa213o_7lj_g
 id: paragraph.phasing_item.field_description
 field_name: field_description
 entity_type: paragraph

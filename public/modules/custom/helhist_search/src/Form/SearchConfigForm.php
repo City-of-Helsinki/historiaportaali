@@ -5,37 +5,30 @@ declare(strict_types=1);
 namespace Drupal\helhist_search\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
+use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure search page settings.
  */
 class SearchConfigForm extends ConfigFormBase {
 
+  use AutowireTrait;
+
   /**
    * Constructs a SearchConfigForm object.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
+    TypedConfigManagerInterface $typedConfigManager,
     protected EntityTypeManagerInterface $entityTypeManager,
     protected ModuleHandlerInterface $moduleHandler,
   ) {
-    parent::__construct($config_factory);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new self(
-      $container->get('config.factory'),
-      $container->get('entity_type.manager'),
-      $container->get('module_handler')
-    );
+    parent::__construct($config_factory, $typedConfigManager);
   }
 
   /**

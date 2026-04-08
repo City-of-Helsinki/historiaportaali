@@ -64,7 +64,7 @@ dependencies:
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
-label: Ylläpitäjä
+label: Administrator
 weight: -4
 is_admin: null
 permissions:
@@ -95,6 +95,7 @@ permissions:
   - 'administer url aliases'
   - 'administer users'
   - 'administer webform'
+  - 'administer webform overview'
   - 'assign all roles'
   - 'assign content_producer role'
   - 'assign editor role'
@@ -211,6 +212,7 @@ permissions:
   - 'mark as hidden in editoria11y'
   - 'mark as ok in editoria11y'
   - 'merge taxonomy terms'
+  - 'rebuild node access permissions'
   - 'revert all revisions'
   - 'revert announcement revisions'
   - 'revert article revisions'

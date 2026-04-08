@@ -24,8 +24,8 @@ dependencies:
     - image.style.media_library
     - media.type.image
   module:
-    - field_group
     - focal_point
+    - field_group
     - geofield_map
     - select2
     - text
@@ -109,11 +109,44 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
+_core:
+  default_config_hash: sBZSklr6VL62q9muMdA81sfI53ReprPQkcd9IGCGEtI
 id: media.image.media_library
 targetEntityType: media
 bundle: image
 mode: media_library
 content:
+  field_media_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: media_library
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  field_photographer:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_authors:
     type: select2_entity_reference
     weight: 2
@@ -249,16 +282,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
     third_party_settings: {  }
-  field_media_image:
-    type: image_focal_point
-    weight: 1
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: media_library
-      preview_link: true
-      offsets: '50,50'
-    third_party_settings: {  }
   field_neighbourhoods:
     type: select2_entity_reference
     weight: 1
@@ -279,14 +302,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
     third_party_settings: {  }
-  field_photographer:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_start_year:
     type: number
     weight: 0
@@ -302,23 +317,27 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  translation:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
+  field_authors: true
+  field_buildings: true
+  field_buildings_info: true
+  field_copyrights: true
+  field_end_year: true
+  field_finna_id: true
+  field_formats: true
+  field_geolocation: true
+  field_image_caption: true
+  field_keywords: true
+  field_languages: true
+  field_neighbourhoods: true
+  field_phenomena: true
+  field_start_year: true
+  field_transcript: true
   langcode: true
   path: true
+  publish_on: true
   replace_file: true
   status: true
   uid: true
+  unpublish_on: true

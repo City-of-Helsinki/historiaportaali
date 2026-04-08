@@ -7,7 +7,7 @@ dependencies:
     - field.field.media.file.field_media_file
     - media.type.file
 _core:
-  default_config_hash: mRld0RXUfZ-E4SFgfwE7yxhNEmvkYrMGQq8-u8OK7Qw
+  default_config_hash: PnLUWOfSDV2wuJomGo-wDi3ndC1-Rp_qhZ6roAFuz0M
 id: media.file.media_library
 targetEntityType: media
 bundle: file
@@ -31,6 +31,8 @@ hidden:
   field_media_file: true
   langcode: true
   path: true
+  publish_on: true
   replace_file: true
   status: true
   uid: true
+  unpublish_on: true

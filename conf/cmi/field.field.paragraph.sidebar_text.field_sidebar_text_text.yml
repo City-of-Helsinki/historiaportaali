@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.sidebar_text
   module:
     - text
+_core:
+  default_config_hash: SwBeyo46Zb4NP_DtxZjeIFJb2_oo0wvQ107faCVlMdk
 id: paragraph.sidebar_text.field_sidebar_text_text
 field_name: field_sidebar_text_text
 entity_type: paragraph

@@ -9,7 +9,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: 54apkr-SUH-gN-iSmegZXnw0vux_R9kbXcZ30h0m3r4
+  default_config_hash: hOawgZeCfELyvOAw2lZjDzwg8XJyRIcn4G_UDASLTgo
 id: paragraph.contact_card_listing.field_description
 field_name: field_description
 entity_type: paragraph

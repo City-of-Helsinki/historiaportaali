@@ -23,10 +23,10 @@ dependencies:
     - image.style.media_library
     - media.type.image
   module:
-    - field_group
     - focal_point
-    - geofield_map
     - path
+    - field_group
+    - geofield_map
     - select2
     - text
 third_party_settings:
@@ -109,6 +109,8 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
+_core:
+  default_config_hash: MZDsaThzqkkKtCUzlkFmmuJ6mr8L4MjVgItwaLIYq3Q
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -116,9 +118,75 @@ mode: default
 content:
   created:
     type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: media_library
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  field_photographer:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
     weight: 7
     region: content
     settings: {  }
+    third_party_settings: {  }
+  replace_file:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_authors:
     type: select2_entity_reference
@@ -255,16 +323,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
     third_party_settings: {  }
-  field_media_image:
-    type: image_focal_point
-    weight: 2
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: media_library
-      preview_link: true
-      offsets: '50,50'
-    third_party_settings: {  }
   field_neighbourhoods:
     type: select2_entity_reference
     weight: 19
@@ -285,14 +343,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
     third_party_settings: {  }
-  field_photographer:
-    type: string_textfield
-    weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_start_year:
     type: number
     weight: 27
@@ -308,52 +358,21 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 0
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  replace_file:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 13
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  translation:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_authors: true
+  field_buildings: true
+  field_buildings_info: true
+  field_copyrights: true
+  field_end_year: true
+  field_finna_id: true
+  field_formats: true
+  field_geolocation: true
+  field_image_caption: true
+  field_keywords: true
+  field_languages: true
+  field_neighbourhoods: true
+  field_phenomena: true
+  field_start_year: true
+  field_transcript: true
+  publish_on: true
+  unpublish_on: true

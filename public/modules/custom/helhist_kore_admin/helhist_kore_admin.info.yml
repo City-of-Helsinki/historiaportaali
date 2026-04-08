@@ -1,5 +1,0 @@
-name: HEL Historia Kore Admin
-type: module
-description: 'Deprecated module, to be removed once uninstalled in production.'
-package: Custom
-core_version_requirement: ^10 || ^11

@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.text
   module:
     - text
+_core:
+  default_config_hash: RN2lZap1VnvLW0-yBAJSYz_TNTocVRcBlk6qAQsDvBM
 id: paragraph.text.field_text
 field_name: field_text
 entity_type: paragraph

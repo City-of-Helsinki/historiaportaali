@@ -18,9 +18,9 @@ settings:
   label: 'Entity view (Content) - Content Top'
   label_display: '0'
   provider: ctools
-  view_mode: content_top
   context_mapping:
     entity: '@node.node_route_context:node'
+  view_mode: content_top
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'

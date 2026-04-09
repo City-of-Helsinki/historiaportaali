@@ -10,7 +10,6 @@ if (PHP_SAPI === 'cli') {
   ini_set('memory_limit', '1024M');
 }
 
-/*
 $config['openid_connect.client.tunnistamo']['settings']['ad_roles'] = [
   [
     'ad_role' => 'Drupal_Helfi_kaupunkitaso_paakayttajat',
@@ -33,7 +32,6 @@ $config['openid_connect.client.tunnistamo']['settings']['ad_roles'] = [
     'roles' => ['super_administrator'],
   ],
 ];
-*/
 
 if ($elastic_proxy_url = getenv('ELASTIC_PROXY_URL')) {
   $settings['elasticsearch_proxy_url'] = $elastic_proxy_url;

@@ -1,0 +1,13 @@
+diff --git a/core/includes/common.inc b/core/includes/common.inc
+index e739a80e0a..d8f109cba8 100644
+--- a/core/includes/common.inc
++++ b/core/includes/common.inc
+@@ -555,7 +555,7 @@ function drupal_flush_all_caches($kernel = NULL) {
+   // to reset the theme manager.
+   \Drupal::theme()->resetActiveTheme();
+
+-  if (!$kernel instanceof DrupalKernel) {
++  if (!$kernel instanceof DrupalKernel || PHP_SAPI === 'cli') {
+     $kernel = \Drupal::service('kernel');
+     $kernel->invalidateContainer();
+     $kernel->rebuildContainer();

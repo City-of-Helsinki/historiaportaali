@@ -89,8 +89,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "[#3221375] Wrong language field labels after drupal_rebuild()" : "patches/3221375-27.patch",
-                "[#3584812] ConfigInstaller isSyncing does not persist to hook_modules_installed() when multiple modules are installed": "patches/3584812-7.patch"
+                "[#3221375] Wrong language field labels after drupal_rebuild()" : "patches/3221375-27.patch"
             },
             "drupal/matomo": {
                 "HIS-303 Fix Digia Iiris tracker url": "patches/HIS-303-matomo-digia-tracker-url.patch"

@@ -110,7 +110,7 @@ third_party_settings:
         description: ''
         required_fields: true
 _core:
-  default_config_hash: sBZSklr6VL62q9muMdA81sfI53ReprPQkcd9IGCGEtI
+  default_config_hash: TJWhq-XZhpnNdLiW6qa38fYy05myTPDoAgni2M5RItg
 id: media.image.media_library
 targetEntityType: media
 bundle: image

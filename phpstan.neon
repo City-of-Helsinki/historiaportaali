@@ -1,3 +1,5 @@
+includes:
+	- phpstan-baseline.neon
 parameters:
   fileExtensions:
       - php
@@ -11,5 +13,5 @@ parameters:
     - vendor
     - */node_modules/*
     - ./public/themes/custom/hdbt_subtheme/dist
-  level: 3
+  level: 7
   treatPhpDocTypesAsCertain: false

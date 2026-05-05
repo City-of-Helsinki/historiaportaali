@@ -2,6 +2,8 @@ uuid: 79118d48-7883-4e31-969e-ffdf22c9a651
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.kore_school
   module:
     - node
 id: kore_school_content_pattern
@@ -12,7 +14,6 @@ selection_criteria:
   301c07ba-9ef9-4369-b01f-a3f8fe176602:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 301c07ba-9ef9-4369-b01f-a3f8fe176602
     context_mapping:
       node: node
     bundles:

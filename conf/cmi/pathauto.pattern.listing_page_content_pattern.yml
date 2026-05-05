@@ -2,17 +2,18 @@ uuid: 6a406e26-dff9-4dfb-8993-d2e28ea04f12
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.listing_page
   module:
     - node
 id: listing_page_content_pattern
 label: 'Listing page content pattern'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:title]'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
   257ec7d4-ed47-4530-b985-dcd238a2c40c:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 257ec7d4-ed47-4530-b985-dcd238a2c40c
     context_mapping:
       node: node
     bundles:

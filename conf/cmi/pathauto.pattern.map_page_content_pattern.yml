@@ -2,17 +2,18 @@ uuid: f4df5572-1ac1-4343-a918-2a1490893ce1
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.map_page
   module:
     - node
 id: map_page_content_pattern
 label: 'Map page content pattern'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:title]'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
   b77e83e8-fa78-4749-bdc1-95c99376e35f:
     id: 'entity_bundle:node'
     negate: false
-    uuid: b77e83e8-fa78-4749-bdc1-95c99376e35f
     context_mapping:
       node: node
     bundles:

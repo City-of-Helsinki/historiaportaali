@@ -2,8 +2,10 @@ uuid: 799780aa-3e26-414b-a541-f1b07cf64cde
 langcode: en
 status: true
 dependencies:
+  config:
+    - media.type.image
+    - media.type.remote_video
   module:
-    - ctools
     - media
 id: media_pattern
 label: 'Media pattern'
@@ -13,7 +15,6 @@ selection_criteria:
   3a08f400-0d15-419f-90a8-0cb9b8918bc4:
     id: 'entity_bundle:media'
     negate: false
-    uuid: 3a08f400-0d15-419f-90a8-0cb9b8918bc4
     context_mapping:
       media: media
     bundles:

@@ -218,7 +218,6 @@ export const SearchForm: React.FC = () => {
             key={searchResetKey}
             {...searchProps}
             value={keywordValue}
-            defaultValue={keywordValue}
             onChange={handleKeywordChange}
             onFocus={() => {
               hasKeywordInteractionRef.current = true;

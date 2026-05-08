@@ -23,10 +23,6 @@ import type {
   Facet,
 } from "../types/Content";
 import {
-  getMappingMode,
-  resolveEsFieldForAggregation,
-} from "../../search/common/utils/esMapping";
-import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
   INDEX_NAME,
@@ -112,14 +108,12 @@ const buildQueryString = ({
   filters,
   offset,
   itemsPerPage,
-  useKeywordSubfields,
   languageField,
   languageValue,
 }: {
   filters: SearchFilters;
   offset: number;
   itemsPerPage: number;
-  useKeywordSubfields: boolean;
   languageField: string;
   languageValue: string;
 }) => {
@@ -129,7 +123,7 @@ const buildQueryString = ({
   const resolvedFacetFields = Object.fromEntries(
     FACET_CONFIG.map((f) => [
       f.key,
-      resolveEsFieldForAggregation(f.field, useKeywordSubfields),
+      f.field,
     ]),
   ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
 
@@ -264,8 +258,6 @@ export const KoreResultsContainer = ({
   const offset = currentPageIndex * itemsPerPage;
   const languageField = "search_api_language";
   const languageValue = drupalSettings?.path?.currentLanguage || "fi";
-  const useKeywordSubfields =
-    getMappingMode(drupalSettings?.koreSearch?.mappingMode) === "keyword";
 
   const queryString = useMemo(
     () =>
@@ -273,11 +265,10 @@ export const KoreResultsContainer = ({
         filters,
         offset,
         itemsPerPage,
-        useKeywordSubfields,
         languageField,
         languageValue,
       }),
-    [filters, languageValue, offset, itemsPerPage, useKeywordSubfields],
+    [filters, languageValue, offset, itemsPerPage],
   );
 
   const fetcher = useCallback(

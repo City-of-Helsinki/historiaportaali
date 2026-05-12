@@ -7,7 +7,6 @@ namespace Drupal\helhist_search\Plugin\Block;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -35,7 +34,6 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
     $plugin_id,
     $plugin_definition,
     protected RouteMatchInterface $routeMatch,
-    protected ConfigFactoryInterface $configFactory,
     protected SearchPathResolver $searchPathResolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -63,20 +61,11 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritdoc}
    */
   public function build(): array {
-    $mapping_mode = $this->configFactory
-      ->get('helhist_search.settings')
-      ->get('mapping_mode') ?: 'text';
-
     return [
       '#theme' => 'react_search',
       '#attached' => [
         'library' => [
           'hdbt_subtheme/react-search-app',
-        ],
-        'drupalSettings' => [
-          'search' => [
-            'mappingMode' => $mapping_mode,
-          ],
         ],
       ],
     ];

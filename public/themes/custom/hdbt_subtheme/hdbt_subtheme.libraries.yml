@@ -70,7 +70,7 @@ gallery:
     - hdbt_subtheme/tiny-slider
 
 react-search-app:
-  version: 1.0.0
+  version: 1.0.1
   js:
     dist/js/search-app.min.js: { preprocess: false }
   css:
@@ -80,7 +80,7 @@ react-search-app:
     - core/drupal
 
 kore-search-app:
-  version: 1.0.0
+  version: 1.0.1
   js:
     dist/js/kore-search-app.min.js: { preprocess: false }
   css:

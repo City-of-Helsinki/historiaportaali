@@ -14,17 +14,6 @@ This decouples the search implementation from hardcoded node IDs, making it
 environment-agnostic and allowing flexible URL management and use of Hero and
 other instructional content management to the search page.
 
-### Search mapping mode
-
-The main search and KoRe search use Elasticsearch facet aggregations. The mapping mode must match your index field types:
-
-| Environment | Setting | Reason |
-|-------------|---------|--------|
-| **Local** | Text mapping | Local index typically has facet fields (`kore_type`, `kore_language`, etc.) as `keyword` type. Use plain field names. |
-| **Server** | Keyword mapping | Server index typically has these as `text` type with `.keyword` subfields. Aggregations require keyword fields — text fields have fielddata disabled by default. |
-
-Wrong mode causes "Fielddata is disabled on [field]" errors or empty facet buckets. Configure at `/admin/tools/helhist-search`.
-
 ## Blocks
 
 - **HelHist Header Search** (`helhist_search_header_search_block`)

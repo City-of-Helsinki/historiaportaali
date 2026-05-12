@@ -157,10 +157,6 @@ class KoreSearchBlockTest extends KernelTestBase {
       ],
     ])->save();
 
-    $this->config('helhist_search.settings')
-      ->set('mapping_mode', 'geo')
-      ->save();
-
     $block = $this->createBlock();
     $build = $block->build();
 
@@ -176,7 +172,6 @@ class KoreSearchBlockTest extends KernelTestBase {
       ['value' => 'fi', 'label' => 'Finnish'],
       ['value' => 'sv', 'label' => 'Swedish'],
     ], $settings['languageOptions']);
-    $this->assertEquals('geo', $settings['mappingMode']);
 
     $this->assertContains('hdbt_subtheme/kore-search-app', $build['#attached']['library']);
     $this->assertContains('config:field.storage.paragraph.field_kore_type', $build['#cache']['tags']);

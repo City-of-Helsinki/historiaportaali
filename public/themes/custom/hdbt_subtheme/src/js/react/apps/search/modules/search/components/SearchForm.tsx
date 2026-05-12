@@ -1,7 +1,8 @@
 import type React from "react";
 import { useAtomValue, useSetAtom } from "jotai";
+import { useRef, useState } from "react";
 import {
-  SearchInput,
+  Search,
   Button,
   ButtonVariant,
   ButtonPresetTheme,
@@ -28,12 +29,25 @@ import {
   setFormatsAtom,
   neighbourhoodsAtom,
   setNeighbourhoodsAtom,
-  stagedFiltersAtom,
-  urlUpdateAtom,
+  submitFiltersAtom,
   resetFormAtom,
   facetsAtom,
   isLoadingFacetsAtom,
 } from "../store";
+
+const searchProps = {
+  texts: {
+    label: Drupal.t("Search", {}, { context: "Search" }),
+    searchPlaceholder: Drupal.t(
+      "Location, person, topic, event...",
+      {},
+      { context: "Search" },
+    ),
+    searchClearButtonAriaLabel: Drupal.t("Clear search", {}, { context: "Search" }),
+    searchButtonAriaLabel: Drupal.t("Search", {}, { context: "Search" }),
+  },
+  className: "search-input",
+};
 
 export const SearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
@@ -51,17 +65,37 @@ export const SearchForm: React.FC = () => {
   const setFormats = useSetAtom(setFormatsAtom);
   const neighbourhoods = useAtomValue(neighbourhoodsAtom);
   const setNeighbourhoods = useSetAtom(setNeighbourhoodsAtom);
-  const stagedFilters = useAtomValue(stagedFiltersAtom);
-  const setUrlParams = useSetAtom(urlUpdateAtom);
+  const submitFilters = useSetAtom(submitFiltersAtom);
   const resetForm = useSetAtom(resetFormAtom);
+  const [searchResetKey, setSearchResetKey] = useState(0);
+  const keywordValue = Array.isArray(keywords) ? keywords.join(" ") : keywords;
+  const hasKeywordInteractionRef = useRef(false);
 
-  const submitFilters = () => {
-    const { page, ...filtersWithoutPage } = stagedFilters;
-    setUrlParams(filtersWithoutPage);
+  const handleKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextValue = e.target.value;
+
+    // HDS Search may emit an empty change during initialization.
+    if (
+      !hasKeywordInteractionRef.current &&
+      keywordValue.trim() !== "" &&
+      nextValue.trim() === ""
+    ) {
+      return;
+    }
+
+    hasKeywordInteractionRef.current = true;
+    setKeywords(nextValue);
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     submitFilters();
+  };
+
+  const handleReset = () => {
+    resetForm();
+    // Remount Search to clear possible internal buffered value.
+    setSearchResetKey((current) => current + 1);
   };
 
   // Helper to ensure year is a string (TypeScript workaround for generic atom types)
@@ -180,27 +214,15 @@ export const SearchForm: React.FC = () => {
     <div className="historia-search__form">
       <form onSubmit={handleSubmit}>
         <div className="react-search-keyword">
-          <SearchInput
-            label={Drupal.t("Search", {}, { context: "Search" })}
-            value={Array.isArray(keywords) ? keywords.join(" ") : keywords}
-            onChange={(value) => setKeywords(value)}
-            onSubmit={submitFilters}
-            placeholder={Drupal.t(
-              "Location, person, topic, event...",
-              {},
-              { context: "Search" },
-            )}
-            className="search-input"
-            searchButtonAriaLabel={Drupal.t(
-              "Search",
-              {},
-              { context: "Search" },
-            )}
-            clearButtonAriaLabel={Drupal.t(
-              "Clear search",
-              {},
-              { context: "Search" },
-            )}
+          <Search
+            key={searchResetKey}
+            {...searchProps}
+            value={keywordValue}
+            onChange={handleKeywordChange}
+            onFocus={() => {
+              hasKeywordInteractionRef.current = true;
+            }}
+            onSend={() => submitFilters()}
           />
         </div>
 
@@ -290,7 +312,7 @@ export const SearchForm: React.FC = () => {
             {hasActiveFilters && (
               <Button
                 type="button"
-                onClick={resetForm}
+                onClick={handleReset}
                 variant={ButtonVariant.Supplementary}
                 theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}

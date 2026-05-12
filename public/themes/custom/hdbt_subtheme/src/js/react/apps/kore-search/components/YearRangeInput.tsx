@@ -89,10 +89,6 @@ export const YearRangeInput: React.FC<YearRangeInputProps> = ({
         />
         <span
           className="year-range-input__range-labels"
-          aria-label={`${label}: ${Drupal.t("@min — @max", {
-            "@min": minYear,
-            "@max": maxYear,
-          })}`}
         >
           <span>{minYear}</span>
           <span className="visually-hidden"> — </span>

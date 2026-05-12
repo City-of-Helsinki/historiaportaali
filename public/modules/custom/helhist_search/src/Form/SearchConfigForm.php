@@ -70,16 +70,6 @@ class SearchConfigForm extends ConfigFormBase {
       '#default_value' => $config->get('search_page_node') ? $this->entityTypeManager->getStorage('node')->load($config->get('search_page_node')) : NULL,
       '#required' => TRUE,
     ];
-    $form['mapping_mode'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Search mapping mode'),
-      '#description' => $this->t('Match your Elasticsearch index: Text mapping for keyword-type fields, Keyword mapping for text-type fields with .keyword subfields. Wrong mode causes "Fielddata is disabled" or empty facets.'),
-      '#options' => [
-        'text' => $this->t('Text mapping'),
-        'keyword' => $this->t('Keyword mapping'),
-      ],
-      '#default_value' => $config->get('mapping_mode') ?: 'text',
-    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -89,8 +79,7 @@ class SearchConfigForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $config = $this->config('helhist_search.settings')
-      ->set('search_page_node', $form_state->getValue('search_page_node'))
-      ->set('mapping_mode', $form_state->getValue('mapping_mode'));
+      ->set('search_page_node', $form_state->getValue('search_page_node'));
 
     if ($this->moduleHandler->moduleExists('helhist_kore_search')) {
       $config->set('kore_search_page_node', $form_state->getValue('kore_search_page_node'));

@@ -65,6 +65,16 @@ export const stagedFiltersAtom = atom<URLParams>(
   getParams(new URLSearchParams(window.location.search)),
 );
 
+// Submit staged filters using latest atom value, with optional overrides.
+export const submitFiltersAtom = atom(
+  null,
+  (get, set, overrides?: Partial<URLParams>) => {
+    const merged = { ...get(stagedFiltersAtom), ...(overrides || {}) };
+    const { page, ...filtersWithoutPage } = merged;
+    set(urlUpdateAtom, { ...filtersWithoutPage, page: "1" });
+  },
+);
+
 const createStringFieldAtom = (field: keyof URLParams) => {
   const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || "");
   const setAtom = atom(null, (get, set, value: string) => {
@@ -99,11 +109,11 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
     keywords: params.q || "",
     startYear:
       params.startYear !== undefined && params.startYear !== ""
-        ? Number.parseInt(params.startYear)
+        ? Number.parseInt(params.startYear, 10)
         : undefined,
     endYear:
       params.endYear !== undefined && params.endYear !== ""
-        ? Number.parseInt(params.endYear)
+        ? Number.parseInt(params.endYear, 10)
         : undefined,
     kore_type: params.type || undefined,
     kore_language: params.language || undefined,

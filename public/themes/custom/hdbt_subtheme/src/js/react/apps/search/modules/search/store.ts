@@ -41,14 +41,12 @@ export const urlAtom = atom<URLParams>(
   getParams(new URLSearchParams(window.location.search)),
 );
 
-// Atom to update URL and sync state
-export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
-  // set atom value
-  values.page = values.page || "1";
-  set(urlAtom, values);
-  set(stagedFiltersAtom, values);
+const normalizeUrlValues = (values: URLParams): URLParams => ({
+  ...values,
+  page: values.page || "1",
+});
 
-  // Set new params to window.location
+const pushUrlToHistory = (values: URLParams) => {
   const newUrl = new URL(window.location.toString());
   const newParams = new URLSearchParams();
 
@@ -73,6 +71,21 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
 
   newUrl.search = newParams.toString();
   window.history.pushState({}, "", newUrl);
+};
+
+// Atom to update URL and sync state
+export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
+  const normalized = normalizeUrlValues(values);
+  set(urlAtom, normalized);
+  set(stagedFiltersAtom, normalized);
+  pushUrlToHistory(normalized);
+});
+
+// Atom to update URL without syncing staged form state
+const urlOnlyUpdateAtom = atom(null, (_get, set, values: URLParams) => {
+  const normalized = normalizeUrlValues(values);
+  set(urlAtom, normalized);
+  pushUrlToHistory(normalized);
 });
 
 // Read-only atom for getting current page (0-based)
@@ -84,13 +97,19 @@ export const getPageAtom = atom((get) => {
 export const setPageAtom = atom(null, (get, set, pageIndex: number) => {
   const url = get(urlAtom);
   const urlPage = pageIndex + 1; // Convert 0-based to 1-based for URL
-  set(urlUpdateAtom, { ...url, page: urlPage.toString() });
+  set(urlOnlyUpdateAtom, { ...url, page: urlPage.toString() });
 });
 
 // Staged filters atom for form input (not yet submitted)
 export const stagedFiltersAtom = atom<URLParams>(
   getParams(new URLSearchParams(window.location.search)),
 );
+
+// Submit currently staged filters using latest atom value at write-time.
+export const submitFiltersAtom = atom(null, (get, set) => {
+  const { page, ...filtersWithoutPage } = get(stagedFiltersAtom);
+  set(urlUpdateAtom, { ...filtersWithoutPage, page: "1" });
+});
 
 // Helper to create string field atoms
 const createStringFieldAtom = (field: keyof URLParams) => {
@@ -158,11 +177,11 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
     keywords: params.q || "",
     startYear:
       params.startYear !== undefined && params.startYear !== ""
-        ? Number.parseInt(params.startYear)
+        ? Number.parseInt(params.startYear, 10)
         : undefined,
     endYear:
       params.endYear !== undefined && params.endYear !== ""
-        ? Number.parseInt(params.endYear)
+        ? Number.parseInt(params.endYear, 10)
         : undefined,
     formats: normalizeArray(params.formats),
     phenomena: normalizeArray(params.phenomena),
@@ -174,8 +193,8 @@ export const searchFiltersAtom = atom<SearchFilters>((get) => {
 
 // Reset form atom
 export const resetFormAtom = atom(null, (_get, set) => {
+  set(urlOnlyUpdateAtom, {});
   set(stagedFiltersAtom, {});
-  set(urlUpdateAtom, {});
 });
 
 // Initialization tracking atom (for scroll behavior)

@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the HelHist Search module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Removes obsolete mapping mode from config.
+ */
+function helhist_search_update_11000(): void {
+  $config = \Drupal::configFactory()->getEditable('helhist_search.settings');
+
+  if ($config->get('mapping_mode') === null) {
+    // Nothing to remove, just return.
+    return;
+  }
+
+  $config->clear('mapping_mode');
+  $config->save();
+}

@@ -13,7 +13,7 @@ declare(strict_types=1);
 function helhist_search_update_11000(): void {
   $config = \Drupal::configFactory()->getEditable('helhist_search.settings');
 
-  if ($config->get('mapping_mode') === null) {
+  if ($config->get('mapping_mode') === NULL) {
     // Nothing to remove, just return.
     return;
   }

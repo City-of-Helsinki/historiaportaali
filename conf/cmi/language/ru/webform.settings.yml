@@ -8,6 +8,7 @@ settings:
   default_form_access_denied_message: 'Please login to access this form.'
   default_form_required_label: 'Указывает обязательное поле'
   default_wizard_prev_button_label: '< Предыдущая страница'
+  default_wizard_next_button_label: 'Next >'
   default_wizard_start_label: Начало
   default_wizard_confirmation_label: Завершён
   default_wizard_toggle_show_label: 'Показать все'
@@ -42,6 +43,7 @@ settings:
       title: Широкий
 element:
   default_more_title: Ещё
+  default_section_title_tag: h2
 file:
   file_private_redirect_message: 'Please login to access the uploaded file.'
 mail:

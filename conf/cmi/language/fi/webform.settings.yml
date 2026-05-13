@@ -34,5 +34,6 @@ settings:
       title: Leveä
 element:
   default_more_title: Lisää
+  default_section_title_tag: h2
 file:
   file_private_redirect_message: 'Please login to access the uploaded file.'

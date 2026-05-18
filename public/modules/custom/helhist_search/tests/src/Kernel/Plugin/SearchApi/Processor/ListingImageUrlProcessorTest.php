@@ -64,7 +64,7 @@ class ListingImageUrlProcessorTest extends ProcessorTestBase {
 
     // Create the image style used by the processor.
     ImageStyle::create([
-      'name' => '1.5_600w_400h',
+      'name' => '1_5_600w_400h',
     ])->save();
 
     // Create media type with image source.

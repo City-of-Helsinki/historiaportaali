@@ -75,7 +75,7 @@ class ListingImageUrl extends ProcessorPluginBase {
     }
 
     if (isset($file)) {
-      $image_style = ImageStyle::load('1.5_600w_400h');
+      $image_style = ImageStyle::load('1_5_600w_400h');
       $image_uri = $file->getFileUri();
 
       if ($image_uri) {

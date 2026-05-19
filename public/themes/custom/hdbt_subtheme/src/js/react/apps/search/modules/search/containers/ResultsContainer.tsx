@@ -20,10 +20,6 @@ import type {
   SearchFilters,
 } from "../../../common/types/Content";
 import {
-  getMappingMode,
-  resolveEsFieldForAggregation,
-} from "../../../common/utils/esMapping";
-import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
   INDEX_NAME,
@@ -85,14 +81,12 @@ const buildQueryString = ({
   filters,
   offset,
   itemsPerPage,
-  useKeywordSubfields,
   languageField,
   languageValue,
 }: {
   filters: SearchFilters;
   offset: number;
   itemsPerPage: number;
-  useKeywordSubfields: boolean;
   languageField: string;
   languageValue: string;
 }) => {
@@ -100,7 +94,7 @@ const buildQueryString = ({
   const resolvedFacetFields = Object.fromEntries(
     FACET_CONFIG.map((facet) => [
       facet.key,
-      resolveEsFieldForAggregation(facet.field, useKeywordSubfields),
+      facet.field,
     ]),
   ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
   const query: ElasticQuery = {
@@ -269,9 +263,6 @@ export const ResultsContainer = ({
   // Calculate offset from 0-based page index
   const offset = currentPageIndex * itemsPerPage;
 
-  const mappingMode = getMappingMode(drupalSettings.search?.mappingMode);
-  const useKeywordSubfields = mappingMode === "keyword";
-
   const languageField = "search_api_language";
   const languageValue = drupalSettings.path.currentLanguage || "fi";
 
@@ -281,11 +272,10 @@ export const ResultsContainer = ({
       filters,
       offset,
       itemsPerPage,
-      useKeywordSubfields,
       languageField,
       languageValue,
     });
-  }, [filters, languageValue, offset, itemsPerPage, useKeywordSubfields]);
+  }, [filters, languageValue, offset, itemsPerPage]);
 
   const fetcher = useCallback(
     (key: string) =>
@@ -334,10 +324,10 @@ export const ResultsContainer = ({
       phenomena: source.aggregated_phenomena_title || [],
       neighbourhoods: source.aggregated_neighbourhoods_title || [],
       start_year: source.aggregated_start_year?.[0]
-        ? Number.parseInt(source.aggregated_start_year[0])
+        ? Number.parseInt(source.aggregated_start_year[0], 10)
         : undefined,
       end_year: source.aggregated_end_year?.[0]
-        ? Number.parseInt(source.aggregated_end_year[0])
+        ? Number.parseInt(source.aggregated_end_year[0], 10)
         : undefined,
       url: source.url?.[0] || "#",
     };

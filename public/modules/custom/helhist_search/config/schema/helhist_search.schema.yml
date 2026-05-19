@@ -8,6 +8,3 @@ helhist_search.settings:
     kore_search_page_node:
       type: string
       label: 'KoRe search page node'
-    mapping_mode:
-      type: string
-      label: 'Search mapping mode'

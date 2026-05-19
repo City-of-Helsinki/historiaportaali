@@ -204,7 +204,7 @@
           if (e.layer instanceof L.MarkerClusterGroup) {
             // Set up mutation observer to watch for cluster elements (tabindex + aria-label)
             const setClusterAccessibility = (clusterNode) => {
-              if (!clusterNode || !clusterNode.isConnected) return;
+              if (!clusterNode?.isConnected) return;
               clusterNode.setAttribute("tabindex", "0");
               clusterNode.setAttribute("role", "button");
               const count =

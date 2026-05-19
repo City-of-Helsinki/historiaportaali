@@ -34,10 +34,10 @@
       }
 
       this.bindFilterToggle(context);
-      this.bindFilterForm(context);
+      this.bindFilterForm();
     },
 
-    bindFilterForm(context) {
+    bindFilterForm() {
       jQuery(document).on(
         "submit",
         ".node-type--map_page .views-exposed-form",

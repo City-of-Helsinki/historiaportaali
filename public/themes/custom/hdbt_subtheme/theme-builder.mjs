@@ -28,12 +28,6 @@ const styles = [
 
 // Static files.
 const staticFiles = [
-  ['node_modules/hyphenopoly/min/Hyphenopoly_Loader.js', `${outDir}/js/hyphenopoly/Hyphenopoly_Loader.js`],
-  ['node_modules/hyphenopoly/min/Hyphenopoly.js', `${outDir}/js/hyphenopoly/Hyphenopoly.js`],
-  ['node_modules/hyphenopoly/min/patterns/fi.wasm', `${outDir}/js/hyphenopoly/patterns/fi.wasm`],
-  ['node_modules/hyphenopoly/min/patterns/sv.wasm', `${outDir}/js/hyphenopoly/patterns/sv.wasm`],
-  ['node_modules/hyphenopoly/min/patterns/en-gb.wasm', `${outDir}/js/hyphenopoly/patterns/en-gb.wasm`],
-  ['node_modules/hyphenopoly/min/patterns/ru.wasm', `${outDir}/js/hyphenopoly/patterns/ru.wasm`],
   ['node_modules/@splidejs/splide/dist/css/splide-core.min.css', `${outDir}/css/splide/splide-core.min.css`],
   ['node_modules/@splidejs/splide/dist/js/splide.min.js', `${outDir}/js/splide/splide.min.js`],
   ['node_modules/tiny-slider/dist/tiny-slider.css', `${outDir}/css/tiny-slider/tiny-slider.css`],

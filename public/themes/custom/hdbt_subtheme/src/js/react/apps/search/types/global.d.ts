@@ -18,13 +18,9 @@ declare global {
     path: {
       currentLanguage: "fi" | "en" | "sv";
     };
-    search?: {
-      mappingMode?: "text" | "keyword";
-    };
     koreSearch?: {
       typeOptions?: Array<{ value: string; label: string }>;
       languageOptions?: Array<{ value: string; label: string }>;
-      mappingMode?: "text" | "keyword";
       sortLabels?: Record<string, string>;
     };
   };

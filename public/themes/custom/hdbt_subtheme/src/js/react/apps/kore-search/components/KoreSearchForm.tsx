@@ -1,8 +1,8 @@
 import type React from "react";
 import { useAtomValue, useSetAtom } from "jotai";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
-  SearchInput,
+  Search,
   Button,
   ButtonVariant,
   ButtonPresetTheme,
@@ -22,8 +22,7 @@ import {
   setTypeFilterAtom,
   languageFilterAtom,
   setLanguageFilterAtom,
-  stagedFiltersAtom,
-  urlUpdateAtom,
+  submitFiltersAtom,
   resetFormAtom,
   facetsAtom,
   isLoadingFacetsAtom,
@@ -32,6 +31,16 @@ import {
 // TODO: read the possible minimum year from index, though 1550 is anyways the year Helsinki was established so this might be fine.
 const YEAR_MIN = 1550;
 const YEAR_MAX = new Date().getFullYear();
+
+const searchProps = {
+  texts: {
+    label: Drupal.t("Search", {}, { context: "Kore search" }),
+    searchPlaceholder: Drupal.t("School name...", {}, { context: "Kore search" }),
+    searchClearButtonAriaLabel: Drupal.t("Clear search", {}, { context: "Kore search" }),
+    searchButtonAriaLabel: Drupal.t("Search", {}, { context: "Kore search" }),
+  },
+  className: "search-input",
+};
 
 export const KoreSearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
@@ -49,15 +58,11 @@ export const KoreSearchForm: React.FC = () => {
   const setTypeFilter = useSetAtom(setTypeFilterAtom);
   const languageFilter = useAtomValue(languageFilterAtom);
   const setLanguageFilter = useSetAtom(setLanguageFilterAtom);
-  const stagedFilters = useAtomValue(stagedFiltersAtom);
-  const setUrlParams = useSetAtom(urlUpdateAtom);
+  const submitFilters = useSetAtom(submitFiltersAtom);
   const resetForm = useSetAtom(resetFormAtom);
-
-  const submitFilters = (overrides?: Partial<typeof stagedFilters>) => {
-    const merged = { ...stagedFilters, ...overrides };
-    const { page, ...filtersWithoutPage } = merged;
-    setUrlParams({ ...filtersWithoutPage, page: "1" });
-  };
+  const [searchResetKey, setSearchResetKey] = useState(0);
+  const keywordValue = Array.isArray(keywords) ? keywords.join(" ") : keywords;
+  const hasKeywordInteractionRef = useRef(false);
 
   const [filterAnnouncement, setFilterAnnouncement] = useState("");
   useEffect(() => {
@@ -81,18 +86,39 @@ export const KoreSearchForm: React.FC = () => {
     { context: "Kore search" },
   );
 
-  // Handle input change by updating the state and submitting filters if user clears input.
   const handleInputChange = (
     value: string | string[],
     updateState: (v: string) => void,
-    urlKey: keyof typeof stagedFilters,
   ) => {
     const str = typeof value === "string" ? value : (value ?? []).join(" ");
     updateState(str);
-    if (str.trim() === "") {
-      submitFilters({ [urlKey]: "" });
+  };
+
+  const handleKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextValue = e.target.value;
+
+    // HDS Search may emit an empty change during initialization.
+    if (
+      !hasKeywordInteractionRef.current &&
+      keywordValue.trim() !== "" &&
+      nextValue.trim() === ""
+    ) {
+      return;
+    }
+
+    hasKeywordInteractionRef.current = true;
+    setKeywords(nextValue);
+
+    if (nextValue.trim() === "" && keywordValue.trim() !== "") {
+      submitFilters({ q: "" });
       setFilterAnnouncement(searchingAnnouncement);
     }
+  };
+
+  const handleReset = () => {
+    resetForm();
+    // Remount Search to clear possible internal buffered value.
+    setSearchResetKey((current) => current + 1);
   };
 
   const koreTypeFacet = facets?.find((f) => f.name === "kore_type");
@@ -174,27 +200,15 @@ export const KoreSearchForm: React.FC = () => {
       </output>
       <form onSubmit={handleSubmit}>
         <div className="react-search-keyword">
-          <SearchInput
-            label={Drupal.t("Search", {}, { context: "Kore search" })}
-            value={Array.isArray(keywords) ? keywords.join(" ") : keywords}
-            onChange={(value) => handleInputChange(value, setKeywords, "q")}
-            onSubmit={() => submitFilters()}
-            placeholder={Drupal.t(
-              "School name...",
-              {},
-              { context: "Kore search" },
-            )}
-            className="search-input"
-            searchButtonAriaLabel={Drupal.t(
-              "Search",
-              {},
-              { context: "Kore search" },
-            )}
-            clearButtonAriaLabel={Drupal.t(
-              "Clear search",
-              {},
-              { context: "Kore search" },
-            )}
+          <Search
+            key={searchResetKey}
+            {...searchProps}
+            value={keywordValue}
+            onChange={handleKeywordChange}
+            onFocus={() => {
+              hasKeywordInteractionRef.current = true;
+            }}
+            onSend={() => submitFilters()}
           />
         </div>
 
@@ -246,7 +260,7 @@ export const KoreSearchForm: React.FC = () => {
                 label={Drupal.t("Beginning at", {}, { context: "Kore search" })}
                 value={asString(startYear)}
                 onChange={(v) =>
-                  handleInputChange(v, setStartYear, "startYear")
+                  handleInputChange(v, setStartYear)
                 }
                 onSliderRelease={() => {
                   submitFilters();
@@ -266,7 +280,7 @@ export const KoreSearchForm: React.FC = () => {
                 id="kore-end-year"
                 label={Drupal.t("Ending at", {}, { context: "Kore search" })}
                 value={asString(endYear)}
-                onChange={(v) => handleInputChange(v, setEndYear, "endYear")}
+                onChange={(v) => handleInputChange(v, setEndYear)}
                 onSliderRelease={() => {
                   submitFilters();
                   setFilterAnnouncement(searchingAnnouncement);
@@ -297,7 +311,7 @@ export const KoreSearchForm: React.FC = () => {
             {hasActiveFilters && (
               <Button
                 type="button"
-                onClick={resetForm}
+                onClick={handleReset}
                 variant={ButtonVariant.Supplementary}
                 theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}

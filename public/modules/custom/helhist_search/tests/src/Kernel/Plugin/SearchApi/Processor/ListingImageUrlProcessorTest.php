@@ -160,7 +160,7 @@ class ListingImageUrlProcessorTest extends ProcessorTestBase {
     $field = array_first($items)->getField('listing_image_url');
     $values = $field->getValues();
     $this->assertNotEmpty($values);
-    $this->assertStringContainsString('1.5_600w_400h', $values[0]);
+    $this->assertStringContainsString('1_5_600w_400h', $values[0]);
   }
 
 }

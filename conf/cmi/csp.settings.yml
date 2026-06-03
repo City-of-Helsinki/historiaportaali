@@ -11,7 +11,7 @@ enforce:
     default-src:
       base: self
     img-src:
-      base: self
+      base: any
       sources:
         - 'https://server.arcgisonline.com'
         - 'https://kartta.hel.fi'
@@ -46,4 +46,6 @@ enforce:
       sources:
         - 'https://api.finna.fi'
   reporting:
-    plugin: none
+    plugin: uri
+    options:
+      uri: 'https://www.test.hel.ninja/log-report-uri/enforce'

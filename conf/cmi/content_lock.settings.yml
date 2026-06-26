@@ -2,61 +2,21 @@ _core:
   default_config_hash: 6Ka3T1c-CIjEUO1Q64NXKksLthkMhj53a6zy4RJBtkc
 verbose: true
 types:
-  content_moderation_state: {  }
-  crop: {  }
-  file: {  }
-  media: {  }
-  menu_link_content: {  }
   node:
     '*': '*'
   paragraphs_library_item:
     '*': '*'
-  path_alias: {  }
-  redirect: {  }
-  search_api_task: {  }
   taxonomy_term:
     '*': '*'
-  user: {  }
-  paragraph: {  }
 types_translation_lock: {  }
 form_op_lock:
-  content_moderation_state:
-    mode: 0
-    values: {  }
-  crop:
-    mode: 0
-    values: {  }
-  file:
-    mode: null
-    values: {  }
-  media:
-    mode: 0
-    values: {  }
-  menu_link_content:
-    mode: 0
-    values: {  }
   node:
     mode: 0
     values: {  }
   paragraphs_library_item:
     mode: 0
     values: {  }
-  path_alias:
-    mode: 0
-    values: {  }
-  redirect:
-    mode: 0
-    values: {  }
-  search_api_task:
-    mode: null
-    values: {  }
   taxonomy_term:
-    mode: 0
-    values: {  }
-  user:
-    mode: 0
-    values: {  }
-  paragraph:
     mode: 0
     values: {  }
 timeout: 7200

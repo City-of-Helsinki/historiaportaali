@@ -2,21 +2,21 @@ display:
   default:
     display_title: Oletus
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
         id:
           separator: ', '
         label:
           separator: ', '
+      pager:
+        options:
+          tags:
+            next: Seuraava
+            previous: Edellinen
+          expose:
+            offset_label: Offset
       filters:
         label:
           expose:
-            label: Tunnus
+            label: Otsikko
   entity_reference:
     display_title: Entiteettiviittaus

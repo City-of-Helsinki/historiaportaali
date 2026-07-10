@@ -8,23 +8,23 @@ track_enabled_source_entity_types:
   - media
   - menu_link_content
   - node
+  - paragraph
   - paragraphs_library_item
   - path_alias
   - redirect
   - search_api_task
   - taxonomy_term
-  - paragraph
 track_enabled_target_entity_types:
   - crop
   - media
   - menu_link_content
   - node
+  - paragraph
   - paragraphs_library_item
   - path_alias
   - redirect
   - search_api_task
   - taxonomy_term
-  - paragraph
 track_enabled_plugins:
   - block_field
   - dynamic_entity_reference

@@ -27,9 +27,12 @@ settings:
   dialog_options:
     narrow:
       title: Smal
+    normal:
+      title: Normal
     wide:
       title: Bred
 element:
   default_more_title: Mer
+  default_section_title_tag: h2
 file:
   file_private_redirect_message: 'Please login to access the uploaded file.'

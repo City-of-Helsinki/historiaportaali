@@ -28,10 +28,6 @@ display:
         provider_field:
           exception:
             title: Kaikki
-      filters:
-        authname:
-          expose:
-            label: 'Authentication name'
   page:
     display_title: Sivu
     display_options:

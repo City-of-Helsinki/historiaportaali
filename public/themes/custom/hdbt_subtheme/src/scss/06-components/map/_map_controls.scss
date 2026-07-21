@@ -90,10 +90,6 @@
     transform: translateY(-50%);
     z-index: 1;
 
-    &[hidden] {
-      pointer-events: none;
-    }
-
     &:hover,
     &:focus {
       background: $color-black-90;
@@ -108,6 +104,10 @@
     .hel-icon {
       --icon-size: 1.25rem;
     }
+  }
+
+  .map-controls__clear-btn[hidden] {
+    pointer-events: none;
   }
 
   .map-controls__mid-container {
@@ -248,13 +248,13 @@
 
   .select2-results__option {
     padding-left: 12px;
+  }
 
-    // Group headers (disabled options)
-    &[aria-disabled=true] {
-      color: $color-black; // Inverted by parent filter
-      font-weight: bold;
-      padding-left: 6px;
-    }
+  // Group headers (disabled options)
+  .select2-results__option[aria-disabled=true] {
+    color: $color-black; // Inverted by parent filter
+    font-weight: bold;
+    padding-left: 6px;
   }
 
   .select2-results__option--selected {

@@ -58,14 +58,6 @@
       display: flex;
       padding: 0;
       width: 100%;
-
-      &__content {
-        flex-grow: 1;
-        margin-left: $spacing-and-half;
-        padding: $spacing;
-        text-align: left;
-        transition: background-color 0.1s;
-      }
     }
 
     .timeline-item__button__icon__circle {
@@ -79,6 +71,14 @@
       z-index: 2;
     }
 
+    .timeline-item__button__content {
+      flex-grow: 1;
+      margin-left: $spacing-and-half;
+      padding: $spacing;
+      text-align: left;
+      transition: background-color 0.1s;
+    }
+
     &:hover {
       .timeline-item__button__content {
         background-color: $color-white;
@@ -86,18 +86,16 @@
     }
 
     &.handorgel__header--open {
-      .timeline-item__button {
-        &__icon__circle {
-          background-color: $color-metro-dark;
-        }
+      .timeline-item__button__icon__circle {
+        background-color: $color-metro-dark;
+      }
 
-        &__content {
-          background-color: $color-white;
-          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='24' height='24'/%3E %3Cpolygon fill='currentColor' points='18 7.5 13.5 12 18 16.5 16.5 18 12 13.5 7.5 18 6 16.5 10.5 12 6 7.5 7.5 6 12 10.5 16.5 6'/%3E %3C/g%3E %3C/svg%3E");
-          background-position: right $spacing center;
-          background-repeat: no-repeat;
-          background-size: 23px;
-        }
+      .timeline-item__button__content {
+        background-color: $color-white;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='24' height='24'/%3E %3Cpolygon fill='currentColor' points='18 7.5 13.5 12 18 16.5 16.5 18 12 13.5 7.5 18 6 16.5 10.5 12 6 7.5 7.5 6 12 10.5 16.5 6'/%3E %3C/g%3E %3C/svg%3E");
+        background-position: right $spacing center;
+        background-repeat: no-repeat;
+        background-size: 23px;
       }
     }
   }
@@ -106,11 +104,11 @@
     border: 0;
     margin-left: 66px;
     margin-top: 2px;
+  }
 
-    &__inner {
-      padding-bottom: $spacing-and-half;
-      padding-top: $spacing-and-half;
-    }
+  .timeline-item__content__inner {
+    padding-bottom: $spacing-and-half;
+    padding-top: $spacing-and-half;
   }
 
   article.node--view-mode-timeline-item {

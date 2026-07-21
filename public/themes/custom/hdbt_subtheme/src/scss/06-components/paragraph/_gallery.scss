@@ -135,10 +135,6 @@ $arrow-container-height: 48px;
       width: 96px;
     }
 
-    &[disabled] {
-      opacity: 0.2;
-    }
-
     svg {
       display: none;
     }
@@ -160,6 +156,10 @@ $arrow-container-height: 48px;
         transform: translateX(5px);
       }
     }
+  }
+
+  .splide__arrow[disabled] {
+    opacity: 0.2;
   }
 }
 
@@ -199,20 +199,20 @@ $arrow-container-height: 48px;
     transform: translateY(-50%);
     width: 24px;
     z-index: 1;
+  }
 
-    &[disabled] {
-      display: none;
-    }
+  button[disabled] {
+    display: none;
+  }
 
-    &[data-controls=prev] {
-      background-image: url('../icons/angle-left.svg');
-      left: $spacing-quarter;
-    }
+  button[data-controls=prev] {
+    background-image: url('../icons/angle-left.svg');
+    left: $spacing-quarter;
+  }
 
-    &[data-controls=next] {
-      background-image: url('../icons/angle-right.svg');
-      right: $spacing-quarter;
-    }
+  button[data-controls=next] {
+    background-image: url('../icons/angle-right.svg');
+    right: $spacing-quarter;
   }
 }
 

@@ -21,126 +21,122 @@
     }
   }
 
-  .year-range-input {
-    // Show HDS clear button when value is set (from slider or typing)
-    &[data-hds-textinput-filled] [class*="button-clear"] {
-      display: flex;
-    }
+  .year-range-input__range-labels {
+    color: $color-black-60;
+    display: flex;
+    font-size: $fontsize-body-s;
+    justify-content: space-between;
+  }
 
-    &__label {
-      display: block;
-      font-size: $fontsize-body-m;
-      font-weight: $font-weight-medium;
-    }
+  // Show HDS clear button when value is set (from slider or typing)
+  .year-range-input[data-hds-textinput-filled] [class*="button-clear"] {
+    display: flex;
+  }
 
-    &__slider-wrapper {
-      margin-top: $spacing-quarter;
-    }
+  .year-range-input__label {
+    display: block;
+    font-size: $fontsize-body-m;
+    font-weight: $font-weight-medium;
+  }
 
-    &__slider {
-      height: 6px;
-      margin: 0;
-      width: 100%;
+  .year-range-input__slider-wrapper {
+    margin-top: $spacing-quarter;
+  }
+
+  .year-range-input__slider {
+    height: 6px;
+    margin: 0;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: $color-black-20;
+    border-radius: 3px;
+
+    &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      background: $color-black-20;
-      border-radius: 3px;
+      background: $color-black-90;
+      border: 2px solid $color-white;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+
+      &:hover {
+        background: $color-black;
+      }
+    }
+
+    &::-moz-range-thumb {
+      background: $color-black-90;
+      border: 2px solid $color-white;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+
+      &:hover {
+        background: $color-black;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
 
       &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        background: $color-black-90;
-        border: 2px solid $color-white;
-        border-radius: 50%;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        height: 20px;
-        width: 20px;
-
-        &:hover {
-          background: $color-black;
-        }
+        cursor: not-allowed;
       }
 
       &::-moz-range-thumb {
-        background: $color-black-90;
-        border: 2px solid $color-white;
-        border-radius: 50%;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        height: 20px;
-        width: 20px;
-
-        &:hover {
-          background: $color-black;
-        }
-      }
-
-      &:disabled {
         cursor: not-allowed;
-        opacity: 0.5;
-
-        &::-webkit-slider-thumb {
-          cursor: not-allowed;
-        }
-
-        &::-moz-range-thumb {
-          cursor: not-allowed;
-        }
       }
-    }
-
-    &__range-labels {
-      color: $color-black-60;
-      display: flex;
-      font-size: $fontsize-body-s;
-      justify-content: space-between;
     }
   }
 
-  .kore-result-card {
-    &__years-inline {
-      color: $color-black-60;
-    }
+  .kore-result-card__years-inline {
+    color: $color-black-60;
+  }
 
-    &__types {
-      margin-top: $spacing-quarter;
-    }
+  .kore-result-card__types {
+    margin-top: $spacing-quarter;
+  }
 
-    &__names {
-      display: flex;
-      flex-direction: column;
-      font-size: $fontsize-body-s;
-      gap: $spacing-quarter;
-      margin-top: $spacing-half;
-    }
+  .kore-result-card__names {
+    display: flex;
+    flex-direction: column;
+    font-size: $fontsize-body-s;
+    gap: $spacing-quarter;
+    margin-top: $spacing-half;
+  }
 
-    &__names-title {
-      font-size: $fontsize-body-m;
-      font-weight: $font-weight-medium;
-      margin: $spacing-half 0 0;
-    }
+  .kore-result-card__names-title {
+    font-size: $fontsize-body-m;
+    font-weight: $font-weight-medium;
+    margin: $spacing-half 0 0;
+  }
 
-    &__names-list {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-quarter;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+  .kore-result-card__names-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-quarter;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-      li {
-        margin: $spacing-quarter 0 0;
-      }
+    li {
+      margin: $spacing-quarter 0 0;
     }
+  }
 
-    &__name {
-      font-weight: $font-weight-medium;
-    }
+  .kore-result-card__name {
+    font-weight: $font-weight-medium;
+  }
 
-    &__years {
-      color: $color-black-60;
-    }
+  .kore-result-card__years {
+    color: $color-black-60;
   }
 
 }

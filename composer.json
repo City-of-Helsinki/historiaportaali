@@ -41,7 +41,6 @@
         "jieter/leaflet.sync": "^0.2",
         "mglaman/composer-drupal-lenient": "^2.0",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
-        "oomphinc/composer-installers-extender": "^2.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
@@ -64,7 +63,6 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
-            "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "tbachert/spi": false,

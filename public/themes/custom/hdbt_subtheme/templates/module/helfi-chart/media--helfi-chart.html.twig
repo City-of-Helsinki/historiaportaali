@@ -8,12 +8,7 @@
  */
 #}
 {% if content.field_helfi_chart_url|render %}
-  <figure>
-    <div class="chart__container">
-      {{ content.field_helfi_chart_url }}
-    </div>
-    <figcaption class="chart__transcript visually-hidden">{{ content.field_helfi_chart_transcript }}</figcaption>
-  </figure>
+  {% include "@hdbt/media/media--helfi-chart.html.twig" %}
 {% elseif content.field_helfi_chart_infogram_id|render %}
   <figure>
     <div class="chart__container">

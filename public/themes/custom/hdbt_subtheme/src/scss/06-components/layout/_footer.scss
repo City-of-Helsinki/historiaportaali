@@ -1,0 +1,18 @@
+.footer--dark {
+  .hds-button--secondary {
+    --background-color: transparent;
+    --background-color-hover: var(--color-black);
+    --background-color-focus: var(--color-black);
+    --background-color-hover-focus: var(--color-black);
+    --border-color: var(--color-white);
+    --border-color-hover: var(--color-white);
+    --border-color-focus: var(--color-white);
+    --border-color-hover-focus: var(--color-white);
+    --color: var(--color-white);
+    --color-hover: var(--color-white);
+    --color-focus: var(--color-white);
+    --color-hover-focus: var(--color-white);
+    --focus-outline-color: var(--color-black);
+    --submit-input-focus-gutter-color: var(--color-white);
+  }
+}

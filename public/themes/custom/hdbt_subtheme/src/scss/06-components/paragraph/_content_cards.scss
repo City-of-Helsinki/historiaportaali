@@ -1,0 +1,140 @@
+$card_spacing: $spacing-and-half;
+
+.content-cards__subtitle {
+  margin-bottom: $spacing-half;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.content-cards__title {
+  @include font-size($fontsize-heading-m, $lineheight-m);
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-double;
+  margin-top: 0;
+
+  @include breakpoint($breakpoint-s) {
+    @include font-size($fontsize-heading-l, $lineheight-m);
+  }
+}
+
+.content-card {
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    .content-card__title {
+      text-decoration: underline;
+
+    }
+  }
+}
+
+.content-card__image {
+  img {
+    object-fit: cover;
+  }
+}
+
+.content-card__content {
+  background: $color-white;
+  height: 100%;
+  padding: $spacing;
+
+  .content-card__metadata {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 $spacing-half;
+  }
+
+  .content-card__metadata-item {
+    align-items: center;
+    background-color: #FAF9F7;
+    color: $color-metro-dark;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.4em;
+    margin-bottom: $spacing-half;
+    margin-right: $spacing;
+    min-height: $spacing-double;
+    padding: 0 $spacing-half;
+
+    svg {
+      vertical-align: middle;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .content-card__metadata-item__text {
+    line-height: $lineheight-s;
+    padding: $spacing-half 0;
+
+    & > span {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-bottom: $spacing-half;
+      }
+    }
+  }
+
+  .content-card__bundle .content-card__metadata-item__text {
+    padding-left: $spacing-quarter;
+  }
+
+  .bundle-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bundle-icon {
+    margin-right: $spacing-quarter;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.content-card__arrow {
+  color: $color-metro-dark;
+  display: block;
+  line-height: 0;
+  // Pull the arrow a bit to the left to align with text.
+  margin: $spacing 0 0 -2px;
+  padding-left: 0;
+  transition: all .3s;
+  width: 48px;
+
+  @include breakpoint($breakpoint-s) {
+    // Pull the arrow a bit to the left to align with text.
+    margin-left: -4px;
+  }
+
+  .hel-icon {
+    --icon-size: 1.5rem;
+
+    @include breakpoint($breakpoint-m) {
+      --icon-size: 1.8rem;
+    }
+
+    @include breakpoint($breakpoint-l) {
+      --icon-size: 2rem;
+    }
+  }
+}

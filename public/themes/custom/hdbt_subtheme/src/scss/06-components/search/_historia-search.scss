@@ -1,0 +1,151 @@
+.historia-search {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.historia-search__form {
+  margin-top: $spacing-triple;
+  max-width: $content-width-max;
+
+  .react-search-keyword {
+    margin-bottom: $spacing-double;
+  }
+
+  .react-search-filters {
+    display: grid;
+    gap: $spacing-double $spacing;
+    grid-template-columns: 1fr 1fr;
+
+    @include breakpoint(0 $breakpoint-m) {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-group {
+      min-width: 0;
+      @include breakpoint($breakpoint-m) {
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .filter-group--dates {
+      max-width: fit-content;
+
+      .date-filter-inputs {
+        display: flex;
+        gap: $spacing;
+
+        > * {
+          flex: 0 1 170px;
+        }
+
+        @include breakpoint(0 $breakpoint-s) {
+          flex-direction: column;
+        }
+      }
+
+      @include breakpoint(0 $breakpoint-m) {
+        max-width: 100%;
+
+        .date-filter-inputs > * {
+          flex: 1 1 auto;
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      gap: $spacing;
+      grid-column: 1 / -1;
+      margin: $spacing 0;
+    }
+  }
+}
+
+.historia-search__result-top-area {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing;
+  margin: $spacing-and-half 0;
+
+  @include breakpoint($breakpoint-m) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.historia-search__results-title {
+  margin: 0;
+}
+
+.historia-search__results-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-half;
+
+  button {
+    column-gap: 4px;
+    font-size: $fontsize-body-s;
+    font-weight: $font-weight-regular;
+    padding: 6px $spacing-quarter;
+
+    .hds-button__icon,
+    .hds-icon {
+      margin-inline: 0;
+    }
+
+    &.active {
+      font-weight: $font-weight-bold;
+    }
+
+    @include breakpoint($breakpoint-s) {
+      column-gap: revert;
+      font-size: $fontsize-body-m;
+      padding: $spacing-half $spacing;
+
+      .hds-button__icon,
+      .hds-icon {
+        margin-inline: revert;
+      }
+    }
+  }
+}
+
+.historia-search__results-actions-label {
+  flex-basis: 100%;
+
+  @include breakpoint($breakpoint-s) {
+    flex-basis: auto;
+  }
+}
+
+.historia-search__pagination {
+  margin-top: $spacing-double;
+  // Reset any inherited list styles that interfere with HDS Pagination
+  nav[class*="pagination"] {
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    // Ensure pagination items are perfect circles
+    a[class*="item-link"],
+    span[class*="item-link"] {
+      height: 40px;
+      width: 40px;
+    }
+
+    // Align buttons vertically with page numbers
+    button[class*="button"] {
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+}

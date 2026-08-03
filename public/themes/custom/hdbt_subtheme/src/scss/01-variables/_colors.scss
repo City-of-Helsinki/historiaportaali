@@ -1,0 +1,11 @@
+:root {
+  // Custom color variables.
+  --color-metro-dark-hover: #8a2200; // darken(var(--color-metro-dark), 10%);
+  --placeholder-color: #666;
+
+  // Override new HDBT variables.
+  --theme-fg2: var(--color-metro-dark) !important;
+  --theme-bg1: var(--color-metro-dark) !important;
+}
+
+$color-bg-yellow: #FFE977;

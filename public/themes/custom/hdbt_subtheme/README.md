@@ -22,6 +22,7 @@ Requirements for developing:
 | npm i             | Install dependencies and link local packages.                                     |
 | npm ci            | Install a project with a clean slate. Use especially in CI environments.          |
 | npm run dev       | Compile styles and JS for development and watch for changes.                      |
+| npm run dev-with-remote-data | Same as `npm run dev`, but the search apps query the test environment's Elasticsearch proxy instead of the local one. |
 | npm run build     | Build packages for production. Minify CSS/JS. Create icon sprite.                |
 | npm run typecheck | Run TypeScript type checking (strict - fails on errors).                          |
 | npm run lint      | Run linting for SCSS and JavaScript (Biome for JS).                              |
@@ -60,6 +61,28 @@ Build for production:
 ```bash
 npm run build
 ```
+
+#### Developing the search apps against remote data
+
+A local environment often has an empty or thin Elasticsearch index. To develop
+the search apps against a populated index, run:
+
+```bash
+npm run dev-with-remote-data
+```
+
+This sets `ELASTIC_DEV_URL`, which the theme-builder injects into the bundle in
+development builds only. `getElasticUrl()` prefers it over the
+`data-elasticsearch-url` attribute Drupal renders on the app's root element. Any
+proxy works, not just the default one in the script:
+
+```bash
+ELASTIC_DEV_URL=https://some-other-elastic-proxy.example.com npm run dev
+```
+
+Note that the proxy has to allow your local origin in its CORS configuration.
+Production builds never define `ELASTIC_DEV_URL`, so the URL always comes from
+Drupal there.
 
 ## Structure for files and folders
 

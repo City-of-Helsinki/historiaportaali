@@ -9,6 +9,7 @@
     "typecheck": "npx --prefix ../../contrib/hdbt tsc --noEmit",
     "typecheck:warn": "npm run typecheck || echo 'Warning: TypeScript errors found'",
     "dev": "npm run typecheck:warn && node theme-builder.mjs --watch --dev",
+    "dev-with-remote-data": "ELASTIC_DEV_URL=https://helhist-elastic-proxy.test.hel.ninja npm run dev",
     "build": "npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run postbuild",
     "postbuild": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && sed -i '' '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css || true",
     "preinstall": "npx update-browserslist-db@latest",

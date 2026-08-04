@@ -48,6 +48,11 @@
 
   .map-lift__image {
     margin-bottom: $spacing;
+
+    a:focus,
+    a:active {
+      outline-color: $color-white;
+    }
   }
 
   .map-lift__link {

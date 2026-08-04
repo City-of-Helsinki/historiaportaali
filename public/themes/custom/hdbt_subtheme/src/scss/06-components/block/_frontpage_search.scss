@@ -24,7 +24,15 @@
     }
 
     button[type="submit"] {
+      border: none;
+      box-shadow: none;
       width: 100%;
+
+      &:focus,
+      &:active {
+        outline: 3px solid $color-white;
+        outline-offset: 2px;
+      }
       
       @include breakpoint($breakpoint-s) {
         width: auto;

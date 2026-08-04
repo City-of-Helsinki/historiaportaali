@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ErrorBoundary } from "./common/components/ErrorBoundary";
 import { SearchContainer } from "./modules/search/SearchContainer";
 import ResultsError from "./common/components/ResultsError";
@@ -22,12 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  ReactDOM.render(
+  createRoot(rootElement).render(
     <React.StrictMode>
       <ErrorBoundary fallback={<ResultsError />}>
         <SearchContainer elasticsearchUrl={elasticsearchUrl} />
       </ErrorBoundary>
     </React.StrictMode>,
-    rootElement,
   );
 });

@@ -48,7 +48,7 @@ export const KoreResultCard: React.FC<KoreResultCardProps> = ({
           tag: typeLabels.get(type) ?? type,
         }))
       : undefined;
-  const customMetaRows: JSX.Element[] = [];
+  const customMetaRows: React.JSX.Element[] = [];
   if (cardTags?.length) {
     customMetaRows.push(
       <div key="types" className="kore-result-card__types">

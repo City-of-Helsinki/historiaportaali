@@ -6,13 +6,14 @@
   "license": "MIT",
   "repository": "github:City-of-Helsinki/drupal-hel-platform",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "typecheck:warn": "tsc --noEmit || echo 'Warning: TypeScript errors found'",
+    "typecheck": "npx --prefix ../../contrib/hdbt tsc --noEmit",
+    "typecheck:warn": "npm run typecheck || echo 'Warning: TypeScript errors found'",
     "dev": "npm run typecheck:warn && node theme-builder.mjs --watch --dev",
     "build": "npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run postbuild",
     "postbuild": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && sed -i '' '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css || true",
     "preinstall": "npx update-browserslist-db@latest",
-    "lint:scss": "npx postcss \"src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
+    "postinstall": "npm --prefix ../../contrib/hdbt install --no-audit --progress=false --loglevel=silent",
+    "lint:scss": "npx --prefix ../../contrib/hdbt/theme-builder postcss \"$INIT_CWD/src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
     "lint:js": "biome lint src/js/",
     "format:js": "biome format --write src/js/",
     "lint": "npm run lint:scss && npm run lint:js",
@@ -29,32 +30,11 @@
     "minimatch": "^10.2.1"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^8.11.0",
     "@hdbt/theme-builder": "file:../../contrib/hdbt/theme-builder",
-    "@sentry/react": "^10.20.0",
     "@splidejs/splide": "^4.1.4",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
     "breakpoint-sass": "^3.0.0",
-    "css-declaration-sorter": "^7.0.3",
-    "glob": "^10.0.0",
-    "hds-design-tokens": "^2.0.0",
-    "jotai": "^2.15.0",
-    "normalize.css": "^8.0.1",
-    "postcss": "^8.4.27",
-    "postcss-cli": "^11.0.0",
-    "postcss-scss": "^4.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "glob": "^13.0.0",
     "read-time-estimate": "^0.0.3",
-    "sass": "^1.69.5",
-    "stylelint": "^16.0.0",
-    "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
-    "stylelint-high-performance-animation": "^1.9.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.0.0",
-    "swr": "^2.3.6",
     "tiny-slider": "^2.9.4"
   },
   "browserslist": [
@@ -62,8 +42,6 @@
     "not dead"
   ],
   "devDependencies": {
-    "@biomejs/biome": "^2.4.14",
-    "hyphenopoly": "^6.0.0",
-    "typescript": "^5.9.3"
+    "@biomejs/biome": "^2.4.14"
   }
 }

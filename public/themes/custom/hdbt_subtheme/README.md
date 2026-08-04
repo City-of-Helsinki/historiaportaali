@@ -45,7 +45,7 @@ nvm use
 npm install
 ```
 
-**Why install parent theme?** The subtheme uses `@hdbt/theme-builder` and imports React components from the parent theme.
+**Why install parent theme?** The subtheme uses `@hdbt/theme-builder` and imports React components from the parent theme. It also *runs on* the parent theme's dependencies: React, hds-react, hds-design-tokens, jotai, swr, TypeScript, Sass, PostCSS and Stylelint are deliberately absent from the subtheme's `package.json` and are resolved from `themes/contrib/hdbt/node_modules` at build time. Don't add local copies of them — a second React in the subtheme gets bundled into the search apps alongside the parent theme's one and breaks them at runtime.
 
 ### Development Workflow
 

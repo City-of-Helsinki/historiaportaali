@@ -14,6 +14,11 @@
     font-weight: $font-weight-bold;
     margin: 0 0 $spacing;
 
+    &:focus,
+    &:active {
+      outline-color: $color-white;
+    }
+
     @include breakpoint($breakpoint-l) {
       @include font-size($fontsize-heading-m, $lineheight-s);
     }
@@ -43,10 +48,23 @@
 
   .map-lift__image {
     margin-bottom: $spacing;
+
+    a:focus,
+    a:active {
+      outline-color: $color-white;
+    }
   }
 
   .map-lift__link {
+    border: none;
+    box-shadow: none;
     width: 100%;
+
+    &:focus,
+    &:active{
+      outline: 3px solid $color-white;
+      outline-offset: 2px;
+    }
 
     @include breakpoint($breakpoint-s) {
       width: initial;

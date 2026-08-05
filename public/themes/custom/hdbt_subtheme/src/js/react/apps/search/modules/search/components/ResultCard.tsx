@@ -19,7 +19,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   ) : undefined;
 
   // Build custom metadata rows with icons
-  const customMetaRows: JSX.Element[] = [];
+  const customMetaRows: React.JSX.Element[] = [];
 
   // Format/Bundle type
   if (formats && formats.length > 0) {

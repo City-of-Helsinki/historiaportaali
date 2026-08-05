@@ -52,3 +52,9 @@ The school register (Koulurekisteri) search. Searches for schools in the
 Common components live under `search/common/`. Both apps use `ResultsWrapper`,
 `SortOptions`, `ErrorBoundary`, and `ResultsError`. KoRe passes its own result
 card and sort options into the shared wrapper.
+
+Both entry points also resolve their Elasticsearch URL through
+`search/common/helpers/getElasticUrl.ts`, which reads the
+`data-elasticsearch-url` attribute from the mount element but lets a
+development build override it via `ELASTIC_DEV_URL`
+(`npm run dev-with-remote-data`).

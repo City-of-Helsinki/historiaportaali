@@ -1,0 +1,403 @@
+.map-controls__control-button {
+  background: $color-black-80;
+  border: 0;
+  border-radius: 0;
+  color: $color-white;
+  cursor: pointer;
+  @include font-size(15px, 24px);
+
+  &:hover {
+    background: $color-black-90;
+  }
+
+  &:focus,
+  &:active {
+    outline: 3px solid $color-black;
+    outline-offset: 2px;
+  }
+
+  &.active {
+    background: $color-metro-dark;
+  }
+}
+
+.map-controls__top-container {
+  display: flex;
+  left: $spacing-double;
+  max-width: 90%;
+  position: absolute;
+  top: $spacing;
+  z-index: 401;
+  &.comparison-map {
+    bottom: $spacing;
+    top: auto;
+
+    @include breakpoint($breakpoint-m) {
+      bottom: auto;
+      top: $spacing;
+    }
+
+    @include breakpoint($breakpoint-l) {
+      top: 30px;
+    }
+  }
+
+  @include breakpoint($breakpoint-l) {
+    top: $spacing;
+  }
+
+  .comparison-enabled & {
+    @include breakpoint($breakpoint-m) {
+      left: $spacing;
+
+      &.main-map {
+        max-width: 45%;
+      }
+    }
+
+    @include breakpoint($breakpoint-l) {
+      left: 30px;
+    }
+
+    // Use mobile dropdowns when comparing maps.
+    .map-controls__mid-container {
+      &.mobile {
+        display: flex;
+      }
+
+      &:not(.mobile) {
+        display: none;
+      }
+    }
+  }
+
+  .map-controls__control-button {
+    padding: $spacing * .375 ($spacing * .75);
+
+    @include breakpoint($breakpoint-m) {
+      padding: $spacing-half $spacing;
+    }
+  }
+
+  .map-controls__select-row {
+    position: relative;
+  }
+
+  .map-controls__clear-btn {
+    background: $color-black-80;
+    border: 0;
+    color: $color-white;
+    cursor: pointer;
+    padding: $spacing-half;
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      background: $color-black-90;
+    }
+
+    &:not([hidden]) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hel-icon {
+      --icon-size: 1.25rem;
+    }
+  }
+
+  .map-controls__clear-btn[hidden] {
+    pointer-events: none;
+  }
+
+  .map-controls__mid-container {
+    margin-right: $spacing;
+
+    &.mobile {
+      display: flex;
+
+      @include breakpoint($breakpoint-m) {
+        display: none;
+      }
+    }
+
+    &:not(.mobile) {
+      display: none;
+
+      @include breakpoint($breakpoint-m) {
+        display: flex;
+      }
+    }
+  }
+
+  .select2-container {
+    width: 17rem !important;
+
+    .select2-selection--single {
+      background: $color-black-80;
+      color: $color-white;
+      @include font-size(15px, 24px);
+      position: relative;
+
+      &:hover {
+        background: $color-black-90;
+      }
+
+      &:focus,
+      &:active {
+        outline: 3px solid $color-black;
+        outline-offset: 2px;
+      }
+
+      span {
+        color: $color-white !important;
+      }
+
+      .select2-selection__clear {
+        display: none; /* Use .map-controls__clear-btn for keyboard (Tab) access */
+      }
+
+      .select2-selection__arrow {
+        background: $color-white;
+        height: 26px;
+        mask-image: url(../icons/angle-down.svg);
+        position: absolute;
+        right: $spacing-half;
+        top: 15px;
+        width: 26px;
+        -webkit-mask-image: url(../icons/angle-down.svg);
+
+        b {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .map-controls__map-layer {
+    align-items: center;
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-metro-dark;
+      border-radius: 10px;
+      border-top: 1px solid #333;
+    }
+
+    .map-controls__map-layer-item {
+      display: none;
+      position: relative;
+
+      &.active {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='24' height='24'/%3E %3Cpath fill='white' d='M16.5,24 L16.2787929,23.9956328 C13.34378,23.8795391 11,21.4634791 11,18.5 C11,15.5365209 13.34378,13.1204609 16.2787929,13.0043672 L16.5,13 L16.7732784,13.0067242 C18.0431499,13.0693776 19.233589,13.5683903 20.1999204,14.4417422 L20.422,14.653 L20.4210526,13 L22,13 L22,18 L17,18 L17,16.4210526 L19.299,16.421 L19.0723651,16.1265857 L18.9156533,15.9672102 C18.2708361,15.3515202 17.4146317,15 16.5,15 C14.5670034,15 13,16.5670034 13,18.5 C13,20.4329966 14.5670034,22 16.5,22 L16.6058825,21.9984281 L16.6058825,21.9984281 L16.7500024,21.9912088 L16.9499759,21.971343 L17.118356,21.9455928 L17.2213075,21.9255927 L17.3972515,21.883929 L17.5850289,21.8285631 L17.6959994,21.7905955 L17.8733374,21.7206279 L18.0690175,21.6298559 L18.1649577,21.5793864 L18.3374394,21.4794671 L18.3374394,21.4794671 L18.2260872,21.5458731 C18.3669611,21.4658472 18.5024167,21.3758927 18.6315119,21.2765307 L18.8060993,21.1329137 C19.229017,20.7621923 19.5618464,20.2912056 19.7674734,19.7570681 L21.6347628,20.4749725 C21.3907662,21.1089351 21.0327422,21.6862961 20.5858175,22.1819289 L20.3890873,22.3890873 L20.1633223,22.6025548 L20.1633223,22.6025548 L19.9501038,22.7836402 L19.9501038,22.7836402 L19.7949017,22.9043159 L19.7949017,22.9043159 L19.6184802,23.0311641 L19.6184802,23.0311641 L19.4441479,23.1464729 L19.4441479,23.1464729 L19.2063141,23.289208 L19.2063141,23.289208 L18.9788104,23.4110622 L18.9788104,23.4110622 L18.7397969,23.5247595 L18.7397969,23.5247595 L18.4974858,23.6260162 L18.4974858,23.6260162 L18.3538,23.6794869 L18.3538,23.6794869 L18.1096346,23.7606795 L18.1096346,23.7606795 L17.8371768,23.8360421 L17.8371768,23.8360421 L17.5225645,23.9048532 L17.5225645,23.9048532 L17.3735885,23.9310058 L17.3735885,23.9310058 L17.0542405,23.9723156 L17.0542405,23.9723156 L16.8756787,23.9873711 L16.8756787,23.9873711 L16.7212071,23.9956328 L16.7212071,23.9956328 L16.5,24 Z M17,2 C17.5522847,2 18,2.44771525 18,3 L18,4 L22,4 L22,11 L4,11 L4,19 L10,19 C10,19.5 10.2046135,20.3783843 10.5,21 L2,21 L2,4 L6,4 L6,3 C6,2.44771525 6.44771525,2 7,2 C7.55228475,2 8,2.44771525 8,3 L8,4 L16,4 L16,3 C16,2.44771525 16.4477153,2 17,2 Z M20,6 L4,6 L4,9 L20,9 L20,6 Z'/%3E %3C/g%3E %3C/svg%3E");
+        background-position: left 8px center;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        display: block;
+        padding-left: $spacing-double;
+      }
+
+      @include breakpoint($breakpoint-m) {
+        display: block;
+
+        &.active {
+          background-image: none;
+          padding-left: $spacing;
+        }
+      }
+
+      &:after {
+        background-color: $color-black-50;
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        height: 70%;
+        padding: 3px 0;
+        position: absolute;
+        right: 0;
+        top: 15%;
+        width: 1px;
+      }
+
+      &:last-child:after,
+      &.active:after {
+        display: none;
+      }
+    }
+
+    &.open {
+      .map-controls__map-layer-item {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.node-type--map_page {
+  .select2-container--default .select2-results > .select2-results__options {
+    border: 1px solid $color-black-50;
+    max-height: 600px;
+  }
+
+  .select2-results {
+    background: #FBD;
+    filter: grayscale(1) invert(1);
+  }
+
+  .select2-results__option {
+    padding-left: 12px;
+  }
+
+  // Group headers (disabled options)
+  .select2-results__option[aria-disabled=true] {
+    color: $color-black; // Inverted by parent filter
+    font-weight: bold;
+    padding-left: 6px;
+  }
+
+  .select2-results__option--selected {
+    background: black url(../icons/check.svg) no-repeat 8px center / 14px !important;
+    color: white;
+    font-weight: bold;
+    padding-left: 28px;
+  }
+
+  // Hover/keyboard highlight state
+  .select2-results__option----highlighted.select2-results__option--selectable  {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.map-controls__sidebar-container {
+  position: absolute;
+  right: 10px;
+  top: 200px;
+  z-index: 501;
+
+  .hel-icon {
+    --icon-size: 1.2rem;
+  }
+
+  @include breakpoint($breakpoint-m) {
+    right: 30px;
+    top: 250px;
+
+    .hel-icon {
+      --icon-size: 1.5rem;
+    }
+  }
+
+  .map-controls__control {
+    margin-bottom: $spacing-half;
+    width: 38px;
+
+    @include breakpoint($breakpoint-m) {
+      width: 50px;
+    }
+  }
+
+  .map-controls__control-button {
+    align-items: center;
+    display: flex;
+    height: 38px;
+    justify-content: center;
+    padding: 0;
+    width: 38px;
+
+    @include breakpoint($breakpoint-m) {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  #map-comparison-btn {
+    transform: translate(0, -170px) rotate(90deg);
+    transform-origin: bottom left;
+    width: 170px;
+
+    @include breakpoint($breakpoint-m) {
+      transform: translate(0, -180px) rotate(90deg);
+      width: 180px;
+    }
+
+    .hel-icon {
+      margin-right: 16px;
+    }
+
+    .comparison-enabled & {
+      background-color: $color-metro-dark;
+      color: $color-white;
+    }
+  }
+}
+
+#geolocation-denied-overlay {
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+
+  .info-box {
+    background: $color-white;
+    border-top: 6px solid $color-metro-dark;
+    cursor: default;
+    max-width: 400px;
+    padding: $spacing;
+
+    .info-header {
+      align-items: center;
+      display: flex;
+      margin-bottom: $spacing;
+    }
+
+    span.icon {
+      background: url('../icons/info-circle.svg') no-repeat left center;
+      background-size: 100%;
+      height: 22px;
+      margin-right: $spacing-half;
+      width: 22px;
+    }
+
+    h3 {
+      @include font-size(18px, 20px);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    p {
+      @include font-size(15px, 24px);
+      margin: 0;
+    }
+
+    .close-btn {
+      background: url('../icons/cross.svg') no-repeat center;
+      background-size: 22px;
+      cursor: pointer;
+      height: 22px;
+      margin-left: auto;
+      text-indent: -20000px;
+      width: 22px;
+    }
+  }
+}

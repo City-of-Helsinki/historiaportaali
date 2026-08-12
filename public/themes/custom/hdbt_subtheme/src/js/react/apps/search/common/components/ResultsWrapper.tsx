@@ -12,10 +12,10 @@ type ResultsWrapperProps<T = unknown> = {
   data?: estypes.SearchResponse<T>;
   error?: Error | string | null;
   isLoading: boolean;
-  resultItemCallBack: (item: estypes.SearchHit<T>) => JSX.Element | null;
+  resultItemCallBack: (item: estypes.SearchHit<T>) => React.JSX.Element | null;
   setPageIndex: (pageIndex: number) => void; // 0-based index
   shouldScroll?: boolean;
-  sortElement?: JSX.Element;
+  sortElement?: React.JSX.Element;
   itemsPerPage?: number;
 };
 

@@ -1,0 +1,73 @@
+#block-helhistmaplift {
+  background-color: $color-black-80;
+  color: $color-white;
+  margin: $spacing-double $spacing $spacing-double;
+  max-width: 960px;
+  padding-bottom: $spacing-double;
+  position: relative;
+
+  @include breakpoint($breakpoint-l) {
+    margin: $spacing-quadruple auto $spacing-double;
+  }
+
+  .map-lift__title {
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing;
+
+    &:focus,
+    &:active {
+      outline-color: $color-white;
+    }
+
+    @include breakpoint($breakpoint-l) {
+      @include font-size($fontsize-heading-m, $lineheight-s);
+    }
+  }
+
+  p {
+    margin: 0 0 $spacing;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .map-lift {
+    .map-lift__subtitle {
+      @extend h5;
+    }
+    .map-lift__title {
+      @extend h3;
+    }
+
+    .container {
+      padding-top: $spacing-double;
+    }
+  }
+
+  .map-lift__image {
+    margin-bottom: $spacing;
+
+    a:focus,
+    a:active {
+      outline-color: $color-white;
+    }
+  }
+
+  .map-lift__link {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+
+    &:focus,
+    &:active{
+      outline: 3px solid $color-white;
+      outline-offset: 2px;
+    }
+
+    @include breakpoint($breakpoint-s) {
+      width: initial;
+    }
+  }
+}

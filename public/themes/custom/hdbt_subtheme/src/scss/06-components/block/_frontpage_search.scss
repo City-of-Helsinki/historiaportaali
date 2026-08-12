@@ -1,0 +1,42 @@
+.frontpage-search {
+  background-color: $color-black-80;
+  color: $color-white;
+  margin: 0 $spacing $spacing-double;
+  max-width: 960px;
+  padding: $spacing-double 0;
+  position: relative;
+
+  @include breakpoint($breakpoint-l) {
+    margin: 0 auto $spacing-double;
+  }
+  
+  form {
+    label {
+      color: $color-white;
+    }
+
+    .hds-text-input__input-wrapper {
+      margin-bottom: $spacing;
+
+      input {
+        border: 0;
+      }
+    }
+
+    button[type="submit"] {
+      border: none;
+      box-shadow: none;
+      width: 100%;
+
+      &:focus,
+      &:active {
+        outline: 3px solid $color-white;
+        outline-offset: 2px;
+      }
+      
+      @include breakpoint($breakpoint-s) {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ErrorBoundary } from "../search/common/components/ErrorBoundary";
 import { KoreSearchContainer } from "./KoreSearchContainer";
 import ResultsError from "../search/common/components/ResultsError";
+import { getElasticUrl } from "../search/common/helpers/getElasticUrl";
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootElementId = "historia_kore_search";
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const elasticsearchUrl = rootElement.dataset.elasticsearchUrl?.trim();
+  const elasticsearchUrl = getElasticUrl(rootElement);
 
   if (!elasticsearchUrl) {
     console.error(
@@ -22,12 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  ReactDOM.render(
+  createRoot(rootElement).render(
     <React.StrictMode>
       <ErrorBoundary fallback={<ResultsError />}>
         <KoreSearchContainer elasticsearchUrl={elasticsearchUrl} />
       </ErrorBoundary>
     </React.StrictMode>,
-    rootElement,
   );
 });

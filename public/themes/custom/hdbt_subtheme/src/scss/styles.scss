@@ -5,15 +5,21 @@
 @use "sass:color";
 @use "sass:math";
 
-// Breakpoint helpers
+// @file
+// This file includes all imports
+
 @import 'breakpoint-sass/stylesheets/breakpoint';
+@import 'hdbt';
 
-// Historia.hel.fi specific
-@import 'library/index';
-@import 'layout/index';
-@import 'state/index';
-@import 'base/index';
-@import 'components/index';
+// This folder structure is based loosely on ITCSS
+@import '00-functions/_index';
+@import '01-variables/_index';
+@import '02-mixins/_index';
 
-// HDBT fixes and overrides
-@import '03_generic/index';
+/* Content is created after this point */
+@import '03-generic/_index';
+@import '04-elements/_index';
+@import '05-objects/_index';
+@import '06-components/_index';
+@import '07-utilities/_index';
+

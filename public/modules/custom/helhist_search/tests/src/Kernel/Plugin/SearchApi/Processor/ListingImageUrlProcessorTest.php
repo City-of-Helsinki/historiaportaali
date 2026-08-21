@@ -35,6 +35,7 @@ class ListingImageUrlProcessorTest extends ProcessorTestBase {
     'media',
     'image',
     'file',
+    'diff',
   ];
 
   /**

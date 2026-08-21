@@ -31,6 +31,7 @@ class ContentTypeProcessorTest extends ProcessorTestBase {
     'media',
     'image',
     'file',
+    'diff',
   ];
 
   /**

@@ -34,6 +34,7 @@ class KoreNamesYearsTest extends ProcessorTestBase {
     'paragraphs',
     'entity_reference_revisions',
     'file',
+    'diff',
   ];
 
   /**

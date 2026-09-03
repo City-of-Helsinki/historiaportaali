@@ -42,6 +42,7 @@ class KoreSearchBlockTest extends KernelTestBase {
     'paragraphs',
     'file',
     'options',
+    'diff',
   ];
 
   /**

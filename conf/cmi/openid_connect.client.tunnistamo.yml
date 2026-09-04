@@ -20,3 +20,4 @@ settings:
   client_roles: {  }
   loa_roles: {  }
   ad_roles: {  }
+  provider_slug: ''

@@ -12,6 +12,7 @@ plugin: tunnistamo
 settings:
   client_id: ''
   client_secret: ''
+  provider_slug: ''
   iss_allowed_domains: ''
   prompt: {  }
   is_production: 0
@@ -20,4 +21,3 @@ settings:
   client_roles: {  }
   loa_roles: {  }
   ad_roles: {  }
-  provider_slug: ''

@@ -12,23 +12,12 @@
     "dev-with-remote-data": "ELASTIC_DEV_URL=https://helhist-elastic-proxy.test.hel.ninja npm run dev",
     "build": "npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run postbuild",
     "postbuild": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && sed -i '' '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css || true",
-    "preinstall": "npx update-browserslist-db@latest",
     "postinstall": "npm --prefix ../../contrib/hdbt install --no-audit --progress=false --loglevel=silent",
     "lint:scss": "npx --prefix ../../contrib/hdbt/theme-builder postcss \"$INIT_CWD/src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
     "lint:js": "biome lint src/js/",
     "format:js": "biome format --write src/js/",
     "lint": "npm run lint:scss && npm run lint:js",
     "lint:fix": "npm run lint:scss && npm run format:js"
-  },
-  "@comment dependencies": [
-    "The following packages were updated manually.",
-    "Remove this section once the dependencies have been updated in their respective upstream packages.",
-    {
-      "minimatch": ">=10.2.1, dependency of hds-core (eslint)"
-    }
-  ],
-  "overrides": {
-    "minimatch": "^10.2.1"
   },
   "dependencies": {
     "@hdbt/theme-builder": "file:../../contrib/hdbt/theme-builder",
@@ -38,11 +27,10 @@
     "read-time-estimate": "^0.0.3",
     "tiny-slider": "^2.9.4"
   },
-  "browserslist": [
-    "last 3 major versions",
-    "not dead"
-  ],
   "devDependencies": {
     "@biomejs/biome": "^2.4.14"
+  },
+  "allowScripts": {
+    "@parcel/watcher": false
   }
 }

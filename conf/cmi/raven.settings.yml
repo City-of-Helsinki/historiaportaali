@@ -51,4 +51,3 @@ send_inp_spans: false
 trace_propagation_targets_backend: {  }
 trace_propagation_targets_frontend: {  }
 database_tracing_args: false
-enable_logs: true

@@ -1,1 +1,7 @@
 label: 'Marital status'
+category: Демографический
+options: |
+  Single: Не женат/не замужем
+  Married: Женат/замужем
+  Divorced: В разводе
+  Widowed: Вдовец/вдова

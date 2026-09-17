@@ -1,2 +1,5 @@
 label: Да/Нет
 category: Общий
+options: |
+  Yes: Да
+  No: Нет

@@ -1,1 +1,5 @@
 label: Sex
+category: Демографический
+options: |
+  Male: мужской
+  Female: женский

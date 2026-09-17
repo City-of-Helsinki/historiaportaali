@@ -1,2 +1,8 @@
 label: Размер
 category: Общий
+options: |
+  Extra Small: Очень маленький
+  Small: Маленький
+  Medium: Средний
+  Large: Большой
+  Extra Large: Очень большой

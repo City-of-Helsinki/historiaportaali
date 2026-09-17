@@ -1,1 +1,31 @@
 label: Пол
+category: Демографический
+options: |
+  Man: Мужчина
+  Woman: Женщина
+  Non-binary: Небинарный
+  Agender/Genderless: Агендер/Без гендера
+  Androgyne/Androgynous: Андрогин/Андрогинный
+  Aporagender: Апорагендер
+  Bigender: Бигендер
+  Demi-agender: Деми-агендер
+  Demi-boy: Деми-бой
+  Demi-fluid: Деми-флюид
+  Demi-girl: Деми-гёрл
+  Demi-gender: Деми-гендер
+  Demi-non-binary: Деми-небинарный
+  Genderqueer: Гендерквир
+  Genderflux: Гендерфлюкс
+  Genderfluid: Гендерфлюид
+  Gender-indifferent: Гендерно-безразличный
+  Gender-neutral: Гендерно-нейтральный
+  Graygender: Серый гендер
+  Intergender: Интергендер
+  Maverique: Маверик
+  Maxigender: Максигендер
+  Multigender/Polygender: Мультигендер/Полигендер
+  Neutrois: Нейтройс
+  Pangender/Omnigender: Пангендер/Омнигендер
+  Trigender: Тригендер
+  Two-spirit: Двухдушный
+  'Prefer Not to Answer': 'Предпочитаю не отвечать'

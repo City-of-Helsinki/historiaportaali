@@ -1,1 +1,8 @@
 label: Связь
+category: Демографический
+options: |
+  Parent: Родитель
+  'Significant Other': 'Партнёр'
+  Sibling: Брат или сестра
+  Child: Ребёнок
+  Friend: Друг

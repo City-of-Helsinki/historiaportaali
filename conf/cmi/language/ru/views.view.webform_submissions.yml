@@ -49,6 +49,7 @@ display:
     display_options:
       fields:
         webform_submission_bulk_form:
+          label: 'Массовая форма операций с отправлениями веб-формы'
           action_title: Действие
         sid:
           label: '#'
@@ -87,6 +88,7 @@ display:
     display_options:
       fields:
         webform_submission_bulk_form:
+          label: 'Массовая форма операций с отправлениями веб-формы'
           action_title: Действие
         sid:
           label: '#'

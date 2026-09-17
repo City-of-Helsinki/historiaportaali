@@ -1,0 +1,8 @@
+label: 'Статус занятости'
+category: Демографический
+options: |
+  'Full Time': 'Полная занятость'
+  'Part Time': 'Частичная занятость'
+  'Military': 'Военная служба'
+  Unemployed: Безработный
+  Retired: Пенсионер

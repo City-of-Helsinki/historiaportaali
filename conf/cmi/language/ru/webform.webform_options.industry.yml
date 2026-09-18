@@ -1,1 +1,42 @@
 label: Industry
+category: Демографический
+options: |
+  Accounting/Finance: Бухгалтерия/Финансы
+  Advertising/Public Relations: Реклама/Связи с общественностью
+  Aerospace/Aviation: Авиакосмическая отрасль/Авиация
+  Arts/Entertainment/Publishing: Искусство/Развлечения/Издательское дело
+  Automotive: Автомобильная промышленность
+  Banking/Mortgage: Банковское дело/Ипотека
+  Business Development: Развитие бизнеса
+  Business Opportunity: Деловые возможности
+  Clerical/Administrative: Канцелярская работа/Администрирование
+  Construction/Facilities: Строительство/Обслуживание зданий
+  Consumer Goods: Потребительские товары
+  Customer Service: Обслуживание клиентов
+  Education/Training: Образование/Обучение
+  Energy/Utilities: Энергетика/Коммунальные службы
+  Engineering: Инженерия
+  Government/Military: Государственная служба/Военная служба
+  Healthcare: Здравоохранение
+  Hospitality/Travel: Гостиничный бизнес/Туризм
+  Human Resources: Управление персоналом
+  Installation/Maintenance: Монтаж/Обслуживание
+  Insurance: Страхование
+  Internet: Интернет
+  Law Enforcement/Security: Правоохранительные органы/Охрана
+  Legal: Юриспруденция
+  Management/Executive: Менеджмент/Руководство
+  Manufacturing/Operations: Производство/Операции
+  Marketing: Маркетинг
+  Non-Profit/Volunteer: Некоммерческий сектор/Волонтёрство
+  Pharmaceutical/Biotech: Фармацевтика/Биотехнологии
+  Professional Services: Профессиональные услуги
+  Real Estate: Недвижимость
+  Restaurant/Food Service: Рестораны/Общественное питание
+  Retail: Розничная торговля
+  Sales: Продажи
+  Science/Research: Наука/Исследования
+  Skilled Labor: Квалифицированный труд
+  Technology: Технологии
+  Telecommunications: Телекоммуникации
+  Transportation/Logistics: Транспорт/Логистика

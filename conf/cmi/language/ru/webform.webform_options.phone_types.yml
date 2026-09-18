@@ -1,0 +1,6 @@
+label: 'Тип телефона'
+category: Демографический
+options: |
+  Home: Домашний
+  Office: Рабочий
+  Cell: Мобильный

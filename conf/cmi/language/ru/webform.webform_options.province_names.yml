@@ -1,0 +1,16 @@
+label: 'Названия провинций'
+category: Географический
+options: |
+  Alberta: Альберта
+  'British Columbia': 'Британская Колумбия'
+  Manitoba: Манитоба
+  'New Brunswick': 'Нью-Брансуик'
+  'Newfoundland and Labrador': 'Ньюфаундленд и Лабрадор'
+  'Nova Scotia': 'Новая Шотландия'
+  'Northwest Territories': 'Северо-Западные территории'
+  Nunavut: Нунавут
+  Ontario: Онтарио
+  'Prince Edward Island': 'Остров Принца Эдуарда'
+  Quebec: Квебек
+  Saskatchewan: Саскачеван
+  Yukon: Юкон

@@ -1,2 +1,10 @@
 label: Дни
 category: 'Дата и время'
+options: |
+  Sunday: воскресенье
+  Monday: понедельник
+  Tuesday: вторник
+  Wednesday: среда
+  Thursday: четверг
+  Friday: пятница
+  Saturday: суббота

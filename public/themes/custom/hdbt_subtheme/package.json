@@ -5,17 +5,20 @@
   "author": "Druid",
   "license": "MIT",
   "repository": "github:City-of-Helsinki/drupal-hel-platform",
+  "@comment scripts": [
+    "Every build, lint and format script below runs inside a disposable Node container via the hdbt sandbox script."
+  ],
   "scripts": {
-    "typecheck": "npx --prefix ../../contrib/hdbt tsc --noEmit",
+    "typecheck": "../../contrib/hdbt/tools/sandbox.sh tsc --noEmit",
     "typecheck:warn": "npm run typecheck || echo 'Warning: TypeScript errors found'",
-    "dev": "npm run typecheck:warn && node theme-builder.mjs --watch --dev",
-    "dev-with-remote-data": "ELASTIC_DEV_URL=https://helhist-elastic-proxy.test.hel.ninja npm run dev",
-    "build": "npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run postbuild",
-    "postbuild": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && sed -i '' '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css || true",
+    "dev": "../../contrib/hdbt/tools/sandbox.sh sh -c 'npm run typecheck:warn && node theme-builder.mjs --watch --dev'",
+    "dev-with-remote-data": "HDBT_ELASTIC_DEV_URL=https://helhist-elastic-proxy.test.hel.ninja npm run dev",
+    "build": "../../contrib/hdbt/tools/sandbox.sh sh -c 'npm run typecheck:warn && npm run lint && node theme-builder.mjs && npm run build:finalize'",
+    "build:finalize": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && if [ -f dist/css/tiny-slider/tiny-slider.css ]; then sed -i.bak '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css && rm -f dist/css/tiny-slider/tiny-slider.css.bak; fi",
     "postinstall": "npm --prefix ../../contrib/hdbt install --no-audit --progress=false --loglevel=silent",
-    "lint:scss": "npx --prefix ../../contrib/hdbt/theme-builder postcss \"$INIT_CWD/src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
-    "lint:js": "biome lint src/js/",
-    "format:js": "biome format --write src/js/",
+    "lint:scss": "../../contrib/hdbt/tools/sandbox.sh postcss \"src/scss/**/*.scss\" --syntax postcss-scss --use css-declaration-sorter --replace --no-map",
+    "lint:js": "../../contrib/hdbt/tools/sandbox.sh biome lint src/js/",
+    "format:js": "../../contrib/hdbt/tools/sandbox.sh biome format --write src/js/",
     "lint": "npm run lint:scss && npm run lint:js",
     "lint:fix": "npm run lint:scss && npm run format:js"
   },
@@ -32,5 +35,9 @@
   },
   "allowScripts": {
     "@parcel/watcher": false
+  },
+  "engines": {
+    "npm": ">=12.0.0",
+    "node": ">=24.0.0"
   }
 }

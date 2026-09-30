@@ -31,7 +31,9 @@ function helhist_search_theme() {
       'template' => 'header-search',
     ],
     'react_search' => [
-      'variables' => [],
+      'variables' => [
+        'ELASTIC_PROXY_URL' => '',
+      ],
       'template' => 'react-search',
     ],
   ];

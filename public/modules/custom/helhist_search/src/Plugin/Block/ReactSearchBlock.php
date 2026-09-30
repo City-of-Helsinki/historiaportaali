@@ -11,6 +11,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\helfi_api_base\Environment\ActiveServiceTrait;
+use Drupal\helfi_api_base\Environment\EnvironmentResolverInterface;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
 
@@ -26,6 +28,8 @@ use Drupal\node\NodeInterface;
 )]
 class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+  use ActiveServiceTrait;
+
   /**
    * Constructs a new ReactSearchBlock object.
    */
@@ -35,6 +39,7 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
     $plugin_definition,
     protected RouteMatchInterface $routeMatch,
     protected SearchPathResolver $searchPathResolver,
+    protected EnvironmentResolverInterface $environmentResolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -63,9 +68,15 @@ class ReactSearchBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build(): array {
     return [
       '#theme' => 'react_search',
+      '#ELASTIC_PROXY_URL' => $this->getPublicElasticProxy()?->getAddress() ?? '',
       '#attached' => [
         'library' => [
           'hdbt_subtheme/react-search-app',
+        ],
+      ],
+      '#cache' => [
+        'tags' => [
+          'config:helfi_api_base.environment_resolver.settings',
         ],
       ],
     ];

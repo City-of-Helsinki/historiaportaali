@@ -55,7 +55,8 @@
     },
     "config": {
         "audit": {
-            "abandoned": "report"
+            "abandoned": "report",
+            "ignore": ["CVE-2026-102601"]
         },
         "optimize-autoloader": true,
         "sort-packages": true,

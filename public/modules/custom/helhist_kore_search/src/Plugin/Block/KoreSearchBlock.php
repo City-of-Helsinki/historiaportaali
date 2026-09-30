@@ -10,8 +10,9 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Site\Settings;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\helfi_api_base\Environment\ActiveServiceTrait;
+use Drupal\helfi_api_base\Environment\EnvironmentResolverInterface;
 use Drupal\helhist_kore_search\KoreSearchOptionsProvider;
 use Drupal\helhist_search\SearchPathResolver;
 use Drupal\node\NodeInterface;
@@ -28,6 +29,8 @@ use Drupal\node\NodeInterface;
 )]
 class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+  use ActiveServiceTrait;
+
   /**
    * Constructs a new KoreSearchBlock object.
    */
@@ -38,6 +41,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
     protected RouteMatchInterface $routeMatch,
     protected SearchPathResolver $searchPathResolver,
     protected KoreSearchOptionsProvider $koreSearchOptions,
+    protected EnvironmentResolverInterface $environmentResolver,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -69,7 +73,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
     return [
       '#theme' => 'kore_react_search',
-      '#ELASTIC_PROXY_URL' => Settings::get('elasticsearch_proxy_url', ''),
+      '#ELASTIC_PROXY_URL' => $this->getPublicElasticProxy()?->getAddress() ?? '',
       '#attached' => [
         'library' => [
           'hdbt_subtheme/kore-search-app',
@@ -89,6 +93,7 @@ class KoreSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
           'config:field.storage.paragraph.field_kore_type',
           'config:field.storage.paragraph.field_kore_language',
           'config:helhist_search.settings',
+          'config:helfi_api_base.environment_resolver.settings',
         ],
       ],
     ];

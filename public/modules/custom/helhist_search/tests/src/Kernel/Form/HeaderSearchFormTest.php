@@ -23,6 +23,8 @@ class HeaderSearchFormTest extends KernelTestBase {
     'system',
     'user',
     'helhist_search',
+    'helfi_api_base',
+    'diff',
   ];
 
   /**

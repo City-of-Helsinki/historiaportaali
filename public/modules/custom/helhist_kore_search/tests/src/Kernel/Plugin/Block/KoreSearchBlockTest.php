@@ -7,9 +7,11 @@ namespace Drupal\Tests\helhist_kore_search\Kernel\Plugin\Block;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Site\Settings;
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\helfi_api_base\Environment\EnvironmentEnum;
+use Drupal\helfi_api_base\Environment\Project;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\Tests\helfi_api_base\Traits\EnvironmentResolverTrait;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use PHPUnit\Framework\Attributes\Group;
@@ -22,6 +24,8 @@ use PHPUnit\Framework\MockObject\MockObject;
 #[Group('helhist_kore_search')]
 #[RunTestsInSeparateProcesses]
 class KoreSearchBlockTest extends KernelTestBase {
+
+  use EnvironmentResolverTrait;
 
   /**
    * {@inheritdoc}
@@ -130,7 +134,7 @@ class KoreSearchBlockTest extends KernelTestBase {
    * Tests the block build output with configured fields and settings.
    */
   public function testBuild(): void {
-    new Settings(['elasticsearch_proxy_url' => 'https://elastic.example.com']);
+    $this->setActiveProject(Project::HISTORIA, EnvironmentEnum::Local);
 
     $this->installEntitySchema('paragraph');
 
@@ -162,7 +166,7 @@ class KoreSearchBlockTest extends KernelTestBase {
     $build = $block->build();
 
     $this->assertEquals('kore_react_search', $build['#theme']);
-    $this->assertEquals('https://elastic.example.com', $build['#ELASTIC_PROXY_URL']);
+    $this->assertEquals('https://elastic-proxy-historiaportaali.docker.so', $build['#ELASTIC_PROXY_URL']);
 
     $settings = $build['#attached']['drupalSettings']['koreSearch'];
     $this->assertEquals([

@@ -176,11 +176,6 @@ parameters:
 			path: public/modules/custom/helhist_article/src/ArticlePathAlias.php
 
 		-
-			message: "#^Function helhist_kore_search_preprocess_kore_react_search\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: public/modules/custom/helhist_kore_search/helhist_kore_search.module
-
-		-
 			message: "#^Function helhist_kore_search_theme\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: public/modules/custom/helhist_kore_search/helhist_kore_search.module
@@ -392,16 +387,6 @@ parameters:
 
 		-
 			message: "#^Function helhist_search_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
-			count: 1
-			path: public/modules/custom/helhist_search/helhist_search.module
-
-		-
-			message: "#^Function helhist_search_preprocess_react_search\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: public/modules/custom/helhist_search/helhist_search.module
-
-		-
-			message: "#^Function helhist_search_preprocess_react_search\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: public/modules/custom/helhist_search/helhist_search.module
 

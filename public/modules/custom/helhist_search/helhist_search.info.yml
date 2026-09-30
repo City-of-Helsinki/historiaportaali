@@ -5,4 +5,5 @@ core_version_requirement: ^10 || ^11
 package: 'Custom'
 dependencies:
   - csp:csp
+  - helfi_api_base:helfi_api_base
   - helfi_platform_config:helfi_platform_config

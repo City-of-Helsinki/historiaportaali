@@ -8,7 +8,6 @@
 declare(strict_types=1);
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_theme().
@@ -32,7 +31,9 @@ function helhist_search_theme() {
       'template' => 'header-search',
     ],
     'react_search' => [
-      'variables' => [],
+      'variables' => [
+        'ELASTIC_PROXY_URL' => '',
+      ],
       'template' => 'react-search',
     ],
   ];
@@ -48,11 +49,4 @@ function helhist_search_form_alter(&$form, FormStateInterface $form_state, $form
     $form['form_build_id']['#access'] = FALSE;
     $form['form_id']['#access'] = FALSE;
   }
-}
-
-/**
- * Prepares variables for the react search template.
- */
-function helhist_search_preprocess_react_search(array &$variables) {
-  $variables['ELASTIC_PROXY_URL'] = Settings::get('elasticsearch_proxy_url', '');
 }

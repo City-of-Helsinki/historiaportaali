@@ -63,4 +63,6 @@ drush search-api:index content_and_media
 
 React part located at the `hdbt_subtheme` directory.
 
-Connect to platta ES proxy by changing `ELASTIC_PROXY_URL` env var.
+The Elasticsearch proxy URL comes from the `PublicElasticProxy` service of the
+active environment in `helfi_api_base`'s environment resolver. Locally it is
+`https://elastic-proxy-historiaportaali.docker.so`.

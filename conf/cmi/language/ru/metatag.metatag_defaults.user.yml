@@ -1,3 +1,4 @@
 label: 'User profile tab'
 tags:
+  canonical_url: '[user:url]'
   title: '[user:display-name] | [site:name] | [site:page-title-suffix]'

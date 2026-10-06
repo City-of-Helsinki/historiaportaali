@@ -31,6 +31,7 @@ dependencies:
     - content_moderation
     - content_translation
     - entity_usage
+    - external_entities
     - file
     - filter
     - helfi_api_base
@@ -191,6 +192,7 @@ permissions:
   - 'view any unpublished map_page content'
   - 'view any unpublished page content'
   - 'view article revisions'
+  - 'view helfi_multisite_content external entity'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'

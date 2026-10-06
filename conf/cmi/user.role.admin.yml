@@ -35,6 +35,7 @@ dependencies:
     - content_translation
     - editoria11y
     - entity_usage
+    - external_entities
     - file
     - filter
     - helfi_api_base
@@ -270,6 +271,7 @@ permissions:
   - 'view any unpublished page content'
   - 'view article revisions'
   - 'view editoria11y checker'
+  - 'view helfi_multisite_content external entity'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view listing_page revisions'

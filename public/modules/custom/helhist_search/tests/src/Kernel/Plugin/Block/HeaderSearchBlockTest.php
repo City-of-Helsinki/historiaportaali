@@ -29,6 +29,8 @@ class HeaderSearchBlockTest extends KernelTestBase {
     'field',
     'text',
     'helhist_search',
+    'helfi_api_base',
+    'diff',
   ];
 
   /**
@@ -64,9 +66,8 @@ class HeaderSearchBlockTest extends KernelTestBase {
 
     $currentNode = NULL;
     $this->routeMatch->method('getParameter')
-      ->with('node')
-      ->willReturnCallback(function () use (&$currentNode) {
-        return $currentNode;
+      ->willReturnCallback(function (string $name) use (&$currentNode) {
+        return $name === 'node' ? $currentNode : NULL;
       });
 
     /** @var \Drupal\Core\Block\BlockManagerInterface $blockManager */

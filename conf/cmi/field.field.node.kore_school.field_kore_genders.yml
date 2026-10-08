@@ -127,9 +127,6 @@ settings:
       remote_video:
         weight: 75
         enabled: false
-      sidebar_text:
-        weight: 76
-        enabled: false
       social_media_link:
         weight: 77
         enabled: false

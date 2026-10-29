@@ -1,10 +1,6 @@
 declare global {
   const Drupal: {
-    t: (
-      text: string,
-      args?: Record<string, unknown>,
-      options?: { context?: string },
-    ) => string;
+    t: (text: string, args?: Record<string, unknown>, options?: { context?: string }) => string;
     formatPlural: (
       count: number,
       singular: string,
@@ -16,7 +12,7 @@ declare global {
 
   const drupalSettings: {
     path: {
-      currentLanguage: "fi" | "en" | "sv";
+      currentLanguage: 'fi' | 'en' | 'sv';
     };
     koreSearch?: {
       typeOptions?: Array<{ value: string; label: string }>;

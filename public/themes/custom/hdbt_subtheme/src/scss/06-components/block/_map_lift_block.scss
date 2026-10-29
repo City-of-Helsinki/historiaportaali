@@ -35,9 +35,12 @@
 
   .map-lift {
     .map-lift__subtitle {
+      // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
       @extend h5;
     }
+
     .map-lift__title {
+      // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
       @extend h3;
     }
 

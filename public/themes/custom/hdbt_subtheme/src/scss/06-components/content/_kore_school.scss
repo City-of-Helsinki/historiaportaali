@@ -1,152 +1,151 @@
-.page-type--kore-school {
-  .before-content .kore-school-header__container {
+$kore-icon-width: 22px;
+$kore-indent: $kore-icon-width + $spacing-half;
+
+.page-type--kore-school .before-content .kore-school-header__container {
+  @include breakpoint($breakpoint-m) {
+    padding-left: $spacing-double * 4;
+  }
+}
+
+.page-type--kore-school .node--type-kore-school.node--view-mode-full {
+  margin: 0 $spacing-double;
+  max-width: $content-width-max;
+
+  @include breakpoint($breakpoint-m) {
+    margin: 0 auto;
+  }
+
+  .kore--field-header {
+    align-items: baseline;
+    display: flex;
+    gap: $spacing-half;
+
+    .hel-icon,
+    .kore--field-header__spacer {
+      display: none;
+
+      @include breakpoint($breakpoint-m) {
+        display: block;
+        flex-shrink: 0;
+        width: $kore-icon-width;
+      }
+    }
+
+    .hel-icon {
+      @include breakpoint($breakpoint-m) {
+        transform: translateY(.2em);
+      }
+    }
+
     @include breakpoint($breakpoint-m) {
-      padding-left: $spacing-double * 4;
+      padding-right: $kore-indent;
+    }
+
+    .label {
+      @include font-size($fontsize-heading-m);
     }
   }
 
-  .node--type-kore-school.node--view-mode-full {
-    margin: 0 $spacing-double;
-    max-width: $content-width-max;
+  .kore--field {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    @include breakpoint($breakpoint-m) {
-      margin: 0 auto;
-    }
-
-    $kore-icon-width: 22px;
-    $kore-indent: $kore-icon-width + $spacing-half;
-
-    .kore--field-header {
-      align-items: baseline;
-      display: flex;
-      gap: $spacing-half;
-
-      .hel-icon,
-      .kore--field-header__spacer {
-        display: none;
-        @include breakpoint($breakpoint-m) {
-          display: block;
-          flex-shrink: 0;
-          width: $kore-icon-width;
-        }
-      }
-
-      .hel-icon {
-        @include breakpoint($breakpoint-m) {
-          transform: translateY(.2em);
-        }
-      }
+    &.kore--field-list {
+      padding: $spacing-half 0;
 
       @include breakpoint($breakpoint-m) {
-        padding-right: $kore-indent;
-      }
-
-      .label {
-        @include font-size($fontsize-heading-m);
+        padding: $spacing-half $kore-indent;
       }
     }
+  }
+}
 
-    .kore--field {
-      list-style: none;
-      margin: 0;
+.page-type--kore-school .node--type-kore-school.node--view-mode-full .kore--field .paragraph--type--kore {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-half;
+  margin: 0;
+  padding: $spacing-half 0;
+  position: relative;
+
+  &::after {
+    border-bottom: 1px solid $color-black-10;
+    content: '';
+    inset: auto 0 0;
+    position: absolute;
+  }
+
+  .kore--content {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 0;
+
+    .kore--address {
+      margin: 0 $spacing-quarter;
+      white-space: nowrap;
+    }
+
+    .kore--show-on-map {
+      margin-left: $spacing-quarter;
+    }
+
+    .kore--show-on-map .kore-address--link {
+      background: none;
+      border: none;
+      color: var(--hdbt-default-link-color);
+      cursor: pointer;
+      font: inherit;
       padding: 0;
+      text-decoration: underline;
 
-      &.kore--field-list {
-        padding: $spacing-half 0;
-
-        @include breakpoint($breakpoint-m) {
-          padding: $spacing-half $kore-indent;
-        }
-      }
-
-      .paragraph--type--kore {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: $spacing-half;
-        margin: 0;
-        padding: $spacing-half 0;
-        position: relative;
-
-        &::after {
-          border-bottom: 1px solid $color-black-10;
-          content: '';
-          inset: auto 0 0;
-          position: absolute;
-        }
-
-        .kore--content {
-          display: flex;
-          flex: 1;
-          flex-wrap: wrap;
-          min-width: 0;
-
-          .kore--address {
-            margin: 0 $spacing-quarter;
-            white-space: nowrap;
-          }
-
-          .kore--show-on-map {
-            margin-left: $spacing-quarter;
-
-            .kore-address--link {
-              background: none;
-              border: none;
-              color: var(--hdbt-default-link-color);
-              cursor: pointer;
-              font: inherit;
-              padding: 0;
-              text-decoration: underline;
-
-              &:hover {
-                text-decoration-thickness: 2px;
-              }
-            }
-          }
-        }
-
-        .kore--date {
-          color: $color-black-80;
-        }
-
-        &.paragraph--type--kore-archive .kore--archive-link {
-          flex-basis: 100%;
-          margin-top: $spacing-quarter;
-        }
+      &:hover {
+        text-decoration-thickness: 2px;
       }
     }
+  }
 
-    .kore--field-field-kore-photos {
-      display: grid;
-      gap: $spacing-double $spacing;
-      grid-template-columns: 1fr;
+  .kore--date {
+    color: $color-black-80;
+  }
 
-      @include breakpoint($breakpoint-m) {
-        grid-template-columns: 1fr 1fr;
-      }
+  &.paragraph--type--kore-archive .kore--archive-link {
+    flex-basis: 100%;
+    margin-top: $spacing-quarter;
+  }
+}
 
-      @include breakpoint($breakpoint-xl) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+.page-type--kore-school .node--type-kore-school.node--view-mode-full .kore--field-field-kore-photos {
+  display: grid;
+  gap: $spacing-double $spacing;
+  grid-template-columns: 1fr;
 
-      .kore--photo {
-        picture,
-        img {
-          display: block;
-          max-width: 100%;
-        }
+  @include breakpoint($breakpoint-m) {
+    grid-template-columns: 1fr 1fr;
+  }
 
-        img {
-          border-radius: 4px;
-          height: auto;
-          width: 100%;
-        }
+  @include breakpoint($breakpoint-xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-        p,
-        a {
-          margin: $spacing-half 0 0;
-        }
-      }
+  .kore--photo {
+    picture,
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    img {
+      border-radius: 4px;
+      height: auto;
+      width: 100%;
+    }
+
+    p,
+    a {
+      margin: $spacing-half 0 0;
     }
   }
 }

@@ -17,10 +17,10 @@
 
     .hds-text-input__input-wrapper {
       margin-bottom: $spacing;
+    }
 
-      input {
-        border: 0;
-      }
+    .hds-text-input__input-wrapper input {
+      border: 0;
     }
 
     button[type="submit"] {

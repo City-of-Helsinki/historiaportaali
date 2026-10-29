@@ -26,14 +26,14 @@
       @include breakpoint($breakpoint-m) {
         flex-direction: row;
       }
+    }
 
-      .content-card__image,
-      .content-card__content {
-        width: 100%;
+    .content-card__link .content-card__image,
+    .content-card__link .content-card__content {
+      width: 100%;
 
-        @include breakpoint($breakpoint-m) {
-          width: 50%;
-        }
+      @include breakpoint($breakpoint-m) {
+        width: 50%;
       }
     }
   }

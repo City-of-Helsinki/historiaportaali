@@ -10,7 +10,7 @@
             margin-bottom: $spacing-triple;
           }
 
-          @include breakpoint(0px $breakpoint-s) {
+          @include breakpoint(0 $breakpoint-s) {
             padding-top: $spacing;
           }
 

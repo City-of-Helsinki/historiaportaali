@@ -44,7 +44,7 @@
 
     &:hover {
       .media-video__play-btn {
-        box-shadow: 0 3px 2px 0px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 2px 0 rgb(0 0 0 / 30%);
         color: $color-black;
       }
     }
@@ -75,7 +75,7 @@
 }
 
 .columns__column > .video {
-  @include breakpoint(0px $breakpoint-s) {
+  @include breakpoint(0 $breakpoint-s) {
     padding-left: 0;
     padding-right: 0;
   }

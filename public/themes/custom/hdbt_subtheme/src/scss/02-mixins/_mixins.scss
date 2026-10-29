@@ -18,12 +18,12 @@
     // Check if line-height is in px.
     @if unit($line-height) == 'px' {
       line-height: ($line-height / $base-font-size) * 1rem;
-    }
-    @else {
+    } @else {
       // Check if line-height is in rem and handle the line-height.
       @if unit($line-height) == 'rem' {
         line-height: $line-height;
       }
+
       // The line-height is a multiplier.
       @else {
         $font-size-px: nounit($font-size);

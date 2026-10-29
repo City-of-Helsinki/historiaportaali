@@ -205,12 +205,12 @@ $arrow-container-height: 48px;
     display: none;
   }
 
-  button[data-controls=prev] {
+  button[data-controls="prev"] {
     background-image: url('../icons/angle-left.svg');
     left: $spacing-quarter;
   }
 
-  button[data-controls=next] {
+  button[data-controls="next"] {
     background-image: url('../icons/angle-right.svg');
     right: $spacing-quarter;
   }
@@ -219,7 +219,6 @@ $arrow-container-height: 48px;
 // Sidebar layout.
 .has-sidebar.enriched-content, // TODO: Clean up when unit sidebar block has been created.
 .has-sidebar .main-content {
-
   // Gallery arrows.
   .splide__arrows .splide__arrow {
     @include breakpoint($breakpoint-xl) {

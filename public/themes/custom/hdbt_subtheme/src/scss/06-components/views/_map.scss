@@ -68,11 +68,11 @@
       &.form-item-start-year,
       &.form-item-end-year {
         input[type="number"] {
-          -moz-appearance: textfield;
+          appearance: textfield;
 
           &::-webkit-inner-spin-button,
           &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
+            appearance: none;
             margin: 0;
           }
         }
@@ -137,8 +137,8 @@
 }
 
 .views--combined-map {
-
   $map-marker-red: #bd2f00;
+
   .map-container {
     position: relative;
     width: 100%;
@@ -265,6 +265,7 @@
   .leaflet-popup {
     .leaflet-popup-content-wrapper {
       min-width: 300px;
+
       .leaflet-popup-content {
         margin: -1px;
 

@@ -24,6 +24,7 @@
       .hel-icon,
       .kore--field-header__spacer {
         display: none;
+
         @include breakpoint($breakpoint-m) {
           display: block;
           flex-shrink: 0;

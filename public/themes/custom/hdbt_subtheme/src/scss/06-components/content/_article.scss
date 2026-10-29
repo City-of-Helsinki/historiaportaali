@@ -10,7 +10,7 @@
             margin-bottom: $spacing-triple;
           }
 
-          @include breakpoint(0px $breakpoint-s) {
+          @include breakpoint(0 $breakpoint-s) {
             padding-top: $spacing;
           }
 
@@ -52,7 +52,7 @@
 
     &.node--view-mode-before-content {
       .article-header__container {
-        @include breakpoint(0px $breakpoint-s) {
+        @include breakpoint(0 $breakpoint-s) {
           padding-top: $spacing;
         }
       }
@@ -85,7 +85,7 @@
       }
 
       .columns {
-        @include breakpoint(0px $breakpoint-s) {
+        @include breakpoint(0 $breakpoint-s) {
           margin-top: $spacing;
         }
       }
@@ -96,7 +96,7 @@
       display: flex;
       justify-content: center;
 
-      @include breakpoint(0px $breakpoint-s) {
+      @include breakpoint(0 $breakpoint-s) {
         padding-top: 0;
       }
 

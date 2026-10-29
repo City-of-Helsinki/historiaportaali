@@ -7,11 +7,9 @@
     border: none;
     border-radius: 0;
 
-    .select2-search--dropdown {
-      .select2-search__field {
-        font-size: 1.125em;
-        line-height: var(--input-height);
-      }
+    .select2-search--dropdown .select2-search__field {
+      font-size: 1.125em;
+      line-height: var(--input-height);
     }
   }
 

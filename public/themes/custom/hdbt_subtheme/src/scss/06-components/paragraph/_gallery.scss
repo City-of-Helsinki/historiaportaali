@@ -37,13 +37,9 @@ $arrow-container-height: 48px;
       max-width: 83%;
     }
 
-    .splide__list {
-      .splide__slide {
-        img {
-          height: auto;
-          width: 100%;
-        }
-      }
+    .splide__list .splide__slide img {
+      height: auto;
+      width: 100%;
     }
   }
 }
@@ -82,6 +78,7 @@ $arrow-container-height: 48px;
     height: 20px;
     margin: 10px 6px 0;
     padding: 0;
+    // stylelint-disable-next-line plugin/no-low-performance-animation-properties
     transition: all 0.2s ease-in-out;
     width: 20px;
 

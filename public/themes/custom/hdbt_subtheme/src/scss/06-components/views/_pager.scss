@@ -11,105 +11,105 @@
     list-style: none;
     margin: 1rem 0;
     text-align: center;
+  }
+}
 
-    .pager__item {
+.pager .pager__items .pager__item {
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  vertical-align: top;
+
+  .pager__link,
+  &.pager__item--current {
+    align-items: center;
+    background: var(--color-white); /* Make sure that the text is visible on dark background. */
+    background-color: transparent;
+    border-radius: 1rem; /* Pager size ÷ 2 */
+    box-sizing: border-box;
+    color: #545560;
+    color: var(--color--black-70);
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    line-height: 1;
+    min-width: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-decoration: none;
+  }
+
+  .pager__link:hover,
+  .pager__link:focus {
+    background: var(--color-black-70);
+    color: var(--color-white);
+  }
+
+  &.pager__item--ellipsis {
+    display: none;
+
+    @include breakpoint($breakpoint-m) {
+      display: initial;
+    }
+  }
+
+  &.pager__item--first .pager__link::before {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M11 17l-5-5 5-5M18 17l-5-5 5-5'/%3e%3c/svg%3e");
+  }
+
+  &.pager__item--previous .pager__link::before {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M15 18l-6-6 6-6'/%3e%3c/svg%3e");
+  }
+
+  &.pager__item--active .pager__link.is-active {
+    background: $color-bg-yellow;
+
+    &:hover,
+    &:focus {
+      background: var(--color-black-70);
+      color: var(--color-white);
+    }
+  }
+
+  &.pager__item--next .pager__link::after {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M9 18l6-6-6-6'/%3e%3c/svg%3e");
+  }
+
+  &.pager__item--last .pager__link::after {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M13 17l5-5-5-5M6 17l5-5-5-5'/%3e%3c/svg%3e");
+  }
+
+  &.pager__item--first .pager__link,
+  &.pager__item--previous .pager__link {
+    &::before {
+      background-color: var(--color-black-70);
+      content: "";
       display: inline-block;
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
-      vertical-align: top;
+      height: 1rem;
+      position: relative;
+      width: 1rem;
+    }
 
-      .pager__link,
-      &.pager__item--current {
-        align-items: center;
-        background: var(--color-white); /* Make sure that the text is visible on dark background. */
-        background-color: transparent;
-        border-radius: 1rem; /* Pager size ÷ 2 */
-        box-sizing: border-box;
-        color: #545560;
-        color: var(--color--black-70);
-        display: flex;
-        height: 2rem;
-        justify-content: center;
-        line-height: 1;
-        min-width: 2rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        text-decoration: none;
-      }
+    &:hover::before,
+    &:focus::before {
+      background-color: var(--color-white);
+    }
+  }
 
-      .pager__link:hover,
-      .pager__link:focus {
-        background: var(--color-black-70);
-        color: var(--color-white);
-      }
+  &.pager__item--next .pager__link,
+  &.pager__item--last .pager__link {
+    &::after {
+      background-color: var(--color-black-70);
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      position: relative;
+      width: 1rem;
+    }
 
-      &.pager__item--ellipsis {
-        display: none;
-
-        @include breakpoint($breakpoint-m) {
-          display: initial;
-        }
-      }
-
-      &.pager__item--first .pager__link::before {
-        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M11 17l-5-5 5-5M18 17l-5-5 5-5'/%3e%3c/svg%3e");
-      }
-
-      &.pager__item--previous .pager__link::before {
-        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M15 18l-6-6 6-6'/%3e%3c/svg%3e");
-      }
-
-      &.pager__item--active .pager__link.is-active {
-        background: $color-bg-yellow;
-
-        &:hover,
-        &:focus {
-          background: var(--color-black-70);
-          color: var(--color-white);
-        }
-      }
-
-      &.pager__item--next .pager__link::after {
-        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M9 18l6-6-6-6'/%3e%3c/svg%3e");
-      }
-
-      &.pager__item--last .pager__link::after {
-        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M13 17l5-5-5-5M6 17l5-5-5-5'/%3e%3c/svg%3e");
-      }
-
-      &.pager__item--first .pager__link,
-      &.pager__item--previous .pager__link {
-        &::before {
-          background-color: var(--color-black-70);
-          content: "";
-          display: inline-block;
-          height: 1rem;
-          position: relative;
-          width: 1rem;
-        }
-
-        &:hover::before,
-        &:focus::before {
-          background-color: var(--color-white);
-        }
-      }
-
-      &.pager__item--next .pager__link,
-      &.pager__item--last .pager__link {
-        &::after {
-          background-color: var(--color-black-70);
-          content: "";
-          display: inline-block;
-          height: 1rem;
-          position: relative;
-          width: 1rem;
-        }
-
-        &:hover::after,
-        &:focus::after {
-          background-color: var(--color-white);
-        }
-      }
+    &:hover::after,
+    &:focus::after {
+      background-color: var(--color-white);
     }
   }
 }

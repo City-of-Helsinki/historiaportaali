@@ -23,6 +23,7 @@
       margin: -25px 0 0 -25px;
       position: absolute;
       top: 50%;
+      // stylelint-disable-next-line plugin/no-low-performance-animation-properties
       transition: color 0.12s, box-shadow 0.12s;
       width: 50px;
       z-index: 2;
@@ -33,12 +34,13 @@
         width: 80px;
       }
 
-      .hel-icon {
-        --icon-size: 2rem;
+    }
 
-        @include breakpoint($breakpoint-m) {
-          --icon-size: 3rem;
-        }
+    .media-video__play-btn .hel-icon {
+      --icon-size: 2rem;
+
+      @include breakpoint($breakpoint-m) {
+        --icon-size: 3rem;
       }
     }
 

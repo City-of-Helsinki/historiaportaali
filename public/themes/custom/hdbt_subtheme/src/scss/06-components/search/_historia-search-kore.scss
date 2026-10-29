@@ -9,11 +9,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: $spacing $spacing-double;
+    }
 
-      .filter-group {
-        flex: 1 1 200px;
-        min-width: 0;
-      }
+    .kore-search__filters-row .filter-group {
+      flex: 1 1 200px;
+      min-width: 0;
     }
 
     .kore-search__dates-row {

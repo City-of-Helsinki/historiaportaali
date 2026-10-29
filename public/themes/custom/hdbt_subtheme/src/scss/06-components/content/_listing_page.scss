@@ -1,47 +1,37 @@
-.page-type--listing-page {
-  .before-content {
-    .node--type-listing-page {
-      &.node--view-mode-before-content {
-        .listing-page-header__container {
-          margin-bottom: $spacing-double;
-          padding-top: 0;
+.page-type--listing-page .before-content .node--type-listing-page.node--view-mode-before-content {
+  .listing-page-header__container {
+    margin-bottom: $spacing-double;
+    padding-top: 0;
 
-          @include breakpoint($breakpoint-m) {
-            margin-bottom: $spacing-triple;
-          }
+    @include breakpoint($breakpoint-m) {
+      margin-bottom: $spacing-triple;
+    }
 
-          @include breakpoint(0 $breakpoint-s) {
-            padding-top: $spacing;
-          }
+    @include breakpoint(0 $breakpoint-s) {
+      padding-top: $spacing;
+    }
 
-          > div {
-            max-width: $content-width-max;
+    > div {
+      max-width: $content-width-max;
 
-            @include breakpoint($breakpoint-m) {
-              padding-left: $spacing-triple * 2;
-            }
-          }
-        }
+      @include breakpoint($breakpoint-m) {
+        padding-left: $spacing-triple * 2;
       }
     }
   }
+}
 
-  .main-content {
-    margin-top: 0;
+.page-type--listing-page .main-content {
+  margin-top: 0;
 
-    .node--type-listing-page {
-      &.node--view-mode-full {
-        .listing-page__body {
-          @include font-size(18px, 24px);
-          font-weight: $font-weight-medium;
-          margin: $spacing-double 0 $spacing-triple 0;
-          max-width: $content-width-max;
+  .node--type-listing-page.node--view-mode-full .listing-page__body {
+    @include font-size(18px, 24px);
+    font-weight: $font-weight-medium;
+    margin: $spacing-double 0 $spacing-triple 0;
+    max-width: $content-width-max;
 
-          @include breakpoint($breakpoint-m) {
-            @include font-size(24px, 30px);
-          }
-        }
-      }
+    @include breakpoint($breakpoint-m) {
+      @include font-size(24px, 30px);
     }
   }
 }

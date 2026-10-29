@@ -34,16 +34,14 @@
       visibility: hidden;
     }
 
-    .nav-toggle__button[aria-expanded="true"] {
-      .nav-toggle__label--close {
-        display: flex;
-        visibility: visible;
-      }
+    .nav-toggle__button[aria-expanded="true"] .nav-toggle__label--close {
+      display: flex;
+      visibility: visible;
+    }
 
-      .nav-toggle__label--open {
-        display: none;
-        visibility: hidden;
-      }
+    .nav-toggle__button[aria-expanded="true"] .nav-toggle__label--open {
+      display: none;
+      visibility: hidden;
     }
   }
 
@@ -67,19 +65,19 @@
       display: flex;
       height: 100%;
       position: relative;
+    }
 
-      input {
-        background-image: none;
-      }
+    .hds-text-input__input-wrapper input {
+      background-image: none;
+    }
 
-      .hds-button {
-        height: 100%;
-        position: absolute;
-        right: 0;
+    .hds-text-input__input-wrapper .hds-button {
+      height: 100%;
+      position: absolute;
+      right: 0;
 
-        &:hover {
-          background-color: transparent;
-        }
+      &:hover {
+        background-color: transparent;
       }
     }
   }

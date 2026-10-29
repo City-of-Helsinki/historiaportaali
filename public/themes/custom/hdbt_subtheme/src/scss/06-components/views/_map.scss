@@ -1,144 +1,140 @@
-.node-type--map_page {
-  .exposed-filters {
-    background-color: $color-black-80;
-    margin-top: $spacing-double;
-    padding: $spacing;
+$map-marker-red: #bd2f00;
 
-    @include breakpoint($breakpoint-m) {
-      padding: $spacing-double;
+.node-type--map_page .exposed-filters {
+  background-color: $color-black-80;
+  margin-top: $spacing-double;
+  padding: $spacing;
+
+  @include breakpoint($breakpoint-m) {
+    padding: $spacing-double;
+  }
+
+  .exposed-filters__title {
+    color: $color-white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 $spacing;
+
+    &:focus,
+    &:active {
+      outline-color: $color-white;
+    }
+  }
+
+  .exposed-filters__row {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing $spacing-double;
+
+    @include breakpoint(0 $breakpoint-m) {
+      gap: $spacing;
+    }
+  }
+
+  .views-exposed-form {
+    display: contents;
+  }
+
+  .form-item {
+    margin-bottom: 0;
+    min-width: 0;
+    width: 100%;
+
+    .form-label,
+    .hds-text-input__label {
+      color: $color-white;
+      font-size: 1rem;
+      margin: 0 0 $spacing-quarter;
     }
 
-    .exposed-filters__title {
-      color: $color-white;
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin: 0 0 $spacing;
+    .form-select,
+    .hds-text-input {
+      background-color: $color-white;
+      border: 2px solid $color-black-20;
+      min-height: 2.75rem;
+    }
+
+    .hds-text-input__input {
+      border: none;
 
       &:focus,
       &:active {
-        outline-color: $color-white;
+        outline: 3px solid $color-white;
+        outline-offset: 2px;
       }
     }
 
-    .exposed-filters__row {
-      align-items: flex-end;
-      display: flex;
-      flex-wrap: wrap;
-      gap: $spacing $spacing-double;
-
-      @include breakpoint(0 $breakpoint-m) {
-        gap: $spacing;
-      }
-    }
-
-    .views-exposed-form {
-      display: contents;
-    }
-
-    .form-item {
-      margin-bottom: 0;
-      min-width: 0;
-      width: 100%;
-
-      .form-label,
-      .hds-text-input__label {
-        color: $color-white;
-        font-size: 1rem;
-        margin: 0 0 $spacing-quarter;
-      }
-
-      .form-select,
-      .hds-text-input {
-        background-color: $color-white;
-        border: 2px solid $color-black-20;
-        min-height: 2.75rem;
-      }
-
-      .hds-text-input__input {
-        border: none;
-
-        &:focus,
-        &:active {
-          outline: 3px solid $color-white;
-          outline-offset: 2px;
-        }
-      }
-
-      // Get rid of the increase/decrease arrows on number inputs.
+    @include breakpoint(0 $breakpoint-m) {
       &.form-item-start-year,
       &.form-item-end-year {
-        input[type="number"] {
-          appearance: textfield;
-
-          &::-webkit-inner-spin-button,
-          &::-webkit-outer-spin-button {
-            appearance: none;
-            margin: 0;
-          }
-        }
-      }
-
-      @include breakpoint(0 $breakpoint-m) {
-        &.form-item-start-year,
-        &.form-item-end-year {
-          flex: 1 1 calc((100% - #{$spacing}) / 2);
-          max-width: calc((100% - #{$spacing}) / 2);
-        }
-      }
-
-      @include breakpoint($breakpoint-m) {
-        flex: 0 1 auto;
-        width: auto;
-
-        &.form-item-start-year,
-        &.form-item-end-year {
-          flex: 0 0 8rem;
-        }
-
-        &.form-item-field-keywords-target-id {
-          flex: 1 1 12rem;
-          max-width: 20rem;
-          min-width: 12rem;
-        }
+        flex: 1 1 calc((100% - #{$spacing}) / 2);
+        max-width: calc((100% - #{$spacing}) / 2);
       }
     }
 
-    .form-actions {
-      display: flex;
-      gap: $spacing-half;
-      margin-bottom: 0;
+    @include breakpoint($breakpoint-m) {
+      flex: 0 1 auto;
+      width: auto;
+
+      &.form-item-start-year,
+      &.form-item-end-year {
+        flex: 0 0 8rem;
+      }
+
+      &.form-item-field-keywords-target-id {
+        flex: 1 1 12rem;
+        max-width: 20rem;
+        min-width: 12rem;
+      }
+    }
+  }
+
+  // Get rid of the increase/decrease arrows on number inputs.
+  .form-item.form-item-start-year input[type="number"],
+  .form-item.form-item-end-year input[type="number"] {
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: $spacing-half;
+    margin-bottom: 0;
+    width: 100%;
+
+    .hds-button,
+    input[type="submit"] {
+      border:none;
+      box-shadow: none;
+      min-height: 3.5rem;
       width: 100%;
+
+      &:focus,
+      &:active {
+        outline: 3px solid $color-white;
+        outline-offset: 2px;
+      }
+    }
+
+    @include breakpoint($breakpoint-m) {
+      flex: 0 0 auto;
+      width: auto;
 
       .hds-button,
       input[type="submit"] {
-        border:none;
-        box-shadow: none;
-        min-height: 3.5rem;
-        width: 100%;
-
-        &:focus,
-        &:active {
-          outline: 3px solid $color-white;
-          outline-offset: 2px;
-        }
-      }
-
-      @include breakpoint($breakpoint-m) {
-        flex: 0 0 auto;
         width: auto;
-
-        .hds-button,
-        input[type="submit"] {
-          width: auto;
-        }
       }
     }
   }
 }
 
 .views--combined-map {
-  $map-marker-red: #bd2f00;
-
   .map-container {
     position: relative;
     width: 100%;
@@ -167,146 +163,145 @@
       width: 50%;
     }
   }
+}
 
-  &.comparison-enabled {
-    .map-container {
-      @include breakpoint($breakpoint-m) {
-        display: flex;
-      }
-    }
-
-    .main-map-container {
-      height: 40vh !important;
-      width: 100%;
-
-      @include breakpoint($breakpoint-m) {
-        height: 70vh !important;
-        width: 50%;
-      }
-    }
-
-    .center-pointer {
-      display: block !important;
-      left: 50%;
-      margin: -16px 0 0 -16px;
-      pointer-events: none;
-      position: absolute;
-      top: 50%;
-      z-index: 401;
-
-      .hel-icon {
-        --icon-size: 1.5rem;
-        transform: rotate(45deg);
-      }
+.views--combined-map.comparison-enabled {
+  .map-container {
+    @include breakpoint($breakpoint-m) {
+      display: flex;
     }
   }
 
-  .leaflet-marker-icon {
-    transition: filter 0.08s;
+  .main-map-container {
+    height: 40vh !important;
+    width: 100%;
 
-    &.active,
-    &:hover {
-      filter: drop-shadow(0 0 6px rgba($map-marker-red, 0.6));
+    @include breakpoint($breakpoint-m) {
+      height: 70vh !important;
+      width: 50%;
     }
   }
 
-  .marker-cluster {
-    background-color: rgba($map-marker-red, 0.7);
+  .center-pointer {
+    display: block !important;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    z-index: 401;
+
+    .hel-icon {
+      --icon-size: 1.5rem;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.views--combined-map .leaflet-marker-icon {
+  transition: filter 0.08s;
+
+  &.active,
+  &:hover {
+    filter: drop-shadow(0 0 6px rgba($map-marker-red, 0.6));
+  }
+}
+
+.views--combined-map .marker-cluster {
+  background-color: rgba($map-marker-red, 0.7);
+  border-radius: 50%;
+  // stylelint-disable-next-line plugin/no-low-performance-animation-properties
+  transition: box-shadow 0.08s;
+
+  &:hover {
+    box-shadow: 0 0 6px rgba($map-marker-red, 0.6);
+  }
+
+  div {
+    background-color: rgba($map-marker-red, 0.55);
     border-radius: 50%;
-    transition: box-shadow 0.08s;
+  }
 
-    &:hover {
-      box-shadow: 0 0 6px rgba($map-marker-red, 0.6);
-    }
+  span {
+    color: $color-white;
+    font-family: $font-default;
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+  }
+
+  &.marker-cluster-medium {
+    height: 48px !important;
+    width: 48px !important;
 
     div {
-      background-color: rgba($map-marker-red, 0.55);
-      border-radius: 50%;
+      height: 36px !important;
+      line-height: 36px;
+      margin-left: 6px !important;
+      margin-top: 6px !important;
+      width: 36px !important;
+    }
+  }
+
+  &.marker-cluster-large {
+    height: 64px !important;
+    width: 64px !important;
+
+    div {
+      height: 48px !important;
+      line-height: 48px;
+      margin-left: 8px !important;
+      margin-top: 8px !important;
+      width: 48px !important;
     }
 
     span {
-      color: white;
-      font-family: $font-default;
       font-size: 16px;
-      font-weight: $font-weight-bold;
-    }
-
-    &.marker-cluster-medium {
-      height: 48px !important;
-      width: 48px !important;
-
-      div {
-        height: 36px !important;
-        line-height: 36px;
-        margin-left: 6px !important;
-        margin-top: 6px !important;
-        width: 36px !important;
-      }
-    }
-
-    &.marker-cluster-large {
-      height: 64px !important;
-      width: 64px !important;
-
-      div {
-        height: 48px !important;
-        line-height: 48px;
-        margin-left: 8px !important;
-        margin-top: 8px !important;
-        width: 48px !important;
-      }
-
-      span {
-        font-size: 16px;
-      }
     }
   }
+}
 
-  .leaflet-popup {
-    .leaflet-popup-content-wrapper {
-      min-width: 300px;
+.views--combined-map .leaflet-popup .leaflet-popup-content-wrapper {
+  min-width: 300px;
 
-      .leaflet-popup-content {
-        margin: -1px;
+  .leaflet-popup-content {
+    margin: -1px;
+  }
 
-        article.content-card--design-map-item {
-          background: transparent;
-          margin: 0;
-          min-width: 100%;
-          padding: 0;
+  .leaflet-popup-content article.content-card--design-map-item {
+    background: transparent;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
 
-          a {
-            border-radius: 12px;
-            color: var(--hdbt-default-link-color);
-            padding: 0;
-            width: 100%;
-
-            .content-card__content {
-              h3 {
-                font-size: 16px;
-                line-height: 1.2rem;
-              }
-            }
-          }
-        }
-      }
+    a {
+      border-radius: 12px;
+      color: var(--hdbt-default-link-color);
+      padding: 0;
+      width: 100%;
     }
 
-    .leaflet-popup-close-button {
-      background: $color-black-80;
-      border-radius: 50%;
-      color: $color-white;
-      height: 24px;
-      padding: 0;
-      right: -10px;
-      top: -10px;
-      width: 24px;
+    a .content-card__content h3 {
+      font-size: 16px;
+      line-height: 1.2rem;
+    }
+  }
+}
 
-      &:hover,
-      &:focus {
-        background: $color-black-70;
-        color: $color-white;
-      }
+.views--combined-map .leaflet-popup {
+  .leaflet-popup-close-button {
+    background: $color-black-80;
+    border-radius: 50%;
+    color: $color-white;
+    height: 24px;
+    padding: 0;
+    right: -10px;
+    top: -10px;
+    width: 24px;
+
+    &:hover,
+    &:focus {
+      background: $color-black-70;
+      color: $color-white;
     }
   }
 }

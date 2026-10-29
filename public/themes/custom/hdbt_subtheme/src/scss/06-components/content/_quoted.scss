@@ -1,5 +1,6 @@
 blockquote,
 .quote {
+  // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
   @extend .highlighted;
 
   .quote__text {

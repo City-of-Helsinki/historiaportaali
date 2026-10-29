@@ -1,185 +1,163 @@
-.page-type--article {
-  .before-content {
-    .node--type-article {
-      &.node--view-mode-before-content {
-        .article-header__container {
-          margin-bottom: $spacing-double;
-          padding-top: 0;
+.page-type--article .before-content .node--type-article.node--view-mode-before-content {
+  .article-header__container {
+    margin-bottom: $spacing-double;
+    padding-top: 0;
 
-          @include breakpoint($breakpoint-m) {
-            margin-bottom: $spacing-triple;
-          }
+    @include breakpoint($breakpoint-m) {
+      margin-bottom: $spacing-triple;
+    }
 
-          @include breakpoint(0 $breakpoint-s) {
-            padding-top: $spacing;
-          }
+    @include breakpoint(0 $breakpoint-s) {
+      padding-top: $spacing;
+    }
 
-          > div {
-            max-width: $content-width-max;
-        
-            @include breakpoint($breakpoint-m) {
-              padding-left: $spacing-triple * 2;
-            }
-          }
-        }
+    > div {
+      max-width: $content-width-max;
+
+      @include breakpoint($breakpoint-m) {
+        padding-left: $spacing-triple * 2;
       }
     }
   }
+}
 
+.page-type--article {
   .main-content {
     margin-top: 0;
   }
 
-  .node--type-article {
-    &.node--view-mode-content-top {
-      padding-bottom: 0;
+  .node--type-article.node--view-mode-content-top {
+    padding-bottom: 0;
+
+    @include breakpoint($breakpoint-s) {
+      padding-bottom: $spacing-double;
+    }
+
+    .divider {
+      background-color: $color-silver-medium-light;
+      height: 3px;
+      margin: $spacing auto 0;
+      max-width: 300px;
 
       @include breakpoint($breakpoint-s) {
-        padding-bottom: $spacing-double;
-      }
-
-      .divider {
-        background-color: $color-silver-medium-light;
-        height: 3px;
-        margin: $spacing auto 0;
-        max-width: 300px;
-
-        @include breakpoint($breakpoint-s) {
-          margin: $spacing-double auto 0;
-        }
+        margin: $spacing-double auto 0;
       }
     }
+  }
 
-    &.node--view-mode-before-content {
-      .article-header__container {
-        @include breakpoint(0 $breakpoint-s) {
-          padding-top: $spacing;
-        }
-      }
-    }
-
-    &.node--view-mode-full {
-      .article-header {
-        background-color: $color-white;
-        margin-bottom: $spacing-double;
-        padding: $spacing-double ($spacing * 1.5);
-
-        .article-header__container {
-          margin-bottom: 0;
-
-          .article__lead {
-            @include font-size(18px, 24px);
-            font-weight: $font-weight-medium;
-            margin-bottom: $spacing;
-            max-width: $content-width-max;
-
-            @include breakpoint($breakpoint-m) {
-              @include font-size(24px, 30px);
-            }
-          }
-
-          .article__date {
-            color: var(--color-black-60);
-          }
-        }
-      }
-
-      .columns {
-        @include breakpoint(0 $breakpoint-s) {
-          margin-top: $spacing;
-        }
-      }
-    }
-
-    .article-content-top__container {
-      color: $color-metro-dark;
-      display: flex;
-      justify-content: center;
-
+  .node--type-article.node--view-mode-before-content {
+    .article-header__container {
       @include breakpoint(0 $breakpoint-s) {
-        padding-top: 0;
+        padding-top: $spacing;
       }
+    }
+  }
+}
 
-      svg {
-        margin-right: 5px;
-        margin-top: -4px;
-        vertical-align: middle;
-      }
+.page-type--article .node--type-article.node--view-mode-full {
+  .article-header {
+    background-color: $color-white;
+    margin-bottom: $spacing-double;
+    padding: $spacing-double ($spacing * 1.5);
+  }
 
-      .format-wrapper {
-        align-items: center;
-        display: flex;
-      }
+  .article-header .article-header__container {
+    margin-bottom: 0;
 
-      .era {
-        margin-left: $spacing-double;
-      }
+    .article__lead {
+      @include font-size(18px, 24px);
+      font-weight: $font-weight-medium;
+      margin-bottom: $spacing;
+      max-width: $content-width-max;
 
-      .show-on-map {
-        margin-left: $spacing-double;
-
-        a {
-          color: $color-metro-dark;
-        }
+      @include breakpoint($breakpoint-m) {
+        @include font-size(24px, 30px);
       }
     }
 
-    .article__content {
-      padding: 0;
+    .article__date {
+      color: var(--color-black-60);
+    }
+  }
 
-      @include breakpoint($breakpoint-s) {
-        padding: 0 $spacing-double;
-      }
+  .columns {
+    @include breakpoint(0 $breakpoint-s) {
+      margin-top: $spacing;
+    }
+  }
+}
 
-      /* Normalize paragraph content Y-margins.
-       * After latest hdbt update, this seems
-       * unnecessary and breaks styling of
-       * component title + component.
-      .paragraph-content {
-        .text,
-        .image,
-        .gallery,
-        .list-of-links,
-        .content-cards,
-        .remote-video,
-        .timeline {
-          margin-top: 0;
-          margin-bottom: $spacing-triple;
-        }
-      }
-       */
+.page-type--article .node--type-article {
+  .article-content-top__container {
+    color: $color-metro-dark;
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint(0 $breakpoint-s) {
+      padding-top: 0;
     }
 
-    .component--taxonomies .component__content {
-      .article__keywords,
-      .article__phenomena,
-      .article__neighbourhoods {
-        background: transparent;
-        margin-top: $spacing-double;
-        padding: $spacing-half 0 $spacing-double;
+    svg {
+      margin-right: 5px;
+      margin-top: -4px;
+      vertical-align: middle;
+    }
 
-        @include breakpoint($breakpoint-m) {
-          margin-top: $spacing-quadruple;
-          padding: ($spacing-quadruple - $spacing-and-half) 0 $spacing-quadruple;
-        }
+    .format-wrapper {
+      align-items: center;
+      display: flex;
+    }
 
-        @include breakpoint($breakpoint-l) {
-          margin-top: $spacing-triple;
-        }
+    .era {
+      margin-left: $spacing-double;
+    }
 
-        .container {
-          max-width: $content-area-wrapper-width-max;
-        }
+    .show-on-map {
+      margin-left: $spacing-double;
+    }
 
-        &:last-child {
-          // Make the keywords element go "under" the footer.
-          margin-bottom: calc(-1 * (#{$footer-koro-height} + #{$spacing-triple}));
-          padding-bottom: $spacing-double + $footer-koro-height;
+    .show-on-map a {
+      color: $color-metro-dark;
+    }
+  }
 
-          @include breakpoint($breakpoint-l) {
-            padding-bottom: $spacing-quadruple + $footer-koro-height;
-          }
-        }
+  .article__content {
+    padding: 0;
+
+    @include breakpoint($breakpoint-s) {
+      padding: 0 $spacing-double;
+    }
+  }
+}
+
+.page-type--article .node--type-article .component--taxonomies .component__content {
+  .article__keywords,
+  .article__phenomena,
+  .article__neighbourhoods {
+    background: transparent;
+    margin-top: $spacing-double;
+    padding: $spacing-half 0 $spacing-double;
+
+    @include breakpoint($breakpoint-m) {
+      margin-top: $spacing-quadruple;
+      padding: ($spacing-quadruple - $spacing-and-half) 0 $spacing-quadruple;
+    }
+
+    @include breakpoint($breakpoint-l) {
+      margin-top: $spacing-triple;
+    }
+
+    .container {
+      max-width: $content-area-wrapper-width-max;
+    }
+
+    &:last-child {
+      // Make the keywords element go "under" the footer.
+      margin-bottom: calc(-1 * (#{$footer-koro-height} + #{$spacing-triple}));
+      padding-bottom: $spacing-double + $footer-koro-height;
+
+      @include breakpoint($breakpoint-l) {
+        padding-bottom: $spacing-quadruple + $footer-koro-height;
       }
     }
   }

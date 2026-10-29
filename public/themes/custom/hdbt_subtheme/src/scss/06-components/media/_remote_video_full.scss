@@ -1,68 +1,58 @@
-.media--type-remote-video {
-  &.media--view-mode-full {
-    .before-content {
-      .remote-video-header__container {
-        > div {
-          max-width: $content-width-max;
-  
-          @include breakpoint($breakpoint-m) {
-            padding-left: $spacing-triple * 2;
-          }
-        }
-      }
+.media--type-remote-video.media--view-mode-full {
+  .before-content .remote-video-header__container > div {
+    max-width: $content-width-max;
+
+    @include breakpoint($breakpoint-m) {
+      padding-left: $spacing-triple * 2;
+    }
+  }
+
+  .main-content {
+    margin-top: $spacing;
+
+    @include breakpoint($breakpoint-s) {
+      margin-top: $spacing-double;
     }
 
-    .main-content {
-      margin-top: $spacing;
+    @include breakpoint($breakpoint-m) {
+      margin-top: $spacing-quadruple;
+    }
 
-      @include breakpoint($breakpoint-s) {
-        margin-top: $spacing-double;
-      }
+    .label {
+      @include font-size(18px, 30px);
+      color: $color-black-90;
+      font-weight: $font-weight-medium;
+      margin: 0 $spacing-quarter $spacing-half;
 
       @include breakpoint($breakpoint-m) {
-        margin-top: $spacing-quadruple;
+        @include font-size(24px, 30px);
+        margin: 0 $spacing-quarter $spacing;
       }
+    }
+  }
 
-      .label {
-        @include font-size(18px, 30px);
-        color: $color-black-90;
-        font-weight: $font-weight-medium;
-        margin: 0 $spacing-quarter $spacing-half;
+  .main-content .components:nth-child(1) .component {
+    max-width: unset;
+  }
 
-        @include breakpoint($breakpoint-m) {
-          @include font-size(24px, 30px);
-          margin: 0 $spacing-quarter $spacing;
-        }
-      }
+  .main-content .components:nth-child(1) .component .component__content .media__usage {
+    h2 {
+      margin-left: 0;
+    }
 
-      .components:nth-child(1) {
-        .component {
-          max-width: unset;
+    .content-card--design-listing-item {
+      height: 100%;
+      margin: 0;
+      min-width: 100%;
+      padding: 0;
+    }
+  }
 
-          .component__content {
-            .media__usage {
-              h2 {
-                margin-left: 0;
-              }
+  .main-content .components:nth-child(2) {
+    margin-top: $spacing-double;
 
-              .content-card--design-listing-item {
-                height: 100%;
-                margin: 0;
-                min-width: 100%;
-                padding: 0;
-              }
-            }
-          }
-        }
-      }
-
-      .components:nth-child(2) {
-        margin-top: $spacing-double;
-
-        .component {
-          max-width: unset;
-        }
-      }
+    .component {
+      max-width: unset;
     }
   }
 }

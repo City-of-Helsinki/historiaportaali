@@ -24,6 +24,7 @@
 
     .filter-group {
       min-width: 0;
+
       @include breakpoint($breakpoint-m) {
         &:not(:first-child) {
           margin-top: 0;
@@ -31,21 +32,21 @@
       }
     }
 
+    .filter-group--dates .date-filter-inputs {
+      display: flex;
+      gap: $spacing;
+
+      @include breakpoint(0 $breakpoint-s) {
+        flex-direction: column;
+      }
+    }
+
+    .filter-group--dates .date-filter-inputs > * {
+      flex: 0 1 170px;
+    }
+
     .filter-group--dates {
       max-width: fit-content;
-
-      .date-filter-inputs {
-        display: flex;
-        gap: $spacing;
-
-        > * {
-          flex: 0 1 170px;
-        }
-
-        @include breakpoint(0 $breakpoint-s) {
-          flex-direction: column;
-        }
-      }
 
       @include breakpoint(0 $breakpoint-m) {
         max-width: 100%;
@@ -127,6 +128,7 @@
 
 .historia-search__pagination {
   margin-top: $spacing-double;
+
   // Reset any inherited list styles that interfere with HDS Pagination
   nav[class*="pagination"] {
     ul,

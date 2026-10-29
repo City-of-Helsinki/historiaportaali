@@ -1,32 +1,25 @@
-import type React from "react";
-import { useAtomValue, useSetAtom } from "jotai";
-import { useState, useEffect, useRef } from "react";
+import { Button, ButtonPresetTheme, ButtonVariant, IconCross, Search, Select } from 'hds-react';
+import { useAtomValue, useSetAtom } from 'jotai';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
-  Search,
-  Button,
-  ButtonVariant,
-  ButtonPresetTheme,
-  Select,
-  IconCross,
-} from "hds-react";
-import { YearRangeInput } from "./YearRangeInput";
-import type { Facet } from "../types/Content";
-import {
-  keywordsAtom,
-  setKeywordsAtom,
-  startYearAtom,
-  setStartYearAtom,
   endYearAtom,
-  setEndYearAtom,
-  typeFilterAtom,
-  setTypeFilterAtom,
-  languageFilterAtom,
-  setLanguageFilterAtom,
-  submitFiltersAtom,
-  resetFormAtom,
   facetsAtom,
   isLoadingFacetsAtom,
-} from "../store";
+  keywordsAtom,
+  languageFilterAtom,
+  resetFormAtom,
+  setEndYearAtom,
+  setKeywordsAtom,
+  setLanguageFilterAtom,
+  setStartYearAtom,
+  setTypeFilterAtom,
+  startYearAtom,
+  submitFiltersAtom,
+  typeFilterAtom,
+} from '../store';
+import type { Facet } from '../types/Content';
+import { YearRangeInput } from './YearRangeInput';
 
 // TODO: read the possible minimum year from index, though 1550 is anyways the year Helsinki was established so this might be fine.
 const YEAR_MIN = 1550;
@@ -34,18 +27,18 @@ const YEAR_MAX = new Date().getFullYear();
 
 const searchProps = {
   texts: {
-    label: Drupal.t("Search", {}, { context: "Kore search" }),
-    searchPlaceholder: Drupal.t("School name...", {}, { context: "Kore search" }),
-    searchClearButtonAriaLabel: Drupal.t("Clear search", {}, { context: "Kore search" }),
-    searchButtonAriaLabel: Drupal.t("Search", {}, { context: "Kore search" }),
+    label: Drupal.t('Search', {}, { context: 'Kore search' }),
+    searchPlaceholder: Drupal.t('School name...', {}, { context: 'Kore search' }),
+    searchClearButtonAriaLabel: Drupal.t('Clear search', {}, { context: 'Kore search' }),
+    searchButtonAriaLabel: Drupal.t('Search', {}, { context: 'Kore search' }),
   },
-  className: "search-input",
+  className: 'search-input',
 };
 
 export const KoreSearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
   const loading = useAtomValue(isLoadingFacetsAtom);
-  const language = drupalSettings?.path?.currentLanguage || "fi";
+  const language = drupalSettings?.path?.currentLanguage || 'fi';
   const typeOptions = drupalSettings?.koreSearch?.typeOptions ?? [];
   const languageOptions = drupalSettings?.koreSearch?.languageOptions ?? [];
   const keywords = useAtomValue(keywordsAtom);
@@ -61,13 +54,13 @@ export const KoreSearchForm: React.FC = () => {
   const submitFilters = useSetAtom(submitFiltersAtom);
   const resetForm = useSetAtom(resetFormAtom);
   const [searchResetKey, setSearchResetKey] = useState(0);
-  const keywordValue = Array.isArray(keywords) ? keywords.join(" ") : keywords;
+  const keywordValue = Array.isArray(keywords) ? keywords.join(' ') : keywords;
   const hasKeywordInteractionRef = useRef(false);
 
-  const [filterAnnouncement, setFilterAnnouncement] = useState("");
+  const [filterAnnouncement, setFilterAnnouncement] = useState('');
   useEffect(() => {
     if (!loading && filterAnnouncement) {
-      const id = setTimeout(() => setFilterAnnouncement(""), 500);
+      const id = setTimeout(() => setFilterAnnouncement(''), 500);
       return () => clearTimeout(id);
     }
   }, [loading, filterAnnouncement]);
@@ -78,19 +71,12 @@ export const KoreSearchForm: React.FC = () => {
   };
 
   const asString = (value: string | string[] | undefined): string =>
-    Array.isArray(value) ? value[0] || "" : value || "";
+    Array.isArray(value) ? value[0] || '' : value || '';
 
-  const searchingAnnouncement = Drupal.t(
-    "Searching...",
-    {},
-    { context: "Kore search" },
-  );
+  const searchingAnnouncement = Drupal.t('Searching...', {}, { context: 'Kore search' });
 
-  const handleInputChange = (
-    value: string | string[],
-    updateState: (v: string) => void,
-  ) => {
-    const str = typeof value === "string" ? value : (value ?? []).join(" ");
+  const handleInputChange = (value: string | string[], updateState: (v: string) => void) => {
+    const str = typeof value === 'string' ? value : (value ?? []).join(' ');
     updateState(str);
   };
 
@@ -98,19 +84,15 @@ export const KoreSearchForm: React.FC = () => {
     const nextValue = e.target.value;
 
     // HDS Search may emit an empty change during initialization.
-    if (
-      !hasKeywordInteractionRef.current &&
-      keywordValue.trim() !== "" &&
-      nextValue.trim() === ""
-    ) {
+    if (!hasKeywordInteractionRef.current && keywordValue.trim() !== '' && nextValue.trim() === '') {
       return;
     }
 
     hasKeywordInteractionRef.current = true;
     setKeywords(nextValue);
 
-    if (nextValue.trim() === "" && keywordValue.trim() !== "") {
-      submitFilters({ q: "" });
+    if (nextValue.trim() === '' && keywordValue.trim() !== '') {
+      submitFilters({ q: '' });
       setFilterAnnouncement(searchingAnnouncement);
     }
   };
@@ -121,22 +103,12 @@ export const KoreSearchForm: React.FC = () => {
     setSearchResetKey((current) => current + 1);
   };
 
-  const koreTypeFacet = facets?.find((f) => f.name === "kore_type");
-  const koreLanguageFacet = facets?.find((f) => f.name === "kore_language");
+  const koreTypeFacet = facets?.find((f) => f.name === 'kore_type');
+  const koreLanguageFacet = facets?.find((f) => f.name === 'kore_language');
 
-  const hasActiveFilters = !!(
-    keywords ||
-    startYear ||
-    endYear ||
-    typeFilter ||
-    languageFilter
-  );
+  const hasActiveFilters = !!(keywords || startYear || endYear || typeFilter || languageFilter);
 
-  const handleFacetSubmit = (
-    value: string,
-    urlKey: "type" | "language",
-    announcement: string,
-  ) => {
+  const handleFacetSubmit = (value: string, urlKey: 'type' | 'language', announcement: string) => {
     submitFilters({ [urlKey]: value });
     setFilterAnnouncement(announcement);
   };
@@ -165,12 +137,9 @@ export const KoreSearchForm: React.FC = () => {
     const options =
       allOptions.length > 0
         ? [...allOptions]
-        : (facet?.values.map((v) => ({ value: v.filter, label: v.filter })) ??
-          []);
+        : (facet?.values.map((v) => ({ value: v.filter, label: v.filter })) ?? []);
     const optionsWithSelection =
-      value && !options.some((o) => o.value === value)
-        ? [{ value, label: value }, ...options]
-        : options;
+      value && !options.some((o) => o.value === value) ? [{ value, label: value }, ...options] : options;
 
     return (
       <div className={wrapperClass}>
@@ -182,7 +151,7 @@ export const KoreSearchForm: React.FC = () => {
           multiSelect={false}
           onChange={(selectedOptions) => {
             const selected = selectedOptions?.[0];
-            const newValue = selected?.value ?? "";
+            const newValue = selected?.value ?? '';
             onChange(newValue);
             onSubmit?.(newValue);
           }}
@@ -194,12 +163,12 @@ export const KoreSearchForm: React.FC = () => {
   };
 
   return (
-    <div className="historia-search__form kore-search__form">
-      <output className="visually-hidden" aria-live="polite" aria-atomic="true">
+    <div className='historia-search__form kore-search__form'>
+      <output className='visually-hidden' aria-live='polite' aria-atomic='true'>
         {filterAnnouncement}
       </output>
       <form onSubmit={handleSubmit}>
-        <div className="react-search-keyword">
+        <div className='react-search-keyword'>
           <Search
             key={searchResetKey}
             {...searchProps}
@@ -212,85 +181,63 @@ export const KoreSearchForm: React.FC = () => {
           />
         </div>
 
-        <h2 className="visually-hidden">
-          {Drupal.t("Filter results", {}, { context: "Kore search" })}
-        </h2>
+        <h2 className='visually-hidden'>{Drupal.t('Filter results', {}, { context: 'Kore search' })}</h2>
 
-        <div className="react-search-filters kore-search__filters">
-          <div className="kore-search__filters-row">
+        <div className='react-search-filters kore-search__filters'>
+          <div className='kore-search__filters-row'>
             {renderFacetSelect({
               facet: koreTypeFacet,
               allOptions: typeOptions,
-              wrapperClass: "filter-group filter-group--kore-type",
-              id: "kore-type-select",
-              label: Drupal.t("School type", {}, { context: "Kore search" }),
-              placeholder: Drupal.t(
-                "Select school type",
-                {},
-                { context: "Kore search" },
-              ),
-              value: typeFilter || "",
+              wrapperClass: 'filter-group filter-group--kore-type',
+              id: 'kore-type-select',
+              label: Drupal.t('School type', {}, { context: 'Kore search' }),
+              placeholder: Drupal.t('Select school type', {}, { context: 'Kore search' }),
+              value: typeFilter || '',
               onChange: (v) => setTypeFilter(v),
-              onSubmit: (v) =>
-                handleFacetSubmit(v, "type", searchingAnnouncement),
+              onSubmit: (v) => handleFacetSubmit(v, 'type', searchingAnnouncement),
             })}
 
             {renderFacetSelect({
               facet: koreLanguageFacet,
               allOptions: languageOptions,
-              wrapperClass: "filter-group filter-group--kore-language",
-              id: "kore-language-select",
-              label: Drupal.t("Language", {}, { context: "Kore search" }),
-              placeholder: Drupal.t(
-                "Select language",
-                {},
-                { context: "Kore search" },
-              ),
-              value: languageFilter || "",
+              wrapperClass: 'filter-group filter-group--kore-language',
+              id: 'kore-language-select',
+              label: Drupal.t('Language', {}, { context: 'Kore search' }),
+              placeholder: Drupal.t('Select language', {}, { context: 'Kore search' }),
+              value: languageFilter || '',
               onChange: (v) => setLanguageFilter(v),
-              onSubmit: (v) =>
-                handleFacetSubmit(v, "language", searchingAnnouncement),
+              onSubmit: (v) => handleFacetSubmit(v, 'language', searchingAnnouncement),
             })}
           </div>
 
-          <div className="filter-group filter-group--dates kore-search__dates-row">
-            <div className="date-filter-inputs">
+          <div className='filter-group filter-group--dates kore-search__dates-row'>
+            <div className='date-filter-inputs'>
               <YearRangeInput
-                id="kore-start-year"
-                label={Drupal.t("Beginning at", {}, { context: "Kore search" })}
+                id='kore-start-year'
+                label={Drupal.t('Beginning at', {}, { context: 'Kore search' })}
                 value={asString(startYear)}
-                onChange={(v) =>
-                  handleInputChange(v, setStartYear)
-                }
+                onChange={(v) => handleInputChange(v, setStartYear)}
                 onSliderRelease={() => {
                   submitFilters();
                   setFilterAnnouncement(searchingAnnouncement);
                 }}
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} ${YEAR_MIN}`}
-                clearButtonAriaLabel={Drupal.t(
-                  "Clear beginning at",
-                  {},
-                  { context: "Kore search" },
-                )}
+                placeholder={`${Drupal.t('e.g.', {}, { context: 'Search' })} ${YEAR_MIN}`}
+                clearButtonAriaLabel={Drupal.t('Clear beginning at', {}, { context: 'Kore search' })}
                 minYear={YEAR_MIN}
                 maxYear={YEAR_MAX}
                 disabled={loading}
               />
               <YearRangeInput
-                id="kore-end-year"
-                label={Drupal.t("Ending at", {}, { context: "Kore search" })}
+                id='kore-end-year'
+                label={Drupal.t('Ending at', {}, { context: 'Kore search' })}
                 value={asString(endYear)}
                 onChange={(v) => handleInputChange(v, setEndYear)}
                 onSliderRelease={() => {
                   submitFilters();
                   setFilterAnnouncement(searchingAnnouncement);
                 }}
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} ${YEAR_MAX}`}
-                clearButtonAriaLabel={Drupal.t(
-                  "Clear ending at",
-                  {},
-                  { context: "Kore search" },
-                )}
+                placeholder={`${Drupal.t('e.g.', {}, { context: 'Search' })} ${YEAR_MAX}`}
+                clearButtonAriaLabel={Drupal.t('Clear ending at', {}, { context: 'Kore search' })}
                 minYear={YEAR_MIN}
                 maxYear={YEAR_MAX}
                 disabled={loading}
@@ -298,25 +245,21 @@ export const KoreSearchForm: React.FC = () => {
             </div>
           </div>
 
-          <div className="form-actions">
-            <Button
-              type="submit"
-              disabled={loading}
-              theme={ButtonPresetTheme.Black}
-            >
+          <div className='form-actions'>
+            <Button type='submit' disabled={loading} theme={ButtonPresetTheme.Black}>
               {loading
-                ? Drupal.t("Searching...", {}, { context: "Kore search" })
-                : Drupal.t("Search", {}, { context: "Kore search" })}
+                ? Drupal.t('Searching...', {}, { context: 'Kore search' })
+                : Drupal.t('Search', {}, { context: 'Kore search' })}
             </Button>
             {hasActiveFilters && (
               <Button
-                type="button"
+                type='button'
                 onClick={handleReset}
                 variant={ButtonVariant.Supplementary}
                 theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}
               >
-                {Drupal.t("Clear", {}, { context: "Kore search" })}
+                {Drupal.t('Clear', {}, { context: 'Kore search' })}
               </Button>
             )}
           </div>

@@ -1,27 +1,11 @@
-import type { estypes } from "@elastic/elasticsearch";
-import { useAtomValue, useSetAtom } from "jotai";
-import { useAtomCallback } from "jotai/utils";
-import { useCallback, useEffect, useMemo } from "react";
-import useSWR from "swr";
-import { ResultsWrapper } from "../../search/common/components/ResultsWrapper";
-import { SortOptions } from "../../search/common/components/SortOptions";
-import { KoreResultCard } from "../components/KoreResultCard";
-import {
-  getPageAtom,
-  initializedAtom,
-  searchFiltersAtom,
-  setPageAtom,
-  facetsAtom,
-  isLoadingFacetsAtom,
-  urlAtom,
-  urlUpdateAtom,
-} from "../store";
-import type {
-  KoreItem,
-  KoreNameEntry,
-  SearchFilters,
-  Facet,
-} from "../types/Content";
+import type { estypes } from '@elastic/elasticsearch';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { useAtomCallback } from 'jotai/utils';
+import { useCallback, useEffect, useMemo } from 'react';
+import useSWR from 'swr';
+import { ResultsWrapper } from '../../search/common/components/ResultsWrapper';
+import { SortOptions } from '../../search/common/components/SortOptions';
+import { KoreResultCard } from '../components/KoreResultCard';
 import {
   FACET_AGG_SIZE,
   FACET_CONFIG,
@@ -30,7 +14,18 @@ import {
   KEYWORD_SEARCH_FIELDS,
   SORT_FIELD_MAP,
   YEAR_RANGE_FIELDS,
-} from "../constants";
+} from '../constants';
+import {
+  facetsAtom,
+  getPageAtom,
+  initializedAtom,
+  isLoadingFacetsAtom,
+  searchFiltersAtom,
+  setPageAtom,
+  urlAtom,
+  urlUpdateAtom,
+} from '../store';
+import type { Facet, KoreItem, KoreNameEntry, SearchFilters } from '../types/Content';
 
 interface KoreResultsContainerProps {
   url: string;
@@ -79,9 +74,9 @@ const keywordMatch = (query: string) => ({
   multi_match: {
     query,
     fields: [...KEYWORD_SEARCH_FIELDS],
-    type: "best_fields",
-    operator: "and",
-    fuzziness: "AUTO",
+    type: 'best_fields',
+    operator: 'and',
+    fuzziness: 'AUTO',
   },
 });
 
@@ -120,19 +115,13 @@ const buildQueryString = ({
   const keywords = filters.keywords.trim();
   const langFilter = { term: { [languageField]: languageValue } };
   const yearFilterList = yearFilters(filters);
-  const resolvedFacetFields = Object.fromEntries(
-    FACET_CONFIG.map((f) => [
-      f.key,
-      f.field,
-    ]),
-  ) as Record<(typeof FACET_CONFIG)[number]["key"], string>;
+  const resolvedFacetFields = Object.fromEntries(FACET_CONFIG.map((f) => [f.key, f.field])) as Record<
+    (typeof FACET_CONFIG)[number]['key'],
+    string
+  >;
 
   // Facet aggs: keyword + year only (type/language excluded so counts are independent)
-  const facetBaseFilter: unknown[] = [
-    langFilter,
-    ...(keywords ? [keywordMatch(keywords)] : []),
-    ...yearFilterList,
-  ];
+  const facetBaseFilter: unknown[] = [langFilter, ...(keywords ? [keywordMatch(keywords)] : []), ...yearFilterList];
 
   const facetTermFilters: unknown[] = [];
   for (const facet of FACET_CONFIG) {
@@ -170,14 +159,14 @@ const buildQueryString = ({
       },
     },
     sort: (() => {
-      const order = (filters.sort_order || "ASC").toLowerCase();
-      if (filters.sort === "year") {
+      const order = (filters.sort_order || 'ASC').toLowerCase();
+      if (filters.sort === 'year') {
         return [{ [SORT_FIELD_MAP.year]: { order } }];
       }
-      if (filters.sort === "name") {
+      if (filters.sort === 'name') {
         return [{ [SORT_FIELD_MAP.name]: { order } }];
       }
-      return [{ [SORT_FIELD_MAP.name]: { order: "asc" } }];
+      return [{ [SORT_FIELD_MAP.name]: { order: 'asc' } }];
     })(),
   };
 
@@ -215,19 +204,17 @@ const toKoreItem = (hit: estypes.SearchHit<SearchSource>): KoreItem => {
   const kore_name_entries = parseKoreNameEntries(s.kore_name_entries);
   return {
     nid: s.nid?.[0],
-    title: s.title?.[0] || "Untitled",
+    title: s.title?.[0] || 'Untitled',
     kore_name_entries: kore_name_entries.length ? kore_name_entries : undefined,
     kore_type: s.kore_type,
     kore_language: s.kore_language,
     start_year: starts.length ? Math.min(...starts) : undefined,
     end_year: ends.length ? Math.max(...ends) : undefined,
-    url: s.url?.[0] || "#",
+    url: s.url?.[0] || '#',
   };
 };
 
-const mapAggregationsToFacets = (
-  aggregations: Aggregations | undefined,
-): Facet[] => {
+const mapAggregationsToFacets = (aggregations: Aggregations | undefined): Facet[] => {
   const allFacets = aggregations?.all_facets;
   if (!allFacets) return [];
 
@@ -248,16 +235,14 @@ export const KoreResultsContainer = ({
   const filters = useAtomValue(searchFiltersAtom);
   const currentPageIndex = useAtomValue(getPageAtom);
   const setPageIndex = useSetAtom(setPageAtom);
-  const readInitialized = useAtomCallback(
-    useCallback((get) => get(initializedAtom), []),
-  );
+  const readInitialized = useAtomCallback(useCallback((get) => get(initializedAtom), []));
   const setInitialized = useSetAtom(initializedAtom);
   const setFacets = useSetAtom(facetsAtom);
   const setIsLoadingFacets = useSetAtom(isLoadingFacetsAtom);
 
   const offset = currentPageIndex * itemsPerPage;
-  const languageField = "search_api_language";
-  const languageValue = drupalSettings?.path?.currentLanguage || "fi";
+  const languageField = 'search_api_language';
+  const languageValue = drupalSettings?.path?.currentLanguage || 'fi';
 
   const queryString = useMemo(
     () =>
@@ -274,18 +259,14 @@ export const KoreResultsContainer = ({
   const fetcher = useCallback(
     (key: string) =>
       fetch(`${url}/${indexName}/_search`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: key,
       }).then((res) => res.json()),
     [indexName, url],
   );
 
-  const { data, error, isLoading, isValidating } = useSWR(
-    queryString,
-    fetcher,
-    { revalidateOnFocus: false },
-  );
+  const { data, error, isLoading, isValidating } = useSWR(queryString, fetcher, { revalidateOnFocus: false });
 
   useEffect(() => {
     setIsLoadingFacets(isLoading);
@@ -317,12 +298,7 @@ export const KoreResultsContainer = ({
       isLoading={isLoading}
       shouldScroll={readInitialized()}
       sortElement={
-        <SortOptions
-          urlAtom={urlAtom}
-          urlUpdateAtom={urlUpdateAtom}
-          options={["name", "year"]}
-          context="Search"
-        />
+        <SortOptions urlAtom={urlAtom} urlUpdateAtom={urlUpdateAtom} options={['name', 'year']} context='Search' />
       }
     />
   );

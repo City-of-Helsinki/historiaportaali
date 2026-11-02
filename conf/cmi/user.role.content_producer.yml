@@ -35,6 +35,7 @@ dependencies:
     - file
     - filter
     - helfi_api_base
+    - helfi_users
     - locale
     - media
     - menu_link_content
@@ -182,6 +183,7 @@ permissions:
   - 'update media'
   - 'use articles_editorial_workflow transition create_new_draft'
   - 'use articles_editorial_workflow transition submit_for_review'
+  - 'use favorites'
   - 'use text format full_html'
   - 'use text format minimal'
   - 'view all media revisions'

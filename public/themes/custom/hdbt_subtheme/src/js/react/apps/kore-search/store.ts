@@ -1,6 +1,6 @@
-import { atom } from "jotai";
-import type URLParams from "./types/URLParams";
-import type { SearchFilters, Facet } from "./types/Content";
+import { atom } from 'jotai';
+import type { Facet, SearchFilters } from './types/Content';
+import type URLParams from './types/URLParams';
 
 const getParams = (searchParams: URLSearchParams) => {
   const params: Record<string, string> = {};
@@ -20,12 +20,10 @@ const getParams = (searchParams: URLSearchParams) => {
   return params;
 };
 
-export const urlAtom = atom<URLParams>(
-  getParams(new URLSearchParams(window.location.search)),
-);
+export const urlAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
 
 export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
-  values.page = values.page || "1";
+  values.page = values.page || '1';
   set(urlAtom, values);
   set(stagedFiltersAtom, values);
 
@@ -35,7 +33,7 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   for (const key in values) {
     const value = values[key as keyof URLParams];
 
-    if (key === "page" && value === "1") {
+    if (key === 'page' && value === '1') {
       continue;
     }
 
@@ -47,7 +45,7 @@ export const urlUpdateAtom = atom(null, (_get, set, values: URLParams) => {
   }
 
   newUrl.search = newParams.toString();
-  window.history.pushState({}, "", newUrl);
+  window.history.pushState({}, '', newUrl);
 });
 
 export const getPageAtom = atom((get) => {
@@ -61,64 +59,54 @@ export const setPageAtom = atom(null, (get, set, pageIndex: number) => {
   set(urlUpdateAtom, { ...url, page: urlPage.toString() });
 });
 
-export const stagedFiltersAtom = atom<URLParams>(
-  getParams(new URLSearchParams(window.location.search)),
-);
+export const stagedFiltersAtom = atom<URLParams>(getParams(new URLSearchParams(window.location.search)));
 
 // Submit staged filters using latest atom value, with optional overrides.
-export const submitFiltersAtom = atom(
-  null,
-  (get, set, overrides?: Partial<URLParams>) => {
-    const merged = { ...get(stagedFiltersAtom), ...(overrides || {}) };
-    const { page, ...filtersWithoutPage } = merged;
-    set(urlUpdateAtom, { ...filtersWithoutPage, page: "1" });
-  },
-);
+export const submitFiltersAtom = atom(null, (get, set, overrides?: Partial<URLParams>) => {
+  const merged = { ...get(stagedFiltersAtom), ...(overrides || {}) };
+  const { page, ...filtersWithoutPage } = merged;
+  set(urlUpdateAtom, { ...filtersWithoutPage, page: '1' });
+});
 
 const createStringFieldAtom = (field: keyof URLParams) => {
-  const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || "");
+  const getAtom = atom((get) => get(stagedFiltersAtom)?.[field] || '');
   const setAtom = atom(null, (get, set, value: string) => {
     set(stagedFiltersAtom, { ...get(stagedFiltersAtom), [field]: value });
   });
   return { getAtom, setAtom };
 };
 
-const keywords = createStringFieldAtom("q");
+const keywords = createStringFieldAtom('q');
 export const keywordsAtom = keywords.getAtom;
 export const setKeywordsAtom = keywords.setAtom;
 
-const startYear = createStringFieldAtom("startYear");
+const startYear = createStringFieldAtom('startYear');
 export const startYearAtom = startYear.getAtom;
 export const setStartYearAtom = startYear.setAtom;
 
-const endYear = createStringFieldAtom("endYear");
+const endYear = createStringFieldAtom('endYear');
 export const endYearAtom = endYear.getAtom;
 export const setEndYearAtom = endYear.setAtom;
 
-const typeFilter = createStringFieldAtom("type");
+const typeFilter = createStringFieldAtom('type');
 export const typeFilterAtom = typeFilter.getAtom;
 export const setTypeFilterAtom = typeFilter.setAtom;
 
-const languageFilter = createStringFieldAtom("language");
+const languageFilter = createStringFieldAtom('language');
 export const languageFilterAtom = languageFilter.getAtom;
 export const setLanguageFilterAtom = languageFilter.setAtom;
 
 export const searchFiltersAtom = atom<SearchFilters>((get) => {
   const params = get(urlAtom);
   return {
-    keywords: params.q || "",
+    keywords: params.q || '',
     startYear:
-      params.startYear !== undefined && params.startYear !== ""
-        ? Number.parseInt(params.startYear, 10)
-        : undefined,
-    endYear:
-      params.endYear !== undefined && params.endYear !== ""
-        ? Number.parseInt(params.endYear, 10)
-        : undefined,
+      params.startYear !== undefined && params.startYear !== '' ? Number.parseInt(params.startYear, 10) : undefined,
+    endYear: params.endYear !== undefined && params.endYear !== '' ? Number.parseInt(params.endYear, 10) : undefined,
     kore_type: params.type || undefined,
     kore_language: params.language || undefined,
-    sort: params.sort || "relevance",
-    sort_order: params.sort_order || "ASC",
+    sort: params.sort || 'relevance',
+    sort_order: params.sort_order || 'ASC',
   };
 });
 

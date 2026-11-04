@@ -1,5 +1,5 @@
 // Color variables from HDS.
-@import "hds-design-tokens/lib/color/all.scss";
+@import "hds-design-tokens/lib/color/all";
 
 :root {
   --hdbt-default-link-color: var(--color-black-90);
@@ -51,10 +51,9 @@
   --hdbt-button-highlight-color--suomenlinna: var(--color-white);
 
   // Custom color variables.
-  --color-black-90-hover: #000; // darken(var(--color-black-90), 10%);
+  --color-black-90-hover: #000000; // darken(var(--color-black-90), 10%);
   --color-metro-dark-hover: #8a2200; // darken(var(--color-metro-dark), 10%);
-  --placeholder-color: #666;
-
+  --placeholder-color: #666666;
   --hdbt-color-metro--primary: #fd4f00;
   --hdbt-color-metro--secondary: #fff0f7;
   --hdbt-color-metro--accent: #c2a251;
@@ -66,8 +65,6 @@
 }
 
 $body-bg-color: $color-white;
-
 $color-sand: #FAF9F7;
 $color-bg-yellow: #FFE977;
-
 $text-color-gray: #767575;

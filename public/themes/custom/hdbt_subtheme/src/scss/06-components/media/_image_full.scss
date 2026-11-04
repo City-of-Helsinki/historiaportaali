@@ -1,117 +1,104 @@
-.media--type-image {
-  &.media--view-mode-full {
-    .before-content {
-      .image-header__container {
-        > div {
-          max-width: $content-width-max;
-  
-          @include breakpoint($breakpoint-m) {
-            padding-left: $spacing-triple * 2;
-          }
-        }
-      }
+.media--type-image.media--view-mode-full {
+  .before-content .image-header__container > div {
+    max-width: $content-width-max;
+
+    @include breakpoint($breakpoint-m) {
+      padding-left: $spacing-triple * 2;
+    }
+  }
+
+  .main-content {
+    margin-top: $spacing;
+
+    @include breakpoint($breakpoint-s) {
+      margin-top: $spacing-double;
     }
 
-    .main-content {
-      margin-top: $spacing;
+    @include breakpoint($breakpoint-m) {
+      margin-top: $spacing-quadruple;
+    }
 
-      @include breakpoint($breakpoint-s) {
-        margin-top: $spacing-double;
-      }
+    .label {
+      @include font-size(18px, 30px);
+      color: $color-black-90;
+      font-weight: $font-weight-medium;
+      margin: 0 $spacing-quarter $spacing-half;
 
       @include breakpoint($breakpoint-m) {
-        margin-top: $spacing-quadruple;
-      }
-
-      .label {
-        @include font-size(18px, 30px);
-        color: $color-black-90;
-        font-weight: $font-weight-medium;
-        margin: 0 $spacing-quarter $spacing-half;
-
-        @include breakpoint($breakpoint-m) {
-          @include font-size(24px, 30px);
-          margin: 0 $spacing-quarter $spacing;
-        }
-      }
-
-      .components:nth-child(1) {
-        .component {
-          max-width: unset;
-
-          .component__content {
-            .image__media_image {
-              img {
-                height: auto;
-                width: 100%;
-              }
-            }
-
-            .image__geolocation {
-              .leaflet-container {
-                // Disable map drag/zoomability
-                z-index: -999;
-
-                .leaflet-control-container,
-                .map-controls__top-container {
-                  display: none;
-                }
-              }
-            }
-
-            .image__map_link {
-              background-color: $color-gold-light;
-              color: $color-metro-dark;
-              font-weight: $font-weight-bold;
-              padding: $spacing-double;
-
-              @include breakpoint($breakpoint-m) {
-                margin: (-$spacing-double) $spacing-double $spacing-triple (-$spacing-double);
-              }
-
-              & + .media__usage {
-                margin-top: $spacing-double;
-              }
-
-              svg {
-                margin-right: 5px;
-                margin-top: -3px;
-                vertical-align: middle;
-              }
-
-              a {
-                color: $color-metro-dark;
-              }
-            }
-
-            .media__usage {
-              h2 {
-                margin-left: 0;
-              }
-              .content-card--design-listing-item {
-                height: 100%;
-                margin: 0;
-                min-width: 100%;
-                padding: 0;
-              }
-            }
-          }
-        }
-      }
-
-      .components:nth-child(2) {
-        margin-top: $spacing-double;
-
-        .component {
-          max-width: unset;
-
-          .component__content {
-            .image__finna_id {
-              margin-bottom: $spacing-double;
-            }
-          }
-        }
+        @include font-size(24px, 30px);
+        margin: 0 $spacing-quarter $spacing;
       }
     }
+  }
+
+  .main-content .components:nth-child(1) .component {
+    max-width: unset;
+  }
+}
+
+.media--type-image.media--view-mode-full .main-content .components:nth-child(1) .component .component__content {
+  .image__media_image img {
+    height: auto;
+    width: 100%;
+  }
+
+  .image__geolocation .leaflet-container {
+    // Disable map drag/zoomability
+    z-index: -999;
+
+    .leaflet-control-container,
+    .map-controls__top-container {
+      display: none;
+    }
+  }
+
+  .image__map_link {
+    background-color: $color-gold-light;
+    color: $color-metro-dark;
+    font-weight: $font-weight-bold;
+    padding: $spacing-double;
+
+    @include breakpoint($breakpoint-m) {
+      margin: (-$spacing-double) $spacing-double $spacing-triple (-$spacing-double);
+    }
+
+    & + .media__usage {
+      margin-top: $spacing-double;
+    }
+
+    svg {
+      margin-right: 5px;
+      margin-top: -3px;
+      vertical-align: middle;
+    }
+
+    a {
+      color: $color-metro-dark;
+    }
+  }
+
+  .media__usage {
+    h2 {
+      margin-left: 0;
+    }
+
+    .content-card--design-listing-item {
+      height: 100%;
+      margin: 0;
+      min-width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+.media--type-image.media--view-mode-full .main-content .components:nth-child(2) {
+  margin-top: $spacing-double;
+
+  .component {
+    max-width: unset;
+  }
+
+  .component .component__content .image__finna_id {
+    margin-bottom: $spacing-double;
   }
 }

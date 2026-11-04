@@ -1,5 +1,5 @@
-import type React from "react";
-import { Component, type ReactNode } from "react";
+import type React from 'react';
+import { Component, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error("Search app error:", error, errorInfo);
+    console.error('Search app error:', error, errorInfo);
   }
 
   render(): ReactNode {

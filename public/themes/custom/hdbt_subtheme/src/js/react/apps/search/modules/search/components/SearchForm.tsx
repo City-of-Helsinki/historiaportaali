@@ -1,58 +1,54 @@
-import type React from "react";
-import { useAtomValue, useSetAtom } from "jotai";
-import { useRef, useState } from "react";
 import {
-  Search,
   Button,
-  ButtonVariant,
   ButtonPresetTheme,
-  TextInput,
-  Select,
+  ButtonVariant,
   IconCross,
+  IconLayers,
   IconLocation,
   IconPhoto,
-  IconLayers,
+  Search,
+  Select,
+  TextInput,
   Tooltip,
-} from "hds-react";
-import { defaultMultiSelectTheme } from "@/react/common/constants/selectTheme";
-import type { Facet } from "../../../common/types/Content";
+} from 'hds-react';
+import { useAtomValue, useSetAtom } from 'jotai';
+import type React from 'react';
+import { useRef, useState } from 'react';
+import { defaultMultiSelectTheme } from '@/react/common/constants/selectTheme';
+import type { Facet } from '../../../common/types/Content';
 import {
-  keywordsAtom,
-  setKeywordsAtom,
-  startYearAtom,
-  setStartYearAtom,
   endYearAtom,
-  setEndYearAtom,
-  phenomenaAtom,
-  setPhenomenaAtom,
-  formatsAtom,
-  setFormatsAtom,
-  neighbourhoodsAtom,
-  setNeighbourhoodsAtom,
-  submitFiltersAtom,
-  resetFormAtom,
   facetsAtom,
+  formatsAtom,
   isLoadingFacetsAtom,
-} from "../store";
+  keywordsAtom,
+  neighbourhoodsAtom,
+  phenomenaAtom,
+  resetFormAtom,
+  setEndYearAtom,
+  setFormatsAtom,
+  setKeywordsAtom,
+  setNeighbourhoodsAtom,
+  setPhenomenaAtom,
+  setStartYearAtom,
+  startYearAtom,
+  submitFiltersAtom,
+} from '../store';
 
 const searchProps = {
   texts: {
-    label: Drupal.t("Search", {}, { context: "Search" }),
-    searchPlaceholder: Drupal.t(
-      "Location, person, topic, event...",
-      {},
-      { context: "Search" },
-    ),
-    searchClearButtonAriaLabel: Drupal.t("Clear search", {}, { context: "Search" }),
-    searchButtonAriaLabel: Drupal.t("Search", {}, { context: "Search" }),
+    label: Drupal.t('Search', {}, { context: 'Search' }),
+    searchPlaceholder: Drupal.t('Location, person, topic, event...', {}, { context: 'Search' }),
+    searchClearButtonAriaLabel: Drupal.t('Clear search', {}, { context: 'Search' }),
+    searchButtonAriaLabel: Drupal.t('Search', {}, { context: 'Search' }),
   },
-  className: "search-input",
+  className: 'search-input',
 };
 
 export const SearchForm: React.FC = () => {
   const facets = useAtomValue(facetsAtom);
   const loading = useAtomValue(isLoadingFacetsAtom);
-  const language = drupalSettings?.path?.currentLanguage || "fi";
+  const language = drupalSettings?.path?.currentLanguage || 'fi';
   const keywords = useAtomValue(keywordsAtom);
   const setKeywords = useSetAtom(setKeywordsAtom);
   const startYear = useAtomValue(startYearAtom);
@@ -68,18 +64,14 @@ export const SearchForm: React.FC = () => {
   const submitFilters = useSetAtom(submitFiltersAtom);
   const resetForm = useSetAtom(resetFormAtom);
   const [searchResetKey, setSearchResetKey] = useState(0);
-  const keywordValue = Array.isArray(keywords) ? keywords.join(" ") : keywords;
+  const keywordValue = Array.isArray(keywords) ? keywords.join(' ') : keywords;
   const hasKeywordInteractionRef = useRef(false);
 
   const handleKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nextValue = e.target.value;
 
     // HDS Search may emit an empty change during initialization.
-    if (
-      !hasKeywordInteractionRef.current &&
-      keywordValue.trim() !== "" &&
-      nextValue.trim() === ""
-    ) {
+    if (!hasKeywordInteractionRef.current && keywordValue.trim() !== '' && nextValue.trim() === '') {
       return;
     }
 
@@ -100,7 +92,7 @@ export const SearchForm: React.FC = () => {
 
   // Helper to ensure year is a string (TypeScript workaround for generic atom types)
   const asString = (value: string | string[] | undefined): string =>
-    Array.isArray(value) ? value[0] || "" : value || "";
+    Array.isArray(value) ? value[0] || '' : value || '';
 
   // Helper to validate and limit year input to 4 digits (allows negative for BC years)
   const handleYearChange = (value: string, setter: (value: string) => void) => {
@@ -110,40 +102,30 @@ export const SearchForm: React.FC = () => {
 
   // Common year input props
   const commonYearInputProps = {
-    type: "text" as const,
-    inputMode: "numeric" as const,
+    type: 'text' as const,
+    inputMode: 'numeric' as const,
     clearButton: true,
     tooltip: (
       <Tooltip
-        tooltipLabel={Drupal.t("Year format help", {}, { context: "Search" })}
-        buttonLabel={Drupal.t("Help", {}, { context: "Search" })}
+        tooltipLabel={Drupal.t('Year format help', {}, { context: 'Search' })}
+        buttonLabel={Drupal.t('Help', {}, { context: 'Search' })}
         small
         boxShadow
-        placement="bottom-start"
+        placement='bottom-start'
       >
-        {Drupal.t(
-          "Use negative numbers for BC/BCE (e.g. -2050)",
-          {},
-          { context: "Search" },
-        )}
+        {Drupal.t('Use negative numbers for BC/BCE (e.g. -2050)', {}, { context: 'Search' })}
       </Tooltip>
     ),
   };
 
-  const phenomenaFacet = facets?.find(
-    (f) => f.name === "aggregated_phenomena_title",
-  );
-  const formatsFacet = facets?.find(
-    (f) => f.name === "aggregated_formats_title",
-  );
-  const neighbourhoodsFacet = facets?.find(
-    (f) => f.name === "aggregated_neighbourhoods_title",
-  );
+  const phenomenaFacet = facets?.find((f) => f.name === 'aggregated_phenomena_title');
+  const formatsFacet = facets?.find((f) => f.name === 'aggregated_formats_title');
+  const neighbourhoodsFacet = facets?.find((f) => f.name === 'aggregated_neighbourhoods_title');
 
   const hasActiveFilters = !!(
     (keywords && keywords.length > 0) ||
-    (startYear !== undefined && startYear !== null && startYear !== "") ||
-    (endYear !== undefined && endYear !== null && endYear !== "") ||
+    (startYear !== undefined && startYear !== null && startYear !== '') ||
+    (endYear !== undefined && endYear !== null && endYear !== '') ||
     (phenomena && phenomena.length > 0) ||
     (formats && formats.length > 0) ||
     (neighbourhoods && neighbourhoods.length > 0)
@@ -189,9 +171,7 @@ export const SearchForm: React.FC = () => {
           }}
           {...(showFilter && {
             filter: (option, filterStr) => {
-              return option.label
-                .toLowerCase()
-                .includes(filterStr.toLowerCase());
+              return option.label.toLowerCase().includes(filterStr.toLowerCase());
             },
           })}
           icon={icon}
@@ -200,7 +180,7 @@ export const SearchForm: React.FC = () => {
             language: language,
             placeholder,
             ...(showFilter && {
-              filterPlaceholder: Drupal.t("Filter", {}, { context: "Search" }),
+              filterPlaceholder: Drupal.t('Filter', {}, { context: 'Search' }),
             }),
           }}
           theme={defaultMultiSelectTheme}
@@ -211,9 +191,9 @@ export const SearchForm: React.FC = () => {
   };
 
   return (
-    <div className="historia-search__form">
+    <div className='historia-search__form'>
       <form onSubmit={handleSubmit}>
-        <div className="react-search-keyword">
+        <div className='react-search-keyword'>
           <Search
             key={searchResetKey}
             {...searchProps}
@@ -226,48 +206,38 @@ export const SearchForm: React.FC = () => {
           />
         </div>
 
-        <h2 className="visually-hidden">
-          {Drupal.t("Filter results", {}, { context: "Search" })}
-        </h2>
+        <h2 className='visually-hidden'>{Drupal.t('Filter results', {}, { context: 'Search' })}</h2>
 
-        <div className="react-search-filters">
-          <div className="filter-group filter-group--dates">
-            <div className="date-filter-inputs">
+        <div className='react-search-filters'>
+          <div className='filter-group filter-group--dates'>
+            <div className='date-filter-inputs'>
               <TextInput
                 {...commonYearInputProps}
-                id="search-start-year"
-                label={Drupal.t("From year", {}, { context: "Search" })}
+                id='search-start-year'
+                label={Drupal.t('From year', {}, { context: 'Search' })}
                 value={asString(startYear)}
                 onChange={(e) => handleYearChange(e.target.value, setStartYear)}
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} 1900`}
-                clearButtonAriaLabel={Drupal.t(
-                  "Clear from year",
-                  {},
-                  { context: "Search" },
-                )}
+                placeholder={`${Drupal.t('e.g.', {}, { context: 'Search' })} 1900`}
+                clearButtonAriaLabel={Drupal.t('Clear from year', {}, { context: 'Search' })}
               />
               <TextInput
                 {...commonYearInputProps}
-                id="search-end-year"
-                label={Drupal.t("Until year", {}, { context: "Search" })}
+                id='search-end-year'
+                label={Drupal.t('Until year', {}, { context: 'Search' })}
                 value={asString(endYear)}
                 onChange={(e) => handleYearChange(e.target.value, setEndYear)}
-                placeholder={`${Drupal.t("e.g.", {}, { context: "Search" })} 2000`}
-                clearButtonAriaLabel={Drupal.t(
-                  "Clear until year",
-                  {},
-                  { context: "Search" },
-                )}
+                placeholder={`${Drupal.t('e.g.', {}, { context: 'Search' })} 2000`}
+                clearButtonAriaLabel={Drupal.t('Clear until year', {}, { context: 'Search' })}
               />
             </div>
           </div>
 
           {renderFacetSelect({
             facet: neighbourhoodsFacet,
-            wrapperClass: "filter-group filter-group--neighbourhoods",
-            id: "neighbourhoods-select",
-            label: Drupal.t("Region", {}, { context: "Search" }),
-            placeholder: Drupal.t("Select region", {}, { context: "Search" }),
+            wrapperClass: 'filter-group filter-group--neighbourhoods',
+            id: 'neighbourhoods-select',
+            label: Drupal.t('Region', {}, { context: 'Search' }),
+            placeholder: Drupal.t('Select region', {}, { context: 'Search' }),
             icon: <IconLocation />,
             value: neighbourhoods,
             onChange: setNeighbourhoods,
@@ -275,10 +245,10 @@ export const SearchForm: React.FC = () => {
 
           {renderFacetSelect({
             facet: formatsFacet,
-            wrapperClass: "filter-group filter-group--formats",
-            id: "formats-select",
-            label: Drupal.t("Formats", {}, { context: "Search" }),
-            placeholder: Drupal.t("Select format", {}, { context: "Search" }),
+            wrapperClass: 'filter-group filter-group--formats',
+            id: 'formats-select',
+            label: Drupal.t('Formats', {}, { context: 'Search' }),
+            placeholder: Drupal.t('Select format', {}, { context: 'Search' }),
             icon: <IconPhoto />,
             value: formats,
             onChange: setFormats,
@@ -286,38 +256,30 @@ export const SearchForm: React.FC = () => {
 
           {renderFacetSelect({
             facet: phenomenaFacet,
-            wrapperClass: "filter-group filter-group--phenomena",
-            id: "phenomena-select",
-            label: Drupal.t("Phenomena", {}, { context: "Search" }),
-            placeholder: Drupal.t(
-              "Select phenomenon",
-              {},
-              { context: "Search" },
-            ),
+            wrapperClass: 'filter-group filter-group--phenomena',
+            id: 'phenomena-select',
+            label: Drupal.t('Phenomena', {}, { context: 'Search' }),
+            placeholder: Drupal.t('Select phenomenon', {}, { context: 'Search' }),
             icon: <IconLayers />,
             value: phenomena,
             onChange: setPhenomena,
           })}
 
-          <div className="form-actions">
-            <Button
-              type="submit"
-              disabled={loading}
-              theme={ButtonPresetTheme.Black}
-            >
+          <div className='form-actions'>
+            <Button type='submit' disabled={loading} theme={ButtonPresetTheme.Black}>
               {loading
-                ? Drupal.t("Searching...", {}, { context: "Search" })
-                : Drupal.t("Search", {}, { context: "Search" })}
+                ? Drupal.t('Searching...', {}, { context: 'Search' })
+                : Drupal.t('Search', {}, { context: 'Search' })}
             </Button>
             {hasActiveFilters && (
               <Button
-                type="button"
+                type='button'
                 onClick={handleReset}
                 variant={ButtonVariant.Supplementary}
                 theme={ButtonPresetTheme.Black}
                 iconStart={<IconCross />}
               >
-                {Drupal.t("Clear", {}, { context: "Search" })}
+                {Drupal.t('Clear', {}, { context: 'Search' })}
               </Button>
             )}
           </div>

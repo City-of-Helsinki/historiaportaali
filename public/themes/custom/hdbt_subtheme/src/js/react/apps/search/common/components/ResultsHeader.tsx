@@ -1,4 +1,4 @@
-import { type ForwardedRef, forwardRef, type ReactElement } from "react";
+import { type ForwardedRef, forwardRef, type ReactElement } from 'react';
 
 type ResultsHeaderProps = {
   resultText: ReactElement | string;
@@ -9,16 +9,11 @@ type ResultsHeaderProps = {
 
 const ResultsHeader = forwardRef(
   (
-    {
-      resultText,
-      optionalResultsText,
-      actions,
-      actionsClass,
-    }: ResultsHeaderProps,
+    { resultText, optionalResultsText, actions, actionsClass }: ResultsHeaderProps,
     ref: ForwardedRef<HTMLHeadingElement>,
   ) => (
-    <div className="historia-search__result-top-area">
-      <h3 className="historia-search__results-title" ref={ref}>
+    <div className='historia-search__result-top-area'>
+      <h3 className='historia-search__results-title' ref={ref}>
         {resultText} {optionalResultsText && <>({optionalResultsText})</>}
       </h3>
       {actions && <div className={actionsClass}>{actions}</div>}
@@ -26,6 +21,6 @@ const ResultsHeader = forwardRef(
   ),
 );
 
-ResultsHeader.displayName = "ResultsHeader";
+ResultsHeader.displayName = 'ResultsHeader';
 
 export default ResultsHeader;

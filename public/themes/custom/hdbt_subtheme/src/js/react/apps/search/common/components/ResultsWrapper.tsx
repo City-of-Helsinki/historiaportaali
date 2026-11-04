@@ -1,11 +1,11 @@
-import type React from "react";
-import { useRef, useEffect, type ForwardedRef, forwardRef } from "react";
-import type { estypes } from "@elastic/elasticsearch";
-import ResultsError from "./ResultsError";
-import ResultsEmpty from "./ResultsEmpty";
-import ResultsHeader from "./ResultsHeader";
-import Pagination from "./Pagination";
-import { GhostList } from "./GhostList";
+import type { estypes } from '@elastic/elasticsearch';
+import type React from 'react';
+import { type ForwardedRef, forwardRef, useEffect, useRef } from 'react';
+import { GhostList } from './GhostList';
+import Pagination from './Pagination';
+import ResultsEmpty from './ResultsEmpty';
+import ResultsError from './ResultsError';
+import ResultsHeader from './ResultsHeader';
 
 type ResultsWrapperProps<T = unknown> = {
   currentPageIndex: number; // 0-based index
@@ -43,14 +43,12 @@ export const ResultsWrapper = forwardRef(
         setTimeout(() => {
           if (resultsRef.current) {
             const headerOffset = 100;
-            const elementPosition =
-              resultsRef.current.getBoundingClientRect().top;
-            const offsetPosition =
-              elementPosition + window.pageYOffset - headerOffset;
+            const elementPosition = resultsRef.current.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
               top: offsetPosition,
-              behavior: "smooth",
+              behavior: 'smooth',
             });
           }
         }, 100);
@@ -63,21 +61,13 @@ export const ResultsWrapper = forwardRef(
       setPageIndex(pageIndex); // Pass 0-based index directly
     };
 
-    const loadingAnnouncement = Drupal.t(
-      "Loading results",
-      {},
-      { context: "Search" },
-    );
+    const loadingAnnouncement = Drupal.t('Loading results', {}, { context: 'Search' });
 
     // Show loading on initial load
     if (isLoading && !data) {
       return (
-        <div className="historia-search__results" ref={resultsRef}>
-          <div
-            className="visually-hidden"
-            aria-live="polite"
-            aria-atomic="true"
-          >
+        <div className='historia-search__results' ref={resultsRef}>
+          <div className='visually-hidden' aria-live='polite' aria-atomic='true'>
             {loadingAnnouncement}
           </div>
           <GhostList />
@@ -88,15 +78,11 @@ export const ResultsWrapper = forwardRef(
     // Show error
     if (error) {
       return (
-        <div className="historia-search__results" ref={resultsRef}>
-          <div
-            className="visually-hidden"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {Drupal.t("Results could not be loaded", {}, { context: "Search" })}
+        <div className='historia-search__results' ref={resultsRef}>
+          <div className='visually-hidden' aria-live='polite' aria-atomic='true'>
+            {Drupal.t('Results could not be loaded', {}, { context: 'Search' })}
           </div>
-          <ResultsError className="historia-search__error" />
+          <ResultsError className='historia-search__error' />
         </div>
       );
     }
@@ -108,74 +94,58 @@ export const ResultsWrapper = forwardRef(
 
     const results = data.hits.hits;
     const total = data.hits.total;
-    const totalCount = typeof total === "number" ? total : (total?.value ?? 0);
+    const totalCount = typeof total === 'number' ? total : (total?.value ?? 0);
 
     // Show empty state
     if (totalCount === 0 && !isLoading) {
       return (
-        <div className="historia-search__results" ref={resultsRef}>
-          <div
-            className="visually-hidden"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {Drupal.formatPlural(
-              totalCount,
-              "1 result",
-              "@count results",
-              {},
-              { context: "Search" },
-            )}
+        <div className='historia-search__results' ref={resultsRef}>
+          <div className='visually-hidden' aria-live='polite' aria-atomic='true'>
+            {Drupal.formatPlural(totalCount, '1 result', '@count results', {}, { context: 'Search' })}
           </div>
-          <ResultsEmpty wrapperClass="historia-search__results" />
+          <ResultsEmpty wrapperClass='historia-search__results' />
         </div>
       );
     }
 
     const totalPages = Math.ceil(totalCount / itemsPerPage);
-    const resultsLabel = Drupal.formatPlural(
-      totalCount,
-      "1 result",
-      "@count results",
-      {},
-      { context: "Search" },
-    );
+    const resultsLabel = Drupal.formatPlural(totalCount, '1 result', '@count results', {}, { context: 'Search' });
     const pageLabel =
       totalPages > 1
         ? Drupal.t(
-            "Page @current of @total",
+            'Page @current of @total',
             {
-              "@current": currentPageIndex + 1,
-              "@total": totalPages,
+              '@current': currentPageIndex + 1,
+              '@total': totalPages,
             },
-            { context: "Search" },
+            { context: 'Search' },
           )
-        : "";
+        : '';
     const liveAnnouncement = isLoading
       ? loadingAnnouncement
       : pageLabel
         ? `${resultsLabel}. ${pageLabel}.`
         : `${resultsLabel}.`;
     return (
-      <div className="historia-search__results" ref={resultsRef}>
-        <div className="visually-hidden" aria-live="polite" aria-atomic="true">
+      <div className='historia-search__results' ref={resultsRef}>
+        <div className='visually-hidden' aria-live='polite' aria-atomic='true'>
           {liveAnnouncement}
         </div>
         <ResultsHeader
           resultText={resultsLabel}
           actions={sortElement}
-          actionsClass="historia-search__results-actions"
+          actionsClass='historia-search__results-actions'
           ref={ref}
         />
 
         {/* Loading overlay during pagination */}
         {isLoading && (
-          <div className="hdbt__loading-overlay">
+          <div className='hdbt__loading-overlay'>
             <GhostList />
           </div>
         )}
 
-        <div className="results-list" style={{ opacity: isLoading ? 0.5 : 1 }}>
+        <div className='results-list' style={{ opacity: isLoading ? 0.5 : 1 }}>
           {results.map((item) => resultItemCallBack(item))}
         </div>
 
@@ -191,6 +161,6 @@ export const ResultsWrapper = forwardRef(
   },
 );
 
-ResultsWrapper.displayName = "ResultsWrapper";
+ResultsWrapper.displayName = 'ResultsWrapper';
 
 export default ResultsWrapper;

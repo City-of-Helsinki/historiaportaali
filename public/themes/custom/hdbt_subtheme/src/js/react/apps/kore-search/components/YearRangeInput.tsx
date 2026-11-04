@@ -1,5 +1,5 @@
-import type React from "react";
-import { TextInput } from "hds-react";
+import { TextInput } from 'hds-react';
+import type React from 'react';
 
 interface YearRangeInputProps {
   id: string;
@@ -30,11 +30,7 @@ export const YearRangeInput: React.FC<YearRangeInputProps> = ({
   disabled = false,
 }) => {
   const numValue = value ? Number.parseInt(value, 10) : null;
-  const isValidYear =
-    numValue !== null &&
-    !Number.isNaN(numValue) &&
-    numValue >= minYear &&
-    numValue <= maxYear;
+  const isValidYear = numValue !== null && !Number.isNaN(numValue) && numValue >= minYear && numValue <= maxYear;
   const sliderValue = isValidYear ? numValue : minYear;
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,25 +38,22 @@ export const YearRangeInput: React.FC<YearRangeInputProps> = ({
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = (e.target as HTMLInputElement)?.value ?? "";
-    if (v === "" || /^-?\d{0,4}$/.test(v)) {
+    const v = (e.target as HTMLInputElement)?.value ?? '';
+    if (v === '' || /^-?\d{0,4}$/.test(v)) {
       onChange(v);
     }
   };
 
   return (
-    <div
-      className="year-range-input"
-      {...(value && { "data-hds-textinput-filled": "true" })}
-    >
-      <label htmlFor={id} className="year-range-input__label">
+    <div className='year-range-input' {...(value && { 'data-hds-textinput-filled': 'true' })}>
+      <label htmlFor={id} className='year-range-input__label'>
         {label}
       </label>
       <TextInput
         id={id}
-        type="text"
-        inputMode="numeric"
-        label=""
+        type='text'
+        inputMode='numeric'
+        label=''
         hideLabel
         value={value}
         onChange={handleInputChange}
@@ -69,11 +62,11 @@ export const YearRangeInput: React.FC<YearRangeInputProps> = ({
         clearButtonAriaLabel={clearButtonAriaLabel}
         disabled={disabled}
       />
-      <div className="year-range-input__slider-wrapper">
+      <div className='year-range-input__slider-wrapper'>
         <input
-          type="range"
+          type='range'
           id={`${id}-slider`}
-          className="year-range-input__slider"
+          className='year-range-input__slider'
           min={minYear}
           max={maxYear}
           step={1}
@@ -82,16 +75,14 @@ export const YearRangeInput: React.FC<YearRangeInputProps> = ({
           onMouseUp={onSliderRelease}
           onTouchEnd={onSliderRelease}
           disabled={disabled}
-          aria-label={`${label}, ${Drupal.t("range @min to @max", {
-            "@min": minYear,
-            "@max": maxYear,
+          aria-label={`${label}, ${Drupal.t('range @min to @max', {
+            '@min': minYear,
+            '@max': maxYear,
           })}`}
         />
-        <span
-          className="year-range-input__range-labels"
-        >
+        <span className='year-range-input__range-labels'>
           <span>{minYear}</span>
-          <span className="visually-hidden"> — </span>
+          <span className='visually-hidden'> — </span>
           <span>{maxYear}</span>
         </span>
       </div>

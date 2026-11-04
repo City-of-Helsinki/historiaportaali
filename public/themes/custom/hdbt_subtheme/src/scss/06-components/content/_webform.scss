@@ -1,90 +1,69 @@
-.page-type--webform {
+.page-type--webform .before-content .webform-header__container > div {
+  max-width: $content-width-max;
 
-  .before-content {
-    .webform-header__container {
-      > div {
-        max-width: $content-width-max;
+  @include breakpoint($breakpoint-m) {
+    padding-left: $spacing-triple * 2;
+  }
+}
 
-        @include breakpoint($breakpoint-m) {
-          padding-left: $spacing-triple * 2;
-        }
-      }
+.page-type--webform .main-content form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $content-width-max;
+  padding-left: $spacing;
+  padding-right: $spacing;
+  width: 100%;
+
+  @include breakpoint($breakpoint-l) {
+    padding-left: $spacing-and-half;
+    padding-right: $spacing-and-half;
+  }
+
+  fieldset legend span {
+    @include font-size(18px, 30px);
+    color: $color-black-90;
+    display: block;
+    font-weight: $font-weight-medium;
+    margin: $spacing-half 0;
+
+    @include breakpoint($breakpoint-m) {
+      @include font-size(24px, 30px);
+      margin: $spacing 0;
     }
   }
 
-  .main-content {
-    form {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: $content-width-max;
-      padding-left: $spacing;
-      padding-right: $spacing;
-      width: 100%;
+  img {
+    height: auto;
+    max-width: 70%;
 
-      @include breakpoint($breakpoint-l) {
-        padding-left: $spacing-and-half;
-        padding-right: $spacing-and-half;
-      }
+    @include breakpoint($breakpoint-l) {
+      max-width: 80%;
+    }
 
-      fieldset {
-        legend {
-          span {
-            @include font-size(18px, 30px);
-            color: $color-black-90;
-            display: block;
-            font-weight: $font-weight-medium;
-            margin: $spacing-half 0;
-    
-            @include breakpoint($breakpoint-m) {
-              @include font-size(24px, 30px);
-              margin: $spacing 0;
-            }
-          }
-        }
+    @include breakpoint($breakpoint-s) {
+      max-width: 100%;
+    }
+  }
 
-        .fieldset-wrapper {
+  .webform-quiz-element-result-list {
+    padding-left: $spacing-half;
 
-        }
-      }
+    .messages--status {
+      background-color: var(--color-copper-medium-light);
+      border: 1px solid;
+      box-shadow: -$spacing-half 0 0 $color-metro-dark;
+      padding: $spacing;
+    }
 
-      img {
-        height: auto;
-        max-width: 70%;
+    .messages--neutral {
+      box-shadow: -$spacing-half 0 0 var(--color-fog);
+    }
 
-        @include breakpoint($breakpoint-l) {
-          max-width: 80%;
-        }
-
-        @include breakpoint($breakpoint-s) {
-          max-width: 100%;
-        }
-      }
-
-      .webform-quiz-element-result-list {
-        padding-left: $spacing-half;
-
-        .messages--status {
-          background-color: var(--color-copper-medium-light);
-          border: 1px solid;
-          box-shadow: -$spacing-half 0 0 $color-metro-dark;
-          padding: $spacing;
-        }
-
-        .messages--neutral {
-          box-shadow: -$spacing-half 0 0 var(--color-fog);
-        }
-
-        .messages--error {
-          background-color: var(--color-metro-medium-light);
-          border: 1px solid;
-          box-shadow: -$spacing-half 0 0 $color-metro-dark;
-          padding: $spacing;
-        }
-      }
-
-      .webform-confirmation__back {
-
-      }
+    .messages--error {
+      background-color: var(--color-metro-medium-light);
+      border: 1px solid;
+      box-shadow: -$spacing-half 0 0 $color-metro-dark;
+      padding: $spacing;
     }
   }
 }

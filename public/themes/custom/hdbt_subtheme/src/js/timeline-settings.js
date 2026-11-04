@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Find all timelines.
-  const timelines = document.getElementsByClassName("timeline__handorgel");
+  const timelines = document.getElementsByClassName('timeline__handorgel');
 
   for (const singleTimeline of timelines) {
     /* global handorgel */
@@ -18,27 +18,27 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselFocus: true,
 
       // attribute for the header or content to open folds at initialization
-      initialOpenAttribute: "data-open",
+      initialOpenAttribute: 'data-open',
       // whether to use transition at initial open
       initialOpenTransition: true,
       // delay used to show initial transition
       initialOpenTransitionDelay: 200,
 
       // header/content class if fold is open
-      headerOpenClass: "handorgel__header--open",
-      contentOpenClass: "handorgel__content--open",
+      headerOpenClass: 'handorgel__header--open',
+      contentOpenClass: 'handorgel__content--open',
 
       // header/content class if fold has been opened (transition finished)
-      headerOpenedClass: "handorgel__header--opened",
-      contentOpenedClass: "handorgel__content--opened",
+      headerOpenedClass: 'handorgel__header--opened',
+      contentOpenedClass: 'handorgel__content--opened',
 
       // header/content class if fold has been focused
-      headerFocusClass: "handorgel__header--focus",
-      contentFocusClass: "handorgel__content--focus",
+      headerFocusClass: 'handorgel__header--focus',
+      contentFocusClass: 'handorgel__content--focus',
 
       // header/content class if fold is disabled
-      headerDisabledClass: "handorgel__header--disabled",
-      contentDisabledClass: "handorgel__content--disabled",
+      headerDisabledClass: 'handorgel__header--disabled',
+      contentDisabledClass: 'handorgel__content--disabled',
     });
 
     // Get all the folds associated to the timeline.

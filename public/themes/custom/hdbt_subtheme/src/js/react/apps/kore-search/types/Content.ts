@@ -1,4 +1,4 @@
-import type { Facet, FacetValue } from "../../search/common/types/Content";
+import type { Facet, FacetValue } from '../../search/common/types/Content';
 
 export type { Facet, FacetValue };
 

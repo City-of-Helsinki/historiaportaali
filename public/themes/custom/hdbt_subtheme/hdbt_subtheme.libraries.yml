@@ -1,11 +1,11 @@
 global-styling:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   css:
     theme:
       dist/css/styles.min.css: {}
 
 global-scripting:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/common.min.js: {}
   dependencies:
@@ -14,7 +14,7 @@ global-scripting:
     - leaflet/leaflet
 
 timeline:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/timeline-settings.min.js: {}
   dependencies:
@@ -28,7 +28,7 @@ leaflet-sync:
     - leaflet/leaflet
 
 map-view:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/map.min.js: { weight: -5 }
     dist/js/map-controls.min.js: { weight: -5 }
@@ -42,7 +42,7 @@ map-view:
     - hdbt_admin/select2.min
 
 reading-time:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/reading-time.min.js: {}
 
@@ -61,7 +61,7 @@ tiny-slider:
       dist/css/tiny-slider/tiny-slider.css: {}
 
 gallery:
-  version: 1.x
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/gallery-settings.min.js: {}
   dependencies:
@@ -70,7 +70,7 @@ gallery:
     - hdbt_subtheme/tiny-slider
 
 react-search-app:
-  version: 1.0.1
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/search-app.min.js: { preprocess: false }
   css:
@@ -80,7 +80,7 @@ react-search-app:
     - core/drupal
 
 kore-search-app:
-  version: 1.0.1
+  version: HELFI_DEPLOYMENT_IDENTIFIER
   js:
     dist/js/kore-search-app.min.js: { preprocess: false }
   css:

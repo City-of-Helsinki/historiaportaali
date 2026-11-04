@@ -23,6 +23,7 @@
       margin: -25px 0 0 -25px;
       position: absolute;
       top: 50%;
+      // stylelint-disable-next-line plugin/no-low-performance-animation-properties
       transition: color 0.12s, box-shadow 0.12s;
       width: 50px;
       z-index: 2;
@@ -33,18 +34,19 @@
         width: 80px;
       }
 
-      .hel-icon {
-        --icon-size: 2rem;
+    }
 
-        @include breakpoint($breakpoint-m) {
-          --icon-size: 3rem;
-        }
+    .media-video__play-btn .hel-icon {
+      --icon-size: 2rem;
+
+      @include breakpoint($breakpoint-m) {
+        --icon-size: 3rem;
       }
     }
 
     &:hover {
       .media-video__play-btn {
-        box-shadow: 0 3px 2px 0px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 2px 0 rgb(0 0 0 / 30%);
         color: $color-black;
       }
     }
@@ -75,7 +77,7 @@
 }
 
 .columns__column > .video {
-  @include breakpoint(0px $breakpoint-s) {
+  @include breakpoint(0 $breakpoint-s) {
     padding-left: 0;
     padding-right: 0;
   }

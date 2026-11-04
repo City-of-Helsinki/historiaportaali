@@ -16,9 +16,9 @@ declare const ELASTIC_DEV_URL: string | undefined;
  * @return The Elasticsearch URL, or an empty string if none is available.
  */
 export const getElasticUrl = (rootElement: HTMLElement): string => {
-  const devUrl = typeof ELASTIC_DEV_URL !== "undefined" ? ELASTIC_DEV_URL : "";
+  const devUrl = typeof ELASTIC_DEV_URL !== 'undefined' ? ELASTIC_DEV_URL : '';
 
-  return devUrl || (rootElement.dataset.elasticsearchUrl?.trim() ?? "");
+  return devUrl || (rootElement.dataset.elasticsearchUrl?.trim() ?? '');
 };
 
 export default getElasticUrl;

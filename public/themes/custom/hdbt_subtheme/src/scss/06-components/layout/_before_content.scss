@@ -25,21 +25,21 @@
       margin-top: -50px;
       max-width: unset;
       padding: 0;
+    }
 
-      img {
-        height: 60vw;
-        object-fit: cover;
-        object-position: bottom;
-        vertical-align: middle;
-        width: 100%;
+    .main-image img {
+      height: 60vw;
+      object-fit: cover;
+      object-position: bottom;
+      vertical-align: middle;
+      width: 100%;
 
-        @include breakpoint($breakpoint-m) {
-          height: 40vw;
-        }
+      @include breakpoint($breakpoint-m) {
+        height: 40vw;
+      }
 
-        @include breakpoint($breakpoint-xl) {
-          height: 30vw;
-        }
+      @include breakpoint($breakpoint-xl) {
+        height: 30vw;
       }
     }
   }

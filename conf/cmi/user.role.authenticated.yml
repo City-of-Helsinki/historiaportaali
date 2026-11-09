@@ -32,6 +32,7 @@ permissions:
   - 'setup own tfa'
   - 'use text format webform_default'
   - 'view helfi_announcements external entity'
+  - 'view helfi_multisite_content external entity'
   - 'view helfi_surveys external entity'
   - 'view media'
   - 'view remote entities'

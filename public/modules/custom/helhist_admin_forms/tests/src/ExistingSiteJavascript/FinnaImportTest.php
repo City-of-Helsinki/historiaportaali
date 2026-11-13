@@ -21,7 +21,6 @@ class FinnaImportTest extends ExistingSiteJavascriptTestBase {
   public function testFinnaImportPopulatesFields(): void {
     $user = $this->createUser([], NULL, TRUE);
     $this->drupalLogin($user);
-    // Navigate in Finnish so the JS sends lng=fi to the Finna API.
     $this->drupalGetWithLanguage('/node/add/article', 'fi');
 
     $page = $this->getSession()->getPage();
@@ -44,17 +43,39 @@ class FinnaImportTest extends ExistingSiteJavascriptTestBase {
     $importButton = $assert->waitForElement('css', '#finna');
     $this->assertNotNull($importButton, 'Finna.fi import button should be rendered by JavaScript.');
 
-    // Click the import button.
+    $this->stubFinnaApi();
     $importButton->click();
 
-    // Wait for Select2 fields to get populated.
-    // The test record has: formats "Kuva", author "Heinonen, Helge",
-    // copyright "CC BY-ND 4.0", buildings "Museovirasto" and
-    // "Historian kuvakokoelma".
     $this->assertSelect2HasValue('#edit-field-formats', 'Kuva');
     $this->assertSelect2HasValue('#edit-field-authors', 'Heinonen, Helge');
     $this->assertSelect2HasValue('#edit-field-copyrights', 'CC BY-ND 4.0');
     $this->assertSelect2HasValue('#edit-field-buildings', 'Museovirasto');
+  }
+
+  /**
+   * Replaces the Finna API response with a fixed record.
+   */
+  private function stubFinnaApi(): void {
+    $response = json_encode([
+      'records' => [
+        [
+          'formats' => [['value' => '0/Image/', 'translated' => 'Kuva']],
+          'nonPresenterAuthors' => [['name' => 'Heinonen, Helge']],
+          'imageRights' => ['copyright' => 'CC BY-ND 4.0'],
+          'buildings' => [
+            ['value' => '0/Museovirasto/', 'translated' => 'Museovirasto'],
+            ['value' => '1/Museovirasto/HK/', 'translated' => 'Historian kuvakokoelma'],
+          ],
+        ],
+      ],
+    ]);
+
+    $this->getSession()->executeScript(<<<JS
+      const getJSON = jQuery.getJSON;
+      jQuery.getJSON = (url, callback) => url.startsWith('https://api.finna.fi/')
+        ? callback($response)
+        : getJSON(url, callback);
+    JS);
   }
 
   /**

@@ -1,83 +1,57 @@
 (($, Drupal, once) => {
+  const finnaLanguages = {
+    fi: 'fi',
+    sv: 'sv',
+    en: 'en-gb',
+  };
+
+  const fields = [
+    { selector: '#edit-field-formats', jsonWrapper: 'formats', jsonKey: 'translated' },
+    { selector: '#edit-field-authors', jsonWrapper: 'nonPresenterAuthors', jsonKey: 'name' },
+    { selector: '#edit-field-copyrights', jsonWrapper: 'imageRights', jsonKey: 'copyright' },
+    { selector: '#edit-field-buildings', jsonWrapper: 'buildings', jsonKey: 'translated' },
+  ];
+
+  /**
+   * Selects the matching term or a new term option in a Select2 field.
+   */
+  const addOption = ($element, text) => {
+    const url = JSON.parse($element.attr('data-select2-config')).ajax.url.replace('%3A', ':');
+    const query = $.param({ term: text, _type: 'query', q: text });
+
+    $.getJSON(`${url}?${query}`, (data) => {
+      // Use the existing term when the label matches exactly.
+      const match = data.results.find((result) => result.text === text);
+      const id = match ? match.id : `$ID:${text}`;
+      $element.append(new Option(text, id, true, true)).trigger('change');
+    });
+  };
+
   Drupal.behaviors.finnaImport = {
-    attach: function attach(context) {
-      const wrappers = once('finna-import', '#edit-field-finna-id-wrapper', context);
-      wrappers.forEach((wrapper) => {
-        const $wrapper = $(wrapper);
-        $wrapper.after('<input id="finna" class="button" value="Finna.fi import"></input>');
-        $('#finna').button().click(function() {
+    attach(context) {
+      once('finna-import', '#edit-field-finna-id-wrapper', context).forEach((wrapper) => {
+        const $button = $('<button type="button" id="finna" class="button">Finna.fi import</button>');
+        $(wrapper).after($button);
 
-        $langcode = $('html').attr('lang');
-        $finna_id = $('#edit-field-finna-id-0-value').val();
-        $finna_lang = {
-           fi: 'fi',
-           sv: 'sv',
-           en: 'en-gb'
-        };
-        // Main loop begins
-        $.getJSON('https://api.finna.fi/api/v1/record?id=' + $finna_id + '&prettyPrint=false&lng=' + $finna_lang[$langcode], function(data) {
+        $button.on('click', () => {
+          const finnaId = $('#edit-field-finna-id-0-value').val();
+          const language = finnaLanguages[$('html').attr('lang')] || 'fi';
+          const query = $.param({ id: finnaId, prettyPrint: false, lng: language });
 
-          $formats_field = [
-            {
-              url: JSON.parse($('#edit-field-formats').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
-              element: $('#edit-field-formats'),
-              json_wrapper: 'formats',
-              json_key: 'translated'
+          $.getJSON(`https://api.finna.fi/api/v1/record?${query}`, (data) => {
+            const record = data.records?.[0];
+            if (!record) {
+              return;
             }
-          ];
 
-          $authors_field = [
-            {
-              url: JSON.parse($('#edit-field-authors').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
-              element: $('#edit-field-authors'),
-              json_wrapper: 'nonPresenterAuthors',
-              json_key: 'name'
-            }
-          ];
-
-          $copyrights_field = [
-            {
-              url: JSON.parse($('#edit-field-copyrights').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
-              element: $('#edit-field-copyrights'),
-              json_wrapper: 'imageRights',
-              json_key: 'copyright'
-            }
-          ];
-
-          $buildings_field = [
-            {
-              url: JSON.parse($('#edit-field-buildings').attr('data-select2-config')).ajax.url.replace("%3A", ":"),
-              element: $('#edit-field-buildings'),
-              json_wrapper: 'buildings',
-              json_key: 'translated'
-            }
-          ];
-          $fields = [$formats_field[0], $authors_field[0], $copyrights_field[0], $buildings_field[0]];
-
-          $.each($fields, (index, field) => {
-            var field_data = data['records'][0][field.json_wrapper];
-
-            $(field_data).each((index, element) => {
-              var option_data = {
-                // Parse "empty" option
-                id: '$ID:' + element[field.json_key],
-                text: element[field.json_key]
-              };
-              // Programmatically get Select2 results
-              $.getJSON(field.url + '?term=' + option_data.text + '&_type=query&q=' + option_data.text, function(data) {
-                if (data['results'].length > 0 && data['results'][0]['text'] === option_data.text) {
-                  // Match found, use existing term ID for option
-                  option_data.id = data['results'][0]['id'];
-                }
-                // Append option and select it
-                var option = new Option(option_data.text, option_data.id, true, true);
-                field.element.append(option).trigger('change');
+            fields.forEach((field) => {
+              const $element = $(field.selector);
+              [record[field.jsonWrapper] ?? []].flat().forEach((item) => {
+                addOption($element, item[field.jsonKey]);
               });
             });
           });
-        // Main loop ends
         });
-      });
       });
     },
   };

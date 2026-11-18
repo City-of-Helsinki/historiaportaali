@@ -858,16 +858,16 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v2.3.2",
+            "version": "v2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "e3ce66714cfa181b848533d926e8583261253c9e"
+                "reference": "390ebd12f93cb1c12b0f89d2bf0d6d67c29e5e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/e3ce66714cfa181b848533d926e8583261253c9e",
-                "reference": "e3ce66714cfa181b848533d926e8583261253c9e",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/390ebd12f93cb1c12b0f89d2bf0d6d67c29e5e99",
+                "reference": "390ebd12f93cb1c12b0f89d2bf0d6d67c29e5e99",
                 "shasum": ""
             },
             "require": {
@@ -916,10 +916,10 @@
             ],
             "support": {
                 "issues": "https://github.com/commerceguys/addressing/issues",
-                "source": "https://github.com/commerceguys/addressing/tree/v2.3.2"
+                "source": "https://github.com/commerceguys/addressing/tree/v2.3.3"
             },
-            "time": "2026-10-09T10:50:35+00:00",
-            "published-time": "2026-10-09T10:52:01+00:00"
+            "time": "2026-11-17T19:39:57+00:00",
+            "published-time": "2026-11-17T19:40:57+00:00"
         },
         {
             "name": "composer/installers",
@@ -2297,6 +2297,10 @@
             ],
             "description": "Provides functionality for storing, validating and displaying international postal addresses.",
             "homepage": "http://drupal.org/project/address",
+            "keywords": [
+                "Actively maintained",
+                "Content display"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/address"
             },
@@ -3897,6 +3901,10 @@
             ],
             "description": "Editoria11y (\"editorial accessibility\") is a user-friendly accessibility checker.",
             "homepage": "https://drupal.org/project/editoria11y",
+            "keywords": [
+                "Accessibility",
+                "Actively maintained"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/editoria11y",
                 "issues": "https://drupal.org/project/issues/editoria11y"
@@ -5447,16 +5455,16 @@
         },
         {
             "name": "drupal/helfi_platform_config",
-            "version": "5.5.15",
+            "version": "5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "36dfb637653d7d5842d21efcf382c749871e92c4"
+                "reference": "63823c59b27f12b20f9ba5861abd7750867e2d70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/36dfb637653d7d5842d21efcf382c749871e92c4",
-                "reference": "36dfb637653d7d5842d21efcf382c749871e92c4",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/63823c59b27f12b20f9ba5861abd7750867e2d70",
+                "reference": "63823c59b27f12b20f9ba5861abd7750867e2d70",
                 "shasum": ""
             },
             "require": {
@@ -5597,11 +5605,11 @@
             ],
             "description": "HELfi platform config",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/5.5.15",
+                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/5.5.17",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2026-11-17T10:31:04+00:00",
-            "published-time": "2026-11-17T10:41:25+00:00"
+            "time": "2026-11-18T14:20:07+00:00",
+            "published-time": "2026-11-18T14:20:45+00:00"
         },
         {
             "name": "drupal/helfi_proxy",
@@ -6096,6 +6104,10 @@
             ],
             "description": "Provides jQuery UI Draggable library.",
             "homepage": "https://www.drupal.org/project/jquery_ui_draggable",
+            "keywords": [
+                "Developer tools",
+                "Seeking new maintainer"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/jquery_ui_draggable"
             },
@@ -10360,16 +10372,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v7.2.1",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/php-jwt.git",
-                "reference": "0501f5729b9e2448516674aff07c7d1727869b8e"
+                "reference": "99efeb17d6def8c0295777f2d45b07ff4fdb4e40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/0501f5729b9e2448516674aff07c7d1727869b8e",
-                "reference": "0501f5729b9e2448516674aff07c7d1727869b8e",
+                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/99efeb17d6def8c0295777f2d45b07ff4fdb4e40",
+                "reference": "99efeb17d6def8c0295777f2d45b07ff4fdb4e40",
                 "shasum": ""
             },
             "require": {
@@ -10428,10 +10440,10 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/php-jwt/issues",
-                "source": "https://github.com/googleapis/php-jwt/tree/v7.2.1"
+                "source": "https://github.com/googleapis/php-jwt/tree/v7.2.2"
             },
-            "time": "2026-09-28T17:51:46+00:00",
-            "published-time": "2026-09-28T18:08:24+00:00"
+            "time": "2026-11-17T00:25:19+00:00",
+            "published-time": "2026-11-17T19:16:00+00:00"
         },
         {
             "name": "galbar/jsonpath",
@@ -10719,22 +10731,22 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.16.2",
+            "version": "7.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "22e3847536750e5a7b89d4f880f28aaf7b72e287"
+                "reference": "c88a78082757dd5a0c44191651535259fcb6e605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/22e3847536750e5a7b89d4f880f28aaf7b72e287",
-                "reference": "22e3847536750e5a7b89d4f880f28aaf7b72e287",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/c88a78082757dd5a0c44191651535259fcb6e605",
+                "reference": "c88a78082757dd5a0c44191651535259fcb6e605",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^2.6",
-                "guzzlehttp/psr7": "^2.13.3",
+                "guzzlehttp/psr7": "^2.13.4",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -10827,7 +10839,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.16.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.16.3"
             },
             "funding": [
                 {
@@ -10843,8 +10855,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-17T03:22:11+00:00",
-            "published-time": "2026-11-17T03:22:52+00:00"
+            "time": "2026-11-17T16:23:09+00:00",
+            "published-time": "2026-11-17T16:23:41+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -10933,16 +10945,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.3",
+            "version": "2.13.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "6d3cd8285a97eaa352956a4ada92fa03ecce1c4e"
+                "reference": "ad5e3f872690e1151e1171de2963150fc45ea1e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/6d3cd8285a97eaa352956a4ada92fa03ecce1c4e",
-                "reference": "6d3cd8285a97eaa352956a4ada92fa03ecce1c4e",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/ad5e3f872690e1151e1171de2963150fc45ea1e3",
+                "reference": "ad5e3f872690e1151e1171de2963150fc45ea1e3",
                 "shasum": ""
             },
             "require": {
@@ -11032,7 +11044,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.3"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.4"
             },
             "funding": [
                 {
@@ -11048,8 +11060,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-12T15:57:42+00:00",
-            "published-time": "2026-11-12T15:58:42+00:00"
+            "time": "2026-11-17T16:15:51+00:00",
+            "published-time": "2026-11-17T16:16:24+00:00"
         },
         {
             "name": "itamair/geophp",
@@ -14866,16 +14878,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "4.37.0",
+            "version": "4.37.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "635a94908528ca5c4f0804640a0ec578e51639b3"
+                "reference": "e91d17a16a2f007c01a68b0a6140a46bb3c1f90d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/635a94908528ca5c4f0804640a0ec578e51639b3",
-                "reference": "635a94908528ca5c4f0804640a0ec578e51639b3",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/e91d17a16a2f007c01a68b0a6140a46bb3c1f90d",
+                "reference": "e91d17a16a2f007c01a68b0a6140a46bb3c1f90d",
                 "shasum": ""
             },
             "require": {
@@ -14947,7 +14959,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-php/issues",
-                "source": "https://github.com/getsentry/sentry-php/tree/4.37.0"
+                "source": "https://github.com/getsentry/sentry-php/tree/4.37.1"
             },
             "funding": [
                 {
@@ -14959,8 +14971,8 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-11-11T15:29:22+00:00",
-            "published-time": "2026-11-11T15:35:52+00:00"
+            "time": "2026-11-17T17:03:08+00:00",
+            "published-time": "2026-11-17T17:09:45+00:00"
         },
         {
             "name": "stomp-php/stomp-php",

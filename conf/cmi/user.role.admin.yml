@@ -97,6 +97,7 @@ permissions:
   - 'administer users'
   - 'administer webform'
   - 'administer webform overview'
+  - 'allow views bulk operations'
   - 'assign all roles'
   - 'assign content_producer role'
   - 'assign editor role'

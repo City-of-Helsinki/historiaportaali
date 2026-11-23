@@ -11,6 +11,7 @@
         "cweagans/composer-patches": "^1.6.7",
         "drupal/context": "^5.0@RC",
         "drupal/context_entity_field": "^2",
+        "drupal/core-composer-scaffold": "^10|^11",
         "drupal/dynamic_entity_reference": "^3.0",
         "drupal/geocoder": "^4.14",
         "drupal/geofield": "^1.57",
@@ -54,7 +55,7 @@
     "config": {
         "audit": {
             "abandoned": "report",
-            "ignore": ["CVE-2026-102601", "PKSA-8j6w-3kr7-s9xk", "PKSA-6j95-1jtb-x6wc", "PKSA-cbx2-m9db-bmzd"]
+            "ignore": ["CVE-2026-102601", "PKSA-8j6w-3kr7-s9xk", "PKSA-6j95-1jtb-x6wc", "PKSA-cbx2-m9db-bmzd", "GHSA-9rjx-3jch-6vjf", "GHSA-v383-3rw5-q8rf", "GHSA-m9xh-6747-9r6f", "GHSA-qhmf-972w-m957"]
         },
         "optimize-autoloader": true,
         "sort-packages": true,
@@ -69,6 +70,15 @@
             "wikimedia/composer-merge-plugin": true,
             "mglaman/composer-drupal-lenient": true,
             "symfony/runtime": true
+        },
+        "policy": {
+            "cooldown": {
+                "period": "3 days",
+                "ignore": {
+                    "drupal/helfi_*": "Our own modules are rolled out by the automatic update workflow.",
+                    "drupal/hdbt*": "Our own themes are rolled out by the automatic update workflow."
+                }
+            }
         }
     },
     "extra": {
@@ -136,7 +146,7 @@
             "drupal/core": "-p2"
         },
         "drupal-lenient": {
-            "allowed-list": ["drupal/big_pipe_sessionless"]
+            "allowed-list": ["drupal/big_pipe_sessionless", "drupal/big_pipe_sessionless"]
         }
     },
     "autoload": {
@@ -150,7 +160,8 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://repository.drupal.hel.ninja"
+            "url": "https://repository.drupal.hel.ninja",
+            "require-published-time": false
         },
         {
             "type": "composer",
@@ -179,6 +190,7 @@
           "@test-php"
         ],
         "test-php": "vendor/bin/phpunit -c phpunit.xml.dist",
-        "lint-php": "vendor/bin/phpcs --standard=Drupal"
+        "lint-php": "vendor/bin/phpcs --standard=Drupal",
+        "pre-command-run": "bash tools/composer/require-container.sh"
     }
 }

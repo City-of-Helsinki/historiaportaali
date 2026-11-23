@@ -6,25 +6,24 @@
   "license": "MIT",
   "repository": "github:City-of-Helsinki/drupal-hel-platform",
   "@comment scripts": [
-    "Every build, lint and format script below runs inside a disposable Node container via the hdbt sandbox script."
+    "Every build, lint and format script below runs inside a disposable Node container via the sandbox command."
   ],
   "scripts": {
-    "dev": "../../contrib/hdbt/tools/sandbox.sh sh -c 'npm run validate-ts && node theme-builder.mjs --watch --dev'",
+    "preinstall": "rm -rf node_modules/@hdbt/theme-builder && npm install ../../contrib/hdbt/theme-builder --loglevel=silent",
+    "dev": "sandbox sh -c 'npm run validate-ts && node theme-builder.mjs --watch --dev'",
     "dev-with-remote-data": "HDBT_ELASTIC_DEV_URL=https://helhist-elastic-proxy.test.hel.ninja npm run dev",
-    "build": "../../contrib/hdbt/tools/sandbox.sh sh -c 'npm run validate-ts && npm run lint --loglevel=silent && node theme-builder.mjs && npm run build:finalize'",
+    "build": "sandbox sh -c 'npm run validate-ts && npm run lint --loglevel=silent && node theme-builder.mjs && npm run build:finalize'",
     "build:finalize": "mkdir -p dist/icons && cp src/icons/*.svg dist/icons/ && if [ -f dist/css/tiny-slider/tiny-slider.css ]; then sed -i.bak '/sourceMappingURL/d' dist/css/tiny-slider/tiny-slider.css && rm -f dist/css/tiny-slider/tiny-slider.css.bak; fi",
     "postinstall": "npm --prefix ../../contrib/hdbt install --no-audit --progress=false --loglevel=silent",
-    "lint:scss": "../../contrib/hdbt/tools/sandbox.sh stylelint \"src/scss/**/*.scss\" --config ../../contrib/hdbt/theme-builder/.stylelintrc.yaml --fix",
-    "lint:js": "../../contrib/hdbt/tools/sandbox.sh biome check --write --assist-enabled=true src/js/",
-    "format:js": "../../contrib/hdbt/tools/sandbox.sh biome format --write src/js/",
-    "lint": "../../contrib/hdbt/tools/sandbox.sh npm-run-all --parallel lint:scss lint:js -s",
-    "validate-ts": "../../contrib/hdbt/tools/sandbox.sh sh -c 'tsc --noEmit 2>&1 | grep -v '\\''hdbt'\\'' || true'"
+    "lint:scss": "sandbox stylelint \"src/scss/**/*.scss\" --config node_modules/@hdbt/theme-builder/.stylelintrc.yaml --formatter string --fix",
+    "lint:js": "sandbox biome check --write --assist-enabled=true src/js/",
+    "format:js": "sandbox biome format --write --no-errors-on-unmatched src/js/",
+    "lint": "sandbox npm-run-all --parallel lint:scss lint:js -s",
+    "validate-ts": "sandbox sh -c 'tsc --noEmit 2>&1 | grep -v '\\''hdbt'\\'' || true'"
   },
   "dependencies": {
     "@hdbt/theme-builder": "file:../../contrib/hdbt/theme-builder",
     "@splidejs/splide": "^4.1.4",
-    "breakpoint-sass": "^3.0.0",
-    "glob": "^13.0.0",
     "npm-run-all2": "^8.0.4",
     "read-time-estimate": "^0.0.3",
     "tiny-slider": "^2.9.4"

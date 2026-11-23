@@ -146,7 +146,7 @@
             "drupal/core": "-p2"
         },
         "drupal-lenient": {
-            "allowed-list": ["drupal/big_pipe_sessionless", "drupal/big_pipe_sessionless"]
+            "allowed-list": ["drupal/big_pipe_sessionless"]
         }
     },
     "autoload": {

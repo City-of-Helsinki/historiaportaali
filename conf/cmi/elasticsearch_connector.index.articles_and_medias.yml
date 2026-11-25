@@ -1,9 +1,0 @@
-uuid: a3ea4fce-4ec8-4008-bfc1-ad8f103cea7a
-langcode: en
-status: true
-dependencies: {  }
-index_id: articles_and_medias
-name: 'Articles and medias'
-num_of_shards: 5
-num_of_replica: 1
-server: local

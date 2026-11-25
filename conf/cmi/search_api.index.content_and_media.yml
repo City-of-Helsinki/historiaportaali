@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.server.elasticsearch
+    - search_api.server.default
   module:
     - helfi_react_search
     - helhist_kore_search
@@ -232,4 +232,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: elasticsearch
+server: default

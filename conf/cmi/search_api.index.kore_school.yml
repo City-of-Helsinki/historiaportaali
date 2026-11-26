@@ -7,7 +7,7 @@ dependencies:
     - field.storage.node.field_kore_types
     - field.storage.paragraph.field_kore_language
     - field.storage.paragraph.field_kore_type
-    - search_api.server.elasticsearch
+    - search_api.server.default
   module:
     - helfi_react_search
     - helhist_kore_search
@@ -138,4 +138,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: elasticsearch
+server: default

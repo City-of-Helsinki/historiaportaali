@@ -79,10 +79,8 @@ class ListingImageUrl extends ProcessorPluginBase {
       $image_uri = $file->getFileUri();
 
       if ($image_uri) {
-        $destination_uri = $image_style->buildUri($file->uri->value);
-        $image_style->createDerivative($image_uri, $destination_uri);
-
-        $destination_url = $image_style->buildUrl($file->uri->value);
+        // The derivative is generated lazily on first request.
+        $destination_url = $image_style->buildUrl($image_uri);
 
         $fields = $this->getFieldsHelper()
           ->filterForPropertyPath($item->getFields(), NULL, $this->processorId);
